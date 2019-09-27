@@ -1,11 +1,10 @@
-## My Project
+# AWS SAM CLI Application Templates
 
-TODO: Fill this README out!
+This repository contains the application templates used in the AWS SAM CLI for `sam init` calls.
 
-Be sure to:
+## Contributing
 
-* Change the title in this README
-* Edit your repository description on GitHub
+We welcome issue reports and pull requests to help improve these application templates.
 
 ## License
 
