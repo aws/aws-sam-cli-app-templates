@@ -1,0 +1,84 @@
+{
+  "dotnetcore2.0": {
+    "hello-world": {
+      "directory": "cookiecutter-aws-sam-hello-dotnet",
+      "displayName": "Hello World Example"
+    }
+  },
+  "dotnetcore2.1": {
+    "hello-world": {
+      "directory": "cookiecutter-aws-sam-hello-dotnet",
+      "displayName": "Hello World Example"
+    }
+  },
+  "go1.x": {
+    "hello-world": {
+      "directory": "cookiecutter-aws-sam-hello-go",
+      "displayName": "Hello World Example"
+    }
+  },
+  "java8": {
+    "hello-world-gradle": {
+      "directory": "cookiecutter-aws-sam-hello-java-gradle",
+      "displayName": "Hello World Example: Gradle"
+    },
+    "hello-world-maven": {
+      "directory": "cookiecutter-aws-sam-hello-java-maven",
+      "displayName": "Hello World Example: Maven"
+    }
+  },
+  "nodejs10.x": {
+    "hello-world": {
+      "directory": "cookiecutter-aws-sam-hello-nodejs",
+      "displayName": "Hello World Example"
+    },
+    "quick-start-from-scratch": {
+      "directory": "cookiecutter-quick-start-from-scratch",
+      "displayName": "Quick Start: From Scratch"
+    },
+    "quick-start-cloudwatch-events": {
+      "directory": "cookiecutter-quick-start-cloudwatch-events",
+      "displayName": "Quick Start: Scheduled Events"
+    },
+    "quick-start-s3": {
+      "directory": "cookiecutter-quick-start-s3",
+      "displayName": "Quick Start: S3"
+    },
+    "quick-start-sns": {
+      "directory": "cookiecutter-quick-start-sns",
+      "displayName": "Quick Start: SNS"
+    },
+    "quick-start-sqs": {
+      "directory": "cookiecutter-quick-start-sqs",
+      "displayName": "Quick Start: SQS"
+    },
+    "quick-start-web": {
+      "directory": "cookiecutter-quick-start-web",
+      "displayName": "Quick Start: Web Backend"
+    }
+  },
+  "nodejs8.10": {
+    "hello-world": {
+      "directory": "cookiecutter-aws-sam-hello-nodejs",
+      "displayName": "Hello World Example"
+    }
+  },
+  "python3.6": {
+    "hello-world": {
+      "directory": "cookiecutter-aws-sam-hello-python",
+      "displayName": "Hello World Example"
+    }
+  },
+  "python3.7": {
+    "hello-world": {
+      "directory": "cookiecutter-aws-sam-hello-python",
+      "displayName": "Hello World Example"
+    }
+  },
+  "ruby2.5": {
+    "hello-world": {
+      "directory": "cookiecutter-aws-sam-hello-ruby",
+      "displayName": "Hello World Example"
+    }
+  }
+}
