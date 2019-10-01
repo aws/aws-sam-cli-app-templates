@@ -1,84 +1,100 @@
 {
-  "dotnetcore2.0": {
-    "hello-world": {
+  "dotnetcore2.0": [
+    {
       "directory": "cookiecutter-aws-sam-hello-dotnet",
-      "displayName": "Hello World Example"
+      "displayName": "Hello World Example",
+      "dependencyManager": "cli-package"
     }
-  },
-  "dotnetcore2.1": {
-    "hello-world": {
+  ],
+  "dotnetcore2.1": [
+    {
       "directory": "cookiecutter-aws-sam-hello-dotnet",
-      "displayName": "Hello World Example"
+      "displayName": "Hello World Example",
+      "dependencyManager": "cli-package"
     }
-  },
-  "go1.x": {
-    "hello-world": {
+  ],
+  "go1.x": [
+    {
       "directory": "cookiecutter-aws-sam-hello-go",
-      "displayName": "Hello World Example"
+      "displayName": "Hello World Example",
+      "dependencyManager": null
     }
-  },
-  "java8": {
-    "hello-world-gradle": {
+  ],
+  "java8": [
+    {
       "directory": "cookiecutter-aws-sam-hello-java-gradle",
-      "displayName": "Hello World Example: Gradle"
+      "displayName": "Hello World Example: Gradle",
+      "dependencyManager": "gradle"
     },
-    "hello-world-maven": {
+    {
       "directory": "cookiecutter-aws-sam-hello-java-maven",
-      "displayName": "Hello World Example: Maven"
+      "displayName": "Hello World Example: Maven",
+      "dependencyManager": "maven"
     }
-  },
-  "nodejs10.x": {
-    "hello-world": {
+  ],
+  "nodejs10.x": [
+    {
       "directory": "cookiecutter-aws-sam-hello-nodejs",
-      "displayName": "Hello World Example"
+      "displayName": "Hello World Example",
+      "dependencyManager": "npm"
     },
-    "quick-start-from-scratch": {
+    {
       "directory": "cookiecutter-quick-start-from-scratch",
-      "displayName": "Quick Start: From Scratch"
+      "displayName": "Quick Start: From Scratch",
+      "dependencyManager": "npm"
     },
-    "quick-start-cloudwatch-events": {
+    {
       "directory": "cookiecutter-quick-start-cloudwatch-events",
-      "displayName": "Quick Start: Scheduled Events"
+      "displayName": "Quick Start: Scheduled Events",
+      "dependencyManager": "npm"
     },
-    "quick-start-s3": {
+    {
       "directory": "cookiecutter-quick-start-s3",
-      "displayName": "Quick Start: S3"
+      "displayName": "Quick Start: S3",
+      "dependencyManager": "npm"
     },
-    "quick-start-sns": {
+    {
       "directory": "cookiecutter-quick-start-sns",
-      "displayName": "Quick Start: SNS"
+      "displayName": "Quick Start: SNS",
+      "dependencyManager": "npm"
     },
-    "quick-start-sqs": {
+    {
       "directory": "cookiecutter-quick-start-sqs",
-      "displayName": "Quick Start: SQS"
+      "displayName": "Quick Start: SQS",
+      "dependencyManager": "npm"
     },
-    "quick-start-web": {
+    {
       "directory": "cookiecutter-quick-start-web",
-      "displayName": "Quick Start: Web Backend"
+      "displayName": "Quick Start: Web Backend",
+      "dependencyManager": "npm"
     }
-  },
-  "nodejs8.10": {
-    "hello-world": {
+  ],
+  "nodejs8.10": [
+    {
       "directory": "cookiecutter-aws-sam-hello-nodejs",
-      "displayName": "Hello World Example"
+      "displayName": "Hello World Example",
+      "dependencyManager": "npm"
     }
-  },
-  "python3.6": {
-    "hello-world": {
+  ],
+  "python3.6": [
+    {
       "directory": "cookiecutter-aws-sam-hello-python",
-      "displayName": "Hello World Example"
+      "displayName": "Hello World Example",
+      "dependencyManager": "pip"
     }
-  },
-  "python3.7": {
-    "hello-world": {
+  ],
+  "python3.7": [
+    {
       "directory": "cookiecutter-aws-sam-hello-python",
-      "displayName": "Hello World Example"
+      "displayName": "Hello World Example",
+      "dependencyManager": "pip"
     }
-  },
-  "ruby2.5": {
-    "hello-world": {
+  ],
+  "ruby2.5": [
+    {
       "directory": "cookiecutter-aws-sam-hello-ruby",
-      "displayName": "Hello World Example"
+      "displayName": "Hello World Example",
+      "dependencyManager": "bundler"
     }
-  }
+  ]
 }
