@@ -15,7 +15,7 @@
   ],
   "go1.x": [
     {
-      "directory": "go1.x/cookiecutter-aws-sam-hello-go",
+      "directory": "go1.x/cookiecutter-aws-sam-hello-golang",
       "displayName": "Hello World Example",
       "dependencyManager": null
     }
