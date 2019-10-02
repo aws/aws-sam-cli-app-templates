@@ -3,98 +3,114 @@
     {
       "directory": "dotnetcore2.0/cookiecutter-aws-sam-hello-dotnet",
       "displayName": "Hello World Example",
-      "dependencyManager": "cli-package"
+      "dependencyManager": "cli-package",
+      "appTemplate": "hello-dotnet"
     }
   ],
   "dotnetcore2.1": [
     {
       "directory": "dotnetcore2.1/cookiecutter-aws-sam-hello-dotnet",
       "displayName": "Hello World Example",
-      "dependencyManager": "cli-package"
+      "dependencyManager": "cli-package",
+      "appTemplate": "hello-dotnet"
     }
   ],
   "go1.x": [
     {
       "directory": "go1.x/cookiecutter-aws-sam-hello-golang",
       "displayName": "Hello World Example",
-      "dependencyManager": null
+      "dependencyManager": null,
+      "appTemplate": "hello-golang"
     }
   ],
   "java8": [
     {
       "directory": "java8/cookiecutter-aws-sam-hello-java-gradle",
       "displayName": "Hello World Example: Gradle",
-      "dependencyManager": "gradle"
+      "dependencyManager": "gradle",
+      "appTemplate": "hello-java-gradle"
     },
     {
       "directory": "java8/cookiecutter-aws-sam-hello-java-maven",
       "displayName": "Hello World Example: Maven",
-      "dependencyManager": "maven"
+      "dependencyManager": "maven",
+      "appTemplate": "hello-java-maven"
     }
   ],
   "nodejs10.x": [
     {
       "directory": "nodejs10.x/cookiecutter-aws-sam-hello-nodejs",
       "displayName": "Hello World Example",
-      "dependencyManager": "npm"
+      "dependencyManager": "npm",
+      "appTemplate": "hello-nodejs"
     },
     {
       "directory": "nodejs10.x/cookiecutter-quick-start-from-scratch",
       "displayName": "Quick Start: From Scratch",
-      "dependencyManager": "npm"
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-from-scratch"
     },
     {
       "directory": "nodejs10.x/cookiecutter-quick-start-cloudwatch-events",
       "displayName": "Quick Start: Scheduled Events",
-      "dependencyManager": "npm"
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-cloudwatch-events"
     },
     {
       "directory": "nodejs10.x/cookiecutter-quick-start-s3",
       "displayName": "Quick Start: S3",
-      "dependencyManager": "npm"
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-s3"
     },
     {
       "directory": "nodejs10.x/cookiecutter-quick-start-sns",
       "displayName": "Quick Start: SNS",
-      "dependencyManager": "npm"
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-sns"
     },
     {
       "directory": "nodejs10.x/cookiecutter-quick-start-sqs",
       "displayName": "Quick Start: SQS",
-      "dependencyManager": "npm"
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-sqs"
     },
     {
       "directory": "nodejs10.x/cookiecutter-quick-start-web",
       "displayName": "Quick Start: Web Backend",
-      "dependencyManager": "npm"
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-web"
     }
   ],
   "nodejs8.10": [
     {
       "directory": "nodejs8.10/cookiecutter-aws-sam-hello-nodejs",
       "displayName": "Hello World Example",
-      "dependencyManager": "npm"
+      "dependencyManager": "npm",
+      "appTemplate": "hello-nodejs"
     }
   ],
   "python3.6": [
     {
       "directory": "python3.6/cookiecutter-aws-sam-hello-python",
       "displayName": "Hello World Example",
-      "dependencyManager": "pip"
+      "dependencyManager": "pip",
+      "appTemplate": "hello-python"
     }
   ],
   "python3.7": [
     {
       "directory": "python3.7/cookiecutter-aws-sam-hello-python",
       "displayName": "Hello World Example",
-      "dependencyManager": "pip"
+      "dependencyManager": "pip",
+      "appTemplate": "hello-python"
     }
   ],
   "ruby2.5": [
     {
       "directory": "ruby2.5/cookiecutter-aws-sam-hello-ruby",
       "displayName": "Hello World Example",
-      "dependencyManager": "bundler"
+      "dependencyManager": "bundler",
+      "appTemplate": "hello-ruby"
     }
   ]
 }
