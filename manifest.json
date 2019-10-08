@@ -4,7 +4,7 @@
       "directory": "dotnetcore2.0/cookiecutter-aws-sam-hello-dotnet",
       "displayName": "Hello World Example",
       "dependencyManager": "cli-package",
-      "appTemplate": "hello-dotnet"
+      "appTemplate": "hello-world"
     }
   ],
   "dotnetcore2.1": [
@@ -12,15 +12,15 @@
       "directory": "dotnetcore2.1/cookiecutter-aws-sam-hello-dotnet",
       "displayName": "Hello World Example",
       "dependencyManager": "cli-package",
-      "appTemplate": "hello-dotnet"
+      "appTemplate": "hello-world"
     }
   ],
   "go1.x": [
     {
       "directory": "go1.x/cookiecutter-aws-sam-hello-golang",
       "displayName": "Hello World Example",
-      "dependencyManager": null,
-      "appTemplate": "hello-golang"
+      "dependencyManager": "mod",
+      "appTemplate": "hello-world"
     }
   ],
   "java8": [
@@ -28,13 +28,13 @@
       "directory": "java8/cookiecutter-aws-sam-hello-java-gradle",
       "displayName": "Hello World Example: Gradle",
       "dependencyManager": "gradle",
-      "appTemplate": "hello-java-gradle"
+      "appTemplate": "hello-world"
     },
     {
       "directory": "java8/cookiecutter-aws-sam-hello-java-maven",
       "displayName": "Hello World Example: Maven",
       "dependencyManager": "maven",
-      "appTemplate": "hello-java-maven"
+      "appTemplate": "hello-world"
     }
   ],
   "nodejs10.x": [
@@ -42,7 +42,7 @@
       "directory": "nodejs10.x/cookiecutter-aws-sam-hello-nodejs",
       "displayName": "Hello World Example",
       "dependencyManager": "npm",
-      "appTemplate": "hello-nodejs"
+      "appTemplate": "hello-world"
     },
     {
       "directory": "nodejs10.x/cookiecutter-quick-start-from-scratch",
@@ -86,7 +86,7 @@
       "directory": "nodejs8.10/cookiecutter-aws-sam-hello-nodejs",
       "displayName": "Hello World Example",
       "dependencyManager": "npm",
-      "appTemplate": "hello-nodejs"
+      "appTemplate": "hello-world"
     }
   ],
   "python3.6": [
@@ -94,7 +94,7 @@
       "directory": "python3.6/cookiecutter-aws-sam-hello-python",
       "displayName": "Hello World Example",
       "dependencyManager": "pip",
-      "appTemplate": "hello-python"
+      "appTemplate": "hello-world"
     }
   ],
   "python3.7": [
@@ -102,7 +102,7 @@
       "directory": "python3.7/cookiecutter-aws-sam-hello-python",
       "displayName": "Hello World Example",
       "dependencyManager": "pip",
-      "appTemplate": "hello-python"
+      "appTemplate": "hello-world"
     }
   ],
   "ruby2.5": [
@@ -110,7 +110,7 @@
       "directory": "ruby2.5/cookiecutter-aws-sam-hello-ruby",
       "displayName": "Hello World Example",
       "dependencyManager": "bundler",
-      "appTemplate": "hello-ruby"
+      "appTemplate": "hello-world"
     }
   ]
 }
