@@ -4,9 +4,6 @@ import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/**
- * NewOrder
- */
 public class EC2InstanceStateChangeNotification {
 
     @JsonProperty("instanceId")
