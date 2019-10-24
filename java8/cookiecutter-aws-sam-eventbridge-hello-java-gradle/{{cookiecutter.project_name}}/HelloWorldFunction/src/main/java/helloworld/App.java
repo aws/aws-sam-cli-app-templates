@@ -15,7 +15,7 @@ import model.aws.ec2.marshaller.Marshaller;
  */
 public class App implements RequestStreamHandler {
 
-    private Object handleEvent(final AWSEvent<EC2InstanceStateChangeNotification> input, final Context context) {
+    private Object handleEvent(final AWSEvent<EC2InstanceStateChangeNotification> inputEvent, final Context context) {
         if (inputEvent != null) {
             EC2InstanceStateChangeNotification detail = inputEvent.getDetail();
 
