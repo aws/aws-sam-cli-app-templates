@@ -26,6 +26,7 @@ To use the SAM CLI, you need the following tools.
 * AWS CLI - [Install the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html) and [configure it with your AWS credentials].
 * SAM CLI - [Install the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
 * Java8 - [Install the Java SE Development Kit 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+* Maven - [Install Maven](https://maven.apache.org/install.html)
 * Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community)
 
 The SAM CLI uses an Amazon S3 bucket to store your application's deployment artifacts. If you don't have a bucket suitable for this purpose, create one. Replace `BUCKET_NAME` in the commands in this section with a unique bucket name.
@@ -106,7 +107,7 @@ Tests are defined in the `HelloWorldFunction/src/test` folder in this project.
 
 ```bash
 {{ cookiecutter.project_name }}$ cd HelloWorldFunction
-HelloWorldFunction$ gradle test
+HelloWorldFunction$ mvn test
 ```
 
 ## Cleanup
