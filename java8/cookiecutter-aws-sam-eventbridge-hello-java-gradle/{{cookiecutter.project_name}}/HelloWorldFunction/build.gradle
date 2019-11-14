@@ -7,9 +7,9 @@ repositories {
 }
 
 dependencies {
-    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.2.1'
-    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.0.1'
-    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.10.0'
     implementation 'com.amazonaws:aws-lambda-java-core:1.2.0'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.10.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.10.0'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.10.0'
     testImplementation 'junit:junit:4.12'
 }

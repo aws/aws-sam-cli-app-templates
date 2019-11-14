@@ -15,16 +15,19 @@ import model.aws.ec2.marshaller.Marshaller;
  */
 public class App implements RequestStreamHandler {
 
+    static final String NEW_DETAIL_TYPE = "HelloWorldFunction updated event of %s";
+
     private Object handleEvent(final AWSEvent<EC2InstanceStateChangeNotification> inputEvent, final Context context) {
         if (inputEvent != null) {
             EC2InstanceStateChangeNotification detail = inputEvent.getDetail();
 
             //Developers write your event-driven business logic code here!
+            inputEvent.setDetailType(String.format(NEW_DETAIL_TYPE, inputEvent.getDetailType()));
 
             return inputEvent;
         }
 
-        return "OK";
+        throw new IllegalArgumentException("Unable to deserialize lambda input event to AWSEvent<EC2InstanceStateChangeNotification>. Check that you have the right schema and event source.");
     }
 
     /**
@@ -35,7 +38,7 @@ public class App implements RequestStreamHandler {
      * @throws IOException
      */
     public void handleRequest(InputStream input, OutputStream output, Context context) throws IOException {
-        AWSEvent<EC2InstanceStateChangeNotification> event = Marshaller.toAwsEvent(input, EC2InstanceStateChangeNotification.class);
+        AWSEvent<EC2InstanceStateChangeNotification> event = Marshaller.unmarshalEvent(input, EC2InstanceStateChangeNotification.class);
 
         Object response = handleEvent(event, context);
 
