@@ -1,5 +1,6 @@
 package model.aws.ec2;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonProperty;

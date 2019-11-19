@@ -1,12 +1,14 @@
 package model.aws.ec2;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class EC2InstanceStateChangeNotification {
+public class EC2InstanceStateChangeNotification implements Serializable {
+  private static final long serialVersionUID = 1L;
 
-    @JsonProperty("instanceId")
+    @JsonProperty("instance-id")
     private String instanceId = null;
 
     @JsonProperty("state")
