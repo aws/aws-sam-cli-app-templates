@@ -49,6 +49,28 @@
       "appTemplate": "eventBridge-hello-world"
     }
   ],
+  "java11": [
+    {
+      "directory": "java11/cookiecutter-aws-sam-hello-java-gradle",
+      "displayName": "Hello World Example: Gradle",
+      "dependencyManager": "gradle",
+      "appTemplate": "hello-world"
+    },
+    {
+      "directory": "java11/cookiecutter-aws-sam-hello-java-maven",
+      "displayName": "Hello World Example: Maven",
+      "dependencyManager": "maven",
+      "appTemplate": "hello-world"
+    }
+  ],
+  "nodejs12.x": [
+    {
+      "directory": "nodejs12.x/cookiecutter-aws-sam-hello-nodejs",
+      "displayName": "Hello World Example",
+      "dependencyManager": "npm",
+      "appTemplate": "hello-world"
+    }
+  ],
   "nodejs10.x": [
     {
       "directory": "nodejs10.x/cookiecutter-aws-sam-hello-nodejs",
@@ -112,6 +134,14 @@
   "python3.7": [
     {
       "directory": "python3.7/cookiecutter-aws-sam-hello-python",
+      "displayName": "Hello World Example",
+      "dependencyManager": "pip",
+      "appTemplate": "hello-world"
+    }
+  ],
+  "python3.8": [
+    {
+      "directory": "python3.8/cookiecutter-aws-sam-hello-python",
       "displayName": "Hello World Example",
       "dependencyManager": "pip",
       "appTemplate": "hello-world"
