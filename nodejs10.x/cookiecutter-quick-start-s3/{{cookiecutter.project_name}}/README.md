@@ -26,34 +26,24 @@ The AWS SAM CLI is an extension of the AWS CLI that adds functionality for build
 To use the AWS SAM CLI, you need the following tools:
 
 * AWS SAM CLI - [Install the AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html).
-* AWS CLI - [Install the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html) and [configure it with your AWS credentials](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html).
 * Node.js - [Install Node.js 10](https://nodejs.org/en/), including the npm package management tool.
 * Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community).
 
-The AWS SAM CLI uses an Amazon S3 bucket to store your application's deployment artifacts. If you don't have a bucket suitable for this purpose, create one. Replace `BUCKET_NAME` in the commands in this section with a unique bucket name.
+To build and deploy your application for the first time, run the following in your shell:
 
 ```bash
-my-application$ aws s3 mb s3://BUCKET_NAME
+sam build
+sam deploy --guided
 ```
 
-To prepare the application for deployment, use the `sam package` command.
+The first command will build the source of your application. The second command will package and deploy your application to AWS, with a series of prompts:
 
-```bash
-my-application$ sam package \
-    --output-template-file packaged.yaml \
-    --s3-bucket BUCKET_NAME
-```
-
-The AWS SAM CLI creates deployment packages, uploads them to the S3 bucket, and creates a new version of the template that refers to the artifacts in the bucket. 
-
-To deploy the application, use the `sam deploy` command.
-
-```bash
-my-application$ sam deploy \
-    --template-file packaged.yaml \
-    --stack-name sam-app \
-    --capabilities CAPABILITY_IAM
-```
+* **Stack Name**: The name of the stack to deploy to CloudFormation. This should be unique to your account and region, and a good starting point would be something matching your project name.
+* **AWS Region**: The AWS region you want to deploy your app to.
+* **Parameter AppBucketName**: This template includes a parameter to name the S3 bucket you will create as a part of the new application. This name needs to be globally unique.
+* **Confirm changes before deploy**: If set to yes, any change sets will be shown to you before execution for manual review. If set to no, the AWS SAM CLI will automatically deploy application changes.
+* **Allow SAM CLI IAM role creation**: Many AWS SAM templates, including this example, create AWS IAM roles required for the AWS Lambda function(s) included to access AWS services. By default, these are scoped down to minimum required permissions. To deploy an AWS CloudFormation stack which creates or modified IAM roles, the `CAPABILITY_IAM` value for `capabilities` must be provided. If permission isn't provided through this prompt, to deploy this example you must explicitly pass `--capabilities CAPABILITY_IAM` to the `sam deploy` command.
+* **Save arguments to samconfig.toml**: If set to yes, your choices will be saved to a configuration file inside the project, so that in the future you can just re-run `sam deploy` without parameters to deploy changes to your application.
 
 ## Use the AWS SAM CLI to build and test locally
 
@@ -111,13 +101,7 @@ The dead-letter queue is a location for Lambda to send events that could not be 
 Deploy the updated application.
 
 ```bash
-my-application$ sam package \
-    --output-template-file packaged.yaml \
-    --s3-bucket BUCKET_NAME
-my-application$ sam deploy \
-    --template-file packaged.yaml \
-    --stack-name sam-app \
-    --capabilities CAPABILITY_IAM
+my-application$ sam deploy
 ```
 
 Open the [**Applications**](https://console.aws.amazon.com/lambda/home#/applications) page of the Lambda console, and choose your application. When the deployment completes, view the application resources on the **Overview** tab to see the new resource. Then, choose the function to see the updated configuration that specifies the dead-letter queue.
@@ -147,11 +131,10 @@ my-application$ npm run test
 
 ## Cleanup
 
-To delete the sample application and the bucket that you created, use the AWS CLI.
+To delete the sample application that you created, use the AWS CLI. Assuming you used your project name for the stack name, you can run the following:
 
 ```bash
-my-application$ aws cloudformation delete-stack --stack-name sam-app
-my-application$ aws s3 rb s3://BUCKET_NAME
+aws cloudformation delete-stack --stack-name {{ cookiecutter.project_name }}
 ```
 
 ## Resources
