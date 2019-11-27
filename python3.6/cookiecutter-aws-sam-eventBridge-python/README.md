@@ -8,14 +8,7 @@ A cookiecutter template to create a Python EventBridge Hello world boilerplate u
 
 ## Usage
 
-Generate a boilerplate template in your current project directory using the following syntax:
-
-* **Python 3.7**: `sam init --runtime python3.7`
-* **Python 3.6**: `sam init --runtime python3.6`
-* **Python 2.7**: `sam init --runtime python2.7`
-
-> **NOTE**: ``--name`` allows you to specify a different project folder name (`sam-app` is the default)
-
+Access this template by running `sam init` and choosing it from the list of available templates
 
 # Credits
 
