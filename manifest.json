@@ -151,6 +151,12 @@
       "displayName": "Hello World Example",
       "dependencyManager": "pip",
       "appTemplate": "hello-world"
+    },
+    {
+      "directory": "python3.7/cookiecutter-aws-sam-eventBridge-python",
+      "displayName": "EventBridge Hello World (EC2 Instance State Change)",
+      "dependencyManager": "pip",
+      "appTemplate": "eventBridge-hello-world"
     }
   ],
   "ruby2.5": [
