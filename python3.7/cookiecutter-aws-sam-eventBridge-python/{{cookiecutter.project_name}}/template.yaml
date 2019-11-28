@@ -15,13 +15,7 @@ Resources:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
       Handler: hello_world/app.lambda_handler
-      {%- if cookiecutter.runtime == 'python2.7' %}
-      Runtime: python2.7
-      {%- elif cookiecutter.runtime == 'python3.6' %}
-      Runtime: python3.6
-      {%- else %}
-      Runtime: python3.7
-      {%- endif %}
+      Runtime: {{ cookiecutter.runtime }}
       Events:
         HelloWorld:
           Type: CloudWatchEvent # More info about CloudWatchEvent Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#cloudwatchevent
