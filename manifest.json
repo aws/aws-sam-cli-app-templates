@@ -61,6 +61,18 @@
       "displayName": "Hello World Example: Maven",
       "dependencyManager": "maven",
       "appTemplate": "hello-world"
+    },
+    {
+      "directory": "java11/cookiecutter-aws-sam-eventbridge-hello-java-gradle",
+      "displayName": "EventBridge Hello World: Gradle",
+      "dependencyManager": "gradle",
+      "appTemplate": "eventBridge-hello-world"
+    },
+    {
+      "directory": "java11/cookiecutter-aws-sam-eventbridge-hello-java-maven",
+      "displayName": "EventBridge Hello World: Maven",
+      "dependencyManager": "maven",
+      "appTemplate": "eventBridge-hello-world"
     }
   ],
   "nodejs12.x": [

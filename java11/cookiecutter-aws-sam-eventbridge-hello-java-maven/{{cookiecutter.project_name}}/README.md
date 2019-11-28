@@ -9,7 +9,7 @@ This project contains source code and supporting files for a serverless applicat
 
 This application reacts to EC2 Instance State change events, demonstrating the power of event-driven development with Amazon EventBridge.
 
-The application uses several AWS resources, including Lambda functions and an API Gateway API. These resources are defined in the `template.yaml` file in this project. You can update the template to add AWS resources through the same deployment process that updates your application code.
+The application uses several AWS resources, including Lambda functions and an EventBridge Rule. These resources are defined in the `template.yaml` file in this project. You can update the template to add AWS resources through the same deployment process that updates your application code.
 
 If you prefer to use an integrated development environment (IDE) to build and test your application, you can use the AWS Toolkit.  
 The AWS Toolkit is an open source plug-in for popular IDEs that uses the SAM CLI to build and deploy serverless applications on AWS. The AWS Toolkit also adds a simplified step-through debugging experience for Lambda function code. See the following links to get started.
@@ -21,31 +21,40 @@ The AWS Toolkit is an open source plug-in for popular IDEs that uses the SAM CLI
 
 ## Deploy the sample application
 
-The Serverless Application Model Command Line Interface (SAM CLI) is an extension of the AWS CLI that adds functionality for building and testing Lambda applications. It uses Docker to run your functions in an Amazon Linux environment that matches Lambda. It can also emulate your application's build environment and API.
+The Serverless Application Model Command Line Interface (SAM CLI) is an extension of the AWS CLI that adds functionality for building and testing Lambda applications. It uses Docker to run your functions in an Amazon Linux environment that matches Lambda. It can also emulate your application's build environment.
 
 To use the SAM CLI, you need the following tools.
 
+* AWS CLI - [Install the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html) and [configure it with your AWS credentials].
 * SAM CLI - [Install the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
 * Java8 - [Install the Java SE Development Kit 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 * Maven - [Install Maven](https://maven.apache.org/install.html)
 * Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community)
 
-To build and deploy your application for the first time, run the following in your shell:
+The SAM CLI uses an Amazon S3 bucket to store your application's deployment artifacts. If you don't have a bucket suitable for this purpose, create one. Replace `BUCKET_NAME` in the commands in this section with a unique bucket name.
 
 ```bash
-sam build
-sam deploy --guided
+{{ cookiecutter.project_name }}$ aws s3 mb s3://BUCKET_NAME
 ```
 
-The first command will build the source of your application. The second command will package and deploy your application to AWS, with a series of prompts:
+To prepare the application for deployment, use the `sam package` command.
 
-* **Stack Name**: The name of the stack to deploy to CloudFormation. This should be unique to your account and region, and a good starting point would be something matching your project name.
-* **AWS Region**: The AWS region you want to deploy your app to.
-* **Confirm changes before deploy**: If set to yes, any change sets will be shown to you before execution for manual review. If set to no, the AWS SAM CLI will automatically deploy application changes.
-* **Allow SAM CLI IAM role creation**: Many AWS SAM templates, including this example, create AWS IAM roles required for the AWS Lambda function(s) included to access AWS services. By default, these are scoped down to minimum required permissions. To deploy an AWS CloudFormation stack which creates or modified IAM roles, the `CAPABILITY_IAM` value for `capabilities` must be provided. If permission isn't provided through this prompt, to deploy this example you must explicitly pass `--capabilities CAPABILITY_IAM` to the `sam deploy` command.
-* **Save arguments to samconfig.toml**: If set to yes, your choices will be saved to a configuration file inside the project, so that in the future you can just re-run `sam deploy` without parameters to deploy changes to your application.
+```bash
+{{ cookiecutter.project_name }}$ sam package \
+    --output-template-file packaged.yaml \
+    --s3-bucket BUCKET_NAME
+```
 
-You can find your API Gateway Endpoint URL in the output values displayed after deployment.
+The SAM CLI creates deployment packages, uploads them to the S3 bucket, and creates a new version of the template that refers to the artifacts in the bucket. 
+
+To deploy the application, use the `sam deploy` command.
+
+```bash
+{{ cookiecutter.project_name }}$ sam deploy \
+    --template-file packaged.yaml \
+    --stack-name {{ cookiecutter.project_name }} \
+    --capabilities CAPABILITY_IAM
+```
 
 ## Use the SAM CLI to build and test locally
 
@@ -65,22 +74,18 @@ Run functions locally and invoke them with the `sam local invoke` command.
 {{ cookiecutter.project_name }}$ sam local invoke HelloWorldFunction --event events/event.json
 ```
 
-The SAM CLI can also emulate your application's API. Use the `sam local start-api` to run the API locally on port 3000.
-
-```bash
-{{ cookiecutter.project_name }}$ sam local start-api
-{{ cookiecutter.project_name }}$ curl http://localhost:3000/
-```
-
-The SAM CLI reads the application template to determine the API's routes and the functions that they invoke. The `Events` property on each function's definition includes the route and method for each path.
+The SAM CLI reads the application template to determine the EventBridge rule pattern and the functions that they invoke as a target. The `Events` property on each function's definition includes the source and detail-type of the types of events that will invoke the function.
 
 ```yaml
       Events:
         HelloWorld:
-          Type: Api
+          Type: CloudWatchEvent # More info about CloudWatchEvent Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#cloudwatchevent
           Properties:
-            Path: /hello
-            Method: get
+            Pattern:
+              source:
+                - aws.ec2
+              detail-type:
+                - EC2 Instance State-change Notification
 ```
 
 ## Add a resource to your application
@@ -109,10 +114,11 @@ HelloWorldFunction$ mvn test
 
 ## Cleanup
 
-To delete the sample application that you created, use the AWS CLI. Assuming you used your project name for the stack name, you can run the following:
+To delete the sample application and the bucket that you created, use the AWS CLI.
 
 ```bash
-aws cloudformation delete-stack --stack-name {{ cookiecutter.project_name }}
+{{ cookiecutter.project_name }}$ aws cloudformation delete-stack --stack-name {{ cookiecutter.project_name }}
+{{ cookiecutter.project_name }}$ aws s3 rb s3://BUCKET_NAME
 ```
 
 ## Resources
