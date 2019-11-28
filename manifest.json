@@ -132,7 +132,7 @@
     },
     {
       "directory": "python3.6/cookiecutter-aws-sam-eventBridge-python",
-      "displayName": "EventBridge Hello World (EC2 Instance State Change)",
+      "displayName": "EventBridge Hello World",
       "dependencyManager": "pip",
       "appTemplate": "eventBridge-hello-world"
     }    
@@ -143,6 +143,12 @@
       "displayName": "Hello World Example",
       "dependencyManager": "pip",
       "appTemplate": "hello-world"
+    },
+    {
+      "directory": "python3.7/cookiecutter-aws-sam-eventBridge-python",
+      "displayName": "EventBridge Hello World",
+      "dependencyManager": "pip",
+      "appTemplate": "eventBridge-hello-world"
     }
   ],
   "python3.8": [
@@ -153,8 +159,8 @@
       "appTemplate": "hello-world"
     },
     {
-      "directory": "python3.7/cookiecutter-aws-sam-eventBridge-python",
-      "displayName": "EventBridge Hello World (EC2 Instance State Change)",
+      "directory": "python3.8/cookiecutter-aws-sam-eventBridge-python",
+      "displayName": "EventBridge Hello World",
       "dependencyManager": "pip",
       "appTemplate": "eventBridge-hello-world"
     }
