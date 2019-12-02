@@ -38,15 +38,29 @@
     },
     {
       "directory": "java8/cookiecutter-aws-sam-eventbridge-hello-java-gradle",
-      "displayName": "EventBridge Hello World (EC2 Instance State Change): Gradle",
+      "displayName": "EventBridge Hello World: Gradle",
       "dependencyManager": "gradle",
       "appTemplate": "eventBridge-hello-world"
     },
     {
       "directory": "java8/cookiecutter-aws-sam-eventbridge-hello-java-maven",
-      "displayName": "EventBridge Hello World (EC2 Instance State Change): Maven",
+      "displayName": "EventBridge Hello World: Maven",
       "dependencyManager": "maven",
       "appTemplate": "eventBridge-hello-world"
+    },
+    {
+      "directory": "java8/cookiecutter-aws-sam-eventbridge-schema-app-java-gradle",
+      "displayName": "EventBridge App from scratch (100+ Event Schemas): Gradle",
+      "dependencyManager": "gradle",
+      "appTemplate": "eventBridge-schema-app",
+      "isDynamicTemplate": "True"
+    },
+    {
+      "directory": "java8/cookiecutter-aws-sam-eventbridge-schema-app-java-maven",
+      "displayName": "EventBridge App from scratch (100+ Event Schemas): Maven",
+      "dependencyManager": "maven",
+      "appTemplate": "eventBridge-schema-app",
+      "isDynamicTemplate": "True"
     }
   ],
   "java11": [
@@ -61,6 +75,32 @@
       "displayName": "Hello World Example: Maven",
       "dependencyManager": "maven",
       "appTemplate": "hello-world"
+    },
+    {
+      "directory": "java11/cookiecutter-aws-sam-eventbridge-hello-java-gradle",
+      "displayName": "EventBridge Hello World: Gradle",
+      "dependencyManager": "gradle",
+      "appTemplate": "eventBridge-hello-world"
+    },
+    {
+      "directory": "java11/cookiecutter-aws-sam-eventbridge-hello-java-maven",
+      "displayName": "EventBridge Hello World: Maven",
+      "dependencyManager": "maven",
+      "appTemplate": "eventBridge-hello-world"
+    },    
+    {
+      "directory": "java11/cookiecutter-aws-sam-eventbridge-schema-app-java-gradle",
+      "displayName": "EventBridge App from scratch (100+ Event Schemas): Gradle",
+      "dependencyManager": "gradle",
+      "appTemplate": "eventBridge-schema-app",
+      "isDynamicTemplate": "True"
+    },
+    {
+      "directory": "java11/cookiecutter-aws-sam-eventbridge-schema-app-java-maven",
+      "displayName": "EventBridge App from scratch (100+ Event Schemas): Maven",
+      "dependencyManager": "maven",
+      "appTemplate": "eventBridge-schema-app",
+      "isDynamicTemplate": "True"
     }
   ],
   "nodejs12.x": [
@@ -129,6 +169,19 @@
       "displayName": "Hello World Example",
       "dependencyManager": "pip",
       "appTemplate": "hello-world"
+    },
+    {
+      "directory": "python3.6/cookiecutter-aws-sam-eventBridge-python",
+      "displayName": "EventBridge Hello World",
+      "dependencyManager": "pip",
+      "appTemplate": "eventBridge-hello-world"
+    },
+    {
+      "directory": "python3.6/cookiecutter-aws-sam-eventbridge-schema-app-python",
+      "displayName": "EventBridge App from scratch (100+ Event Schemas)",
+      "dependencyManager": "pip",
+      "appTemplate": "eventBridge-schema-app",
+      "isDynamicTemplate": "True"
     }
   ],
   "python3.7": [
@@ -137,6 +190,19 @@
       "displayName": "Hello World Example",
       "dependencyManager": "pip",
       "appTemplate": "hello-world"
+    },
+    {
+      "directory": "python3.7/cookiecutter-aws-sam-eventBridge-python",
+      "displayName": "EventBridge Hello World",
+      "dependencyManager": "pip",
+      "appTemplate": "eventBridge-hello-world"
+    },    
+    {
+      "directory": "python3.7/cookiecutter-aws-sam-eventbridge-schema-app-python",
+      "displayName": "EventBridge App from scratch (100+ Event Schemas)",
+      "dependencyManager": "pip",
+      "appTemplate": "eventBridge-schema-app",
+      "isDynamicTemplate": "True"
     }
   ],
   "python3.8": [
@@ -145,6 +211,19 @@
       "displayName": "Hello World Example",
       "dependencyManager": "pip",
       "appTemplate": "hello-world"
+    },
+    {
+      "directory": "python3.8/cookiecutter-aws-sam-eventBridge-python",
+      "displayName": "EventBridge Hello World",
+      "dependencyManager": "pip",
+      "appTemplate": "eventBridge-hello-world"
+    },    
+    {
+      "directory": "python3.8/cookiecutter-aws-sam-eventbridge-schema-app-python",
+      "displayName": "EventBridge App from scratch (100+ Event Schemas)",
+      "dependencyManager": "pip",
+      "appTemplate": "eventBridge-schema-app",
+      "isDynamicTemplate": "True"
     }
   ],
   "ruby2.5": [

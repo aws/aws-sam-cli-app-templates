@@ -30,7 +30,7 @@ To use the SAM CLI, you need the following tools.
 To build and deploy your application for the first time, run the following in your shell:
 
 ```bash
-sam build
+sam build --use-container
 sam deploy --guided
 ```
 
@@ -46,10 +46,10 @@ You can find your API Gateway Endpoint URL in the output values displayed after 
 
 ## Use the SAM CLI to build and test locally
 
-Build your application with the `sam build` command.
+Build your application with the `sam build --use-container` command.
 
 ```bash
-{{ cookiecutter.project_name }}$ sam build
+{{ cookiecutter.project_name }}$ sam build --use-container
 ```
 
 The SAM CLI installs dependencies defined in `hello_world/requirements.txt`, creates a deployment package, and saves it in the `.aws-sam/build` folder.

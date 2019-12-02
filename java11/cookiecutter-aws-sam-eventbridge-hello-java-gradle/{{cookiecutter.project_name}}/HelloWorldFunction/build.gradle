@@ -1,0 +1,15 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.amazonaws:aws-lambda-java-core:1.2.0'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.10.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.10.0'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.10.0'
+    testImplementation 'junit:junit:4.12'
+}
