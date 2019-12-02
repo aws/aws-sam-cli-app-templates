@@ -1,0 +1,10 @@
+{
+    "project_name": "Your EventBridge Starter app",
+    "runtime": "java8",
+    "function_name": "HelloWorldFunction",
+    "AWS_Schema_registry": "aws.events",
+    "AWS_Schema_name": "EC2InstanceStateChangeNotification",
+    "AWS_Schema_root": "aws.ec2.EC2InstanceStateChangeNotification",
+    "AWS_Schema_source": "aws.ec2",
+    "AWS_Schema_detail_type": "EC2 Instance State-change Notification"
+}
