@@ -155,14 +155,6 @@
       "appTemplate": "quick-start-web"
     }
   ],
-  "nodejs8.10": [
-    {
-      "directory": "nodejs8.10/cookiecutter-aws-sam-hello-nodejs",
-      "displayName": "Hello World Example",
-      "dependencyManager": "npm",
-      "appTemplate": "hello-world"
-    }
-  ],
   "python3.6": [
     {
       "directory": "python3.6/cookiecutter-aws-sam-hello-python",
