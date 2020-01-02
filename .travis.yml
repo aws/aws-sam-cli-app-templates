@@ -6,4 +6,5 @@ matrix:
       dist: xenial
       sudo: true
 
+  install: python --version # Don't actually need anything here.
   script: pytest tests/unit/*
