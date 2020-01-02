@@ -6,4 +6,4 @@ matrix:
       dist: xenial
       sudo: true
 
-  script: pytest tests/unit/*
+script: pytest tests/unit/*
