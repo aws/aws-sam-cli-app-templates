@@ -163,6 +163,14 @@
       "appTemplate": "hello-world"
     }
   ],
+  "python2.7": [
+    {
+      "directory": "python2.7/cookiecutter-aws-sam-hello-python",
+      "displayName": "Hello World Example",
+      "dependencyManager": "pip",
+      "appTemplate": "hello-world"
+    }
+  ],
   "python3.6": [
     {
       "directory": "python3.6/cookiecutter-aws-sam-hello-python",
