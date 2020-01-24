@@ -96,7 +96,7 @@ Tests are defined in the `tests` folder in this project. Use PIP to install the 
 
 ```bash
 {{ cookiecutter.project_name }}$ pip install pytest pytest-mock --user
-{{ cookiecutter.project_name }}$ python -m pytest tests/ -v
+{{ cookiecutter.project_name }}/{{ cookiecutter.function_name }} python -m pytest ../tests/ -v
 ```
 
 ## Cleanup
