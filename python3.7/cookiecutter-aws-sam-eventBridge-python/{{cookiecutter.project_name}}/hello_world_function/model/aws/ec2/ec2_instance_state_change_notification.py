@@ -1,5 +1,4 @@
 # coding: utf-8
-
 import pprint
 import re  # noqa: F401
 
@@ -41,8 +40,6 @@ class EC2InstanceStateChangeNotification(object):
     @state.setter
     def state(self, state):
 
-        if state is None:
-            raise ValueError("Invalid value for `state`, must not be `None`")  # noqa: E501
 
         self._state = state
 
