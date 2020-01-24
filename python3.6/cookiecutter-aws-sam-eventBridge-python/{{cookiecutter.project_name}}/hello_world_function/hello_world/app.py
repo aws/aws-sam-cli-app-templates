@@ -2,7 +2,7 @@
 
 from model.aws.ec2 import Marshaller
 from model.aws.ec2 import AWSEvent
-from model.aws.ec2.ec2_instance_state_change_notification import EC2InstanceStateChangeNotification
+from model.aws.ec2 import EC2InstanceStateChangeNotification
 
 
 def lambda_handler(event, context):
