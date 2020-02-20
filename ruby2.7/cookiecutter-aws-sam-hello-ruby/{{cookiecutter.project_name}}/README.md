@@ -24,7 +24,7 @@ The Serverless Application Model Command Line Interface (SAM CLI) is an extensio
 To use the SAM CLI, you need the following tools.
 
 * SAM CLI - [Install the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
-* Ruby - [Install Ruby 2.5](https://www.ruby-lang.org/en/documentation/installation/)
+* Ruby - [Install Ruby 2.7](https://www.ruby-lang.org/en/documentation/installation/)
 * Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community)
 
 To build and deploy your application for the first time, run the following in your shell:
