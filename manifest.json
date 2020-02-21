@@ -155,14 +155,6 @@
       "appTemplate": "quick-start-web"
     }
   ],
-  "nodejs8.10": [
-    {
-      "directory": "nodejs8.10/cookiecutter-aws-sam-hello-nodejs",
-      "displayName": "Hello World Example",
-      "dependencyManager": "npm",
-      "appTemplate": "hello-world"
-    }
-  ],
   "python2.7": [
     {
       "directory": "python2.7/cookiecutter-aws-sam-hello-python",
@@ -237,6 +229,14 @@
   "ruby2.5": [
     {
       "directory": "ruby2.5/cookiecutter-aws-sam-hello-ruby",
+      "displayName": "Hello World Example",
+      "dependencyManager": "bundler",
+      "appTemplate": "hello-world"
+    }
+  ],
+  "ruby2.7": [
+    {
+      "directory": "ruby2.7/cookiecutter-aws-sam-hello-ruby",
       "displayName": "Hello World Example",
       "dependencyManager": "bundler",
       "appTemplate": "hello-world"
