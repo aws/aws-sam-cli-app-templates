@@ -233,5 +233,13 @@
       "dependencyManager": "bundler",
       "appTemplate": "hello-world"
     }
+  ],
+  "ruby2.7": [
+    {
+      "directory": "ruby2.7/cookiecutter-aws-sam-hello-ruby",
+      "displayName": "Hello World Example",
+      "dependencyManager": "bundler",
+      "appTemplate": "hello-world"
+    }
   ]
 }
