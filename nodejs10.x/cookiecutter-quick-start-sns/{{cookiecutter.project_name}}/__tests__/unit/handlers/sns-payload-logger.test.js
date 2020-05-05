@@ -3,7 +3,7 @@ const snsPayloadLogger = require('../../../src/handlers/sns-payload-logger.js');
 
 describe('Test for sns-payload-logger', function () {
     // This test invokes the sns-payload-logger Lambda function and verifies that the received payload is logged
-    it('Verifies the payload is logged', async() = > {
+    it('Verifies the payload is logged', async() => {
         // Mock console.log statements so we can verify them. For more information, see
         // https://jestjs.io/docs/en/mock-functions.html
         console.info = jest.fn()
