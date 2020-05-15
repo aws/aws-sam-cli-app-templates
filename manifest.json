@@ -95,7 +95,7 @@
       "displayName": "EventBridge Hello World: Maven",
       "dependencyManager": "maven",
       "appTemplate": "eventBridge-hello-world"
-    },    
+    },
     {
       "directory": "java11/cookiecutter-aws-sam-eventbridge-schema-app-java-gradle",
       "displayName": "EventBridge App from scratch (100+ Event Schemas): Gradle",
@@ -204,7 +204,7 @@
       "displayName": "EventBridge Hello World",
       "dependencyManager": "pip",
       "appTemplate": "eventBridge-hello-world"
-    },    
+    },
     {
       "directory": "python3.7/cookiecutter-aws-sam-eventbridge-schema-app-python",
       "displayName": "EventBridge App from scratch (100+ Event Schemas)",
@@ -225,13 +225,19 @@
       "displayName": "EventBridge Hello World",
       "dependencyManager": "pip",
       "appTemplate": "eventBridge-hello-world"
-    },    
+    },
     {
       "directory": "python3.8/cookiecutter-aws-sam-eventbridge-schema-app-python",
       "displayName": "EventBridge App from scratch (100+ Event Schemas)",
       "dependencyManager": "pip",
       "appTemplate": "eventBridge-schema-app",
       "isDynamicTemplate": "True"
+    },
+    {
+      "directory": "python3.8/cookiecutter-aws-sam-step-functions-sample-app",
+      "displayName": "Step Functions Sample App (Stock Trader)",
+      "dependencyManager": "pip",
+      "appTemplate": "step-functions-sample-app"
     }
   ],
   "ruby2.5": [
