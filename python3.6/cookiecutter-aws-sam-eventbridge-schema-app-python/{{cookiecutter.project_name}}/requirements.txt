@@ -3,4 +3,3 @@ six
 regex
 pytest
 pytest-mock
--e .
