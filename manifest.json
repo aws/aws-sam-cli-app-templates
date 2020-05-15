@@ -117,6 +117,12 @@
       "displayName": "Hello World Example",
       "dependencyManager": "npm",
       "appTemplate": "hello-world"
+    },
+    {
+      "directory": "nodejs12.x/cookiecutter-aws-sam-step-functions-sample-app",
+      "displayName": "Step Functions Sample App (Stock Trader)",
+      "dependencyManager": "npm",
+      "appTemplate": "step-functions-sample-app"
     }
   ],
   "nodejs10.x": [
@@ -161,6 +167,12 @@
       "displayName": "Quick Start: Web Backend",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-web"
+    },
+    {
+      "directory": "nodejs10.x/cookiecutter-aws-sam-step-functions-sample-app",
+      "displayName": "Step Functions Sample App (Stock Trader)",
+      "dependencyManager": "npm",
+      "appTemplate": "step-functions-sample-app"
     }
   ],
   "python2.7": [

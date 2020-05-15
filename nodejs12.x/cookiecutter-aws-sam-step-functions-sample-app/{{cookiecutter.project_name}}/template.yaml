@@ -1,0 +1,76 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  {{ cookiecutter.project_name }}
+
+  Sample SAM Template for {{ cookiecutter.project_name }}
+
+Resources:
+  StockTradingStateMachine:
+    Type: AWS::Serverless::StateMachine # More info about State Machine Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessstatemachine
+    Properties:
+      DefinitionUri: statemachine/stock_trader.asl.json
+      DefinitionSubstitutions:
+        StockCheckerFunctionArn: !GetAtt StockCheckerFunction.Arn
+        StockSellerFunctionArn: !GetAtt StockSellerFunction.Arn
+        StockBuyerFunctionArn: !GetAtt StockBuyerFunction.Arn
+        DDBPutItem: !Sub arn:${AWS::Partition}:states:::dynamodb:putItem
+        DDBTable: !Ref TransactionTable
+      Events:
+        HourlyTradingSchedule:
+          Type: Schedule # More info about Schedule Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#schedule
+          Properties:
+            Description: Schedule to run the stock trading state machine every hour
+            Enabled: False
+            Schedule: "rate(1 hour)"
+      Policies: # Find out more about SAM policy templates https://github.com/awslabs/serverless-application-model/blob/master/docs/policy_templates.rst#how-to-use
+        - LambdaInvokePolicy:
+            FunctionName: !Ref StockCheckerFunction
+        - LambdaInvokePolicy:
+            FunctionName: !Ref StockSellerFunction
+        - LambdaInvokePolicy:
+            FunctionName: !Ref StockBuyerFunction
+        - DynamoDBWritePolicy:
+            TableName: !Ref TransactionTable
+
+  StockCheckerFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: functions/stock-checker/
+      Handler: app.lambdaHandler
+      Runtime: nodejs12.x
+
+  StockSellerFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: functions/stock-seller/
+      Handler: app.lambdaHandler
+      Runtime: nodejs12.x
+
+  StockBuyerFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: functions/stock-buyer/
+      Handler: app.lambdaHandler
+      Runtime: nodejs12.x
+
+  TransactionTable:
+    Type: AWS::Serverless::SimpleTable # More info about SimpleTable Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesssimpletable
+    Properties:
+      PrimaryKey:
+        Name: Id
+        Type: String
+      ProvisionedThroughput:
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
+
+Outputs:
+  # StockTradingStateMachineHourlyTradingSchedule is an implicit Schedule event rule created out of Events key under Serverless::StateMachine
+  # Find out more about other implicit resources you can reference within SAM
+  # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst
+  StockTradingStateMachineArn:
+    Description: "Stock Trading state machine ARN"
+    Value: !Ref StockTradingStateMachine
+  StockTradingStateMachineRole:
+    Description: "IAM Role created for Stock Trading state machine based on the specified SAM Policy Templates"
+    Value: !GetAtt StockTradingStateMachineRole.Arn
