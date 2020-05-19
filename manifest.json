@@ -163,6 +163,50 @@
       "appTemplate": "quick-start-web"
     }
   ],
+  "nodejs12.x": [
+    {
+      "directory": "nodejs12.x/cookiecutter-aws-sam-hello-nodejs",
+      "displayName": "Hello World Example",
+      "dependencyManager": "npm",
+      "appTemplate": "hello-world"
+    },
+    {
+      "directory": "nodejs12.x/cookiecutter-quick-start-from-scratch",
+      "displayName": "Quick Start: From Scratch",
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-from-scratch"
+    },
+    {
+      "directory": "nodejs12.x/cookiecutter-quick-start-cloudwatch-events",
+      "displayName": "Quick Start: Scheduled Events",
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-cloudwatch-events"
+    },
+    {
+      "directory": "nodejs12.x/cookiecutter-quick-start-s3",
+      "displayName": "Quick Start: S3",
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-s3"
+    },
+    {
+      "directory": "nodejs12.x/cookiecutter-quick-start-sns",
+      "displayName": "Quick Start: SNS",
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-sns"
+    },
+    {
+      "directory": "nodejs12.x/cookiecutter-quick-start-sqs",
+      "displayName": "Quick Start: SQS",
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-sqs"
+    },
+    {
+      "directory": "nodejs12.x/cookiecutter-quick-start-web",
+      "displayName": "Quick Start: Web Backend",
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-web"
+    }
+  ],
   "python2.7": [
     {
       "directory": "python2.7/cookiecutter-aws-sam-hello-python",
