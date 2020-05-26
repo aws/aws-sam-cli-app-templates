@@ -2,7 +2,7 @@
 
 A cookiecutter template to create a Python Step Functions Sample App (Stock Trader) boilerplate using [Serverless Application Model (SAM)](https://github.com/awslabs/serverless-application-model).
 
-This application creates a stock trading workflow which runs on a pre-defined schedule. It demonstrates the power of Step Functions to orchestrate Lambda functions and other AWS resources to form complex and robust workflow, coupled with event-driven development using Amazon EventBridge.
+This application creates a mock stock trading workflow which runs on a pre-defined schedule. It demonstrates the power of Step Functions to orchestrate Lambda functions and other AWS resources to form complex and robust workflows, coupled with event-driven development using Amazon EventBridge.
 
 ## Requirements
 
@@ -10,7 +10,7 @@ This application creates a stock trading workflow which runs on a pre-defined sc
 
 ## Usage
 
-Access this template by running `sam init` and choosing it from the list of available templates
+Access this template by running `sam init` and choosing it from the list of available templates.
 
 # Credits
 
