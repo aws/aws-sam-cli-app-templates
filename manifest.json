@@ -69,6 +69,20 @@
       "dependencyManager": "maven",
       "appTemplate": "eventBridge-schema-app",
       "isDynamicTemplate": "True"
+    },
+    {
+      "directory": "java8/cookiecutter-aws-sam-hello-step-functions-sample-app-gradle",
+      "displayName": "Step Functions Sample App (Stock Trader): Gradle",
+      "dependencyManager": "gradle",
+      "appTemplate": "step-functions-sample-app",
+      "isDynamicTemplate": "True"
+    },
+    {
+      "directory": "java8/cookiecutter-aws-sam-hello-step-functions-sample-app-maven",
+      "displayName": "Step Functions Sample App (Stock Trader): Maven",
+      "dependencyManager": "maven",
+      "appTemplate": "step-functions-sample-app",
+      "isDynamicTemplate": "True"
     }
   ],
   "java11": [
@@ -108,6 +122,20 @@
       "displayName": "EventBridge App from scratch (100+ Event Schemas): Maven",
       "dependencyManager": "maven",
       "appTemplate": "eventBridge-schema-app",
+      "isDynamicTemplate": "True"
+    },
+    {
+      "directory": "java11/cookiecutter-aws-sam-hello-step-functions-sample-app-gradle",
+      "displayName": "Step Functions Sample App (Stock Trader): Gradle",
+      "dependencyManager": "gradle",
+      "appTemplate": "step-functions-sample-app",
+      "isDynamicTemplate": "True"
+    },
+    {
+      "directory": "java11/cookiecutter-aws-sam-hello-step-functions-sample-app-maven",
+      "displayName": "Step Functions Sample App (Stock Trader): Maven",
+      "dependencyManager": "maven",
+      "appTemplate": "step-functions-sample-app",
       "isDynamicTemplate": "True"
     }
   ],
