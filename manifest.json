@@ -41,6 +41,12 @@
       "displayName": "Hello World Example",
       "dependencyManager": "mod",
       "appTemplate": "hello-world"
+    },
+    {
+      "directory": "go1.x/cookiecutter-aws-sam-hello-step-functions-sample-app",
+      "displayName": "Step Functions Sample App (Stock Trader)",
+      "dependencyManager": "mod",
+      "appTemplate": "step-functions-sample-app"
     }
   ],
   "java8": [
