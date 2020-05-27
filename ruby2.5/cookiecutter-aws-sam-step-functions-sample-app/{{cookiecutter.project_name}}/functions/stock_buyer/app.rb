@@ -25,10 +25,10 @@ def lambda_handler(event:, context:)
   stock_price = event["stock_price"]
   # Mocked result of a stock buying transaction
   {
-      "id": SecureRandom.uuid,  # Unique ID for the transaction
-      "price": stock_price.to_s,  # Price of each share
-      "type": "buy",  # Type of transaction (buy/sell)
-      "qty": rand(1...10).to_s,  # Number of shares bought/sold (We are mocking this as a random integer between 1 and 10)
-      "timestamp": DateTime.now.iso8601,  # Timestamp of the when the transaction was completed
+      id: SecureRandom.uuid,  # Unique ID for the transaction
+      price: stock_price.to_s,  # Price of each share
+      type: "buy",  # Type of transaction (buy/sell)
+      qty: rand(1...10).to_s,  # Number of shares bought/sold (We are mocking this as a random integer between 1 and 10)
+      timestamp: DateTime.now.iso8601,  # Timestamp of the when the transaction was completed
   }
 end
