@@ -70,7 +70,8 @@ Resources:
 Outputs:
   # StockTradingStateMachineHourlyTradingSchedule is an implicit Schedule event rule created out of Events key under Serverless::StateMachine
   # Find out more about other implicit resources you can reference within SAM
-  # https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-generated-resources.html  StockTradingStateMachineArn:
+  # https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-generated-resources.html
+  StockTradingStateMachineArn:
     Description: "Stock Trading State machine ARN"
     Value: !Ref StockTradingStateMachine
   StockTradingStateMachineRoleArn:
