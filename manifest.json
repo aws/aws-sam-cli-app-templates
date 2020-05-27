@@ -13,6 +13,12 @@
       "displayName": "Hello World Example",
       "dependencyManager": "cli-package",
       "appTemplate": "hello-world"
+    },
+    {
+      "directory": "dotnetcore2.1/cookiecutter-aws-sam-hello-step-functions-sample-app",
+      "displayName": "Step Functions Sample App (Stock Trader)",
+      "dependencyManager": "cli-package",
+      "appTemplate": "step-functions-sample-app"
     }
   ],
   "dotnetcore3.1": [
@@ -21,6 +27,12 @@
       "displayName": "Hello World Example",
       "dependencyManager": "cli-package",
       "appTemplate": "hello-world"
+    },
+    {
+      "directory": "dotnetcore3.1/cookiecutter-aws-sam-hello-step-functions-sample-app",
+      "displayName": "Step Functions Sample App (Stock Trader)",
+      "dependencyManager": "cli-package",
+      "appTemplate": "step-functions-sample-app"
     }
   ],
   "go1.x": [
@@ -29,6 +41,12 @@
       "displayName": "Hello World Example",
       "dependencyManager": "mod",
       "appTemplate": "hello-world"
+    },
+    {
+      "directory": "go1.x/cookiecutter-aws-sam-hello-step-functions-sample-app",
+      "displayName": "Step Functions Sample App (Stock Trader)",
+      "dependencyManager": "mod",
+      "appTemplate": "step-functions-sample-app"
     }
   ],
   "java8": [
@@ -69,6 +87,20 @@
       "dependencyManager": "maven",
       "appTemplate": "eventBridge-schema-app",
       "isDynamicTemplate": "True"
+    },
+    {
+      "directory": "java8/cookiecutter-aws-sam-hello-step-functions-sample-app-gradle",
+      "displayName": "Step Functions Sample App (Stock Trader): Gradle",
+      "dependencyManager": "gradle",
+      "appTemplate": "step-functions-sample-app",
+      "isDynamicTemplate": "True"
+    },
+    {
+      "directory": "java8/cookiecutter-aws-sam-hello-step-functions-sample-app-maven",
+      "displayName": "Step Functions Sample App (Stock Trader): Maven",
+      "dependencyManager": "maven",
+      "appTemplate": "step-functions-sample-app",
+      "isDynamicTemplate": "True"
     }
   ],
   "java11": [
@@ -95,7 +127,7 @@
       "displayName": "EventBridge Hello World: Maven",
       "dependencyManager": "maven",
       "appTemplate": "eventBridge-hello-world"
-    },    
+    },
     {
       "directory": "java11/cookiecutter-aws-sam-eventbridge-schema-app-java-gradle",
       "displayName": "EventBridge App from scratch (100+ Event Schemas): Gradle",
@@ -109,6 +141,20 @@
       "dependencyManager": "maven",
       "appTemplate": "eventBridge-schema-app",
       "isDynamicTemplate": "True"
+    },
+    {
+      "directory": "java11/cookiecutter-aws-sam-hello-step-functions-sample-app-gradle",
+      "displayName": "Step Functions Sample App (Stock Trader): Gradle",
+      "dependencyManager": "gradle",
+      "appTemplate": "step-functions-sample-app",
+      "isDynamicTemplate": "True"
+    },
+    {
+      "directory": "java11/cookiecutter-aws-sam-hello-step-functions-sample-app-maven",
+      "displayName": "Step Functions Sample App (Stock Trader): Maven",
+      "dependencyManager": "maven",
+      "appTemplate": "step-functions-sample-app",
+      "isDynamicTemplate": "True"
     }
   ],
   "nodejs12.x": [
@@ -117,6 +163,48 @@
       "displayName": "Hello World Example",
       "dependencyManager": "npm",
       "appTemplate": "hello-world"
+    },
+    {
+      "directory": "nodejs12.x/cookiecutter-aws-sam-step-functions-sample-app",
+      "displayName": "Step Functions Sample App (Stock Trader)",
+      "dependencyManager": "npm",
+      "appTemplate": "step-functions-sample-app"
+    },
+    {
+      "directory": "nodejs12.x/cookiecutter-quick-start-from-scratch",
+      "displayName": "Quick Start: From Scratch",
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-from-scratch"
+    },
+    {
+      "directory": "nodejs12.x/cookiecutter-quick-start-cloudwatch-events",
+      "displayName": "Quick Start: Scheduled Events",
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-cloudwatch-events"
+    },
+    {
+      "directory": "nodejs12.x/cookiecutter-quick-start-s3",
+      "displayName": "Quick Start: S3",
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-s3"
+    },
+    {
+      "directory": "nodejs12.x/cookiecutter-quick-start-sns",
+      "displayName": "Quick Start: SNS",
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-sns"
+    },
+    {
+      "directory": "nodejs12.x/cookiecutter-quick-start-sqs",
+      "displayName": "Quick Start: SQS",
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-sqs"
+    },
+    {
+      "directory": "nodejs12.x/cookiecutter-quick-start-web",
+      "displayName": "Quick Start: Web Backend",
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-web"
     }
   ],
   "nodejs10.x": [
@@ -161,50 +249,12 @@
       "displayName": "Quick Start: Web Backend",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-web"
-    }
-  ],
-  "nodejs12.x": [
-    {
-      "directory": "nodejs12.x/cookiecutter-aws-sam-hello-nodejs",
-      "displayName": "Hello World Example",
-      "dependencyManager": "npm",
-      "appTemplate": "hello-world"
     },
     {
-      "directory": "nodejs12.x/cookiecutter-quick-start-from-scratch",
-      "displayName": "Quick Start: From Scratch",
+      "directory": "nodejs10.x/cookiecutter-aws-sam-step-functions-sample-app",
+      "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "npm",
-      "appTemplate": "quick-start-from-scratch"
-    },
-    {
-      "directory": "nodejs12.x/cookiecutter-quick-start-cloudwatch-events",
-      "displayName": "Quick Start: Scheduled Events",
-      "dependencyManager": "npm",
-      "appTemplate": "quick-start-cloudwatch-events"
-    },
-    {
-      "directory": "nodejs12.x/cookiecutter-quick-start-s3",
-      "displayName": "Quick Start: S3",
-      "dependencyManager": "npm",
-      "appTemplate": "quick-start-s3"
-    },
-    {
-      "directory": "nodejs12.x/cookiecutter-quick-start-sns",
-      "displayName": "Quick Start: SNS",
-      "dependencyManager": "npm",
-      "appTemplate": "quick-start-sns"
-    },
-    {
-      "directory": "nodejs12.x/cookiecutter-quick-start-sqs",
-      "displayName": "Quick Start: SQS",
-      "dependencyManager": "npm",
-      "appTemplate": "quick-start-sqs"
-    },
-    {
-      "directory": "nodejs12.x/cookiecutter-quick-start-web",
-      "displayName": "Quick Start: Web Backend",
-      "dependencyManager": "npm",
-      "appTemplate": "quick-start-web"
+      "appTemplate": "step-functions-sample-app"
     }
   ],
   "python2.7": [
@@ -213,6 +263,12 @@
       "displayName": "Hello World Example",
       "dependencyManager": "pip",
       "appTemplate": "hello-world"
+    },
+    {
+      "directory": "python2.7/cookiecutter-aws-sam-step-functions-sample-app",
+      "displayName": "Step Functions Sample App (Stock Trader)",
+      "dependencyManager": "pip",
+      "appTemplate": "step-functions-sample-app"
     }
   ],
   "python3.6": [
@@ -234,6 +290,12 @@
       "dependencyManager": "pip",
       "appTemplate": "eventBridge-schema-app",
       "isDynamicTemplate": "True"
+    },
+    {
+      "directory": "python3.6/cookiecutter-aws-sam-step-functions-sample-app",
+      "displayName": "Step Functions Sample App (Stock Trader)",
+      "dependencyManager": "pip",
+      "appTemplate": "step-functions-sample-app"
     }
   ],
   "python3.7": [
@@ -248,13 +310,19 @@
       "displayName": "EventBridge Hello World",
       "dependencyManager": "pip",
       "appTemplate": "eventBridge-hello-world"
-    },    
+    },
     {
       "directory": "python3.7/cookiecutter-aws-sam-eventbridge-schema-app-python",
       "displayName": "EventBridge App from scratch (100+ Event Schemas)",
       "dependencyManager": "pip",
       "appTemplate": "eventBridge-schema-app",
       "isDynamicTemplate": "True"
+    },
+    {
+      "directory": "python3.7/cookiecutter-aws-sam-step-functions-sample-app",
+      "displayName": "Step Functions Sample App (Stock Trader)",
+      "dependencyManager": "pip",
+      "appTemplate": "step-functions-sample-app"
     }
   ],
   "python3.8": [
@@ -269,13 +337,19 @@
       "displayName": "EventBridge Hello World",
       "dependencyManager": "pip",
       "appTemplate": "eventBridge-hello-world"
-    },    
+    },
     {
       "directory": "python3.8/cookiecutter-aws-sam-eventbridge-schema-app-python",
       "displayName": "EventBridge App from scratch (100+ Event Schemas)",
       "dependencyManager": "pip",
       "appTemplate": "eventBridge-schema-app",
       "isDynamicTemplate": "True"
+    },
+    {
+      "directory": "python3.8/cookiecutter-aws-sam-step-functions-sample-app",
+      "displayName": "Step Functions Sample App (Stock Trader)",
+      "dependencyManager": "pip",
+      "appTemplate": "step-functions-sample-app"
     }
   ],
   "ruby2.5": [
@@ -284,6 +358,12 @@
       "displayName": "Hello World Example",
       "dependencyManager": "bundler",
       "appTemplate": "hello-world"
+    },
+    {
+      "directory": "ruby2.5/cookiecutter-aws-sam-step-functions-sample-app",
+      "displayName": "Step Functions Sample App (Stock Trader)",
+      "dependencyManager": "bundler",
+      "appTemplate": "step-functions-sample-app"
     }
   ],
   "ruby2.7": [
@@ -292,6 +372,12 @@
       "displayName": "Hello World Example",
       "dependencyManager": "bundler",
       "appTemplate": "hello-world"
+    },
+    {
+      "directory": "ruby2.7/cookiecutter-aws-sam-step-functions-sample-app",
+      "displayName": "Step Functions Sample App (Stock Trader)",
+      "dependencyManager": "bundler",
+      "appTemplate": "step-functions-sample-app"
     }
   ]
 }
