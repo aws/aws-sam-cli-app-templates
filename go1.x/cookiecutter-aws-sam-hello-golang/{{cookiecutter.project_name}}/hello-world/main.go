@@ -21,26 +21,26 @@ var (
 	ErrNon200Response = errors.New("Non 200 Response found")
 )
 
-func handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
+func handler(request events.APIGatewayV2HTTPRequest) (events.APIGatewayV2HTTPResponse, error) {
 	resp, err := http.Get(DefaultHTTPGetAddress)
 	if err != nil {
-		return events.APIGatewayProxyResponse{}, err
+		return events.APIGatewayV2HTTPResponse{}, err
 	}
 
 	if resp.StatusCode != 200 {
-		return events.APIGatewayProxyResponse{}, ErrNon200Response
+		return events.APIGatewayV2HTTPResponse{}, ErrNon200Response
 	}
 
 	ip, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		return events.APIGatewayProxyResponse{}, err
+		return events.APIGatewayV2HTTPResponse{}, err
 	}
 
 	if len(ip) == 0 {
-		return events.APIGatewayProxyResponse{}, ErrNoIP
+		return events.APIGatewayV2HTTPResponse{}, ErrNoIP
 	}
 
-	return events.APIGatewayProxyResponse{
+	return events.APIGatewayV2HTTPResponse{
 		Body:       fmt.Sprintf("Hello, %v", string(ip)),
 		StatusCode: 200,
 	}, nil
