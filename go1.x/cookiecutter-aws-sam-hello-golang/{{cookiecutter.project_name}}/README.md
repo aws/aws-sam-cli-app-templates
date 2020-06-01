@@ -17,30 +17,20 @@ This is a sample template for {{ cookiecutter.project_name }} - Below is a brief
 * AWS CLI already configured with Administrator permission
 * [Docker installed](https://www.docker.com/community-edition)
 * [Golang](https://golang.org)
+* SAM CLI - [Install the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
 
 ## Setup process
 
-### Installing dependencies
+### Installing dependencies & building the target 
 
-In this example we use the built-in `go get` and the only dependency we need is AWS Lambda Go SDK:
+In this example we use the built-in `sam build` to automatically download all the dependencies and package our build target.   
+Read more about [SAM Build here](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-build.html) 
 
+The `sam build` command is wrapped inside of the `Makefile`. To execute this simply run
+ 
 ```shell
-go get -u github.com/aws/aws-lambda-go/...
+make
 ```
-
-**NOTE:** As you change your application code as well as dependencies during development, you might want to research how to handle dependencies in Golang at scale.
-
-### Building
-
-Golang is a statically compiled language, meaning that in order to run it you have to build the executable target.
-
-You can issue the following command in a shell to build it:
-
-```shell
-GOOS=linux GOARCH=amd64 go build -o hello-world/hello-world ./hello-world
-```
-
-**NOTE**: If you're not building the function on a Linux machine, you will need to specify the `GOOS` and `GOARCH` environment variables, this allows Golang to build your function for another system architecture and ensure compatibility.
 
 ### Local development
 
