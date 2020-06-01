@@ -34,7 +34,7 @@ Resources:
         SNSTopicEvent:
           Type: SNS
           Properties:
-            Topic: Fn::GetAtt SimpleTopic.Arn
+            Topic: !Ref SimpleTopic
       MemorySize: 128
       Timeout: 100
       Policies:
