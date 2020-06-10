@@ -251,10 +251,10 @@
   ],
   "none": [
     {
-      "directory": "none/cookiecutter-quick-start-step-functions-only",
-      "displayName": "Step Functions Only (No Code)",
+      "directory": "none/cookiecutter-step-functions-only",
+      "displayName": "Step Functions only (no Lambda functions)",
       "dependencyManager": "none",
-      "appTemplate": "step-functions-only-app"
+      "appTemplate": "step-functions-only"
     }
   ],
   "python2.7": [

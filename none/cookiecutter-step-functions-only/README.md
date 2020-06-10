@@ -10,7 +10,7 @@ A cookiecutter template to create a basic Quick Start Application using [Serverl
 
 Generate a boilerplate template in your current project directory using the following syntax:
 
-* **None**: `sam init --runtime none --application-template quick-start-step-functions-only --name sam-app`
+* **None**: `sam init --runtime none --application-template step-functions-only --name sam-app`
 
 > **NOTE**: ``--name`` allows you to specify a different project folder name
 
