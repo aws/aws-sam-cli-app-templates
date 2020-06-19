@@ -342,6 +342,12 @@
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "pip",
       "appTemplate": "step-functions-sample-app"
+    },
+    {
+      "directory": "python3.8/cookiecutter-aws-sam-efs-python",
+      "displayName": "Elastic File System Sample App",
+      "dependencyManager": "pip",
+      "appTemplate": "efs-sample-app"
     }
   ],
   "ruby2.5": [
