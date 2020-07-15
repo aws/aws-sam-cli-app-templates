@@ -1,0 +1,85 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  {{ cookiecutter.project_name }}
+  
+  AWS SAM Template for {{ cookiecutter.project_name }}
+
+Parameters:
+  PassthroughTarget:
+    Type: String
+    Description: The protocol and hostname for the passthrough target. Do not include a trailing forward-slash. For example, https://github.com
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 5
+
+Resources:
+  PassthroughAPI:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      DefinitionBody:
+        'Fn::Transform':
+          Name: 'AWS::Include'
+          Parameters:
+            Location: api-definition.yaml
+      AccessLogSettings:
+        DestinationArn: !GetAtt PassthroughLogs.Arn
+        Format: '{ "requestId":"$context.requestId", "ip": "$context.identity.sourceIp", "requestTime":"$context.requestTime", "httpMethod":"$context.httpMethod","routeKey":"$context.routeKey", "status":"$context.status","protocol":"$context.protocol", "responseLength":"$context.responseLength", "integrationError:"$context.integrationErrorMessage" }'
+        
+  PassthroughLogs:
+    Type: AWS::Logs::LogGroup
+
+  CustomerReadFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: customer-read/
+      Handler: customer-read
+      Runtime: go1.x
+      Tracing: Active
+      Events:
+        ClientRequest:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref PassthroughAPI
+            Path: /customer/{id}
+            Method: GET
+      Environment: # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
+        Variables:
+          DYNAMODB_TABLE: !Ref VoteTable
+      Policies:
+        - DynamoDBReadPolicy:
+            TableName: !Ref VoteTable
+
+  CustomerWriteFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: customer-write/
+      Handler: customer-write
+      Runtime: go1.x
+      Tracing: Active
+      Events:
+        ClientRequest:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref PassthroughAPI
+            Path: /customer
+            Method: POST
+      Environment: # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
+        Variables:
+          DYNAMODB_TABLE: !Ref VoteTable
+      Policies:
+        - DynamoDBWritePolicy:
+            TableName: !Ref VoteTable
+
+  VoteTable:
+    Type: AWS::Serverless::SimpleTable
+
+Outputs:
+  # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
+  # Find out more about other implicit resources you can reference within SAM
+  # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
+  APIRoot:
+    Description: "API Gateway root URL for migration"
+    Value: !Sub "https://${PassthroughAPI}.execute-api.${AWS::Region}.amazonaws.com"

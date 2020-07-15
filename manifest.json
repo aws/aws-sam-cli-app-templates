@@ -39,6 +39,12 @@
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "mod",
       "appTemplate": "step-functions-sample-app"
+    },
+    {
+      "directory": "go1.x/cookiecutter-aws-sam-iterative-replacement-golang",
+      "displayName": "Migrating a monolith with iterative replacement",
+      "dependencyManager": "mod",
+      "appTemplate": "iterative-replacement"
     }
   ],
   "java8": [
