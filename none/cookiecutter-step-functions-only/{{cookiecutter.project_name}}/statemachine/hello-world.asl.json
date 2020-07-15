@@ -1,0 +1,27 @@
+{
+  "Comment": "A Hello World example demonstrating various state types of the Amazon States Language",
+  "StartAt": "First State",
+  "States": {
+      "First State": {
+          "Comment": "A Pass state passes its input to its output, without performing work. Pass states are useful when constructing and debugging state machines.",
+          "Type": "Pass",
+          "Parameters": {
+            "Message": "Hello, world!"
+          },
+          "Next": "Write to DynamoDB"
+      },
+      "Write to DynamoDB": {
+        "Type": "Task",
+        "Resource": "arn:aws:states:::dynamodb:putItem",
+        "Parameters": {
+          "TableName": "${DynamoDBTableName}",
+          "Item": {
+            "id.$": "$$.Execution.Id",
+            "message.$": "$.Message"
+          }
+        },
+        "ResultPath": "$.DynamoDB",
+        "End": true
+      }
+  }
+}

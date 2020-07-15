@@ -249,6 +249,14 @@
       "appTemplate": "step-functions-sample-app"
     }
   ],
+  "none": [
+    {
+      "directory": "none/cookiecutter-step-functions-only",
+      "displayName": "Step Functions only (no Lambda functions)",
+      "dependencyManager": "none",
+      "appTemplate": "step-functions-only"
+    }
+  ],
   "python2.7": [
     {
       "directory": "python2.7/cookiecutter-aws-sam-hello-python",
