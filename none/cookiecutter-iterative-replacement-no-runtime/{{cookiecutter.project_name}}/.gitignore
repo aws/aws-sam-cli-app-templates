@@ -1,0 +1,14 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+# Goland files
+.idea/
+
+# AWS SAM CLI build folder
+.aws-sam/
+
+# AWS SAM CLI guided deploy settings
+samconfig.toml
+
+# macOS files
+.DS_Store

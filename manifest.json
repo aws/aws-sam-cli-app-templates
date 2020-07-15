@@ -255,6 +255,12 @@
       "displayName": "Step Functions only (no Lambda functions)",
       "dependencyManager": "none",
       "appTemplate": "step-functions-only"
+    },
+    {
+      "directory": "none/cookiecutter-iterative-replacement-no-runtime",
+      "displayName": "Monolith migration with iterative replacement (no Lambda functions)",
+      "dependencyManager": "none",
+      "appTemplate": "iterative-replacement"
     }
   ],
   "python2.7": [

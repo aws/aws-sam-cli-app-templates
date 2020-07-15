@@ -1,0 +1,35 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  {{ cookiecutter.project_name }}
+  
+  AWS SAM Template for {{ cookiecutter.project_name }}
+
+Parameters:
+  PassthroughTarget:
+    Type: String
+    Description: The protocol and hostname for the passthrough target. Do not include a trailing forward-slash. For example, https://github.com
+
+Resources:
+  PassthroughAPI:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      DefinitionBody:
+        'Fn::Transform':
+          Name: 'AWS::Include'
+          Parameters:
+            Location: api-definition.yaml
+      AccessLogSettings:
+        DestinationArn: !GetAtt PassthroughLogs.Arn
+        Format: '{ "requestId":"$context.requestId", "ip": "$context.identity.sourceIp", "requestTime":"$context.requestTime", "httpMethod":"$context.httpMethod","routeKey":"$context.routeKey", "status":"$context.status","protocol":"$context.protocol", "responseLength":"$context.responseLength", "integrationError:"$context.integrationErrorMessage" }'
+        
+  PassthroughLogs:
+    Type: AWS::Logs::LogGroup
+
+Outputs:
+  # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
+  # Find out more about other implicit resources you can reference within SAM
+  # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
+  APIRoot:
+    Description: "API Gateway root URL for migration"
+    Value: !Sub "https://${PassthroughAPI}.execute-api.${AWS::Region}.amazonaws.com"
