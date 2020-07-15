@@ -39,6 +39,12 @@
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "mod",
       "appTemplate": "step-functions-sample-app"
+    },
+    {
+      "directory": "go1.x/cookiecutter-aws-sam-real-world-golang",
+      "displayName": "Real-world example with dependency injection and DynamoDB mocks",
+      "dependencyManager": "mod",
+      "appTemplate": "real-world-go"
     }
   ],
   "java8": [
