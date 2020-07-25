@@ -81,18 +81,16 @@
       "isDynamicTemplate": "True"
     },
     {
-      "directory": "java8/cookiecutter-aws-sam-hello-step-functions-sample-app-gradle",
+      "directory": "java8/cookiecutter-aws-sam-step-functions-sample-app-gradle",
       "displayName": "Step Functions Sample App (Stock Trader): Gradle",
       "dependencyManager": "gradle",
-      "appTemplate": "step-functions-sample-app",
-      "isDynamicTemplate": "True"
+      "appTemplate": "step-functions-sample-app"
     },
     {
-      "directory": "java8/cookiecutter-aws-sam-hello-step-functions-sample-app-maven",
+      "directory": "java8/cookiecutter-aws-sam-step-functions-sample-app-maven",
       "displayName": "Step Functions Sample App (Stock Trader): Maven",
       "dependencyManager": "maven",
-      "appTemplate": "step-functions-sample-app",
-      "isDynamicTemplate": "True"
+      "appTemplate": "step-functions-sample-app"
     }
   ],
   "java11": [
@@ -135,18 +133,16 @@
       "isDynamicTemplate": "True"
     },
     {
-      "directory": "java11/cookiecutter-aws-sam-hello-step-functions-sample-app-gradle",
+      "directory": "java11/cookiecutter-aws-sam-step-functions-sample-app-gradle",
       "displayName": "Step Functions Sample App (Stock Trader): Gradle",
       "dependencyManager": "gradle",
-      "appTemplate": "step-functions-sample-app",
-      "isDynamicTemplate": "True"
+      "appTemplate": "step-functions-sample-app"
     },
     {
-      "directory": "java11/cookiecutter-aws-sam-hello-step-functions-sample-app-maven",
+      "directory": "java11/cookiecutter-aws-sam-step-functions-sample-app-maven",
       "displayName": "Step Functions Sample App (Stock Trader): Maven",
       "dependencyManager": "maven",
-      "appTemplate": "step-functions-sample-app",
-      "isDynamicTemplate": "True"
+      "appTemplate": "step-functions-sample-app"
     }
   ],
   "nodejs12.x": [
