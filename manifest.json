@@ -93,6 +93,58 @@
       "appTemplate": "step-functions-sample-app"
     }
   ],
+  "java8.al2": [
+    {
+      "directory": "java8.al2/cookiecutter-aws-sam-hello-java-gradle",
+      "displayName": "Hello World Example: Gradle",
+      "dependencyManager": "gradle",
+      "appTemplate": "hello-world"
+    },
+    {
+      "directory": "java8.al2/cookiecutter-aws-sam-hello-java-maven",
+      "displayName": "Hello World Example: Maven",
+      "dependencyManager": "maven",
+      "appTemplate": "hello-world"
+    },
+    {
+      "directory": "java8.al2/cookiecutter-aws-sam-eventbridge-hello-java-gradle",
+      "displayName": "EventBridge Hello World: Gradle",
+      "dependencyManager": "gradle",
+      "appTemplate": "eventBridge-hello-world"
+    },
+    {
+      "directory": "java8.al2/cookiecutter-aws-sam-eventbridge-hello-java-maven",
+      "displayName": "EventBridge Hello World: Maven",
+      "dependencyManager": "maven",
+      "appTemplate": "eventBridge-hello-world"
+    },
+    {
+      "directory": "java8.al2/cookiecutter-aws-sam-eventbridge-schema-app-java-gradle",
+      "displayName": "EventBridge App from scratch (100+ Event Schemas): Gradle",
+      "dependencyManager": "gradle",
+      "appTemplate": "eventBridge-schema-app",
+      "isDynamicTemplate": "True"
+    },
+    {
+      "directory": "java8.al2/cookiecutter-aws-sam-eventbridge-schema-app-java-maven",
+      "displayName": "EventBridge App from scratch (100+ Event Schemas): Maven",
+      "dependencyManager": "maven",
+      "appTemplate": "eventBridge-schema-app",
+      "isDynamicTemplate": "True"
+    },
+    {
+      "directory": "java8.al2/cookiecutter-aws-sam-step-functions-sample-app-gradle",
+      "displayName": "Step Functions Sample App (Stock Trader): Gradle",
+      "dependencyManager": "gradle",
+      "appTemplate": "step-functions-sample-app"
+    },
+    {
+      "directory": "java8.al2/cookiecutter-aws-sam-step-functions-sample-app-maven",
+      "displayName": "Step Functions Sample App (Stock Trader): Maven",
+      "dependencyManager": "maven",
+      "appTemplate": "step-functions-sample-app"
+    }
+  ],
   "java11": [
     {
       "directory": "java11/cookiecutter-aws-sam-hello-java-gradle",
