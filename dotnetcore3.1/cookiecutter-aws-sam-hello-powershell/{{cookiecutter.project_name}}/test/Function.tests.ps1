@@ -1,15 +1,24 @@
 ﻿Import-Module -Name Pester
 
-Describe "HelloWorld Tests" {
+$srcRoot = Join-Path -Path $PSScriptRoot -ChildPath "../src" -Resolve
+.$srcRoot\Function.ps1
 
-    $srcRoot = Join-Path -Path $PSScriptRoot -ChildPath "../src" -Resolve
+Describe "HelloWorld Tests" {
 
     Mock -CommandName "Write-Host" -MockWith { }
 
-    It "Should write the input to the host stream" {
-        $functionPath = Join-Path -Path $srcRoot -ChildPath "Function.ps1"
-        $result = . $functionPath
-        Assert-MockCalled -CommandName Write-Host -Times 1
-        $result.message | Should Be "hello world"
+    It "Should return a normal crafted return when the function is executed normally" {
+        $eval = Write-HelloWorld
+        $eval.message | Should BeExactly "hello world"
+    }
+    It "Should return a a properly formed API return when an API call is made." {
+        $LambdaInput = @{
+            requestContext = @{
+                apiId = '1234567890'
+            }
+        }
+        $eval = Write-HelloWorld
+        $eval.statusCode | Should BeExactly 200
+        ($eval.body | ConvertFrom-Json).message | Should BeExactly "hello world"
     }
 }
