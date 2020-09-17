@@ -161,10 +161,56 @@ aws cloudformation delete-stack --stack-name {{ cookiecutter.project_name }}
 
 ## Resources
 
-See the
-[AWS SAM developer guide](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html)
-for an introduction to SAM specification, the SAM CLI, and serverless application concepts.
+See the [AWS SAM developer guide](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html) for an introduction to SAM specification, the SAM CLI, and serverless application concepts.
 
-Next, you can use AWS Serverless Application Repository to deploy ready to use Apps that go beyond
-hello world samples and learn how authors developed their applications:
-[AWS Serverless Application Repository main page](https://aws.amazon.com/serverless/serverlessrepo/)
+Next, you can use AWS Serverless Application Repository to deploy ready to use Apps that go beyond hello world samples and learn how authors developed their applications: [AWS Serverless Application Repository main page](https://aws.amazon.com/serverless/serverlessrepo/)
+
+
+## QuickStart Reference
+
+```powershell
+# compile your PowerShell project into a zip that can be deployed
+PS {{ cookiecutter.project_name }}> .\build.ps1
+```
+
+```bash
+# Invoke function locally
+{{ cookiecutter.project_name }}$ sam local invoke HelloWorldFunction
+
+# Invoke function locally and capture Lambda outputs to log file
+{{ cookiecutter.project_name }}$ sam local invoke HelloWorldFunction --log-file logoutput.txt
+
+# Invoke function locally with event.json as an input
+{{ cookiecutter.project_name }}$ sam local invoke HelloWorldFunction --event event.json
+
+# Run API Gateway locally
+{{ cookiecutter.project_name }}$ sam local start-api
+
+# Interact with your local API \
+curl http://localhost:3000/hello
+
+# Create S3 bucket
+aws s3 mb s3://BUCKET_NAME
+
+# Package Lambda function defined locally and upload to S3 as an artifact
+sam package \
+    --template-file template.yaml \
+    --output-template-file packaged.yaml \
+    --s3-bucket REPLACE_THIS_WITH_YOUR_S3_BUCKET_NAME
+
+# Deploy SAM template as a CloudFormation stack
+sam deploy \
+    --template-file packaged.yaml \
+    --stack-name {{ cookiecutter.project_name.lower().replace(' ', '-') }} \
+    --capabilities CAPABILITY_IAM
+
+# Describe Output section of CloudFormation stack previously created
+aws cloudformation describe-stacks \
+    --stack-name {{ cookiecutter.project_name.lower().replace(' ', '-') }} \
+    --query 'Stacks[].Outputs[?OutputKey==`HelloWorldApi`]' \
+    --output table
+
+# Tail Lambda function Logs using Logical name defined in SAM Template
+sam logs -n HelloWorldFunction --stack-name {{ cookiecutter.project_name.lower().replace(' ', '-') }} --tail
+
+```

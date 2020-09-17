@@ -1,5 +1,4 @@
 
-**/*.zip
 # Created by https://www.gitignore.io/api/osx,linux,python,windows
 
 ### Linux ###
@@ -164,6 +163,15 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Exclude packaged modules
+*.zip
+
+# Exclude .NET assemblies from source
+*.dll
+
+# Exclude artifacts folder
+artifacts
 
 
 # End of https://www.gitignore.io/api/osx,linux,python,windows
