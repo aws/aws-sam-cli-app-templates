@@ -1,0 +1,16 @@
+{
+  "name": "replaced-by-user-input",
+  "description": "replaced-by-user-input",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "aws-sdk": "^2.442.0"
+  },
+  "devDependencies": {
+    "jest": "^24.7.1",
+    "aws-sdk-mock": "^4.5.0"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
