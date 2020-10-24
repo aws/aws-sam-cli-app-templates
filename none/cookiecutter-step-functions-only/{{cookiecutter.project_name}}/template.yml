@@ -1,0 +1,60 @@
+# This is the SAM template that represents the architecture of your serverless application
+# https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-template-basics.html
+
+# The AWSTemplateFormatVersion identifies the capabilities of the template
+# https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/format-version-structure.html
+AWSTemplateFormatVersion: 2010-09-09
+Description: >-
+  {{cookiecutter.project_name}}
+
+# Transform section specifies one or more macros that AWS CloudFormation uses to process your template
+# https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-section-structure.html
+Transform:
+- AWS::Serverless-2016-10-31
+
+# Resources declares the AWS resources that you want to include in the stack
+# https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html
+Resources:
+  # Simple syntax to create a DynamoDB table with a single attribute primary key, more in
+  # https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesssimpletable
+  HelloTable:
+    Type: AWS::Serverless::SimpleTable
+  
+  # A simple Amazon Cloudwatch Logs log group
+  # https://docs.aws.amazon.com/step-functions/latest/dg/cw-logs.html
+  HelloLogs:
+    Type: AWS::Logs::LogGroup
+
+  # An AWS Step Functions Express Workflow invoked via API Gateway that stores its execution ID in a DynamoDB table
+  # https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-statemachine.html
+  HelloStateMachine:
+    Type: AWS::Serverless::StateMachine
+    Properties:
+      DefinitionUri: statemachine/hello-world.asl.json
+      DefinitionSubstitutions:
+        DynamoDBTableName: !Ref HelloTable
+      Events:
+        HttpRequest:
+          Type: Api
+          Properties:
+            Method: POST
+            Path: /hello
+      Logging:
+        Destinations:
+          - CloudWatchLogsLogGroup: 
+              LogGroupArn: !GetAtt HelloLogs.Arn
+        IncludeExecutionData: true
+        Level: ALL
+      Policies:
+        - CloudWatchLogsFullAccess
+        - DynamoDBWritePolicy: 
+            TableName: !Ref HelloTable
+      Type: EXPRESS
+
+Outputs:
+  # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
+  # Find out more about other implicit resources you can reference within SAM
+  # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
+  WebEndpoint:
+    Description: "API Gateway endpoint URL for Prod stage"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello"
