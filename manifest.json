@@ -7,7 +7,7 @@
       "appTemplate": "hello-world"
     },
     {
-      "directory": "dotnetcore2.1/cookiecutter-aws-sam-hello-step-functions-sample-app",
+      "directory": "dotnetcore2.1/cookiecutter-aws-sam-step-functions-sample-app",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "cli-package",
       "appTemplate": "step-functions-sample-app"
@@ -21,7 +21,7 @@
       "appTemplate": "hello-world"
     },
     {
-      "directory": "dotnetcore3.1/cookiecutter-aws-sam-hello-step-functions-sample-app",
+      "directory": "dotnetcore3.1/cookiecutter-aws-sam-step-functions-sample-app",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "cli-package",
       "appTemplate": "step-functions-sample-app"
@@ -35,7 +35,7 @@
       "appTemplate": "hello-world"
     },
     {
-      "directory": "go1.x/cookiecutter-aws-sam-hello-step-functions-sample-app",
+      "directory": "go1.x/cookiecutter-aws-sam-step-functions-sample-app",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "mod",
       "appTemplate": "step-functions-sample-app"
