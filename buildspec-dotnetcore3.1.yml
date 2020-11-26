@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      dotnet: 3.1
+
+    commands:
+      - pip install --upgrade pip
+      - pip install -r requirements.txt
+      - echo 'export PATH="$PATH:/root/.dotnet/tools"' >> ~/.bash_profile
+      - source ~/.bash_profile
+      - dotnet --info
+
+  post_build:
+    commands:
+      - pytest -vvv --capture=tee-sys tests/integration/build_invoke/test_build_invoke_dotnetcore3_1.py -n 4
+      - pytest -vvv --capture=tee-sys tests/integration/unit_test/test_unit_test_dotnetcore3_1.py -n 4
