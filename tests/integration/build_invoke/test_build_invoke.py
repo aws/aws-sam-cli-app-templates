@@ -259,3 +259,64 @@ class BuildInvoke_ruby2_7_cookiecutter_aws_sam_hello_ruby(Base.HelloWorldExclama
 
 class BuildInvoke_ruby2_7_cookiecutter_aws_sam_step_functions_sample_app(Base.BuildInvokeBase):
     directory = "ruby2.7/cookiecutter-aws-sam-step-functions-sample-app"
+
+
+#
+# Image templates
+#
+
+
+class BuildInvoke_image_nodejs12_x_cookiecutter_aws_sam_hello_nodejs_lambda_image:
+    directory = "nodejs12.x-image/cookiecutter-aws-sam-hello-nodejs-lambda-image"
+
+
+class BuildInvoke_image_python3_8_cookiecutter_aws_sam_hello_python_lambda_image:
+    directory = "python3.8-image/cookiecutter-aws-sam-hello-python-lambda-image"
+
+
+class BuildInvoke_image_ruby2_7_cookiecutter_aws_sam_hello_ruby_lambda_image:
+    directory = "ruby2.7-image/cookiecutter-aws-sam-hello-ruby-lambda-image"
+
+
+class BuildInvoke_image_java11_cookiecutter_aws_sam_hello_java_gradle_lambda_image:
+    directory = "java11-image/cookiecutter-aws-sam-hello-java-gradle-lambda-image"
+
+
+class BuildInvoke_image_java11_cookiecutter_aws_sam_hello_java_maven_lambda_image:
+    directory = "java11-image/cookiecutter-aws-sam-hello-java-maven-lambda-image"
+
+
+class BuildInvoke_image_nodejs10_x_cookiecutter_aws_sam_hello_nodejs_lambda_image:
+    directory = "nodejs10.x-image/cookiecutter-aws-sam-hello-nodejs-lambda-image"
+
+
+class BuildInvoke_image_python3_7_cookiecutter_aws_sam_hello_python_lambda_image:
+    directory = "python3.7-image/cookiecutter-aws-sam-hello-python-lambda-image"
+
+
+class BuildInvoke_image_python3_6_cookiecutter_aws_sam_hello_python_lambda_image:
+    directory = "python3.6-image/cookiecutter-aws-sam-hello-python-lambda-image"
+
+
+class BuildInvoke_image_python2_7_cookiecutter_aws_sam_hello_python_lambda_image:
+    directory = "python2.7-image/cookiecutter-aws-sam-hello-python-lambda-image"
+
+
+class BuildInvoke_image_ruby2_5_cookiecutter_aws_sam_hello_ruby_lambda_image:
+    directory = "ruby2.5-image/cookiecutter-aws-sam-hello-ruby-lambda-image"
+
+
+class BuildInvoke_image_java8_cookiecutter_aws_sam_hello_java_gradle_lambda_image:
+    directory = "java8-image/cookiecutter-aws-sam-hello-java-gradle-lambda-image"
+
+
+class BuildInvoke_image_java8_cookiecutter_aws_sam_hello_java_maven_lambda_image:
+    directory = "java8-image/cookiecutter-aws-sam-hello-java-maven-lambda-image"
+
+
+class BuildInvoke_image_java8_al2_cookiecutter_aws_sam_hello_java_gradle_lambda_image:
+    directory = "java8.al2-image/cookiecutter-aws-sam-hello-java-gradle-lambda-image"
+
+
+class BuildInvoke_image_java8_al2_cookiecutter_aws_sam_hello_java_maven_lambda_image:
+    directory = "java8.al2-image/cookiecutter-aws-sam-hello-java-maven-lambda-image"

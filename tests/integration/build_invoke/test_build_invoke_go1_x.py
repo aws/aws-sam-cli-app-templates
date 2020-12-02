@@ -9,3 +9,12 @@ class BuildInvoke_go1_x_cookiecutter_aws_sam_hello_golang(Base.BuildInvokeBase):
 class BuildInvoke_go1_x_cookiecutter_aws_sam_hello_step_functions_sample_app(Base.BuildInvokeBase):
     use_container = False
     directory = "go1.x/cookiecutter-aws-sam-hello-step-functions-sample-app"
+
+
+#
+# Image templates
+#
+
+
+class BuildInvoke_image_go1_x_cookiecutter_aws_sam_hello_golang_lambda_image:
+    directory = "go1.x-image/cookiecutter-aws-sam-hello-golang-lambda-image"
