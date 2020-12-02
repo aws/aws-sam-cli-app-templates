@@ -9,6 +9,8 @@ from logging import getLogger, StreamHandler, INFO
 from typing import Dict, Any, Optional, List
 from unittest import TestCase
 
+import pytest
+
 from tests import REPO_ROOT
 
 PROJECT_NAME = "project"
@@ -107,6 +109,7 @@ class Base(object):
                 except json.decoder.JSONDecodeError:
                     self.fail(f"Response is not a valid JSON: {result.stdout.decode()}")
 
+        @pytest.mark.flaky(reruns=3)
         def test_buld_and_invoke(self):
             self._test_init_template()
             self._test_build()
