@@ -5,26 +5,29 @@ Description: >
 
 # More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
 Globals:
-    Function:
-        Timeout: 10
+  Function:
+    Timeout: 10
+
 
 Resources:
+
   HelloWorldFunction:
-      Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
-      Properties:
-          CodeUri: ./artifacts/Function.zip
-          Handler: Function::Function.Bootstrap::ExecuteFunction
-          Runtime: dotnetcore3.1
-          MemorySize: 512
-          Environment: # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
-              Variables:
-                  AWS_POWERSHELL_FUNCTION_HANDLER: Write-HelloWorld # if your ps1 has a function inside that you want to be called put the function name here
-          Events:
-            HelloWorld:
-              Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
-              Properties:
-                Path: /hello
-                Method: get
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Metadata:
+      BuildMethod: makefile # The makefile executes the build of this function, including bundling of dependent modules
+    Properties:
+      CodeUri: ./src/HelloWorld
+      Handler: Function::Function.Bootstrap::ExecuteFunction
+      Runtime: dotnetcore3.1
+      Environment: # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
+        Variables:
+          PARAM1: VALUE
+      Events:
+        HelloWorld:
+        Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+        Properties:
+          Path: /hello
+          Method: get
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
