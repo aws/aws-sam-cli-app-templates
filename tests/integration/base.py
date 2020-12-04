@@ -1,3 +1,4 @@
+import ipaddress
 import json
 import os
 import tempfile
@@ -135,7 +136,10 @@ class Base(object):
             body = json.loads(self.invoke_output["body"])
             self.assertEqual(body["message"], "hello world")
             # make sure it is an IP address
-            self.assertRegex(body["location"], r"\d+\.\d+\.\d+\.\d+")
+            try:
+                ipaddress.ip_address(body["location"])
+            except ValueError:
+                self.fail(f'Invalid location: {body["location"]}')
 
     class EventBridgeHelloWorldBuildInvokeBase(BuildInvokeBase):
         def _test_local_invoke(self):
