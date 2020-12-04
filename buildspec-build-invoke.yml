@@ -9,9 +9,10 @@ phases:
       # start docker daemon
       - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://127.0.0.1:2375 --storage-driver=overlay2&
       - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"
-      - pip install --upgrade pip
+      - pip install --upgrade pip aws-sam-cli
       - pip install -r requirements.txt
 
   post_build:
     commands:
+      - sam --version
       - pytest -vvv --capture=tee-sys tests/integration/build_invoke/test_build_invoke.py -n 8

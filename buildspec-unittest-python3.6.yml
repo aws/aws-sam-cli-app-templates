@@ -13,6 +13,8 @@ phases:
       - make -j4
       - make install
       - cd ..
+      # upgrade sam-cli
+      - pip upgrade aws-sam-cli
       # install pip
       - curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
       - python3.6 get-pip.py
@@ -22,4 +24,5 @@ phases:
 
   post_build:
     commands:
+      - sam --version
       - python3.6 -m pytest -vvv --capture=tee-sys tests/integration/unit_test/test_unit_test_python3_6.py -n 4

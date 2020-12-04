@@ -6,11 +6,12 @@ phases:
       golang: 1.x
 
     commands:
-      - pip install --upgrade pip
+      - pip install --upgrade pip aws-sam-cli
       - pip install -r requirements.txt
       - go version
 
   post_build:
     commands:
+      - sam --version
       - pytest -vvv --capture=tee-sys tests/integration/build_invoke/test_build_invoke_go1_x.py -n 4
       - pytest -vvv --capture=tee-sys tests/integration/unit_test/test_unit_test_go1_x.py -n 4

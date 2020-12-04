@@ -6,10 +6,11 @@ phases:
       python: 3.7
 
     commands:
-      - pip install --upgrade pip
+      - pip install --upgrade pip aws-sam-cli
       - pip install -r requirements.txt
       - python3 --version
 
   post_build:
     commands:
+      - sam --version
       - pytest -vvv --capture=tee-sys tests/integration/unit_test/test_unit_test_python3_7.py -n 4

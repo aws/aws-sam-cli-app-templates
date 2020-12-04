@@ -13,10 +13,11 @@ phases:
       - cd ..
       - /opt/ruby-2.5/bin/gem install bundler
       # install test requirements
-      - pip install --upgrade pip
+      - pip install --upgrade pip aws-sam-cli
       - pip install -r requirements.txt
       - PATH=/opt/ruby-2.5/bin:$PATH ruby --version
 
   post_build:
     commands:
+      - sam --version
       - PATH=/opt/ruby-2.5/bin:$PATH pytest -vvv --capture=tee-sys tests/integration/unit_test/test_unit_test_ruby2_5.py -n 4
