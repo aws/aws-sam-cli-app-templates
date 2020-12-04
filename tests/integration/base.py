@@ -2,11 +2,11 @@ import json
 import os
 import tempfile
 from abc import abstractmethod
-from collections import namedtuple
+
 from pathlib import Path
 from subprocess import Popen, PIPE, TimeoutExpired
 from logging import getLogger, StreamHandler, INFO
-from typing import Dict, Any, Optional, List
+from typing import Dict, Any, Optional, List, NamedTuple
 from unittest import TestCase
 
 import pytest
@@ -14,7 +14,14 @@ import pytest
 from tests import REPO_ROOT
 
 PROJECT_NAME = "project"
-CommandResult = namedtuple("CommandResult", "process stdout stderr")
+
+
+class CommandResult(NamedTuple):
+    process: Popen
+    stdout: str
+    stderr: str
+
+
 TIMEOUT = 300
 
 LOG = getLogger(__name__)
@@ -26,9 +33,11 @@ def run_command(command_list, cwd=None, env=None, timeout=TIMEOUT) -> CommandRes
     process_execute = Popen(command_list, cwd=cwd, env=env, stdout=PIPE, stderr=PIPE)
     try:
         stdout_data, stderr_data = process_execute.communicate(timeout=timeout)
-        LOG.info(f"Stdout: {stdout_data.decode('utf-8')}")
-        LOG.info(f"Stderr: {stderr_data.decode('utf-8')}")
-        return CommandResult(process_execute, stdout_data, stderr_data)
+        stdout = stdout_data.decode()
+        stderr = stderr_data.decode()
+        LOG.info(f"Stdout: {stdout}")
+        LOG.info(f"Stderr: {stderr}")
+        return CommandResult(process_execute, stdout, stderr)
     except TimeoutExpired:
         LOG.error(f"Command: {command_list}, TIMED OUT")
         LOG.error(f"Return Code: {process_execute.returncode}")
@@ -105,9 +114,9 @@ class Base(object):
                 LOG.info(cmdlist)
                 result = run_command(cmdlist, self.cwd)
                 try:
-                    self.invoke_output = json.loads(result.stdout.decode())
+                    self.invoke_output = json.loads(result.stdout)
                 except json.decoder.JSONDecodeError:
-                    self.fail(f"Response is not a valid JSON: {result.stdout.decode()}")
+                    self.fail(f"Response is not a valid JSON: {result.stdout}")
 
         @pytest.mark.flaky(reruns=3)
         def test_buld_and_invoke(self):
@@ -192,10 +201,10 @@ class Base(object):
             LOG.info(cmdlist)
             result = run_command(cmdlist, Path(self.cwd, code_directory))
             self.assertRegex(
-                result.stdout.decode(), r"added \d+ packages from \d+ contributors and audited \d+ packages",
+                result.stdout, r"added \d+ packages from \d+ contributors and audited \d+ packages",
             )
             self.assertIn(
-                "found 0 vulnerabilities", result.stdout.decode(),
+                "found 0 vulnerabilities", result.stdout,
             )
 
         def _test_unit_tests(self, code_directory: str):
@@ -205,8 +214,8 @@ class Base(object):
             ]
             LOG.info(cmdlist)
             result = run_command(cmdlist, Path(self.cwd, code_directory))
-            self.assertIn("pass", result.stdout.decode() + result.stderr.decode())
-            self.assertNotIn("fail", result.stdout.decode() + result.stderr.decode())
+            self.assertIn("pass", result.stdout + result.stderr)
+            self.assertNotIn("fail", result.stdout + result.stderr)
 
     class PythonUnitTestBase(UnitTestBase):
         python_executable = "python"
@@ -227,9 +236,9 @@ class Base(object):
             ]
             LOG.info(cmdlist)
             result = run_command(cmdlist, self.cwd)
-            if result.stdout.decode():
+            if result.stdout:
                 # when requirements.txt is empty, the stdout is also empty
-                self.assertIn("Successfully installed", result.stdout.decode())
+                self.assertIn("Successfully installed", result.stdout)
 
         def _test_unit_tests(self, code_directory: str):
             env = os.environ.copy()
@@ -237,7 +246,7 @@ class Base(object):
             cmdlist = [self.python_executable, "-m", "pytest", "tests"]
             LOG.info(cmdlist)
             result = run_command(cmdlist, self.cwd, env=env)
-            self.assertNotIn("ERRORS", result.stdout.decode())
+            self.assertNotIn("ERRORS", result.stdout)
 
     class JavaUnitTestGradleBase(UnitTestBase):
         def _test_install(self, code_directory: str):
@@ -247,7 +256,7 @@ class Base(object):
             cmdlist = ["gradle", "test"]
             LOG.info(cmdlist)
             result = run_command(cmdlist, Path(self.cwd, code_directory))
-            self.assertIn("BUILD SUCCESSFUL", result.stdout.decode())
+            self.assertIn("BUILD SUCCESSFUL", result.stdout)
 
     class JavaUnitTestMavenBase(UnitTestBase):
         def _test_install(self, code_directory: str):
@@ -257,7 +266,7 @@ class Base(object):
             cmdlist = ["mvn", "test"]
             LOG.info(cmdlist)
             result = run_command(cmdlist, Path(self.cwd, code_directory))
-            self.assertIn("BUILD SUCCESS", result.stdout.decode())
+            self.assertIn("BUILD SUCCESS", result.stdout)
 
     class DotNetCoreUnitTestBase(UnitTestBase):
         def _test_install(self, code_directory: str):
@@ -267,8 +276,8 @@ class Base(object):
             cmdlist = ["dotnet", "test"]
             LOG.info(cmdlist)
             result = run_command(cmdlist, Path(self.cwd, code_directory))
-            self.assertIn("Passed", result.stdout.decode())
-            self.assertNotIn("Failed", result.stdout.decode())
+            self.assertIn("Passed", result.stdout)
+            self.assertNotIn("Failed", result.stdout)
 
     class GoUnitTestBase(UnitTestBase):
         def _test_install(self, code_directory: str):
@@ -278,8 +287,8 @@ class Base(object):
             cmdlist = ["go", "test", "-v"]
             LOG.info(cmdlist)
             result = run_command(cmdlist, Path(self.cwd, code_directory))
-            self.assertIn("PASS", result.stdout.decode())
-            self.assertNotIn("FAIL", result.stdout.decode())
+            self.assertIn("PASS", result.stdout)
+            self.assertNotIn("FAIL", result.stdout)
 
     class RubyUnitTestBase(UnitTestBase):
         def _test_install(self, code_directory: str):
@@ -290,10 +299,10 @@ class Base(object):
             cmdlist = ["bundle", "install"]
             LOG.info(cmdlist)
             result = run_command(cmdlist, self.cwd)
-            self.assertIn("Bundle complete!", result.stdout.decode())
+            self.assertIn("Bundle complete!", result.stdout)
 
         def _test_unit_tests(self, code_directory: str):
             cmdlist = ["ruby", code_directory]
             LOG.info(cmdlist)
             result = run_command(cmdlist, self.cwd)
-            self.assertIn("100% passed", result.stdout.decode())
+            self.assertIn("100% passed", result.stdout)
