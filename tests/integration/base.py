@@ -255,6 +255,18 @@ class Base:
             result = run_command(cmdlist, self.cwd, env=env)
             self.assertNotIn("ERRORS", result.stdout)
 
+    class Python27UnitTestBase(UnitTestBase):
+        python_executable = "python27"
+
+    class Python36UnitTestBase(UnitTestBase):
+        python_executable = "python36"
+
+    class Python37UnitTestBase(UnitTestBase):
+        python_executable = "python37"
+
+    class Python38UnitTestBase(UnitTestBase):
+        python_executable = "python38"
+
     class JavaUnitTestGradleBase(UnitTestBase):
         def _test_install(self, code_directory: str):
             pass
