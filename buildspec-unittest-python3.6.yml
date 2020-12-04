@@ -14,7 +14,7 @@ phases:
       - make install
       - cd ..
       # upgrade sam-cli
-      - pip upgrade aws-sam-cli
+      - pip install --upgrade aws-sam-cli
       # install pip
       - curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
       - python3.6 get-pip.py
