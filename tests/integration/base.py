@@ -84,7 +84,7 @@ class Base:
         use_container: bool = True
 
         def _test_build(self):
-            cmdlist = ["sam", "build", "--skip-pull-image", "--debug"]
+            cmdlist = ["sam", "build", "--debug"]
             if self.use_container:
                 cmdlist.append("--use-container")
             LOG.info(cmdlist)
