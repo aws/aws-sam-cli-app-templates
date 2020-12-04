@@ -46,7 +46,7 @@ def run_command(command_list, cwd=None, env=None, timeout=TIMEOUT) -> CommandRes
         raise
 
 
-class Base(object):
+class Base:
     class IntegBase(TestCase):
         tempdir: Any
         directory: str
