@@ -8,8 +8,6 @@ phases:
     commands:
       - pip install --upgrade pip aws-sam-cli
       - pip install -r requirements.txt
-      - echo 'export PATH="$PATH:/root/.dotnet/tools"' >> ~/.bash_profile
-      - source ~/.bash_profile
       - dotnet --info
 
   post_build:

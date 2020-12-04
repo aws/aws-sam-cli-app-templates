@@ -31,6 +31,9 @@ LOG.setLevel(INFO)
 
 
 def run_command(command_list, cwd=None, env=None, timeout=TIMEOUT) -> CommandResult:
+    if not env:
+        env = os.environ.copy()
+    LOG.info("PATH=%s", env["PATH"])
     process_execute = Popen(command_list, cwd=cwd, env=env, stdout=PIPE, stderr=PIPE)
     try:
         stdout_data, stderr_data = process_execute.communicate(timeout=timeout)
