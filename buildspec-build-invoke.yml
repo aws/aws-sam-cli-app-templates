@@ -11,6 +11,6 @@ phases:
 
   post_build:
     commands:
-      - docker --info
+      - docker info
       - sam --version
       - pytest -vvv --capture=tee-sys tests/integration/build_invoke/test_build_invoke.py -n 8
