@@ -15,9 +15,6 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       PackageType: Image
-      # ImageConfig:
-        # Uncomment this to override command here from the Dockerfile
-        # Command: ["app.lambdaHandler"]
       Events:
         HelloWorld:
           Type: Api
