@@ -1,0 +1,15 @@
+version: 0.2
+
+batch:
+  fast-fail: false
+  build-list:
+    - identifier: BuildInvoke
+      buildspec: buildspec-build-invoke.yml
+      env:
+        compute-type: BUILD_GENERAL1_LARGE
+        image: aws/codebuild/amazonlinux2-x86_64-standard:3.0
+    - identifier: UnitTestNodejs10
+      buildspec: buildspec-unittest-nodejs-10.x.yml
+      env:
+        compute-type: BUILD_GENERAL1_SMALL
+        image: aws/codebuild/amazonlinux2-x86_64-standard:3.0
