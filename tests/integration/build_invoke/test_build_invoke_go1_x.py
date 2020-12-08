@@ -1,4 +1,4 @@
-from tests.integration.base import Base
+from tests.integration.build_invoke.build_invoke_base import BuildInvokeBase
 
 """
 sam build does not support to build go 1.x templates using container, 
@@ -11,12 +11,12 @@ For each template, it will test the following sam commands:
 """
 
 
-class BuildInvoke_go1_x_cookiecutter_aws_sam_hello_golang(Base.BuildInvokeBase):
+class BuildInvoke_go1_x_cookiecutter_aws_sam_hello_golang(BuildInvokeBase.BuildInvokeBase):
     use_container = False
     directory = "go1.x/cookiecutter-aws-sam-hello-golang"
 
 
-class BuildInvoke_go1_x_cookiecutter_aws_sam_hello_step_functions_sample_app(Base.BuildInvokeBase):
+class BuildInvoke_go1_x_cookiecutter_aws_sam_hello_step_functions_sample_app(BuildInvokeBase.BuildInvokeBase):
     use_container = False
     directory = "go1.x/cookiecutter-aws-sam-hello-step-functions-sample-app"
 
@@ -26,5 +26,5 @@ class BuildInvoke_go1_x_cookiecutter_aws_sam_hello_step_functions_sample_app(Bas
 #
 
 
-class BuildInvoke_image_go1_x_cookiecutter_aws_sam_hello_golang_lambda_image:
+class BuildInvoke_image_go1_x_cookiecutter_aws_sam_hello_golang_lambda_image(BuildInvokeBase.BuildInvokeBase):
     directory = "go1.x-image/cookiecutter-aws-sam-hello-golang-lambda-image"

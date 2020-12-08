@@ -1,4 +1,4 @@
-from tests.integration.base import Base
+from tests.integration.build_invoke.build_invoke_base import BuildInvokeBase
 
 """
 sam build does not support to build dotnetcore 3.1 templates using container, 
@@ -11,13 +11,13 @@ For each template, it will test the following sam commands:
 """
 
 
-class BuildInvoke_dotnetcore3_1_cookiecutter_aws_sam_hello_dotnet(Base.DotNetCoreExtraRerunBuildInvokeBase):
+class BuildInvoke_dotnetcore3_1_cookiecutter_aws_sam_hello_dotnet(BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase):
     use_container = False
     directory = "dotnetcore3.1/cookiecutter-aws-sam-hello-dotnet"
 
 
 class BuildInvoke_dotnetcore3_1_cookiecutter_aws_sam_hello_step_functions_sample_app(
-    Base.DotNetCoreExtraRerunBuildInvokeBase
+    BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase
 ):
     use_container = False
     directory = "dotnetcore3.1/cookiecutter-aws-sam-hello-step-functions-sample-app"
@@ -29,6 +29,6 @@ class BuildInvoke_dotnetcore3_1_cookiecutter_aws_sam_hello_step_functions_sample
 
 
 class BuildInvoke_image_dotnetcore3_1_cookiecutter_aws_sam_hello_dotnet_lambda_image(
-    Base.DotNetCoreExtraRerunBuildInvokeBase
+    BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase
 ):
     directory = "dotnetcore3.1-image/cookiecutter-aws-sam-hello-dotnet-lambda-image"
