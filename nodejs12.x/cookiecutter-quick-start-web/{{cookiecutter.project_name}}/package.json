@@ -4,10 +4,10 @@
     "version": "0.0.1",
     "private": true,
     "dependencies": {
-        "aws-sdk": "^2.437.0"
+        "aws-sdk": "^2.799.0"
     },
     "devDependencies": {
-        "jest": "^24.7.1"
+        "jest": "^26.6.3"
     },
     "scripts": {
         "test": "jest"
