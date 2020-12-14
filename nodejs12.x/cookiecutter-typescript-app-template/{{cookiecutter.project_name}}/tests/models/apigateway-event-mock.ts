@@ -8,6 +8,7 @@ export class ApiGatewayEventMock implements ApiGatewayEvent {
         headers = {
             'Content-Type': 'application/json'
         };
+        pathParameters = {};
         requestContext = {
             accountId: '123456789',
             resourceId: '123456789',
