@@ -1,8 +1,8 @@
 
 # Created by https://www.gitignore.io/api/osx,linux,python,windows
 
-node_modules
-dist
+.node_modules
+.dist
 
 ### Linux ###
 *~
