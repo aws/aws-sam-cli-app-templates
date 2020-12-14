@@ -1,10 +1,11 @@
-import { ApiGatewayEvent } from '../models/apigateway/apigateway-event';
-import { ApiGatewayResponse } from '../models/apigateway/apigateway-response';
+import { ApiGatewayEvent } from '../common/apigateway/apigateway-event';
+import { ApiGatewayResponse } from '../common/apigateway/apigateway-response';
+import { TodoRepository } from '../common/todo-repository';
+import { TodoItem } from '../common/todo-item';
 
-import { TodoRepository } from '../models/todo-repository';
-import { TodoItem } from '../models/todo-item';
+import { LambdaApp } from './lambda-app';
 
-export class GetByIdApp {
+export class GetByIdApp implements LambdaApp {
     table: string;
     repository: TodoRepository;
     

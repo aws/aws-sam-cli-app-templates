@@ -3,10 +3,12 @@ import { expect } from 'chai';
 import { Mock, It, Times } from 'moq.ts';
 
 import { PostApp } from '../../src/apps/post-app';
-import { TodoItem } from '../../src/models/todo-item';
-import { TodoRepository } from '../../src/models/todo-repository';
-import { ApiGatewayResponse } from '../../src/models/apigateway/apigateway-response';
-import { ApiGatewayEventMock } from '../models/apigateway-event-mock';
+
+import { TodoItem } from '../../src/common/todo-item';
+import { TodoRepository } from '../../src/common/todo-repository';
+import { ApiGatewayResponse } from '../../src/common/apigateway/apigateway-response';
+
+import { ApiGatewayEventMock } from '../mocks/apigateway-event-mock';
 
 describe('PostApp instance', () => {
     const tableName = 'MY_TABLE';

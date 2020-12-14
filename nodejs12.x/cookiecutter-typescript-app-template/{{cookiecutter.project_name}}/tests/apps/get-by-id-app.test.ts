@@ -1,13 +1,13 @@
 import 'mocha';
 import { expect } from 'chai';
 import { Mock, It, Times } from 'moq.ts';
-import { DynamoDB } from 'aws-sdk';
 
 import { GetByIdApp } from '../../src/apps/get-by-id-app';
-import { TodoItem } from '../../src/models/todo-item';
-import { TodoRepository } from '../../src/models/todo-repository';
-import { ApiGatewayResponse } from '../../src/models/apigateway/apigateway-response';
-import { ApiGatewayEventMock } from '../models/apigateway-event-mock';
+import { TodoItem } from '../../src/common/todo-item';
+import { TodoRepository } from '../../src/common/todo-repository';
+import { ApiGatewayResponse } from '../../src/common/apigateway/apigateway-response';
+
+import { ApiGatewayEventMock } from '../mocks/apigateway-event-mock';
 
 describe('PostApp instance', () => {
     const tableName = 'MY_TABLE';
@@ -56,6 +56,12 @@ describe('PostApp instance', () => {
             const response: ApiGatewayResponse = await app.run(event);
             
             mock.verify(instance => instance.getById(It.IsAny(), tableName), Times.Once());
+            if (!response.body) {
+                expect.fail('expected a response body to be present');
+            }
+            
+            const responseTodo: TodoItem = JSON.parse(response.body) as TodoItem;
+            expect(responseTodo.id).to.equal(todo.id);
         });
     });
 });

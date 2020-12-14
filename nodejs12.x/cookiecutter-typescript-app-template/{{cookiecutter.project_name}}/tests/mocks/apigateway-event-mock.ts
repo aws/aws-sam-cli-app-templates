@@ -1,4 +1,4 @@
-import { ApiGatewayEvent } from '../../src/models/apigateway/apigateway-event';
+import { ApiGatewayEvent } from '../../src/common/apigateway/apigateway-event';
 
 export class ApiGatewayEventMock implements ApiGatewayEvent {
         body = '{ "id": "1", "title":"test", "isComplete": "false"}';
