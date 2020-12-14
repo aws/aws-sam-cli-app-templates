@@ -12,6 +12,9 @@ import { ApiGatewayEventMock } from '../mocks/apigateway-event-mock';
 
 describe('PostApp instance', () => {
     const tableName = 'MY_TABLE';
+    
+    // Stubs out our TodoRepository interface so we can simulate the expected behavior
+    // with a successful "put" to the underlying data store.
     const repoMock = new Mock<TodoRepository>()
         .setup(instance => instance.putTodo(It.IsAny(), tableName))
         .returns(new Promise<void>((resolve) => { resolve(); }));
@@ -98,6 +101,8 @@ describe('PostApp instance', () => {
         });
         
         it('repository failures returns 500 status code', async () => {
+            // Stub our TodoRepository so it simulates a failed operation from the
+            // underlying data store.
             const mock = new Mock<TodoRepository>()
                 .setup(instance => instance.putTodo(It.IsAny(), tableName))
                 .returns(new Promise<void>((resolve, reject) => { reject(new Error('unit test rejected Promise')); }));

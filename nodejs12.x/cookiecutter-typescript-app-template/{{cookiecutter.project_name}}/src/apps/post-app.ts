@@ -5,6 +5,10 @@ import { TodoItem } from '../common/todo-item';
 
 import { LambdaApp } from './lambda-app';
 
+/**
+ * PostApp is a LambdaApp that puts a new record into DynamoDB using the API Gateway event body as the record content.
+ * 
+ */
 export class PostApp implements LambdaApp {
     table: string;
     repository: TodoRepository;
@@ -20,10 +24,12 @@ export class PostApp implements LambdaApp {
             const todo: TodoItem = JSON.parse(event.body);
             
             if (!todo.title) {
+                console.log('Body is missing the title');
                 return { statusCode: 422 };
             } else if (!todo.isComplete) {
                 todo.isComplete = false;
             } else if (!todo.id) {
+                console.log('Body is missing the id');
                 return { statusCode: 422 };
             }
             

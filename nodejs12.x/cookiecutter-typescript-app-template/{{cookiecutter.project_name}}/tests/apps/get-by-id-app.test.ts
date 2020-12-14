@@ -11,6 +11,9 @@ import { ApiGatewayEventMock } from '../mocks/apigateway-event-mock';
 
 describe('PostApp instance', () => {
     const tableName = 'MY_TABLE';
+    
+    // Stubs out our TodoRepository interface so we can simulate the expected behavior
+    // with a successful "put" to the underlying data store.
     const repoMock = new Mock<TodoRepository>()
         .setup(instance => instance.putTodo(It.IsAny(), tableName))
         .returns(new Promise<void>((resolve) => { resolve(); }));
@@ -42,7 +45,10 @@ describe('PostApp instance', () => {
         });
         
         it('repository is called to get a record by id', async () => {
-            const todo: TodoItem = { id: "123", title: "hello world", isComplete: true };
+            const todo: TodoItem = { id: '123', title: 'hello world', isComplete: true };
+            
+            // Stub a getById invocation resolving a Promise with a valid TodoItem
+            // instance from the data store
             const mock = new Mock<TodoRepository>()
                 .setup(instance => instance.getById(It.IsAny(), tableName))
                 .returns(new Promise<TodoItem>((resolve) => { 

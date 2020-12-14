@@ -1,4 +1,4 @@
-import { ApiGatewayRequestContext } from "./apigateway-request-context";
+import { ApiGatewayRequestContext } from './apigateway-request-context';
 
 export interface ApiGatewayEvent {
     body: string;

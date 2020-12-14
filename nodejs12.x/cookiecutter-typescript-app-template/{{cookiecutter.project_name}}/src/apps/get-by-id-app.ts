@@ -5,6 +5,10 @@ import { TodoItem } from '../common/todo-item';
 
 import { LambdaApp } from './lambda-app';
 
+/**
+ * GetByIdApp is a LambdaApp that queries DynamoDB by the Partition Key and returns the results.
+ * 
+ */
 export class GetByIdApp implements LambdaApp {
     table: string;
     repository: TodoRepository;
@@ -18,6 +22,7 @@ export class GetByIdApp implements LambdaApp {
 
         try {
             if (!event.pathParameters?.id) {
+                console.log('API Gateway event is missing the /{id} parameter path required.');
                 return { statusCode: 404 };
             }
             
