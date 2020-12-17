@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - pip install --upgrade pip aws-sam-cli
+      - pip install -r requirements.txt
+
+  post_build:
+    commands:
+      - docker info
+      - sam --version
+      # larger codebuild machine will be allocated to this test, the number of tests running in parallel increases to 8
+      - pytest -vvv tests/integration/build_invoke/test_build_invoke_image.py -n 8
