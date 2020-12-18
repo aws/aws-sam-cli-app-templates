@@ -1,8 +1,8 @@
 {
   "name": "web_template",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "author": "SAM CLI",
+  "license": "MIT",
   "directories": {
     "test": "tests"
   },
@@ -13,8 +13,6 @@
     "test": "eslint . --ext .ts && tsc && mocha",
     "fast-test": "mocha"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@types/chai": "^4.2.14",
     "@types/mocha": "^8.2.0",
