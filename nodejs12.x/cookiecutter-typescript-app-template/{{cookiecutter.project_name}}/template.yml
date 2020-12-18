@@ -21,6 +21,8 @@ Resources:
   # This is a Lambda function config associated with the source code: get-by-id.js
   getByIdFunction:
     Type: AWS::Serverless::Function
+    Metadata:
+      BuildMethod: makefile
     Properties:
       Handler: dist/src/handlers/get-by-id.handler
       Runtime: nodejs12.x
@@ -47,6 +49,8 @@ Resources:
   # This is a Lambda function config associated with the source code: put-item.js
   putItemFunction:
     Type: AWS::Serverless::Function
+    Metadata:
+      BuildMethod: makefile
     Properties:
       Handler: dist/src/handlers/post.handler
       Runtime: nodejs12.x
