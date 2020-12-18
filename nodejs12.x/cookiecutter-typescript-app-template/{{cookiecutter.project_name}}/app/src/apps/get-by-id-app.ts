@@ -27,7 +27,7 @@ export class GetByIdApp implements LambdaApp {
             }
             
             const id: string = event.pathParameters.id;
-            const results: TodoItem = await this.repository.getById(id, this.table);
+            const results: TodoItem = await this.repository.getTodoById(id, this.table);
             
             return { statusCode: 200, body: JSON.stringify(results) };
             

@@ -50,7 +50,7 @@ describe('PostApp instance', () => {
             // Stub a getById invocation resolving a Promise with a valid TodoItem
             // instance from the data store
             const mock = new Mock<TodoRepository>()
-                .setup(instance => instance.getById(It.IsAny(), tableName))
+                .setup(instance => instance.getTodoById(It.IsAny(), tableName))
                 .returns(new Promise<TodoItem>((resolve) => { 
                     resolve(todo);
                 }));
@@ -61,7 +61,7 @@ describe('PostApp instance', () => {
             const app = new GetByIdApp(tableName, mock.object());
             const response: ApiGatewayResponse = await app.run(event);
             
-            mock.verify(instance => instance.getById(It.IsAny(), tableName), Times.Once());
+            mock.verify(instance => instance.getTodoById(It.IsAny(), tableName), Times.Once());
             if (!response.body) {
                 expect.fail('expected a response body to be present');
             }
