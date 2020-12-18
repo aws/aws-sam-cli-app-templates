@@ -25,7 +25,7 @@ export class TodoDynamoClientRepository implements TodoRepository {
     }
     
     // Fetches a TodoItem with an Id matching the requested id from DynamoDB.
-    async getById(id: string, table: string): Promise<TodoItem> {
+    async getTodoById(id: string, table: string): Promise<TodoItem> {
         
         const params: DynamoDB.DocumentClient.GetItemInput = {
             TableName: table,
