@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      # install dotnetcore 2.1 since the runtime is not provided
+      - curl -sSL https://dot.net/v1/dotnet-install.sh | bash -s -- -Version 2.1.811
+      # install test requirements
+      - pip install --upgrade pip aws-sam-cli
+      - pip install -r requirements.txt
+      - dotnet --info
+
+  post_build:
+    commands:
+      - sam --version
+      - pytest -vvv tests/integration/build_invoke/test_build_invoke_dotnetcore2_1.py -n 4
+      - pytest -vvv tests/integration/unit_test/test_unit_test_dotnetcore2_1.py -n 4

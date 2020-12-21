@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      # install ruby 2.5 since it is not provided
+      - wget https://cache.ruby-lang.org/pub/ruby/2.5/ruby-2.5.8.tar.gz
+      - tar zxf ruby-2.5.8.tar.gz
+      - cd ruby-2.5.8
+      - ./configure --prefix=/opt/ruby-2.5
+      - make -j4
+      - make install
+      - cd ..
+      - /opt/ruby-2.5/bin/gem install bundler
+      # install test requirements
+      - pip install --upgrade pip aws-sam-cli
+      - pip install -r requirements.txt
+      - PATH=/opt/ruby-2.5/bin:$PATH ruby --version
+
+  post_build:
+    commands:
+      - sam --version
+      - PATH=/opt/ruby-2.5/bin:$PATH pytest -vvv tests/integration/unit_test/test_unit_test_ruby2_5.py -n 4
