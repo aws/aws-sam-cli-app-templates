@@ -5,9 +5,11 @@
     "private": true,
     "dependencies": {},
     "devDependencies": {
+        "aws-sdk": "^2.815.0",
         "jest": "^26.6.3"
     },
     "scripts": {
-        "test": "jest"
+        "test": "jest --roots __tests__/unit",
+        "integ-test": "jest --roots __tests__/integration"
     }
 }
