@@ -4,6 +4,7 @@ from time import sleep, time
 from unittest import TestCase
 
 import boto3
+from botocore.exceptions import ClientError
 
 
 class TestEC2Event(TestCase):
@@ -17,10 +18,6 @@ class TestEC2Event(TestCase):
 
     @classmethod
     def setUpClass(cls) -> None:
-        """
-        Based on the provided env variable AWS_SAM_STACK_NAME,
-        here we use cloudformation API to find out what the HelloWorldFunction function name
-        """
         stack_name = os.environ.get("AWS_SAM_STACK_NAME")
         if not stack_name:
             raise Exception("Cannot find env var AWS_SAM_STACK_NAME")
@@ -37,9 +34,6 @@ class TestEC2Event(TestCase):
         cls.function_name = function_resources[0]["PhysicalResourceId"]
 
     def setUp(self) -> None:
-        """
-        Create a temporary EC2 instance, and record the instance id for verification and clean up
-        """
         client = boto3.client("ec2")
         response = client.run_instances(
             ImageId="resolve:ssm:/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2",
@@ -51,18 +45,10 @@ class TestEC2Event(TestCase):
         self.instance_id = response["Instances"][0]["InstanceId"]
 
     def tearDown(self) -> None:
-        """
-        Clean up the EC2 instance
-        """
         client = boto3.client("ec2")
         client.terminate_instances(InstanceIds=[self.instance_id])
 
     def test_ec2_event(self):
-        """
-        Scan the cloudwatch log in the past minute to verify there is a log entry
-        containing the EC2 instance ID recorded in setUp().
-        Since cloudwatch log has a latency, here we will retry 5 times
-        """
         log_group_name = f"/aws/lambda/{self.function_name}"
 
         client = boto3.client("logs")
@@ -71,11 +57,19 @@ class TestEC2Event(TestCase):
         retries = 5
         start_time = int(time() - 60) * 1000
         while retries >= 0:
-            response = client.describe_log_streams(
-                logGroupName=log_group_name,
-                orderBy="LastEventTime",
-                descending=True,
-            )
+            try:
+                response = client.describe_log_streams(
+                    logGroupName=log_group_name,
+                    orderBy="LastEventTime",
+                    descending=True,
+                )
+            except ClientError as e:
+                if e.response["Error"]["Code"] == "ResourceNotFoundException":
+                    logging.info(f"Cannot find log group {log_group_name}, waiting")
+                    sleep(5)
+                    continue
+                raise e
+
             log_streams = response["logStreams"]
             self.assertTrue(log_streams, "Cannot find log streams")
 
@@ -91,6 +85,7 @@ class TestEC2Event(TestCase):
             )
             events = response["events"]
             match_events = [event for event in events if self.instance_id in event["message"]]
+
             if match_events:
                 return
             else:
