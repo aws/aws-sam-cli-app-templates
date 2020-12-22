@@ -11,18 +11,22 @@ class TestApiGateway(TestCase):
     def setUp(self) -> None:
         """
         Based on the provided env variable AWS_SAM_STACK_NAME,
-        here we use cloudformation API to find out what the ServerlessRestApi URL is
+        here we use cloudformation API to find out what the HelloEfsApi URL is
         """
         stack_name = os.environ.get("AWS_SAM_STACK_NAME")
         self.failIf(not stack_name, "Cannot find env var AWS_SAM_STACK_NAME")
 
         client = boto3.client("cloudformation")
-        response = client.list_stack_resources(StackName=stack_name)
-        resources = response["StackResourceSummaries"]
-        api_resources = [resource for resource in resources if resource["LogicalResourceId"] == "ServerlessRestApi"]
-        self.failIf(not api_resources, "Cannot find ServerlessRestApi")
 
-        self.api_endpoint = f"https://{api_resources[0]['PhysicalResourceId']}.execute-api.{client.meta.region_name}.amazonaws.com/Prod/hello/"
+        response = client.describe_stacks(StackName=stack_name)
+        stacks = response["Stacks"]
+        self.assertTrue(stacks, f"Cannot find stack {stack_name}")
+
+        stack_outputs = stacks[0]["Outputs"]
+        api_outputs = [output for output in stack_outputs if output["OutputKey"] == "HelloEfsApi"]
+        self.assertTrue(api_outputs, f"Cannot find output HelloEfsApi in stack {stack_name}")
+
+        self.api_endpoint = api_outputs[0]["OutputValue"]
 
     def test_api_gateway(self):
         """
