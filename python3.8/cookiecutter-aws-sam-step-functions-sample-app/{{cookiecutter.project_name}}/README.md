@@ -80,7 +80,8 @@ Tests are defined in the `tests` folder in this project. Use PIP to install the 
 {{ cookiecutter.project_name }}$ pip install -r tests/requirements.txt --user
 # unit test
 {{ cookiecutter.project_name }}$ python -m pytest tests/unit -v
-# integration test, requiring deploying the stack first
+# integration test, requiring deploying the stack first.
+# Create the env variable AWS_SAM_STACK_NAME with the name of the stack we are testing
 {{ cookiecutter.project_name }}$ AWS_SAM_STACK_NAME=<stack-name> python -m pytest tests/integration -v
 ```
 
