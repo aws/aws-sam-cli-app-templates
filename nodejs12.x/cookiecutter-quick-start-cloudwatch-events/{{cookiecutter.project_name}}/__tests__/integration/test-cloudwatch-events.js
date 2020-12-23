@@ -4,7 +4,7 @@ const uuid = require("uuid");
 const sleep = (secs) =>
   new Promise((resolve) => setTimeout(resolve, 1000 * secs));
 
-describe("Test Web Endpoint", function () {
+describe("Test Cloudwatch Event", function () {
   let functionName;
   /**
    * Based on the provided env variable AWS_SAM_STACK_NAME,

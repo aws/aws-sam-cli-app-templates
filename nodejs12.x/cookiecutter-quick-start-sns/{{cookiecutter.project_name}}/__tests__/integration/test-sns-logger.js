@@ -8,7 +8,7 @@ const sleep = (secs) =>
  * This test publish a testing message to sns topic
  * and make sure cloudwatch has corresponding log entry.
  */
-describe("Test Web Endpoint", function () {
+describe("Test SNS Logger", function () {
   let functionName, topicArn;
   /**
    * Based on the provided env variable AWS_SAM_STACK_NAME,
@@ -132,7 +132,7 @@ describe("Test Web Endpoint", function () {
    * Publish a message containing a unique string to the SNS topic using AWS API and
    * check the corresponding log is inserted into cloudwatch
    */
-  it("When ScheduledEventLogger called, cloudwatch should have logs recorded", async () => {
+  it("When SNSPayloadLogger called, cloudwatch should have logs recorded", async () => {
     console.info("function name:", functionName, "sns topic:", topicArn);
 
     // we will use this uuid to verify the recorded log entry is init from this test

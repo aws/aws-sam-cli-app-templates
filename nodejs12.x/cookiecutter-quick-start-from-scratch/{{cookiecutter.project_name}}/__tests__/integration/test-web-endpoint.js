@@ -1,6 +1,6 @@
 const AWS = require("aws-sdk");
 
-describe("Test Web Endpoint", function () {
+describe("Test Function Invoke", function () {
   let functionName;
   /**
    * Based on the provided env variable AWS_SAM_STACK_NAME,

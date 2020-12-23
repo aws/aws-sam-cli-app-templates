@@ -8,7 +8,7 @@ const sleep = (secs) =>
  * This test creates a temporary file in the AppBucket
  * invoke the S3JsonLoggerFunction and make sure cloudwatch has corresponding log entry.
  */
-describe("Test Web Endpoint", function () {
+describe("Test S3 Logger", function () {
   let functionName, bucketName;
 
   let fileName;
@@ -177,7 +177,7 @@ describe("Test Web Endpoint", function () {
    * Calling the S3JsonLoggerFunction using AWS API and
    * check the corresponding log is inserted into cloudwatch
    */
-  it("When ScheduledEventLogger called, cloudwatch should have logs recorded", async () => {
+  it("When S3JsonLoggerFunction called, cloudwatch should have logs recorded", async () => {
     console.info("function name:", functionName, "bucket name:", bucketName);
 
     await invokeFunction();
