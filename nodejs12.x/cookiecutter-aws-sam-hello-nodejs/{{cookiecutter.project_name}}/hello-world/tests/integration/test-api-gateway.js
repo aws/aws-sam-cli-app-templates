@@ -5,8 +5,12 @@ const AWS = require("aws-sdk");
 const https = require("https");
 const expect = chai.expect;
 
+/**
+ * Make sure env variable AWS_SAM_STACK_NAME exists with the name of the stack we are going to test.
+ */
 describe("Test API Gateway", function () {
   let apiEndpoint;
+
   /**
    * Based on the provided env variable AWS_SAM_STACK_NAME,
    * here we use cloudformation API to find out what the HelloWorldApi URL is

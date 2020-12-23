@@ -1,7 +1,11 @@
 const AWS = require("aws-sdk");
 
+/**
+ * Make sure env variable AWS_SAM_STACK_NAME exists with the name of the stack we are going to test.
+ */
 describe("Test Function Invoke", function () {
   let functionName;
+
   /**
    * Based on the provided env variable AWS_SAM_STACK_NAME,
    * here we use cloudformation API to find out what the helloFromLambdaFunction is

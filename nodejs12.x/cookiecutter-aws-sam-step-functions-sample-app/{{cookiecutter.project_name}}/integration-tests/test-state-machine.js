@@ -8,6 +8,13 @@ const expect = chai.expect;
 const sleep = (secs) =>
   new Promise((resolve) => setTimeout(resolve, 1000 * secs));
 
+/**
+ * This integration test will execute the step function and verify
+ * - "Record Transaction" is executed
+ * - the record has been inserted into the transaction record
+ *
+ * Make sure env variable AWS_SAM_STACK_NAME exists with the name of the stack we are going to test.
+ */
 describe("Test State Machine", function () {
   let stateMachineArn, transactionTableName;
 

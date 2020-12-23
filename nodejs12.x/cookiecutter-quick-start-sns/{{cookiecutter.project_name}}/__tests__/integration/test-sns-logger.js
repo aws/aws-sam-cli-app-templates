@@ -7,6 +7,7 @@ const sleep = (secs) =>
 /**
  * This test publish a testing message to sns topic
  * and make sure cloudwatch has corresponding log entry.
+ * Make sure env variable AWS_SAM_STACK_NAME exists with the name of the stack we are going to test.
  */
 describe("Test SNS Logger", function () {
   let functionName, topicArn;

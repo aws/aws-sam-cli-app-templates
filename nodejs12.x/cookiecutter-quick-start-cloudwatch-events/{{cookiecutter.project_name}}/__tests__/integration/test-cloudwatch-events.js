@@ -4,8 +4,14 @@ const uuid = require("uuid");
 const sleep = (secs) =>
   new Promise((resolve) => setTimeout(resolve, 1000 * secs));
 
+/**
+ * This integration test will invoke the function and scan cloudwatch log
+ * to check the corresponding log is recorded.
+ * Make sure env variable AWS_SAM_STACK_NAME exists with the name of the stack we are going to test.
+ */
 describe("Test Cloudwatch Event", function () {
   let functionName;
+
   /**
    * Based on the provided env variable AWS_SAM_STACK_NAME,
    * here we use cloudformation API to find out what the ScheduledEventLogger ARN is

@@ -1,8 +1,13 @@
 const AWS = require("aws-sdk");
 const https = require("https");
 
+/**
+ * This integration will make request to the API Gateway to verify the responses.
+ * Make sure env variable AWS_SAM_STACK_NAME exists with the name of the stack we are going to test.
+ */
 describe("Test Web Endpoint", function () {
   let apiEndpoint;
+
   /**
    * Based on the provided env variable AWS_SAM_STACK_NAME,
    * here we use cloudformation API to find out what the WebEndpoint URL is

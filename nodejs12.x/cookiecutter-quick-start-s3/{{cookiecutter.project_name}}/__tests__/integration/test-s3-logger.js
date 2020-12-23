@@ -5,8 +5,9 @@ const sleep = (secs) =>
   new Promise((resolve) => setTimeout(resolve, 1000 * secs));
 
 /**
- * This test creates a temporary file in the AppBucket
+ * This integration test creates a temporary file in the AppBucket
  * invoke the S3JsonLoggerFunction and make sure cloudwatch has corresponding log entry.
+ * Make sure env variable AWS_SAM_STACK_NAME exists with the name of the stack we are going to test.
  */
 describe("Test S3 Logger", function () {
   let functionName, bucketName;
