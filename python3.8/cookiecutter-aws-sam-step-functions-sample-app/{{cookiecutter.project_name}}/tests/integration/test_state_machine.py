@@ -30,6 +30,26 @@ class TestStateMachine(TestCase):
     transaction_table_input: Dict
 
     @classmethod
+    def get_and_verify_stack_name(cls) -> str:
+        stack_name = os.environ.get("AWS_SAM_STACK_NAME")
+        if not stack_name:
+            raise Exception(
+                "Cannot find env var AWS_SAM_STACK_NAME. \n"
+                "Please setup this environment variable with the stack name where we are running integration tests."
+            )
+
+        # Verify stack exists
+        client = boto3.client("cloudformation")
+        try:
+            client.describe_stacks(StackName=stack_name)
+        except Exception as e:
+            raise Exception(
+                f"Cannot find stack {stack_name}. \n" f'Please make sure stack with the name "{stack_name}" exists.'
+            ) from e
+
+        return stack_name
+
+    @classmethod
     def setUpClass(cls) -> None:
         """
         Based on the provided env variable AWS_SAM_STACK_NAME,
@@ -37,9 +57,7 @@ class TestStateMachine(TestCase):
         - StockTradingStateMachine's ARN
         - TransactionTable's table name
         """
-        stack_name = os.environ.get("AWS_SAM_STACK_NAME")
-        if not stack_name:
-            raise Exception("Cannot find env var AWS_SAM_STACK_NAME")
+        stack_name = TestStateMachine.get_and_verify_stack_name()
 
         client = boto3.client("cloudformation")
         response = client.list_stack_resources(StackName=stack_name)
