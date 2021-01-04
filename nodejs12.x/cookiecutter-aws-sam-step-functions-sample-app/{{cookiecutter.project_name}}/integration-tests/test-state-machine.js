@@ -8,6 +8,32 @@ const expect = chai.expect;
 const sleep = (secs) =>
   new Promise((resolve) => setTimeout(resolve, 1000 * secs));
 
+const getAndVerifyStackName = async () => {
+  const stackName = process.env["AWS_SAM_STACK_NAME"];
+  if (!stackName) {
+    throw new Error(
+      "Cannot find env var AWS_SAM_STACK_NAME.\n" +
+        "Please setup this environment variable with the stack name where we are running integration tests."
+    );
+  }
+
+  const client = new AWS.CloudFormation();
+  try {
+    await client
+      .describeStacks({
+        StackName: stackName,
+      })
+      .promise();
+  } catch (e) {
+    throw new Error(
+      `Cannot find stack ${stackName}: ${e.message}\n` +
+        `Please make sure stack with the name "${stackName}" exists.`
+    );
+  }
+
+  return stackName;
+};
+
 /**
  * This integration test will execute the step function and verify
  * - "Record Transaction" is executed
@@ -27,10 +53,7 @@ describe("Test State Machine", function () {
    * - TransactionTable's table name
    */
   before(async () => {
-    const stackName = process.env["AWS_SAM_STACK_NAME"];
-    if (!stackName) {
-      throw new Error("Cannot find env var AWS_SAM_STACK_NAME");
-    }
+    const stackName = await getAndVerifyStackName();
 
     const client = new AWS.CloudFormation();
     const response = await client

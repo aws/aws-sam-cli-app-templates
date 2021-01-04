@@ -4,6 +4,32 @@ const uuid = require("uuid");
 const sleep = (secs) =>
   new Promise((resolve) => setTimeout(resolve, 1000 * secs));
 
+const getAndVerifyStackName = async () => {
+  const stackName = process.env["AWS_SAM_STACK_NAME"];
+  if (!stackName) {
+    throw new Error(
+      "Cannot find env var AWS_SAM_STACK_NAME.\n" +
+        "Please setup this environment variable with the stack name where we are running integration tests."
+    );
+  }
+
+  const client = new AWS.CloudFormation();
+  try {
+    await client
+      .describeStacks({
+        StackName: stackName,
+      })
+      .promise();
+  } catch (e) {
+    throw new Error(
+      `Cannot find stack ${stackName}: ${e.message}\n` +
+        `Please make sure stack with the name "${stackName}" exists.`
+    );
+  }
+
+  return stackName;
+};
+
 /**
  * This integration test creates a temporary file in the AppBucket
  * invoke the S3JsonLoggerFunction and make sure cloudwatch has corresponding log entry.
@@ -18,10 +44,7 @@ describe("Test S3 Logger", function () {
    * here we use cloudformation API to find out what the S3JsonLoggerFunction and AppBucket are
    */
   beforeAll(async () => {
-    const stackName = process.env["AWS_SAM_STACK_NAME"];
-    if (!stackName) {
-      throw new Error("Cannot find env var AWS_SAM_STACK_NAME");
-    }
+    const stackName = await getAndVerifyStackName();
 
     const client = new AWS.CloudFormation();
     const response = await client

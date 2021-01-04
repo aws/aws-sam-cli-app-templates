@@ -1,6 +1,32 @@
 const AWS = require("aws-sdk");
 const https = require("https");
 
+const getAndVerifyStackName = async () => {
+  const stackName = process.env["AWS_SAM_STACK_NAME"];
+  if (!stackName) {
+    throw new Error(
+      "Cannot find env var AWS_SAM_STACK_NAME.\n" +
+        "Please setup this environment variable with the stack name where we are running integration tests."
+    );
+  }
+
+  const client = new AWS.CloudFormation();
+  try {
+    await client
+      .describeStacks({
+        StackName: stackName,
+      })
+      .promise();
+  } catch (e) {
+    throw new Error(
+      `Cannot find stack ${stackName}: ${e.message}\n` +
+        `Please make sure stack with the name "${stackName}" exists.`
+    );
+  }
+
+  return stackName;
+};
+
 /**
  * This integration will make request to the API Gateway to verify the responses.
  * Make sure env variable AWS_SAM_STACK_NAME exists with the name of the stack we are going to test.
@@ -13,10 +39,7 @@ describe("Test Web Endpoint", function () {
    * here we use cloudformation API to find out what the WebEndpoint URL is
    */
   beforeAll(async () => {
-    const stackName = process.env["AWS_SAM_STACK_NAME"];
-    if (!stackName) {
-      throw new Error("Cannot find env var AWS_SAM_STACK_NAME");
-    }
+    const stackName = await getAndVerifyStackName();
 
     const client = new AWS.CloudFormation();
     const response = await client

@@ -5,6 +5,18 @@ const AWS = require("aws-sdk");
 const https = require("https");
 const expect = chai.expect;
 
+const getStackName = () => {
+  const stackName = process.env["AWS_SAM_STACK_NAME"];
+  if (!stackName) {
+    throw new Error(
+      "Cannot find env var AWS_SAM_STACK_NAME.\n" +
+        "Please setup this environment variable with the stack name where we are running integration tests."
+    );
+  }
+
+  return stackName;
+};
+
 /**
  * Make sure env variable AWS_SAM_STACK_NAME exists with the name of the stack we are going to test.
  */
@@ -16,20 +28,25 @@ describe("Test API Gateway", function () {
    * here we use cloudformation API to find out what the HelloWorldApi URL is
    */
   before(async () => {
-    const stackName = process.env["AWS_SAM_STACK_NAME"];
-    if (!stackName) {
-      throw new Error("Cannot find env var AWS_SAM_STACK_NAME");
-    }
+    const stackName = getStackName();
 
     const client = new AWS.CloudFormation();
-    const response = await client
-      .describeStacks({
-        StackName: stackName,
-      })
-      .promise();
+
+    let response;
+    try {
+      response = await client
+        .describeStacks({
+          StackName: stackName,
+        })
+        .promise();
+    } catch (e) {
+      throw new Error(
+        `Cannot find stack ${stackName}: ${e.message}\n` +
+          `Please make sure stack with the name "${stackName}" exists.`
+      );
+    }
 
     const stacks = response.Stacks;
-    expect(stacks, `Cannot find stack ${stackName}`).not.to.be.empty;
 
     const stackOutputs = stacks[0].Outputs;
     const apiOutput = stackOutputs.find(
