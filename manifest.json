@@ -550,6 +550,15 @@
         "packageType": "Zip"
       }
     ],
+    "amazon/nodejs14.x-base": [
+      {
+        "directory": "nodejs14.x-image/cookiecutter-aws-sam-hello-nodejs-lambda-image",
+        "displayName": "Hello World Image Example",
+        "dependencyManager": "npm",
+        "appTemplate": "hello-world-lambda-image",
+        "packageType": "Image"
+      }
+    ],
     "amazon/nodejs12.x-base": [
       {
         "directory": "nodejs12.x-image/cookiecutter-aws-sam-hello-nodejs-lambda-image",
