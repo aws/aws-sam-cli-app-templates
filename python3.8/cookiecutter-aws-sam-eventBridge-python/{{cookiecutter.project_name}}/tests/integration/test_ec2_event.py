@@ -73,41 +73,17 @@ class TestEC2Event(TestCase):
     def test_ec2_event(self):
         log_group_name = f"/aws/lambda/{self.function_name}"
 
-        client = boto3.client("logs")
-
         # cloudwatch log might be deplayed, give it 5 retries
         retries = 5
         start_time = int(time() - 60) * 1000
         while retries >= 0:
-            try:
-                response = client.describe_log_streams(
-                    logGroupName=log_group_name,
-                    orderBy="LastEventTime",
-                    descending=True,
-                )
-            except ClientError as e:
-                if e.response["Error"]["Code"] == "ResourceNotFoundException":
-                    logging.info(f"Cannot find log group {log_group_name}, waiting")
-                    sleep(5)
-                    continue
-                raise e
-
-            log_streams = response["logStreams"]
-            self.assertTrue(log_streams, "Cannot find log streams")
-
             # use the lastest one
-            log_stream = log_streams[0]
+            log_stream_name = self._get_latest_log_stream_name(log_group_name)
+            if not log_stream_name:
+                sleep(5)
+                continue
 
-            response = client.get_log_events(
-                logGroupName=log_group_name,
-                logStreamName=log_stream["logStreamName"],
-                startTime=start_time,
-                endTime=int(time()) * 1000,
-                startFromHead=False,
-            )
-            events = response["events"]
-            match_events = [event for event in events if self.instance_id in event["message"]]
-
+            match_events = self._get_matched_events(log_group_name, log_stream_name, start_time)
             if match_events:
                 return
             else:
@@ -116,3 +92,43 @@ class TestEC2Event(TestCase):
                 sleep(5)
 
         self.fail(f"Cannot find matching events containing instance id {self.instance_id} after 5 retries")
+
+    def _get_latest_log_stream_name(self, log_group_name: str):
+        """
+        Find the name of latest log stream name in group,
+        return None if the log group does not exists or does not have any stream
+        (for lambda function that has never invoked before).
+        """
+        client = boto3.client("logs")
+        try:
+            response = client.describe_log_streams(
+                logGroupName=log_group_name,
+                orderBy="LastEventTime",
+                descending=True,
+            )
+        except ClientError as e:
+            if e.response["Error"]["Code"] == "ResourceNotFoundException":
+                logging.info(f"Cannot find log group {log_group_name}, waiting")
+                return None
+            raise e
+
+        log_streams = response["logStreams"]
+        self.assertTrue(log_streams, "Cannot find log streams")
+
+        # use the lastest one
+        return log_streams[0]
+
+    def _get_matched_events(self, log_group_name, log_stream_name, start_time):
+        """
+        Return a list of events with body containing self.instance_id after start_time
+        """
+        client = boto3.client("logs")
+        response = client.get_log_events(
+            logGroupName=log_group_name,
+            logStreamName=log_stream_name,
+            startTime=start_time,
+            endTime=int(time()) * 1000,
+            startFromHead=False,
+        )
+        events = response["events"]
+        return [event for event in events if self.instance_id in event["message"]]
