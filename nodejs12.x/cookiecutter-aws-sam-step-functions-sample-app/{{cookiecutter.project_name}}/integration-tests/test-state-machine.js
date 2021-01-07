@@ -44,7 +44,7 @@ const getAndVerifyStackName = async () => {
 describe("Test State Machine", function () {
   let stateMachineArn, transactionTableName;
 
-  let executionArn, transactionTableInput;
+  let insertedRecordId;
 
   /**
    * Based on the provided env variable AWS_SAM_STACK_NAME,
@@ -93,7 +93,7 @@ describe("Test State Machine", function () {
       .deleteItem({
         Key: {
           Id: {
-            S: transactionTableInput["id"],
+            S: insertedRecordId,
           },
         },
         TableName: transactionTableName,
@@ -114,7 +114,7 @@ describe("Test State Machine", function () {
       })
       .promise();
 
-    executionArn = response.executionArn;
+    return response.executionArn;
   };
 
   const waitExecution = async () => {
@@ -143,7 +143,7 @@ describe("Test State Machine", function () {
   /**
    * Make sure "Record Transaction" step was reached, and record the input of it.
    */
-  const retrieveTransactionTableInput = async () => {
+  const retrieveTransactionTableInput = async (executionArn) => {
     const client = new AWS.StepFunctions();
     const response = await client
       .getExecutionHistory({ executionArn })
@@ -160,16 +160,18 @@ describe("Test State Machine", function () {
       "Cannot find Record Transaction TaskStateEntered event"
     ).to.not.be.undefined;
 
-    transactionTableInput = JSON.parse(
+    const transactionTableInput = JSON.parse(
       recordTransactionEnteredEvent.stateEnteredEventDetails.input
     );
+    insertedRecordId = transactionTableInput["id"]; // store the record ID for cleaning up
+    return transactionTableInput;
   };
 
   /**
    * Use the input recorded in _retrieve_transaction_table_input() to
    * verify whether the record has been written to dynamodb
    */
-  const verifyTransactionRecordWritten = async () => {
+  const verifyTransactionRecordWritten = async (transactionTableInput) => {
     const client = new AWS.DynamoDB();
     const response = await client
       .getItem({
@@ -191,9 +193,11 @@ describe("Test State Machine", function () {
   };
 
   it("Test state machine execution", async () => {
-    await startExecution();
-    await waitExecution();
-    await retrieveTransactionTableInput();
-    await verifyTransactionRecordWritten();
+    const executionArn = await startExecution();
+    await waitExecution(executionArn);
+    const transactionTableInput = await retrieveTransactionTableInput(
+      executionArn
+    );
+    await verifyTransactionRecordWritten(transactionTableInput);
   });
 });
