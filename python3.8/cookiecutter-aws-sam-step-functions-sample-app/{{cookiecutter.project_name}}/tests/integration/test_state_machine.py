@@ -26,8 +26,7 @@ class TestStateMachine(TestCase):
     transaction_table_name: str
 
     client: BaseClient
-    execution_arn: str
-    transaction_table_input: Dict
+    inserted_record_id: str
 
     @classmethod
     def get_and_verify_stack_name(cls) -> str:
@@ -85,39 +84,39 @@ class TestStateMachine(TestCase):
         client.delete_item(
             Key={
                 "Id": {
-                    "S": self.transaction_table_input["id"],
+                    "S": self.inserted_record_id,
                 },
             },
             TableName=self.transaction_table_name,
         )
 
-    def _start_execute(self):
+    def _start_execute(self) -> str:
         """
         Start the state machine execution request and record the execution ARN
         """
         response = self.client.start_execution(
             stateMachineArn=self.state_machine_arn, name=f"integ-test-{uuid4()}", input="{}"
         )
-        self.execution_arn = response["executionArn"]
+        return response["executionArn"]
 
-    def _wait_execution(self):
+    def _wait_execution(self, execution_arn: str):
         while True:
-            response = self.client.describe_execution(executionArn=self.execution_arn)
+            response = self.client.describe_execution(executionArn=execution_arn)
             status = response["status"]
             if status == "SUCCEEDED":
-                logging.info(f"Execution {self.execution_arn} completely successfully.")
+                logging.info(f"Execution {execution_arn} completely successfully.")
                 break
             elif status == "RUNNING":
-                logging.info(f"Execution {self.execution_arn} is still running, waiting")
+                logging.info(f"Execution {execution_arn} is still running, waiting")
                 sleep(3)
             else:
-                self.fail(f"Execution {self.execution_arn} failed with status {status}")
+                self.fail(f"Execution {execution_arn} failed with status {status}")
 
-    def _retrieve_transaction_table_input(self):
+    def _retrieve_transaction_table_input(self, execution_arn: str) -> Dict:
         """
         Make sure "Record Transaction" step was reached, and record the input of it.
         """
-        response = self.client.get_execution_history(executionArn=self.execution_arn)
+        response = self.client.get_execution_history(executionArn=execution_arn)
         events = response["events"]
         record_transaction_entered_events = [
             event
@@ -128,11 +127,11 @@ class TestStateMachine(TestCase):
             record_transaction_entered_events,
             "Cannot find Record Transaction TaskStateEntered event",
         )
-        self.transaction_table_input = json.loads(
-            record_transaction_entered_events[0]["stateEnteredEventDetails"]["input"]
-        )
+        transaction_table_input = json.loads(record_transaction_entered_events[0]["stateEnteredEventDetails"]["input"])
+        self.inserted_record_id = transaction_table_input["id"]  # save this ID for cleaning up
+        return transaction_table_input
 
-    def _verify_transaction_record_written(self):
+    def _verify_transaction_record_written(self, transaction_table_input: Dict):
         """
         Use the input recorded in _retrieve_transaction_table_input() to
         verify whether the record has been written to dynamodb
@@ -141,22 +140,22 @@ class TestStateMachine(TestCase):
         response = client.get_item(
             Key={
                 "Id": {
-                    "S": self.transaction_table_input["id"],
+                    "S": transaction_table_input["id"],
                 },
             },
             TableName=self.transaction_table_name,
         )
         self.assertTrue(
             "Item" in response,
-            f'Cannot find transaction record with id {self.transaction_table_input["id"]}',
+            f'Cannot find transaction record with id {transaction_table_input["id"]}',
         )
         item = response["Item"]
-        self.assertDictEqual(item["Quantity"], {"N": self.transaction_table_input["qty"]})
-        self.assertDictEqual(item["Price"], {"N": self.transaction_table_input["price"]})
-        self.assertDictEqual(item["Type"], {"S": self.transaction_table_input["type"]})
+        self.assertDictEqual(item["Quantity"], {"N": transaction_table_input["qty"]})
+        self.assertDictEqual(item["Price"], {"N": transaction_table_input["price"]})
+        self.assertDictEqual(item["Type"], {"S": transaction_table_input["type"]})
 
     def test_state_machine(self):
-        self._start_execute()
-        self._wait_execution()
-        self._retrieve_transaction_table_input()
-        self._verify_transaction_record_written()
+        execution_arn = self._start_execute()
+        self._wait_execution(execution_arn)
+        transaction_table_input = self._retrieve_transaction_table_input(execution_arn)
+        self._verify_transaction_record_written(transaction_table_input)
