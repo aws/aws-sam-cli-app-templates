@@ -5,6 +5,10 @@ const AWS = require("aws-sdk");
 const https = require("https");
 const expect = chai.expect;
 
+/**
+ * Get stack name from environment variable AWS_SAM_STACK_NAME.
+ * throw exception if AWS_SAM_STACK_NAME is not set.
+ */
 const getStackName = () => {
   const stackName = process.env["AWS_SAM_STACK_NAME"];
   if (!stackName) {
@@ -24,7 +28,7 @@ describe("Test API Gateway", function () {
   let apiEndpoint;
 
   /**
-   * Based on the provided env variable AWS_SAM_STACK_NAME,
+   * Based on the provided stack name,
    * here we use cloudformation API to find out what the HelloWorldApi URL is
    */
   before(async () => {

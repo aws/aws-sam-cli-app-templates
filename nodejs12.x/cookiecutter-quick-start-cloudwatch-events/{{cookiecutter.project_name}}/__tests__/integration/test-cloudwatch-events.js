@@ -4,6 +4,10 @@ const uuid = require("uuid");
 const sleep = (secs) =>
   new Promise((resolve) => setTimeout(resolve, 1000 * secs));
 
+/**
+ * Get stack name from environment variable AWS_SAM_STACK_NAME and make an API call to verify the stack exists.
+ * throw exception if AWS_SAM_STACK_NAME is not set.
+ */
 const getAndVerifyStackName = async () => {
   const stackName = process.env["AWS_SAM_STACK_NAME"];
   if (!stackName) {
@@ -39,7 +43,7 @@ describe("Test Cloudwatch Event", function () {
   let functionName;
 
   /**
-   * Based on the provided env variable AWS_SAM_STACK_NAME,
+   * Based on the provided stack name,
    * here we use cloudformation API to find out what the ScheduledEventLogger ARN is
    */
   beforeAll(async () => {
