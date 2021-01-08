@@ -101,10 +101,10 @@ Tests are defined in the `hello-world/tests` folder in this project. Use NPM to 
 
 ```bash
 {{ cookiecutter.project_name }}$ cd hello-world
-# unit test
 hello-world$ npm install
+# Unit test
 hello-world$ npm run test
-# integration test, requiring deploying the stack first.
+# Integration test, requiring deploying the stack first.
 # Create the env variable AWS_SAM_STACK_NAME with the name of the stack we are testing
 hello-world$ AWS_SAM_STACK_NAME=<stack-name> npm run integ-test
 ```

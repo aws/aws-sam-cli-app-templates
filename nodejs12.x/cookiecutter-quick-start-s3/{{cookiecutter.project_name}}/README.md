@@ -126,8 +126,9 @@ Tests are defined in the `__tests__` folder in this project. Use `npm` to instal
 
 ```bash
 my-application$ npm install
+# Unit test
 my-application$ npm run test
-# integration test, requiring deploying the stack first.
+# Integration test, requiring deploying the stack first.
 # Create the env variable AWS_SAM_STACK_NAME with the name of the stack we are testing
 my-application$ AWS_SAM_STACK_NAME=<stack-name> npm run integ-test
 ```
