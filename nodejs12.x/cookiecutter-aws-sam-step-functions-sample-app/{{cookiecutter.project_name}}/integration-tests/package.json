@@ -1,0 +1,18 @@
+{
+  "name": "integration_test",
+  "version": "1.0.0",
+  "description": "Integration test for NodeJS step function template",
+  "repository": "TODO",
+  "author": "SAM CLI",
+  "license": "MIT",
+  "dependencies": {},
+  "scripts": {
+    "integ-test": "mocha . --timeout 30000"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.815.0",
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1",
+    "uuid": "^8.3.2"
+  }
+}

@@ -115,13 +115,17 @@ my-application$ sam logs -n SNSPayloadLogger --stack-name sam-app --tail
 
 You can find more information and examples about filtering Lambda function logs in the [AWS SAM CLI documentation](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-logging.html).
 
-## Unit tests
+## Tests
 
-Tests are defined in the `__tests__` folder in this project. Use `npm` to install the [Jest test framework](https://jestjs.io/) and run unit tests.
+Tests are defined in the `__tests__` folder in this project. Use `npm` to install the [Jest test framework](https://jestjs.io/) and run tests.
 
 ```bash
 my-application$ npm install
+# Unit test
 my-application$ npm run test
+# Integration test, requiring deploying the stack first.
+# Create the env variable AWS_SAM_STACK_NAME with the name of the stack we are testing
+my-application$ AWS_SAM_STACK_NAME=<stack-name> npm run integ-test
 ```
 
 ## Cleanup
