@@ -75,12 +75,23 @@ You can find more information and examples about filtering Lambda function logs 
 
 ## Unit tests
 
-Tests are defined in the `functions/*/tests` folder in this project. Use NPM to install the [Mocha test framework](https://mochajs.org/) and run unit tests.
+Unit tests are defined in the `functions/*/tests` folder in this project. Use NPM to install the [Mocha test framework](https://mochajs.org/) and run unit tests.
 
 ```bash
 {{ cookiecutter.project_name }}$ cd functions/stock-checker
 stock-checker$ npm install
 stock-checker$ npm run test
+```
+
+## Integration tests
+
+Integration tests for the whole stack are defined in `integration-tests` folder. 
+Use NPM to install the [Mocha test framework](https://mochajs.org/) and run integration tests
+after deploying the stack.
+
+```base
+# Create the env variable AWS_SAM_STACK_NAME with the name of the stack we are testing
+integration-tests$ AWS_SAM_STACK_NAME=<stack-name> npm run integ-test
 ```
 
 ## Cleanup

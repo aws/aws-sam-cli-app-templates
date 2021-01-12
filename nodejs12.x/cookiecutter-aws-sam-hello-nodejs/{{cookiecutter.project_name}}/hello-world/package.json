@@ -10,9 +10,11 @@
     "axios": "^0.21.1"
   },
   "scripts": {
-    "test": "mocha tests/unit/"
+    "test": "mocha tests/unit/",
+    "integ-test": "mocha tests/integration/"
   },
   "devDependencies": {
+    "aws-sdk": "^2.815.0",
     "chai": "^4.2.0",
     "mocha": "^8.2.1"
   }
