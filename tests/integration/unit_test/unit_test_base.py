@@ -101,7 +101,7 @@ class UnitTestBase:
         def _test_unit_tests(self, code_directory: str):
             env = os.environ.copy()
             env["PYTHONPATH"] = "lib:."
-            cmdlist = [self.python_executable, "-m", "pytest", "tests"]
+            cmdlist = [self.python_executable, "-m", "pytest", "tests/unit"]
             LOG.info(cmdlist)
             result = run_command(cmdlist, self.cwd, env=env)
             self.assertNotIn("ERRORS", result.stdout)

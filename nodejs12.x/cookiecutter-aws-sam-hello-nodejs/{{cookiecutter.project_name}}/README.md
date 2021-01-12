@@ -95,14 +95,18 @@ To simplify troubleshooting, SAM CLI has a command called `sam logs`. `sam logs`
 
 You can find more information and examples about filtering Lambda function logs in the [SAM CLI Documentation](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-logging.html).
 
-## Unit tests
+## Tests
 
-Tests are defined in the `hello-world/tests` folder in this project. Use NPM to install the [Mocha test framework](https://mochajs.org/) and run unit tests.
+Tests are defined in the `hello-world/tests` folder in this project. Use NPM to install the [Mocha test framework](https://mochajs.org/) and run tests.
 
 ```bash
 {{ cookiecutter.project_name }}$ cd hello-world
 hello-world$ npm install
+# Unit test
 hello-world$ npm run test
+# Integration test, requiring deploying the stack first.
+# Create the env variable AWS_SAM_STACK_NAME with the name of the stack we are testing
+hello-world$ AWS_SAM_STACK_NAME=<stack-name> npm run integ-test
 ```
 
 ## Cleanup

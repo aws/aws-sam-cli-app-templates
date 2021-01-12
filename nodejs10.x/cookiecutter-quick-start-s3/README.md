@@ -10,7 +10,7 @@ A cookiecutter template to create a NodeJS S3 Quick Start Application using [Ser
 
 Generate a boilerplate template in your current project directory using the following syntax:
 
-* **NodeJS 10**: `sam init --runtime nodejs10.x --application-template quick-start-s3 --name s3-app`
+* **NodeJS 10**: `sam init --runtime nodejs10.x --app-template quick-start-s3 --name s3-app`
 
 > **NOTE**: ``--name`` allows you to specify a different project folder name
 

@@ -18,6 +18,6 @@ describe('Test for sns-payload-logger', function () {
         await snsPayloadLogger.snsPayloadLoggerHandler(payload, null)
 
         // Verify that console.info has been called with the expected payload
-        expect(console.info).toHaveBeenCalledWith(payload)
+        expect(console.info).toHaveBeenCalledWith(JSON.stringify(payload))
     });
 });
