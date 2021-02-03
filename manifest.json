@@ -228,6 +228,64 @@
         "packageType": "Zip"
       }
     ],
+    "nodejs14.x": [
+      {
+        "directory": "nodejs14.x/cookiecutter-aws-sam-hello-nodejs",
+        "displayName": "Hello World Example",
+        "dependencyManager": "npm",
+        "appTemplate": "hello-world",
+        "packageType": "Zip"
+      },
+      {
+        "directory": "nodejs14.x/cookiecutter-aws-sam-step-functions-sample-app",
+        "displayName": "Step Functions Sample App (Stock Trader)",
+        "dependencyManager": "npm",
+        "appTemplate": "step-functions-sample-app",
+        "packageType": "Zip"
+      },
+      {
+        "directory": "nodejs14.x/cookiecutter-quick-start-from-scratch",
+        "displayName": "Quick Start: From Scratch",
+        "dependencyManager": "npm",
+        "appTemplate": "quick-start-from-scratch",
+        "packageType": "Zip"
+      },
+      {
+        "directory": "nodejs14.x/cookiecutter-quick-start-cloudwatch-events",
+        "displayName": "Quick Start: Scheduled Events",
+        "dependencyManager": "npm",
+        "appTemplate": "quick-start-cloudwatch-events",
+        "packageType": "Zip"
+      },
+      {
+        "directory": "nodejs14.x/cookiecutter-quick-start-s3",
+        "displayName": "Quick Start: S3",
+        "dependencyManager": "npm",
+        "appTemplate": "quick-start-s3",
+        "packageType": "Zip"
+      },
+      {
+        "directory": "nodejs14.x/cookiecutter-quick-start-sns",
+        "displayName": "Quick Start: SNS",
+        "dependencyManager": "npm",
+        "appTemplate": "quick-start-sns",
+        "packageType": "Zip"
+      },
+      {
+        "directory": "nodejs14.x/cookiecutter-quick-start-sqs",
+        "displayName": "Quick Start: SQS",
+        "dependencyManager": "npm",
+        "appTemplate": "quick-start-sqs",
+        "packageType": "Zip"
+      },
+      {
+        "directory": "nodejs14.x/cookiecutter-quick-start-web",
+        "displayName": "Quick Start: Web Backend",
+        "dependencyManager": "npm",
+        "appTemplate": "quick-start-web",
+        "packageType": "Zip"
+      }
+    ],
     "nodejs12.x": [
       {
         "directory": "nodejs12.x/cookiecutter-aws-sam-hello-nodejs",
@@ -490,6 +548,15 @@
         "dependencyManager": "bundler",
         "appTemplate": "step-functions-sample-app",
         "packageType": "Zip"
+      }
+    ],
+    "amazon/nodejs14.x-base": [
+      {
+        "directory": "nodejs14.x-image/cookiecutter-aws-sam-hello-nodejs-lambda-image",
+        "displayName": "Hello World Image Example",
+        "dependencyManager": "npm",
+        "appTemplate": "hello-world-lambda-image",
+        "packageType": "Image"
       }
     ],
     "amazon/nodejs12.x-base": [
