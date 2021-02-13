@@ -14,7 +14,7 @@ phases:
       - make install
       - cd ..
       # install pip
-      - curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+      - curl https://bootstrap.pypa.io/2.7/get-pip.py -o get-pip.py
       - python2.7 get-pip.py
       # install requirements
       - python3 -m pip install --upgrade pip aws-sam-cli
