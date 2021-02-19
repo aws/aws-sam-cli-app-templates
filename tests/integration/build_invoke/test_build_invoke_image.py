@@ -7,6 +7,10 @@ For each template, it will test the following sam commands:
 3. (if there are event jsons), for each event json, check `sam local invoke` response is a valid json
 """
 
+class BuildInvoke_image_nodejs14_x_cookiecutter_aws_sam_hello_nodejs_lambda_image(
+    BuildInvokeBase.SimpleHelloWorldBuildInvokeBase
+):
+    directory = "nodejs14.x-image/cookiecutter-aws-sam-hello-nodejs-lambda-image"
 
 class BuildInvoke_image_nodejs12_x_cookiecutter_aws_sam_hello_nodejs_lambda_image(
     BuildInvokeBase.SimpleHelloWorldBuildInvokeBase
