@@ -62,7 +62,7 @@ The SAM CLI can also emulate your application's API. Use the `sam local start-ap
 
 ```bash
 {{ cookiecutter.project_name }}$ sam local start-api
-{{ cookiecutter.project_name }}$ curl http://localhost:3000/
+{{ cookiecutter.project_name }}$ curl http://localhost:3000{{ cookiecutter.api_path }}
 ```
 
 The SAM CLI reads the application template to determine the API's routes and the functions that they invoke. The `Events` property on each function's definition includes the route and method for each path.
@@ -72,7 +72,7 @@ The SAM CLI reads the application template to determine the API's routes and the
         Inference:
           Type: Api
           Properties:
-            Path: classify_digit
+            Path: {{ cookiecutter.api_path }}
             Method: post
 ```
 
