@@ -1,10 +1,10 @@
-# {{ cookiecutter.project_name }}
+# digit_classifier
 
-This project contains source code and supporting files for a serverless application for classifying handwritten digits using a Machine Learning model in [scikit-learn](https://scikit-learn.org/). It includes the following files and folders:
+This project contains source code and supporting files for a serverless application for classifying handwritten digits using a Machine Learning model in [PyTorch](https://pytorch.org/). It includes the following files and folders:
 
 - app/app.py - Code for the application's Lambda function including the code for ML inferencing.
 - app/Dockerfile - The Dockerfile to build the container image.
-- app/model - A simple scikit-learn logistic regression model for classifying handwritten digits trained against the MNIST dataset.
+- app/model - A simple PyTorch model for classifying handwritten digits trained against the MNIST dataset.
 - app/requirements.txt - The pip requirements to be installed during the container build.
 - events - Invocation events that you can use to invoke the function.
 - template.yaml - A template that defines the application's AWS resources.
@@ -45,7 +45,7 @@ You can find your API Gateway Endpoint URL in the output values displayed after 
 Build your application with the `sam build` command.
 
 ```bash
-{{ cookiecutter.project_name }}$ sam build
+digit_classifier$ sam build
 ```
 
 The SAM CLI builds a docker image from a Dockerfile and then installs dependencies defined in `app/requirements.txt` inside the docker image. The processed template file is saved in the `.aws-sam/build` folder.
@@ -55,14 +55,14 @@ Test a single function by invoking it directly with a test event. An event is a 
 Run functions locally and invoke them with the `sam local invoke` command.
 
 ```bash
-{{ cookiecutter.project_name }}$ sam local invoke InferenceFunction --event events/event.json
+digit_classifier$ sam local invoke InferenceFunction --event events/event.json
 ```
 
 The SAM CLI can also emulate your application's API. Use the `sam local start-api` to run the API locally on port 3000.
 
 ```bash
-{{ cookiecutter.project_name }}$ sam local start-api
-{{ cookiecutter.project_name }}$ curl http://localhost:3000{{ cookiecutter.api_path }}
+digit_classifier$ sam local start-api
+digit_classifier$ curl http://localhost:3000/classify_digit
 ```
 
 The SAM CLI reads the application template to determine the API's routes and the functions that they invoke. The `Events` property on each function's definition includes the route and method for each path.
@@ -72,7 +72,7 @@ The SAM CLI reads the application template to determine the API's routes and the
         Inference:
           Type: Api
           Properties:
-            Path: {{ cookiecutter.api_path }}
+            Path: /classify_digit
             Method: post
 ```
 
@@ -86,7 +86,7 @@ To simplify troubleshooting, SAM CLI has a command called `sam logs`. `sam logs`
 `NOTE`: This command works for all AWS Lambda functions; not just the ones you deploy using SAM.
 
 ```bash
-{{ cookiecutter.project_name }}$ sam logs -n InferenceFunction --stack-name {{ cookiecutter.project_name }} --tail
+digit_classifier$ sam logs -n InferenceFunction --stack-name digit_classifier --tail
 ```
 
 You can find more information and examples about filtering Lambda function logs in the [SAM CLI Documentation](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-logging.html).
@@ -96,7 +96,7 @@ You can find more information and examples about filtering Lambda function logs 
 To delete the sample application that you created, use the AWS CLI. Assuming you used your project name for the stack name, you can run the following:
 
 ```bash
-aws cloudformation delete-stack --stack-name {{ cookiecutter.project_name }}
+aws cloudformation delete-stack --stack-name digit_classifier
 ```
 
 ## Resources
