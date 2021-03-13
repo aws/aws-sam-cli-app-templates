@@ -16,7 +16,7 @@
   {%- else %}
   "framework" : "netcoreapp2.1",
   {%- endif %}
-  "function-runtime":"{{ cookiecutter.runtime }}",
+  "function-runtime":"dotnetcore2.1",
   "function-memory-size" : 256,
   "function-timeout" : 30,
   "function-handler" : "HelloWorld::HelloWorld.Function::FunctionHandler"

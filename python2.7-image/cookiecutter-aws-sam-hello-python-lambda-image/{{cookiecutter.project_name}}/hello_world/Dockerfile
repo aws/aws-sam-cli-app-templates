@@ -4,11 +4,11 @@ COPY app.py requirements.txt ./
 
 RUN curl https://bootstrap.pypa.io/2.7/get-pip.py -o get-pip.py
 
-RUN {{cookiecutter.runtime}} get-pip.py
+RUN python2.7 get-pip.py
 
 RUN rm -rf get-pip.y
 
-RUN {{cookiecutter.runtime}} -m pip install -r requirements.txt -t .
+RUN python2.7 -m pip install -r requirements.txt -t .
 
 # Command can be overwritten by providing a different command in the template directly.
 CMD ["app.lambda_handler"]

@@ -22,7 +22,7 @@ Resources:
             Path: /hello
             Method: get
     Metadata:
-      DockerTag: {{cookiecutter.runtime}}-v1
+      DockerTag: python3.7-v1
       DockerContext: ./hello_world
       Dockerfile: Dockerfile
 
