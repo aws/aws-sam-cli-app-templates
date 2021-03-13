@@ -16,7 +16,7 @@ Resources:
     Properties:
       CodeUri: {{ cookiecutter.function_name }}
       Handler: hello_world/app.lambda_handler
-      Runtime: {{ cookiecutter.runtime }}
+      Runtime: python3.7
       Events:
         HelloWorld:
           Type: CloudWatchEvent # More info about CloudWatchEvent Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#cloudwatchevent

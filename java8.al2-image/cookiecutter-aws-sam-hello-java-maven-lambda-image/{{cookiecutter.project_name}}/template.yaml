@@ -22,7 +22,7 @@ Resources:
             Path: /hello
             Method: get
     Metadata:
-      DockerTag: {{cookiecutter.runtime}}-maven-v1
+      DockerTag: java8.al2-maven-v1
       DockerContext: ./HelloWorldFunction
       Dockerfile: Dockerfile
 

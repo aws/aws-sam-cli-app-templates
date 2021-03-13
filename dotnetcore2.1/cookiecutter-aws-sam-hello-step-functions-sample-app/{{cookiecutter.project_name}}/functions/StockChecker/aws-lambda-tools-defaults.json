@@ -12,7 +12,7 @@
   "region" : "",
   "configuration": "Release",
   "framework" : "netcoreapp2.1",
-  "function-runtime":"{{ cookiecutter.runtime }}",
+  "function-runtime":"dotnetcore2.1",
   "function-memory-size" : 256,
   "function-timeout" : 30,
   "function-handler" : "StockChecker::StockChecker.Function::FunctionHandler"

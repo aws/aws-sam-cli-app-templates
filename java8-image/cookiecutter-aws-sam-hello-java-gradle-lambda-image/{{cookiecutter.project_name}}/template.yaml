@@ -22,7 +22,7 @@ Resources:
             Path: /hello
             Method: get
     Metadata:
-      DockerTag: {{cookiecutter.runtime}}-gradle-v1
+      DockerTag: java8-gradle-v1
       DockerContext: ./HelloWorldFunction
       Dockerfile: Dockerfile
 

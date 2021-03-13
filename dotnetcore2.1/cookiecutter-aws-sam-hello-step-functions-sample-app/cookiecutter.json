@@ -1,4 +1,3 @@
 {
-    "project_name": "Name of the project",
-    "runtime": "dotnetcore2.1"
+    "project_name": "Name of the project"
 }
