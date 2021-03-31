@@ -24,6 +24,7 @@ Resources:
     Metadata:
       BuildMethod: makefile
     Properties:
+      CodeUri: app/
       Handler: dist/src/handlers/get-by-id.handler
       Runtime: nodejs12.x
       MemorySize: 128
@@ -52,6 +53,7 @@ Resources:
     Metadata:
       BuildMethod: makefile
     Properties:
+      CodeUri: app/
       Handler: dist/src/handlers/post.handler
       Runtime: nodejs12.x
       MemorySize: 128
