@@ -19,10 +19,9 @@ export class PostApp implements LambdaApp {
     }
     
     async run(event: ApiGatewayEvent): Promise<ApiGatewayResponse> {
-        
+        let todo: TodoItem
         try {
-            const todo: TodoItem = JSON.parse(event.body);
-            
+            todo = JSON.parse(event.body);
             if (!todo.title) {
                 console.log('Body is missing the title');
                 return { statusCode: 422 };
@@ -32,10 +31,14 @@ export class PostApp implements LambdaApp {
                 console.log('Body is missing the id');
                 return { statusCode: 422 };
             }
-            
+        } catch (err) {
+            console.log('Failed to parse event body as JSON');
+            return { statusCode: 400 };
+        }
+
+        try {
             await this.repository.putTodo(todo, this.table);
             return { statusCode: 201, body: JSON.stringify(todo) };
-            
         } catch(err) {
             console.log(err.message);
             return { statusCode: 500 };
