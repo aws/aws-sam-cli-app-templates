@@ -337,6 +337,13 @@
         "packageType": "Zip"
       },
       {
+        "directory": "nodejs12.x/cookiecutter-typescript-app-template",
+        "displayName": "Quick Start: App Backend using TypeScript",
+        "dependencyManager": "npm",
+        "appTemplate": "quick-start-typescript-app",
+        "packageType": "Zip"
+      },
+      {
         "directory": "nodejs12.x/cookiecutter-quick-start-web",
         "displayName": "Quick Start: Web Backend",
         "dependencyManager": "npm",

@@ -1,0 +1,5 @@
+# don't ever lint node_modules
+node_modules
+
+# don't lint our output build
+dist

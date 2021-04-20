@@ -37,3 +37,7 @@ class UnitTest_nodejs12_x_cookiecutter_quick_start_sqs(UnitTestBase.NodejsUnitTe
 
 class UnitTest_nodejs12_x_cookiecutter_quick_start_web(UnitTestBase.NodejsUnitTestBase):
     directory = "nodejs12.x/cookiecutter-quick-start-web"
+
+class UnitTest_nodejs12_x_cookiecutter_typescript_app_template(UnitTestBase.NodejsUnitTestBase):
+    directory = "nodejs12.x/cookiecutter-typescript-app-template"
+    code_directories = [ "app" ]
