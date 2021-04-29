@@ -35,7 +35,7 @@ describe('PostApp instance', () => {
     });
     
     describe('run', () => {
-        it('invalid json body returns 500 status code', async () => {
+        it('invalid json body returns 400 status code', async () => {
             const event = new ApiGatewayEventMock();
             event.body = '{""}';
             
@@ -43,7 +43,7 @@ describe('PostApp instance', () => {
             const response: ApiGatewayResponse = await app.run(event);
             
             expect(response).to.have.property('statusCode');
-            expect(response.statusCode).to.equal(500);
+            expect(response.statusCode).to.equal(400);
         });
         
         it('invalid todo "title" returns 422 status code', async () => {
