@@ -32,7 +32,7 @@ export class PostApp implements LambdaApp {
                 return { statusCode: 422 };
             }
         } catch (err) {
-            console.log('Failed to parse event body as JSON');
+            console.log('Event body could not be parsed as JSON');
             return { statusCode: 400 };
         }
 

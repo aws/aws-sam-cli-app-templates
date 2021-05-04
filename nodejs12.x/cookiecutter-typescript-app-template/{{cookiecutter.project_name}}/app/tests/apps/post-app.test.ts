@@ -100,7 +100,7 @@ describe('PostApp instance', () => {
             mock.verify(instance => instance.putTodo(It.IsAny(), tableName), Times.Once());
         });
         
-        it('repository failures returns 500 status code', async () => {
+        it('repository issue returns 500 status code', async () => {
             // Stub our TodoRepository so it simulates a failed operation from the
             // underlying data store.
             const mock = new Mock<TodoRepository>()
