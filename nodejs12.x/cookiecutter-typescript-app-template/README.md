@@ -10,7 +10,7 @@ A cookiecutter template to create a TypeScript Application using [Serverless App
 
 Generate a boilerplate template in your current project directory using the following syntax:
 
-* **NodeJS 12**: `sam init --runtime nodejs12.x --application-template typescript-app-template`
+* **NodeJS 12**: `sam init --runtime nodejs12.x --app-template quick-start-typescript-app`
 
 > **NOTE**: ``--name`` allows you to specify a different project folder name
 
