@@ -1,4 +1,4 @@
-FROM openjdk:8 as build-image
+FROM public.ecr.aws/lambda/java:8.al2 as build-image
 
 ARG SCRATCH_DIR=/var/task/build
 WORKDIR /var/task
