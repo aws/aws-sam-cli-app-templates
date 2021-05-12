@@ -1,7 +1,7 @@
-FROM golang:1.14 as build-image
+FROM public.ecr.aws/bitnami/golang:1.16 as build-image
 
 WORKDIR /go/src
-COPY go.mod main.go ./
+COPY go.mod go.sum main.go ./
 
 RUN go build -o ../bin
 
