@@ -1,5 +1,7 @@
 FROM public.ecr.aws/lambda/python:3.8
 
+RUN yum install -y libgomp
+
 COPY app.py requirements.txt ./
 COPY model /opt/ml/model
 

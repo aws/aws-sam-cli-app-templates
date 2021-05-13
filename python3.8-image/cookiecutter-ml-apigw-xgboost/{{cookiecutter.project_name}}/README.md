@@ -8,8 +8,11 @@ This project contains source code and supporting files for a serverless applicat
 - app/requirements.txt - The pip requirements to be installed during the container build.
 - events - Invocation events that you can use to invoke the function.
 - template.yaml - A template that defines the application's AWS resources.
+- training.ipynb - A jupyter notebook to show the training process for the sample model at `app/model`.
 
 The application uses several AWS resources, including Lambda functions and an API Gateway API. These resources are defined in the `template.yaml` file in this project. You can update the template to add AWS resources through the same deployment process that updates your application code.
+
+While this template does not use any auth, you will almost certainly want to use auth in order to productionize. Please follow [these instructions](https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#function-auth-object) to set up auth with SAM.
 
 ## Deploy the sample application
 
