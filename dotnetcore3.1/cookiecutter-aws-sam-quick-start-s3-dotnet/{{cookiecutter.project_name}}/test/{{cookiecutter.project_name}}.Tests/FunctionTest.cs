@@ -14,9 +14,9 @@ using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
 
-using S3JsonLogger;
+using {{cookiecutter.project_name}};
 
-namespace S3JsonLogger.Tests
+namespace {{cookiecutter.project_name}}.Tests
 {
     public class FunctionTest
     {

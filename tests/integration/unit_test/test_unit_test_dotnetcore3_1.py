@@ -13,5 +13,5 @@ class UnitTest_dotnetcore3_1_cookiecutter_aws_sam_hello_step_functions_sample_ap
 
 class UnitTest_dotnetcore3_1_cookiecutter_aws_sam_quick_start_s3_dotnet(UnitTestBase.DotNetCoreUnitTestBase):
     directory = "dotnetcore3.1/cookiecutter-aws-sam-quick-start-s3-dotnet"
-    code_directories = ["test/S3JsonLogger.Tests"]
+    code_directories = ["test/project.Tests"]
     
