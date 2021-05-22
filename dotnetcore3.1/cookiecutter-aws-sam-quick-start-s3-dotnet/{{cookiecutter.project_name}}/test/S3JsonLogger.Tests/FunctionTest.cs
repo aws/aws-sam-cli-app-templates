@@ -14,9 +14,9 @@ using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
 
-using {{cookiecutter.project_name}};
+using S3JsonLogger;
 
-namespace {{cookiecutter.project_name}}.Tests
+namespace S3JsonLogger.Tests
 {
     public class FunctionTest
     {
@@ -26,7 +26,7 @@ namespace {{cookiecutter.project_name}}.Tests
             IAmazonS3 s3Client = new AmazonS3Client(RegionEndpoint.USWest2);
             var context = new TestLambdaContext();
 
-            var bucketName = "lambda-{{cookiecutter.project_name}}-".ToLower() + DateTime.Now.Ticks;
+            var bucketName = "lambda-S3JsonLogger-".ToLower() + DateTime.Now.Ticks;
             var key = "text.txt";
 
             // Create a bucket an object to setup a test data.

@@ -131,7 +131,7 @@ You can find more information and examples about filtering Lambda function logs 
 Tests are defined in the `test` folder in this project.
 
 ```bash
-{{ cookiecutter.project_name }}$ dotnet test test/{{ cookiecutter.project_name }}.Tests/{{ cookiecutter.project_name }}.Tests.csproj 
+{{ cookiecutter.project_name }}$ dotnet test test/S3JsonLogger.Tests/S3JsonLogger.Tests.csproj 
 ```
 
 ## Cleanup
