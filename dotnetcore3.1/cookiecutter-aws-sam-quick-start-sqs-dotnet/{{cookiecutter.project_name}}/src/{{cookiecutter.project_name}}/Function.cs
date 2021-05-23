@@ -32,12 +32,14 @@ namespace {{cookiecutter.project_name}}
         /// <param name="evnt"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public async Task FunctionHandler(SQSEvent evnt, ILambdaContext context)
+        public async Task<string> FunctionHandler(SQSEvent evnt, ILambdaContext context)
         {
             foreach(var message in evnt.Records)
             {
                 await ProcessMessageAsync(message, context);
             }
+            
+            return "done";
         }
 
         private async Task ProcessMessageAsync(SQSEvent.SQSMessage message, ILambdaContext context)
