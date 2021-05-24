@@ -29,6 +29,13 @@
         "dependencyManager": "cli-package",
         "appTemplate": "step-functions-sample-app",
         "packageType": "Zip"
+      },
+      {
+        "directory": "nodejs14.x/cookiecutter-aws-sam-quick-start-sqs-dotnet",
+        "displayName": "Quick Start: SQS",
+        "dependencyManager": "cli-package",
+        "appTemplate": "quick-start-sqs",
+        "packageType": "Zip"
       }
     ],
     "go1.x": [
