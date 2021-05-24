@@ -120,7 +120,7 @@ You can find more information and examples about filtering Lambda function logs 
 
 ## Unit tests
 
-Tests are defined in the `__tests__` folder in this project. Use `npm` to install the [Jest test framework](https://jestjs.io/) and run unit tests.
+Tests for the Lambda functions are defined in the `test` folder in this project.
 
 ```bash
 {{ cookiecutter.project_name }}$ dotnet test test/{{ cookiecutter.project_name }}.Tests/{{ cookiecutter.project_name }}.Tests.csproj 
