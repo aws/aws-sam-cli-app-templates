@@ -31,7 +31,7 @@
         "packageType": "Zip"
       },
       {
-        "directory": "nodejs14.x/cookiecutter-aws-sam-quick-start-sqs-dotnet",
+        "directory": "dotnetcore3.1/cookiecutter-aws-sam-quick-start-sqs-dotnet",
         "displayName": "Quick Start: SQS",
         "dependencyManager": "cli-package",
         "appTemplate": "quick-start-sqs",
