@@ -8,13 +8,13 @@ export class AwsSamCliCdkHelloWorldStack extends cdk.Stack {
     super(scope, id, props);
 
     // The code that defines your stack goes here
-    const backend = new lambda.Function(this, 'lambda-function', {
+    const backend = new lambda.Function(this, 'hello-world-lambda-function', {
       runtime: lambda.Runtime.PYTHON_3_8,
       handler: 'app.lambda_handler',
       code: lambda.Code.fromAsset(path.join(__dirname, '..', 'hello_world')),
     });
     
-    const api = new apigateway.LambdaRestApi(this, 'myapi', {
+    const api = new apigateway.LambdaRestApi(this, 'hello-world-api', {
       handler: backend,
       proxy: false
     });

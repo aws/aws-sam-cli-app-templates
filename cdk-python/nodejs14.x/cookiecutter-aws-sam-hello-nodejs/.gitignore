@@ -60,7 +60,7 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
+{{cookiecutter.project_name}}/lib/
 lib64/
 parts/
 sdist/
