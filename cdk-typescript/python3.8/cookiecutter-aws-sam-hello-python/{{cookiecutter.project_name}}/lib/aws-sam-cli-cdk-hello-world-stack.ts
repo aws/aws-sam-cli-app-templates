@@ -9,8 +9,8 @@ export class AwsSamCliCdkHelloWorldStack extends cdk.Stack {
 
     // The code that defines your stack goes here
     const backend = new lambda.Function(this, 'lambda-function', {
-      runtime: lambda.Runtime.NODEJS_14_X,
-      handler: 'app.lambdaHandler',
+      runtime: lambda.Runtime.PYTHON_3_8,
+      handler: 'app.lambda_handler',
       code: lambda.Code.fromAsset(path.join(__dirname, '..', 'hello_world')),
     });
     
