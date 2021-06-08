@@ -1,0 +1,5 @@
+{
+  "project_name": "digit_classifier",
+  "tensorflow_version": "2.4.1",
+  "api_path": "/classify_digit"
+}
