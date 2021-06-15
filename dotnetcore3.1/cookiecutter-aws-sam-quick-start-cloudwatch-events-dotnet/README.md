@@ -1,6 +1,6 @@
 # Cookiecutter .NET Core 3.1 CloudWatch Events Quick Start Application
 
-A cookiecutter template to create a NodeJS CloudWatch Events Quick Start Application using [Serverless Application Model (SAM)](https://github.com/awslabs/serverless-application-model).
+A cookiecutter template to create a .NET Core CloudWatch Events Quick Start Application using [Serverless Application Model (SAM)](https://github.com/awslabs/serverless-application-model).
 
 ## Requirements
 
