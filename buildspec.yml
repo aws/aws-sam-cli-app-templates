@@ -38,9 +38,8 @@ batch:
     - identifier: UnitTestJava8
       buildspec: buildspecs/buildspec-unittest-java8.yml
       env:
-        # openjdk8 is only available in image aws/codebuild/standard:3.0
-        # https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-available.html
-        image: aws/codebuild/standard:3.0
+        # We want to test Java 8 non-al2, so here standard is used instead of default (AL2).
+        image: aws/codebuild/standard:5.0
     - identifier: UnitTestJava8al2
       buildspec: buildspecs/buildspec-unittest-java8-al2.yml
     - identifier: UnitTestJava11
