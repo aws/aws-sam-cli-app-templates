@@ -1,0 +1,2 @@
+scikit-learn==0.23.2
+pillow==8.0.1
