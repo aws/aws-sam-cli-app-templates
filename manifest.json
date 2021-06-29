@@ -557,6 +557,66 @@
         "packageType": "Zip"
       }
     ],
+    "cdk-python": {
+      "nodejs14.x": [
+        {
+          "directory": "cdk-python/nodejs14.x/cookiecutter-aws-sam-hello-nodejs",
+          "displayName": "Hello World Example",
+          "dependencyManager": "npm",
+          "appTemplate": "hello-world",
+          "packageType": "Zip"
+        }
+      ],
+      "python3.8": [
+        {
+          "directory": "cdk-python/python3.8/cookiecutter-aws-sam-hello-python",
+          "displayName": "Hello World Example",
+          "dependencyManager": "pip",
+          "appTemplate": "hello-world",
+          "packageType": "Zip"
+        }
+      ]
+    },
+    "cdk-javascript": {
+      "nodejs14.x": [
+        {
+          "directory": "cdk-javascript/nodejs14.x/cookiecutter-aws-sam-hello-nodejs",
+          "displayName": "Hello World Example",
+          "dependencyManager": "npm",
+          "appTemplate": "hello-world",
+          "packageType": "Zip"
+        }
+      ],
+      "python3.8": [
+        {
+          "directory": "cdk-javascript/python3.8/cookiecutter-aws-sam-hello-python",
+          "displayName": "Hello World Example",
+          "dependencyManager": "pip",
+          "appTemplate": "hello-world",
+          "packageType": "Zip"
+        }
+      ]
+    },
+    "cdk-typescript": {
+      "nodejs14.x": [
+        {
+          "directory": "cdk-typescript/nodejs14.x/cookiecutter-aws-sam-hello-nodejs",
+          "displayName": "Hello World Example",
+          "dependencyManager": "npm",
+          "appTemplate": "hello-world",
+          "packageType": "Zip"
+        }
+      ],
+      "python3.8": [
+        {
+          "directory": "cdk-typescript/python3.8/cookiecutter-aws-sam-hello-python",
+          "displayName": "Hello World Example",
+          "dependencyManager": "pip",
+          "appTemplate": "hello-world",
+          "packageType": "Zip"
+        }
+      ]
+    },
     "amazon/nodejs14.x-base": [
       {
         "directory": "nodejs14.x-image/cookiecutter-aws-sam-hello-nodejs-lambda-image",
