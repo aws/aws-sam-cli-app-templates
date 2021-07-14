@@ -2,4 +2,4 @@ aws-cdk.core
 aws-cdk.aws_sam
 aws-cdk.aws_lambda
 aws-cdk.aws_apigateway
-aws-cdk.aws_lambda_event_source
+aws-cdk.aws_lambda_event_sources
