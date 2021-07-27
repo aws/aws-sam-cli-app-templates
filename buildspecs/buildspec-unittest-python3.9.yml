@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+
+    commands:
+      - pip install --upgrade pip aws-sam-cli
+      - pip install -r requirements.txt
+      - python3 --version
+
+  post_build:
+    commands:
+      - sam --version
+      - pytest -vvv tests/integration/unit_test/test_unit_test_python3_9.py -n 4
