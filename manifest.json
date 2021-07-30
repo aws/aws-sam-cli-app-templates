@@ -5,14 +5,16 @@
       "displayName": "Hello World Example",
       "dependencyManager": "cli-package",
       "appTemplate": "hello-world",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
     },
     {
       "directory": "dotnetcore2.1/cookiecutter-aws-sam-hello-step-functions-sample-app",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "cli-package",
       "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow"
     }
   ],
   "dotnetcore3.1": [
@@ -21,14 +23,16 @@
       "displayName": "Hello World Example",
       "dependencyManager": "cli-package",
       "appTemplate": "hello-world",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
     },
     {
       "directory": "dotnetcore3.1/cookiecutter-aws-sam-hello-step-functions-sample-app",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "cli-package",
       "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow"
     }
   ],
   "go1.x": [
@@ -37,14 +41,16 @@
       "displayName": "Hello World Example",
       "dependencyManager": "mod",
       "appTemplate": "hello-world",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
     },
     {
       "directory": "go1.x/cookiecutter-aws-sam-hello-step-functions-sample-app",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "mod",
       "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow"
     }
   ],
   "java8": [
@@ -53,28 +59,32 @@
       "displayName": "Hello World Example: Gradle",
       "dependencyManager": "gradle",
       "appTemplate": "hello-world",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
     },
     {
       "directory": "java8/cookiecutter-aws-sam-hello-java-maven",
       "displayName": "Hello World Example: Maven",
       "dependencyManager": "maven",
       "appTemplate": "hello-world",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
     },
     {
       "directory": "java8/cookiecutter-aws-sam-eventbridge-hello-java-gradle",
       "displayName": "EventBridge Hello World: Gradle",
       "dependencyManager": "gradle",
       "appTemplate": "eventBridge-hello-world",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
     },
     {
       "directory": "java8/cookiecutter-aws-sam-eventbridge-hello-java-maven",
       "displayName": "EventBridge Hello World: Maven",
       "dependencyManager": "maven",
       "appTemplate": "eventBridge-hello-world",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
     },
     {
       "directory": "java8/cookiecutter-aws-sam-eventbridge-schema-app-java-gradle",
@@ -82,7 +92,8 @@
       "dependencyManager": "gradle",
       "appTemplate": "eventBridge-schema-app",
       "isDynamicTemplate": "True",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
     },
     {
       "directory": "java8/cookiecutter-aws-sam-eventbridge-schema-app-java-maven",
@@ -90,21 +101,24 @@
       "dependencyManager": "maven",
       "appTemplate": "eventBridge-schema-app",
       "isDynamicTemplate": "True",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
     },
     {
       "directory": "java8/cookiecutter-aws-sam-step-functions-sample-app-gradle",
       "displayName": "Step Functions Sample App (Stock Trader): Gradle",
       "dependencyManager": "gradle",
       "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow"
     },
     {
       "directory": "java8/cookiecutter-aws-sam-step-functions-sample-app-maven",
       "displayName": "Step Functions Sample App (Stock Trader): Maven",
       "dependencyManager": "maven",
       "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow"
     }
   ],
   "java8.al2": [
@@ -113,28 +127,32 @@
       "displayName": "Hello World Example: Gradle",
       "dependencyManager": "gradle",
       "appTemplate": "hello-world",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
     },
     {
       "directory": "java8.al2/cookiecutter-aws-sam-hello-java-maven",
       "displayName": "Hello World Example: Maven",
       "dependencyManager": "maven",
       "appTemplate": "hello-world",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
     },
     {
       "directory": "java8.al2/cookiecutter-aws-sam-eventbridge-hello-java-gradle",
       "displayName": "EventBridge Hello World: Gradle",
       "dependencyManager": "gradle",
       "appTemplate": "eventBridge-hello-world",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
     },
     {
       "directory": "java8.al2/cookiecutter-aws-sam-eventbridge-hello-java-maven",
       "displayName": "EventBridge Hello World: Maven",
       "dependencyManager": "maven",
       "appTemplate": "eventBridge-hello-world",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
     },
     {
       "directory": "java8.al2/cookiecutter-aws-sam-eventbridge-schema-app-java-gradle",
@@ -142,7 +160,8 @@
       "dependencyManager": "gradle",
       "appTemplate": "eventBridge-schema-app",
       "isDynamicTemplate": "True",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
     },
     {
       "directory": "java8.al2/cookiecutter-aws-sam-eventbridge-schema-app-java-maven",
@@ -150,21 +169,24 @@
       "dependencyManager": "maven",
       "appTemplate": "eventBridge-schema-app",
       "isDynamicTemplate": "True",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
     },
     {
       "directory": "java8.al2/cookiecutter-aws-sam-step-functions-sample-app-gradle",
       "displayName": "Step Functions Sample App (Stock Trader): Gradle",
       "dependencyManager": "gradle",
       "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow"
     },
     {
       "directory": "java8.al2/cookiecutter-aws-sam-step-functions-sample-app-maven",
       "displayName": "Step Functions Sample App (Stock Trader): Maven",
       "dependencyManager": "maven",
       "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow"
     }
   ],
   "java11": [
@@ -173,28 +195,32 @@
       "displayName": "Hello World Example: Gradle",
       "dependencyManager": "gradle",
       "appTemplate": "hello-world",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
     },
     {
       "directory": "java11/cookiecutter-aws-sam-hello-java-maven",
       "displayName": "Hello World Example: Maven",
       "dependencyManager": "maven",
       "appTemplate": "hello-world",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
     },
     {
       "directory": "java11/cookiecutter-aws-sam-eventbridge-hello-java-gradle",
       "displayName": "EventBridge Hello World: Gradle",
       "dependencyManager": "gradle",
       "appTemplate": "eventBridge-hello-world",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
     },
     {
       "directory": "java11/cookiecutter-aws-sam-eventbridge-hello-java-maven",
       "displayName": "EventBridge Hello World: Maven",
       "dependencyManager": "maven",
       "appTemplate": "eventBridge-hello-world",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
     },
     {
       "directory": "java11/cookiecutter-aws-sam-eventbridge-schema-app-java-gradle",
@@ -202,7 +228,8 @@
       "dependencyManager": "gradle",
       "appTemplate": "eventBridge-schema-app",
       "isDynamicTemplate": "True",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
     },
     {
       "directory": "java11/cookiecutter-aws-sam-eventbridge-schema-app-java-maven",
@@ -210,7 +237,8 @@
       "dependencyManager": "maven",
       "appTemplate": "eventBridge-schema-app",
       "isDynamicTemplate": "True",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
     },
     {
       "directory": "java11/cookiecutter-aws-sam-step-functions-sample-app-gradle",
@@ -218,14 +246,16 @@
       "dependencyManager": "gradle",
       "appTemplate": "step-functions-sample-app",
       "isDynamicTemplate": "True",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow"
     },
     {
       "directory": "java11/cookiecutter-aws-sam-step-functions-sample-app-maven",
       "displayName": "Step Functions Sample App (Stock Trader): Maven",
       "dependencyManager": "maven",
       "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow"
     }
   ],
   "nodejs14.x": [
@@ -234,56 +264,64 @@
       "displayName": "Hello World Example",
       "dependencyManager": "npm",
       "appTemplate": "hello-world",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
     },
     {
       "directory": "nodejs14.x/cookiecutter-aws-sam-step-functions-sample-app",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "npm",
       "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow"
     },
     {
       "directory": "nodejs14.x/cookiecutter-quick-start-from-scratch",
       "displayName": "Quick Start: From Scratch",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-from-scratch",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Standalone function"
     },
     {
       "directory": "nodejs14.x/cookiecutter-quick-start-cloudwatch-events",
       "displayName": "Quick Start: Scheduled Events",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-cloudwatch-events",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Scheduled task"
     },
     {
       "directory": "nodejs14.x/cookiecutter-quick-start-s3",
       "displayName": "Quick Start: S3",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-s3",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Data processing"
     },
     {
       "directory": "nodejs14.x/cookiecutter-quick-start-sns",
       "displayName": "Quick Start: SNS",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-sns",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Data processing"
     },
     {
       "directory": "nodejs14.x/cookiecutter-quick-start-sqs",
       "displayName": "Quick Start: SQS",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-sqs",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Data processing"
     },
     {
       "directory": "nodejs14.x/cookiecutter-quick-start-web",
       "displayName": "Quick Start: Web Backend",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-web",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
     }
   ],
   "nodejs12.x": [
@@ -292,63 +330,64 @@
       "displayName": "Hello World Example",
       "dependencyManager": "npm",
       "appTemplate": "hello-world",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
     },
     {
       "directory": "nodejs12.x/cookiecutter-aws-sam-step-functions-sample-app",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "npm",
       "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow"
     },
     {
       "directory": "nodejs12.x/cookiecutter-quick-start-from-scratch",
       "displayName": "Quick Start: From Scratch",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-from-scratch",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Standalone function"
     },
     {
       "directory": "nodejs12.x/cookiecutter-quick-start-cloudwatch-events",
       "displayName": "Quick Start: Scheduled Events",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-cloudwatch-events",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Scheduled task"
     },
     {
       "directory": "nodejs12.x/cookiecutter-quick-start-s3",
       "displayName": "Quick Start: S3",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-s3",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Data processing"
     },
     {
       "directory": "nodejs12.x/cookiecutter-quick-start-sns",
       "displayName": "Quick Start: SNS",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-sns",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Data processing"
     },
     {
       "directory": "nodejs12.x/cookiecutter-quick-start-sqs",
       "displayName": "Quick Start: SQS",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-sqs",
-      "packageType": "Zip"
-    },
-    {
-      "directory": "nodejs12.x/cookiecutter-typescript-app-template",
-      "displayName": "Quick Start: App Backend using TypeScript",
-      "dependencyManager": "npm",
-      "appTemplate": "quick-start-typescript-app",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Data processing"
     },
     {
       "directory": "nodejs12.x/cookiecutter-quick-start-web",
       "displayName": "Quick Start: Web Backend",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-web",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
     }
   ],
   "nodejs10.x": [
@@ -357,56 +396,64 @@
       "displayName": "Hello World Example",
       "dependencyManager": "npm",
       "appTemplate": "hello-world",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
     },
     {
       "directory": "nodejs10.x/cookiecutter-quick-start-from-scratch",
       "displayName": "Quick Start: From Scratch",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-from-scratch",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Standalone function"
     },
     {
       "directory": "nodejs10.x/cookiecutter-quick-start-cloudwatch-events",
       "displayName": "Quick Start: Scheduled Events",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-cloudwatch-events",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Scheduled task"
     },
     {
       "directory": "nodejs10.x/cookiecutter-quick-start-s3",
       "displayName": "Quick Start: S3",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-s3",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Data processing"
     },
     {
       "directory": "nodejs10.x/cookiecutter-quick-start-sns",
       "displayName": "Quick Start: SNS",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-sns",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Data processing"
     },
     {
       "directory": "nodejs10.x/cookiecutter-quick-start-sqs",
       "displayName": "Quick Start: SQS",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-sqs",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Data processing"
     },
     {
       "directory": "nodejs10.x/cookiecutter-quick-start-web",
       "displayName": "Quick Start: Web Backend",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-web",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
     },
     {
       "directory": "nodejs10.x/cookiecutter-aws-sam-step-functions-sample-app",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "npm",
       "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow"
     }
   ],
   "python2.7": [
@@ -415,14 +462,16 @@
       "displayName": "Hello World Example",
       "dependencyManager": "pip",
       "appTemplate": "hello-world",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
     },
     {
       "directory": "python2.7/cookiecutter-aws-sam-step-functions-sample-app",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "pip",
       "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow"
     }
   ],
   "python3.6": [
@@ -431,14 +480,16 @@
       "displayName": "Hello World Example",
       "dependencyManager": "pip",
       "appTemplate": "hello-world",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
     },
     {
       "directory": "python3.6/cookiecutter-aws-sam-eventBridge-python",
       "displayName": "EventBridge Hello World",
       "dependencyManager": "pip",
       "appTemplate": "eventBridge-hello-world",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
     },
     {
       "directory": "python3.6/cookiecutter-aws-sam-eventbridge-schema-app-python",
@@ -446,14 +497,16 @@
       "dependencyManager": "pip",
       "appTemplate": "eventBridge-schema-app",
       "isDynamicTemplate": "True",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
     },
     {
       "directory": "python3.6/cookiecutter-aws-sam-step-functions-sample-app",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "pip",
       "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow"
     }
   ],
   "python3.7": [
@@ -462,14 +515,16 @@
       "displayName": "Hello World Example",
       "dependencyManager": "pip",
       "appTemplate": "hello-world",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
     },
     {
       "directory": "python3.7/cookiecutter-aws-sam-eventBridge-python",
       "displayName": "EventBridge Hello World",
       "dependencyManager": "pip",
       "appTemplate": "eventBridge-hello-world",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
     },
     {
       "directory": "python3.7/cookiecutter-aws-sam-eventbridge-schema-app-python",
@@ -477,14 +532,16 @@
       "dependencyManager": "pip",
       "appTemplate": "eventBridge-schema-app",
       "isDynamicTemplate": "True",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
     },
     {
       "directory": "python3.7/cookiecutter-aws-sam-step-functions-sample-app",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "pip",
       "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow"
     }
   ],
   "python3.8": [
@@ -493,14 +550,16 @@
       "displayName": "Hello World Example",
       "dependencyManager": "pip",
       "appTemplate": "hello-world",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
     },
     {
       "directory": "python3.8/cookiecutter-aws-sam-eventBridge-python",
       "displayName": "EventBridge Hello World",
       "dependencyManager": "pip",
       "appTemplate": "eventBridge-hello-world",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
     },
     {
       "directory": "python3.8/cookiecutter-aws-sam-eventbridge-schema-app-python",
@@ -508,21 +567,24 @@
       "dependencyManager": "pip",
       "appTemplate": "eventBridge-schema-app",
       "isDynamicTemplate": "True",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
     },
     {
       "directory": "python3.8/cookiecutter-aws-sam-step-functions-sample-app",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "pip",
       "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow"
     },
     {
       "directory": "python3.8/cookiecutter-aws-sam-efs-python",
       "displayName": "Elastic File System Sample App",
       "dependencyManager": "pip",
       "appTemplate": "efs-sample-app",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
     }
   ],
   "python3.9": [
@@ -531,14 +593,16 @@
       "displayName": "Hello World Example",
       "dependencyManager": "pip",
       "appTemplate": "hello-world",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
     },
     {
       "directory": "python3.9/cookiecutter-aws-sam-eventBridge-python",
       "displayName": "EventBridge Hello World",
       "dependencyManager": "pip",
       "appTemplate": "eventBridge-hello-world",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
     },
     {
       "directory": "python3.9/cookiecutter-aws-sam-eventbridge-schema-app-python",
@@ -546,21 +610,24 @@
       "dependencyManager": "pip",
       "appTemplate": "eventBridge-schema-app",
       "isDynamicTemplate": "True",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
     },
     {
       "directory": "python3.9/cookiecutter-aws-sam-step-functions-sample-app",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "pip",
       "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow"
     },
     {
       "directory": "python3.9/cookiecutter-aws-sam-efs-python",
       "displayName": "Elastic File System Sample App",
       "dependencyManager": "pip",
       "appTemplate": "efs-sample-app",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
     }
   ],
   "ruby2.5": [
@@ -569,14 +636,16 @@
       "displayName": "Hello World Example",
       "dependencyManager": "bundler",
       "appTemplate": "hello-world",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
     },
     {
       "directory": "ruby2.5/cookiecutter-aws-sam-step-functions-sample-app",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "bundler",
       "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow"
     }
   ],
   "ruby2.7": [
@@ -585,14 +654,16 @@
       "displayName": "Hello World Example",
       "dependencyManager": "bundler",
       "appTemplate": "hello-world",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
     },
     {
       "directory": "ruby2.7/cookiecutter-aws-sam-step-functions-sample-app",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "bundler",
       "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip"
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow"
     }
   ],
   "amazon/nodejs14.x-base": [
@@ -601,7 +672,8 @@
       "displayName": "Hello World Image Example",
       "dependencyManager": "npm",
       "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image"
+      "packageType": "Image",
+      "useCaseName": "Serverless API"
     }
   ],
   "amazon/nodejs12.x-base": [
@@ -610,7 +682,8 @@
       "displayName": "Hello World Image Example",
       "dependencyManager": "npm",
       "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image"
+      "packageType": "Image",
+      "useCaseName": "Serverless API"
     }
   ],
   "amazon/python3.8-base": [
@@ -619,72 +692,8 @@
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "pip",
       "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image"
-    },
-    {
-      "directory": "python3.8-image/cookiecutter-ml-apigw-pytorch",
-      "displayName": "PyTorch Machine Learning Inference API",
-      "dependencyManager": "pip",
-      "appTemplate": "ml-apigw-pytorch",
-      "packageType": "Image"
-    },
-    {
-      "directory": "python3.8-image/cookiecutter-ml-apigw-scikit-learn",
-      "displayName": "Scikit-learn Machine Learning Inference API",
-      "dependencyManager": "pip",
-      "appTemplate": "ml-apigw-scikit-learn",
-      "packageType": "Image"
-    },
-    {
-      "directory": "python3.8-image/cookiecutter-ml-apigw-tensorflow",
-      "displayName": "Tensorflow Machine Learning Inference API",
-      "dependencyManager": "pip",
-      "appTemplate": "ml-apigw-tensorflow",
-      "packageType": "Image"
-    },
-    {
-      "directory": "python3.8-image/cookiecutter-ml-apigw-xgboost",
-      "displayName": "XGBoost Machine Learning Inference API",
-      "dependencyManager": "pip",
-      "appTemplate": "ml-apigw-xgboost",
-      "packageType": "Image"
-    }
-  ],
-  "amazon/python3.9-base": [
-    {
-      "directory": "python3.9-image/cookiecutter-aws-sam-hello-python-lambda-image",
-      "displayName": "Hello World Lambda Image Example",
-      "dependencyManager": "pip",
-      "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image"
-    },
-    {
-      "directory": "python3.9-image/cookiecutter-ml-apigw-pytorch",
-      "displayName": "PyTorch Machine Learning Inference API",
-      "dependencyManager": "pip",
-      "appTemplate": "ml-apigw-pytorch",
-      "packageType": "Image"
-    },
-    {
-      "directory": "python3.9-image/cookiecutter-ml-apigw-scikit-learn",
-      "displayName": "Scikit-learn Machine Learning Inference API",
-      "dependencyManager": "pip",
-      "appTemplate": "ml-apigw-scikit-learn",
-      "packageType": "Image"
-    },
-    {
-      "directory": "python3.9-image/cookiecutter-ml-apigw-tensorflow",
-      "displayName": "Tensorflow Machine Learning Inference API",
-      "dependencyManager": "pip",
-      "appTemplate": "ml-apigw-tensorflow",
-      "packageType": "Image"
-    },
-    {
-      "directory": "python3.9-image/cookiecutter-ml-apigw-xgboost",
-      "displayName": "XGBoost Machine Learning Inference API",
-      "dependencyManager": "pip",
-      "appTemplate": "ml-apigw-xgboost",
-      "packageType": "Image"
+      "packageType": "Image",
+      "useCaseName": "Serverless API"
     }
   ],
   "amazon/ruby2.7-base": [
@@ -693,7 +702,8 @@
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "bundler",
       "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image"
+      "packageType": "Image",
+      "useCaseName": "Serverless API"
     }
   ],
   "amazon/go1.x-base": [
@@ -702,7 +712,8 @@
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "mod",
       "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image"
+      "packageType": "Image",
+      "useCaseName": "Serverless API"
     }
   ],
   "amazon/java11-base": [
@@ -711,14 +722,16 @@
       "displayName": "Hello World Lambda Image Example: Gradle",
       "dependencyManager": "gradle",
       "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image"
+      "packageType": "Image",
+      "useCaseName": "Serverless API"
     },
     {
       "directory": "java11-image/cookiecutter-aws-sam-hello-java-maven-lambda-image",
       "displayName": "Hello World Lambda Image Example: Maven",
       "dependencyManager": "maven",
       "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image"
+      "packageType": "Image",
+      "useCaseName": "Serverless API"
     }
   ],
   "amazon/dotnet5.0-base": [
@@ -727,7 +740,8 @@
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "cli-package",
       "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image"
+      "packageType": "Image",
+      "useCaseName": "Serverless API"
     }
   ],
   "amazon/dotnetcore3.1-base": [
@@ -736,7 +750,8 @@
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "cli-package",
       "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image"
+      "packageType": "Image",
+      "useCaseName": "Serverless API"
     }
   ],
   "amazon/nodejs10.x-base": [
@@ -745,7 +760,8 @@
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "npm",
       "appTemplate": "hello-world--lambda-image",
-      "packageType": "Image"
+      "packageType": "Image",
+      "useCaseName": "Serverless API"
     }
   ],
   "amazon/python3.7-base": [
@@ -754,7 +770,8 @@
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "pip",
       "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image"
+      "packageType": "Image",
+      "useCaseName": "Serverless API"
     }
   ],
   "amazon/python3.6-base": [
@@ -763,7 +780,8 @@
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "pip",
       "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image"
+      "packageType": "Image",
+      "useCaseName": "Serverless API"
     }
   ],
   "amazon/python2.7-base": [
@@ -772,7 +790,8 @@
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "pip",
       "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image"
+      "packageType": "Image",
+      "useCaseName": "Serverless API"
     }
   ],
   "amazon/ruby2.5-base": [
@@ -781,7 +800,8 @@
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "bundler",
       "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image"
+      "packageType": "Image",
+      "useCaseName": "Serverless API"
     }
   ],
   "amazon/java8-base": [
@@ -790,14 +810,16 @@
       "displayName": "Hello World Lambda Image Example: Gradle",
       "dependencyManager": "gradle",
       "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image"
+      "packageType": "Image",
+      "useCaseName": "Serverless API"
     },
     {
       "directory": "java8-image/cookiecutter-aws-sam-hello-java-maven-lambda-image",
       "displayName": "Hello World Lambda Image Example: Maven",
       "dependencyManager": "maven",
       "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image"
+      "packageType": "Image",
+      "useCaseName": "Serverless API"
     }
   ],
   "amazon/java8.al2-base": [
@@ -806,14 +828,16 @@
       "displayName": "Hello World Lambda Image Example: Gradle",
       "dependencyManager": "gradle",
       "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image"
+      "packageType": "Image",
+      "useCaseName": "Serverless API"
     },
     {
       "directory": "java8.al2-image/cookiecutter-aws-sam-hello-java-maven-lambda-image",
       "displayName": "Hello World Lambda Image Example: Maven",
       "dependencyManager": "maven",
       "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image"
+      "packageType": "Image",
+      "useCaseName": "Serverless API"
     }
   ],
   "amazon/dotnetcore2.1-base": [
@@ -822,7 +846,8 @@
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "cli-package",
       "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image"
+      "packageType": "Image",
+      "useCaseName": "Serverless API"
     }
   ]
 }
