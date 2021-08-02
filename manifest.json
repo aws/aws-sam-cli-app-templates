@@ -382,6 +382,14 @@
       "useCaseName": "Data processing"
     },
     {
+      "directory": "nodejs12.x/cookiecutter-typescript-app-template",
+      "displayName": "Quick Start: App Backend using TypeScript",
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-typescript-app",
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
+    },
+    {
       "directory": "nodejs12.x/cookiecutter-quick-start-web",
       "displayName": "Quick Start: Web Backend",
       "dependencyManager": "npm",
@@ -694,6 +702,38 @@
       "appTemplate": "hello-world-lambda-image",
       "packageType": "Image",
       "useCaseName": "Serverless API"
+    },
+    {
+      "directory": "python3.8-image/cookiecutter-ml-apigw-pytorch",
+      "displayName": "PyTorch Machine Learning Inference API",
+      "dependencyManager": "pip",
+      "appTemplate": "ml-apigw-pytorch",
+      "packageType": "Image",
+      "useCaseName": "Machine Learning"
+    },
+    {
+      "directory": "python3.8-image/cookiecutter-ml-apigw-scikit-learn",
+      "displayName": "Scikit-learn Machine Learning Inference API",
+      "dependencyManager": "pip",
+      "appTemplate": "ml-apigw-scikit-learn",
+      "packageType": "Image",
+      "useCaseName": "Machine Learning"
+    },
+    {
+      "directory": "python3.8-image/cookiecutter-ml-apigw-tensorflow",
+      "displayName": "Tensorflow Machine Learning Inference API",
+      "dependencyManager": "pip",
+      "appTemplate": "ml-apigw-tensorflow",
+      "packageType": "Image",
+      "useCaseName": "Machine Learning"
+    },
+    {
+      "directory": "python3.8-image/cookiecutter-ml-apigw-xgboost",
+      "displayName": "XGBoost Machine Learning Inference API",
+      "dependencyManager": "pip",
+      "appTemplate": "ml-apigw-xgboost",
+      "packageType": "Image",
+      "useCaseName": "Machine Learning"
     }
   ],
   "amazon/ruby2.7-base": [
