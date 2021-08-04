@@ -1,2 +1,2 @@
-scikit-learn=={{cookiecutter.scikit_learn_version}}
-pillow
+scikit-learn==0.23.2
+pillow==8.0.1

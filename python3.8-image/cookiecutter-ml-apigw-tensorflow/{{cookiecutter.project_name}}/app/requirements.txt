@@ -1,2 +1,2 @@
-tensorflow=={{cookiecutter.tensorflow_version}}
-pillow
+tensorflow==2.4.0
+pillow==8.0.1
