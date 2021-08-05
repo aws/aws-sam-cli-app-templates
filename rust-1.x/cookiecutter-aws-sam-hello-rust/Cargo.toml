@@ -1,0 +1,23 @@
+[package]
+name = "rust-sam-cli-hello"
+version = "0.1.0"
+authors = ["Roman Valls Guimera <brainstorm@nopcode.org>"]
+edition = "2018"
+
+[dependencies]
+url = "2.1.1"
+serde = "^1"
+serde_derive = "^1"
+serde_json = "^1"
+lambda_runtime = { git = "https://github.com/awslabs/aws-lambda-rust-runtime", rev = "7e2cd97b37436234c621dd6057ea99497ebd5c96"}
+
+tokio = { version = "1.9.0" }
+
+[[ bin ]]
+name = "bootstrap"
+path = "src/main.rs"
+
+#[profile.release]
+#lto = true
+#opt-level = 'z'
+#codegen-units = 1

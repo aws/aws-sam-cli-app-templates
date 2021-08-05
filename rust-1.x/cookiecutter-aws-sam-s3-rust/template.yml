@@ -1,0 +1,30 @@
+Transform: AWS::Serverless-2016-10-31
+Resources:
+  hello:
+    Type: AWS::Serverless::Function
+    Metadata:
+      BuildMethod: makefile
+    Properties:
+      FunctionName: hello-rust
+      Handler: bootstrap.is.real.handler
+      Runtime: provided.al2
+      MemorySize: 128
+      Timeout: 30
+      CodeUri: .
+      Policies:
+        - AWSLambdaBasicExecutionRole
+        - AmazonS3ReadOnlyAccess
+      Tags:
+        "Creator": "brainstorm"
+        "Deploy": "sam"
+      Events:
+        RootEvent:
+          Type: Api
+          Properties:
+            Path: /
+            Method: any
+        GatewayEvent:
+          Type: Api
+          Properties:
+            Path: /{proxy+}
+            Method: any

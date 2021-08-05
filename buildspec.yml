@@ -64,3 +64,5 @@ batch:
       buildspec: buildspecs/buildspec-dotnetcore2.1.yml
     - identifier: CombinedGo1x
       buildspec: buildspecs/buildspec-go1.x.yml
+    - identifier: Provided
+      buildspec: buildspecs/buildspec-provided.yml
