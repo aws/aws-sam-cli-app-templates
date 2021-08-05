@@ -167,6 +167,6 @@ $RECYCLE.BIN/
 ## Rust
 target
 Cargo.lock
-
+.aws-sam
 
 # End of https://www.gitignore.io/api/osx,linux,python,windows
