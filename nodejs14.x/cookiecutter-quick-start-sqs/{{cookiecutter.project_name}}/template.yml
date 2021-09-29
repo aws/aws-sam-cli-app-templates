@@ -40,3 +40,6 @@ Resources:
       Policies:
         # Give Lambda basic execution Permission to the helloFromLambda
         - AWSLambdaBasicExecutionRole
+        # Give Lambda permissions to poll the SQS queue
+        - SQSPollerPolicy:
+            QueueName: !GetAtt SimpleQueue.QueueName
