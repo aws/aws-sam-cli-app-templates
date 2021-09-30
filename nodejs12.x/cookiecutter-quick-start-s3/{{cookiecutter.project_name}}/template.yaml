@@ -14,6 +14,10 @@ Resources:
     Properties:
       Handler: src/handlers/s3-json-logger.s3JsonLoggerHandler
       Runtime: nodejs12.x
+      Architectures:
+      {%- for arch in cookiecutter.architectures.value %}
+        - {{arch}}
+      {%- endfor %}
       MemorySize: 128
       Timeout: 60
       Policies:
