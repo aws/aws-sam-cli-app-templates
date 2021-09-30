@@ -39,6 +39,10 @@ Resources:
       CodeUri: ./functions/StockChecker/
       Handler: StockChecker::StockChecker.Function::FunctionHandler
       Runtime: dotnetcore3.1
+      Architectures:
+      {%- for arch in cookiecutter.architectures.value %}
+        - {{arch}}
+      {%- endfor %}
 
   StockSellerFunction:
     Type: AWS::Serverless::Function
@@ -46,6 +50,10 @@ Resources:
       CodeUri: ./functions/StockSeller/
       Handler: StockSeller::StockSeller.Function::FunctionHandler
       Runtime: dotnetcore3.1
+      Architectures:
+      {%- for arch in cookiecutter.architectures.value %}
+        - {{arch}}
+      {%- endfor %}
 
   StockBuyerFunction:
     Type: AWS::Serverless::Function
@@ -53,6 +61,10 @@ Resources:
       CodeUri: ./functions/StockBuyer/
       Handler: StockBuyer::StockBuyer.Function::FunctionHandler
       Runtime: dotnetcore3.1
+      Architectures:
+      {%- for arch in cookiecutter.architectures.value %}
+        - {{arch}}
+      {%- endfor %}
 
   TransactionTable:
     Type: AWS::Serverless::SimpleTable # More info about SimpleTable Resource: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-simpletable.html

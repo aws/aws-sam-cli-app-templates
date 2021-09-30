@@ -1,5 +1,10 @@
 {
   "project_name": "digit_classifier",
   "tensorflow_version": "2.4.1",
-  "api_path": "/classify_digit"
+  "api_path": "/classify_digit",
+  "architectures": {
+    "value": [
+      "x86_64"
+    ]
+  }
 }
