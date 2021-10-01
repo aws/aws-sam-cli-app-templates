@@ -2,8 +2,6 @@
     "project_name": "Name of the project",
     "runtime": "ruby2.7",
     "architectures": {
-        "value": [
-            "x86_64"
-        ]
+        "value": []
     }
 }
