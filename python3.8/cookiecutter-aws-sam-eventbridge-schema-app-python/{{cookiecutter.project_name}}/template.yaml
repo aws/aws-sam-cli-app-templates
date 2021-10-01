@@ -17,10 +17,12 @@ Resources:
       CodeUri: {{ cookiecutter.function_name }}
       Handler: hello_world/app.lambda_handler
       Runtime: {{ cookiecutter.runtime }}
+      {%- if cookiecutter.architectures.value != []%}
       Architectures:
       {%- for arch in cookiecutter.architectures.value %}
         - {{arch}}
       {%- endfor %}
+      {%- endif %}
       Events:
         HelloWorld:
           Type: CloudWatchEvent # More info about CloudWatchEvent Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#cloudwatchevent
