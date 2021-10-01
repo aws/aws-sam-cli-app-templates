@@ -2,8 +2,6 @@
     "project_name": "Your EventBridge Starter app",
     "runtime": "java11",
     "architectures": {
-        "value": [
-            "x86_64"
-        ]
+        "value": []
     }
 }
