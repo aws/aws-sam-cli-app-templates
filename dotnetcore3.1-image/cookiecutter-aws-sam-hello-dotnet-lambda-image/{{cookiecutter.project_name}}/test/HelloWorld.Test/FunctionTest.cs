@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Net.Http;
-using Newtonsoft.Json;
+using System.Text.Json;
+using System.Threading.Tasks;
+
 using Xunit;
-using Amazon.Lambda.TestUtilities;
 using Amazon.Lambda.APIGatewayEvents;
+using Amazon.Lambda.TestUtilities;
 
 namespace HelloWorld.Tests
 {
@@ -39,7 +39,7 @@ namespace HelloWorld.Tests
 
             var expectedResponse = new APIGatewayProxyResponse
             {
-                Body = JsonConvert.SerializeObject(body),
+                Body = JsonSerializer.Serialize(body),
                 StatusCode = 200,
                 Headers = new Dictionary<string, string> { { "Content-Type", "application/json" } }
             };
