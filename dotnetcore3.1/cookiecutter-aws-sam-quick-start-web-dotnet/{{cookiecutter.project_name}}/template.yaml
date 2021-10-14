@@ -45,7 +45,7 @@ Resources:
       TableName: {{cookiecutter.project_name}}BookCatalog
       PrimaryKey:
         Name: Id
-        Type: Number
+        Type: String
       ProvisionedThroughput:
         ReadCapacityUnits: 2
         WriteCapacityUnits: 2

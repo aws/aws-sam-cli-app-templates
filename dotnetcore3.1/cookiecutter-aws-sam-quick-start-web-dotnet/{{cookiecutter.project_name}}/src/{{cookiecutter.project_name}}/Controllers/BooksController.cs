@@ -32,7 +32,7 @@ namespace {{cookiecutter.project_name}}.Controllers
             var result = new List<Book>();
 
             ScanFilter filter = new ScanFilter();
-            filter.AddCondition("Id", ScanOperator.GreaterThan, new DynamoDBEntry[] { 0 });
+            filter.AddCondition("Title", ScanOperator.IsNotNull);
             ScanOperationConfig scanConfig = new ScanOperationConfig
             {
                 Limit = 10,
@@ -51,7 +51,7 @@ namespace {{cookiecutter.project_name}}.Controllers
 
         // GET api/books/5
         [HttpGet("{id}")]
-        public async Task<Book> Get(int id)
+        public async Task<Book> Get(Guid id)
         {
             LambdaLogger.Log($"Looking for book {id}");
             return await context.LoadAsync<Book>(id);
@@ -61,9 +61,9 @@ namespace {{cookiecutter.project_name}}.Controllers
         [HttpPost]
         public async Task Post([FromBody] Book book)
         {
-            if (book == null || book.Id <= 0)
+            if (book == null )
             {
-                throw new ArgumentException("Invalid input! Book must have id > 0");
+                throw new ArgumentException("Invalid input! Book not informed");
             }
 
             await context.SaveAsync<Book>(book);
@@ -72,7 +72,7 @@ namespace {{cookiecutter.project_name}}.Controllers
 
         // PUT api/books/5
         [HttpPut("{id}")]
-        public async Task Put(int id, [FromBody] Book book)
+        public async Task Put(Guid id, [FromBody] Book book)
         {
             // Retrieve the book.
             Book bookRetrieved = await context.LoadAsync<Book>(id);
@@ -92,7 +92,7 @@ namespace {{cookiecutter.project_name}}.Controllers
 
         // DELETE api/books/5
         [HttpDelete("{id}")]
-        public async Task Delete(int id)
+        public async Task Delete(Guid id)
         {
             // Delete the book.
             await context.DeleteAsync<Book>(id);

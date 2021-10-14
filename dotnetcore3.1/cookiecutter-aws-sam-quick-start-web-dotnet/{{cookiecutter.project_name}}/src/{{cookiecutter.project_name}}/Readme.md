@@ -29,10 +29,10 @@ the base class of `LambdaEntryPoint` from `Amazon.Lambda.AspNetCoreServer.APIGat
 this file bootstraps the ASP.NET Core hosting framework. The Lambda function is defined in the base class.
 Change the base class to **Amazon.Lambda.AspNetCoreServer.ApplicationLoadBalancerFunction** when using an 
 Application Load Balancer.
-* LocalEntryPoint.cs - for local development this contains the executable Main function which bootstraps the ASP.NET Core hosting framework with Kestrel, as for typical ASP.NET Core applications.
+* Program.cs - for local development this contains the executable Main function which bootstraps the ASP.NET Core hosting framework with Kestrel, as for typical ASP.NET Core applications.
 * Startup.cs - usual ASP.NET Core Startup class used to configure the services ASP.NET Core will use.
 * web.config - used for local development.
-* Controllers\ValuesController - example Web API controller
+* Controllers\BooksController - example Web API controller
 
 You may also have a test project depending on the options selected.
 

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Amazon.DynamoDBv2.DataModel;
 
 
@@ -17,7 +18,7 @@ namespace {{cookiecutter.project_name}}.Entities
         /// to learn more visit https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/MidLevelAPILimitations.SupportedTypes.html
         /// <summary>
         [DynamoDBHashKey] //Partition key
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [DynamoDBProperty]
         public string Title { get; set; }
