@@ -39,7 +39,14 @@
       "displayName": "Quick Start: Web Backend",
       "dependencyManager": "cli-package",
       "appTemplate": "quick-start-web",
-      "packageType": "Zip"  
+      "packageType": "Zip"
+    },
+    {
+      "directory": "dotnetcore3.1/cookiecutter-aws-sam-quick-start-cloudwatch-events-dotnet",
+      "displayName": "Quick Start: Scheduled Events",
+      "dependencyManager": "cli-package",
+      "appTemplate": "quick-start-cloudwatch-events",
+      "packageType": "Zip"
     }
   ],
   "go1.x": [
