@@ -12,6 +12,11 @@ class UnitTest_dotnetcore3_1_cookiecutter_aws_sam_hello_step_functions_sample_ap
     code_directories = ["tests/StockBuyer.Test", "tests/StockChecker.Test", "tests/StockSeller.Test"]
 
 
+class UnitTest_dotnetcore3_1_cookiecutter_aws_from_scratch_dotnet(UnitTestBase.DotNetCoreUnitTestBase):
+    directory = "dotnetcore3.1/cookiecutter-aws-sam-quick-start-from-scratch-dotnet"
+    code_directories = ["test/project.Tests"]
+
+    
 class UnitTest_dotnetcore3_1_cookiecutter_aws_sam_cloudwatch_events_dotnet(UnitTestBase.DotNetCoreUnitTestBase):
     directory = "dotnetcore3.1/cookiecutter-aws-sam-quick-start-cloudwatch-events-dotnet"
     code_directories = ["test/project.Tests"]
