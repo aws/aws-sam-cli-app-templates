@@ -39,6 +39,12 @@ Resources:
       CodeUri: functions/StockChecker
       Handler: StockChecker.src.main.java.stockChecker.App::handleRequest
       Runtime: java8.al2
+      {%- if cookiecutter.architectures.value != []%}
+      Architectures:
+      {%- for arch in cookiecutter.architectures.value %}
+        - {{arch}}
+      {%- endfor %}
+      {%- endif %}
       MemorySize: 512
 
   StockSellerFunction:
@@ -47,6 +53,12 @@ Resources:
       CodeUri: functions/StockSeller
       Handler: StockSeller.src.main.java.stockSeller.App::handleRequest
       Runtime: java8.al2
+      {%- if cookiecutter.architectures.value != []%}
+      Architectures:
+      {%- for arch in cookiecutter.architectures.value %}
+        - {{arch}}
+      {%- endfor %}
+      {%- endif %}
       MemorySize: 512
 
   StockBuyerFunction:
@@ -55,6 +67,12 @@ Resources:
       CodeUri: functions/StockBuyer
       Handler: StockBuyer.src.main.java.stockBuyer.App::handleRequest
       Runtime: java8.al2
+      {%- if cookiecutter.architectures.value != []%}
+      Architectures:
+      {%- for arch in cookiecutter.architectures.value %}
+        - {{arch}}
+      {%- endfor %}
+      {%- endif %}
       MemorySize: 512
 
   TransactionTable:

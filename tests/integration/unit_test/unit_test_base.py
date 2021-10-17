@@ -53,10 +53,12 @@ class UnitTestBase:
             LOG.info(cmdlist)
             result = run_command(cmdlist, Path(self.cwd, code_directory))
             self.assertRegex(
-                result.stdout, r"added \d+ packages from \d+ contributors and audited \d+ packages",
+                result.stdout,
+                r"added \d+ packages from \d+ contributors and audited \d+ packages",
             )
             self.assertIn(
-                "found 0 vulnerabilities", result.stdout,
+                "found 0 vulnerabilities",
+                result.stdout,
             )
 
         def _test_unit_tests(self, code_directory: str):
@@ -117,6 +119,9 @@ class UnitTestBase:
 
     class Python38UnitTestBase(PythonUnitTestBase):
         python_executable = "python3.8"
+
+    class Python39UnitTestBase(PythonUnitTestBase):
+        python_executable = "python3.9"
 
     class JavaUnitTestGradleBase(UnitTestBase):
         """

@@ -24,6 +24,12 @@ Resources:
     Properties:
       Handler: src/handlers/hello-from-lambda.helloFromLambdaHandler
       Runtime: nodejs12.x
+      {%- if cookiecutter.architectures.value != []%}
+      Architectures:
+      {%- for arch in cookiecutter.architectures.value %}
+        - {{arch}}
+      {%- endfor %}
+      {%- endif %}
       MemorySize: 128
       Timeout: 100
       Description: A Lambda function that returns a static string.

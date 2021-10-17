@@ -11,6 +11,27 @@ class UnitTest_dotnetcore3_1_cookiecutter_aws_sam_hello_step_functions_sample_ap
     directory = "dotnetcore3.1/cookiecutter-aws-sam-hello-step-functions-sample-app"
     code_directories = ["tests/StockBuyer.Test", "tests/StockChecker.Test", "tests/StockSeller.Test"]
 
+
 class UnitTest_dotnetcore3_1_cookiecutter_aws_sam_quick_start_sqs_dotnet(UnitTestBase.DotNetCoreUnitTestBase):
     directory = "dotnetcore3.1/cookiecutter-aws-sam-quick-start-sqs-dotnet"
+    code_directories = ["test/project.Tests"]
+
+
+class UnitTest_dotnetcore3_1_cookiecutter_aws_sam_quickstart_sns_dotnet(UnitTestBase.DotNetCoreUnitTestBase):
+    directory = "dotnetcore3.1/cookiecutter-aws-sam-quick-start-sns-dotnet"
+    code_directories = ["test/project.Tests"]
+
+    
+class UnitTest_dotnetcore3_1_cookiecutter_aws_from_scratch_dotnet(UnitTestBase.DotNetCoreUnitTestBase):
+    directory = "dotnetcore3.1/cookiecutter-aws-sam-quick-start-from-scratch-dotnet"
+    code_directories = ["test/project.Tests"]
+
+    
+class UnitTest_dotnetcore3_1_cookiecutter_aws_sam_cloudwatch_events_dotnet(UnitTestBase.DotNetCoreUnitTestBase):
+    directory = "dotnetcore3.1/cookiecutter-aws-sam-quick-start-cloudwatch-events-dotnet"
+    code_directories = ["test/project.Tests"]
+
+    
+class UnitTest_dotnetcore3_1_cookiecutter_aws_sam_quick_start_web_dotnet_dotnet(UnitTestBase.DotNetCoreUnitTestBase):
+    directory = "dotnetcore3.1/cookiecutter-aws-sam-quick-start-web-dotnet"
     code_directories = ["test/project.Tests"]
