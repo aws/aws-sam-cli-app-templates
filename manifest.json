@@ -33,6 +33,13 @@
       "appTemplate": "step-functions-sample-app",
       "packageType": "Zip",
       "useCaseName": "Multi-step workflow"
+    },
+    {
+      "directory": "dotnetcore3.1/cookiecutter-aws-sam-quick-start-web-dotnet",
+      "displayName": "Quick Start: Web Backend",
+      "dependencyManager": "cli-package",
+      "appTemplate": "quick-start-web",
+      "packageType": "Zip"  
     }
   ],
   "go1.x": [

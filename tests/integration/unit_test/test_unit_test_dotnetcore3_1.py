@@ -10,3 +10,8 @@ class UnitTest_dotnetcore3_1_cookiecutter_aws_sam_hello_dotnet(UnitTestBase.DotN
 class UnitTest_dotnetcore3_1_cookiecutter_aws_sam_hello_step_functions_sample_app(UnitTestBase.DotNetCoreUnitTestBase):
     directory = "dotnetcore3.1/cookiecutter-aws-sam-hello-step-functions-sample-app"
     code_directories = ["tests/StockBuyer.Test", "tests/StockChecker.Test", "tests/StockSeller.Test"]
+
+
+class UnitTest_dotnetcore3_1_cookiecutter_aws_sam_quick_start_web_dotnet_dotnet(UnitTestBase.DotNetCoreUnitTestBase):
+    directory = "dotnetcore3.1/cookiecutter-aws-sam-quick-start-web-dotnet"
+    code_directories = ["test/project.Tests"]
