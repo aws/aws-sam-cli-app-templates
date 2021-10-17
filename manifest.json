@@ -54,6 +54,13 @@
       "dependencyManager": "cli-package",
       "appTemplate": "quick-start-from-scratch",
       "packageType": "Zip"
+    },
+    {
+      "directory": "dotnetcore3.1/cookiecutter-aws-sam-quick-start-sns-dotnet",
+      "displayName": "Quick Start: SNS",
+      "dependencyManager": "cli-package",
+      "appTemplate": "quick-start-sns",
+      "packageType": "Zip"
     }
   ],
   "go1.x": [

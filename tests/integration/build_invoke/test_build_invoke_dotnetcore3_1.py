@@ -23,6 +23,11 @@ class BuildInvoke_dotnetcore3_1_cookiecutter_aws_sam_hello_step_functions_sample
     directory = "dotnetcore3.1/cookiecutter-aws-sam-hello-step-functions-sample-app"
 
 
+class BuildInvoke_dotnetcore3_1_cookiecutter_aws_quickstart_sns_dotnet(BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase):
+    use_container = False
+    directory = "dotnetcore3.1/cookiecutter-aws-sam-quick-start-sns-dotnet"
+
+    
 class BuildInvoke_dotnetcore3_1_cookiecutter_aws_from_scratch_dotnet(BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase):
     use_container = False
     directory = "dotnetcore3.1/cookiecutter-aws-sam-quick-start-from-scratch-dotnet"
