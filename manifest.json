@@ -68,6 +68,13 @@
       "dependencyManager": "cli-package",
       "appTemplate": "quick-start-sqs",
       "packageType": "Zip"
+    },
+    {
+      "directory": "dotnetcore3.1/cookiecutter-aws-sam-quick-start-s3-dotnet",
+      "displayName": "Quick Start: S3",
+      "dependencyManager": "cli-package",
+      "appTemplate": "quick-start-s3",
+      "packageType": "Zip"
     }
   ],
   "go1.x": [
