@@ -1,4 +1,7 @@
 {
     "project_name": "Name of the project",
-    "runtime": "go1.x"
+    "runtime": "go1.x",
+    "architectures": {
+        "value": []
+    }
 }

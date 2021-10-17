@@ -15,6 +15,12 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       PackageType: Image
+      {%- if cookiecutter.architectures.value != []%}
+      Architectures:
+      {%- for arch in cookiecutter.architectures.value %}
+        - {{arch}}
+      {%- endfor %}
+      {%- endif %}
       Events:
         HelloWorld:
           Type: Api
