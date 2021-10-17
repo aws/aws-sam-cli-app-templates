@@ -166,8 +166,8 @@ class UnitTestBase:
             cmdlist = ["dotnet", "test"]
             LOG.info(cmdlist)
             result = run_command(cmdlist, Path(self.cwd, code_directory))
-            self.assertIn("Passed", result.stdout)
-            self.assertNotIn("Failed", result.stdout)
+            self.assertIn("Passed!", result.stdout)
+            self.assertNotIn("Failed!", result.stdout)
 
     class GoUnitTestBase(UnitTestBase):
         """
