@@ -1,0 +1,4 @@
+{
+    "project_name": "sample-glue-etl-project",
+    "runtime": "python3.9"
+}

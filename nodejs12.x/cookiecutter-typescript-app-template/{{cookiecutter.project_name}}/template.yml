@@ -27,6 +27,12 @@ Resources:
       CodeUri: app/
       Handler: dist/src/handlers/get-by-id.handler
       Runtime: nodejs12.x
+      {%- if cookiecutter.architectures.value != []%}
+      Architectures:
+      {%- for arch in cookiecutter.architectures.value %}
+        - {{arch}}
+      {%- endfor %}
+      {%- endif %}
       MemorySize: 128
       Timeout: 100
       Description: A simple example includes a HTTP get method to get one item by id from a DynamoDB table.
@@ -56,6 +62,12 @@ Resources:
       CodeUri: app/
       Handler: dist/src/handlers/post.handler
       Runtime: nodejs12.x
+      {%- if cookiecutter.architectures.value != []%}
+      Architectures:
+      {%- for arch in cookiecutter.architectures.value %}
+        - {{arch}}
+      {%- endfor %}
+      {%- endif %}
       MemorySize: 128
       Timeout: 100
       Description: A simple example includes a HTTP post method to add one item to a DynamoDB table.

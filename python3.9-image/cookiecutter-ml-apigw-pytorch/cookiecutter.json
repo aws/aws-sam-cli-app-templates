@@ -1,0 +1,11 @@
+{
+  "project_name": "digit_classifier",
+  "pytorch_version": "1.8.0",
+  "torchvision_version": "0.9.0",
+  "api_path": "/classify_digit",
+  "architectures": {
+    "value": [
+      "x86_64"
+    ]
+  }
+}
