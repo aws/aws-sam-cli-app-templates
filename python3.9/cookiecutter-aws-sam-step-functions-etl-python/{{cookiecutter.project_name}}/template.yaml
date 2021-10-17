@@ -1,0 +1,113 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  {{ cookiecutter.project_name }}
+
+  Sample SAM Template for {{ cookiecutter.project_name }}
+
+Parameters:
+  pGlueJobName:
+    Type: String
+Resources:
+  StateMachineRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - states.amazonaws.com
+            Action:
+              - sts:AssumeRole
+      Path: '/service-role/'
+      Policies:
+        - PolicyName: glue
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - glue:*
+                Resource:
+                  - !Sub 'arn:aws:glue:${AWS::Region}:${AWS::AccountId}:job/${pGlueJobName}'
+        - PolicyName: lambda
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - lambda:InvokeFunction
+                Resource:
+                  - !GetAtt FnCheck.Arn
+                  - !GetAtt FnSuccess.Arn
+                  - !GetAtt FnFailure.Arn
+  LambdaRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - lambda.amazonaws.com
+            Action:
+              - sts:AssumeRole
+      Path: '/service-role/'
+      Policies:
+        - PolicyName: glue
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - glue:*
+                Resource:
+                  - !Sub 'arn:aws:glue:${AWS::Region}:${AWS::AccountId}:job/${pGlueJobName}'
+  StateMachine:
+    Type: AWS::Serverless::StateMachine # More info about State Machine Resource: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-statemachine.html
+    Properties:
+      DefinitionUri: statemachine/asl.json
+      DefinitionSubstitutions:
+        GlueJobName: !Ref pGlueJobName
+        FnCheck: !GetAtt FnCheck.Arn
+        FnSuccess: !GetAtt FnSuccess.Arn
+        FnFailure: !GetAtt FnFailure.Arn
+      Role: !GetAtt StateMachineRole.Arn
+  FnCheck:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-function.html
+    Properties:
+      CodeUri: functions/etl_check/
+      Handler: app.lambda_handler
+      Role: !GetAtt LambdaRole.Arn
+      Runtime: python3.9
+  FnSuccess:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-function.html
+    Properties:
+      CodeUri: functions/etl_success/
+      Handler: app.lambda_handler
+      Runtime: python3.9
+  FnFailure:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-function.html
+    Properties:
+      CodeUri: functions/etl_failure/
+      Handler: app.lambda_handler
+      Runtime: python3.9
+Outputs:
+  StateMachineRoleArn:
+    Description: "IAM role ARN"
+    Value: !GetAtt StateMachineRole.Arn
+  StateMachineArn:
+    Description: "State machine ARN"
+    Value: !GetAtt StateMachine.Arn
+  FnCheckArn:
+    Description: "Check function ARN"
+    Value: !GetAtt FnCheck.Arn
+  FnSuccessArn:
+    Description: "Success function ARN"
+    Value: !GetAtt FnSuccess.Arn
+  FnFailureArn:
+    Description: "Failure function ARN"
+    Value: !GetAtt FnFailure.Arn

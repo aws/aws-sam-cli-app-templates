@@ -23,8 +23,10 @@ class BuildInvokeBase:
         invoke_output: Dict[str, Any]
         use_container: bool = True
 
+        # NOTE: Using `samdev` as against `sam` in cmdlist enables test with samcli in your dev environment.
+
         def _test_build(self):
-            cmdlist = ["sam", "build", "--debug"]
+            cmdlist = ["samdev", "build", "--debug"]
             if self.use_container:
                 cmdlist.append("--use-container")
             LOG.info(cmdlist)
@@ -40,23 +42,26 @@ class BuildInvokeBase:
             for event_file in event_files:
                 if self.function_id_by_event:
                     cmdlist = [
-                        "sam",
+                        "samdev",
                         "local",
                         "invoke",
                         self.function_id_by_event[event_file],
                         "-e",
                         Path("events", event_file),
+                        "--debug",
                     ]
                 else:
                     cmdlist = [
-                        "sam",
+                        "samdev",
                         "local",
                         "invoke",
                         "-e",
                         Path("events", event_file),
+                        "--debug",
                     ]
                 LOG.info(cmdlist)
                 result = run_command(cmdlist, self.cwd)
+                LOG.info(result)
                 try:
                     self.invoke_output = json.loads(result.stdout)
                 except json.decoder.JSONDecodeError:
@@ -79,7 +84,10 @@ class BuildInvokeBase:
             self.assertEqual(self.invoke_output["statusCode"], 200)
             self.assertEqual(
                 self.invoke_output["headers"],
-                {"X-Custom-Header": "application/json", "Content-Type": "application/json",},
+                {
+                    "X-Custom-Header": "application/json",
+                    "Content-Type": "application/json",
+                },
             )
             body = json.loads(self.invoke_output["body"])
             self.assertEqual(body["message"], "hello world")
@@ -98,14 +106,16 @@ class BuildInvokeBase:
         def _test_local_invoke(self):
             super()._test_local_invoke()
             self.assertEqual(
-                self.invoke_output["detail"], {"instance-id": "i-abcd1111", "state": "pending"},
+                self.invoke_output["detail"],
+                {"instance-id": "i-abcd1111", "state": "pending"},
             )
             self.assertEqual(
                 self.invoke_output["detail-type"],
                 "HelloWorldFunction updated event of EC2 Instance State-change Notification",
             )
             self.assertEqual(
-                self.invoke_output["resources"], ["arn:aws:ec2:us-east-1:123456789012:instance/i-abcd1111"],
+                self.invoke_output["resources"],
+                ["arn:aws:ec2:us-east-1:123456789012:instance/i-abcd1111"],
             )
             self.assertEqual(self.invoke_output["source"], "aws.ec2")
             self.assertEqual(self.invoke_output["account"], "123456789012")

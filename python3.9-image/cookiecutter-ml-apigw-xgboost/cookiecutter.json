@@ -1,0 +1,10 @@
+{
+  "project_name": "digit_classifier",
+  "xgboost_version": "1.3.3",
+  "api_path": "/classify_digit",
+  "architectures": {
+    "value": [
+      "x86_64"
+    ]
+  }
+}
