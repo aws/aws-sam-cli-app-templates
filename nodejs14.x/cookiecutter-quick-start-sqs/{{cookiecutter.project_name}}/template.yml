@@ -27,6 +27,12 @@ Resources:
     Properties:
       Description: A Lambda function that logs the payload of messages sent to an associated SQS queue.
       Runtime: nodejs14.x
+      {%- if cookiecutter.architectures.value != []%}
+      Architectures:
+      {%- for arch in cookiecutter.architectures.value %}
+        - {{arch}}
+      {%- endfor %}
+      {%- endif %}
       Handler: src/handlers/sqs-payload-logger.sqsPayloadLoggerHandler
       # This property associates this Lambda function with the SQS queue defined above, so that whenever the queue
       # receives a message, the Lambda function is invoked
