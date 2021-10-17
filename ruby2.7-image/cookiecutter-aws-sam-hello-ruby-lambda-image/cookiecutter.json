@@ -1,4 +1,7 @@
 {
     "project_name": "Name of the project",
-    "runtime": "ruby2.7"
+    "runtime": "ruby2.7",
+    "architectures": {
+        "value": []
+    }
 }

@@ -27,6 +27,12 @@ Resources:
     Properties:
       Description: A Lambda function that logs the payload of messages sent to an associated SNS topic.
       Runtime: nodejs14.x
+      {%- if cookiecutter.architectures.value != []%}
+      Architectures:
+      {%- for arch in cookiecutter.architectures.value %}
+        - {{arch}}
+      {%- endfor %}
+      {%- endif %}
       Handler: src/handlers/sns-payload-logger.snsPayloadLoggerHandler
       # This property associates this Lambda function with the SNS topic defined above, so that whenever the topic
       # receives a message, the Lambda function is invoked

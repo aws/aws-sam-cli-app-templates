@@ -39,6 +39,12 @@ Resources:
       CodeUri: functions/stock_checker/
       Handler: app.lambda_handler
       Runtime: python3.8
+      {%- if cookiecutter.architectures.value != []%}
+      Architectures:
+      {%- for arch in cookiecutter.architectures.value %}
+        - {{arch}}
+      {%- endfor %}
+      {%- endif %}
 
   StockSellerFunction:
     Type: AWS::Serverless::Function
@@ -46,6 +52,12 @@ Resources:
       CodeUri: functions/stock_seller/
       Handler: app.lambda_handler
       Runtime: python3.8
+      {%- if cookiecutter.architectures.value != []%}
+      Architectures:
+      {%- for arch in cookiecutter.architectures.value %}
+        - {{arch}}
+      {%- endfor %}
+      {%- endif %}
 
   StockBuyerFunction:
     Type: AWS::Serverless::Function
@@ -53,6 +65,12 @@ Resources:
       CodeUri: functions/stock_buyer/
       Handler: app.lambda_handler
       Runtime: python3.8
+      {%- if cookiecutter.architectures.value != []%}
+      Architectures:
+      {%- for arch in cookiecutter.architectures.value %}
+        - {{arch}}
+      {%- endfor %}
+      {%- endif %}
 
   TransactionTable:
     Type: AWS::Serverless::SimpleTable # More info about SimpleTable Resource: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-simpletable.html

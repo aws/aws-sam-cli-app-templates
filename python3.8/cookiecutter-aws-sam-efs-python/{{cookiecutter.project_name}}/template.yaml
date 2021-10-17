@@ -81,6 +81,12 @@ Resources:
       CodeUri: hello_efs/
       Handler: app.lambda_handler
       Runtime: python3.8
+      {%- if cookiecutter.architectures.value != []%}
+      Architectures:
+      {%- for arch in cookiecutter.architectures.value %}
+        - {{arch}}
+      {%- endfor %}
+      {%- endif %}
       Policies:
         - EFSWriteAccessPolicy:
             FileSystem: !Ref EfsFileSystem

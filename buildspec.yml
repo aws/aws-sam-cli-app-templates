@@ -35,6 +35,10 @@ batch:
       buildspec: buildspecs/buildspec-unittest-python3.7.yml
     - identifier: UnitTestPython38
       buildspec: buildspecs/buildspec-unittest-python3.8.yml
+    - identifier: UnitTestPython39
+      buildspec: buildspecs/buildspec-unittest-python3.9.yml
+      env:
+        image: aws/codebuild/standard:5.0
     - identifier: UnitTestJava8
       buildspec: buildspecs/buildspec-unittest-java8.yml
       env:
