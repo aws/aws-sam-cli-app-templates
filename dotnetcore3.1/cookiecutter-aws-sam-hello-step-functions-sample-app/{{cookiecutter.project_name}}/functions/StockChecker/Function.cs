@@ -2,13 +2,13 @@ using System;
 using Amazon.Lambda.Core;
 
 // Assembly attribute to enable the Lambda function's JSON input to be converted into a .NET class.
-[assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
+[assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
 
 namespace StockChecker
 {
     public class StockEvent
     {
-        public int stockPrice;
+        public int stockPrice { get; set; }
     }
 
     public class Function
