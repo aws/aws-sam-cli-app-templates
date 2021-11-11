@@ -40,7 +40,7 @@ Resources:
         SQSQueueEvent:
           Type: SQS
           Properties:
-            Queue: Fn::GetAtt SimpleQueue.Arn
+            Queue: !GetAtt SimpleQueue.Arn
       MemorySize: 128
       Timeout: 25 # Chosen to be less than the default SQS Visibility Timeout of 30 seconds
       Policies:
