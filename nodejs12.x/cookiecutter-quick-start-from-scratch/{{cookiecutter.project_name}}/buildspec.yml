@@ -18,7 +18,6 @@ phases:
       # Use AWS SAM to package the application by using AWS CloudFormation
       - aws cloudformation package --template template.yaml --s3-bucket $S3_BUCKET --output-template template-export.yml
 artifacts:
-  type: zip
   files:
     - template-export.yml
 
