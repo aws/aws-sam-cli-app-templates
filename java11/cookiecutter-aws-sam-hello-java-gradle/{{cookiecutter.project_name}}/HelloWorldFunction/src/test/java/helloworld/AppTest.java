@@ -11,8 +11,8 @@ public class AppTest {
   public void successfulResponse() {
     App app = new App();
     APIGatewayProxyResponseEvent result = app.handleRequest(null, null);
-    assertEquals(result.getStatusCode().intValue(), 200);
-    assertEquals(result.getHeaders().get("Content-Type"), "application/json");
+    assertEquals(200, result.getStatusCode().intValue());
+    assertEquals("application/json", result.getHeaders().get("Content-Type"));
     String content = result.getBody();
     assertNotNull(content);
     assertTrue(content.contains("\"message\""));

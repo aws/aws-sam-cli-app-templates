@@ -10,8 +10,8 @@ public class AppTest {
   public void successfulResponse() {
     App app = new App();
     GatewayResponse result = (GatewayResponse) app.handleRequest(null, null);
-    assertEquals(result.getStatusCode(), 200);
-    assertEquals(result.getHeaders().get("Content-Type"), "application/json");
+    assertEquals(200, result.getStatusCode());
+    assertEquals("application/json", result.getHeaders().get("Content-Type"));
     String content = result.getBody();
     assertNotNull(content);
     assertTrue(content.contains("\"message\""));
