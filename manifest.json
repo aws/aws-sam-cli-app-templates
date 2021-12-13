@@ -716,6 +716,24 @@
       "useCaseName": "Multi-step workflow"
     }
   ],
+  "rust": [
+    {
+      "directory": "rust/cookiecutter-aws-sam-rust-hello",
+      "displayName": "Hello World Example",
+      "dependencyManager": "cargo",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
+    },
+    {
+      "directory": "rust/cookiecutter-aws-sam-rust-hello-dynamodb",
+      "displayName": "Hello World Example with DynamoDB",
+      "dependencyManager": "cargo",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
+    }
+  ],
   "amazon/nodejs14.x-base": [
     {
       "directory": "nodejs14.x-image/cookiecutter-aws-sam-hello-nodejs-lambda-image",
