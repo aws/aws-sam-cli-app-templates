@@ -723,7 +723,7 @@
       "dependencyManager": "cargo",
       "appTemplate": "hello-world",
       "packageType": "Zip",
-      "useCaseName": "Serverless API"
+      "useCaseName": "Hello World Example"
     },
     {
       "directory": "rust/cookiecutter-aws-sam-rust-hello-dynamodb",
@@ -731,7 +731,7 @@
       "dependencyManager": "cargo",
       "appTemplate": "hello-world",
       "packageType": "Zip",
-      "useCaseName": "Serverless API"
+      "useCaseName": "Hello World Example with DynamoDB"
     }
   ],
   "amazon/nodejs14.x-base": [
