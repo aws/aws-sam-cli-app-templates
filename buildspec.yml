@@ -69,4 +69,4 @@ batch:
     - identifier: CombinedGo1x
       buildspec: buildspecs/buildspec-go1.x.yml
     - identifier: GraalVM
-      buildspec: buildspecs/buildspec-unittest-graalvm.yml
+      buildspec: buildspecs/buildspec-graalvm.yml
