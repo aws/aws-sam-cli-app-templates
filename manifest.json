@@ -300,6 +300,42 @@
       "useCaseName": "Multi-step workflow"
     }
   ],
+  "graalvm.java11": [
+    {
+      "directory": "graalvm/java11/cookiecutter-aws-sam-graalvm-maven",
+      "displayName": "Hello World Example",
+      "dependencyManager": "maven",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "graalvm/java11/cookiecutter-aws-sam-graalvm-gradle",
+      "displayName": "Hello World Example",
+      "dependencyManager": "gradle",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    }
+  ],
+  "graalvm.java17": [
+    {
+      "directory": "graalvm/java117cookiecutter-aws-sam-graalvm-maven",
+      "displayName": "Hello World Example",
+      "dependencyManager": "maven",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "graalvm/java17/cookiecutter-aws-sam-graalvm-gradle",
+      "displayName": "Hello World Example",
+      "dependencyManager": "gradle",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    }
+  ],
   "nodejs14.x": [
     {
       "directory": "nodejs14.x/cookiecutter-aws-sam-hello-nodejs",

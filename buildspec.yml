@@ -68,3 +68,5 @@ batch:
       buildspec: buildspecs/buildspec-dotnetcore2.1.yml
     - identifier: CombinedGo1x
       buildspec: buildspecs/buildspec-go1.x.yml
+    - identifier: GraalVM
+      buildspec: buildspecs/buildspec-unittest-graalvm.yml
