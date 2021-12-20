@@ -320,7 +320,7 @@
   ],
   "graalvm.java17": [
     {
-      "directory": "graalvm/java117cookiecutter-aws-sam-graalvm-maven",
+      "directory": "graalvm/java17/cookiecutter-aws-sam-graalvm-maven",
       "displayName": "Hello World Example",
       "dependencyManager": "maven",
       "appTemplate": "hello-world",
