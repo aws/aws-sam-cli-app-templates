@@ -55,8 +55,8 @@ To use the SAM CLI, you need the following tools.
 To build and deploy your application for the first time, run the following in your shell:
 
 ```bash
-{{ cookiecutter.project_slug }}$ sam build
-{{ cookiecutter.project_slug }}$ sam deploy --guided
+{{ cookiecutter.project_name }}$ sam build
+{{ cookiecutter.project_name }}$ sam deploy --guided
 ```
 
 The first command will build the source of your application. The second command will package and deploy your application to AWS, with a series of prompts:
@@ -74,7 +74,7 @@ You can find your API Gateway Endpoint URL in the output values displayed after 
 Build your application with the `sam build` command.
 
 ```bash
-{{ cookiecutter.project_slug }}$ sam build
+{{ cookiecutter.project_name }}$ sam build
 ```
 
 The SAM CLI installs dependencies defined in `HelloWorldFunction/pom.xml`, creates a deployment package, and saves it in the `.aws-sam/build` folder.
@@ -84,14 +84,14 @@ Test a single function by invoking it directly with a test event. An event is a 
 Run functions locally and invoke them with the `sam local invoke` command.
 
 ```bash
-{{ cookiecutter.project_slug }}$ sam local invoke HelloWorldFunction --event events/event.json
+{{ cookiecutter.project_name }}$ sam local invoke HelloWorldFunction --event events/event.json
 ```
 
 The SAM CLI can also emulate your application's API. Use the `sam local start-api` to run the API locally on port 3000.
 
 ```bash
-{{ cookiecutter.project_slug }}$ sam local start-api
-{{ cookiecutter.project_slug }}$ curl http://localhost:3000/
+{{ cookiecutter.project_name }}$ sam local start-api
+{{ cookiecutter.project_name }}$ curl http://localhost:3000/
 ```
 
 The SAM CLI reads the application template to determine the API's routes and the functions that they invoke. The `Events` property on each function's definition includes the route and method for each path.
@@ -116,7 +116,7 @@ To simplify troubleshooting, SAM CLI has a command called `sam logs`. `sam logs`
 `NOTE`: This command works for all AWS Lambda functions; not just the ones you deploy using SAM.
 
 ```bash
-{{ cookiecutter.project_slug }}$ sam logs -n HelloWorldFunction --stack-name <Name-of-your-deployed-stack> --tail
+{{ cookiecutter.project_name }}$ sam logs -n HelloWorldFunction --stack-name <Name-of-your-deployed-stack> --tail
 ```
 
 You can find more information and examples about filtering Lambda function logs in the [SAM CLI Documentation](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-logging.html).
@@ -126,7 +126,7 @@ You can find more information and examples about filtering Lambda function logs 
 Tests are defined in the `HelloWorldFunction/src/test` folder in this project.
 
 ```bash
-{{ cookiecutter.project_slug }}$ cd HelloWorldFunction
+{{ cookiecutter.project_name }}$ cd HelloWorldFunction
 HelloWorldFunction$ mvn test
 ```
 

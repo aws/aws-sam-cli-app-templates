@@ -19,10 +19,6 @@
     "fields":[{"name":"m"}]
   },
   {
-    "name":"jdk.internal.module.IllegalAccessLogger",
-    "fields":[{"name":"logger"}]
-  },
-  {
     "name":"sun.misc.Unsafe",
     "fields":[{"name":"theUnsafe"}]
   },
