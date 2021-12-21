@@ -23,4 +23,6 @@ class TestJson(unittest.TestCase):
         for runtime, templates in json_body.items():
             for template in templates:
                 directory = template["directory"]
+                use_case_name = template.get("useCaseName")
                 self.assertTrue(Path(directory).exists(), f"{directory} does not exist")
+                self.assertIsNotNone(use_case_name, "Template property 'useCaseName' was not specified")
