@@ -1,0 +1,4 @@
+{
+    "project_name": "aws-sam-hello-http-python",
+    "runtime": "python3.8"
+}

@@ -14,14 +14,14 @@ Resources:
   HelloWorldFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: hello_world_http_beta/
+      CodeUri: hello_world_http/
       Handler: app.lambda_handler
-      {%- if cookiecutter.runtime == 'python2.7' %}
-      Runtime: python2.7
-      {%- elif cookiecutter.runtime == 'python3.6' %}
-      Runtime: python3.6
-      {%- elif cookiecutter.runtime == 'python3.7' %}
+      {%- if cookiecutter.runtime == 'python3.7' %}
       Runtime: python3.7
+      {%- elif cookiecutter.runtime == 'python3.8' %}
+      Runtime: python3.8
+      {%- elif cookiecutter.runtime == 'python3.9' %}
+      Runtime: python3.9
       {%- else %}
       Runtime: python3.8
       {%- endif %}
@@ -34,7 +34,7 @@ Outputs:
   # Find out more about other implicit resources you can reference within SAM
   # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
   HelloWorldApi:
-    Description: "API Gateway endpoint URL for Hello World function (HTTP beta, default stage)"
+    Description: "API Gateway endpoint URL for Hello World function (HTTP, default stage)"
     Value: !Sub "https://${ServerlessHttpApi}.execute-api.${AWS::Region}.amazonaws.com/"
   HelloWorldFunction:
     Description: "Hello World Lambda Function ARN"
