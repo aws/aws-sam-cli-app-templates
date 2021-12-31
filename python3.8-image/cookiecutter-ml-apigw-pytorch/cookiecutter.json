@@ -1,0 +1,9 @@
+{
+  "project_name": "digit_classifier",
+  "api_path": "/classify_digit",
+  "architectures": {
+    "value": [
+      "x86_64"
+    ]
+  }
+}

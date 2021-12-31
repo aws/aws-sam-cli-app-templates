@@ -1,0 +1,48 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Globals:
+  Function:
+    Timeout: 50
+    MemorySize: 5000
+  Api:
+    BinaryMediaTypes:
+      - image/png
+      - image/jpg
+      - image/jpeg
+
+Resources:
+  InferenceFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      PackageType: Image
+      {%- if cookiecutter.architectures.value != []%}
+      Architectures:
+      {%- for arch in cookiecutter.architectures.value %}
+        - {{arch}}
+      {%- endfor %}
+      {%- endif %}
+      Events:
+        Inference:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: {{cookiecutter.api_path}}
+            Method: post
+    Metadata:
+      Dockerfile: Dockerfile
+      DockerContext: ./app
+      DockerTag: python3.8-v1
+
+Outputs:
+  # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
+  # Find out more about other implicit resources you can reference within SAM
+  # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
+  InferenceApi:
+    Description: "API Gateway endpoint URL for Prod stage for Inference function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod{{cookiecutter.api_path}}/"
+  InferenceFunction:
+    Description: "Inference Lambda Function ARN"
+    Value: !GetAtt InferenceFunction.Arn
+  InferenceFunctionIamRole:
+    Description: "Implicit IAM Role created for Inference function"
+    Value: !GetAtt InferenceFunction.Arn

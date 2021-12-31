@@ -1,0 +1,4 @@
+[tool.black]
+
+# our test code has many long names, it will look better with longer lines.
+line-length = 120

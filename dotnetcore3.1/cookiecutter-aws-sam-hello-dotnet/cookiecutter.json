@@ -1,0 +1,7 @@
+{
+    "project_name": "Name of the project",
+    "runtime": "dotnetcore3.1",
+    "architectures": {
+        "value": []
+    }
+}

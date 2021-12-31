@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      # install dotnet 5.0 since the runtime is not provided
+      - curl -sSL https://dot.net/v1/dotnet-install.sh | bash -s -- -Version 5.0.101
+      # install test requirements
+      - pip install --upgrade pip aws-sam-cli
+      - pip install -r requirements.txt
+      - dotnet --info
+
+  post_build:
+    commands:
+      - sam --version
+      - pytest -vvv tests/integration/build_invoke/test_build_invoke_dotnet5_0.py -n 4

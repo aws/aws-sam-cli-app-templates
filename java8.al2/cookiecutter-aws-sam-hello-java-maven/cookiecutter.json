@@ -1,0 +1,7 @@
+{
+    "project_name": "Name of the project",
+    "runtime": "java8.al2",
+    "architectures": {
+        "value": []
+    }
+}

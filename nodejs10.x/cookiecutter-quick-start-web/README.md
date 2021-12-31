@@ -10,7 +10,7 @@ A cookiecutter template to create a NodeJS Quick Start Web Application using [Se
 
 Generate a boilerplate template in your current project directory using the following syntax:
 
-* **NodeJS 10**: `sam init --runtime nodejs10.x --application-template quick-start-web --name web-app`
+* **NodeJS 10**: `sam init --runtime nodejs10.x --app-template quick-start-web --name web-app`
 
 > **NOTE**: ``--name`` allows you to specify a different project folder name
 
