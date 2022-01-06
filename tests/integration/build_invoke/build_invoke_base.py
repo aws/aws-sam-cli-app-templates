@@ -23,10 +23,10 @@ class BuildInvokeBase:
         invoke_output: Dict[str, Any]
         use_container: bool = True
 
-        # NOTE: Using `samdev` as against `sam` in cmdlist enables test with samcli in your dev environment.
+        SAM_COMMAND = "samdev" if "SAM_CLI_DEV" in os.environ else "sam"
 
         def _test_build(self):
-            cmdlist = ["samdev", "build", "--debug"]
+            cmdlist = [self.SAM_COMMAND, "build", "--debug"]
             if self.use_container:
                 cmdlist.append("--use-container")
             LOG.info(cmdlist)
@@ -42,7 +42,7 @@ class BuildInvokeBase:
             for event_file in event_files:
                 if self.function_id_by_event:
                     cmdlist = [
-                        "samdev",
+                        self.SAM_COMMAND,
                         "local",
                         "invoke",
                         self.function_id_by_event[event_file],
@@ -52,7 +52,7 @@ class BuildInvokeBase:
                     ]
                 else:
                     cmdlist = [
-                        "samdev",
+                        self.SAM_COMMAND,
                         "local",
                         "invoke",
                         "-e",
