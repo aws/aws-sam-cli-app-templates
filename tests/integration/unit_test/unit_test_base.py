@@ -68,6 +68,7 @@ class UnitTestBase:
             ]
             LOG.info(cmdlist)
             result = run_command(cmdlist, Path(self.cwd, code_directory))
+            LOG.info(result)
             self.assertIn("pass", result.stdout + result.stderr)
             self.assertNotIn("fail", result.stdout + result.stderr)
 

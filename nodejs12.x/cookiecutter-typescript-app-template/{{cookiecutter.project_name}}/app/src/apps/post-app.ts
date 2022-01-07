@@ -39,7 +39,7 @@ export class PostApp implements LambdaApp {
         try {
             await this.repository.putTodo(todo, this.table);
             return { statusCode: 201, body: JSON.stringify(todo) };
-        } catch(err) {
+        } catch(err: any) {
             console.log(err.message);
             return { statusCode: 500 };
         }

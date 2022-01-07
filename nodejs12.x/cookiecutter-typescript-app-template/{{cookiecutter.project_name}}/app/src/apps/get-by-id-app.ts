@@ -31,7 +31,7 @@ export class GetByIdApp implements LambdaApp {
             
             return { statusCode: 200, body: JSON.stringify(results) };
             
-        } catch(err) {
+        } catch(err: any) {
             console.log(err.message);
             return { statusCode: 500 };
         }
