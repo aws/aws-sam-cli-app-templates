@@ -13,7 +13,7 @@
     "test": "mocha tests/unit/"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^8.2.1"
+    "chai": "^4.3.0",
+    "mocha": "^9.1.3"
   }
 }
