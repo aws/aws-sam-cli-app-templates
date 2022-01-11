@@ -328,14 +328,6 @@ class BuildInvoke_python3_9_cookiecutter_aws_sam_efs_python(BuildInvokeBase.Buil
 # if we want to check response json, we need to setup efs
 
 
-class BuildInvoke_ruby2_5_cookiecutter_aws_sam_hello_ruby(BuildInvokeBase.HelloWorldExclamationBuildInvokeBase):
-    directory = "ruby2.5/cookiecutter-aws-sam-hello-ruby"
-
-
-class BuildInvoke_ruby2_5_cookiecutter_aws_sam_step_functions_sample_app(BuildInvokeBase.BuildInvokeBase):
-    directory = "ruby2.5/cookiecutter-aws-sam-step-functions-sample-app"
-
-
 class BuildInvoke_ruby2_7_cookiecutter_aws_sam_hello_ruby(BuildInvokeBase.HelloWorldExclamationBuildInvokeBase):
     directory = "ruby2.7/cookiecutter-aws-sam-hello-ruby"
 
