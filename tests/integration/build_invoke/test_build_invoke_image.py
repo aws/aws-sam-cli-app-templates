@@ -68,12 +68,6 @@ class BuildInvoke_image_python3_6_cookiecutter_aws_sam_hello_python_lambda_image
     directory = "python3.6-image/cookiecutter-aws-sam-hello-python-lambda-image"
 
 
-class BuildInvoke_image_python2_7_cookiecutter_aws_sam_hello_python_lambda_image(
-    (BuildInvokeBase.SimpleHelloWorldBuildInvokeBase)
-):
-    directory = "python2.7-image/cookiecutter-aws-sam-hello-python-lambda-image"
-
-
 class BuildInvoke_image_ruby2_5_cookiecutter_aws_sam_hello_ruby_lambda_image(
     BuildInvokeBase.HelloWorldExclamationBuildInvokeBase
 ):
