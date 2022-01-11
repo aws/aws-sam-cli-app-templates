@@ -50,12 +50,6 @@ class BuildInvoke_image_java11_cookiecutter_aws_sam_hello_java_maven_lambda_imag
     directory = "java11-image/cookiecutter-aws-sam-hello-java-maven-lambda-image"
 
 
-class BuildInvoke_image_nodejs10_x_cookiecutter_aws_sam_hello_nodejs_lambda_image(
-    BuildInvokeBase.SimpleHelloWorldBuildInvokeBase
-):
-    directory = "nodejs10.x-image/cookiecutter-aws-sam-hello-nodejs-lambda-image"
-
-
 class BuildInvoke_image_python3_7_cookiecutter_aws_sam_hello_python_lambda_image(
     (BuildInvokeBase.SimpleHelloWorldBuildInvokeBase)
 ):
