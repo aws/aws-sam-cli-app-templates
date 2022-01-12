@@ -724,14 +724,6 @@
       "appTemplate": "hello-world",
       "packageType": "Zip",
       "useCaseName": "Hello World Example"
-    },
-    {
-      "directory": "rust/cookiecutter-aws-sam-rust-hello-dynamodb",
-      "displayName": "Hello World Example with DynamoDB",
-      "dependencyManager": "cargo",
-      "appTemplate": "hello-world",
-      "packageType": "Zip",
-      "useCaseName": "Hello World Example with DynamoDB"
     }
   ],
   "amazon/nodejs14.x-base": [
