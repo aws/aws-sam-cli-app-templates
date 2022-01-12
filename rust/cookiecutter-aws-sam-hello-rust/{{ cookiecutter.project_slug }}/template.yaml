@@ -14,7 +14,9 @@ Resources:
   Table:
     Type: AWS::Serverless::SimpleTable # More info about SimpleTable Resource: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-simpletable.html
     Properties:
-      PrimaryKey: id
+      PrimaryKey:
+        Name: id
+        Type: String
 
   PutFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction

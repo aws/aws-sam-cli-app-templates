@@ -7,12 +7,18 @@ use lambda_http::{
 };
 use std::env;
 
+/// Main function
 #[tokio::main]
 async fn main() -> Result<(), Error> {
+    // Initialize the AWS SDK for Rust
     let config = aws_config::load_from_env().await;
     let table_name = env::var("TABLE_NAME").expect("TABLE_NAME must be set");
     let dynamodb_client = Client::new(&config);
 
+    // Register the Lambda handler
+    //
+    // We use a closure to pass the `dynamodb_client` and `table_name` as arguments
+    // to the handler function.
     lambda_runtime::run(handler(|request: Request, context: Context| {
         put_item(&dynamodb_client, &table_name, request, context)
     }))
@@ -21,14 +27,15 @@ async fn main() -> Result<(), Error> {
     Ok(())
 }
 
-async fn put_item<C>(
-    client: &Client<C>,
+/// Put Item Lambda function
+/// 
+/// This function will run for every invoke of the Lambda function.
+async fn put_item(
+    client: &Client,
     table_name: &str,
     request: Request,
     _context: Context,
 ) -> Result<impl IntoResponse, Error>
-where
-    C: aws_smithy_client::bounds::SmithyConnector,
 {
     // Extract path parameter from request
     let path_parameters = request.path_parameters();
@@ -60,14 +67,18 @@ where
     }
 }
 
+/// Unit tests
+/// 
+/// These tests are run using the `cargo test` command.
 #[cfg(test)]
 mod tests {
     use super::*;
     use aws_sdk_dynamodb::{Client, Config, Credentials, Region};
-    use aws_smithy_client::test_connection::TestConnection;
+    use aws_smithy_client::{erase::DynConnector, test_connection::TestConnection};
     use aws_smithy_http::body::SdkBody;
     use std::collections::HashMap;
 
+    // Helper function to create a mock AWS configuration
     async fn get_mock_config() -> Config {
         let cfg = aws_config::from_env()
             .region(Region::new("eu-west-1"))
@@ -78,6 +89,7 @@ mod tests {
         Config::new(&cfg)
     }
 
+    /// Helper function to generate a sample DynamoDB request
     fn get_request_builder() -> http::request::Builder {
         http::Request::builder()
             .header("content-type", "application/x-amz-json-1.0")
@@ -89,6 +101,11 @@ mod tests {
     #[tokio::test]
     async fn test_put_item() {
         // Mock DynamoDB client
+        //
+        // `TestConnection` takes a vector of requests and responses, allowing us to
+        // simulate the behaviour of the DynamoDB API endpoint. Since we are only
+        // making a single request in this test, we only need to provide a single
+        // entry in the vector.
         let conn = TestConnection::new(vec![(
             get_request_builder()
                 .header("x-amz-target", "DynamoDB_20120810.PutItem")
@@ -103,7 +120,7 @@ mod tests {
                 ))
                 .unwrap(),
         )]);
-        let client = Client::from_conf_conn(get_mock_config().await, conn.clone());
+        let client = Client::from_conf_conn(get_mock_config().await, DynConnector::new(conn.clone()));
 
         let table_name = "test_table";
 
