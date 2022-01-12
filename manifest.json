@@ -718,7 +718,7 @@
   ],
   "rust": [
     {
-      "directory": "rust/cookiecutter-aws-sam-rust-hello",
+      "directory": "rust/cookiecutter-aws-sam-hello-rust",
       "displayName": "Hello World Example",
       "dependencyManager": "cargo",
       "appTemplate": "hello-world",
