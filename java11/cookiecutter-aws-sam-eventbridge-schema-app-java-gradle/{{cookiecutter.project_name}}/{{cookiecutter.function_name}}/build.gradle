@@ -13,3 +13,6 @@ dependencies {
     implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.1'
     testImplementation 'junit:junit:4.13.2'
 }
+
+sourceCompatibility = 11
+targetCompatibility = 11
