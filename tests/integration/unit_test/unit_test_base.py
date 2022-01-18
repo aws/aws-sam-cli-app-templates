@@ -165,8 +165,9 @@ class UnitTestBase:
         def _test_unit_tests(self, code_directory: str):
             cmdlist = ["dotnet", "test"]
             LOG.info(cmdlist)
+            LOG.info("Running in folder %s", self.cwd)
             result = run_command(cmdlist, Path(self.cwd, code_directory))
-            self.assertIn("Passed!", result.stdout)
+            self.assertEqual(result.process.returncode, 0)
             self.assertNotIn("Failed!", result.stdout)
 
     class GoUnitTestBase(UnitTestBase):
