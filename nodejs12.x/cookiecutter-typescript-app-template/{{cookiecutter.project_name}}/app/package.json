@@ -21,7 +21,7 @@
     "@typescript-eslint/parser": "^4.9.1",
     "chai": "^4.2.0",
     "eslint": "^7.15.0",
-    "mocha": "^8.2.1",
+    "mocha": "^9.1.4",
     "moq.ts": "^6.4.0",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.3"
