@@ -9,8 +9,8 @@ from typing import Dict, Any, Optional
 
 import pytest
 
-
-SAM_CLI_CMD = "samdev" if os.environ.get("SAM_CLI_DEV", 0) == 1 else "sam"
+# NOTE: Using `samdev` as against `sam` in cmdlist enables test with samcli in your dev environment.
+SAM_CLI_EXECUTABLE = "samdev" if os.getenv("SAM_CLI_DEV") else "sam"
 
 class BuildInvokeBase:
     class BuildInvokeBase(Base.IntegBase):
@@ -26,7 +26,7 @@ class BuildInvokeBase:
         use_container: bool = True
 
         def _test_build(self):
-            cmdlist = [SAM_CLI_CMD, "build", "--debug"]
+            cmdlist = [SAM_CLI_EXECUTABLE, "build", "--debug"]
             if self.use_container:
                 cmdlist.append("--use-container")
             LOG.info(cmdlist)
@@ -42,7 +42,7 @@ class BuildInvokeBase:
             for event_file in event_files:
                 if self.function_id_by_event:
                     cmdlist = [
-                        SAM_CLI_CMD,
+                        SAM_CLI_EXECUTABLE,
                         "local",
                         "invoke",
                         self.function_id_by_event[event_file],
@@ -52,7 +52,7 @@ class BuildInvokeBase:
                     ]
                 else:
                     cmdlist = [
-                        SAM_CLI_CMD,
+                        SAM_CLI_EXECUTABLE,
                         "local",
                         "invoke",
                         "-e",
