@@ -14,7 +14,6 @@ This application creates a mock stock trading workflow which runs on a pre-defin
 Generate a boilerplate template in your current project directory using the following syntax:
 
 * **NodeJS 12**: `sam init --runtime nodejs12.x`
-* **NodeJS 10**: `sam init --runtime nodejs10.x`
 
 > **NOTE**: ``--name`` allows you to specify a different project folder name (`sam-app` is the default)
 
