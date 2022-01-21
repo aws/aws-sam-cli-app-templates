@@ -1,22 +1,4 @@
 {
-  "dotnetcore2.1": [
-    {
-      "directory": "dotnetcore2.1/cookiecutter-aws-sam-hello-dotnet",
-      "displayName": "Hello World Example",
-      "dependencyManager": "cli-package",
-      "appTemplate": "hello-world",
-      "packageType": "Zip",
-      "useCaseName": "Hello World Example"
-    },
-    {
-      "directory": "dotnetcore2.1/cookiecutter-aws-sam-hello-step-functions-sample-app",
-      "displayName": "Step Functions Sample App (Stock Trader)",
-      "dependencyManager": "cli-package",
-      "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip",
-      "useCaseName": "Multi-step workflow"
-    }
-  ],
   "dotnetcore3.1": [
     {
       "directory": "dotnetcore3.1/cookiecutter-aws-sam-hello-dotnet",
@@ -833,16 +815,6 @@
       "directory": "java8.al2-image/cookiecutter-aws-sam-hello-java-maven-lambda-image",
       "displayName": "Hello World Lambda Image Example: Maven",
       "dependencyManager": "maven",
-      "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image",
-      "useCaseName": "Hello World Example"
-    }
-  ],
-  "amazon/dotnetcore2.1-base": [
-    {
-      "directory": "dotnetcore2.1-image/cookiecutter-aws-sam-hello-dotnet-lambda-image",
-      "displayName": "Hello World Lambda Image Example",
-      "dependencyManager": "cli-package",
       "appTemplate": "hello-world-lambda-image",
       "packageType": "Image",
       "useCaseName": "Hello World Example"

@@ -58,7 +58,5 @@ batch:
       buildspec: buildspecs/buildspec-dotnet5.0.yml
     - identifier: CombinedDotNet31
       buildspec: buildspecs/buildspec-dotnetcore3.1.yml
-    - identifier: CombinedDotNet21
-      buildspec: buildspecs/buildspec-dotnetcore2.1.yml
     - identifier: CombinedGo1x
       buildspec: buildspecs/buildspec-go1.x.yml
