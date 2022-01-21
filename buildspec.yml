@@ -17,8 +17,6 @@ version: 0.2
 batch:
   fast-fail: false
   build-list:
-    - identifier: UnitTestNodejs10
-      buildspec: buildspecs/buildspec-unittest-nodejs-10.x.yml
     - identifier: UnitTestNodejs12
       buildspec: buildspecs/buildspec-unittest-nodejs-12.x.yml
     - identifier: UnitTestNodejs14

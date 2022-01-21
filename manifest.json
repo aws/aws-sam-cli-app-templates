@@ -446,72 +446,6 @@
       "useCaseName": "Serverless API"
     }
   ],
-  "nodejs10.x": [
-    {
-      "directory": "nodejs10.x/cookiecutter-aws-sam-hello-nodejs",
-      "displayName": "Hello World Example",
-      "dependencyManager": "npm",
-      "appTemplate": "hello-world",
-      "packageType": "Zip",
-      "useCaseName": "Hello World Example"
-    },
-    {
-      "directory": "nodejs10.x/cookiecutter-quick-start-from-scratch",
-      "displayName": "Quick Start: From Scratch",
-      "dependencyManager": "npm",
-      "appTemplate": "quick-start-from-scratch",
-      "packageType": "Zip",
-      "useCaseName": "Standalone function"
-    },
-    {
-      "directory": "nodejs10.x/cookiecutter-quick-start-cloudwatch-events",
-      "displayName": "Quick Start: Scheduled Events",
-      "dependencyManager": "npm",
-      "appTemplate": "quick-start-cloudwatch-events",
-      "packageType": "Zip",
-      "useCaseName": "Scheduled task"
-    },
-    {
-      "directory": "nodejs10.x/cookiecutter-quick-start-s3",
-      "displayName": "Quick Start: S3",
-      "dependencyManager": "npm",
-      "appTemplate": "quick-start-s3",
-      "packageType": "Zip",
-      "useCaseName": "Data processing"
-    },
-    {
-      "directory": "nodejs10.x/cookiecutter-quick-start-sns",
-      "displayName": "Quick Start: SNS",
-      "dependencyManager": "npm",
-      "appTemplate": "quick-start-sns",
-      "packageType": "Zip",
-      "useCaseName": "Data processing"
-    },
-    {
-      "directory": "nodejs10.x/cookiecutter-quick-start-sqs",
-      "displayName": "Quick Start: SQS",
-      "dependencyManager": "npm",
-      "appTemplate": "quick-start-sqs",
-      "packageType": "Zip",
-      "useCaseName": "Data processing"
-    },
-    {
-      "directory": "nodejs10.x/cookiecutter-quick-start-web",
-      "displayName": "Quick Start: Web Backend",
-      "dependencyManager": "npm",
-      "appTemplate": "quick-start-web",
-      "packageType": "Zip",
-      "useCaseName": "Hello World Example"
-    },
-    {
-      "directory": "nodejs10.x/cookiecutter-aws-sam-step-functions-sample-app",
-      "displayName": "Step Functions Sample App (Stock Trader)",
-      "dependencyManager": "npm",
-      "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip",
-      "useCaseName": "Multi-step workflow"
-    }
-  ],
   "python3.6": [
     {
       "directory": "python3.6/cookiecutter-aws-sam-hello-python",
@@ -844,16 +778,6 @@
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "cli-package",
       "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image",
-      "useCaseName": "Hello World Example"
-    }
-  ],
-  "amazon/nodejs10.x-base": [
-    {
-      "directory": "nodejs10.x-image/cookiecutter-aws-sam-hello-nodejs-lambda-image",
-      "displayName": "Hello World Lambda Image Example",
-      "dependencyManager": "npm",
-      "appTemplate": "hello-world--lambda-image",
       "packageType": "Image",
       "useCaseName": "Hello World Example"
     }

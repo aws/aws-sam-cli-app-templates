@@ -194,44 +194,6 @@ class BuildInvoke_nodejs12_x_cookiecutter_quick_start_sqs(BuildInvokeBase.BuildI
 class BuildInvoke_nodejs12_x_cookiecutter_quick_start_web(BuildInvokeBase.QuickStartWebBuildInvokeBase):
     directory = "nodejs12.x/cookiecutter-quick-start-web"
 
-    # if we want to check response json, we need to setup dynamodb
-
-
-class BuildInvoke_nodejs10_x_cookiecutter_aws_sam_hello_nodejs(BuildInvokeBase.SimpleHelloWorldBuildInvokeBase):
-    directory = "nodejs10.x/cookiecutter-aws-sam-hello-nodejs"
-
-
-class BuildInvoke_nodejs10_x_cookiecutter_quick_start_from_scratch(BuildInvokeBase.BuildInvokeBase):
-    directory = "nodejs10.x/cookiecutter-quick-start-from-scratch"
-
-
-class BuildInvoke_nodejs10_x_cookiecutter_quick_start_cloudwatch_events(BuildInvokeBase.BuildInvokeBase):
-    directory = "nodejs10.x/cookiecutter-quick-start-cloudwatch-events"
-
-
-class BuildInvoke_nodejs10_x_cookiecutter_quick_start_s3(BuildInvokeBase.BuildInvokeBase):
-    directory = "nodejs10.x/cookiecutter-quick-start-s3"
-
-    # if we want to check response json, we need to setup bucket for testing
-
-
-class BuildInvoke_nodejs10_x_cookiecutter_quick_start_sns(BuildInvokeBase.BuildInvokeBase):
-    directory = "nodejs10.x/cookiecutter-quick-start-sns"
-
-
-class BuildInvoke_nodejs10_x_cookiecutter_quick_start_sqs(BuildInvokeBase.BuildInvokeBase):
-    directory = "nodejs10.x/cookiecutter-quick-start-sqs"
-
-
-class BuildInvoke_nodejs10_x_cookiecutter_quick_start_web(BuildInvokeBase.QuickStartWebBuildInvokeBase):
-    directory = "nodejs10.x/cookiecutter-quick-start-web"
-
-    # if we want to check response json, we need to setup dynamodb
-
-
-class BuildInvoke_nodejs10_x_cookiecutter_aws_sam_step_functions_sample_app(BuildInvokeBase.BuildInvokeBase):
-    directory = "nodejs10.x/cookiecutter-aws-sam-step-functions-sample-app"
-
 
 class BuildInvoke_python3_6_cookiecutter_aws_sam_hello_python(BuildInvokeBase.SimpleHelloWorldBuildInvokeBase):
     directory = "python3.6/cookiecutter-aws-sam-hello-python"
