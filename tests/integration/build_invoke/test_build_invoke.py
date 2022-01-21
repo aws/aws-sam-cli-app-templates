@@ -233,14 +233,6 @@ class BuildInvoke_nodejs10_x_cookiecutter_aws_sam_step_functions_sample_app(Buil
     directory = "nodejs10.x/cookiecutter-aws-sam-step-functions-sample-app"
 
 
-class BuildInvoke_python2_7_cookiecutter_aws_sam_hello_python(BuildInvokeBase.SimpleHelloWorldBuildInvokeBase):
-    directory = "python2.7/cookiecutter-aws-sam-hello-python"
-
-
-class BuildInvoke_python2_7_cookiecutter_aws_sam_step_functions_sample_app(BuildInvokeBase.BuildInvokeBase):
-    directory = "python2.7/cookiecutter-aws-sam-step-functions-sample-app"
-
-
 class BuildInvoke_python3_6_cookiecutter_aws_sam_hello_python(BuildInvokeBase.SimpleHelloWorldBuildInvokeBase):
     directory = "python3.6/cookiecutter-aws-sam-hello-python"
 
