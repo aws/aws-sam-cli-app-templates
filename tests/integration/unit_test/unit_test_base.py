@@ -108,9 +108,6 @@ class UnitTestBase:
             result = run_command(cmdlist, self.cwd, env=env)
             self.assertNotIn("ERRORS", result.stdout)
 
-    class Python27UnitTestBase(PythonUnitTestBase):
-        python_executable = "python2.7"
-
     class Python36UnitTestBase(PythonUnitTestBase):
         python_executable = "python3.6"
 
