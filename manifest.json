@@ -686,24 +686,6 @@
       "useCaseName": "Serverless API"
     }
   ],
-  "ruby2.5": [
-    {
-      "directory": "ruby2.5/cookiecutter-aws-sam-hello-ruby",
-      "displayName": "Hello World Example",
-      "dependencyManager": "bundler",
-      "appTemplate": "hello-world",
-      "packageType": "Zip",
-      "useCaseName": "Hello World Example"
-    },
-    {
-      "directory": "ruby2.5/cookiecutter-aws-sam-step-functions-sample-app",
-      "displayName": "Step Functions Sample App (Stock Trader)",
-      "dependencyManager": "bundler",
-      "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip",
-      "useCaseName": "Multi-step workflow"
-    }
-  ],
   "ruby2.7": [
     {
       "directory": "ruby2.7/cookiecutter-aws-sam-hello-ruby",
@@ -919,16 +901,6 @@
       "directory": "python2.7-image/cookiecutter-aws-sam-hello-python-lambda-image",
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "pip",
-      "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image",
-      "useCaseName": "Hello World Example"
-    }
-  ],
-  "amazon/ruby2.5-base": [
-    {
-      "directory": "ruby2.5-image/cookiecutter-aws-sam-hello-ruby-lambda-image",
-      "displayName": "Hello World Lambda Image Example",
-      "dependencyManager": "bundler",
       "appTemplate": "hello-world-lambda-image",
       "packageType": "Image",
       "useCaseName": "Hello World Example"
