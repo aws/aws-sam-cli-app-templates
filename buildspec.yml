@@ -48,8 +48,6 @@ batch:
       buildspec: buildspecs/buildspec-unittest-java8-al2.yml
     - identifier: UnitTestJava11
       buildspec: buildspecs/buildspec-unittest-java11.yml
-    - identifier: UnitTestRuby25
-      buildspec: buildspecs/buildspec-unittest-ruby2.5.yml
     - identifier: UnitTestRuby27
       buildspec: buildspecs/buildspec-unittest-ruby2.7.yml
     - identifier: BuildAndInvoke
