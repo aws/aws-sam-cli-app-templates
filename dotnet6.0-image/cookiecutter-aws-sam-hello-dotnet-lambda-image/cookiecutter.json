@@ -1,4 +1,4 @@
 {
     "project_name": "Name of the project",
-    "runtime": "dotnet5.0"
+    "runtime": "dotnet6.0"
 }

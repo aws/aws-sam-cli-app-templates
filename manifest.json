@@ -744,9 +744,9 @@
       "useCaseName": "Hello World Example"
     }
   ],
-  "amazon/dotnet5.0-base": [
+  "amazon/dotnet6.0-base": [
     {
-      "directory": "dotnet5.0-image/cookiecutter-aws-sam-hello-dotnet-lambda-image",
+      "directory": "dotnet6.0-image/cookiecutter-aws-sam-hello-dotnet-lambda-image",
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "cli-package",
       "appTemplate": "hello-world-lambda-image",
