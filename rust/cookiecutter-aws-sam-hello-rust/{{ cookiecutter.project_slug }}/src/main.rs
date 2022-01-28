@@ -28,15 +28,14 @@ async fn main() -> Result<(), Error> {
 }
 
 /// Put Item Lambda function
-/// 
+///
 /// This function will run for every invoke of the Lambda function.
 async fn put_item(
     client: &Client,
     table_name: &str,
     request: Request,
     _context: Context,
-) -> Result<impl IntoResponse, Error>
-{
+) -> Result<impl IntoResponse, Error> {
     // Extract path parameter from request
     let path_parameters = request.path_parameters();
     let id = match path_parameters.get("id") {
@@ -68,7 +67,7 @@ async fn put_item(
 }
 
 /// Unit tests
-/// 
+///
 /// These tests are run using the `cargo test` command.
 #[cfg(test)]
 mod tests {
@@ -82,7 +81,13 @@ mod tests {
     async fn get_mock_config() -> Config {
         let cfg = aws_config::from_env()
             .region(Region::new("eu-west-1"))
-            .credentials_provider(Credentials::new("access_key", "privatekey", None, None, "dummy"))
+            .credentials_provider(Credentials::new(
+                "access_key",
+                "privatekey",
+                None,
+                None,
+                "dummy",
+            ))
             .load()
             .await;
 
@@ -120,7 +125,8 @@ mod tests {
                 ))
                 .unwrap(),
         )]);
-        let client = Client::from_conf_conn(get_mock_config().await, DynConnector::new(conn.clone()));
+        let client =
+            Client::from_conf_conn(get_mock_config().await, DynConnector::new(conn.clone()));
 
         let table_name = "test_table";
 
