@@ -10,6 +10,10 @@ Globals:
   Function:
     Timeout: 3
 
+Parameters:
+  DD_API_KEY: 
+    Type: String
+
 Resources:
   HelloWorldFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
@@ -28,7 +32,7 @@ Resources:
         - arn:aws:lambda:sa-east-1:464622532012:layer:Datadog-Python39:50
       Environment:
         Variables:
-          DD_API_KEY: dummy-val
+          DD_API_KEY: !Ref DD_API_KEY
       Events:
         HelloWorld:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
