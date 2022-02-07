@@ -551,6 +551,14 @@
       "useCaseName": "Hello World Example"
     },
     {
+      "directory": "python3.9/cookiecutter-aws-sam-hello-python-datadog",
+      "displayName": "Hello World Example with Datadog",
+      "dependencyManager": "pip",
+      "appTemplate": "hello-world-datadog",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example with Datadog"
+    },
+    {
       "directory": "python3.9/cookiecutter-aws-sam-eventBridge-python",
       "displayName": "EventBridge Hello World",
       "dependencyManager": "pip",
