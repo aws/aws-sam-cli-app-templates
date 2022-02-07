@@ -1,1 +1,3 @@
 requests
+ddtrace
+datadog_lambda
