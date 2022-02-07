@@ -23,6 +23,9 @@ Resources:
         - {{arch}}
       {%- endfor %}
       {%- endif %}
+      Layers:
+        - arn:aws:lambda:sa-east-1:464622532012:layer:Datadog-Extension:18
+        - arn:aws:lambda:sa-east-1:464622532012:layer:Datadog-Python39:50
       Events:
         HelloWorld:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
