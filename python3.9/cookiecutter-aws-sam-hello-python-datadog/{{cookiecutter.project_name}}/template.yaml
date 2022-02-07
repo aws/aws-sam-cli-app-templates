@@ -2,12 +2,12 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: 
   - AWS::Serverless-2016-10-31
   - Name: DatadogServerless
-      Parameters:
-        stackName: !Ref AWS::StackName
-        apiKey: !Ref apiKey
-        pythonLayerVersion: 50
-        extensionLayerVersion: 18
-        # For additional parameters, see: https://docs.datadoghq.com/serverless/libraries_integrations/macro/#configuration
+    Parameters:
+      stackName: !Ref AWS::StackName
+      apiKey: !Ref apiKey
+      pythonLayerVersion: 50
+      extensionLayerVersion: 18
+      # For additional parameters, see: https://docs.datadoghq.com/serverless/libraries_integrations/macro/#configuration
 
 Description: >
   {{ cookiecutter.project_name }}
