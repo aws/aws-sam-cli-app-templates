@@ -1,5 +1,12 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Transform: AWS::Serverless-2016-10-31
+Transform: 
+  - AWS::Serverless-2016-10-31
+  - Name: DatadogServerless
+    Parameters:
+      stackName: !Ref AWS::StackName
+      apiKey: !Ref apiKey
+      pythonLayerVersion: 50
+      extensionLayerVersion: 18
 Description: >
   {{ cookiecutter.project_name }}
 
@@ -28,12 +35,6 @@ Resources:
         - {{arch}}
       {%- endfor %}
       {%- endif %}
-      Layers:
-        - arn:aws:lambda:sa-east-1:464622532012:layer:Datadog-Extension:18
-        - arn:aws:lambda:sa-east-1:464622532012:layer:Datadog-Python39:50
-      Environment:
-        Variables:
-          DD_API_KEY: !Ref apiKey
       Events:
         HelloWorld:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
