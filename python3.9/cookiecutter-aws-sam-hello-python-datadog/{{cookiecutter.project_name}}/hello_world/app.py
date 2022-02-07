@@ -1,31 +1,42 @@
-from ddtrace import tracer
-from datadog_lambda.metric import lambda_metric
+import json
+
+# import requests
+
 
 def lambda_handler(event, context):
+    """Sample pure Lambda function
 
-    # add custom tags to the lambda function span,
-    # does NOT work when X-Ray tracing is enabled
-    current_span = tracer.current_span()
-    if current_span:
-        current_span.set_tag('customer.id', '123456')
+    Parameters
+    ----------
+    event: dict, required
+        API Gateway Lambda Proxy Input Format
 
-    # submit a custom span
-    with tracer.trace("hello.world"):
-        print('Hello, World!')
+        Event doc: https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html#api-gateway-simple-proxy-for-lambda-input-format
 
-    # submit a custom metric
-    lambda_metric(
-        metric_name='coffee_house.order_value',
-        value=12.45,
-        tags=['product:latte', 'order:online']
-    )
+    context: object, required
+        Lambda Context runtime methods and attributes
+
+        Context doc: https://docs.aws.amazon.com/lambda/latest/dg/python-context-object.html
+
+    Returns
+    ------
+    API Gateway Lambda Proxy Output Format: dict
+
+        Return doc: https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html
+    """
+
+    # try:
+    #     ip = requests.get("http://checkip.amazonaws.com/")
+    # except requests.RequestException as e:
+    #     # Send some context about this error to Lambda Logs
+    #     print(e)
+
+    #     raise e
 
     return {
         "statusCode": 200,
-        'body': get_message()
+        "body": json.dumps({
+            "message": "hello world",
+            # "location": ip.text.replace("\n", "")
+        }),
     }
-
-# trace a function
-@tracer.wrap()
-def get_message():
-    return 'Hello from serverless!'
