@@ -11,7 +11,8 @@ Globals:
     Timeout: 3
 
 Parameters:
-  DD_API_KEY: 
+  DatadogAPIKey: 
+    Description: 'Required. Datadog API Key'
     Type: String
 
 Resources:
@@ -32,7 +33,7 @@ Resources:
         - arn:aws:lambda:sa-east-1:464622532012:layer:Datadog-Python39:50
       Environment:
         Variables:
-          DD_API_KEY: !Ref DD_API_KEY
+          DD_API_KEY: !Ref DatadogAPIKey
       Events:
         HelloWorld:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
