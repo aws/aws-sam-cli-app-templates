@@ -559,6 +559,14 @@
       "useCaseName": "Hello World Example with Datadog"
     },
     {
+      "directory": "python3.9/cookiecutter-aws-sam-cdk-hello-python-datadog",
+      "displayName": "Hello World Example with Datadog using AWS CDK",
+      "dependencyManager": "pip",
+      "appTemplate": "hello-world-datadog-CDK",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example with Datadog using AWS CDK"
+    },
+    {
       "directory": "python3.9/cookiecutter-aws-sam-eventBridge-python",
       "displayName": "EventBridge Hello World",
       "dependencyManager": "pip",
