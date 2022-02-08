@@ -4,7 +4,7 @@ Transform:
   - Name: DatadogServerless
     Parameters:
       stackName: !Ref AWS::StackName
-      apiKey: !Ref apiKey
+      apiKey: !Ref DatadogAPIKey
       pythonLayerVersion: 50
       extensionLayerVersion: 18
 Description: >
@@ -18,7 +18,7 @@ Globals:
     Timeout: 3
 
 Parameters:
-  apiKey: 
+  DatadogAPIKey: 
     Description: Required. Datadog API Key
     Type: String
 

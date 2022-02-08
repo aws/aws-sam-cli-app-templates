@@ -1,8 +1,8 @@
 # {{ cookiecutter.project_name }}
 
-This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes the following files and folders.
+This project contains source code and supporting files for a serverless application instrumented with Datadog that you can deploy with the SAM CLI. It includes the following files and folders.
 
-- hello_world - Code for the application's Lambda function.
+- hello_world - Code for the application's Lambda function, including sample Datadog features.
 - events - Invocation events that you can use to invoke the function.
 - tests - Unit tests for the application code. 
 - template.yaml - A template that defines the application's AWS resources.
@@ -34,7 +34,27 @@ To use the SAM CLI, you need the following tools.
 * [Python 3 installed](https://www.python.org/downloads/)
 * Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community)
 
-To build and deploy your application for the first time, run the following in your shell:
+Additionally, you need to set up your [Datadog API Key](https://docs.datadoghq.com/account_management/api-app-keys/) to setup the Datadog features within this sample
+application.
+
+Before building and deploying your application, you need to install the Datadog Cloudformation Macro. This
+macro will be used during deployment to automatically add Datadog's Lambda library using layers, 
+configuring your functions to send metrics, traces, and logs to Datadog through the Datadog Lambda Extension.
+
+To install the Datadog Cloudformation Macro, run the following in your shell with your 
+[AWS credentials](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html):
+
+```bash
+aws cloudformation create-stack \
+  --stack-name datadog-serverless-macro \
+  --template-url https://datadog-cloudformation-template.s3.amazonaws.com/aws/serverless-macro/latest.yml \
+  --capabilities CAPABILITY_AUTO_EXPAND CAPABILITY_IAM
+```
+
+See [this link](https://docs.datadoghq.com/serverless/installation/python/?tab=awssam#install) for more info
+about the macro.
+
+After installing the Datadog Macro, run the following in your shell to build and deploy your application:
 
 ```bash
 sam build --use-container
@@ -45,6 +65,7 @@ The first command will build the source of your application. The second command 
 
 * **Stack Name**: The name of the stack to deploy to CloudFormation. This should be unique to your account and region, and a good starting point would be something matching your project name.
 * **AWS Region**: The AWS region you want to deploy your app to.
+* **DatadogApiKey**: Your Datadog API Key
 * **Confirm changes before deploy**: If set to yes, any change sets will be shown to you before execution for manual review. If set to no, the AWS SAM CLI will automatically deploy application changes.
 * **Allow SAM CLI IAM role creation**: Many AWS SAM templates, including this example, create AWS IAM roles required for the AWS Lambda function(s) included to access AWS services. By default, these are scoped down to minimum required permissions. To deploy an AWS CloudFormation stack which creates or modifies IAM roles, the `CAPABILITY_IAM` value for `capabilities` must be provided. If permission isn't provided through this prompt, to deploy this example you must explicitly pass `--capabilities CAPABILITY_IAM` to the `sam deploy` command.
 * **Save arguments to samconfig.toml**: If set to yes, your choices will be saved to a configuration file inside the project, so that in the future you can just re-run `sam deploy` without parameters to deploy changes to your application.
