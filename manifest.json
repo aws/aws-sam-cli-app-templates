@@ -298,6 +298,14 @@
       "useCaseName": "Hello World Example"
     },
     {
+      "directory": "nodejs14.x/cookiecutter-aws-sam-hello-nodejs-datadog",
+      "displayName": "Hello World Example with Datadog",
+      "dependencyManager": "npm",
+      "appTemplate": "hello-world-datadog",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example with Datadog"
+    },
+    {
       "directory": "nodejs14.x/cookiecutter-aws-sam-step-functions-sample-app",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "npm",
