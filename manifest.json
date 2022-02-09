@@ -602,6 +602,16 @@
       "useCaseName": "Multi-step workflow"
     }
   ],
+  "rust(Provided.al2)": [
+    {
+      "directory": "go1.x/cookiecutter-aws-sam-hello-golang",
+      "displayName": "Hello World Example",
+      "dependencyManager": "mod",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    }
+  ],
   "amazon/nodejs14.x-base": [
     {
       "directory": "nodejs14.x-image/cookiecutter-aws-sam-hello-nodejs-lambda-image",
