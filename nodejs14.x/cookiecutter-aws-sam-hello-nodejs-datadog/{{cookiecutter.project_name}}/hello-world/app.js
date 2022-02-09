@@ -1,36 +1,35 @@
-import { tracer } from ddtrace;
-import { lambda_metric } from datadog_lambda.metric
+const sendDistributionMetric  = require("datadog-lambda-js");
+const tracer = require("dd-trace");
 
-function get_message() {
-    return 'Hello from serverless!';
-}
+// submit a custom span named "sleep"
+const sleep = tracer.wrap("sleep", (ms) => {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+});
 
-get_message = tracer.wrap(get_message);
+exports.handler = async (event) => {
+  // add custom tags to the lambda function span,
+  // does NOT work when X-Ray tracing is enabled
+  const span = tracer.scope().active();
+  span.setTag('customer_id', '123456');
 
-exports.lambdaHandler = async (event, context) => {
-    
-    // add custom tags to the lambda function span,
-    // does NOT work when X-Ray tracing is enabled
-    current_span = tracer.current_span();
-    if (current_span) {
-        current_span.set_tag('customer.id', '123456');
-    }
+  await sleep(100);
 
-    // submit a custom span
-    with (tracer.trace("hello.world")) {
-        print('Hello, World!');
-    }
+  // submit a custom span
+  const sandwich = tracer.trace('hello.world', () => {
+    console.log('Hello, World!');
+  });
 
-    // submit a custom metric
-    lambda_metric(
-        metric_name='coffee_house.order_value',
-        value=12.45,
-        tags=['product:latte', 'order:online']
-    )
+  // submit a custom metric
+  sendDistributionMetric(
+    "coffee_house.order_value", // metric name
+    12.45, // metric value
+    "product:latte", // tag
+    "order:online", // another tag
+  );
 
-    return {
-        "statusCode": 200,
-        'body': get_message()
-    }
-}
-
+  const response = {
+    statusCode: 200,
+    body: JSON.stringify("Hello from serverless!"),
+  };
+  return response;
+};
