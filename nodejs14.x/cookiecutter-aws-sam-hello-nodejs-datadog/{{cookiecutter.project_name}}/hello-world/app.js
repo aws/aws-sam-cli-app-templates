@@ -1,4 +1,4 @@
-const sendDistributionMetric  = require("datadog-lambda-js");
+const { sendDistributionMetric }  = require("datadog-lambda-js");
 const tracer = require("dd-trace");
 
 // submit a custom span named "sleep"
@@ -6,7 +6,7 @@ const sleep = tracer.wrap("sleep", (ms) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 });
 
-exports.handler = async (event) => {
+exports.lambdaHandler = async (event, context) => {
   // add custom tags to the lambda function span,
   // does NOT work when X-Ray tracing is enabled
   const span = tracer.scope().active();
