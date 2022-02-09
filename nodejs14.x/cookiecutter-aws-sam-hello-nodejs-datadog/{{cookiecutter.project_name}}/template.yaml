@@ -5,7 +5,7 @@ Transform:
     Parameters:
       stackName: !Ref AWS::StackName
       apiKey: !Ref DatadogAPIKey
-      pythonLayerVersion: 50
+      nodeLayerVersion: 67
       extensionLayerVersion: 18
 Description: >
   {{ cookiecutter.project_name }}
