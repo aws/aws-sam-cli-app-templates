@@ -2,6 +2,8 @@ import json
 
 import pytest
 
+from ddtrace import tracer
+
 from hello_world import app
 
 
@@ -61,13 +63,14 @@ def apigw_event():
         "path": "/examplepath",
     }
 
-
 def test_lambda_handler(apigw_event, mocker):
+
+    tracer.enabled = False
 
     ret = app.lambda_handler(apigw_event, "")
     data = json.loads(ret["body"])
 
     assert ret["statusCode"] == 200
     assert "message" in ret["body"]
-    assert data["message"] == "hello world"
+    assert data["message"] == "Hello from serverless!"
     # assert "location" in data.dict_keys()

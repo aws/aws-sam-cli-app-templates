@@ -1,3 +1,4 @@
+import json
 from ddtrace import tracer
 from datadog_lambda.metric import lambda_metric
 
@@ -22,7 +23,9 @@ def lambda_handler(event, context):
 
     return {
         "statusCode": 200,
-        'body': get_message()
+        'body': json.dumps({
+            'message': get_message()
+        })
     }
 
 # trace a function

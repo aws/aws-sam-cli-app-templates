@@ -1,5 +1,5 @@
 const { sendDistributionMetric }  = require("datadog-lambda-js");
-const tracer = require("dd-trace");
+const tracer = require("dd-trace").init();
 
 // submit a custom span named "sleep"
 const sleep = tracer.wrap("sleep", (ms) => {
@@ -29,7 +29,9 @@ exports.lambdaHandler = async (event, context) => {
 
   const response = {
     statusCode: 200,
-    body: JSON.stringify("Hello from serverless!"),
+    body: JSON.stringify({
+      message: "Hello from serverless!"
+    }),
   };
   return response;
 };
