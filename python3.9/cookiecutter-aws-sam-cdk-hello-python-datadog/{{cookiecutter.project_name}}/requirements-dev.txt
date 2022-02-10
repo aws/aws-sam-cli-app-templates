@@ -1,2 +1,0 @@
-pytest
-datadog-cdk-constructs-v2

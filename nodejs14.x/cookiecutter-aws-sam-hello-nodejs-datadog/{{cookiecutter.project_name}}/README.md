@@ -37,24 +37,9 @@ To use the SAM CLI, you need the following tools.
 Additionally, you need to set up your [Datadog API Key](https://docs.datadoghq.com/account_management/api-app-keys/) to setup the Datadog features within this sample	
 application.	
 
-Before building and deploying your application, you need to install the Datadog Cloudformation Macro. This	
-macro will be used during deployment to automatically add Datadog's Lambda library using layers, 	
-configuring your functions to send metrics, traces, and logs to Datadog through the Datadog Lambda Extension.	
+This application has all the necessary configuration to connect to Datadog. To learn more about instrumenting functions, please see [our documentation](https://docs.datadoghq.com/serverless/installation)
 
-To install the Datadog Cloudformation Macro, run the following in your shell with your 	
-[AWS credentials](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html):	
-
-```bash	
-aws cloudformation create-stack \	
-  --stack-name datadog-serverless-macro \	
-  --template-url https://datadog-cloudformation-template.s3.amazonaws.com/aws/serverless-macro/latest.yml \	
-  --capabilities CAPABILITY_AUTO_EXPAND CAPABILITY_IAM	
-```	
-
-See [this link](https://docs.datadoghq.com/serverless/installation/python/?tab=awssam#install) for more info	
-about the macro.	
-
-After installing the Datadog Macro, run the following in your shell to build and deploy your application:
+To build and deploy your application for the first time, run the following in your shell:
 
 ```bash
 sam build

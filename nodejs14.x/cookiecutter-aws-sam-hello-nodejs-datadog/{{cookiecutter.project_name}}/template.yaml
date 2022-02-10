@@ -1,12 +1,5 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Transform: 
-  - AWS::Serverless-2016-10-31
-  - Name: DatadogServerless
-    Parameters:
-      stackName: !Ref AWS::StackName
-      apiKey: !Ref DatadogAPIKey
-      nodeLayerVersion: 67
-      extensionLayerVersion: 18
+Transform: AWS::Serverless-2016-10-31
 Description: >
   {{ cookiecutter.project_name }}
 
@@ -30,6 +23,9 @@ Resources:
       Handler: app.lambdaHandler
       Runtime: nodejs14.x
       {%- if cookiecutter.architectures.value != []%}
+      Layers:
+        - !Sub arn:aws:lambda:${AWS::Region}:464622532012:layer:Datadog-Extension:20
+        - !Sub arn:aws:lambda:${AWS::Region}:464622532012:layer:Datadog-Node14-x:68
       Architectures:
       {%- for arch in cookiecutter.architectures.value %}
         - {{arch}}
@@ -41,6 +37,11 @@ Resources:
           Properties:
             Path: /hello
             Method: get
+      Environment:
+        Variables:
+          DD_LAMBDA_HANDLER: app.lambdaHandler
+          DD_TRACE_ENABLED: true
+          DD_API_KEY: !Ref DatadogAPIKey
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function

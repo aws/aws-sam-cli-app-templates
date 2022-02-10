@@ -1,7 +1,0 @@
-{
-    "project_name": "Name of the project",
-    "runtime": "python3.9",
-    "architectures": {
-        "value": []
-    }
-}
