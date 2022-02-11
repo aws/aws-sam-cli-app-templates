@@ -6,7 +6,7 @@
       "dependencyManager": "cli-package",
       "appTemplate": "hello-world",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World example"
     },
     {
       "directory": "dotnetcore3.1/cookiecutter-aws-sam-hello-step-functions-sample-app",
@@ -72,7 +72,7 @@
       "dependencyManager": "mod",
       "appTemplate": "hello-world",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World example"
     },
     {
       "directory": "go1.x/cookiecutter-aws-sam-hello-step-functions-sample-app",
@@ -90,7 +90,7 @@
       "dependencyManager": "gradle",
       "appTemplate": "hello-world",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World example"
     },
     {
       "directory": "java8/cookiecutter-aws-sam-hello-java-maven",
@@ -98,7 +98,7 @@
       "dependencyManager": "maven",
       "appTemplate": "hello-world",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World example"
     },
     {
       "directory": "java8/cookiecutter-aws-sam-eventbridge-hello-java-gradle",
@@ -158,7 +158,7 @@
       "dependencyManager": "gradle",
       "appTemplate": "hello-world",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World example"
     },
     {
       "directory": "java8.al2/cookiecutter-aws-sam-hello-java-maven",
@@ -166,7 +166,7 @@
       "dependencyManager": "maven",
       "appTemplate": "hello-world",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World example"
     },
     {
       "directory": "java8.al2/cookiecutter-aws-sam-eventbridge-hello-java-gradle",
@@ -226,7 +226,7 @@
       "dependencyManager": "gradle",
       "appTemplate": "hello-world",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World example"
     },
     {
       "directory": "java11/cookiecutter-aws-sam-hello-java-maven",
@@ -234,7 +234,7 @@
       "dependencyManager": "maven",
       "appTemplate": "hello-world",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World example"
     },
     {
       "directory": "java11/cookiecutter-aws-sam-eventbridge-hello-java-gradle",
@@ -295,7 +295,7 @@
       "dependencyManager": "npm",
       "appTemplate": "hello-world",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World example"
     },
     {
       "directory": "nodejs14.x/cookiecutter-aws-sam-step-functions-sample-app",
@@ -361,7 +361,7 @@
       "dependencyManager": "npm",
       "appTemplate": "hello-world",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World example"
     },
     {
       "directory": "nodejs12.x/cookiecutter-aws-sam-step-functions-sample-app",
@@ -435,7 +435,7 @@
       "dependencyManager": "pip",
       "appTemplate": "hello-world",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World example"
     },
     {
       "directory": "python3.6/cookiecutter-aws-sam-eventBridge-python",
@@ -470,7 +470,7 @@
       "dependencyManager": "pip",
       "appTemplate": "hello-world",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World example"
     },
     {
       "directory": "python3.7/cookiecutter-aws-sam-eventBridge-python",
@@ -505,7 +505,7 @@
       "dependencyManager": "pip",
       "appTemplate": "hello-world",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World example"
     },
     {
       "directory": "python3.8/cookiecutter-aws-sam-eventBridge-python",
@@ -548,7 +548,7 @@
       "dependencyManager": "pip",
       "appTemplate": "hello-world",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World example"
     },
     {
       "directory": "python3.9/cookiecutter-aws-sam-eventBridge-python",
@@ -591,7 +591,7 @@
       "dependencyManager": "bundler",
       "appTemplate": "hello-world",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World example"
     },
     {
       "directory": "ruby2.7/cookiecutter-aws-sam-step-functions-sample-app",
@@ -609,7 +609,7 @@
       "dependencyManager": "npm",
       "appTemplate": "hello-world-lambda-image",
       "packageType": "Image",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World example"
     }
   ],
   "amazon/nodejs12.x-base": [
@@ -619,7 +619,7 @@
       "dependencyManager": "npm",
       "appTemplate": "hello-world-lambda-image",
       "packageType": "Image",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World example"
     }
   ],
   "amazon/python3.8-base": [
@@ -629,7 +629,7 @@
       "dependencyManager": "pip",
       "appTemplate": "hello-world-lambda-image",
       "packageType": "Image",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World example"
     },
     {
       "directory": "python3.8-image/cookiecutter-ml-apigw-pytorch",
@@ -671,7 +671,7 @@
       "dependencyManager": "pip",
       "appTemplate": "hello-world-lambda-image",
       "packageType": "Image",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World example"
     },
     {
       "directory": "python3.9-image/cookiecutter-ml-apigw-pytorch",
@@ -713,7 +713,7 @@
       "dependencyManager": "bundler",
       "appTemplate": "hello-world-lambda-image",
       "packageType": "Image",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World example"
     }
   ],
   "amazon/go1.x-base": [
@@ -723,7 +723,7 @@
       "dependencyManager": "mod",
       "appTemplate": "hello-world-lambda-image",
       "packageType": "Image",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World example"
     }
   ],
   "amazon/java11-base": [
@@ -733,7 +733,7 @@
       "dependencyManager": "gradle",
       "appTemplate": "hello-world-lambda-image",
       "packageType": "Image",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World example"
     },
     {
       "directory": "java11-image/cookiecutter-aws-sam-hello-java-maven-lambda-image",
@@ -741,7 +741,7 @@
       "dependencyManager": "maven",
       "appTemplate": "hello-world-lambda-image",
       "packageType": "Image",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World example"
     }
   ],
   "amazon/dotnet5.0-base": [
@@ -751,7 +751,7 @@
       "dependencyManager": "cli-package",
       "appTemplate": "hello-world-lambda-image",
       "packageType": "Image",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World example"
     }
   ],
   "amazon/dotnetcore3.1-base": [
@@ -761,7 +761,7 @@
       "dependencyManager": "cli-package",
       "appTemplate": "hello-world-lambda-image",
       "packageType": "Image",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World example"
     }
   ],
   "amazon/python3.7-base": [
@@ -771,7 +771,7 @@
       "dependencyManager": "pip",
       "appTemplate": "hello-world-lambda-image",
       "packageType": "Image",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World example"
     }
   ],
   "amazon/python3.6-base": [
@@ -781,7 +781,7 @@
       "dependencyManager": "pip",
       "appTemplate": "hello-world-lambda-image",
       "packageType": "Image",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World example"
     }
   ],
   "amazon/java8-base": [
@@ -791,7 +791,7 @@
       "dependencyManager": "gradle",
       "appTemplate": "hello-world-lambda-image",
       "packageType": "Image",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World example"
     },
     {
       "directory": "java8-image/cookiecutter-aws-sam-hello-java-maven-lambda-image",
@@ -799,7 +799,7 @@
       "dependencyManager": "maven",
       "appTemplate": "hello-world-lambda-image",
       "packageType": "Image",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World example"
     }
   ],
   "amazon/java8.al2-base": [
@@ -809,7 +809,7 @@
       "dependencyManager": "gradle",
       "appTemplate": "hello-world-lambda-image",
       "packageType": "Image",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World example"
     },
     {
       "directory": "java8.al2-image/cookiecutter-aws-sam-hello-java-maven-lambda-image",
@@ -817,7 +817,7 @@
       "dependencyManager": "maven",
       "appTemplate": "hello-world-lambda-image",
       "packageType": "Image",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World example"
     }
   ]
 }
