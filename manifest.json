@@ -232,7 +232,7 @@
       "directory": "java11/cookiecutter-aws-sam-hello-java-gradle-datadog",
       "displayName": "Monitoring and Observability with Datadog: Gradle",
       "dependencyManager": "gradle",
-      "appTemplate": "hello-world",
+      "appTemplate": "hello-world-datadog",
       "packageType": "Zip",
       "useCaseName": "Monitoring and Observability with Datadog"
     },
