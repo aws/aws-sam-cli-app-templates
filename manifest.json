@@ -229,6 +229,14 @@
       "useCaseName": "Hello World Example"
     },
     {
+      "directory": "java11/cookiecutter-aws-sam-hello-java-gradle-datadog",
+      "displayName": "Monitoring and Observability with Datadog: Gradle",
+      "dependencyManager": "gradle",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Monitoring and Observability with Datadog"
+    },
+    {
       "directory": "java11/cookiecutter-aws-sam-hello-java-maven",
       "displayName": "Hello World Example: Maven",
       "dependencyManager": "maven",
