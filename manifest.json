@@ -250,7 +250,7 @@
       "dependencyManager": "maven",
       "appTemplate": "hello-world-datadog",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Monitoring and Observability with Datadog"
     },
     {
       "directory": "java11/cookiecutter-aws-sam-eventbridge-hello-java-gradle",
