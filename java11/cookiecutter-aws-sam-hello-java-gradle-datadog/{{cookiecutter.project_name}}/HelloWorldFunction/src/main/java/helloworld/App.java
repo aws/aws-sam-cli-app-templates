@@ -13,13 +13,20 @@ import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
 
+import com.datadoghq.datadog_lambda_java.DDLambda;
+
 /**
  * Handler for requests to Lambda function.
  */
 public class App implements RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
 
     public APIGatewayProxyResponseEvent handleRequest(final APIGatewayProxyRequestEvent input, final Context context) {
-        DDLambda ddl = new DDLambda(request, context); //Required to initialize the trace
+        DDLambda ddl;
+        if (input != null) {
+            ddl = new DDLambda(input, context); // Required to initialize the trace
+        } else {
+            ddl = new DDLambda(context);
+        }
         
         Map<String,Object> myTags = new HashMap<String, Object>();
             myTags.put("product", "latte");
@@ -38,7 +45,6 @@ public class App implements RequestHandler<APIGatewayProxyRequestEvent, APIGatew
         APIGatewayProxyResponseEvent response = new APIGatewayProxyResponseEvent()
                 .withHeaders(headers);
 
-        ddl.finish(); //Required to finish the active span.
         try {
             final String pageContents = this.getPageContents("https://checkip.amazonaws.com");
             String output = String.format("{ \"message\": \"hello world\", \"location\": \"%s\" }", pageContents);
@@ -50,6 +56,8 @@ public class App implements RequestHandler<APIGatewayProxyRequestEvent, APIGatew
             return response
                     .withBody("{}")
                     .withStatusCode(500);
+        } finally {
+            ddl.finish(); //Required to finish the active span.
         }
     }
 

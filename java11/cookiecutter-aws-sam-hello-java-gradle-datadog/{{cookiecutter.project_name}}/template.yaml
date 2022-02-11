@@ -42,7 +42,7 @@ Resources:
         Variables:
           PARAM1: VALUE
           DD_API_KEY: !Ref DatadogAPIKey
-          JAVA_TOOL_OPTIONS: -javaagent:"/opt/java/lib/dd-java-agent.jar"
+          JAVA_TOOL_OPTIONS: -javaagent:/opt/java/lib/dd-java-agent.jar
           DD_LOGS_INJECTION: true
           DD_JMXFETCH_ENABLED: false
           DD_TRACE_ENABLED: true
