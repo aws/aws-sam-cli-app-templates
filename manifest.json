@@ -299,11 +299,11 @@
     },
     {
       "directory": "nodejs14.x/cookiecutter-aws-sam-hello-nodejs-datadog",
-      "displayName": "Hello World Example with Datadog",
+      "displayName": "Monitoring and Observability with Datadog",
       "dependencyManager": "npm",
       "appTemplate": "hello-world-datadog",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example with Datadog"
+      "useCaseName": "Monitoring and Observability with Datadog"
     },
     {
       "directory": "nodejs14.x/cookiecutter-aws-sam-step-functions-sample-app",
@@ -560,11 +560,11 @@
     },
     {
       "directory": "python3.9/cookiecutter-aws-sam-hello-python-datadog",
-      "displayName": "Hello World Example with Datadog",
+      "displayName": "Monitoring and Observability with Datadog",
       "dependencyManager": "pip",
       "appTemplate": "hello-world-datadog",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example with Datadog"
+      "useCaseName": "Monitoring and Observability with Datadog"
     },
     {
       "directory": "python3.9/cookiecutter-aws-sam-eventBridge-python",

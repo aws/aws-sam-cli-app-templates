@@ -1,0 +1,17 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.amazonaws:aws-lambda-java-core:1.2.1'
+    implementation 'com.amazonaws:aws-lambda-java-events:3.11.0'
+    implementation 'com.datadoghq:datadog-lambda-java:1.4.3'
+    testImplementation 'junit:junit:4.13.2'
+}
+
+sourceCompatibility = 11
+targetCompatibility = 11
