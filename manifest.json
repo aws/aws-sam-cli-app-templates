@@ -602,9 +602,9 @@
       "useCaseName": "Multi-step workflow"
     }
   ],
-  "rust": [
+  "rust(provided.al2)": [
     {
-      "directory": "rust/cookiecutter-aws-sam-hello-rust",
+      "directory": "rust(provided.al2)/cookiecutter-aws-sam-hello-rust",
       "displayName": "Hello World Example",
       "dependencyManager": "cargo",
       "appTemplate": "hello-world",
