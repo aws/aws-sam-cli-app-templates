@@ -1,5 +1,5 @@
 pytest
 pytest-mock
 boto3
-datadog_lambda
 ddtrace
+datadog-lambda
