@@ -1,4 +1,4 @@
-FROM amazonlinux:2
+FROM public.ecr.aws/amazonlinux/amazonlinux:2
 
 RUN yum -y update \
     && yum install -y unzip tar gzip bzip2-devel ed gcc gcc-c++ gcc-gfortran \
