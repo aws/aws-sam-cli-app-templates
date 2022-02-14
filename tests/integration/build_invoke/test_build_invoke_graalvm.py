@@ -1,8 +1,7 @@
 from tests.integration.build_invoke.build_invoke_base import BuildInvokeBase
 
 """
-sam build does not support to build dotnetcore 3.1 templates using container, 
-here we put them in a separate file and use a dedicate codebuild project with .net 3.1 runtime to build them.
+sam build needs to use a specific build image to support GraalVM templates using container.
 
 For each template, it will test the following sam commands:
 1. sam init
