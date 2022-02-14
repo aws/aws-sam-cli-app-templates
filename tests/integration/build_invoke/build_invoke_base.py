@@ -36,7 +36,7 @@ class BuildInvokeBase:
                 build_image_cmdlist.append(".")
                 LOG.info(build_image_cmdlist)
                 result = run_command(build_image_cmdlist, self.cwd)
-                self.assertIn("DONE", str(result.stderr)) #docker build outputs to stderr
+                self.assertIn("Successfully tagged", str(result.stdout))
 
             cmdlist = [SAM_CLI_EXECUTABLE, "build", "--debug"]
             if self.use_container:
