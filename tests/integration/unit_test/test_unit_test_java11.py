@@ -8,8 +8,18 @@ class UnitTest_java11_cookiecutter_aws_sam_hello_java_gradle(UnitTestBase.JavaUn
     code_directories = ["HelloWorldFunction"]
 
 
+class UnitTest_java11_cookiecutter_aws_sam_hello_java_gradle_datadog(UnitTestBase.JavaUnitTestGradleBase):
+    directory = "java11/cookiecutter-aws-sam-hello-java-gradle-datadog"
+    code_directories = ["HelloWorldFunction"]
+
+
 class UnitTest_java11_cookiecutter_aws_sam_hello_java_maven(UnitTestBase.JavaUnitTestMavenBase):
     directory = "java11/cookiecutter-aws-sam-hello-java-maven"
+    code_directories = ["HelloWorldFunction"]
+
+
+class UnitTest_java11_cookiecutter_aws_sam_hello_java_maven_datadog(UnitTestBase.JavaUnitTestMavenBase):
+    directory = "java11/cookiecutter-aws-sam-hello-java-maven-datadog"
     code_directories = ["HelloWorldFunction"]
 
 

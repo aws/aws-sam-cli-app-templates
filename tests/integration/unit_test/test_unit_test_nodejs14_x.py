@@ -6,6 +6,11 @@ class UnitTest_nodejs14_x_cookiecutter_aws_sam_hello_nodejs(UnitTestBase.NodejsU
     code_directories = ["hello-world"]
 
 
+class UnitTest_nodejs14_x_cookiecutter_aws_sam_hello_nodejs_datadog(UnitTestBase.NodejsUnitTestBase):
+    directory = "nodejs14.x/cookiecutter-aws-sam-hello-nodejs-datadog"
+    code_directories = ["hello-world"]
+
+
 class UnitTest_nodejs14_x_cookiecutter_aws_sam_step_functions_sample_app(UnitTestBase.NodejsUnitTestBase):
     directory = "nodejs14.x/cookiecutter-aws-sam-step-functions-sample-app"
     code_directories = [

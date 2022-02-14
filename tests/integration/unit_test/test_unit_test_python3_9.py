@@ -6,6 +6,11 @@ class UnitTest_python3_9_cookiecutter_aws_sam_hello_python(UnitTestBase.Python39
     code_directories = ["hello_world"]
 
 
+class UnitTest_python3_9_cookiecutter_aws_sam_hello_python_datadog(UnitTestBase.Python39UnitTestBase):
+    directory = "python3.9/cookiecutter-aws-sam-hello-python-datadog"
+    code_directories = ["hello_world"]
+
+
 class UnitTest_python3_9_cookiecutter_aws_sam_eventBridge_python(UnitTestBase.Python39UnitTestBase):
     directory = "python3.9/cookiecutter-aws-sam-eventBridge-python"
     code_directories = ["hello_world_function"]
