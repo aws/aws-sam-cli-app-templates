@@ -1,6 +1,6 @@
 # {{ cookiecutter.project_name }}
 
-This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes [Lambda Powertools for operational best practices](https://github.com/awslabs/aws-lambda-powertools-java), and the following files and folders.
+This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes support for [Graal VM](https://www.graalvm.org), and the following files and folders.
 
 - HelloWorldFunction/src/main - Code for the application's Lambda function.
 - events - Invocation events that you can use to invoke the function.
