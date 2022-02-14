@@ -93,8 +93,9 @@ class UnitTestBase:
                 # to run pytest, pytest needs to be installed
                 "pytest",
                 "pytest-mock",
-                "ddtrace"
             ]
+            if "datadog" in code_directory:
+                cmdlist.extend(["ddtrace", "datadog-lambda"])
             LOG.info(cmdlist)
             result = run_command(cmdlist, self.cwd)
             if result.stdout:
