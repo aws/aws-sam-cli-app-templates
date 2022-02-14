@@ -298,6 +298,14 @@
       "useCaseName": "Hello World Example"
     },
     {
+      "directory": "nodejs14.x/cookiecutter-aws-sam-hello-typescript-nodejs",
+      "displayName": "Hello World Example TypeScript",
+      "dependencyManager": "npm",
+      "appTemplate": "hello-world-typescript",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    },
+    {
       "directory": "nodejs14.x/cookiecutter-aws-sam-step-functions-sample-app",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "npm",
