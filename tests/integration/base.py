@@ -19,7 +19,7 @@ class CommandResult(NamedTuple):
     stderr: str
 
 
-TIMEOUT = 300
+TIMEOUT = 600
 
 LOG = getLogger(__name__)
 LOG.addHandler(StreamHandler())
