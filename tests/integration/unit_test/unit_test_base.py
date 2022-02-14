@@ -93,6 +93,7 @@ class UnitTestBase:
                 # to run pytest, pytest needs to be installed
                 "pytest",
                 "pytest-mock",
+                "ddtrace"
             ]
             LOG.info(cmdlist)
             result = run_command(cmdlist, self.cwd)
