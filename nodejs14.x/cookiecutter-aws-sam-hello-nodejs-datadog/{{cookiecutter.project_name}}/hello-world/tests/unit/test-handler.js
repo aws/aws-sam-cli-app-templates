@@ -10,13 +10,7 @@ const dd_lambda = require("datadog-lambda-js");
 
 describe('Tests index', function () {
     it('verifies successful response', async () => {
-
-        const tracer = require("dd-trace").init();
-        tracer.enabled = false
-        const sendDistributionMetricFake = () => {
-            return;
-        }
-        sinon.stub(dd_lambda, "sendDistributionMetric").callsFake(sendDistributionMetricFake);
+        sinon.stub(dd_lambda, "sendDistributionMetric");
         
         const result = await app.lambdaHandler(event, context)
 
