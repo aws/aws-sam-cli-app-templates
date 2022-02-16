@@ -4,3 +4,4 @@ __pycache__
 .idea/
 venv/
 .gradle/
+bin/
