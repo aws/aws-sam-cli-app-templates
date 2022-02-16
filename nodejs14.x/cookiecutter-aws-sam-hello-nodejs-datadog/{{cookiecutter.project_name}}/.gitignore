@@ -1,4 +1,3 @@
-
 # Created by https://www.toptal.com/developers/gitignore/api/osx,node,linux,windows,sam
 # Edit at https://www.toptal.com/developers/gitignore?templates=osx,node,linux,windows,sam
 
@@ -150,7 +149,7 @@ temp/
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
 
 # Thumbnails
 ._*
