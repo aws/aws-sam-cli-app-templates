@@ -1,5 +1,0 @@
-pytest
-pytest-mock
-boto3
-ddtrace
-datadog-lambda

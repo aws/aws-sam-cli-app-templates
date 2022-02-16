@@ -229,28 +229,12 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "java11/cookiecutter-aws-sam-hello-java-gradle-datadog",
-      "displayName": "Monitoring and Observability with Datadog: Gradle",
-      "dependencyManager": "gradle",
-      "appTemplate": "hello-world-datadog",
-      "packageType": "Zip",
-      "useCaseName": "Monitoring and Observability with Datadog"
-    },
-    {
       "directory": "java11/cookiecutter-aws-sam-hello-java-maven",
       "displayName": "Hello World Example: Maven",
       "dependencyManager": "maven",
       "appTemplate": "hello-world",
       "packageType": "Zip",
       "useCaseName": "Hello World Example"
-    },
-    {
-      "directory": "java11/cookiecutter-aws-sam-hello-java-maven-datadog",
-      "displayName": "Monitoring and Observability with Datadog: Maven",
-      "dependencyManager": "maven",
-      "appTemplate": "hello-world-datadog",
-      "packageType": "Zip",
-      "useCaseName": "Monitoring and Observability with Datadog"
     },
     {
       "directory": "java11/cookiecutter-aws-sam-eventbridge-hello-java-gradle",
@@ -573,14 +557,6 @@
       "appTemplate": "hello-world",
       "packageType": "Zip",
       "useCaseName": "Hello World Example"
-    },
-    {
-      "directory": "python3.9/cookiecutter-aws-sam-hello-python-datadog",
-      "displayName": "Monitoring and Observability with Datadog",
-      "dependencyManager": "pip",
-      "appTemplate": "hello-world-datadog",
-      "packageType": "Zip",
-      "useCaseName": "Monitoring and Observability with Datadog"
     },
     {
       "directory": "python3.9/cookiecutter-aws-sam-eventBridge-python",
