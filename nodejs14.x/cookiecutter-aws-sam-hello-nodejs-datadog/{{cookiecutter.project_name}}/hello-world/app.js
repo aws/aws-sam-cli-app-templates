@@ -1,4 +1,4 @@
-const { sendDistributionMetric }  = require("datadog-lambda-js");
+const dd_lambda = require("datadog-lambda-js");
 const tracer = require("dd-trace").init();
 
 // submit a custom span named "sleep"
@@ -20,7 +20,7 @@ exports.lambdaHandler = async (event, context) => {
   });
 
   // submit a custom metric
-  sendDistributionMetric(
+  dd_lambda.sendDistributionMetric(
     "coffee_house.order_value", // metric name
     12.45, // metric value
     "product:latte", // tag

@@ -5,22 +5,28 @@ const chai = require('chai');
 const expect = chai.expect;
 var event, context;
 
+const sinon =  require('sinon');
+const dd_lambda = require("datadog-lambda-js");
+
 describe('Tests index', function () {
     it('verifies successful response', async () => {
 
         const tracer = require("dd-trace").init();
         tracer.enabled = false
+        const sendDistributionMetricFake = () => {
+            return;
+        }
+        sinon.stub(dd_lambda, "sendDistributionMetric").callsFake(sendDistributionMetricFake);
         
         const result = await app.lambdaHandler(event, context)
 
         expect(result).to.be.an('object');
-        // expect(result.statusCode).to.equal(200);
-        // expect(result.body).to.be.an('string');
+        expect(result.statusCode).to.equal(200);
+        expect(result.body).to.be.an('string');
 
-        // let response = JSON.parse(result.body);
+        let response = JSON.parse(result.body);
 
-        // expect(response).to.be.an('object');
-        // expect(response.message).to.be.equal("Hello from serverless!");
-        // expect(response.location).to.be.an("string");
+        expect(response).to.be.an('object');
+        expect(response.message).to.be.equal("Hello from serverless!");
     });
 });
