@@ -94,8 +94,6 @@ class UnitTestBase:
                 "pytest",
                 "pytest-mock",
             ]
-            if "datadog" in self.__class__.__name__:
-                cmdlist.extend(["ddtrace", "datadog-lambda"])
             LOG.info(cmdlist)
             result = run_command(cmdlist, self.cwd)
             if result.stdout:
