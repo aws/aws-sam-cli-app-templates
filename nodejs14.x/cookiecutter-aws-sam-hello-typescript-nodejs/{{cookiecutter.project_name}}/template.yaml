@@ -34,7 +34,7 @@ Resources:
       BuildProperties:
         Minify: true
         Target: "es2020"
-        Sourcemap: true,
+        Sourcemap: true
         EntryPoints: 
         - app.ts
 
