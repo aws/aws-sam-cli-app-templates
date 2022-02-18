@@ -3,5 +3,8 @@
     "runtime": "nodejs14.x",
     "architectures": {
         "value": []
-    }
+    },
+    "Powertools X-Ray Tracing": ["enabled","disabled"],
+    "Powertools Metrics": ["enabled","disabled"],
+    "Powertools Logging": ["enabled","disabled"]
 }

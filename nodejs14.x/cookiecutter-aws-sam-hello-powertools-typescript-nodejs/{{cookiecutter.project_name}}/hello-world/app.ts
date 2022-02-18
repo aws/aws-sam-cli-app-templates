@@ -1,14 +1,24 @@
 import { APIGatewayProxyEvent, APIGatewayProxyResult, Context } from 'aws-lambda';
+{%- if cookiecutter["Powertools Metrics"] == "enabled"%}
 import { Metrics, MetricUnits } from '@aws-lambda-powertools/metrics';
+{%- endif %}
+{%- if cookiecutter["Powertools Logging"] == "enabled"%}
 import { Logger } from '@aws-lambda-powertools/logger';
+{%- endif %}
+{%- if cookiecutter["Powertools X-Ray Tracing"] == "enabled"%}
 import { Tracer } from '@aws-lambda-powertools/tracer';
+{%- endif %}
 
-const namespace = 'CDKExample';
-const serviceName = 'MyFunctionWithStandardHandler';
 
-const metrics = new Metrics({ namespace: namespace, serviceName: serviceName });
-const logger = new Logger({ logLevel: 'INFO', serviceName: serviceName });
-const tracer = new Tracer({ serviceName: serviceName });
+{%- if cookiecutter["Powertools Metrics"] == "enabled"%}
+const metrics = new Metrics();
+{%- endif %}
+{%- if cookiecutter["Powertools Logging"] == "enabled"%}
+const logger = new Logger();
+{%- endif %}
+{%- if cookiecutter["Powertools X-Ray Tracing"] == "enabled"%}
+const tracer = new Tracer();
+{%- endif %}
 
 /**
  *
@@ -24,6 +34,7 @@ const tracer = new Tracer({ serviceName: serviceName });
 export const lambdaHandler = async (event: APIGatewayProxyEvent, context: Context): Promise<APIGatewayProxyResult> => {
     let response: APIGatewayProxyResult;
 
+    {%- if cookiecutter["Powertools X-Ray Tracing"] == "enabled"%}
     // Get facade segment created by AWS Lambda
     const segment = tracer.getSegment();
 
@@ -38,13 +49,18 @@ export const lambdaHandler = async (event: APIGatewayProxyEvent, context: Contex
     // Add annotation for the awsRequestId
     tracer.putAnnotation('awsRequestId', context.awsRequestId);
 
+    {%- endif %}
+    {%- if cookiecutter["Powertools Metrics"] == "enabled" %}
     // Capture cold start metrics
     metrics.captureColdStartMetric();
 
+    {%- endif %}
+    {%- if cookiecutter["Powertools X-Ray Tracing"] == "enabled"%}
     // Create another subsegment & set it as active
     const subsegment = handlerSegment.addNewSubsegment('### MySubSegment');
     tracer.setSegment(subsegment);
 
+    {%- endif %}
     try {
         // hello world code
         response = {
@@ -53,7 +69,9 @@ export const lambdaHandler = async (event: APIGatewayProxyEvent, context: Contex
                 message: 'hello world',
             }),
         };
+        {%- if cookiecutter["Powertools Logging"] == "enabled"%}
         logger.info('This is an INFO log - sending HTTP 200 - hello world response');
+        {%- endif %}
 
     } catch (err) {
         // Error handling
@@ -64,9 +82,13 @@ export const lambdaHandler = async (event: APIGatewayProxyEvent, context: Contex
                 message: 'some error happened',
             }),
         };
+        {%- if cookiecutter["Powertools Logging"] == "enabled"%}
         logger.error('This is an ERROR log - sending HTTP 500 - some error happened response');
+        {%- endif %}
 
+    {%- if cookiecutter["Powertools Metrics"] == "enabled" or cookiecutter["Powertools X-Ray Tracing"] == "enabled"%}
     } finally {
+        {%- if cookiecutter["Powertools X-Ray Tracing"] == "enabled"%}
         // Close subsegments (the AWS Lambda one is closed automatically)
         subsegment.close(); // (### MySubSegment)
         handlerSegment.close(); // (## index.handler)
@@ -74,8 +96,13 @@ export const lambdaHandler = async (event: APIGatewayProxyEvent, context: Contex
         // Set the facade segment as active again (the one created by AWS Lambda)
         tracer.setSegment(segment);
 
+        {%- endif %}
+        {%- if cookiecutter["Powertools Metrics"] == "enabled"%}
         // Publish all stored metrics
         metrics.publishStoredMetrics();
+
+        {%- endif %}
+    {%- endif %}
     }
 
     return response;
