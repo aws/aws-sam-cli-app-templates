@@ -71,11 +71,11 @@ export const lambdaHandler = async (event: APIGatewayProxyEvent, context: Contex
         };
         {%- if cookiecutter["Powertools Logging"] == "enabled"%}
         logger.info('This is an INFO log - sending HTTP 200 - hello world response');
+        {%- else %}
+        console.log('sending HTTP 200 - hello world response')
         {%- endif %}
-
     } catch (err) {
         // Error handling
-        console.log(err);
         response = {
             statusCode: 500,
             body: JSON.stringify({
@@ -84,8 +84,9 @@ export const lambdaHandler = async (event: APIGatewayProxyEvent, context: Contex
         };
         {%- if cookiecutter["Powertools Logging"] == "enabled"%}
         logger.error('This is an ERROR log - sending HTTP 500 - some error happened response');
+        {%- else %}
+        console.log('sending HTTP 500 - some error happened response')
         {%- endif %}
-
     {%- if cookiecutter["Powertools Metrics"] == "enabled" or cookiecutter["Powertools X-Ray Tracing"] == "enabled"%}
     } finally {
         {%- if cookiecutter["Powertools X-Ray Tracing"] == "enabled"%}
