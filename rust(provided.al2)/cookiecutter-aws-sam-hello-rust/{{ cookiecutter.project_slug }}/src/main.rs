@@ -1,10 +1,5 @@
 use aws_sdk_dynamodb::{model::AttributeValue, Client};
-use lambda_http::{
-    ext::RequestExt,
-    handler,
-    lambda_runtime::{self, Context, Error},
-    Body, IntoResponse, Request, Response,
-};
+use lambda_http::{service_fn, Body, Error, IntoResponse, Request, RequestExt, Response};
 use std::env;
 
 /// Main function
@@ -19,8 +14,8 @@ async fn main() -> Result<(), Error> {
     //
     // We use a closure to pass the `dynamodb_client` and `table_name` as arguments
     // to the handler function.
-    lambda_runtime::run(handler(|request: Request, context: Context| {
-        put_item(&dynamodb_client, &table_name, request, context)
+    lambda_http::run(service_fn(|request: Request| {
+        put_item(&dynamodb_client, &table_name, request)
     }))
     .await?;
 
@@ -34,11 +29,10 @@ async fn put_item(
     client: &Client,
     table_name: &str,
     request: Request,
-    _context: Context,
 ) -> Result<impl IntoResponse, Error> {
     // Extract path parameter from request
     let path_parameters = request.path_parameters();
-    let id = match path_parameters.get("id") {
+    let id = match path_parameters.first("id") {
         Some(id) => id,
         None => return Ok(Response::builder().status(400).body("id is required")?),
     };
@@ -142,7 +136,7 @@ mod tests {
             .with_path_parameters(path_parameters);
 
         // Send mock request to Lambda handler function
-        let response = put_item(&client, table_name, request, Context::default())
+        let response = put_item(&client, table_name, request)
             .await
             .unwrap()
             .into_response();
