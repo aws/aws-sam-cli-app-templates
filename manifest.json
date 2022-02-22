@@ -612,16 +612,6 @@
       "useCaseName": "Hello World Example"
     }
   ],
-  "graalvm.java11(provided.al2)": [
-    {
-      "directory": "go1.x/cookiecutter-aws-sam-hello-golang",
-      "displayName": "Hello World Example",
-      "dependencyManager": "maven",
-      "appTemplate": "hello-world",
-      "packageType": "Zip",
-      "useCaseName": "Hello World Example"
-    }
-  ],
   "amazon/nodejs14.x-base": [
     {
       "directory": "nodejs14.x-image/cookiecutter-aws-sam-hello-nodejs-lambda-image",
