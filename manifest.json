@@ -602,7 +602,7 @@
       "useCaseName": "Multi-step workflow"
     }
   ],
-  "rust(provided.al2)": [
+  "rust (provided.al2)": [
     {
       "directory": "go1.x/cookiecutter-aws-sam-hello-golang",
       "displayName": "Hello World Example",
@@ -612,7 +612,7 @@
       "useCaseName": "Hello World Example"
     }
   ],
-  "graalvm.java11(provided.al2)": [
+  "graalvm.java11 (provided.al2)": [
     {
       "directory": "go1.x/cookiecutter-aws-sam-hello-golang",
       "displayName": "Hello World Example",
