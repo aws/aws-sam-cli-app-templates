@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      # install dotnet6 until it's available in codebuild
+      - curl -sSL https://dot.net/v1/dotnet-install.sh | bash -s -- -Version 6.0.100
+      - pip install --upgrade pip aws-sam-cli
+      - pip install -r requirements.txt
+      - dotnet --info
+
+  post_build:
+    commands:
+      - sam --version
+      - pytest -vvv tests/integration/build_invoke/test_build_invoke_dotnet6.py -n 4
+      - pytest -vvv tests/integration/unit_test/test_unit_test_dotnet6.py -n 4
