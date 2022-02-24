@@ -72,7 +72,7 @@
       "dependencyManager": "cli-package",
       "appTemplate": "hello-world",
       "packageType": "Zip",
-      "useCaseName": "Serverless API"
+      "useCaseName": "Hello World Example"
     },
     {
       "directory": "dotnet6/cookiecutter-aws-sam-hello-step-functions-sample-app",
