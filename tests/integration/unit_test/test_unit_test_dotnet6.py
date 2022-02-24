@@ -7,6 +7,7 @@ class UnitTest_dotnet6_cookiecutter_aws_sam_hello_dotnet(UnitTestBase.DotNetCore
     code_directories = ["test/HelloWorld.Test"]
 
 
+# FIXME: fix and re-enable the test
 # class UnitTest_dotnet6_cookiecutter_aws_sam_hello_powershell(UnitTestBase.DotNetCoreUnitTestBase):
 #     directory = "dotnet6/cookiecutter-aws-sam-hello-powershell"
 #     code_directories = ["test/HelloWorld.Test"]

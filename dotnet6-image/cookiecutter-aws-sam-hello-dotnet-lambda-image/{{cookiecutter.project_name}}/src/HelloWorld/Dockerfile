@@ -16,7 +16,7 @@ RUN mkdir -p build_artifacts
 RUN if [ "$SAM_BUILD_MODE" = "debug" ]; then dotnet lambda package --configuration Debug; else dotnet lambda package --configuration Release; fi
 RUN if [ "$SAM_BUILD_MODE" = "debug" ]; then cp -r /build/bin/Debug/net6.0/publish/* /build/build_artifacts; else cp -r /build/bin/Release/net6.0/publish/* /build/build_artifacts; fi
 
-FROM public.ecr.aws/lambda/dotnet:6.0
+FROM public.ecr.aws/lambda/dotnet:6
 
 COPY --from=build-image /build/build_artifacts/ /var/task/
 # Command can be overwritten by providing a different command in the template directly.
