@@ -65,24 +65,6 @@
       "useCaseName": "Data processing"
     }
   ],
-  "dotnet6": [
-    {
-      "directory": "dotnet6/cookiecutter-aws-sam-hello-dotnet",
-      "displayName": "Hello World Example",
-      "dependencyManager": "cli-package",
-      "appTemplate": "hello-world",
-      "packageType": "Zip",
-      "useCaseName": "Serverless API"
-    },
-    {
-      "directory": "dotnet6/cookiecutter-aws-sam-hello-step-functions-sample-app",
-      "displayName": "Step Functions Sample App (Stock Trader)",
-      "dependencyManager": "cli-package",
-      "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip",
-      "useCaseName": "Multi-step workflow"
-    }
-  ],
   "go1.x": [
     {
       "directory": "go1.x/cookiecutter-aws-sam-hello-golang",
@@ -768,16 +750,6 @@
       "appTemplate": "hello-world-lambda-image",
       "packageType": "Image",
       "useCaseName": "Hello World Example"
-    }
-  ],
-  "amazon/dotnet6-base": [
-    {
-      "directory": "dotnet6-image/cookiecutter-aws-sam-hello-dotnet-lambda-image",
-      "displayName": "Hello World Lambda Image Example",
-      "dependencyManager": "cli-package",
-      "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image",
-      "useCaseName": "Serverless API"
     }
   ],
   "amazon/dotnet5.0-base": [
