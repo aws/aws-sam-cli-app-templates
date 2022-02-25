@@ -15,14 +15,6 @@ RUN curl -4 -L https://github.com/graalvm/graalvm-ce-builds/releases/download/vm
 RUN mv $GRAAL_FOLDERNAME /usr/lib/graalvm
 RUN rm -rf $GRAAL_FOLDERNAME
 
-# Maven
-ENV MVN_VERSION 3.8.4
-ENV MVN_FOLDERNAME apache-maven-${MVN_VERSION}
-ENV MVN_FILENAME apache-maven-${MVN_VERSION}-bin.tar.gz
-RUN curl -4 -L https://dlcdn.apache.org/maven/maven-3/${MVN_VERSION}/binaries/${MVN_FILENAME} | tar -xvz
-RUN mv $MVN_FOLDERNAME /usr/lib/maven
-RUN rm -rf $MVN_FOLDERNAME
-
 # Gradle
 ENV GRADLE_VERSION 7.3.1
 ENV GRADLE_FOLDERNAME gradle-${GRADLE_VERSION}

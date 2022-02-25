@@ -17,7 +17,6 @@ def test_project_tree(cookies):
     assert result.project.join('src', 'main', 'java').isdir()
     assert result.project.join('src', 'main', 'java', 'helloworld').isdir()
     assert result.project.join('src', 'main', 'java', 'helloworld', 'App.java').isfile()
-    assert result.project.join('src', 'main', 'java', 'helloworld', 'GatewayResponse.java').isfile()
     assert result.project.join('src', 'test', 'java').isdir()
     assert result.project.join('src', 'test', 'java', 'helloworld').isdir()
     assert result.project.join('src', 'test', 'java', 'helloworld', 'AppTest.java').isfile()
@@ -31,9 +30,8 @@ def test_app_content(cookies):
 
     contents = (
         "package helloword",
-        "class App implements RequestHandler<Object, Object>",
+        "public class App implements RequestHandler<APIGatewayV2HTTPEvent, APIGatewayV2HTTPResponse>",
         "https://checkip.amazonaws.com",
-        "return new GatewayResponse",
         "getPageContents",
     )
 

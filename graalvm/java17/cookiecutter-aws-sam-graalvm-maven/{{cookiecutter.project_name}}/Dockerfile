@@ -24,16 +24,6 @@ RUN curl -4 -L https://dlcdn.apache.org/maven/maven-3/${MVN_VERSION}/binaries/${
 RUN mv $MVN_FOLDERNAME /usr/lib/maven
 RUN rm -rf $MVN_FOLDERNAME
 
-# Gradle
-ENV GRADLE_VERSION 7.3.1
-ENV GRADLE_FOLDERNAME gradle-${GRADLE_VERSION}
-ENV GRALE_FILENAME ${GRADLE_FOLDERNAME}-bin.zip
-RUN curl -L https://services.gradle.org/distributions/${GRALE_FILENAME} > $GRALE_FILENAME
-RUN unzip -o $GRALE_FILENAME
-RUN mv $GRADLE_FOLDERNAME /usr/lib/gradle
-RUN rm $GRALE_FILENAME
-ENV PATH=$PATH:/usr/lib/gradle/bin
-
 # AWS Lambda Builders
 RUN amazon-linux-extras enable python3.8
 RUN yum clean metadata && yum -y install python3.8
