@@ -1,7 +1,7 @@
 name: "Manifest Backward Compatibility Check"
 on:
   pull_request:
-    branches: [master, feat/prevent-manifest-change]
+    branches: [master]
 
 jobs:
   check-manifest-backward-compatibility:
