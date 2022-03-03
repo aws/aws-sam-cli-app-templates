@@ -17,5 +17,6 @@ class UnitTest_dotnet6_cookiecutter_aws_sam_hello_step_functions_sample_app(Unit
     directory = "dotnet6/cookiecutter-aws-sam-hello-step-functions-sample-app"
     code_directories = ["tests/StockBuyer.Test", "tests/StockChecker.Test", "tests/StockSeller.Test"]
 
-
-
+class UnitTest_dotnet6_cookiecutter_aws_sam_cloudwatch_events_dotnet(UnitTestBase.DotNetCoreUnitTestBase):
+    directory = "dotnet6/cookiecutter-aws-sam-quick-start-cloudwatch-events-dotnet"
+    code_directories = ["test/project.Tests"]
