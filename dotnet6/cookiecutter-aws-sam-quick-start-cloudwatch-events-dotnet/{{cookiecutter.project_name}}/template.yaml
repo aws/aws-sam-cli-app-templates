@@ -23,6 +23,12 @@ Resources:
       CodeUri: ./src/{{cookiecutter.project_name}}/
       Handler: {{cookiecutter.project_name}}::{{cookiecutter.project_name}}.Function::FunctionHandler
       Runtime: dotnet6
+      {%- if cookiecutter.architectures.value != [ ]%}
+      Architectures:
+        {%- for arch in cookiecutter.architectures.value %}
+        - {{arch}}
+        {%- endfor %}
+      {%- endif %}
       MemorySize: 256
       Timeout: 100
       # This property associates this Lambda function with a scheduled CloudWatch Event. For all available properties, see
