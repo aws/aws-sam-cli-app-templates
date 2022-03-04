@@ -19,4 +19,4 @@ class UnitTest_dotnet6_cookiecutter_aws_sam_hello_step_functions_sample_app(Unit
 
 class UnitTest_dotnet6_cookiecutter_aws_sam_cloudwatch_events_dotnet(UnitTestBase.DotNetCoreUnitTestBase):
     directory = "dotnet6/cookiecutter-aws-sam-quick-start-cloudwatch-events-dotnet"
-    code_directories = ["test/project.Tests.cs"]
+    code_directories = ["test/project.Tests"]
