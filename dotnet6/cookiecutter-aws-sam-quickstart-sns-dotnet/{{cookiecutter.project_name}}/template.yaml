@@ -6,6 +6,7 @@
 AWSTemplateFormatVersion: 2010-09-09
 Description: >-
   {{cookiecutter.project_name}}
+  Sample SAM Template for {{ cookiecutter.project_name }}
 
 # Transform section specifies one or more macros that AWS CloudFormation uses to process your template
 # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-section-structure.html
@@ -33,6 +34,12 @@ Resources:
       CodeUri: ./src/{{cookiecutter.project_name}}/
       Handler: {{cookiecutter.project_name}}::{{cookiecutter.project_name}}.Function::FunctionHandler
       Runtime: dotnet6
+      {%- if cookiecutter.architectures.value != [ ]%}
+      Architectures:
+        {%- for arch in cookiecutter.architectures.value %}
+        - {{arch}}
+        {%- endfor %}
+      {%- endif %}      
       MemorySize: 256
       # This property associates this Lambda function with the SNS topic defined above, so that whenever the topic
       # receives a message, the Lambda function is invoked
