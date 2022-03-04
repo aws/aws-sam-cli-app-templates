@@ -83,7 +83,7 @@ Resources:
     Properties:
       CodeUri: ./src/{{cookiecutter.project_name}}/
       Handler: {{cookiecutter.project_name}}::{{cookiecutter.project_name}}.Function::FunctionHandler
-      Runtime: dotnetcore3.1
+      Runtime: dotnet6
       MemorySize: 256
       Timeout: 100
       DeadLetterQueue:
