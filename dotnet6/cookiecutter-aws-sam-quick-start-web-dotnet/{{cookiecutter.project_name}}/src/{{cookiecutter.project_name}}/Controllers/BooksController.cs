@@ -1,105 +1,104 @@
-using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DataModel;
-using Amazon.DynamoDBv2.DocumentModel;
 using Microsoft.AspNetCore.Mvc;
 using {{cookiecutter.project_name}}.Entities;
+using {{cookiecutter.project_name}}.Repositories;
 
 namespace {{cookiecutter.project_name}}.Controllers;
 
 [Route("api/[controller]")]
+[Produces("application/json")]
 public class BooksController : ControllerBase
 {
-    private readonly ILogger<BooksController> _logger;
+    private readonly ILogger<BooksController> logger;
+    private readonly IBookRepository bookRepository;
 
-    private readonly IAmazonDynamoDB client;
-    private readonly DynamoDBContext context;
-
-    public BooksController(IAmazonDynamoDB client, ILogger<BooksController> logger)
+    public BooksController(ILogger<BooksController> logger, IBookRepository bookRepository)
     {
-        this.client = client;
-        this.context = new DynamoDBContext(client);
-        this._logger = logger;
+        this.logger = logger;
+        this.bookRepository = bookRepository;
     }
 
     // GET api/books
     [HttpGet]
-    public async Task<IEnumerable<Book>> Get()
+    public async Task<ActionResult<IEnumerable<Book>>> Get([FromQuery] int limit = 10)
     {
-        var result = new List<Book>();
+        if (limit <= 0 || limit > 100) return BadRequest("The limit should been between [1-100]");
 
-        ScanFilter filter = new ScanFilter();
-        filter.AddCondition("Title", ScanOperator.IsNotNull);
-        ScanOperationConfig scanConfig = new ScanOperationConfig
-        {
-            Limit = 10,
-            Filter = filter
-        };
-        var queryResult = context.FromScanAsync<Book>(scanConfig);
-
-        do
-        {
-            result.AddRange(await queryResult.GetNextSetAsync());
-        }
-        while (!queryResult.IsDone && result.Count < 10);
-
-        return result;
+        return Ok(await bookRepository.GetBooksAsync(limit));
     }
 
     // GET api/books/5
     [HttpGet("{id}")]
-    public async Task<Book> Get(Guid id)
+    public async Task<ActionResult<Book>> Get(Guid id)
     {
-        _logger.LogInformation($"Looking for book {id}");
-        return await context.LoadAsync<Book>(id);
+        var result = await bookRepository.GetByIdAsync(id);
+
+        if (result == null)
+        {
+            return NotFound();
+        }
+
+        return Ok(result);
     }
 
     // POST api/books
     [HttpPost]
-    public async Task Post([FromBody] Book book)
+    public async Task<ActionResult<Book>> Post([FromBody] Book book)
     {
-        
-        if (book == null)
+        if (book == null) return ValidationProblem("Invalid input! Book not informed");
+
+        var result = await bookRepository.CreateAsync(book);
+
+        if (result)
         {
-            throw new ArgumentException("Invalid input! Book not informed");
+            return CreatedAtAction(
+                nameof(Get),
+                new { id = book.Id },
+                book);
+        }
+        else
+        {
+            return BadRequest("Fail to persist");
         }
 
-        await context.SaveAsync<Book>(book);
-        _logger.LogInformation($"Book {book.Id} is added");
     }
 
     // PUT api/books/5
     [HttpPut("{id}")]
-    public async Task Put(Guid id, [FromBody] Book book)
+    public async Task<IActionResult> Put(Guid id, [FromBody] Book book)
     {
+        if (id == Guid.Empty || book == null) return ValidationProblem("Invalid request payload");
+
         // Retrieve the book.
-        Book bookRetrieved = await context.LoadAsync<Book>(id);
+        var bookRetrieved = await bookRepository.GetByIdAsync(id);
 
         if (bookRetrieved == null)
         {
             var errorMsg = $"Invalid input! No book found with id:{id}";
-            _logger.LogInformation(errorMsg);
-            throw new ArgumentException(errorMsg);
+            return NotFound(errorMsg);
         }
 
         book.Id = bookRetrieved.Id;
 
-        await context.SaveAsync<Book>(book);
-        _logger.LogInformation($"Book {book.Id} is updated");
+        await bookRepository.UpdateAsync(book);
+        return Ok();
     }
 
     // DELETE api/books/5
     [HttpDelete("{id}")]
-    public async Task Delete(Guid id)
+    public async Task<IActionResult> Delete(Guid id)
     {
-        // Delete the book.
-        await context.DeleteAsync<Book>(id);
-        // Try to retrieve deleted book. It should return null.
-        Book deletedBook = await context.LoadAsync<Book>(id, new DynamoDBContextConfig
-        {
-            ConsistentRead = true
-        });
+        if (id == Guid.Empty) return ValidationProblem("Invalid request payload");
 
-        if (deletedBook == null)
-            _logger.LogInformation($"Book {id} is deleted");
+        var bookRetrieved = await bookRepository.GetByIdAsync(id);
+
+        if (bookRetrieved == null)
+        {
+            var errorMsg = $"Invalid input! No book found with id:{id}";
+            return NotFound(errorMsg);
+        }
+
+        await bookRepository.DeleteAsync(bookRetrieved);
+        return Ok();
     }
 }

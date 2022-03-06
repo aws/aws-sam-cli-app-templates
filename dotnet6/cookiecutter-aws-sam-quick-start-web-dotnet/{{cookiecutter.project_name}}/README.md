@@ -90,7 +90,7 @@ Resources:
     Properties:
       CodeUri: ./src/{{cookiecutter.project_name}}/
       Handler: {{cookiecutter.project_name}}::{{cookiecutter.project_name}}.Function::FunctionHandler
-      Runtime: dotnetcore3.1
+      Runtime: dotnet6
       MemorySize: 1042
       DeadLetterQueue:
         Type: SQS

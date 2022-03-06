@@ -18,4 +18,8 @@
     <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.7.3.7" />
   </ItemGroup>
 
+  <ItemGroup>
+    <InternalsVisibleTo Include="{{cookiecutter.project_name}}.Tests" />
+  </ItemGroup>
+
 </Project>

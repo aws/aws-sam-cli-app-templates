@@ -20,11 +20,11 @@ public class Book
     public string Title { get; set; } = string.Empty;
 
     [DynamoDBProperty]
-    public int ISBN { get; set; }
+    public string? ISBN { get; set; }
 
-    [DynamoDBProperty("Authors")] //String Set datatype
-    public List<string> BookAuthors { get; set; } = new List<string>();
+    [DynamoDBProperty] //String Set datatype
+    public List<string>? Authors { get; set; }
 
     [DynamoDBIgnore]
-    public string CoverPage { get; set; } = string.Empty;
+    public string? CoverPage { get; set; }
 }
