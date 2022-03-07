@@ -107,24 +107,6 @@ We use `testing` package that is built-in in Golang and you can simply run the f
 go test -v ./hello-world/
 ```
 
-## Steps to End to End (E2E) test using the AWS Console
-1. Using the steps outlined in the `Deploy the sample application` section, deploy the application to your AWS account.
-2. Sign in to the AWS console using the account you deployed the application to.
-3. Navigate to EC2 Dashboard, there you will be able to view the instances currently running in your account. For the purpose of this test you can either
-   1. Launch a new EC2 instance (pick free tier if possible)
-   2. Update the state of an instance already running in your account to `Stopped`. Keep note of the original state as you will need to revert it back once testing is completed.
-4. Next navigate to the Lambda Console, there you will be able to see all your functions deployed in your account. Select the function prefixed with {{ cookiecutter.project_name }}. 
-   1. In the lambda function overview section we can see that there is an EventBridge Rule configured as a trigger for this lambda function. 
-5. To verify that the EC2 Instance Change Notifications are being routed properly by EventBridge select the `Monitor` tab. There we can see information about the lambda function such as: 
-   1. Invocation Count
-   2. Duration
-   3. Error and Success Rate
-6. Taking a look at the Invocations graph, we should now be able to see data points showing us that the EC2 Instance Change Notifications are invoking the deployed lambda function.
-   1. If you want further information about the lambda execution click the `View logs in Cloudwatch` button.
-   2. Select any of the log streams that have been created.
-   3. Looking at the logs posted you can confirm the EC2 instance that was created/updated and the state that it transitioned to.
-7. You can now start adding your own custom business logic in `hello-world/main.go` to interact with these EC2 instance change notifications.
-8. After testing is completed make sure to terminate the EC2 instance that was created or change the instance state back to the original value.
 
 ## Cleanup
 

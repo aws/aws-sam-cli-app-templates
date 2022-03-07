@@ -5,4 +5,4 @@ require (
 
 module {{ cookiecutter.project_name }}
 
-go 1.16
+go 1.17
