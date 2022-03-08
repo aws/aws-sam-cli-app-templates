@@ -20,5 +20,5 @@ class UnitTest_dotnet6_cookiecutter_aws_sam_hello_step_functions_sample_app(Unit
 
 class UnitTest_dotnet6_cookiecutter_aws_sam_quick_start_sqs(UnitTestBase.DotNetCoreUnitTestBase):
     directory = "dotnet6/cookiecutter-aws-sam-quick-start-sqs-dotnet"
-    code_directories = ["test/project.Tests.cs"]
+    code_directories = ["test/project.Tests"]
 
