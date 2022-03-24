@@ -2,12 +2,14 @@
 
 This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes the following files and folders.
 
-- HelloWorldFunction/src/main - Code for the application's Lambda function.
+- hello-world/main.go - Code for the application's Lambda function.
 - events - Invocation events that you can use to invoke the function.
-- HelloWorldFunction/src/test - Unit tests for the application code. 
+- hello-world/main_tests.go - Unit tests for the application code.
 - template.yaml - A template that defines the application's AWS resources.
 
-The application uses several AWS resources, including Lambda functions and an EventBridge Rule. These resources are defined in the `template.yaml` file in this project. You can update the template to add AWS resources through the same deployment process that updates your application code.
+This application reacts to EC2 Instance State change events, demonstrating the power of event-driven development with Amazon EventBridge.
+
+The application uses several AWS resources, including Lambda functions and an EventBridge Rule trigger. These resources are defined in the `template.yaml` file in this project. You can update the template to add AWS resources through the same deployment process that updates your application code.
 
 If you prefer to use an integrated development environment (IDE) to build and test your application, you can use the AWS Toolkit.  
 The AWS Toolkit is an open source plug-in for popular IDEs that uses the SAM CLI to build and deploy serverless applications on AWS. The AWS Toolkit also adds a simplified step-through debugging experience for Lambda function code. See the following links to get started.
@@ -32,33 +34,23 @@ To use the SAM CLI, you need the following tools.
 
 * AWS CLI - [Install the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html) and [configure it with your AWS credentials].
 * SAM CLI - [Install the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
-* Java8 - [Install the Java SE Development Kit 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+* Golang - [Golang](https://golang.org)
 * Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community)
 
-The SAM CLI uses an Amazon S3 bucket to store your application's deployment artifacts. If you don't have a bucket suitable for this purpose, create one. Replace `BUCKET_NAME` in the commands in this section with a unique bucket name.
+To build and deploy your application for the first time, run the following in your shell:
 
 ```bash
-{{ cookiecutter.project_name }}$ aws s3 mb s3://BUCKET_NAME
+sam build
+sam deploy --guided
 ```
 
-To prepare the application for deployment, use the `sam package` command.
+The first command will build the source of your application. The second command will package and deploy your application to AWS, with a series of prompts:
 
-```bash
-{{ cookiecutter.project_name }}$ sam package \
-    --output-template-file packaged.yaml \
-    --s3-bucket BUCKET_NAME
-```
-
-The SAM CLI creates deployment packages, uploads them to the S3 bucket, and creates a new version of the template that refers to the artifacts in the bucket. 
-
-To deploy the application, use the `sam deploy` command.
-
-```bash
-{{ cookiecutter.project_name }}$ sam deploy \
-    --template-file packaged.yaml \
-    --stack-name {{ cookiecutter.project_name }} \
-    --capabilities CAPABILITY_IAM
-```
+* **Stack Name**: The name of the stack to deploy to CloudFormation. This should be unique to your account and region, and a good starting point would be something matching your project name.
+* **AWS Region**: The AWS region you want to deploy your app to.
+* **Confirm changes before deploy**: If set to yes, any change sets will be shown to you before execution for manual review. If set to no, the AWS SAM CLI will automatically deploy application changes.
+* **Allow SAM CLI IAM role creation**: Many AWS SAM templates, including this example, create AWS IAM roles required for the AWS Lambda function(s) included to access AWS services. By default, these are scoped down to minimum required permissions. To deploy an AWS CloudFormation stack which creates or modifies IAM roles, the `CAPABILITY_IAM` value for `capabilities` must be provided. If permission isn't provided through this prompt, to deploy this example you must explicitly pass `--capabilities CAPABILITY_IAM` to the `sam deploy` command.
+* **Save arguments to samconfig.toml**: If set to yes, your choices will be saved to a configuration file inside the project, so that in the future you can just re-run `sam deploy` without parameters to deploy changes to your application.
 
 ## Use the SAM CLI to build and test locally
 
@@ -68,7 +60,7 @@ Build your application with the `sam build` command.
 {{ cookiecutter.project_name }}$ sam build
 ```
 
-The SAM CLI installs dependencies defined in `HelloWorldFunction/build.gradle`, creates a deployment package, and saves it in the `.aws-sam/build` folder.
+The SAM CLI installs dependencies defined in `go.mod`, creates a deployment package, and saves it in the `.aws-sam/build` folder.
 
 Test a single function by invoking it directly with a test event. An event is a JSON document that represents the input that the function receives from the event source. Test events are included in the `events` folder in this project.
 
@@ -83,7 +75,7 @@ The SAM CLI reads the application template to determine the EventBridge rule pat
 ```yaml
       Events:
         HelloWorld:
-          Type: CloudWatchEvent # More info about CloudWatchEvent Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#cloudwatchevent
+          Type: EventBridgeRule # More info about EventBridge Event Source: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#eventbridgerule
           Properties:
             Pattern:
               source:
@@ -109,20 +101,19 @@ You can find more information and examples about filtering Lambda function logs 
 
 ## Unit tests
 
-Tests are defined in the `HelloWorldFunction/src/test` folder in this project.
+We use `testing` package that is built-in in Golang and you can simply run the following commands to run the tests:
 
 ```bash
-{{ cookiecutter.project_name }}$ cd HelloWorldFunction
-HelloWorldFunction$ gradle test
+go test -v ./hello-world/
 ```
+
 
 ## Cleanup
 
-To delete the sample application and the bucket that you created, use the SAM CLI and AWS CLI.
+To delete the sample application that you created, use the SAM CLI. Assuming you used your project name for the stack name, you can run the following:
 
 ```bash
-{{ cookiecutter.project_name }}$ sam delete --stack-name {{ cookiecutter.project_name }}
-{{ cookiecutter.project_name }}$ aws s3 rb s3://BUCKET_NAME
+sam delete --stack-name {{ cookiecutter.project_name }}
 ```
 
 ## Resources
@@ -130,3 +121,8 @@ To delete the sample application and the bucket that you created, use the SAM CL
 See the [AWS SAM developer guide](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html) for an introduction to SAM specification, the SAM CLI, and serverless application concepts.
 
 Next, you can use AWS Serverless Application Repository to deploy ready to use Apps that go beyond hello world samples and learn how authors developed their applications: [AWS Serverless Application Repository main page](https://aws.amazon.com/serverless/serverlessrepo/)
+
+
+
+
+
