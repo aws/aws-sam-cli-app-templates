@@ -7,10 +7,11 @@ repositories {
 }
 
 dependencies {
+    ext.jacksonVersion = '2.13.2'
     implementation 'com.amazonaws:aws-lambda-java-core:1.2.1'
-    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.13.1'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.1'
-    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.1'
+    implementation "com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion"
+    implementation "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion"
+    implementation "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$jacksonVersion"
     testImplementation 'junit:junit:4.13.2'
 }
 
