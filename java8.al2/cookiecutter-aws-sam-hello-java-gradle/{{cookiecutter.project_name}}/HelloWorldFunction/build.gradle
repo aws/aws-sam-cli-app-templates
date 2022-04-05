@@ -8,5 +8,8 @@ repositories {
 
 dependencies {
     implementation 'com.amazonaws:aws-lambda-java-core:1.2.1'
-    testImplementation 'junit:junit:4.13.1'
+    testImplementation 'junit:junit:4.13.2'
 }
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8

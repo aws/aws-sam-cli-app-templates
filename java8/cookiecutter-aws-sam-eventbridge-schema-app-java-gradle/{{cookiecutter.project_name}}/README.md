@@ -110,10 +110,10 @@ Tests are defined in the `{{cookiecutter.function_name}}/src/test` folder in thi
 
 ## Cleanup
 
-To delete the sample application that you created, use the AWS CLI. Assuming you used your project name for the stack name, you can run the following:
+To delete the sample application that you created, use the SAM CLI. Assuming you used your project name for the stack name, you can run the following:
 
 ```bash
-aws cloudformation delete-stack --stack-name {{ cookiecutter.project_name }}
+sam delete --stack-name {{ cookiecutter.project_name }}
 ```
 
 ## Resources

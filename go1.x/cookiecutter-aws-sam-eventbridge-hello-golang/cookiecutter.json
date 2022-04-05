@@ -1,0 +1,7 @@
+{
+    "project_name": "Your EventBridge Starter App",
+    "runtime": "go1.x",
+    "architectures": {
+        "value": []
+    }
+}
