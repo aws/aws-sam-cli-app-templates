@@ -18,7 +18,7 @@ exports.putItemHandler = async (event) => {
     console.info('received:', event);
 
     // Get id and name from the body of the request
-    const body = JSON.parse(event.body)
+    const body = JSON.parse(event.body);
     const id = body.id;
     const name = body.name;
 
@@ -39,4 +39,4 @@ exports.putItemHandler = async (event) => {
     // All log statements are written to CloudWatch
     console.info(`response from: ${event.path} statusCode: ${response.statusCode} body: ${response.body}`);
     return response;
-}
+};

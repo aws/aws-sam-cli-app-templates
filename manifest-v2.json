@@ -93,6 +93,23 @@
       "useCaseName": "Hello World Example"
     },
     {
+      "directory": "go1.x/cookiecutter-aws-sam-eventbridge-hello-golang",
+      "displayName": "EventBridge Hello World",
+      "dependencyManager": "mod",
+      "appTemplate": "eventBridge-hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
+    },
+    {
+      "directory": "go1.x/cookiecutter-aws-sam-eventbridge-schema-app-golang",
+      "displayName": "EventBridge App from scratch (100+ Event Schemas)",
+      "dependencyManager": "mod",
+      "appTemplate": "eventBridge-schema-app",
+      "isDynamicTemplate": "True",
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
+    },
+    {
       "directory": "go1.x/cookiecutter-aws-sam-hello-step-functions-sample-app",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "mod",
