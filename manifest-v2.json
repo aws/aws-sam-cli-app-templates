@@ -647,7 +647,7 @@
   ],
   "rust (provided.al2)": [
     {
-      "directory": "rust/cookiecutter-aws-sam-hello-rust",
+      "directory": "provided.al2/rust/cookiecutter-aws-sam-hello-rust",
       "displayName": "Hello World Example",
       "dependencyManager": "cargo",
       "appTemplate": "hello-world",
