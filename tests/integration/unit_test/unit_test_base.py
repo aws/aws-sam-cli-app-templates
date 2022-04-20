@@ -219,4 +219,4 @@ class UnitTestBase:
             cmdlist = ["cargo", "test"]
             LOG.info(cmdlist)
             result = run_command(cmdlist, Path(self.cwd, code_directory))
-            self.assertIn("tests passed", result.stdout)
+            self.assertNotIn("FAILED", result.stdout)
