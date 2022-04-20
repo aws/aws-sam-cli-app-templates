@@ -7,6 +7,8 @@ phases:
       - pip install -r requirements.txt
       # Install rustup
       - curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+      # Configure cargo for the current shell
+      - source $HOME/.cargo/env
       # Install cross for cross-compilation
       - cargo install cross
   
