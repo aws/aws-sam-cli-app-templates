@@ -645,6 +645,16 @@
       "useCaseName": "Multi-step workflow"
     }
   ],
+  "rust (provided.al2)": [
+    {
+      "directory": "provided.al2/rust/cookiecutter-aws-sam-hello-rust",
+      "displayName": "Hello World Example",
+      "dependencyManager": "cargo",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    }
+  ],
   "amazon/nodejs14.x-base": [
     {
       "directory": "nodejs14.x-image/cookiecutter-aws-sam-hello-nodejs-lambda-image",
