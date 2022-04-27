@@ -12,7 +12,7 @@ For each template, it will test the following sam commands:
 class BuildInvoke_graalvm_java11_cookiecutter_aws_sam_graalvm_gradle(
     BuildInvokeBase.HelloWorldWithLocationBuildInvokeBase
 ):
-    directory = "graalvm/java11/cookiecutter-aws-sam-graalvm-gradle"
+    directory = "provided.al2/graalvm/java11/cookiecutter-aws-sam-graalvm-gradle"
     build_image_tag = "al2-graalvm:java11-gradle"
     command_timeout = 3600
 
@@ -20,7 +20,7 @@ class BuildInvoke_graalvm_java11_cookiecutter_aws_sam_graalvm_gradle(
 class BuildInvoke_graalvm_java11_cookiecutter_aws_sam_graalvm_maven(
     BuildInvokeBase.HelloWorldWithLocationBuildInvokeBase
 ):
-    directory = "graalvm/java11/cookiecutter-aws-sam-graalvm-maven"
+    directory = "provided.al2/graalvm/java11/cookiecutter-aws-sam-graalvm-maven"
     build_image_tag = "al2-graalvm:java11-maven"
     command_timeout = 3600
 
@@ -28,7 +28,7 @@ class BuildInvoke_graalvm_java11_cookiecutter_aws_sam_graalvm_maven(
 class BuildInvoke_graalvm_java17_cookiecutter_aws_sam_graalvm_gradle(
     BuildInvokeBase.HelloWorldWithLocationBuildInvokeBase
 ):
-    directory = "graalvm/java17/cookiecutter-aws-sam-graalvm-gradle"
+    directory = "provided.al2/graalvm/java17/cookiecutter-aws-sam-graalvm-gradle"
     build_image_tag = "al2-graalvm:java17-gradle"
     command_timeout = 3600
 
@@ -36,7 +36,7 @@ class BuildInvoke_graalvm_java17_cookiecutter_aws_sam_graalvm_gradle(
 class BuildInvoke_graalvm_java17_cookiecutter_aws_sam_graalvm_maven(
     BuildInvokeBase.HelloWorldWithLocationBuildInvokeBase
 ):
-    directory = "graalvm/java17/cookiecutter-aws-sam-graalvm-maven"
+    directory = "provided.al2/graalvm/java17/cookiecutter-aws-sam-graalvm-maven"
     build_image_tag = "al2-graalvm:java17-maven"
     command_timeout = 3600
 

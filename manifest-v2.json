@@ -1,4 +1,40 @@
 {
+  "graalvm.java11 (provided.al2)": [
+    {
+      "directory": "provided.al2/graalvm/java11/cookiecutter-aws-sam-graalvm-maven",
+      "displayName": "Hello World Example",
+      "dependencyManager": "maven",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "provided.al2/graalvm/java11/cookiecutter-aws-sam-graalvm-gradle",
+      "displayName": "Hello World Example",
+      "dependencyManager": "gradle",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    }
+  ],
+  "graalvm.java17 (provided.al2)": [
+    {
+      "directory": "provided.al2/graalvm/java17/cookiecutter-aws-sam-graalvm-maven",
+      "displayName": "Hello World Example",
+      "dependencyManager": "maven",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "provided.al2/graalvm/java17/cookiecutter-aws-sam-graalvm-gradle",
+      "displayName": "Hello World Example",
+      "dependencyManager": "gradle",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    }
+  ],
   "dotnetcore3.1": [
     {
       "directory": "dotnetcore3.1/cookiecutter-aws-sam-hello-dotnet",
