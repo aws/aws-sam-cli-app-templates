@@ -46,6 +46,8 @@ batch:
       buildspec: buildspecs/buildspec-unittest-java11.yml
     - identifier: UnitTestRuby27
       buildspec: buildspecs/buildspec-unittest-ruby2.7.yml
+    - identifier: UnitTestRust
+      buildspec: buildspecs/buildspec-unittest-rust.yml
     - identifier: BuildAndInvoke
       buildspec: buildspecs/buildspec-build-invoke.yml
       env:
