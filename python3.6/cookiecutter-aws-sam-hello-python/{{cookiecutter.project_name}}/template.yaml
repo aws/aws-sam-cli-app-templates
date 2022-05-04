@@ -16,9 +16,7 @@ Resources:
     Properties:
       CodeUri: hello_world/
       Handler: app.lambda_handler
-      {%- if cookiecutter.runtime == 'python2.7' %}
-      Runtime: python2.7
-      {%- elif cookiecutter.runtime == 'python3.6' %}
+      {%- if cookiecutter.runtime == 'python3.6' %}
       Runtime: python3.6
       {%- else %}
       Runtime: python3.7
