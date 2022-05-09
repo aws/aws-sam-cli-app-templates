@@ -67,6 +67,14 @@
   ],
   "dotnet6": [
     {
+      "directory": "dotnet6/cookiecutter-aws-sam-quick-start-sqs-dotnet",
+      "displayName": "Quick Start: SQS",
+      "dependencyManager": "cli-package",
+      "appTemplate": "quick-start-sqs",
+      "packageType": "Zip",
+      "useCaseName": "Data processing"
+    },
+    {
       "directory": "dotnet6/cookiecutter-aws-sam-hello-dotnet",
       "displayName": "Hello World Example",
       "dependencyManager": "cli-package",
@@ -91,6 +99,23 @@
       "appTemplate": "hello-world",
       "packageType": "Zip",
       "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "go1.x/cookiecutter-aws-sam-eventbridge-hello-golang",
+      "displayName": "EventBridge Hello World",
+      "dependencyManager": "mod",
+      "appTemplate": "eventBridge-hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
+    },
+    {
+      "directory": "go1.x/cookiecutter-aws-sam-eventbridge-schema-app-golang",
+      "displayName": "EventBridge App from scratch (100+ Event Schemas)",
+      "dependencyManager": "mod",
+      "appTemplate": "eventBridge-schema-app",
+      "isDynamicTemplate": "True",
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
     },
     {
       "directory": "go1.x/cookiecutter-aws-sam-hello-step-functions-sample-app",
@@ -700,6 +725,16 @@
       "appTemplate": "step-functions-sample-app",
       "packageType": "Zip",
       "useCaseName": "Multi-step workflow"
+    }
+  ],
+  "rust (provided.al2)": [
+    {
+      "directory": "provided.al2/rust/cookiecutter-aws-sam-hello-rust",
+      "displayName": "Hello World Example",
+      "dependencyManager": "cargo",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
     }
   ],
   "amazon/nodejs14.x-base": [
