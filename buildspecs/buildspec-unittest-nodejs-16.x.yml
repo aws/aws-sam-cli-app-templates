@@ -3,9 +3,10 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 16
+      nodejs: 14 # keep it 14 until nodejs16 support is out
 
     commands:
+      - n 16
       - pip install --upgrade pip aws-sam-cli
       - pip install -r requirements.txt
       - node --version
