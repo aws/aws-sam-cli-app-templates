@@ -318,7 +318,6 @@
       "displayName": "Step Functions Sample App (Stock Trader): Gradle",
       "dependencyManager": "gradle",
       "appTemplate": "step-functions-sample-app",
-      "isDynamicTemplate": "True",
       "packageType": "Zip",
       "useCaseName": "Multi-step workflow"
     },
