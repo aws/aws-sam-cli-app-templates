@@ -54,7 +54,11 @@ class UnitTestBase:
             result = run_command(cmdlist, Path(self.cwd, code_directory))
             self.assertRegex(
                 result.stdout,
-                r"added \d+ packages from \d+ contributors and audited \d+ packages",
+                r"added \d+ packages",
+            )
+            self.assertRegex(
+                result.stdout,
+                r"audited \d+ packages",
             )
             self.assertIn(
                 "found 0 vulnerabilities",
