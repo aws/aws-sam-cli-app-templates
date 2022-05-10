@@ -89,6 +89,14 @@
       "appTemplate": "step-functions-sample-app",
       "packageType": "Zip",
       "useCaseName": "Multi-step workflow"
+    },
+    {
+      "directory": "dotnet6/cookiecutter-aws-sam-quick-start-web-dotnet",
+      "displayName": "Quick Start: Web Backend",
+      "dependencyManager": "cli-package",
+      "appTemplate": "quick-start-web",
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
     }
   ],
   "go1.x": [
