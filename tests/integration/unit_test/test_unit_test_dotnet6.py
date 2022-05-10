@@ -23,4 +23,6 @@ class UnitTest_dotnet6_cookiecutter_aws_sam_quick_start_web_dotnet(UnitTestBase.
     code_directories = ["tests/project.Tests"]
 
 
-
+class UnitTest_dotnet6_cookiecutter_aws_sam_quick_start_sqs(UnitTestBase.DotNetCoreUnitTestBase):
+    directory = "dotnet6/cookiecutter-aws-sam-quick-start-sqs-dotnet"
+    code_directories = ["test/project.Tests"]
