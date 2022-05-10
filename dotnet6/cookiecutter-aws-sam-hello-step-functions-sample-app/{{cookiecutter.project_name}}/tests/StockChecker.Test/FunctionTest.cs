@@ -14,8 +14,8 @@ namespace StockChecker.Tests
             var function = new Function();
             var response = function.FunctionHandler(context);
 
-            Assert.True(response.stockPrice >= 0);
-            Assert.True(response.stockPrice <= 99);
+            Assert.True(response.StockPrice >= 0);
+            Assert.True(response.StockPrice <= 99);
     }
   }
 }

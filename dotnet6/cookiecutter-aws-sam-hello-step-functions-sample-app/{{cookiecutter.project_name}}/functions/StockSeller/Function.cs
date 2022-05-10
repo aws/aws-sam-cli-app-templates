@@ -2,22 +2,22 @@ using Amazon.Lambda.Core;
 using System;
 
 // Assembly attribute to enable the Lambda function's JSON input to be converted into a .NET class.
-[assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
+[assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.CamelCaseLambdaJsonSerializer))]
 
 namespace StockSeller
 {
     public class StockEvent
     {
-        public int stockPrice;
+        public int StockPrice;
     }
 
     public class TransactionResult
     {
-        public string id;
-        public string price;
-        public string type;
-        public string qty;
-        public string timestamp;
+        public string Id { get; set; } = string.Empty;
+        public string Price { get; set; } = string.Empty;
+        public string Type { get; set; } = string.Empty;
+        public string Qty { get; set; } = string.Empty;
+        public string Timestamp { get; set; } = string.Empty;
     }
 
     public class Function
@@ -47,11 +47,11 @@ namespace StockSeller
 
             return new TransactionResult
             {
-                id = rand.Next().ToString(),
-                type = "Sell",
-                price = stockEvent.stockPrice.ToString(),
-                qty = (rand.Next() % 10 + 1).ToString(),
-                timestamp = DateTime.Now.ToString("yyyyMMddHHmmssffff")
+                Id = rand.Next().ToString(),
+                Type = "Sell",
+                Price = stockEvent.StockPrice.ToString(),
+                Qty = (rand.Next() % 10 + 1).ToString(),
+                Timestamp = DateTime.Now.ToString("yyyyMMddHHmmssffff")
             };
         }
     }
