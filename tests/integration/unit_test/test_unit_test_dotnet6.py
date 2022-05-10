@@ -21,3 +21,13 @@ class UnitTest_dotnet6_cookiecutter_aws_sam_hello_step_functions_sample_app(Unit
 class UnitTest_dotnet6_cookiecutter_aws_from_scratch_dotnet(UnitTestBase.DotNetCoreUnitTestBase):
     directory = "dotnet6/cookiecutter-aws-sam-quick-start-from-scratch-dotnet"
     code_directories = ["test/project.Tests"]
+
+    
+class UnitTest_dotnet6_cookiecutter_aws_sam_quick_start_web_dotnet(UnitTestBase.DotNetCoreUnitTestBase):
+    directory = "dotnet6/cookiecutter-aws-sam-quick-start-web-dotnet"
+    code_directories = ["tests/project.Tests"]
+
+
+class UnitTest_dotnet6_cookiecutter_aws_sam_quick_start_sqs(UnitTestBase.DotNetCoreUnitTestBase):
+    directory = "dotnet6/cookiecutter-aws-sam-quick-start-sqs-dotnet"
+    code_directories = ["test/project.Tests"]
