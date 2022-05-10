@@ -419,6 +419,16 @@
       "useCaseName": "Serverless API"
     }
   ],
+  "amazon/nodejs16.x-base": [
+    {
+      "directory": "nodejs16.x-image/cookiecutter-aws-sam-hello-nodejs-lambda-image",
+      "displayName": "Hello World Image Example",
+      "dependencyManager": "npm",
+      "appTemplate": "hello-world-lambda-image",
+      "packageType": "Image",
+      "useCaseName": "Hello World Example"
+    }
+  ],
   "nodejs14.x": [
     {
       "directory": "nodejs14.x/cookiecutter-aws-sam-hello-nodejs",
