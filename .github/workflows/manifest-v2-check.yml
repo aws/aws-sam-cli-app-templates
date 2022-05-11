@@ -9,6 +9,9 @@ jobs:
       pull-requests: read
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Changes
+        uses: actions/checkout@v3
       - name: Validate manifest-v2.json
         run: |
-          echo manifest-v2.json | jq
+          ls -ltra
+          cat manifest-v2.json | jq
