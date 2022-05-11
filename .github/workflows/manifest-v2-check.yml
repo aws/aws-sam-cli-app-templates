@@ -11,4 +11,4 @@ jobs:
     steps:
       - name: Validate manifest-v2.json
         run: |
-          echo manifest-v2.json | jq
+          cat manifest-v2.json | jq
