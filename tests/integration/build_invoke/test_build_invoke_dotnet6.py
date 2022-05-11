@@ -28,6 +28,9 @@ class BuildInvoke_dotnet6_cookiecutter_aws_sam_hello_step_functions_sample_app(
     use_container = False
     directory = "dotnet6/cookiecutter-aws-sam-hello-step-functions-sample-app"
 
+class BuildInvoke_dotnet6_cookiecutter_aws_sam_quick_start_cloudwatch_events_dotnet(BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase):
+    use_container = False
+    directory = "dotnet6/cookiecutter-aws-sam-quick-start-cloudwatch-events-dotnet"
 
 class BuildInvoke_dotnet6_cookiecutter_aws_from_scratch_dotnet(
     BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase):
