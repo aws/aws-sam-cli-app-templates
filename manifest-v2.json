@@ -16,6 +16,7 @@
       "packageType": "Zip",
       "useCaseName": "Multi-step workflow"
     },
+    {
       "directory": "dotnetcore3.1/cookiecutter-aws-sam-quick-start-web-dotnet",
       "displayName": "Quick Start: Web Backend",
       "dependencyManager": "cli-package",
