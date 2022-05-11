@@ -105,6 +105,7 @@
       "packageType": "Zip",
       "useCaseName": "Standalone function"
     },
+    {
       "directory": "dotnet6/cookiecutter-aws-sam-quick-start-web-dotnet",
       "displayName": "Quick Start: Web Backend",
       "dependencyManager": "cli-package",
