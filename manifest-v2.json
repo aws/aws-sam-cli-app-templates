@@ -98,6 +98,7 @@
       "packageType": "Zip",
       "useCaseName": "Scheduled task"
     },
+    {
       "directory": "dotnet6/cookiecutter-aws-sam-quick-start-from-scratch-dotnet",
       "displayName": "Quick Start: From Scratch",
       "dependencyManager": "cli-package",
