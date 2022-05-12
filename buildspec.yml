@@ -25,6 +25,10 @@ batch:
         # node 14 only available in aws/codebuild/standard:5.0
         # https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-available.html
         image: aws/codebuild/standard:5.0
+    - identifier: UnitTestNodejs16
+      buildspec: buildspecs/buildspec-unittest-nodejs-16.x.yml
+      env:
+        image: aws/codebuild/standard:5.0
     - identifier: UnitTestPython36
       buildspec: buildspecs/buildspec-unittest-python3.6.yml
     - identifier: UnitTestPython37

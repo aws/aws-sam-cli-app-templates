@@ -121,7 +121,7 @@ describe("Test State Machine", function () {
     return response.executionArn;
   };
 
-  const waitExecution = async () => {
+  const waitExecution = async (executionArn) => {
     const client = new AWS.StepFunctions();
     while (true) {
       const response = await client
