@@ -10,7 +10,7 @@ func TestHandler(t *testing.T) {
 		context := context.Background()
 		response, _ := handler(context)
 
-		if (response.StockPrice < 0 || response.StockPrice > 99) {
+		if response.StockPrice < 0 || response.StockPrice > 99 {
 			t.Fatal("Response has invalid field value")
 		}
 	})

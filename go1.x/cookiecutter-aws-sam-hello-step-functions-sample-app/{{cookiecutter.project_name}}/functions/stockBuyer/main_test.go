@@ -18,11 +18,11 @@ func TestHandler(t *testing.T) {
 		_, qtyOk := interface{}(response.Qty).(string)
 		_, timestampOk := interface{}(response.Timestamp).(string)
 
-		if(!idOk || !priceOk || !typeOk || !qtyOk || !timestampOk) {
+		if !idOk || !priceOk || !typeOk || !qtyOk || !timestampOk {
 			t.Fatal("Response missing property")
 		}
 
-		if(respType != "buy" || price != strconv.FormatInt(int64(event.StockPrice), 10)) {
+		if respType != "buy" || price != strconv.FormatInt(int64(event.StockPrice), 10) {
 			t.Fatal("Response invalid property value")
 		}
 	})
