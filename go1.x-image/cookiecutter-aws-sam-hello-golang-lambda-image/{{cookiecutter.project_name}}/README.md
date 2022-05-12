@@ -4,7 +4,6 @@ This is a sample template for {{ cookiecutter.project_name }} - Below is a brief
 
 ```bash
 .
-├── Makefile                    <-- Make to automate build
 ├── README.md                   <-- This instructions file
 ├── hello-world                 <-- Source code for a lambda function
 │   ├── main.go                 <-- Lambda function code
