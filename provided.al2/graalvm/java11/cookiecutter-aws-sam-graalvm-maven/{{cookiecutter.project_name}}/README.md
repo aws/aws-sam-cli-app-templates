@@ -23,16 +23,16 @@ This sample uses GraalVM to create a native binary of your Java application. By 
 
 This sample contains build configurations for both Maven and Gradle build systems. (See Makefile in HelloWorldFunction)
 
-A docker image is required to compile for the Lambda execution environment (based on Amazon Linux 2). This image can be built using the `build.sh` script or by executing the following command in your shell:
+A docker image is required to compile for the Lambda execution environment (based on Amazon Linux 2). This image can be built using the `build-image.sh` script or by executing the following command in your shell:
 
 ```bash
-docker build -t al2-graalvm .
+docker build -t al2-graalvm:maven .
 ```
 
 This image is then used when building the SAM package:
 
 ```bash
-sam build --use-container --build-image al2-graalvm
+sam build
 ```
 
 **Note:**
@@ -49,7 +49,6 @@ To use the SAM CLI, you need the following tools.
 
 - SAM CLI - [Install the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
 - Java11 - [Install the Java 11](https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/downloads-list.html)
-- Maven - [Install Maven](https://maven.apache.org/install.html)
 - Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community)
 
 To build and deploy your application for the first time, run the following in your shell:
