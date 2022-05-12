@@ -40,6 +40,9 @@ Resources:
       Handler: StockChecker.src.main.java.stockChecker.App::handleRequest
       Runtime: java8
       MemorySize: 512
+      Environment: # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
+        Variables:
+          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1 # More info about tiered compilation https://aws.amazon.com/blogs/compute/optimizing-aws-lambda-function-performance-for-java/
 
   StockSellerFunction:
     Type: AWS::Serverless::Function
@@ -48,6 +51,9 @@ Resources:
       Handler: StockSeller.src.main.java.stockSeller.App::handleRequest
       Runtime: java8
       MemorySize: 512
+      Environment: # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
+        Variables:
+          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1 # More info about tiered compilation https://aws.amazon.com/blogs/compute/optimizing-aws-lambda-function-performance-for-java/
 
   StockBuyerFunction:
     Type: AWS::Serverless::Function
@@ -56,6 +62,9 @@ Resources:
       Handler: StockBuyer.src.main.java.stockBuyer.App::handleRequest
       Runtime: java8
       MemorySize: 512
+      Environment: # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
+        Variables:
+          JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1 # More info about tiered compilation https://aws.amazon.com/blogs/compute/optimizing-aws-lambda-function-performance-for-java/
 
   TransactionTable:
     Type: AWS::Serverless::SimpleTable # More info about SimpleTable Resource: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-simpletable.html
