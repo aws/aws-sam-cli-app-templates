@@ -24,11 +24,26 @@ class BuildInvokeBase:
         function_id_by_event: Optional[Dict[str, str]] = None
         invoke_output: Dict[str, Any]
         use_container: bool = True
+        build_image_tag: Optional[str] = None
+        build_image_file: Optional[str] = None
 
         def _test_build(self):
+            if self.build_image_tag:
+                build_image_cmdlist = ["docker", "build", "-t", self.build_image_tag]
+                if self.build_image_file:
+                    build_image_cmdlist.append("-f")
+                    build_image_cmdlist.append(self.build_image_file)
+                build_image_cmdlist.append(".")
+                LOG.info(build_image_cmdlist)
+                result = run_command(build_image_cmdlist, self.cwd)
+                self.assertIn("Successfully tagged", str(result.stdout))
+
             cmdlist = [SAM_CLI_EXECUTABLE, "build", "--debug"]
             if self.use_container:
                 cmdlist.append("--use-container")
+            if self.build_image_tag:
+                cmdlist.append("--build-image")
+                cmdlist.append(self.build_image_tag)
             LOG.info(cmdlist)
             result = run_command(cmdlist, self.cwd)
             self.assertIn("Build Succeeded", str(result.stdout))
