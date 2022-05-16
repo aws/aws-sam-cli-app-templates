@@ -8,7 +8,7 @@ RUN yum -y update \
 
 # Graal VM
 ENV JAVA_VERSION java17
-ENV GRAAL_VERSION 22.0.0.2
+ENV GRAAL_VERSION 22.1.0
 ENV GRAAL_FOLDERNAME graalvm-ce-${JAVA_VERSION}-${GRAAL_VERSION}
 ENV GRAAL_FILENAME graalvm-ce-${JAVA_VERSION}-linux-amd64-${GRAAL_VERSION}.tar.gz
 RUN curl -4 -L https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-${GRAAL_VERSION}/${GRAAL_FILENAME} | tar -xvz
