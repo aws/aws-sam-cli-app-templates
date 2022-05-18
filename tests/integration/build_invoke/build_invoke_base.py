@@ -36,7 +36,8 @@ class BuildInvokeBase:
                 build_image_cmdlist.append(".")
                 LOG.info(build_image_cmdlist)
                 result = run_command(build_image_cmdlist, self.cwd)
-                self.assertIn("Successfully tagged", str(result.stdout))
+                returnCode = result.process.poll()
+                self.assertEqual(returnCode, 0)
 
             cmdlist = [SAM_CLI_EXECUTABLE, "build", "--debug"]
             if self.use_container:
