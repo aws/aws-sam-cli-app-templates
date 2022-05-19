@@ -18,8 +18,8 @@ class CommandResult(NamedTuple):
     stdout: str
     stderr: str
 
-
-TIMEOUT = 300
+# TODO: make refactor so timeout and run_command is in Base class so we can override it
+TIMEOUT = 3600
 
 LOG = getLogger(__name__)
 LOG.addHandler(StreamHandler())

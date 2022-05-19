@@ -54,7 +54,11 @@ class UnitTestBase:
             result = run_command(cmdlist, Path(self.cwd, code_directory))
             self.assertRegex(
                 result.stdout,
-                r"added \d+ packages from \d+ contributors and audited \d+ packages",
+                r"added \d+ packages",
+            )
+            self.assertRegex(
+                result.stdout,
+                r"audited \d+ packages",
             )
             self.assertIn(
                 "found 0 vulnerabilities",
@@ -205,3 +209,18 @@ class UnitTestBase:
             LOG.info(cmdlist)
             result = run_command(cmdlist, self.cwd)
             self.assertIn("100% passed", result.stdout)
+
+    class RustUnitTestBase(UnitTestBase):
+        """
+        Execute the following commands:
+        1. cargo test # install dependencies and run tests
+        """
+
+        def _test_install(self, code_directory: str):
+            pass
+
+        def _test_unit_tests(self, code_directory: str):
+            cmdlist = ["cargo", "test"]
+            LOG.info(cmdlist)
+            result = run_command(cmdlist, Path(self.cwd, code_directory))
+            self.assertNotIn("FAILED", result.stdout)

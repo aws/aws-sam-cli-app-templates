@@ -120,10 +120,10 @@ HelloWorldFunction$ gradle test
 
 ## Cleanup
 
-To delete the sample application and the bucket that you created, use the AWS CLI.
+To delete the sample application and the bucket that you created, use the SAM CLI and AWS CLI.
 
 ```bash
-{{ cookiecutter.project_name }}$ aws cloudformation delete-stack --stack-name {{ cookiecutter.project_name }}
+{{ cookiecutter.project_name }}$ sam delete --stack-name {{ cookiecutter.project_name }}
 {{ cookiecutter.project_name }}$ aws s3 rb s3://BUCKET_NAME
 ```
 

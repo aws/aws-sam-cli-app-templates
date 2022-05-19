@@ -1,0 +1,10 @@
+pluginManagement {
+    plugins {
+        id 'org.graalvm.buildtools.native' version getProperty('native.gradle.plugin.version')
+    }
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+rootProject.name = 'hello-world-native'
