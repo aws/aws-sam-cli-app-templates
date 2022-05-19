@@ -554,7 +554,7 @@
       "appTemplate": "hello-world-powertools-typescript",
       "packageType": "Zip",
       "useCaseName": "Hello World Example"
-    },
+    }
   ],
   "nodejs12.x": [
     {
