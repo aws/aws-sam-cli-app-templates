@@ -3,5 +3,8 @@
     "runtime": "ruby2.7",
     "architectures": {
         "value": []
-    }
+    },
+    "_copy_without_render": [
+        ".gitignore"
+    ]
 }
