@@ -3,5 +3,8 @@
     "runtime": "nodejs14.x",
     "architectures": {
         "value": []
-    }
+    },
+    "_copy_without_render": [
+        ".gitignore"
+    ]
 }
