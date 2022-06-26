@@ -1,5 +1,5 @@
 {
-    "project_name": "Name of the project",
+    "project_name": "aws-sam-hello-http-python",
     "runtime": "python3.9",
     "architectures": {
         "value": []
