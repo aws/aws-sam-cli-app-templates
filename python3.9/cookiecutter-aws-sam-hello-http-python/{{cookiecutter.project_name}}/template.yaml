@@ -11,8 +11,6 @@ Globals:
     Timeout: 3
 
 Resources:
-  HelloWorldHttpAPI:
-    Type: AWS::Serverless::HttpApi
 
   HelloWorldFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
@@ -23,11 +21,7 @@ Resources:
       Events:
         ApiEvent:
           Type: HttpApi
-          Properties:
-            Path: /hello
-            Method: get
-            ApiId: !Ref HelloWorldHttpAPI
-          
+
 Outputs:
   # ServerlessHttpApi is an implicit API created out of Events key under Serverless::Function
   # Find out more about other implicit resources you can reference within SAM
