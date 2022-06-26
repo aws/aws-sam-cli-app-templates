@@ -745,6 +745,14 @@
       "useCaseName": "Hello World Example"
     },
     {
+      "directory": "python3.9/cookiecutter-aws-sam-hello-http-python",
+      "displayName": "Hello World Example (APIGatewayV2/HTTP API)",
+      "dependencyManager": "pip",
+      "appTemplate": "hello-world-http",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example (APIGatewayV2/HTTP API)"
+    },
+    {
       "directory": "python3.9/cookiecutter-aws-sam-eventBridge-python",
       "displayName": "EventBridge Hello World",
       "dependencyManager": "pip",
