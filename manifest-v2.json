@@ -546,6 +546,14 @@
       "appTemplate": "quick-start-web",
       "packageType": "Zip",
       "useCaseName": "Serverless API"
+    },
+    {
+      "directory": "nodejs14.x/cookiecutter-aws-sam-hello-powertools-typescript-nodejs",
+      "displayName": "Hello World Example TypeScript w/ Lambda Powertools",
+      "dependencyManager": "npm",
+      "appTemplate": "hello-world-powertools-typescript",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
     }
   ],
   "nodejs12.x": [
