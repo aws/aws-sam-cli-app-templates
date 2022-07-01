@@ -11,4 +11,4 @@ phases:
       - docker info
       - sam --version
       # larger codebuild machine will be allocated to this test, the number of tests running in parallel increases to 8
-      - pytest -vvv tests/integration/build_invoke/test_build_invoke_image.py -n 8
+      - pytest -vvv tests/integration/build_invoke/test_build_invoke_image.py -n 4
