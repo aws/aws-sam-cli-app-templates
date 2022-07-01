@@ -75,6 +75,7 @@ class Base:
                 template_path,
                 "--name",
                 PROJECT_NAME,
+                "--debug"
             ]
             LOG.info(cmdlist)
             run_command(cmdlist, self.tempdir.name)
