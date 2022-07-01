@@ -86,6 +86,10 @@ class BuildInvokeBase:
         @pytest.mark.flaky(reruns=3)
         def test_buld_and_invoke(self):
             self._test_init_template()
+            for child in self.cwd.iterdir():
+                LOG.info(child)
+
+            self.assertTrue(False)
             self._test_build()
             self._test_local_invoke()
 
