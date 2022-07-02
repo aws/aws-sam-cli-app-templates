@@ -59,7 +59,7 @@ batch:
     - identifier: BuildAndInvokeImage
       buildspec: buildspecs/buildspec-build-invoke-image.yml
       env:
-        compute-type: BUILD_GENERAL1_2XLARGE
+        compute-type: BUILD_GENERAL1_LARGE
     - identifier: CombinedDotNet6
       buildspec: buildspecs/buildspec-dotnet6.yml
     - identifier: CombinedDotNet5
