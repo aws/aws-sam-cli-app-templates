@@ -748,7 +748,7 @@
       "dependencyManager": "pip",
       "appTemplate": "efs-sample-app",
       "packageType": "Zip",
-      "useCaseName": "Serverless API"
+      "useCaseName": "Lambda EFS example"
     }
   ],
   "python3.9": [
@@ -791,7 +791,7 @@
       "dependencyManager": "pip",
       "appTemplate": "efs-sample-app",
       "packageType": "Zip",
-      "useCaseName": "Serverless API"
+      "useCaseName": "Lambda EFS example"
     }
   ],
   "ruby2.7": [
