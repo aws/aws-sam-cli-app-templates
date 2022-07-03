@@ -26,8 +26,8 @@ builder.Services
         .AddScoped<IDynamoDBContext, DynamoDBContext>()
         .AddScoped<IBookRepository, BookRepository>();
 
-// Add AWS Lambda support. When application is run in Lambda Kestrel is swapped out as the web server with Amazon.Lambda.AspNetCoreServer. This
-// package will act as the webserver translating request and responses between the Lambda event source and ASP.NET Core.
+// Add AWS Lambda support. When running the application as an AWS Serverless application, Kestrel is replaced
+// with a Lambda function contained in the Amazon.Lambda.AspNetCoreServer package, which marshals the request into the ASP.NET Core hosting framework.
 builder.Services.AddAWSLambdaHosting(LambdaEventSource.HttpApi);
 
 
