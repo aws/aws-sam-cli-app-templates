@@ -546,6 +546,14 @@
       "appTemplate": "quick-start-web",
       "packageType": "Zip",
       "useCaseName": "Serverless API"
+    },
+    {
+      "directory": "nodejs14.x/cookiecutter-aws-sam-hello-powertools-typescript-nodejs",
+      "displayName": "Hello World Example TypeScript w/ Lambda Powertools",
+      "dependencyManager": "npm",
+      "appTemplate": "hello-world-powertools-typescript",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
     }
   ],
   "nodejs12.x": [
@@ -732,7 +740,7 @@
       "dependencyManager": "pip",
       "appTemplate": "efs-sample-app",
       "packageType": "Zip",
-      "useCaseName": "Serverless API"
+      "useCaseName": "Lambda EFS example"
     }
   ],
   "python3.9": [
@@ -775,7 +783,7 @@
       "dependencyManager": "pip",
       "appTemplate": "efs-sample-app",
       "packageType": "Zip",
-      "useCaseName": "Serverless API"
+      "useCaseName": "Lambda EFS example"
     }
   ],
   "ruby2.7": [
