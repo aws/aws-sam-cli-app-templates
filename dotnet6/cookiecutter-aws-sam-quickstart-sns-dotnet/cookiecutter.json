@@ -1,0 +1,9 @@
+{
+    "project_name": "Name of the project",
+    "runtime": "dotnet6",
+    "architectures": {
+        "value": [
+            "x86_64", "arm64"
+        ]
+    }
+}

@@ -90,6 +90,37 @@ stock-checker$ npm install
 stock-checker$ npm run test
 ```
 
+## Testing Step Functions locally
+Developers can test their state machines locally using Step Functions Local before deploying them to an AWS account. Often, developers want to test the control and data flows of their state machine executions in isolation, without any dependency on service integration availability. This is now possible using the [Mocked Service Integrations for Step Functions Local](https://docs.aws.amazon.com/step-functions/latest/dg/sfn-local-test-sm-exec.html).
+
+The `statemachine/tests/MockConfigFile.json` contains various test cases with mocked service integrations.
+
+- `HappyPathSellStockTest` - This test mocks the output of Check Stock Value, Sell Stock and Record Transaction using LambdaMockedSuccessValueGreaterThan50, SellStockLambdaMockedResponse and RecordTransactionDDBMockedResponse respectively.
+- `HappyPathBuyStockTest` - This test mocks the output of Check Stock Value, Buy Stock and Record Transaction using LambdaMockedSuccessValueLowerThan50, BuyStockLambdaMockedResponse and RecordTransactionDDBMockedResponse respectively.
+- `CheckStockRetryOnServiceExceptionTest` and `SellStockRetryOnServiceExceptionTest`- These tests mocks the failure with exponential retries.
+
+This application also provides a `makefile` which has all the required commands to run docker [`make run`], create state machine and execute tests [`make all`], and checking history [`make history`].
+
+On a terminal window, first start with running docker:
+
+```bash
+make run
+```
+
+On a different terminal window/tab, you can then run:
+
+```bash
+make all
+```
+
+Finally, you can check history of each execution by running:
+
+```bash
+make history
+```
+
+Check [`makefile`](./makefile) for details
+
 ## Cleanup
 
 To delete the sample application that you created, use the AWS CLI. Assuming you used your project name for the stack name, you can run the following:
