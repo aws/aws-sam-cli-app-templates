@@ -45,4 +45,4 @@ Outputs:
     Value: !GetAtt InferenceFunction.Arn
   InferenceFunctionIamRole:
     Description: "Implicit IAM Role created for Inference function"
-    Value: !GetAtt InferenceFunction.Arn
+    Value: !GetAtt InferenceFunctionRole.Arn
