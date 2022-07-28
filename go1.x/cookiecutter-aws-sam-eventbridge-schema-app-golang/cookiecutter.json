@@ -11,5 +11,8 @@
     "AWS_Schema_source": "aws.ec2",
     "AWS_Schema_detail_type": "EC2 Instance State-change Notification",
     "codegen_path": "{{ cookiecutter.project_name }}/{{ cookiecutter.function_name }}/{{ cookiecutter.AWS_Schema_root|lower|replace('.', '/') }}",
-    "codegen_package_name": "{{ cookiecutter.AWS_Schema_root.lower()[cookiecutter.AWS_Schema_root.rfind(\".\")+1:] }}"
+    "codegen_package_name": "{{ cookiecutter.AWS_Schema_root.lower()[cookiecutter.AWS_Schema_root.rfind(\".\")+1:] }}",
+    "_copy_without_render": [
+        ".gitignore"
+    ]
 }

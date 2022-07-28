@@ -1,4 +1,8 @@
 {
     "project_name": "Name of the project",
-    "runtime": "python3.6"
+    "runtime": "python3.6",
+    "_copy_without_render": [
+        ".gitignore"
+    ]
+
 }

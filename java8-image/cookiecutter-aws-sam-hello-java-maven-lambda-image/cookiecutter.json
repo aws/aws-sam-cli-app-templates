@@ -1,4 +1,7 @@
 {
     "project_name": "Name of the project",
-    "runtime": "java8"
+    "runtime": "java8",
+    "_copy_without_render": [
+        ".gitignore"
+    ]
 }

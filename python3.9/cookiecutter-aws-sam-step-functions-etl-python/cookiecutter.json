@@ -1,4 +1,7 @@
 {
     "project_name": "sample-glue-etl-project",
-    "runtime": "python3.9"
+    "runtime": "python3.9",
+    "_copy_without_render": [
+        ".gitignore"
+    ]
 }

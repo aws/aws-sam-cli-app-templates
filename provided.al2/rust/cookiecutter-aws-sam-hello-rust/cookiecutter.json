@@ -1,5 +1,8 @@
 {
     "project_name": "My Project",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
-    "architecture": ["x86_64", "arm64"]
+    "architecture": ["x86_64", "arm64"],
+    "_copy_without_render": [
+      ".gitignore"
+    ]
   }
