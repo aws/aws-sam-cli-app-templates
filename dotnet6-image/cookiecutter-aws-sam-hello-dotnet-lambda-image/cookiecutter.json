@@ -1,4 +1,8 @@
 {
     "project_name": "Name of the project",
-    "runtime": "dotnet6.0"
+    "runtime": "dotnet6.0",
+    "_copy_without_render": [
+        ".gitignore"
+    ]
+
 }

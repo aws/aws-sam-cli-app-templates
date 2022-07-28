@@ -5,5 +5,9 @@
         "value": [
             "x86_64", "arm64"
         ]
-    }
+    },
+    "_copy_without_render": [
+        ".gitignore"
+    ]
+
 }

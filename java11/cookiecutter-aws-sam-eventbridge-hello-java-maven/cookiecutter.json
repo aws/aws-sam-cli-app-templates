@@ -3,5 +3,8 @@
     "runtime": "java11",
     "architectures": {
         "value": []
-    }
+    },
+    "_copy_without_render": [
+        ".gitignore"
+    ]
 }
