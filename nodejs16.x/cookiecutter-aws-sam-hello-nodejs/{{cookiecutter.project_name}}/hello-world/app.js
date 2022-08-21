@@ -1,4 +1,4 @@
-// const axios = require('axios')
+// const p = require('phin')
 // const url = 'http://checkip.amazonaws.com/';
 let response;
 
@@ -16,12 +16,12 @@ let response;
  */
 exports.lambdaHandler = async (event, context) => {
     try {
-        // const ret = await axios(url);
+        // const res = await p(url);
         response = {
             'statusCode': 200,
             'body': JSON.stringify({
                 message: 'hello world',
-                // location: ret.data.trim()
+                // location: res.body.toString()
             })
         }
     } catch (err) {
