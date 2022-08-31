@@ -29,7 +29,6 @@ Resources:
       {%- if cookiecutter["Powertools X-Ray Tracing"] == "enabled" or cookiecutter["Powertools Metrics"] == "enabled" or cookiecutter["Powertools Logging"] == "enabled" %}
       Environment:
         Variables:
-          NODE_OPTIONS: --enable-source-maps
           {%- if cookiecutter["Powertools X-Ray Tracing"] == "enabled" or cookiecutter["Powertools Metrics"] == "enabled"%}
           POWERTOOLS_SERVICE_NAME: helloWorld
           {%- endif %}
@@ -51,7 +50,7 @@ Resources:
       BuildProperties:
         Minify: true
         Target: "es2020"
-        Sourcemap: true,
+        # Sourcemap: true # Enabling source maps will create the required NODE_OPTIONS environment variables on your lambda function during sam build
         EntryPoints: 
         - app.ts
 
