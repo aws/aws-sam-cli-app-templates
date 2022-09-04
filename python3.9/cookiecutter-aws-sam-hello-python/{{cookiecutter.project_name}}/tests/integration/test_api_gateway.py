@@ -14,6 +14,7 @@ class TestApiGateway(TestCase):
 
     @classmethod
     def get_stack_name(cls) -> str:
+        # HELLO IAIN
         stack_name = os.environ.get("AWS_SAM_STACK_NAME")
         if not stack_name:
             raise Exception(
