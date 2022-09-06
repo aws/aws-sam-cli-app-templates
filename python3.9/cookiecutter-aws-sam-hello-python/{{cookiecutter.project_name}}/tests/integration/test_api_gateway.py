@@ -1,7 +1,7 @@
 import os
-from unittest import TestCase
 
 import boto3
+import pytest
 import requests
 
 """
@@ -9,26 +9,15 @@ Make sure env variable AWS_SAM_STACK_NAME exists with the name of the stack we a
 """
 
 
-class TestApiGateway(TestCase):
-    api_endpoint: str
+class TestApiGateway:
 
-    @classmethod
-    def get_stack_name(cls) -> str:
+    @pytest.fixture()
+    def api_gateway_url(self):
+        """ Get the API Gateway URL from Cloudformation Stack outputs """
         stack_name = os.environ.get("AWS_SAM_STACK_NAME")
-        if not stack_name:
-            raise Exception(
-                "Cannot find env var AWS_SAM_STACK_NAME. \n"
-                "Please setup this environment variable with the stack name where we are running integration tests."
-            )
 
-        return stack_name
-
-    def setUp(self) -> None:
-        """
-        Based on the provided env variable AWS_SAM_STACK_NAME,
-        here we use cloudformation API to find out what the HelloWorldApi URL is
-        """
-        stack_name = TestApiGateway.get_stack_name()
+        if stack_name is None:
+            raise ValueError('Please set the AWS_SAM_STACK_NAME environment variable to the name of your stack')
 
         client = boto3.client("cloudformation")
 
@@ -36,20 +25,21 @@ class TestApiGateway(TestCase):
             response = client.describe_stacks(StackName=stack_name)
         except Exception as e:
             raise Exception(
-                f"Cannot find stack {stack_name}. \n" f'Please make sure stack with the name "{stack_name}" exists.'
+                f"Cannot find stack {stack_name} \n" f'Please make sure a stack with the name "{stack_name}" exists'
             ) from e
 
         stacks = response["Stacks"]
-
         stack_outputs = stacks[0]["Outputs"]
         api_outputs = [output for output in stack_outputs if output["OutputKey"] == "HelloWorldApi"]
-        self.assertTrue(api_outputs, f"Cannot find output HelloWorldApi in stack {stack_name}")
 
-        self.api_endpoint = api_outputs[0]["OutputValue"]
+        if not api_outputs:
+            raise KeyError(f"HelloWorldAPI not found in stack {stack_name}")
 
-    def test_api_gateway(self):
-        """
-        Call the API Gateway endpoint and check the response
-        """
-        response = requests.get(self.api_endpoint)
-        self.assertDictEqual(response.json(), {"message": "hello world"})
+        return api_outputs[0]["OutputValue"]  # Extract url from stack outputs
+
+    def test_api_gateway(self, api_gateway_url):
+        """ Call the API Gateway endpoint and check the response """
+        response = requests.get(api_gateway_url)
+
+        assert response.status_code == 200
+        assert response.json() == {"message": "hello world"}
