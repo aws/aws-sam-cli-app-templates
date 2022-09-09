@@ -22,17 +22,26 @@ exports.getByIdHandler = async (event) => {
  
   // Get the item from the table
   // https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html#get-property
-  var params = {
-    TableName : tableName,
-    Key: { id: id },
-  };
-  const data = await docClient.get(params).promise();
-  const item = data.Item;
- 
-  const response = {
-    statusCode: 200,
-    body: JSON.stringify(item)
-  };
+  let response = {};
+
+  try {
+    const params = {
+      TableName : tableName,
+      Key: { id: id },
+    };
+    const data = await docClient.get(params).promise();
+    const item = data.Item;
+   
+    response = {
+      statusCode: 200,
+      body: JSON.stringify(item)
+    };
+  } catch (ResourceNotFoundException) {
+    response = {
+        statusCode: 404,
+        body: "Unable to call DynamoDB. Table resource not found."
+    };
+  }
  
   // All log statements are written to CloudWatch
   console.info(`response from: ${event.path} statusCode: ${response.statusCode} body: ${response.body}`);
