@@ -195,25 +195,6 @@ class BuildInvoke_nodejs12_x_cookiecutter_quick_start_web(BuildInvokeBase.QuickS
     directory = "nodejs12.x/cookiecutter-quick-start-web"
 
 
-class BuildInvoke_python3_6_cookiecutter_aws_sam_hello_python(BuildInvokeBase.SimpleHelloWorldBuildInvokeBase):
-    directory = "python3.6/cookiecutter-aws-sam-hello-python"
-
-
-class BuildInvoke_python3_6_cookiecutter_aws_sam_eventBridge_python(
-    BuildInvokeBase.EventBridgeHelloWorldBuildInvokeBase
-):
-    directory = "python3.6/cookiecutter-aws-sam-eventBridge-python"
-
-
-@skip("eventbridge schema app requires credential to pull missing files, skip")
-class BuildInvoke_python3_6_cookiecutter_aws_sam_eventbridge_schema_app_python(BuildInvokeBase.BuildInvokeBase):
-    directory = "python3.6/cookiecutter-aws-sam-eventbridge-schema-app-python"
-
-
-class BuildInvoke_python3_6_cookiecutter_aws_sam_step_functions_sample_app(BuildInvokeBase.BuildInvokeBase):
-    directory = "python3.6/cookiecutter-aws-sam-step-functions-sample-app"
-
-
 class BuildInvoke_python3_7_cookiecutter_aws_sam_hello_python(BuildInvokeBase.SimpleHelloWorldBuildInvokeBase):
     directory = "python3.7/cookiecutter-aws-sam-hello-python"
 

@@ -638,41 +638,6 @@
       "useCaseName": "Serverless API"
     }
   ],
-  "python3.6": [
-    {
-      "directory": "python3.6/cookiecutter-aws-sam-hello-python",
-      "displayName": "Hello World Example",
-      "dependencyManager": "pip",
-      "appTemplate": "hello-world",
-      "packageType": "Zip",
-      "useCaseName": "Hello World Example"
-    },
-    {
-      "directory": "python3.6/cookiecutter-aws-sam-eventBridge-python",
-      "displayName": "EventBridge Hello World",
-      "dependencyManager": "pip",
-      "appTemplate": "eventBridge-hello-world",
-      "packageType": "Zip",
-      "useCaseName": "Infrastructure event management"
-    },
-    {
-      "directory": "python3.6/cookiecutter-aws-sam-eventbridge-schema-app-python",
-      "displayName": "EventBridge App from scratch (100+ Event Schemas)",
-      "dependencyManager": "pip",
-      "appTemplate": "eventBridge-schema-app",
-      "isDynamicTemplate": "True",
-      "packageType": "Zip",
-      "useCaseName": "Infrastructure event management"
-    },
-    {
-      "directory": "python3.6/cookiecutter-aws-sam-step-functions-sample-app",
-      "displayName": "Step Functions Sample App (Stock Trader)",
-      "dependencyManager": "pip",
-      "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip",
-      "useCaseName": "Multi-step workflow"
-    }
-  ],
   "python3.7": [
     {
       "directory": "python3.7/cookiecutter-aws-sam-hello-python",
@@ -997,16 +962,6 @@
   "amazon/python3.7-base": [
     {
       "directory": "python3.7-image/cookiecutter-aws-sam-hello-python-lambda-image",
-      "displayName": "Hello World Lambda Image Example",
-      "dependencyManager": "pip",
-      "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image",
-      "useCaseName": "Hello World Example"
-    }
-  ],
-  "amazon/python3.6-base": [
-    {
-      "directory": "python3.6-image/cookiecutter-aws-sam-hello-python-lambda-image",
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "pip",
       "appTemplate": "hello-world-lambda-image",
