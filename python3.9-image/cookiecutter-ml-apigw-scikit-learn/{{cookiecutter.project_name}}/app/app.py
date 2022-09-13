@@ -11,7 +11,7 @@ model = joblib.load(model_file)
 
 
 def lambda_handler(event, context):
-    image_bytes = event['body'].encode('utf-8')
+    image_bytes = json.loads(event['body'])['body'].encode('utf-8')
     image = Image.open(BytesIO(base64.b64decode(image_bytes))).convert(mode='L')
     image = image.resize((28, 28))
 
