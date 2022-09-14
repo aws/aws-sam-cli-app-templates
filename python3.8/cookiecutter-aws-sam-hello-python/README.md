@@ -13,8 +13,8 @@ This template creates a Serverless Application that reacts to EC2 Instance State
 
 Generate a boilerplate template in your current project directory using the following syntax:
 
-* **Python 3.7**: `sam init --runtime python3.7`
-* **Python 3.6**: `sam init --runtime python3.6`
+* **Python 3.8**: `sam init --runtime python3.8`
+
 
 > **NOTE**: ``--name`` allows you to specify a different project folder name (`sam-app` is the default)
 

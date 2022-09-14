@@ -1,5 +1,0 @@
-requests
-six
-regex
-pytest
-pytest-mock

@@ -29,8 +29,6 @@ batch:
       buildspec: buildspecs/buildspec-unittest-nodejs-16.x.yml
       env:
         image: aws/codebuild/standard:5.0
-    - identifier: UnitTestPython36
-      buildspec: buildspecs/buildspec-unittest-python3.6.yml
     - identifier: UnitTestPython37
       buildspec: buildspecs/buildspec-unittest-python3.7.yml
     - identifier: UnitTestPython38
