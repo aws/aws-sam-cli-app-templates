@@ -23,6 +23,10 @@ The AWS Toolkit is an open source plug-in for popular IDEs that uses the SAM CLI
 * [VS Code](https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/welcome.html)
 * [Visual Studio](https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/welcome.html)
 
+
+## Requirments
+* This template was tested with Rust v1.61.0 and above.
+
 ## Deploy the sample application
 
 To deploy the application, you need the folllowing tools:
