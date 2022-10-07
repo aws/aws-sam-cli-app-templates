@@ -15,10 +15,8 @@ Transform:
 # Resources declares the AWS resources that you want to include in the stack
 # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html
 Resources:
-    ##########################################################################
-  #   Serverless Connector                                                 #
-  ##########################################################################
-  # More info about Serverless Connector Resource: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-connector.html
+  # Serverless Connector                                                 #
+  # More info about Connector Resource: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-connector.html
   getAllItemsFunctionToTableConnector:
     Type: AWS::Serverless::Connector
     Properties:

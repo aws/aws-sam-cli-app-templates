@@ -6,18 +6,15 @@ Description: >
   Sample SAM Template for {{ cookiecutter.project_name }}
 
 Resources:
-  ##########################################################################
-  #   Serverless Connector                                                 #
-  ##########################################################################
-  # More info about Serverless Connector Resource: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-connector.html
+  # Serverless Connector                                                 #
+  # More info about Connector Resource: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-connector.html
   SfnToStockCheckerFunctionConnector:
     Type: AWS::Serverless::Connector 
     Properties:
       Source:
         Id: StockTradingStateMachine
       Destination:
-        Type: AWS::Lambda::Function
-        Arn: !GetAtt StockCheckerFunction.Arn
+        Id: StockCheckerFunction
       Permissions:
         - Write
 
@@ -27,8 +24,7 @@ Resources:
       Source:
         Id: StockTradingStateMachine
       Destination:
-        Type: AWS::Lambda::Function
-        Arn: !GetAtt StockBuyerFunction.Arn
+        Id: StockBuyerFunction
       Permissions:
         - Write
 
@@ -38,8 +34,7 @@ Resources:
       Source:
         Id: StockTradingStateMachine
       Destination:
-        Type: AWS::Lambda::Function
-        Arn: !GetAtt StockSellerFunction.Arn
+        Id: StockSellerFunction
       Permissions:
         - Write
 
