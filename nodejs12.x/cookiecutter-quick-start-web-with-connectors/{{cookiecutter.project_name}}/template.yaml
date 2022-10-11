@@ -26,7 +26,7 @@ Resources:
         - Read
 
   getByIdFunctionToTableConnector:
-    Type: AWS::Serverless::Connector # More info about Connector Resource: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-connector.html
+    Type: AWS::Serverless::Connector
     Properties:
       Source:
         Id: getByIdFunction
@@ -36,7 +36,7 @@ Resources:
         - Read
 
   putItemFunctionToTableConnector:
-    Type: AWS::Serverless::Connector # More info about Connector Resource: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-connector.html
+    Type: AWS::Serverless::Connector
     Properties:
       Source:
         Id: putItemFunction

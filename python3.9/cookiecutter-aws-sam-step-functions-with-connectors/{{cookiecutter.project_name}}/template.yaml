@@ -17,7 +17,7 @@ Resources:
         - Write
 
   SfnToStockBuyerFunctionConnector:
-    Type: AWS::Serverless::Connector # More info about Connector Resource: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-connector.html
+    Type: AWS::Serverless::Connector
     Properties:
       Source:
         Id: StockTradingStateMachine
@@ -27,7 +27,7 @@ Resources:
         - Write
 
   SfnToStockSellerFunctionConnector:
-    Type: AWS::Serverless::Connector # More info about Connector Resource: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-connector.html
+    Type: AWS::Serverless::Connector
     Properties:
       Source:
         Id: StockTradingStateMachine
@@ -37,7 +37,7 @@ Resources:
         - Write
 
   SfnToTransactionTableConnector:
-    Type: AWS::Serverless::Connector # More info about Connector Resource: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-connector.html
+    Type: AWS::Serverless::Connector
     Properties:
       Source:
         Id: StockTradingStateMachine
