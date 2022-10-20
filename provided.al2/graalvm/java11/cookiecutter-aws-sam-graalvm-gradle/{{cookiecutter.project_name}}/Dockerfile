@@ -1,4 +1,11 @@
+ARG PLATFORMARG=linux/amd64
+        ### Example: "linux/amd64", "windows/amd64", "linux/aarch64", "darwin/aarch64", ..  See supported values at: https://github.com/graalvm/graalvm-ce-builds/releases/
+### !! Attention !! Repeat this for the "ENV" line below for "PLATFORM" env-variable.
+
 FROM public.ecr.aws/amazonlinux/amazonlinux:2
+
+ENV PLATFORM linux-amd64
+        ### Attention: Unlike the "ARG" line at the top of this file, replace "/" with "-" (hyphen).
 
 RUN yum -y update \
     && yum install -y unzip tar gzip bzip2-devel ed gcc gcc-c++ gcc-gfortran \
@@ -10,7 +17,7 @@ RUN yum -y update \
 ENV JAVA_VERSION java11
 ENV GRAAL_VERSION 22.1.0
 ENV GRAAL_FOLDERNAME graalvm-ce-${JAVA_VERSION}-${GRAAL_VERSION}
-ENV GRAAL_FILENAME graalvm-ce-${JAVA_VERSION}-linux-amd64-${GRAAL_VERSION}.tar.gz
+ENV GRAAL_FILENAME graalvm-ce-${JAVA_VERSION}-${PLATFORM}-${GRAAL_VERSION}.tar.gz
 RUN curl -4 -L https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-${GRAAL_VERSION}/${GRAAL_FILENAME} | tar -xvz
 RUN mv $GRAAL_FOLDERNAME /usr/lib/graalvm
 RUN rm -rf $GRAAL_FOLDERNAME
