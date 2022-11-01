@@ -1,7 +1,7 @@
 {% if cookiecutter.architecture == 'arm64' -%}
-CARGO_LAMBDA_FLAGS = '--arm64'
+CARGO_LAMBDA_FLAGS = --arm64
 {%- else -%}
-CARGO_LAMBDA_FLAGS = ''
+CARGO_LAMBDA_FLAGS = --target x86_64-unknown-linux-gnu
 {%- endif %}
 
 .PHONY: build
