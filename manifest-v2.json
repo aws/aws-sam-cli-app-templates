@@ -478,6 +478,22 @@
       "appTemplate": "hello-world-powertools-typescript",
       "packageType": "Zip",
       "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "nodejs16.x/cookiecutter-quick-start-web-with-connectors",
+      "displayName": "Quick Start: Web Backend With Connectors",
+      "dependencyManager": "npm",
+      "appTemplate": "hello-world-connector",
+      "packageType": "Zip",
+      "useCaseName": "Serverless Connector Hello World Example"
+    },
+    {
+      "directory": "nodejs16.x/cookiecutter-aws-sam-step-functions-with-connectors",
+      "displayName": "Step Functions Sample App (Stock Trader) With Connectors",
+      "dependencyManager": "npm",
+      "appTemplate": "step-functions-with-connectors",
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow with Connectors"
     }
   ],
   "amazon/nodejs16.x-base": [
@@ -570,6 +586,22 @@
       "appTemplate": "hello-world-powertools-typescript",
       "packageType": "Zip",
       "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "nodejs14.x/cookiecutter-quick-start-web-with-connectors",
+      "displayName": "Quick Start: Web Backend With Connectors",
+      "dependencyManager": "npm",
+      "appTemplate": "hello-world-connector",
+      "packageType": "Zip",
+      "useCaseName": "Serverless Connector Hello World Example"
+    },
+    {
+      "directory": "nodejs14.x/cookiecutter-aws-sam-step-functions-with-connectors",
+      "displayName": "Step Functions Sample App (Stock Trader) With Connectors",
+      "dependencyManager": "npm",
+      "appTemplate": "step-functions-with-connectors",
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow with Connectors"
     }
   ],
   "nodejs12.x": [
@@ -644,6 +676,22 @@
       "appTemplate": "quick-start-web",
       "packageType": "Zip",
       "useCaseName": "Serverless API"
+    },
+    {
+      "directory": "nodejs12.x/cookiecutter-quick-start-web-with-connectors",
+      "displayName": "Quick Start: Web Backend With Connectors",
+      "dependencyManager": "npm",
+      "appTemplate": "hello-world-connector",
+      "packageType": "Zip",
+      "useCaseName": "Serverless Connector Hello World Example"
+    },
+    {
+      "directory": "nodejs12.x/cookiecutter-aws-sam-step-functions-with-connectors",
+      "displayName": "Step Functions Sample App (Stock Trader) With Connectors",
+      "dependencyManager": "npm",
+      "appTemplate": "step-functions-with-connectors",
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow with Connectors"
     }
   ],
   "python3.7": [
@@ -679,6 +727,22 @@
       "appTemplate": "step-functions-sample-app",
       "packageType": "Zip",
       "useCaseName": "Multi-step workflow"
+    },
+    {
+      "directory": "python3.7/cookiecutter-aws-sam-quick-start-web-with-connectors",
+      "displayName": "Quick Start: Web Backend With Connectors",
+      "dependencyManager": "pip",
+      "appTemplate": "hello-world-connector",
+      "packageType": "Zip",
+      "useCaseName": "Serverless Connector Hello World Example"
+    },
+    {
+      "directory": "python3.7/cookiecutter-aws-sam-step-functions-with-connectors",
+      "displayName": "Step Functions Sample App (Stock Trader) With Connectors",
+      "dependencyManager": "pip",
+      "appTemplate": "step-functions-with-connectors",
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow with Connectors"
     }
   ],
   "python3.8": [
@@ -722,6 +786,22 @@
       "appTemplate": "efs-sample-app",
       "packageType": "Zip",
       "useCaseName": "Lambda EFS example"
+    },
+    {
+      "directory": "python3.8/cookiecutter-aws-sam-quick-start-web-with-connectors",
+      "displayName": "Quick Start: Web Backend With Connectors",
+      "dependencyManager": "pip",
+      "appTemplate": "hello-world-connector",
+      "packageType": "Zip",
+      "useCaseName": "Serverless Connector Hello World Example"
+    },
+    {
+      "directory": "python3.8/cookiecutter-aws-sam-step-functions-with-connectors",
+      "displayName": "Step Functions Sample App (Stock Trader) With Connectors",
+      "dependencyManager": "pip",
+      "appTemplate": "step-functions-with-connectors",
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow with Connectors"
     }
   ],
   "python3.9": [
@@ -765,6 +845,22 @@
       "appTemplate": "efs-sample-app",
       "packageType": "Zip",
       "useCaseName": "Lambda EFS example"
+    },
+    {
+      "directory": "python3.9/cookiecutter-aws-sam-quick-start-web-with-connectors",
+      "displayName": "Quick Start: Web Backend With Connectors",
+      "dependencyManager": "pip",
+      "appTemplate": "hello-world-connector",
+      "packageType": "Zip",
+      "useCaseName": "Serverless Connector Hello World Example"
+    },
+    {
+      "directory": "python3.9/cookiecutter-aws-sam-step-functions-with-connectors",
+      "displayName": "Step Functions Sample App (Stock Trader) With Connectors",
+      "dependencyManager": "pip",
+      "appTemplate": "step-functions-with-connectors",
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow with Connectors"
     }
   ],
   "ruby2.7": [

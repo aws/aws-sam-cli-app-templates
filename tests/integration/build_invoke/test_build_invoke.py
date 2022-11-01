@@ -148,6 +148,13 @@ class BuildInvoke_nodejs14_x_cookiecutter_quick_start_s3(BuildInvokeBase.BuildIn
 
     # if we want to check response json, we need to setup bucket for testing
 
+class BuildInvoke_nodejs14_x_cookiecutter_aws_sam_quick_start_web_with_connectors(BuildInvokeBase.QuickStartWebBuildInvokeBase):
+    directory = "nodejs14.x/cookiecutter-quick-start-web-with-connectors"
+
+
+class BuildInvoke_nodejs14_x_cookiecutter_aws_sam_step_functions_with_connectors(BuildInvokeBase.BuildInvokeBase):
+    directory = "nodejs14.x/cookiecutter-aws-sam-step-functions-with-connectors"
+
 
 class BuildInvoke_nodejs14_x_cookiecutter_quick_start_sns(BuildInvokeBase.BuildInvokeBase):
     directory = "nodejs14.x/cookiecutter-quick-start-sns"
@@ -183,6 +190,14 @@ class BuildInvoke_nodejs12_x_cookiecutter_quick_start_s3(BuildInvokeBase.BuildIn
     # if we want to check response json, we need to setup bucket for testing
 
 
+class BuildInvoke_nodejs12_x_cookiecutter_aws_sam_quick_start_web_with_connectors(BuildInvokeBase.QuickStartWebBuildInvokeBase):
+    directory = "nodejs12.x/cookiecutter-quick-start-web-with-connectors"
+
+
+class BuildInvoke_nodejs12_x_cookiecutter_aws_sam_step_functions_with_connectors(BuildInvokeBase.BuildInvokeBase):
+    directory = "nodejs12.x/cookiecutter-aws-sam-step-functions-with-connectors"
+
+
 class BuildInvoke_nodejs12_x_cookiecutter_quick_start_sns(BuildInvokeBase.BuildInvokeBase):
     directory = "nodejs12.x/cookiecutter-quick-start-sns"
 
@@ -205,6 +220,14 @@ class BuildInvoke_python3_7_cookiecutter_aws_sam_eventBridge_python(
     directory = "python3.7/cookiecutter-aws-sam-eventBridge-python"
 
 
+class BuildInvoke_python3_7_cookiecutter_aws_sam_quick_start_web_with_connectors(BuildInvokeBase.QuickStartWebBuildInvokeBase):
+    directory = "python3.7/cookiecutter-aws-sam-quick-start-web-with-connectors"
+
+
+class BuildInvoke_python3_7_cookiecutter_aws_sam_step_functions_with_connectors(BuildInvokeBase.BuildInvokeBase):
+    directory = "python3.7/cookiecutter-aws-sam-step-functions-with-connectors"
+
+
 @skip("eventbridge schema app requires credential to pull missing files, skip")
 class BuildInvoke_python3_7_cookiecutter_aws_sam_eventbridge_schema_app_python(BuildInvokeBase.BuildInvokeBase):
     directory = "python3.7/cookiecutter-aws-sam-eventbridge-schema-app-python"
@@ -222,6 +245,14 @@ class BuildInvoke_python3_8_cookiecutter_aws_sam_eventBridge_python(
     BuildInvokeBase.EventBridgeHelloWorldBuildInvokeBase
 ):
     directory = "python3.8/cookiecutter-aws-sam-eventBridge-python"
+
+
+class BuildInvoke_python3_8_cookiecutter_aws_sam_quick_start_web_with_connectors(BuildInvokeBase.QuickStartWebBuildInvokeBase):
+    directory = "python3.9/cookiecutter-aws-sam-quick-start-web-with-connectors"
+
+
+class BuildInvoke_python3_8_cookiecutter_aws_sam_step_functions_with_connectors(BuildInvokeBase.BuildInvokeBase):
+    directory = "python3.8/cookiecutter-aws-sam-step-functions-with-connectors"
 
 
 @skip("eventbridge schema app requires credential to pull missing files, skip")
@@ -245,6 +276,13 @@ class BuildInvoke_python3_9_cookiecutter_aws_sam_eventBridge_python(
     BuildInvokeBase.EventBridgeHelloWorldBuildInvokeBase
 ):
     directory = "python3.9/cookiecutter-aws-sam-eventBridge-python"
+
+class BuildInvoke_python3_9_cookiecutter_aws_sam_quick_start_web_with_connectors(BuildInvokeBase.QuickStartWebBuildInvokeBase):
+    directory = "python3.9/cookiecutter-aws-sam-quick-start-web-with-connectors"
+
+
+class BuildInvoke_python3_9_cookiecutter_aws_sam_step_functions_with_connectors(BuildInvokeBase.BuildInvokeBase):
+    directory = "python3.9/cookiecutter-aws-sam-step-functions-with-connectors"
 
 
 @skip("eventbridge schema app requires credential to pull missing files, skip")
