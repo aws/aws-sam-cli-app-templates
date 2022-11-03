@@ -39,21 +39,11 @@ class UnitTest_nodejs14_x_cookiecutter_quick_start_web(UnitTestBase.NodejsUnitTe
     directory = "nodejs14.x/cookiecutter-quick-start-web"
 
 
-class UnitTest_nodejs14_x_cookiecutter_aws_sam_hello_typescript_nodejs(UnitTestBase.NodejsUnitTestBase):
-    directory = "nodejs14.x/cookiecutter-aws-sam-hello-typescript-nodejs"
-    code_directories = [ "hello-world" ]
+class UnitTest_nodejs16_x_cookiecutter_aws_sam_quick_start_web_with_connectors(UnitTestBase.NodejsUnitTestBase):
+    directory = "nodejs16.x/cookiecutter-quick-start-web-with-connectors"
 
-
-class UnitTest_nodejs14_x_cookiecutter_aws_sam_hello_powerltools_typescript_nodejs(UnitTestBase.NodejsUnitTestBase):
-    directory = "nodejs14.x/cookiecutter-aws-sam-hello-powertools-typescript-nodejs"
-    code_directories = [ "hello-world" ]
-
-
-class UnitTest_nodejs14_x_cookiecutter_aws_sam_quick_start_web_with_connectors(UnitTestBase.NodejsUnitTestBase):
-    directory = "nodejs14.x/cookiecutter-quick-start-web-with-connectors"
-
-class UnitTest_nodejs14_x_cookiecutter_aws_sam_step_functions_with_connectors(UnitTestBase.NodejsUnitTestBase):
-    directory = "nodejs14.x/cookiecutter-aws-sam-step-functions-with-connectors"
+class UnitTest_nodejs16_x_cookiecutter_aws_sam_step_functions_with_connectors(UnitTestBase.NodejsUnitTestBase):
+    directory = "nodejs16.x/cookiecutter-aws-sam-step-functions-with-connectors"
     code_directories = [
         "functions/stock-buyer",
         "functions/stock-checker",
