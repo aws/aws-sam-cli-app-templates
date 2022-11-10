@@ -159,7 +159,7 @@
       "useCaseName": "Serverless API"
     }
   ],
-  "dotnet7.aot (provided.al2)": [
+  "aot.dotnet7 (provided.al2)": [
     {
       "directory": "provided.al2/nativeaot/dotnet7/cookiecutter-aws-sam-hello-dotnet",
       "displayName": "Hello World Example",
