@@ -16,7 +16,7 @@ Resources:
     Properties:
       CodeUri: ./src/HelloWorld/
       Handler: bootstrap
-      Runtime: provided
+      Runtime: provided.al2
       {%- if cookiecutter.architectures.value != [ ]%}
       Architectures:
         {%- for arch in cookiecutter.architectures.value %}
