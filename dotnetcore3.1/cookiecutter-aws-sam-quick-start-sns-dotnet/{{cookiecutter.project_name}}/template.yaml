@@ -10,6 +10,7 @@ Description: >-
 # Transform section specifies one or more macros that AWS CloudFormation uses to process your template
 # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-section-structure.html
 Transform:
+- AWS::LanguageExtensions
 - AWS::Serverless-2016-10-31
 
 Globals:
