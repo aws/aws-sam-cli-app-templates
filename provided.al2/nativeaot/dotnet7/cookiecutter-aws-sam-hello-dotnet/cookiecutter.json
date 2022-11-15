@@ -1,6 +1,6 @@
 {
     "project_name": "Name of the project",
-    "runtime": "provided",
+    "runtime": "provided.al2",
     "architectures": {
         "value": [
             "x86_64"
