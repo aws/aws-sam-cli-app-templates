@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 16.x
+      nodejs: 16
 
     commands:
       - n 16
