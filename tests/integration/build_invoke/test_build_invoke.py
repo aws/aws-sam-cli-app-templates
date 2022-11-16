@@ -127,6 +127,73 @@ class BuildInvoke_java11_cookiecutter_aws_sam_step_functions_sample_app_maven(Bu
     directory = "java11/cookiecutter-aws-sam-step-functions-sample-app-maven"
 
 
+# class BuildInvoke_nodejs18_x_cookiecutter_aws_sam_hello_nodejs(BuildInvokeBase.SimpleHelloWorldBuildInvokeBase):
+#     directory = "nodejs18.x/cookiecutter-aws-sam-hello-nodejs"
+
+
+# class BuildInvoke_nodejs18_x_cookiecutter_aws_sam_step_functions_sample_app(BuildInvokeBase.BuildInvokeBase):
+#     directory = "nodejs18.x/cookiecutter-aws-sam-step-functions-sample-app"
+
+
+# class BuildInvoke_nodejs18_x_cookiecutter_quick_start_from_scratch(BuildInvokeBase.BuildInvokeBase):
+#     directory = "nodejs18.x/cookiecutter-quick-start-from-scratch"
+
+
+# class BuildInvoke_nodejs18_x_cookiecutter_quick_start_cloudwatch_events(BuildInvokeBase.BuildInvokeBase):
+#     directory = "nodejs18.x/cookiecutter-quick-start-cloudwatch-events"
+
+
+# class BuildInvoke_nodejs18_x_cookiecutter_quick_start_s3(BuildInvokeBase.BuildInvokeBase):
+#     directory = "nodejs18.x/cookiecutter-quick-start-s3"
+
+#     # if we want to check response json, we need to setup bucket for testing
+
+
+# class BuildInvoke_nodejs18_x_cookiecutter_quick_start_sns(BuildInvokeBase.BuildInvokeBase):
+#     directory = "nodejs18.x/cookiecutter-quick-start-sns"
+
+
+# class BuildInvoke_nodejs18_x_cookiecutter_quick_start_sqs(BuildInvokeBase.BuildInvokeBase):
+#     directory = "nodejs18.x/cookiecutter-quick-start-sqs"
+
+
+# class BuildInvoke_nodejs18_x_cookiecutter_quick_start_web(BuildInvokeBase.QuickStartWebBuildInvokeBase):
+#     directory = "nodejs18.x/cookiecutter-quick-start-web"
+
+
+class BuildInvoke_nodejs16_x_cookiecutter_aws_sam_hello_nodejs(BuildInvokeBase.SimpleHelloWorldBuildInvokeBase):
+    directory = "nodejs16.x/cookiecutter-aws-sam-hello-nodejs"
+
+
+class BuildInvoke_nodejs16_x_cookiecutter_aws_sam_step_functions_sample_app(BuildInvokeBase.BuildInvokeBase):
+    directory = "nodejs16.x/cookiecutter-aws-sam-step-functions-sample-app"
+
+
+class BuildInvoke_nodejs16_x_cookiecutter_quick_start_from_scratch(BuildInvokeBase.BuildInvokeBase):
+    directory = "nodejs16.x/cookiecutter-quick-start-from-scratch"
+
+
+class BuildInvoke_nodejs16_x_cookiecutter_quick_start_cloudwatch_events(BuildInvokeBase.BuildInvokeBase):
+    directory = "nodejs16.x/cookiecutter-quick-start-cloudwatch-events"
+
+
+class BuildInvoke_nodejs16_x_cookiecutter_quick_start_s3(BuildInvokeBase.BuildInvokeBase):
+    directory = "nodejs16.x/cookiecutter-quick-start-s3"
+
+    # if we want to check response json, we need to setup bucket for testing
+
+
+class BuildInvoke_nodejs16_x_cookiecutter_quick_start_sns(BuildInvokeBase.BuildInvokeBase):
+    directory = "nodejs16.x/cookiecutter-quick-start-sns"
+
+
+class BuildInvoke_nodejs16_x_cookiecutter_quick_start_sqs(BuildInvokeBase.BuildInvokeBase):
+    directory = "nodejs16.x/cookiecutter-quick-start-sqs"
+
+
+class BuildInvoke_nodejs16_x_cookiecutter_quick_start_web(BuildInvokeBase.QuickStartWebBuildInvokeBase):
+    directory = "nodejs16.x/cookiecutter-quick-start-web"
+
 class BuildInvoke_nodejs14_x_cookiecutter_aws_sam_hello_nodejs(BuildInvokeBase.SimpleHelloWorldBuildInvokeBase):
     directory = "nodejs14.x/cookiecutter-aws-sam-hello-nodejs"
 
