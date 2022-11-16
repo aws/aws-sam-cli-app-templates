@@ -13,4 +13,4 @@ phases:
   post_build:
     commands:
       - sam --version
-      - pytest -vvv tests/integration/build_invoke/test_build_invoke_dotnet5_0.py -n 4
+      - pytest -vvv tests/integration/build_invoke/test_build_invoke_dotnet5_0.py
