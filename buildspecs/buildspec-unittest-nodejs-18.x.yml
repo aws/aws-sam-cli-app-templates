@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 14 # update this to nodejs18 when CodeBuild starts supporting it
+      nodejs: 16 # update this to nodejs18 when CodeBuild starts supporting it
 
     commands:
       - n 18
