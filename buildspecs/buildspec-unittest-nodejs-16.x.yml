@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 14 # keep it 14 until nodejs16 support is out
+      nodejs: 16
 
     commands:
       - n 16
