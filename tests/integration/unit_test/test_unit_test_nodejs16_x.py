@@ -37,3 +37,15 @@ class UnitTest_nodejs16_x_cookiecutter_quick_start_sqs(UnitTestBase.NodejsUnitTe
 
 class UnitTest_nodejs16_x_cookiecutter_quick_start_web(UnitTestBase.NodejsUnitTestBase):
     directory = "nodejs16.x/cookiecutter-quick-start-web"
+
+
+class UnitTest_nodejs16_x_cookiecutter_aws_sam_quick_start_web_with_connectors(UnitTestBase.NodejsUnitTestBase):
+    directory = "nodejs16.x/cookiecutter-quick-start-web-with-connectors"
+
+class UnitTest_nodejs16_x_cookiecutter_aws_sam_step_functions_with_connectors(UnitTestBase.NodejsUnitTestBase):
+    directory = "nodejs16.x/cookiecutter-aws-sam-step-functions-with-connectors"
+    code_directories = [
+        "functions/stock-buyer",
+        "functions/stock-checker",
+        "functions/stock-seller",
+    ]

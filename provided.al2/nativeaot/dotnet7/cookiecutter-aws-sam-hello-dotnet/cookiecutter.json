@@ -1,0 +1,13 @@
+{
+    "project_name": "Name of the project",
+    "runtime": "provided.al2",
+    "architectures": {
+        "value": [
+            "x86_64"
+        ]
+    },
+    "_copy_without_render": [
+        ".gitignore"
+    ]
+
+}

@@ -1,5 +1,5 @@
 use aws_sdk_dynamodb::{model::AttributeValue, Client};
-use lambda_http::{service_fn, Body, Error, IntoResponse, Request, RequestExt, Response};
+use lambda_http::{service_fn, Body, Error, Request, RequestExt, Response};
 use std::env;
 
 /// Main function
@@ -29,12 +29,12 @@ async fn put_item(
     client: &Client,
     table_name: &str,
     request: Request,
-) -> Result<impl IntoResponse, Error> {
+) -> Result<Response<Body>, Error> {
     // Extract path parameter from request
     let path_parameters = request.path_parameters();
     let id = match path_parameters.first("id") {
         Some(id) => id,
-        None => return Ok(Response::builder().status(400).body("id is required")?),
+        None => return Ok(Response::builder().status(400).body("id is required".into())?),
     };
 
     // Extract body from request
@@ -55,8 +55,8 @@ async fn put_item(
 
     // Return a response to the end-user
     match res {
-        Ok(_) => Ok(Response::builder().status(200).body("item saved")?),
-        Err(_) => Ok(Response::builder().status(500).body("internal error")?),
+        Ok(_) => Ok(Response::builder().status(200).body("item saved".into())?),
+        Err(_) => Ok(Response::builder().status(500).body("internal error".into())?),
     }
 }
 
