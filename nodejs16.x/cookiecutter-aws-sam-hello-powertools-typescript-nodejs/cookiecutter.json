@@ -1,0 +1,14 @@
+{
+    "project_name": "Name of the project",
+    "runtime": "nodejs16.x",
+    "architectures": {
+        "value": []
+    },
+    "Powertools X-Ray Tracing": ["enabled","disabled"],
+    "Powertools Metrics": ["enabled","disabled"],
+    "Powertools Logging": ["enabled","disabled"],
+    "_copy_without_render": [
+        ".gitignore"
+    ]
+
+}

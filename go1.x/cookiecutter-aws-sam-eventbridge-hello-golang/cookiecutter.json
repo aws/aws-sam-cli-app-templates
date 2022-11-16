@@ -3,5 +3,8 @@
     "runtime": "go1.x",
     "architectures": {
         "value": []
-    }
+    },
+    "_copy_without_render": [
+        ".gitignore"
+    ]
 }

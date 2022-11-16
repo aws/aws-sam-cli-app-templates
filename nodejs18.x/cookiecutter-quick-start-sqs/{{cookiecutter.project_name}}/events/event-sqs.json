@@ -1,0 +1,11 @@
+{
+  "DelaySeconds": 10,
+  "MessageAttributes": {
+    "Sender": {
+      "DataType": "String",
+      "StringValue": "sqs-payload-logger"
+    }
+  },
+  "MessageBody": "This message was sent by the sqs-payload-logger Lambda function",
+  "QueueUrl": "SQS_QUEUE_URL"
+}

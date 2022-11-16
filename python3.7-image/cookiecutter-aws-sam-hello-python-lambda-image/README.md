@@ -11,7 +11,6 @@ A cookiecutter template to create a Python Hello world boilerplate using [Server
 Generate a boilerplate template in your current project directory using the following syntax:
 
 * **Python 3.7**: `sam init --runtime python3.7`
-* **Python 3.6**: `sam init --runtime python3.6`
 
 > **NOTE**: ``--name`` allows you to specify a different project folder name (`sam-app` is the default)
 

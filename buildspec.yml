@@ -28,9 +28,13 @@ batch:
     - identifier: UnitTestNodejs16
       buildspec: buildspecs/buildspec-unittest-nodejs-16.x.yml
       env:
-        image: aws/codebuild/standard:5.0
-    - identifier: UnitTestPython36
-      buildspec: buildspecs/buildspec-unittest-python3.6.yml
+        # node 16 available in aws/codebuild/standard:6.0
+        image: aws/codebuild/standard:6.0
+    - identifier: UnitTestNodejs18
+      buildspec: buildspecs/buildspec-unittest-nodejs-18.x.yml
+      env:
+        # node 16 available in aws/codebuild/standard:6.0
+        image: aws/codebuild/standard:6.0
     - identifier: UnitTestPython37
       buildspec: buildspecs/buildspec-unittest-python3.7.yml
     - identifier: UnitTestPython38
@@ -68,3 +72,5 @@ batch:
       buildspec: buildspecs/buildspec-dotnetcore3.1.yml
     - identifier: CombinedGo1x
       buildspec: buildspecs/buildspec-go1.x.yml
+    - identifier: GraalVM
+      buildspec: buildspecs/buildspec-graalvm.yml

@@ -9,5 +9,8 @@
     "AWS_Schema_name": "EC2InstanceStateChangeNotification",
     "AWS_Schema_root": "aws.ec2.EC2InstanceStateChangeNotification",
     "AWS_Schema_source": "aws.ec2",
-    "AWS_Schema_detail_type": "EC2 Instance State-change Notification"
+    "AWS_Schema_detail_type": "EC2 Instance State-change Notification",
+    "_copy_without_render": [
+        ".gitignore"
+    ]
 }

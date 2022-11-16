@@ -1,0 +1,58 @@
+# This is the SAM template that represents the architecture of your serverless application
+# https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-template-basics.html
+
+# The AWSTemplateFormatVersion identifies the capabilities of the template
+# https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/format-version-structure.html
+AWSTemplateFormatVersion: 2010-09-09
+Description: >-
+  {{cookiecutter.project_name}}
+  Sample SAM Template for {{ cookiecutter.project_name }}
+
+# Transform section specifies one or more macros that AWS CloudFormation uses to process your template
+# https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-section-structure.html
+Transform:
+- AWS::Serverless-2016-10-31
+
+Globals:
+  Function:
+    Timeout: 100
+
+# Resources declares the AWS resources that you want to include in the stack
+# https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html
+Resources:
+  # This is an SNS Topic with all default configuration properties. To learn more about the available options, see
+  # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html
+  SimpleTopic:
+    Type: AWS::SNS::Topic
+  
+  # This is the Lambda function definition associated with the source code: sns-payload-logger.js. For all available properties, see
+  # https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+  SNSPayloadLogger:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: A Lambda function that logs the payload of messages sent to an associated SNS topic.
+      CodeUri: ./src/{{cookiecutter.project_name}}/
+      Handler: {{cookiecutter.project_name}}::{{cookiecutter.project_name}}.Function::FunctionHandler
+      Runtime: dotnet6
+      {%- if cookiecutter.architectures.value != [ ]%}
+      Architectures:
+        {%- for arch in cookiecutter.architectures.value %}
+        - {{arch}}
+        {%- endfor %}
+      {%- endif %}      
+      MemorySize: 256
+      # This property associates this Lambda function with the SNS topic defined above, so that whenever the topic
+      # receives a message, the Lambda function is invoked
+      Events:
+        SNSTopicEvent:
+          Type: SNS
+          Properties:
+            Topic: !Ref SimpleTopic
+      Policies:
+        # Give Lambda basic execution Permission to the helloFromLambda
+        - AWSLambdaBasicExecutionRole
+
+Outputs:  
+  AppBucketArn:
+    Description: "SNS Topic ARN"
+    Value: !Ref  SimpleTopic
