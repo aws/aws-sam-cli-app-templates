@@ -204,6 +204,41 @@
       "useCaseName": "Multi-step workflow"
     }
   ],
+  "go (provided.al2)": [
+    {
+      "directory": "provided.al2/go/cookiecutter-aws-sam-hello-golang",
+      "displayName": "Hello World Example",
+      "dependencyManager": "mod",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "provided.al2/go/cookiecutter-aws-sam-eventbridge-hello-golang",
+      "displayName": "EventBridge Hello World",
+      "dependencyManager": "mod",
+      "appTemplate": "eventBridge-hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
+    },
+    {
+      "directory": "provided.al2/go/cookiecutter-aws-sam-eventbridge-schema-app-golang",
+      "displayName": "EventBridge App from scratch (100+ Event Schemas)",
+      "dependencyManager": "mod",
+      "appTemplate": "eventBridge-schema-app",
+      "isDynamicTemplate": "True",
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
+    },
+    {
+      "directory": "provided.al2/go/cookiecutter-aws-sam-hello-step-functions-sample-app",
+      "displayName": "Step Functions Sample App (Stock Trader)",
+      "dependencyManager": "mod",
+      "appTemplate": "step-functions-sample-app",
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow"
+    }
+  ],
   "java8": [
     {
       "directory": "java8/cookiecutter-aws-sam-hello-java-gradle",
