@@ -28,10 +28,6 @@ Read more about [SAM Build here](https://docs.aws.amazon.com/serverless-applicat
 
 The `sam build` command is wrapped inside of the `Makefile`. To execute this simply run
  
-```shell
-make
-```
-
 ### Local development
 
 **Invoking function locally through local API Gateway**

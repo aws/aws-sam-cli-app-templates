@@ -26,12 +26,6 @@ This is a sample template for {{ cookiecutter.project_name }} - Below is a brief
 In this example we use the built-in `sam build` to automatically download all the dependencies and package our build target.   
 Read more about [SAM Build here](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-build.html) 
 
-The `sam build` command is wrapped inside of the `Makefile`. To execute this simply run
- 
-```shell
-make
-```
-
 ### Local development
 
 **Invoking function locally through local API Gateway**
