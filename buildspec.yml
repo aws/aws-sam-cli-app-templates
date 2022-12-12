@@ -66,8 +66,6 @@ batch:
         compute-type: BUILD_GENERAL1_LARGE
     - identifier: CombinedDotNet6
       buildspec: buildspecs/buildspec-dotnet6.yml
-    - identifier: CombinedDotNet5
-      buildspec: buildspecs/buildspec-dotnet5.0.yml
     - identifier: CombinedDotNet31
       buildspec: buildspecs/buildspec-dotnetcore3.1.yml
     - identifier: CombinedGo1x
