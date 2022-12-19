@@ -9,8 +9,15 @@ jobs:
       pull-requests: read
     runs-on: ubuntu-latest
     steps:
-      - uses: xalvarez/prevent-file-change-action@v1
+      - name: Checkout commit
+        uses: actions/checkout@v3
         with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
-          pattern: manifest.json
+          fetch-depth: 3
+      - name: Check for manifest.json changes
+        shell: bash
+        run: |
+          if git log --name-only -n 2 ${{github.sha}} | grep "manifest.json"; then
+            echo "Backward Incompatible change found!"
+            exit 1
+          fi
 
