@@ -55,3 +55,6 @@ class BuildInvoke_provided_go_cookiecutter_aws_sam_hello_step_functions_sample_a
 
 class BuildInvoke_image_go1_x_cookiecutter_aws_sam_hello_golang_lambda_image(BuildInvokeBase.BuildInvokeBase):
     directory = "go1.x-image/cookiecutter-aws-sam-hello-golang-lambda-image"
+
+class BuildInvoke_image_provided_go_cookiecutter_aws_sam_hello_golang_lambda_image(BuildInvokeBase.BuildInvokeBase):
+    directory = "provided.al2/go/cookiecutter-aws-sam-hello-golang-lambda-image"
