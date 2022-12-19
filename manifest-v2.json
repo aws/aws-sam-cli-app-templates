@@ -1144,6 +1144,16 @@
       "useCaseName": "Hello World Example"
     }
   ],
+  "amazon/go-provided.al2-base": [
+    {
+      "directory": "provided.al2/go/cookiecutter-aws-sam-hello-golang-lambda-image",
+      "displayName": "Hello World Lambda Image Example",
+      "dependencyManager": "mod",
+      "appTemplate": "hello-world-lambda-image",
+      "packageType": "Image",
+      "useCaseName": "Hello World Example"
+    }
+  ],
   "amazon/java11-base": [
     {
       "directory": "java11-image/cookiecutter-aws-sam-hello-java-gradle-lambda-image",
