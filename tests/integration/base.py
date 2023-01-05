@@ -69,7 +69,7 @@ class Base:
 
         def _test_init_template(self):
             cmdlist = [
-                "samdev",
+                "sam",
                 "init",
                 "--no-input",
                 "--location",
