@@ -43,11 +43,11 @@ class UnitTest_nodejs12_x_cookiecutter_typescript_app_template(UnitTestBase.Node
     code_directories = [ "app" ]
 
 
-class UnitTest_nodejs16_x_cookiecutter_aws_sam_quick_start_web_with_connectors(UnitTestBase.NodejsUnitTestBase):
-    directory = "nodejs16.x/web-conn"
+class UnitTest_nodejs12_x_cookiecutter_aws_sam_quick_start_web_with_connectors(UnitTestBase.NodejsUnitTestBase):
+    directory = "nodejs12.x/web-conn"
 
-class UnitTest_nodejs16_x_cookiecutter_aws_sam_step_functions_with_connectors(UnitTestBase.NodejsUnitTestBase):
-    directory = "nodejs16.x/step-func-conn"
+class UnitTest_nodejs12_x_cookiecutter_aws_sam_step_functions_with_connectors(UnitTestBase.NodejsUnitTestBase):
+    directory = "nodejs12.x/step-func-conn"
     code_directories = [
         "functions/stock-buyer",
         "functions/stock-checker",
