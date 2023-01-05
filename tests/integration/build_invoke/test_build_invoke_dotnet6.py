@@ -53,4 +53,4 @@ class BuildInvoke_dotnet6_cookiecutter_aws_sam_quick_start_web_dotnet(
 class BuildInvoke_image_dotnet6_cookiecutter_aws_sam_hello_dotnet_lambda_image(
     BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase
 ):
-    directory = "dotnet6-image/cookiecutter-aws-sam-hello-dotnet-lambda-image"
+    directory = "dotnet6/hello-img"
