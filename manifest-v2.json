@@ -1,7 +1,7 @@
 {
   "graalvm.java11 (provided.al2)": [
     {
-      "directory": "provided.al2/graalvm/java11/maven",
+      "directory": "al2/graalvm/11/maven",
       "displayName": "Hello World Example",
       "dependencyManager": "maven",
       "appTemplate": "hello-world",
@@ -9,7 +9,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "provided.al2/graalvm/java11/gradle",
+      "directory": "al2/graalvm/11/gradle",
       "displayName": "Hello World Example",
       "dependencyManager": "gradle",
       "appTemplate": "hello-world",
@@ -19,7 +19,7 @@
   ],
   "graalvm.java17 (provided.al2)": [
     {
-      "directory": "provided.al2/graalvm/java17/maven",
+      "directory": "al2/graalvm/17/maven",
       "displayName": "Hello World Example",
       "dependencyManager": "maven",
       "appTemplate": "hello-world",
@@ -27,7 +27,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "provided.al2/graalvm/java17/gradle",
+      "directory": "al2/graalvm/17/gradle",
       "displayName": "Hello World Example",
       "dependencyManager": "gradle",
       "appTemplate": "hello-world",
@@ -161,7 +161,7 @@
   ],
   "aot.dotnet7 (provided.al2)": [
     {
-      "directory": "provided.al2/dotnet7-aot/hello",
+      "directory": "al2/dotnet7-aot/hello",
       "displayName": "Hello World Example",
       "dependencyManager": "cli-package",
       "appTemplate": "hello-world",
@@ -206,7 +206,7 @@
   ],
   "go (provided.al2)": [
     {
-      "directory": "provided.al2/go/hello",
+      "directory": "al2/go/hello",
       "displayName": "Hello World Example",
       "dependencyManager": "mod",
       "appTemplate": "hello-world",
@@ -214,7 +214,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "provided.al2/go/event-bridge",
+      "directory": "al2/go/event-bridge",
       "displayName": "EventBridge Hello World",
       "dependencyManager": "mod",
       "appTemplate": "eventBridge-hello-world",
@@ -222,7 +222,7 @@
       "useCaseName": "Infrastructure event management"
     },
     {
-      "directory": "provided.al2/go/event-bridge-schema",
+      "directory": "al2/go/event-bridge-schema",
       "displayName": "EventBridge App from scratch (100+ Event Schemas)",
       "dependencyManager": "mod",
       "appTemplate": "eventBridge-schema-app",
@@ -231,7 +231,7 @@
       "useCaseName": "Infrastructure event management"
     },
     {
-      "directory": "provided.al2/go/step-func",
+      "directory": "al2/go/step-func",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "mod",
       "appTemplate": "step-functions-sample-app",
@@ -1012,7 +1012,7 @@
   ],
   "rust (provided.al2)": [
     {
-      "directory": "provided.al2/rust/hello",
+      "directory": "al2/rust/hello",
       "displayName": "Hello World Example",
       "dependencyManager": "cargo",
       "appTemplate": "hello-world",
@@ -1146,7 +1146,7 @@
   ],
   "amazon/go-provided.al2-base": [
     {
-      "directory": "provided.al2/go/hello-img",
+      "directory": "al2/go/hello-img",
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "mod",
       "appTemplate": "hello-world-lambda-image",

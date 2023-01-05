@@ -18,7 +18,7 @@ class BuildInvoke_go1_x_cookiecutter_aws_sam_hello_golang(BuildInvokeBase.BuildI
 
 class BuildInvoke_provided_go_cookiecutter_aws_sam_hello_golang(BuildInvokeBase.BuildInvokeBase):
     use_container = False
-    directory = "provided.al2/go/hello"
+    directory = "al2/go/hello"
 
 class BuildInvoke_go1_x_cookiecutter_aws_sam_eventbridge_hello_golang(BuildInvokeBase.BuildInvokeBase):
     use_container = False
@@ -26,7 +26,7 @@ class BuildInvoke_go1_x_cookiecutter_aws_sam_eventbridge_hello_golang(BuildInvok
 
 class BuildInvoke_provided_go_cookiecutter_aws_sam_eventbridge_hello_golang(BuildInvokeBase.BuildInvokeBase):
     use_container = False
-    directory = "provided.al2/go/event-bridge"
+    directory = "al2/go/event-bridge"
 
 # todo: remove skip once tests are run in environment with AWS Credentials
 @skip("eventbridge schema app requires credential to pull missing files, skip")
@@ -38,7 +38,7 @@ class BuildInvoke_go1_x_cookiecutter_aws_sam_eventbridge_schema_app_golang(Build
 @skip("eventbridge schema app requires credential to pull missing files, skip")
 class BuildInvoke_provided_go_cookiecutter_aws_sam_eventbridge_schema_app_golang(BuildInvokeBase.BuildInvokeBase):
     use_container = False
-    directory = "provided.al2/go/event-bridge-schema"
+    directory = "al2/go/event-bridge-schema"
 
 class BuildInvoke_go1_x_cookiecutter_aws_sam_hello_step_functions_sample_app(BuildInvokeBase.BuildInvokeBase):
     use_container = False
@@ -46,7 +46,7 @@ class BuildInvoke_go1_x_cookiecutter_aws_sam_hello_step_functions_sample_app(Bui
 
 class BuildInvoke_provided_go_cookiecutter_aws_sam_hello_step_functions_sample_app(BuildInvokeBase.BuildInvokeBase):
     use_container = False
-    directory = "provided.al2/go/step-func"
+    directory = "al2/go/step-func"
 
 #
 # Image templates
@@ -57,4 +57,4 @@ class BuildInvoke_image_go1_x_cookiecutter_aws_sam_hello_golang_lambda_image(Bui
     directory = "go1.x/hello-img"
 
 class BuildInvoke_image_provided_go_cookiecutter_aws_sam_hello_golang_lambda_image(BuildInvokeBase.BuildInvokeBase):
-    directory = "provided.al2/go/hello-img"
+    directory = "al2/go/hello-img"

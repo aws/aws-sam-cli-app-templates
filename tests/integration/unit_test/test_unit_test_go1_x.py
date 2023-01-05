@@ -7,7 +7,7 @@ class UnitTest_go1_x_cookiecutter_aws_sam_hello_golang(UnitTestBase.GoUnitTestBa
     code_directories = ["hello-world"]
 
 class UnitTest_provided_go_cookiecutter_aws_sam_hello_golang(UnitTestBase.GoUnitTestBase):
-    directory = "provided.al2/go/hello"
+    directory = "al2/go/hello"
     code_directories = ["hello-world"]
 
 class UnitTest_go1_x_cookiecutter_aws_sam_eventbridge_hello_golang(UnitTestBase.GoUnitTestBase):
@@ -15,7 +15,7 @@ class UnitTest_go1_x_cookiecutter_aws_sam_eventbridge_hello_golang(UnitTestBase.
     code_directories = ["hello-world"]
 
 class UnitTest_provided_go_cookiecutter_aws_sam_eventbridge_hello_golang(UnitTestBase.GoUnitTestBase):
-    directory = "provided.al2/go/event-bridge"
+    directory = "al2/go/event-bridge"
     code_directories = ["hello-world"]
 
 @skip("eventbridge schema app requires credential to pull missing files, skip")
@@ -25,7 +25,7 @@ class UnitTest_go1_x_cookiecutter_aws_sam_eventbridge_schema_app_golang(UnitTest
 
 @skip("eventbridge schema app requires credential to pull missing files, skip")
 class UnitTest_provided_go_cookiecutter_aws_sam_eventbridge_schema_app_golang(UnitTestBase.GoUnitTestBase):
-    directory = "provided.al2/go/event-bridge-schema"
+    directory = "al2/go/event-bridge-schema"
     code_directories = ["hello-world"]
 
 class UnitTest_go1_x_cookiecutter_aws_sam_hello_step_functions_sample_app(UnitTestBase.GoUnitTestBase):
@@ -33,5 +33,5 @@ class UnitTest_go1_x_cookiecutter_aws_sam_hello_step_functions_sample_app(UnitTe
     code_directories = ["functions/stockBuyer", "functions/stockChecker", "functions/stockSeller"]
 
 class UnitTest_provided_go_cookiecutter_aws_sam_hello_step_functions_sample_app(UnitTestBase.GoUnitTestBase):
-    directory = "provided.al2/go/step-func"
+    directory = "al2/go/step-func"
     code_directories = ["functions/stockBuyer", "functions/stockChecker", "functions/stockSeller"]
