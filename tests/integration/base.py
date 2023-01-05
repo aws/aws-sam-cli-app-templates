@@ -90,7 +90,7 @@ class Base:
             """
 
             # drive + user folder + max length username + temp folder + template folder
-            MOCK_WINDOWS_PATH = "C:/Users/abcdefghijklmnopqrst/AppData/Local/Temp/2/tmp0h55doro/templates"
+            MOCK_WINDOWS_PATH = "C:/Users/abcdefghijklmnopqrst/AppData/Local/Temp/2/tmp0h55doro/aws-sam-cli-app-templates"
             WINDOWS_MAX_PATH = 260
 
             for root, _, files in os.walk(self.template_path):
