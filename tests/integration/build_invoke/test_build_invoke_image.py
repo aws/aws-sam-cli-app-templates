@@ -10,80 +10,80 @@ For each template, it will test the following sam commands:
 # class BuildInvoke_image_nodejs18_x_cookiecutter_aws_sam_hello_nodejs_lambda_image(
 #     BuildInvokeBase.SimpleHelloWorldBuildInvokeBase
 # ):
-#     directory = "nodejs18.x-image/cookiecutter-aws-sam-hello-nodejs-lambda-image"
+#     directory = "nodejs18.x/hello-img"
 
 class BuildInvoke_image_nodejs16_x_cookiecutter_aws_sam_hello_nodejs_lambda_image(
     BuildInvokeBase.SimpleHelloWorldBuildInvokeBase
 ):
-    directory = "nodejs16.x-image/cookiecutter-aws-sam-hello-nodejs-lambda-image"
+    directory = "nodejs16.x/hello-img"
 
 class BuildInvoke_image_nodejs14_x_cookiecutter_aws_sam_hello_nodejs_lambda_image(
     BuildInvokeBase.SimpleHelloWorldBuildInvokeBase
 ):
-    directory = "nodejs14.x-image/cookiecutter-aws-sam-hello-nodejs-lambda-image"
+    directory = "nodejs14.x/hello-img"
 
 
 class BuildInvoke_image_nodejs12_x_cookiecutter_aws_sam_hello_nodejs_lambda_image(
     BuildInvokeBase.SimpleHelloWorldBuildInvokeBase
 ):
-    directory = "nodejs12.x-image/cookiecutter-aws-sam-hello-nodejs-lambda-image"
+    directory = "nodejs12.x/hello-img"
 
 
 class BuildInvoke_image_python3_9_cookiecutter_aws_sam_hello_python_lambda_image(
     BuildInvokeBase.SimpleHelloWorldBuildInvokeBase
 ):
-    directory = "python3.9-image/cookiecutter-aws-sam-hello-python-lambda-image"
+    directory = "python3.9/hello-img"
 
 
 class BuildInvoke_image_python3_8_cookiecutter_aws_sam_hello_python_lambda_image(
     BuildInvokeBase.SimpleHelloWorldBuildInvokeBase
 ):
-    directory = "python3.8-image/cookiecutter-aws-sam-hello-python-lambda-image"
+    directory = "python3.8/hello-img"
 
 
 class BuildInvoke_image_ruby2_7_cookiecutter_aws_sam_hello_ruby_lambda_image(
     BuildInvokeBase.HelloWorldExclamationBuildInvokeBase
 ):
-    directory = "ruby2.7-image/cookiecutter-aws-sam-hello-ruby-lambda-image"
+    directory = "ruby2.7/hello-img"
 
 
 class BuildInvoke_image_java11_cookiecutter_aws_sam_hello_java_gradle_lambda_image(
     BuildInvokeBase.HelloWorldWithLocationBuildInvokeBase
 ):
-    directory = "java11-image/cookiecutter-aws-sam-hello-java-gradle-lambda-image"
+    directory = "java11/hello-img-gradle"
 
 
 class BuildInvoke_image_java11_cookiecutter_aws_sam_hello_java_maven_lambda_image(
     BuildInvokeBase.HelloWorldWithLocationBuildInvokeBase
 ):
-    directory = "java11-image/cookiecutter-aws-sam-hello-java-maven-lambda-image"
+    directory = "java11/hello-img-maven"
 
 
 class BuildInvoke_image_python3_7_cookiecutter_aws_sam_hello_python_lambda_image(
     (BuildInvokeBase.SimpleHelloWorldBuildInvokeBase)
 ):
-    directory = "python3.7-image/cookiecutter-aws-sam-hello-python-lambda-image"
+    directory = "python3.7/hello-img"
 
 
 class BuildInvoke_image_java8_cookiecutter_aws_sam_hello_java_gradle_lambda_image(
     BuildInvokeBase.HelloWorldWithLocationBuildInvokeBase
 ):
-    directory = "java8-image/cookiecutter-aws-sam-hello-java-gradle-lambda-image"
+    directory = "java8/hello-img-gradle"
 
 
 class BuildInvoke_image_java8_cookiecutter_aws_sam_hello_java_maven_lambda_image(
     BuildInvokeBase.HelloWorldWithLocationBuildInvokeBase
 ):
-    directory = "java8-image/cookiecutter-aws-sam-hello-java-maven-lambda-image"
+    directory = "java8/hello-img-maven"
 
 
 class BuildInvoke_image_java8_al2_cookiecutter_aws_sam_hello_java_gradle_lambda_image(
     BuildInvokeBase.HelloWorldWithLocationBuildInvokeBase
 ):
-    directory = "java8.al2-image/cookiecutter-aws-sam-hello-java-gradle-lambda-image"
+    directory = "java8.al2/hello-img-gradle"
 
 
 class BuildInvoke_image_java8_al2_cookiecutter_aws_sam_hello_java_maven_lambda_image(
     BuildInvokeBase.HelloWorldWithLocationBuildInvokeBase
 ):
-    directory = "java8.al2-image/cookiecutter-aws-sam-hello-java-maven-lambda-image"
+    directory = "java8.al2/hello-img-maven"
