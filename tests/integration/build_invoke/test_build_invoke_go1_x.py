@@ -14,39 +14,39 @@ For each template, it will test the following sam commands:
 
 class BuildInvoke_go1_x_cookiecutter_aws_sam_hello_golang(BuildInvokeBase.BuildInvokeBase):
     use_container = False
-    directory = "go1.x/cookiecutter-aws-sam-hello-golang"
+    directory = "go1.x/hello"
 
 class BuildInvoke_provided_go_cookiecutter_aws_sam_hello_golang(BuildInvokeBase.BuildInvokeBase):
     use_container = False
-    directory = "provided.al2/go/cookiecutter-aws-sam-hello-golang"
+    directory = "al2/go/hello"
 
 class BuildInvoke_go1_x_cookiecutter_aws_sam_eventbridge_hello_golang(BuildInvokeBase.BuildInvokeBase):
     use_container = False
-    directory = "go1.x/cookiecutter-aws-sam-eventbridge-hello-golang"
+    directory = "go1.x/event-bridge"
 
 class BuildInvoke_provided_go_cookiecutter_aws_sam_eventbridge_hello_golang(BuildInvokeBase.BuildInvokeBase):
     use_container = False
-    directory = "provided.al2/go/cookiecutter-aws-sam-eventbridge-hello-golang"
+    directory = "al2/go/event-bridge"
 
 # todo: remove skip once tests are run in environment with AWS Credentials
 @skip("eventbridge schema app requires credential to pull missing files, skip")
 class BuildInvoke_go1_x_cookiecutter_aws_sam_eventbridge_schema_app_golang(BuildInvokeBase.BuildInvokeBase):
     use_container = False
-    directory = "go1.x/cookiecutter-aws-sam-eventbridge-schema-app-golang"
+    directory = "go1.x/event-bridge-schema"
 
 # todo: remove skip once tests are run in environment with AWS Credentials
 @skip("eventbridge schema app requires credential to pull missing files, skip")
 class BuildInvoke_provided_go_cookiecutter_aws_sam_eventbridge_schema_app_golang(BuildInvokeBase.BuildInvokeBase):
     use_container = False
-    directory = "provided.al2/go/cookiecutter-aws-sam-eventbridge-schema-app-golang"
+    directory = "al2/go/event-bridge-schema"
 
 class BuildInvoke_go1_x_cookiecutter_aws_sam_hello_step_functions_sample_app(BuildInvokeBase.BuildInvokeBase):
     use_container = False
-    directory = "go1.x/cookiecutter-aws-sam-hello-step-functions-sample-app"
+    directory = "go1.x/step-func"
 
 class BuildInvoke_provided_go_cookiecutter_aws_sam_hello_step_functions_sample_app(BuildInvokeBase.BuildInvokeBase):
     use_container = False
-    directory = "provided.al2/go/cookiecutter-aws-sam-hello-step-functions-sample-app"
+    directory = "al2/go/step-func"
 
 #
 # Image templates
@@ -54,7 +54,7 @@ class BuildInvoke_provided_go_cookiecutter_aws_sam_hello_step_functions_sample_a
 
 
 class BuildInvoke_image_go1_x_cookiecutter_aws_sam_hello_golang_lambda_image(BuildInvokeBase.BuildInvokeBase):
-    directory = "go1.x-image/cookiecutter-aws-sam-hello-golang-lambda-image"
+    directory = "go1.x/hello-img"
 
 class BuildInvoke_image_provided_go_cookiecutter_aws_sam_hello_golang_lambda_image(BuildInvokeBase.BuildInvokeBase):
-    directory = "provided.al2/go/cookiecutter-aws-sam-hello-golang-lambda-image"
+    directory = "al2/go/hello-img"

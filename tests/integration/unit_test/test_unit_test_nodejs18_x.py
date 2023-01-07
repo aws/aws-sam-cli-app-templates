@@ -2,12 +2,12 @@ from tests.integration.unit_test.unit_test_base import UnitTestBase
 
 
 class UnitTest_nodejs18_x_cookiecutter_aws_sam_hello_nodejs(UnitTestBase.NodejsUnitTestBase):
-    directory = "nodejs18.x/cookiecutter-aws-sam-hello-nodejs"
+    directory = "nodejs18.x/hello"
     code_directories = ["hello-world"]
 
 
 class UnitTest_nodejs18_x_cookiecutter_aws_sam_step_functions_sample_app(UnitTestBase.NodejsUnitTestBase):
-    directory = "nodejs18.x/cookiecutter-aws-sam-step-functions-sample-app"
+    directory = "nodejs18.x/step-func"
     code_directories = [
         "functions/stock-buyer",
         "functions/stock-checker",
@@ -16,24 +16,24 @@ class UnitTest_nodejs18_x_cookiecutter_aws_sam_step_functions_sample_app(UnitTes
 
 
 class UnitTest_nodejs18_x_cookiecutter_quick_start_from_scratch(UnitTestBase.NodejsUnitTestBase):
-    directory = "nodejs18.x/cookiecutter-quick-start-from-scratch"
+    directory = "nodejs18.x/scratch"
 
 
 class UnitTest_nodejs18_x_cookiecutter_quick_start_cloudwatch_events(UnitTestBase.NodejsUnitTestBase):
-    directory = "nodejs18.x/cookiecutter-quick-start-cloudwatch-events"
+    directory = "nodejs18.x/cw-event"
 
 
 class UnitTest_nodejs18_x_cookiecutter_quick_start_s3(UnitTestBase.NodejsUnitTestBase):
-    directory = "nodejs18.x/cookiecutter-quick-start-s3"
+    directory = "nodejs18.x/s3"
 
 
 class UnitTest_nodejs18_x_cookiecutter_quick_start_sns(UnitTestBase.NodejsUnitTestBase):
-    directory = "nodejs18.x/cookiecutter-quick-start-sns"
+    directory = "nodejs18.x/sns"
 
 
 class UnitTest_nodejs18_x_cookiecutter_quick_start_sqs(UnitTestBase.NodejsUnitTestBase):
-    directory = "nodejs18.x/cookiecutter-quick-start-sqs"
+    directory = "nodejs18.x/sqs"
 
 
 class UnitTest_nodejs18_x_cookiecutter_quick_start_web(UnitTestBase.NodejsUnitTestBase):
-    directory = "nodejs18.x/cookiecutter-quick-start-web"
+    directory = "nodejs18.x/web"

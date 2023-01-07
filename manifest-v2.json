@@ -1,7 +1,7 @@
 {
   "graalvm.java11 (provided.al2)": [
     {
-      "directory": "provided.al2/graalvm/java11/cookiecutter-aws-sam-graalvm-maven",
+      "directory": "al2/graalvm/11/maven",
       "displayName": "Hello World Example",
       "dependencyManager": "maven",
       "appTemplate": "hello-world",
@@ -9,7 +9,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "provided.al2/graalvm/java11/cookiecutter-aws-sam-graalvm-gradle",
+      "directory": "al2/graalvm/11/gradle",
       "displayName": "Hello World Example",
       "dependencyManager": "gradle",
       "appTemplate": "hello-world",
@@ -19,7 +19,7 @@
   ],
   "graalvm.java17 (provided.al2)": [
     {
-      "directory": "provided.al2/graalvm/java17/cookiecutter-aws-sam-graalvm-maven",
+      "directory": "al2/graalvm/17/maven",
       "displayName": "Hello World Example",
       "dependencyManager": "maven",
       "appTemplate": "hello-world",
@@ -27,7 +27,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "provided.al2/graalvm/java17/cookiecutter-aws-sam-graalvm-gradle",
+      "directory": "al2/graalvm/17/gradle",
       "displayName": "Hello World Example",
       "dependencyManager": "gradle",
       "appTemplate": "hello-world",
@@ -37,7 +37,7 @@
   ],
   "dotnetcore3.1": [
     {
-      "directory": "dotnetcore3.1/cookiecutter-aws-sam-hello-dotnet",
+      "directory": "dotnetcore3.1/hello",
       "displayName": "Hello World Example",
       "dependencyManager": "cli-package",
       "appTemplate": "hello-world",
@@ -45,7 +45,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "dotnetcore3.1/cookiecutter-aws-sam-hello-step-functions-sample-app",
+      "directory": "dotnetcore3.1/step-func",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "cli-package",
       "appTemplate": "step-functions-sample-app",
@@ -53,7 +53,7 @@
       "useCaseName": "Multi-step workflow"
     },
     {
-      "directory": "dotnetcore3.1/cookiecutter-aws-sam-quick-start-web-dotnet",
+      "directory": "dotnetcore3.1/web",
       "displayName": "Quick Start: Web Backend",
       "dependencyManager": "cli-package",
       "appTemplate": "quick-start-web",
@@ -61,7 +61,7 @@
       "useCaseName": "Serverless API"
     },
     {
-      "directory": "dotnetcore3.1/cookiecutter-aws-sam-quick-start-cloudwatch-events-dotnet",
+      "directory": "dotnetcore3.1/cw-event",
       "displayName": "Quick Start: Scheduled Events",
       "dependencyManager": "cli-package",
       "appTemplate": "quick-start-cloudwatch-events",
@@ -69,7 +69,7 @@
       "useCaseName": "Scheduled task"
     },
     {
-      "directory": "dotnetcore3.1/cookiecutter-aws-sam-quick-start-from-scratch-dotnet",
+      "directory": "dotnetcore3.1/scratch",
       "displayName": "Quick Start: From Scratch",
       "dependencyManager": "cli-package",
       "appTemplate": "quick-start-from-scratch",
@@ -77,7 +77,7 @@
       "useCaseName": "Standalone function"
     },
     {
-      "directory": "dotnetcore3.1/cookiecutter-aws-sam-quick-start-sns-dotnet",
+      "directory": "dotnetcore3.1/sns",
       "displayName": "Quick Start: SNS",
       "dependencyManager": "cli-package",
       "appTemplate": "quick-start-sns",
@@ -85,7 +85,7 @@
       "useCaseName": "Data processing"
     },
     {
-      "directory": "dotnetcore3.1/cookiecutter-aws-sam-quick-start-sqs-dotnet",
+      "directory": "dotnetcore3.1/sqs",
       "displayName": "Quick Start: SQS",
       "dependencyManager": "cli-package",
       "appTemplate": "quick-start-sqs",
@@ -93,7 +93,7 @@
       "useCaseName": "Data processing"
     },
     {
-      "directory": "dotnetcore3.1/cookiecutter-aws-sam-quick-start-s3-dotnet",
+      "directory": "dotnetcore3.1/s3",
       "displayName": "Quick Start: S3",
       "dependencyManager": "cli-package",
       "appTemplate": "quick-start-s3",
@@ -103,7 +103,7 @@
   ],
   "dotnet6": [
     {
-      "directory": "dotnet6/cookiecutter-aws-sam-quick-start-sqs-dotnet",
+      "directory": "dotnet6/sqs",
       "displayName": "Quick Start: SQS",
       "dependencyManager": "cli-package",
       "appTemplate": "quick-start-sqs",
@@ -111,7 +111,7 @@
       "useCaseName": "Data processing"
     },
     {
-      "directory": "dotnet6/cookiecutter-aws-sam-quickstart-sns-dotnet",
+      "directory": "dotnet6/sns",
       "displayName": "Quick Start: SNS",
       "dependencyManager": "cli-package",
       "appTemplate": "quickstart-sns",
@@ -119,7 +119,7 @@
       "useCaseName": "Data processing"
     },
     {
-      "directory": "dotnet6/cookiecutter-aws-sam-hello-dotnet",
+      "directory": "dotnet6/hello",
       "displayName": "Hello World Example",
       "dependencyManager": "cli-package",
       "appTemplate": "hello-world",
@@ -127,7 +127,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "dotnet6/cookiecutter-aws-sam-hello-step-functions-sample-app",
+      "directory": "dotnet6/step-func",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "cli-package",
       "appTemplate": "step-functions-sample-app",
@@ -135,7 +135,7 @@
       "useCaseName": "Multi-step workflow"
     },
     {
-      "directory": "dotnet6/cookiecutter-aws-sam-quick-start-cloudwatch-events-dotnet",
+      "directory": "dotnet6/cw-event",
       "displayName": "Quick Start: Scheduled Events",
       "dependencyManager": "cli-package",
       "appTemplate": "quick-start-cloudwatch-events",
@@ -143,7 +143,7 @@
       "useCaseName": "Scheduled task"
     },
     {
-      "directory": "dotnet6/cookiecutter-aws-sam-quick-start-from-scratch-dotnet",
+      "directory": "dotnet6/scratch",
       "displayName": "Quick Start: From Scratch",
       "dependencyManager": "cli-package",
       "appTemplate": "quick-start-from-scratch",
@@ -151,7 +151,7 @@
       "useCaseName": "Standalone function"
     },
     {
-      "directory": "dotnet6/cookiecutter-aws-sam-quick-start-web-dotnet",
+      "directory": "dotnet6/web",
       "displayName": "Quick Start: Web Backend",
       "dependencyManager": "cli-package",
       "appTemplate": "quick-start-web",
@@ -161,7 +161,7 @@
   ],
   "aot.dotnet7 (provided.al2)": [
     {
-      "directory": "provided.al2/nativeaot/dotnet7/cookiecutter-aws-sam-hello-dotnet",
+      "directory": "al2/dotnet7-aot/hello",
       "displayName": "Hello World Example",
       "dependencyManager": "cli-package",
       "appTemplate": "hello-world",
@@ -171,7 +171,7 @@
   ],
   "go1.x": [
     {
-      "directory": "go1.x/cookiecutter-aws-sam-hello-golang",
+      "directory": "go1.x/hello",
       "displayName": "Hello World Example",
       "dependencyManager": "mod",
       "appTemplate": "hello-world",
@@ -179,7 +179,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "go1.x/cookiecutter-aws-sam-eventbridge-hello-golang",
+      "directory": "go1.x/event-bridge",
       "displayName": "EventBridge Hello World",
       "dependencyManager": "mod",
       "appTemplate": "eventBridge-hello-world",
@@ -187,7 +187,7 @@
       "useCaseName": "Infrastructure event management"
     },
     {
-      "directory": "go1.x/cookiecutter-aws-sam-eventbridge-schema-app-golang",
+      "directory": "go1.x/event-bridge-schema",
       "displayName": "EventBridge App from scratch (100+ Event Schemas)",
       "dependencyManager": "mod",
       "appTemplate": "eventBridge-schema-app",
@@ -196,7 +196,7 @@
       "useCaseName": "Infrastructure event management"
     },
     {
-      "directory": "go1.x/cookiecutter-aws-sam-hello-step-functions-sample-app",
+      "directory": "go1.x/step-func",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "mod",
       "appTemplate": "step-functions-sample-app",
@@ -206,7 +206,7 @@
   ],
   "go (provided.al2)": [
     {
-      "directory": "provided.al2/go/cookiecutter-aws-sam-hello-golang",
+      "directory": "al2/go/hello",
       "displayName": "Hello World Example",
       "dependencyManager": "mod",
       "appTemplate": "hello-world",
@@ -214,7 +214,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "provided.al2/go/cookiecutter-aws-sam-eventbridge-hello-golang",
+      "directory": "al2/go/event-bridge",
       "displayName": "EventBridge Hello World",
       "dependencyManager": "mod",
       "appTemplate": "eventBridge-hello-world",
@@ -222,7 +222,7 @@
       "useCaseName": "Infrastructure event management"
     },
     {
-      "directory": "provided.al2/go/cookiecutter-aws-sam-eventbridge-schema-app-golang",
+      "directory": "al2/go/event-bridge-schema",
       "displayName": "EventBridge App from scratch (100+ Event Schemas)",
       "dependencyManager": "mod",
       "appTemplate": "eventBridge-schema-app",
@@ -231,7 +231,7 @@
       "useCaseName": "Infrastructure event management"
     },
     {
-      "directory": "provided.al2/go/cookiecutter-aws-sam-hello-step-functions-sample-app",
+      "directory": "al2/go/step-func",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "mod",
       "appTemplate": "step-functions-sample-app",
@@ -241,7 +241,7 @@
   ],
   "java8": [
     {
-      "directory": "java8/cookiecutter-aws-sam-hello-java-gradle",
+      "directory": "java8/hello-gradle",
       "displayName": "Hello World Example: Gradle",
       "dependencyManager": "gradle",
       "appTemplate": "hello-world",
@@ -249,7 +249,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "java8/cookiecutter-aws-sam-hello-java-maven",
+      "directory": "java8/hello-maven",
       "displayName": "Hello World Example: Maven",
       "dependencyManager": "maven",
       "appTemplate": "hello-world",
@@ -257,7 +257,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "java8/cookiecutter-aws-sam-eventbridge-hello-java-gradle",
+      "directory": "java8/event-bridge-gradle",
       "displayName": "EventBridge Hello World: Gradle",
       "dependencyManager": "gradle",
       "appTemplate": "eventBridge-hello-world",
@@ -265,7 +265,7 @@
       "useCaseName": "Infrastructure event management"
     },
     {
-      "directory": "java8/cookiecutter-aws-sam-eventbridge-hello-java-maven",
+      "directory": "java8/event-bridge-maven",
       "displayName": "EventBridge Hello World: Maven",
       "dependencyManager": "maven",
       "appTemplate": "eventBridge-hello-world",
@@ -273,7 +273,7 @@
       "useCaseName": "Infrastructure event management"
     },
     {
-      "directory": "java8/cookiecutter-aws-sam-eventbridge-schema-app-java-gradle",
+      "directory": "java8/event-bridge-schema-gradle",
       "displayName": "EventBridge App from scratch (100+ Event Schemas): Gradle",
       "dependencyManager": "gradle",
       "appTemplate": "eventBridge-schema-app",
@@ -282,7 +282,7 @@
       "useCaseName": "Infrastructure event management"
     },
     {
-      "directory": "java8/cookiecutter-aws-sam-eventbridge-schema-app-java-maven",
+      "directory": "java8/event-bridge-schema-maven",
       "displayName": "EventBridge App from scratch (100+ Event Schemas): Maven",
       "dependencyManager": "maven",
       "appTemplate": "eventBridge-schema-app",
@@ -291,7 +291,7 @@
       "useCaseName": "Infrastructure event management"
     },
     {
-      "directory": "java8/cookiecutter-aws-sam-step-functions-sample-app-gradle",
+      "directory": "java8/step-func-gradle",
       "displayName": "Step Functions Sample App (Stock Trader): Gradle",
       "dependencyManager": "gradle",
       "appTemplate": "step-functions-sample-app",
@@ -299,7 +299,7 @@
       "useCaseName": "Multi-step workflow"
     },
     {
-      "directory": "java8/cookiecutter-aws-sam-step-functions-sample-app-maven",
+      "directory": "java8/step-func-maven",
       "displayName": "Step Functions Sample App (Stock Trader): Maven",
       "dependencyManager": "maven",
       "appTemplate": "step-functions-sample-app",
@@ -309,7 +309,7 @@
   ],
   "java8.al2": [
     {
-      "directory": "java8.al2/cookiecutter-aws-sam-hello-java-gradle",
+      "directory": "java8.al2/hello-gradle",
       "displayName": "Hello World Example: Gradle",
       "dependencyManager": "gradle",
       "appTemplate": "hello-world",
@@ -317,7 +317,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "java8.al2/cookiecutter-aws-sam-hello-java-maven",
+      "directory": "java8.al2/hello-maven",
       "displayName": "Hello World Example: Maven",
       "dependencyManager": "maven",
       "appTemplate": "hello-world",
@@ -325,7 +325,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "java8.al2/cookiecutter-aws-sam-eventbridge-hello-java-gradle",
+      "directory": "java8.al2/event-bridge-gradle",
       "displayName": "EventBridge Hello World: Gradle",
       "dependencyManager": "gradle",
       "appTemplate": "eventBridge-hello-world",
@@ -333,7 +333,7 @@
       "useCaseName": "Infrastructure event management"
     },
     {
-      "directory": "java8.al2/cookiecutter-aws-sam-eventbridge-hello-java-maven",
+      "directory": "java8.al2/event-bridge-maven",
       "displayName": "EventBridge Hello World: Maven",
       "dependencyManager": "maven",
       "appTemplate": "eventBridge-hello-world",
@@ -341,7 +341,7 @@
       "useCaseName": "Infrastructure event management"
     },
     {
-      "directory": "java8.al2/cookiecutter-aws-sam-eventbridge-schema-app-java-gradle",
+      "directory": "java8.al2/event-bridge-schema-gradle",
       "displayName": "EventBridge App from scratch (100+ Event Schemas): Gradle",
       "dependencyManager": "gradle",
       "appTemplate": "eventBridge-schema-app",
@@ -350,7 +350,7 @@
       "useCaseName": "Infrastructure event management"
     },
     {
-      "directory": "java8.al2/cookiecutter-aws-sam-eventbridge-schema-app-java-maven",
+      "directory": "java8.al2/event-bridge-schema-maven",
       "displayName": "EventBridge App from scratch (100+ Event Schemas): Maven",
       "dependencyManager": "maven",
       "appTemplate": "eventBridge-schema-app",
@@ -359,7 +359,7 @@
       "useCaseName": "Infrastructure event management"
     },
     {
-      "directory": "java8.al2/cookiecutter-aws-sam-step-functions-sample-app-gradle",
+      "directory": "java8.al2/step-func-gradle",
       "displayName": "Step Functions Sample App (Stock Trader): Gradle",
       "dependencyManager": "gradle",
       "appTemplate": "step-functions-sample-app",
@@ -367,7 +367,7 @@
       "useCaseName": "Multi-step workflow"
     },
     {
-      "directory": "java8.al2/cookiecutter-aws-sam-step-functions-sample-app-maven",
+      "directory": "java8.al2/step-func-maven",
       "displayName": "Step Functions Sample App (Stock Trader): Maven",
       "dependencyManager": "maven",
       "appTemplate": "step-functions-sample-app",
@@ -377,7 +377,7 @@
   ],
   "java11": [
     {
-      "directory": "java11/cookiecutter-aws-sam-hello-java-gradle",
+      "directory": "java11/hello-gradle",
       "displayName": "Hello World Example: Gradle",
       "dependencyManager": "gradle",
       "appTemplate": "hello-world",
@@ -385,7 +385,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "java11/cookiecutter-aws-sam-hello-java-maven",
+      "directory": "java11/hello-maven",
       "displayName": "Hello World Example: Maven",
       "dependencyManager": "maven",
       "appTemplate": "hello-world",
@@ -393,7 +393,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "java11/cookiecutter-aws-sam-eventbridge-hello-java-gradle",
+      "directory": "java11/event-bridge-gradle",
       "displayName": "EventBridge Hello World: Gradle",
       "dependencyManager": "gradle",
       "appTemplate": "eventBridge-hello-world",
@@ -401,7 +401,7 @@
       "useCaseName": "Infrastructure event management"
     },
     {
-      "directory": "java11/cookiecutter-aws-sam-eventbridge-hello-java-maven",
+      "directory": "java11/event-bridge-maven",
       "displayName": "EventBridge Hello World: Maven",
       "dependencyManager": "maven",
       "appTemplate": "eventBridge-hello-world",
@@ -409,7 +409,7 @@
       "useCaseName": "Infrastructure event management"
     },
     {
-      "directory": "java11/cookiecutter-aws-sam-eventbridge-schema-app-java-gradle",
+      "directory": "java11/event-bridge-schema-gradle",
       "displayName": "EventBridge App from scratch (100+ Event Schemas): Gradle",
       "dependencyManager": "gradle",
       "appTemplate": "eventBridge-schema-app",
@@ -418,7 +418,7 @@
       "useCaseName": "Infrastructure event management"
     },
     {
-      "directory": "java11/cookiecutter-aws-sam-eventbridge-schema-app-java-maven",
+      "directory": "java11/event-bridge-schema-maven",
       "displayName": "EventBridge App from scratch (100+ Event Schemas): Maven",
       "dependencyManager": "maven",
       "appTemplate": "eventBridge-schema-app",
@@ -427,7 +427,7 @@
       "useCaseName": "Infrastructure event management"
     },
     {
-      "directory": "java11/cookiecutter-aws-sam-step-functions-sample-app-gradle",
+      "directory": "java11/step-func-gradle",
       "displayName": "Step Functions Sample App (Stock Trader): Gradle",
       "dependencyManager": "gradle",
       "appTemplate": "step-functions-sample-app",
@@ -435,7 +435,7 @@
       "useCaseName": "Multi-step workflow"
     },
     {
-      "directory": "java11/cookiecutter-aws-sam-step-functions-sample-app-maven",
+      "directory": "java11/step-func-maven",
       "displayName": "Step Functions Sample App (Stock Trader): Maven",
       "dependencyManager": "maven",
       "appTemplate": "step-functions-sample-app",
@@ -445,7 +445,7 @@
   ],
   "nodejs16.x": [
     {
-      "directory": "nodejs16.x/cookiecutter-aws-sam-hello-nodejs",
+      "directory": "nodejs16.x/hello",
       "displayName": "Hello World Example",
       "dependencyManager": "npm",
       "appTemplate": "hello-world",
@@ -453,7 +453,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "nodejs16.x/cookiecutter-aws-sam-hello-typescript-nodejs",
+      "directory": "nodejs16.x/hello-ts",
       "displayName": "Hello World Example TypeScript",
       "dependencyManager": "npm",
       "appTemplate": "hello-world-typescript",
@@ -461,7 +461,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "nodejs16.x/cookiecutter-aws-sam-step-functions-sample-app",
+      "directory": "nodejs16.x/step-func",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "npm",
       "appTemplate": "step-functions-sample-app",
@@ -469,7 +469,7 @@
       "useCaseName": "Multi-step workflow"
     },
     {
-      "directory": "nodejs16.x/cookiecutter-quick-start-from-scratch",
+      "directory": "nodejs16.x/scratch",
       "displayName": "Quick Start: From Scratch",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-from-scratch",
@@ -477,7 +477,7 @@
       "useCaseName": "Standalone function"
     },
     {
-      "directory": "nodejs16.x/cookiecutter-quick-start-cloudwatch-events",
+      "directory": "nodejs16.x/cw-event",
       "displayName": "Quick Start: Scheduled Events",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-cloudwatch-events",
@@ -485,7 +485,7 @@
       "useCaseName": "Scheduled task"
     },
     {
-      "directory": "nodejs16.x/cookiecutter-quick-start-s3",
+      "directory": "nodejs16.x/s3",
       "displayName": "Quick Start: S3",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-s3",
@@ -493,7 +493,7 @@
       "useCaseName": "Data processing"
     },
     {
-      "directory": "nodejs16.x/cookiecutter-quick-start-sns",
+      "directory": "nodejs16.x/sns",
       "displayName": "Quick Start: SNS",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-sns",
@@ -501,7 +501,7 @@
       "useCaseName": "Data processing"
     },
     {
-      "directory": "nodejs16.x/cookiecutter-quick-start-sqs",
+      "directory": "nodejs16.x/sqs",
       "displayName": "Quick Start: SQS",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-sqs",
@@ -509,7 +509,7 @@
       "useCaseName": "Data processing"
     },
     {
-      "directory": "nodejs16.x/cookiecutter-quick-start-web",
+      "directory": "nodejs16.x/web",
       "displayName": "Quick Start: Web Backend",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-web",
@@ -517,7 +517,7 @@
       "useCaseName": "Serverless API"
     },
     {
-      "directory": "nodejs16.x/cookiecutter-aws-sam-hello-powertools-typescript-nodejs",
+      "directory": "nodejs16.x/hello-ts-pt",
       "displayName": "Hello World Example TypeScript w/ Lambda Powertools",
       "dependencyManager": "npm",
       "appTemplate": "hello-world-powertools-typescript",
@@ -525,7 +525,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "nodejs16.x/cookiecutter-quick-start-web-with-connectors",
+      "directory": "nodejs16.x/web-conn",
       "displayName": "Quick Start: Web Backend With Connectors",
       "dependencyManager": "npm",
       "appTemplate": "hello-world-connector",
@@ -533,7 +533,7 @@
       "useCaseName": "Serverless Connector Hello World Example"
     },
     {
-      "directory": "nodejs16.x/cookiecutter-aws-sam-step-functions-with-connectors",
+      "directory": "nodejs16.x/step-func-conn",
       "displayName": "Step Functions Sample App (Stock Trader) With Connectors",
       "dependencyManager": "npm",
       "appTemplate": "step-functions-with-connectors",
@@ -543,7 +543,7 @@
   ],
   "amazon/nodejs16.x-base": [
     {
-      "directory": "nodejs16.x-image/cookiecutter-aws-sam-hello-nodejs-lambda-image",
+      "directory": "nodejs16.x/hello-img",
       "displayName": "Hello World Image Example",
       "dependencyManager": "npm",
       "appTemplate": "hello-world-lambda-image",
@@ -553,7 +553,7 @@
   ],
   "nodejs18.x": [
     {
-      "directory": "nodejs18.x/cookiecutter-aws-sam-hello-nodejs",
+      "directory": "nodejs18.x/hello",
       "displayName": "Hello World Example",
       "dependencyManager": "npm",
       "appTemplate": "hello-world",
@@ -561,7 +561,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "nodejs18.x/cookiecutter-aws-sam-hello-typescript-nodejs",
+      "directory": "nodejs18.x/hello-ts",
       "displayName": "Hello World Example TypeScript",
       "dependencyManager": "npm",
       "appTemplate": "hello-world-typescript",
@@ -569,7 +569,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "nodejs18.x/cookiecutter-aws-sam-step-functions-sample-app",
+      "directory": "nodejs18.x/step-func",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "npm",
       "appTemplate": "step-functions-sample-app",
@@ -577,7 +577,7 @@
       "useCaseName": "Multi-step workflow"
     },
     {
-      "directory": "nodejs18.x/cookiecutter-quick-start-from-scratch",
+      "directory": "nodejs18.x/scratch",
       "displayName": "Quick Start: From Scratch",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-from-scratch",
@@ -585,7 +585,7 @@
       "useCaseName": "Standalone function"
     },
     {
-      "directory": "nodejs18.x/cookiecutter-quick-start-cloudwatch-events",
+      "directory": "nodejs18.x/cw-event",
       "displayName": "Quick Start: Scheduled Events",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-cloudwatch-events",
@@ -593,7 +593,7 @@
       "useCaseName": "Scheduled task"
     },
     {
-      "directory": "nodejs18.x/cookiecutter-quick-start-s3",
+      "directory": "nodejs18.x/s3",
       "displayName": "Quick Start: S3",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-s3",
@@ -601,7 +601,7 @@
       "useCaseName": "Data processing"
     },
     {
-      "directory": "nodejs18.x/cookiecutter-quick-start-sns",
+      "directory": "nodejs18.x/sns",
       "displayName": "Quick Start: SNS",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-sns",
@@ -609,7 +609,7 @@
       "useCaseName": "Data processing"
     },
     {
-      "directory": "nodejs18.x/cookiecutter-quick-start-sqs",
+      "directory": "nodejs18.x/sqs",
       "displayName": "Quick Start: SQS",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-sqs",
@@ -617,7 +617,7 @@
       "useCaseName": "Data processing"
     },
     {
-      "directory": "nodejs18.x/cookiecutter-quick-start-web",
+      "directory": "nodejs18.x/web",
       "displayName": "Quick Start: Web Backend",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-web",
@@ -627,7 +627,7 @@
   ],
   "amazon/nodejs18.x-base": [
     {
-      "directory": "nodejs18.x-image/cookiecutter-aws-sam-hello-nodejs-lambda-image",
+      "directory": "nodejs18.x/hello-img",
       "displayName": "Hello World Image Example",
       "dependencyManager": "npm",
       "appTemplate": "hello-world-lambda-image",
@@ -637,7 +637,7 @@
   ],
   "nodejs14.x": [
     {
-      "directory": "nodejs14.x/cookiecutter-aws-sam-hello-nodejs",
+      "directory": "nodejs14.x/hello",
       "displayName": "Hello World Example",
       "dependencyManager": "npm",
       "appTemplate": "hello-world",
@@ -645,7 +645,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "nodejs14.x/cookiecutter-aws-sam-hello-typescript-nodejs",
+      "directory": "nodejs14.x/hello-ts",
       "displayName": "Hello World Example TypeScript",
       "dependencyManager": "npm",
       "appTemplate": "hello-world-typescript",
@@ -653,7 +653,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "nodejs14.x/cookiecutter-aws-sam-step-functions-sample-app",
+      "directory": "nodejs14.x/step-func",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "npm",
       "appTemplate": "step-functions-sample-app",
@@ -661,7 +661,7 @@
       "useCaseName": "Multi-step workflow"
     },
     {
-      "directory": "nodejs14.x/cookiecutter-quick-start-from-scratch",
+      "directory": "nodejs14.x/scratch",
       "displayName": "Quick Start: From Scratch",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-from-scratch",
@@ -669,7 +669,7 @@
       "useCaseName": "Standalone function"
     },
     {
-      "directory": "nodejs14.x/cookiecutter-quick-start-cloudwatch-events",
+      "directory": "nodejs14.x/cw-event",
       "displayName": "Quick Start: Scheduled Events",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-cloudwatch-events",
@@ -677,7 +677,7 @@
       "useCaseName": "Scheduled task"
     },
     {
-      "directory": "nodejs14.x/cookiecutter-quick-start-s3",
+      "directory": "nodejs14.x/s3",
       "displayName": "Quick Start: S3",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-s3",
@@ -685,7 +685,7 @@
       "useCaseName": "Data processing"
     },
     {
-      "directory": "nodejs14.x/cookiecutter-quick-start-sns",
+      "directory": "nodejs14.x/sns",
       "displayName": "Quick Start: SNS",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-sns",
@@ -693,7 +693,7 @@
       "useCaseName": "Data processing"
     },
     {
-      "directory": "nodejs14.x/cookiecutter-quick-start-sqs",
+      "directory": "nodejs14.x/sqs",
       "displayName": "Quick Start: SQS",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-sqs",
@@ -701,7 +701,7 @@
       "useCaseName": "Data processing"
     },
     {
-      "directory": "nodejs14.x/cookiecutter-quick-start-web",
+      "directory": "nodejs14.x/web",
       "displayName": "Quick Start: Web Backend",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-web",
@@ -709,7 +709,7 @@
       "useCaseName": "Serverless API"
     },
     {
-      "directory": "nodejs14.x/cookiecutter-aws-sam-hello-powertools-typescript-nodejs",
+      "directory": "nodejs14.x/hello-ts-pt",
       "displayName": "Hello World Example TypeScript w/ Lambda Powertools",
       "dependencyManager": "npm",
       "appTemplate": "hello-world-powertools-typescript",
@@ -717,7 +717,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "nodejs14.x/cookiecutter-quick-start-web-with-connectors",
+      "directory": "nodejs14.x/web-conn",
       "displayName": "Quick Start: Web Backend With Connectors",
       "dependencyManager": "npm",
       "appTemplate": "hello-world-connector",
@@ -725,7 +725,7 @@
       "useCaseName": "Serverless Connector Hello World Example"
     },
     {
-      "directory": "nodejs14.x/cookiecutter-aws-sam-step-functions-with-connectors",
+      "directory": "nodejs14.x/step-func-conn",
       "displayName": "Step Functions Sample App (Stock Trader) With Connectors",
       "dependencyManager": "npm",
       "appTemplate": "step-functions-with-connectors",
@@ -735,7 +735,7 @@
   ],
   "nodejs12.x": [
     {
-      "directory": "nodejs12.x/cookiecutter-aws-sam-hello-nodejs",
+      "directory": "nodejs12.x/hello",
       "displayName": "Hello World Example",
       "dependencyManager": "npm",
       "appTemplate": "hello-world",
@@ -743,7 +743,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "nodejs12.x/cookiecutter-aws-sam-step-functions-sample-app",
+      "directory": "nodejs12.x/step-func",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "npm",
       "appTemplate": "step-functions-sample-app",
@@ -751,7 +751,7 @@
       "useCaseName": "Multi-step workflow"
     },
     {
-      "directory": "nodejs12.x/cookiecutter-quick-start-from-scratch",
+      "directory": "nodejs12.x/scratch",
       "displayName": "Quick Start: From Scratch",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-from-scratch",
@@ -759,7 +759,7 @@
       "useCaseName": "Standalone function"
     },
     {
-      "directory": "nodejs12.x/cookiecutter-quick-start-cloudwatch-events",
+      "directory": "nodejs12.x/cw-event",
       "displayName": "Quick Start: Scheduled Events",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-cloudwatch-events",
@@ -767,7 +767,7 @@
       "useCaseName": "Scheduled task"
     },
     {
-      "directory": "nodejs12.x/cookiecutter-quick-start-s3",
+      "directory": "nodejs12.x/s3",
       "displayName": "Quick Start: S3",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-s3",
@@ -775,7 +775,7 @@
       "useCaseName": "Data processing"
     },
     {
-      "directory": "nodejs12.x/cookiecutter-quick-start-sns",
+      "directory": "nodejs12.x/sns",
       "displayName": "Quick Start: SNS",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-sns",
@@ -783,7 +783,7 @@
       "useCaseName": "Data processing"
     },
     {
-      "directory": "nodejs12.x/cookiecutter-quick-start-sqs",
+      "directory": "nodejs12.x/sqs",
       "displayName": "Quick Start: SQS",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-sqs",
@@ -791,7 +791,7 @@
       "useCaseName": "Data processing"
     },
     {
-      "directory": "nodejs12.x/cookiecutter-typescript-app-template",
+      "directory": "nodejs12.x/ts",
       "displayName": "Quick Start: App Backend using TypeScript",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-typescript-app",
@@ -799,7 +799,7 @@
       "useCaseName": "Serverless API"
     },
     {
-      "directory": "nodejs12.x/cookiecutter-quick-start-web",
+      "directory": "nodejs12.x/web",
       "displayName": "Quick Start: Web Backend",
       "dependencyManager": "npm",
       "appTemplate": "quick-start-web",
@@ -807,7 +807,7 @@
       "useCaseName": "Serverless API"
     },
     {
-      "directory": "nodejs12.x/cookiecutter-quick-start-web-with-connectors",
+      "directory": "nodejs12.x/web-conn",
       "displayName": "Quick Start: Web Backend With Connectors",
       "dependencyManager": "npm",
       "appTemplate": "hello-world-connector",
@@ -815,7 +815,7 @@
       "useCaseName": "Serverless Connector Hello World Example"
     },
     {
-      "directory": "nodejs12.x/cookiecutter-aws-sam-step-functions-with-connectors",
+      "directory": "nodejs12.x/step-func-conn",
       "displayName": "Step Functions Sample App (Stock Trader) With Connectors",
       "dependencyManager": "npm",
       "appTemplate": "step-functions-with-connectors",
@@ -825,7 +825,7 @@
   ],
   "python3.7": [
     {
-      "directory": "python3.7/cookiecutter-aws-sam-hello-python",
+      "directory": "python3.7/hello",
       "displayName": "Hello World Example",
       "dependencyManager": "pip",
       "appTemplate": "hello-world",
@@ -833,7 +833,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "python3.7/cookiecutter-aws-sam-eventBridge-python",
+      "directory": "python3.7/event-bridge",
       "displayName": "EventBridge Hello World",
       "dependencyManager": "pip",
       "appTemplate": "eventBridge-hello-world",
@@ -841,7 +841,7 @@
       "useCaseName": "Infrastructure event management"
     },
     {
-      "directory": "python3.7/cookiecutter-aws-sam-eventbridge-schema-app-python",
+      "directory": "python3.7/event-bridge-schema",
       "displayName": "EventBridge App from scratch (100+ Event Schemas)",
       "dependencyManager": "pip",
       "appTemplate": "eventBridge-schema-app",
@@ -850,7 +850,7 @@
       "useCaseName": "Infrastructure event management"
     },
     {
-      "directory": "python3.7/cookiecutter-aws-sam-step-functions-sample-app",
+      "directory": "python3.7/step-func",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "pip",
       "appTemplate": "step-functions-sample-app",
@@ -858,7 +858,7 @@
       "useCaseName": "Multi-step workflow"
     },
     {
-      "directory": "python3.7/cookiecutter-aws-sam-quick-start-web-with-connectors",
+      "directory": "python3.7/web-conn",
       "displayName": "Quick Start: Web Backend With Connectors",
       "dependencyManager": "pip",
       "appTemplate": "hello-world-connector",
@@ -866,7 +866,7 @@
       "useCaseName": "Serverless Connector Hello World Example"
     },
     {
-      "directory": "python3.7/cookiecutter-aws-sam-step-functions-with-connectors",
+      "directory": "python3.7/step-func-conn",
       "displayName": "Step Functions Sample App (Stock Trader) With Connectors",
       "dependencyManager": "pip",
       "appTemplate": "step-functions-with-connectors",
@@ -876,7 +876,7 @@
   ],
   "python3.8": [
     {
-      "directory": "python3.8/cookiecutter-aws-sam-hello-python",
+      "directory": "python3.8/hello",
       "displayName": "Hello World Example",
       "dependencyManager": "pip",
       "appTemplate": "hello-world",
@@ -884,7 +884,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "python3.8/cookiecutter-aws-sam-eventBridge-python",
+      "directory": "python3.8/event-bridge",
       "displayName": "EventBridge Hello World",
       "dependencyManager": "pip",
       "appTemplate": "eventBridge-hello-world",
@@ -892,7 +892,7 @@
       "useCaseName": "Infrastructure event management"
     },
     {
-      "directory": "python3.8/cookiecutter-aws-sam-eventbridge-schema-app-python",
+      "directory": "python3.8/event-bridge-schema",
       "displayName": "EventBridge App from scratch (100+ Event Schemas)",
       "dependencyManager": "pip",
       "appTemplate": "eventBridge-schema-app",
@@ -901,7 +901,7 @@
       "useCaseName": "Infrastructure event management"
     },
     {
-      "directory": "python3.8/cookiecutter-aws-sam-step-functions-sample-app",
+      "directory": "python3.8/step-func",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "pip",
       "appTemplate": "step-functions-sample-app",
@@ -909,7 +909,7 @@
       "useCaseName": "Multi-step workflow"
     },
     {
-      "directory": "python3.8/cookiecutter-aws-sam-efs-python",
+      "directory": "python3.8/efs",
       "displayName": "Elastic File System Sample App",
       "dependencyManager": "pip",
       "appTemplate": "efs-sample-app",
@@ -917,7 +917,7 @@
       "useCaseName": "Lambda EFS example"
     },
     {
-      "directory": "python3.8/cookiecutter-aws-sam-quick-start-web-with-connectors",
+      "directory": "python3.8/web-conn",
       "displayName": "Quick Start: Web Backend With Connectors",
       "dependencyManager": "pip",
       "appTemplate": "hello-world-connector",
@@ -925,7 +925,7 @@
       "useCaseName": "Serverless Connector Hello World Example"
     },
     {
-      "directory": "python3.8/cookiecutter-aws-sam-step-functions-with-connectors",
+      "directory": "python3.8/step-func-conn",
       "displayName": "Step Functions Sample App (Stock Trader) With Connectors",
       "dependencyManager": "pip",
       "appTemplate": "step-functions-with-connectors",
@@ -935,7 +935,7 @@
   ],
   "python3.9": [
     {
-      "directory": "python3.9/cookiecutter-aws-sam-hello-python",
+      "directory": "python3.9/hello",
       "displayName": "Hello World Example",
       "dependencyManager": "pip",
       "appTemplate": "hello-world",
@@ -943,7 +943,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "python3.9/cookiecutter-aws-sam-eventBridge-python",
+      "directory": "python3.9/event-bridge",
       "displayName": "EventBridge Hello World",
       "dependencyManager": "pip",
       "appTemplate": "eventBridge-hello-world",
@@ -951,7 +951,7 @@
       "useCaseName": "Infrastructure event management"
     },
     {
-      "directory": "python3.9/cookiecutter-aws-sam-eventbridge-schema-app-python",
+      "directory": "python3.9/event-bridge-schema",
       "displayName": "EventBridge App from scratch (100+ Event Schemas)",
       "dependencyManager": "pip",
       "appTemplate": "eventBridge-schema-app",
@@ -960,7 +960,7 @@
       "useCaseName": "Infrastructure event management"
     },
     {
-      "directory": "python3.9/cookiecutter-aws-sam-step-functions-sample-app",
+      "directory": "python3.9/step-func",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "pip",
       "appTemplate": "step-functions-sample-app",
@@ -968,7 +968,7 @@
       "useCaseName": "Multi-step workflow"
     },
     {
-      "directory": "python3.9/cookiecutter-aws-sam-efs-python",
+      "directory": "python3.9/efs",
       "displayName": "Elastic File System Sample App",
       "dependencyManager": "pip",
       "appTemplate": "efs-sample-app",
@@ -976,7 +976,7 @@
       "useCaseName": "Lambda EFS example"
     },
     {
-      "directory": "python3.9/cookiecutter-aws-sam-quick-start-web-with-connectors",
+      "directory": "python3.9/web-conn",
       "displayName": "Quick Start: Web Backend With Connectors",
       "dependencyManager": "pip",
       "appTemplate": "hello-world-connector",
@@ -984,7 +984,7 @@
       "useCaseName": "Serverless Connector Hello World Example"
     },
     {
-      "directory": "python3.9/cookiecutter-aws-sam-step-functions-with-connectors",
+      "directory": "python3.9/step-func-conn",
       "displayName": "Step Functions Sample App (Stock Trader) With Connectors",
       "dependencyManager": "pip",
       "appTemplate": "step-functions-with-connectors",
@@ -994,7 +994,7 @@
   ],
   "ruby2.7": [
     {
-      "directory": "ruby2.7/cookiecutter-aws-sam-hello-ruby",
+      "directory": "ruby2.7/hello",
       "displayName": "Hello World Example",
       "dependencyManager": "bundler",
       "appTemplate": "hello-world",
@@ -1002,7 +1002,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "ruby2.7/cookiecutter-aws-sam-step-functions-sample-app",
+      "directory": "ruby2.7/step-func",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "bundler",
       "appTemplate": "step-functions-sample-app",
@@ -1012,7 +1012,7 @@
   ],
   "rust (provided.al2)": [
     {
-      "directory": "provided.al2/rust/cookiecutter-aws-sam-hello-rust",
+      "directory": "al2/rust/hello",
       "displayName": "Hello World Example",
       "dependencyManager": "cargo",
       "appTemplate": "hello-world",
@@ -1022,7 +1022,7 @@
   ],
   "amazon/nodejs14.x-base": [
     {
-      "directory": "nodejs14.x-image/cookiecutter-aws-sam-hello-nodejs-lambda-image",
+      "directory": "nodejs14.x/hello-img",
       "displayName": "Hello World Image Example",
       "dependencyManager": "npm",
       "appTemplate": "hello-world-lambda-image",
@@ -1032,7 +1032,7 @@
   ],
   "amazon/nodejs12.x-base": [
     {
-      "directory": "nodejs12.x-image/cookiecutter-aws-sam-hello-nodejs-lambda-image",
+      "directory": "nodejs12.x/hello-img",
       "displayName": "Hello World Image Example",
       "dependencyManager": "npm",
       "appTemplate": "hello-world-lambda-image",
@@ -1042,7 +1042,7 @@
   ],
   "amazon/python3.8-base": [
     {
-      "directory": "python3.8-image/cookiecutter-aws-sam-hello-python-lambda-image",
+      "directory": "python3.8/hello-img",
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "pip",
       "appTemplate": "hello-world-lambda-image",
@@ -1050,7 +1050,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "python3.8-image/cookiecutter-ml-apigw-pytorch",
+      "directory": "python3.8/apigw-pytorch",
       "displayName": "PyTorch Machine Learning Inference API",
       "dependencyManager": "pip",
       "appTemplate": "ml-apigw-pytorch",
@@ -1058,7 +1058,7 @@
       "useCaseName": "Machine Learning"
     },
     {
-      "directory": "python3.8-image/cookiecutter-ml-apigw-scikit-learn",
+      "directory": "python3.8/apigw-scikit",
       "displayName": "Scikit-learn Machine Learning Inference API",
       "dependencyManager": "pip",
       "appTemplate": "ml-apigw-scikit-learn",
@@ -1066,7 +1066,7 @@
       "useCaseName": "Machine Learning"
     },
     {
-      "directory": "python3.8-image/cookiecutter-ml-apigw-tensorflow",
+      "directory": "python3.8/apigw-tensorflow",
       "displayName": "Tensorflow Machine Learning Inference API",
       "dependencyManager": "pip",
       "appTemplate": "ml-apigw-tensorflow",
@@ -1074,7 +1074,7 @@
       "useCaseName": "Machine Learning"
     },
     {
-      "directory": "python3.8-image/cookiecutter-ml-apigw-xgboost",
+      "directory": "python3.8/apigw-xgboost",
       "displayName": "XGBoost Machine Learning Inference API",
       "dependencyManager": "pip",
       "appTemplate": "ml-apigw-xgboost",
@@ -1084,7 +1084,7 @@
   ],
   "amazon/python3.9-base": [
     {
-      "directory": "python3.9-image/cookiecutter-aws-sam-hello-python-lambda-image",
+      "directory": "python3.9/hello-img",
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "pip",
       "appTemplate": "hello-world-lambda-image",
@@ -1092,7 +1092,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "python3.9-image/cookiecutter-ml-apigw-pytorch",
+      "directory": "python3.9/apigw-pytorch",
       "displayName": "PyTorch Machine Learning Inference API",
       "dependencyManager": "pip",
       "appTemplate": "ml-apigw-pytorch",
@@ -1100,7 +1100,7 @@
       "useCaseName": "Machine Learning"
     },
     {
-      "directory": "python3.9-image/cookiecutter-ml-apigw-scikit-learn",
+      "directory": "python3.9/apigw-scikit",
       "displayName": "Scikit-learn Machine Learning Inference API",
       "dependencyManager": "pip",
       "appTemplate": "ml-apigw-scikit-learn",
@@ -1108,7 +1108,7 @@
       "useCaseName": "Machine Learning"
     },
     {
-      "directory": "python3.9-image/cookiecutter-ml-apigw-tensorflow",
+      "directory": "python3.9/apigw-tensorflow",
       "displayName": "Tensorflow Machine Learning Inference API",
       "dependencyManager": "pip",
       "appTemplate": "ml-apigw-tensorflow",
@@ -1116,7 +1116,7 @@
       "useCaseName": "Machine Learning"
     },
     {
-      "directory": "python3.9-image/cookiecutter-ml-apigw-xgboost",
+      "directory": "python3.9/apigw-xgboost",
       "displayName": "XGBoost Machine Learning Inference API",
       "dependencyManager": "pip",
       "appTemplate": "ml-apigw-xgboost",
@@ -1126,7 +1126,7 @@
   ],
   "amazon/ruby2.7-base": [
     {
-      "directory": "ruby2.7-image/cookiecutter-aws-sam-hello-ruby-lambda-image",
+      "directory": "ruby2.7/hello-img",
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "bundler",
       "appTemplate": "hello-world-lambda-image",
@@ -1136,7 +1136,7 @@
   ],
   "amazon/go1.x-base": [
     {
-      "directory": "go1.x-image/cookiecutter-aws-sam-hello-golang-lambda-image",
+      "directory": "go1.x/hello-img",
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "mod",
       "appTemplate": "hello-world-lambda-image",
@@ -1146,7 +1146,7 @@
   ],
   "amazon/go-provided.al2-base": [
     {
-      "directory": "provided.al2/go/cookiecutter-aws-sam-hello-golang-lambda-image",
+      "directory": "al2/go/hello-img",
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "mod",
       "appTemplate": "hello-world-lambda-image",
@@ -1156,7 +1156,7 @@
   ],
   "amazon/java11-base": [
     {
-      "directory": "java11-image/cookiecutter-aws-sam-hello-java-gradle-lambda-image",
+      "directory": "java11/hello-img-gradle",
       "displayName": "Hello World Lambda Image Example: Gradle",
       "dependencyManager": "gradle",
       "appTemplate": "hello-world-lambda-image",
@@ -1164,7 +1164,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "java11-image/cookiecutter-aws-sam-hello-java-maven-lambda-image",
+      "directory": "java11/hello-img-maven",
       "displayName": "Hello World Lambda Image Example: Maven",
       "dependencyManager": "maven",
       "appTemplate": "hello-world-lambda-image",
@@ -1174,7 +1174,7 @@
   ],
   "amazon/dotnet6-base": [
     {
-      "directory": "dotnet6-image/cookiecutter-aws-sam-hello-dotnet-lambda-image",
+      "directory": "dotnet6/hello-img",
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "cli-package",
       "appTemplate": "hello-world-lambda-image",
@@ -1184,7 +1184,7 @@
   ],
   "amazon/dotnet5.0-base": [
     {
-      "directory": "dotnet5.0-image/cookiecutter-aws-sam-hello-dotnet-lambda-image",
+      "directory": "dotnet5/hello-img",
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "cli-package",
       "appTemplate": "hello-world-lambda-image",
@@ -1194,7 +1194,7 @@
   ],
   "amazon/dotnetcore3.1-base": [
     {
-      "directory": "dotnetcore3.1-image/cookiecutter-aws-sam-hello-dotnet-lambda-image",
+      "directory": "dotnetcore3.1/hello-img",
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "cli-package",
       "appTemplate": "hello-world-lambda-image",
@@ -1204,7 +1204,7 @@
   ],
   "amazon/python3.7-base": [
     {
-      "directory": "python3.7-image/cookiecutter-aws-sam-hello-python-lambda-image",
+      "directory": "python3.7/hello-img",
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "pip",
       "appTemplate": "hello-world-lambda-image",
@@ -1214,7 +1214,7 @@
   ],
   "amazon/java8-base": [
     {
-      "directory": "java8-image/cookiecutter-aws-sam-hello-java-gradle-lambda-image",
+      "directory": "java8/hello-img-gradle",
       "displayName": "Hello World Lambda Image Example: Gradle",
       "dependencyManager": "gradle",
       "appTemplate": "hello-world-lambda-image",
@@ -1222,7 +1222,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "java8-image/cookiecutter-aws-sam-hello-java-maven-lambda-image",
+      "directory": "java8/hello-img-maven",
       "displayName": "Hello World Lambda Image Example: Maven",
       "dependencyManager": "maven",
       "appTemplate": "hello-world-lambda-image",
@@ -1232,7 +1232,7 @@
   ],
   "amazon/java8.al2-base": [
     {
-      "directory": "java8.al2-image/cookiecutter-aws-sam-hello-java-gradle-lambda-image",
+      "directory": "java8.al2/hello-img-gradle",
       "displayName": "Hello World Lambda Image Example: Gradle",
       "dependencyManager": "gradle",
       "appTemplate": "hello-world-lambda-image",
@@ -1240,7 +1240,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "java8.al2-image/cookiecutter-aws-sam-hello-java-maven-lambda-image",
+      "directory": "java8.al2/hello-img-maven",
       "displayName": "Hello World Lambda Image Example: Maven",
       "dependencyManager": "maven",
       "appTemplate": "hello-world-lambda-image",

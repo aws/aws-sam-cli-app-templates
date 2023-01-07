@@ -18,4 +18,4 @@ For each template, it will test the following sam commands:
 class BuildInvoke_image_dotnet5_0_cookiecutter_aws_sam_hello_dotnet_lambda_image(
     BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase
 ):
-    directory = "dotnet5.0-image/cookiecutter-aws-sam-hello-dotnet-lambda-image"
+    directory = "dotnet5/hello-img"
