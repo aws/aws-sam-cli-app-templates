@@ -1,0 +1,142 @@
+{
+    "StateMachines": {
+        "StockTradingLocalTesting": {
+            "TestCases": {
+                "HappyPathSellStockTest": {
+                    "Check Stock Value": "LambdaMockedSuccessValueGreaterThan50",
+                    "Sell Stock": "SellStockLambdaMockedResponse",
+                    "Record Transaction": "RecordTransactionDDBMockedResponse"
+                },
+                "HappyPathBuyStockTest": {
+                    "Check Stock Value": "LambdaMockedSuccessValueLowerThan50",
+                    "Buy Stock": "BuyStockLambdaMockedResponse",
+                    "Record Transaction": "RecordTransactionDDBMockedResponse"
+                },
+                "CheckStockRetryOnServiceExceptionTest": {
+                    "Check Stock Value": "CheckStockLambdaMockedRetryWithSuccess",
+                    "Sell Stock": "SellStockLambdaMockedResponse",
+                    "Record Transaction": "RecordTransactionDDBMockedResponse"
+                },
+                "SellStockRetryOnServiceExceptionTest": {
+                    "Check Stock Value": "LambdaMockedSuccessValueGreaterThan50",
+                    "Sell Stock": "SellStockLambdaMockedRetryWithSuccess",
+                    "Record Transaction": "RecordTransactionDDBMockedResponse"
+                }
+            }
+        }
+    },
+    "MockedResponses": {
+        "LambdaMockedSuccessValueGreaterThan50": {
+            "0": {
+                "Return": {
+                    "stock_price": 98
+                }
+            }
+        },
+        "LambdaMockedSuccessValueLowerThan50": {
+            "0": {
+                "Return": {
+                    "stock_price": 32
+                }
+            }
+        },
+        "SellStockLambdaMockedResponse": {
+            "0": {
+                "Return": {
+                    "id": "8cd8e4d92fe716b7cedff5636ab9d24e",
+                    "price": "98",
+                    "type": "sell",
+                    "qty": "7",
+                    "timestamp": "2022-06-22T21:14:18.228Z"
+                }
+            }
+        },
+        "BuyStockLambdaMockedResponse": {
+            "0": {
+                "Return": {
+                    "id": "8cd8e4d92fe716b7cedff5636ab9d24e",
+                    "price": "32",
+                    "type": "buy",
+                    "qty": "7",
+                    "timestamp": "2022-06-22T21:14:18.228Z"
+                }
+            }
+        },
+        "RecordTransactionDDBMockedResponse": {
+            "0": {
+                "Return": {
+                    "resourceType": "dynamodb",
+                    "resource": "putItem",
+                    "output": {
+                        "SdkHttpMetadata": {
+                            "AllHttpHeaders": {
+                                "Server": [
+                                    "Server"
+                                ],
+                                "Connection": [
+                                    "keep-alive"
+                                ],
+                                "x-amzn-RequestId": [
+                                    "LAT641GUVNBRI0DC1HC6S4MDH3VV4KQNSO5AEMVJF66Q9ASUAAJG"
+                                ],
+                                "x-amz-crc32": [
+                                    "2745614147"
+                                ],
+                                "Content-Length": [
+                                    "2"
+                                ],
+                                "Date": [
+                                    "Wed, 22 Jun 2022 21:14:18 GMT"
+                                ],
+                                "Content-Type": [
+                                    "application/x-amz-json-1.0"
+                                ]
+                            },
+                            "HttpHeaders": {
+                                "Connection": "keep-alive",
+                                "Content-Length": "2",
+                                "Content-Type": "application/x-amz-json-1.0",
+                                "Date": "Wed, 22 Jun 2022 21:14:18 GMT",
+                                "Server": "Server",
+                                "x-amz-crc32": "2745614147",
+                                "x-amzn-RequestId": "LAT641GUVNBRI0DC1HC6S4MDH3VV4KQNSO5AEMVJF66Q9ASUAAJG"
+                            },
+                            "HttpStatusCode": 200
+                        },
+                        "SdkResponseMetadata": {
+                            "RequestId": "LAT641GUVNBRI0DC1HC6S4MDH3VV4KQNSO5AEMVJF66Q9ASUAAJG"
+                        }
+                    }
+                }
+            }
+        },
+        "CheckStockLambdaMockedRetryWithSuccess": {
+            "0-2": {
+                "Throw": {
+                    "Error": "States.TaskFailed"
+                }
+            },
+            "3": {
+                "Return": {
+                    "stock_price": 89
+                }
+            }
+        },
+        "SellStockLambdaMockedRetryWithSuccess": {
+            "0-2": {
+                "Throw": {
+                    "Error": "States.TaskFailed"
+                }
+            },
+            "3": {
+                "Return": {
+                    "id": "8cd8e4d92fe716b7cedff5636ab9d24e",
+                    "price": "98",
+                    "type": "sell",
+                    "qty": "5",
+                    "timestamp": "2022-06-22T21:14:18.228Z"
+                }
+            }
+        }
+    }
+}

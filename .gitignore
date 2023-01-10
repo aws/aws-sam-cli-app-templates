@@ -4,4 +4,5 @@ __pycache__
 .idea/
 .python-version
 venv/
+.venv/
 .env/

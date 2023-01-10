@@ -1,4 +1,0 @@
--f https://download.pytorch.org/whl/torch_stable.html
-torch==1.8.0+cpu
-torchvision==0.9.0+cpu
-pillow==9.0.1

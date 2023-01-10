@@ -13,36 +13,36 @@ For each template, it will test the following sam commands:
 
 class BuildInvoke_dotnet6_cookiecutter_aws_sam_hello_dotnet(BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase):
     use_container = False
-    directory = "dotnet6/cookiecutter-aws-sam-hello-dotnet"
+    directory = "dotnet6/hello"
 
 
 # FIXME: fix and re-enable the test
 # class BuildInvoke_dotnet6_cookiecutter_aws_sam_hello_powershell(BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase):
 #     use_container = False
-#     directory = "dotnet6/cookiecutter-aws-sam-hello-powershell"
+#     directory = "dotnet6/hello-ps"
 
 
 class BuildInvoke_dotnet6_cookiecutter_aws_sam_hello_step_functions_sample_app(
     BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase
 ):
     use_container = False
-    directory = "dotnet6/cookiecutter-aws-sam-hello-step-functions-sample-app"
+    directory = "dotnet6/step-func"
 
 class BuildInvoke_dotnet6_cookiecutter_aws_sam_quick_start_cloudwatch_events_dotnet(BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase):
     use_container = False
-    directory = "dotnet6/cookiecutter-aws-sam-quick-start-cloudwatch-events-dotnet"
+    directory = "dotnet6/cw-event"
 
 class BuildInvoke_dotnet6_cookiecutter_aws_from_scratch_dotnet(
     BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase):
     use_container = False
-    directory = "dotnet6/cookiecutter-aws-sam-quick-start-from-scratch-dotnet"
+    directory = "dotnet6/scratch"
 
     
 class BuildInvoke_dotnet6_cookiecutter_aws_sam_quick_start_web_dotnet(
     BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase
 ):
     use_container = False
-    directory = "dotnet6/cookiecutter-aws-sam-quick-start-web-dotnet"
+    directory = "dotnet6/web"
    
 
 #
@@ -53,4 +53,4 @@ class BuildInvoke_dotnet6_cookiecutter_aws_sam_quick_start_web_dotnet(
 class BuildInvoke_image_dotnet6_cookiecutter_aws_sam_hello_dotnet_lambda_image(
     BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase
 ):
-    directory = "dotnet6-image/cookiecutter-aws-sam-hello-dotnet-lambda-image"
+    directory = "dotnet6/hello-img"
