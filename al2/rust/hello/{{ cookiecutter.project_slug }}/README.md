@@ -25,7 +25,7 @@ The AWS Toolkit is an open source plug-in for popular IDEs that uses the SAM CLI
 
 
 ## Requirments
-* This template was tested with Rust v1.61.0 and above.
+* This template was tested with Rust v1.66.0 and above.
 
 ## Deploy the sample application
 
