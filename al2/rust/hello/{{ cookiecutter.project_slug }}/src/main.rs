@@ -72,9 +72,10 @@ mod tests {
     use std::collections::HashMap;
 
     // Helper function to create a mock AWS configuration
-    async fn get_mock_config() -> Config {
+    async fn get_mock_config(conn: &TestConnection<SdkBody>) -> Config {
         let cfg = aws_config::from_env()
             .region(Region::new("eu-west-1"))
+            .http_connector(DynConnector::new(conn.clone()))
             .credentials_provider(Credentials::new(
                 "access_key",
                 "privatekey",
@@ -119,8 +120,7 @@ mod tests {
                 ))
                 .unwrap(),
         )]);
-        let client =
-            Client::from_conf_conn(get_mock_config().await, DynConnector::new(conn.clone()));
+        let client = Client::from_conf(get_mock_config(&conn).await);
 
         let table_name = "test_table";
 
@@ -138,9 +138,8 @@ mod tests {
         // Send mock request to Lambda handler function
         let response = put_item(&client, table_name, request)
             .await
-            .unwrap()
-            .into_response();
-
+            .unwrap();
+        
         // Assert that the response is correct
         assert_eq!(response.status(), 200);
         assert_eq!(response.body(), &Body::Text("item saved".to_string()));
