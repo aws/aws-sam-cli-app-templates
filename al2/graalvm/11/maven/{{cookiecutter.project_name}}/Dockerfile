@@ -16,7 +16,7 @@ RUN mv $GRAAL_FOLDERNAME /usr/lib/graalvm
 RUN rm -rf $GRAAL_FOLDERNAME
 
 # Maven
-ENV MVN_VERSION 3.8.6
+ENV MVN_VERSION 3.8.7
 ENV MVN_FOLDERNAME apache-maven-${MVN_VERSION}
 ENV MVN_FILENAME apache-maven-${MVN_VERSION}-bin.tar.gz
 RUN curl -4 -L https://dlcdn.apache.org/maven/maven-3/${MVN_VERSION}/binaries/${MVN_FILENAME} | tar -xvz
