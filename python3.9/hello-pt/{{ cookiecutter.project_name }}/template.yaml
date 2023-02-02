@@ -51,7 +51,7 @@ Resources:
                 LambdaPowertools: python
 
 Outputs:
-    HelloWorldApigwURL:
+    HelloWorldApi:
       Description: "API Gateway endpoint URL for Prod environment for Hello World Function"
       Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello"
 
