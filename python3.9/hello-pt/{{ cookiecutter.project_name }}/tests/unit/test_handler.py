@@ -5,7 +5,6 @@ import pytest
 
 from hello_world import app
 
-#@pytest.fixture
 def lambda_context():
     class LambdaContext:
         def __init__(self):
