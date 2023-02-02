@@ -943,6 +943,14 @@
       "useCaseName": "Hello World Example"
     },
     {
+      "directory": "python3.9/hello-pt",
+      "displayName": "Hello World Example With Powertools",
+      "dependencyManager": "pip",
+      "appTemplate": "hello-world-powertools-python",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example With Powertools"
+    },
+    {
       "directory": "python3.9/event-bridge",
       "displayName": "EventBridge Hello World",
       "dependencyManager": "pip",
