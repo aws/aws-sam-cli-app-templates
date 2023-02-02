@@ -21,7 +21,7 @@ tracer = Tracer()
 logger = Logger()
 {%- endif %}
 {%- if cookiecutter["Powertools Metrics"] == "enabled"%}
-metrics = Metrics()
+metrics = Metrics(namespace="Powertools")
 {%- endif %}
 
 @app.get("/hello")
