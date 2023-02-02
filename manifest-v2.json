@@ -127,6 +127,14 @@
       "useCaseName": "Hello World Example"
     },
     {
+      "directory": "dotnet/hello-pt",
+      "displayName": "Hello World Example .NET w/ Lambda Powertools",
+      "dependencyManager": "cli-package",
+      "appTemplate": "hello-world-powertools-dotnet",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    },
+    {
       "directory": "dotnet6/step-func",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "cli-package",
@@ -165,6 +173,14 @@
       "displayName": "Hello World Example",
       "dependencyManager": "cli-package",
       "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "al2/dotnet7-aot/hello-pt",
+      "displayName": "Hello World Example .NET w/ Lambda Powertools",
+      "dependencyManager": "cli-package",
+      "appTemplate": "hello-world-powertools-dotnet",
       "packageType": "Zip",
       "useCaseName": "Hello World Example"
     }
