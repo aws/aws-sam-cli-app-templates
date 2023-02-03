@@ -5,7 +5,7 @@ class UnitTest_python3_7_cookiecutter_aws_sam_hello_python(UnitTestBase.Python37
     directory = "python3.7/hello"
     code_directories = ["hello_world"]
 
-class UnitTest_python3_7_cookiecutter_aws_sam_hello_python(UnitTestBase.Python37UnitTestBase):
+class UnitTest_python3_9_cookiecutter_aws_sam_hello_pt_python(UnitTestBase.Python37UnitTestBase):
     directory = "python3.7/hello-pt"
     code_directories = ["hello_world"]
 
