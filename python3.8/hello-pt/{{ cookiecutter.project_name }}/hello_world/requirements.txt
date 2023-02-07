@@ -1,5 +1,5 @@
 requests
-{%- if cookiecutter["Powertools X-Ray Tracing"] == "enabled" %}
+{%- if cookiecutter["Powertools Tracing"] == "enabled" %}
 aws-lambda-powertools[tracer]
 {%- else %}
 aws-lambda-powertools

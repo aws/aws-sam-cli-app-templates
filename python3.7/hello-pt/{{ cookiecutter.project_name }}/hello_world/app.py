@@ -4,7 +4,7 @@ from aws_lambda_powertools.utilities.typing import LambdaContext
 from aws_lambda_powertools.logging import correlation_paths
 from aws_lambda_powertools import Logger
 {%- endif %}
-{%- if cookiecutter["Powertools X-Ray Tracing"] == "enabled"%}
+{%- if cookiecutter["Powertools Tracing"] == "enabled"%}
 from aws_lambda_powertools import Tracer
 {%- endif %}
 {%- if cookiecutter["Powertools Metrics"] == "enabled"%}
@@ -13,7 +13,7 @@ from aws_lambda_powertools.metrics import MetricUnit
 {%- endif %}
 
 app = APIGatewayRestResolver()
-{%- if cookiecutter["Powertools X-Ray Tracing"] == "enabled"%}
+{%- if cookiecutter["Powertools Tracing"] == "enabled"%}
 tracer = Tracer()
 {%- endif %}
 {%- if cookiecutter["Powertools Logging"] == "enabled"%}
@@ -24,7 +24,7 @@ metrics = Metrics(namespace="Powertools")
 {%- endif %}
 
 @app.get("/hello")
-{%- if cookiecutter["Powertools X-Ray Tracing"] == "enabled"%}
+{%- if cookiecutter["Powertools Tracing"] == "enabled"%}
 @tracer.capture_method
 {%- endif %}
 def hello():
@@ -50,7 +50,7 @@ def hello():
 # Enrich logging with contextual information from Lambda
 @logger.inject_lambda_context(correlation_id_path=correlation_paths.API_GATEWAY_REST)
 {%- endif %}
-{%- if cookiecutter["Powertools X-Ray Tracing"] == "enabled" %}
+{%- if cookiecutter["Powertools Tracing"] == "enabled" %}
 # Adding tracer
 # See: https://awslabs.github.io/aws-lambda-powertools-python/latest/core/tracer/
 @tracer.capture_lambda_handler
