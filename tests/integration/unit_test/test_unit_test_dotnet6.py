@@ -6,6 +6,9 @@ class UnitTest_dotnet6_cookiecutter_aws_sam_hello_dotnet(UnitTestBase.DotNetCore
     directory = "dotnet6/hello"
     code_directories = ["test/HelloWorld.Test"]
 
+class UnitTest_dotnet6_cookiecutter_aws_sam_hello_dotnet_pt(UnitTestBase.DotNetCoreUnitTestBase):
+    directory = "dotnet6/hello-pt"
+    code_directories = ["test/HelloWorld.Test"]
 
 # FIXME: fix and re-enable the test
 # class UnitTest_dotnet6_cookiecutter_aws_sam_hello_powershell(UnitTestBase.DotNetCoreUnitTestBase):
@@ -29,7 +32,6 @@ class UnitTest_dotnet6_cookiecutter_aws_from_scratch_dotnet(UnitTestBase.DotNetC
     directory = "dotnet6/scratch"
     code_directories = ["test/project.Tests"]
 
-    
 class UnitTest_dotnet6_cookiecutter_aws_sam_quick_start_web_dotnet(UnitTestBase.DotNetCoreUnitTestBase):
     directory = "dotnet6/web"
     code_directories = ["tests/project.Tests"]
