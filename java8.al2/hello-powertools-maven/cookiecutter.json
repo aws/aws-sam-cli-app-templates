@@ -3,7 +3,7 @@
     "runtime": "java8.al2",
     "Powertools Logging": ["enabled","disabled"],
     "Powertools Metrics": ["enabled","disabled"],
-    "Powertools X-Ray Tracing": ["enabled","disabled"],
+    "Powertools Tracing": ["enabled","disabled"],
     "_copy_without_render": [
         ".gitignore"
     ]

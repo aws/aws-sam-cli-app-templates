@@ -19,7 +19,7 @@ Resources:
       Handler: helloworld.App::handleRequest
       Runtime: java8.al2
       MemorySize: 512
-      {%- if cookiecutter["Powertools X-Ray Tracing"] == "enabled"%}
+      {%- if cookiecutter["Powertools Tracing"] == "enabled"%}
       Tracing: Active
       {%- endif %}
       Environment: # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object

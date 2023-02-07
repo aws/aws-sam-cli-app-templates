@@ -12,7 +12,7 @@
     </properties>
 
     <dependencies>
-        {%- if cookiecutter[ "Powertools X-Ray Tracing" ] == "enabled" %}
+        {%- if cookiecutter[ "Powertools Tracing" ] == "enabled" %}
         <dependency>
             <groupId>software.amazon.lambda</groupId>
             <artifactId>powertools-tracing</artifactId>
@@ -62,7 +62,7 @@
                     <target>${maven.compiler.target}</target>
                     <complianceLevel>${maven.compiler.target}</complianceLevel>
                     <aspectLibraries>
-                        {%- if cookiecutter[ "Powertools X-Ray Tracing" ] == "enabled" %}
+                        {%- if cookiecutter[ "Powertools Tracing" ] == "enabled" %}
                         <aspectLibrary>
                             <groupId>software.amazon.lambda</groupId>
                             <artifactId>powertools-tracing</artifactId>

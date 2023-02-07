@@ -20,7 +20,7 @@ import software.amazon.lambda.powertools.logging.Logging;
 {%- if cookiecutter[ "Powertools Metrics" ] == "enabled" %}
 import software.amazon.lambda.powertools.metrics.Metrics;
 {%- endif %}
-{%- if cookiecutter[ "Powertools X-Ray Tracing" ] == "enabled" %}
+{%- if cookiecutter[ "Powertools Tracing" ] == "enabled" %}
 import software.amazon.lambda.powertools.tracing.CaptureMode;
 import software.amazon.lambda.powertools.tracing.Tracing;
 {%- endif %}
@@ -38,7 +38,7 @@ public class App implements RequestHandler<APIGatewayProxyRequestEvent, APIGatew
 
     @Logging(logEvent = true)
     {%- endif %}
-    {%- if cookiecutter[ "Powertools X-Ray Tracing" ] == "enabled" %}
+    {%- if cookiecutter[ "Powertools Tracing" ] == "enabled" %}
     @Tracing(captureMode = DISABLED)
     {%- endif %}
     {%- if cookiecutter[ "Powertools Metrics" ] == "enabled" %}
@@ -64,7 +64,7 @@ public class App implements RequestHandler<APIGatewayProxyRequestEvent, APIGatew
                     .withStatusCode(500);
         }
     }
-    {%- if cookiecutter[ "Powertools X-Ray Tracing" ] == "enabled" %}
+    {%- if cookiecutter[ "Powertools Tracing" ] == "enabled" %}
     @Tracing(namespace = "getPageContents")
     {%- endif %}
     private String getPageContents(String address) throws IOException {
