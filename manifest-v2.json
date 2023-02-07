@@ -833,6 +833,14 @@
       "useCaseName": "Hello World Example"
     },
     {
+      "directory": "python3.7/hello-pt",
+      "displayName": "Hello World Example With Powertools",
+      "dependencyManager": "pip",
+      "appTemplate": "hello-world-powertools-python",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example With Powertools"
+    },
+    {
       "directory": "python3.7/event-bridge",
       "displayName": "EventBridge Hello World",
       "dependencyManager": "pip",
@@ -882,6 +890,14 @@
       "appTemplate": "hello-world",
       "packageType": "Zip",
       "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "python3.8/hello-pt",
+      "displayName": "Hello World Example With Powertools",
+      "dependencyManager": "pip",
+      "appTemplate": "hello-world-powertools-python",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example With Powertools"
     },
     {
       "directory": "python3.8/event-bridge",
@@ -941,6 +957,14 @@
       "appTemplate": "hello-world",
       "packageType": "Zip",
       "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "python3.9/hello-pt",
+      "displayName": "Hello World Example With Powertools",
+      "dependencyManager": "pip",
+      "appTemplate": "hello-world-powertools-python",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example With Powertools"
     },
     {
       "directory": "python3.9/event-bridge",
