@@ -1,0 +1,6 @@
+requests
+{%- if cookiecutter["Powertools Tracing"] == "enabled" %}
+aws-lambda-powertools[tracer]
+{%- else %}
+aws-lambda-powertools
+{%- endif %}
