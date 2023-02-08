@@ -24,13 +24,13 @@ Resources:
         - {{arch}}
       {%- endfor %}
       {%- endif %}
-      {%- if cookiecutter["Powertools X-Ray Tracing"] == "enabled"%}
+      {%- if cookiecutter["Powertools Tracing"] == "enabled"%}
       Tracing: Active
       {%- endif %}
-      {%- if cookiecutter["Powertools X-Ray Tracing"] == "enabled" or cookiecutter["Powertools Metrics"] == "enabled" or cookiecutter["Powertools Logging"] == "enabled" %}
+      {%- if cookiecutter["Powertools Tracing"] == "enabled" or cookiecutter["Powertools Metrics"] == "enabled" or cookiecutter["Powertools Logging"] == "enabled" %}
       Environment:
         Variables:
-          {%- if cookiecutter["Powertools X-Ray Tracing"] == "enabled" or cookiecutter["Powertools Metrics"] == "enabled"%}
+          {%- if cookiecutter["Powertools Tracing"] == "enabled" or cookiecutter["Powertools Metrics"] == "enabled"%}
           POWERTOOLS_SERVICE_NAME: helloWorld
           {%- endif %}
           {%- if cookiecutter["Powertools Metrics"] == "enabled"%}
