@@ -22,13 +22,16 @@ using AWS.Lambda.Powertools.Logging;
 
 namespace HelloWorld
 {
-
     public class Function
     {
-        {%- if cookiecutter["Powertools Tracing"] == "enabled"%}
-        AWSSDKHandler.RegisterXRayForAllServices();
-        {%- endif %}
         private static readonly HttpClient client = new HttpClient();
+        
+        {%- if cookiecutter["Powertools Tracing"] == "enabled"%}
+        public Function()
+        {
+            AWSSDKHandler.RegisterXRayForAllServices();
+        }
+        {%- endif %}
 
         {%- if cookiecutter["Powertools Tracing"] == "enabled"%}
         [Tracing(SegmentName = "Get Calling IP")]
