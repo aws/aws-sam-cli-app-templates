@@ -1,4 +1,4 @@
-# Cookiecutter NodeJS TypeScript Hello-world  for SAM based Serverless App
+# Cookiecutter NodeJS TypeScript Hello-world w/ Lambda PowerTools for SAM based Serverless App
 
 A cookiecutter template to create a NodeJS TypeScript Hello world boilerplate using [Serverless Application Model (SAM)](https://github.com/awslabs/serverless-application-model).
 
