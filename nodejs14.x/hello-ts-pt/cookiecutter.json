@@ -4,7 +4,7 @@
     "architectures": {
         "value": []
     },
-    "Powertools Tracing": ["enabled","disabled"],
+    "Powertools X-Ray Tracing": ["enabled","disabled"],
     "Powertools Metrics": ["enabled","disabled"],
     "Powertools Logging": ["enabled","disabled"],
     "_copy_without_render": [
