@@ -5,7 +5,7 @@ import { Metrics, MetricUnits } from '@aws-lambda-powertools/metrics';
 {%- if cookiecutter["Powertools Logging"] == "enabled"%}
 import { Logger } from '@aws-lambda-powertools/logger';
 {%- endif %}
-{%- if cookiecutter["Powertools X-Ray Tracing"] == "enabled"%}
+{%- if cookiecutter["Powertools Tracing"] == "enabled"%}
 import { Tracer } from '@aws-lambda-powertools/tracer';
 {%- endif %}
 
@@ -16,7 +16,7 @@ const metrics = new Metrics();
 {%- if cookiecutter["Powertools Logging"] == "enabled"%}
 const logger = new Logger();
 {%- endif %}
-{%- if cookiecutter["Powertools X-Ray Tracing"] == "enabled"%}
+{%- if cookiecutter["Powertools Tracing"] == "enabled"%}
 const tracer = new Tracer();
 {%- endif %}
 
@@ -34,7 +34,19 @@ const tracer = new Tracer();
 export const lambdaHandler = async (event: APIGatewayProxyEvent, context: Context): Promise<APIGatewayProxyResult> => {
     let response: APIGatewayProxyResult;
 
-    {%- if cookiecutter["Powertools X-Ray Tracing"] == "enabled"%}
+    {%- if cookiecutter["Powertools Logging"] == "enabled"%}
+
+    // Log the incoming event
+    logger.info('Lambda invocation event', { event });
+
+    // Append awsRequestId to each log statement
+    logger.appendKeys({
+        awsRequestId: context.awsRequestId,
+    });
+
+    {%- endif %}
+
+    {%- if cookiecutter["Powertools Tracing"] == "enabled"%}
     // Get facade segment created by AWS Lambda
     const segment = tracer.getSegment();
 
@@ -55,12 +67,12 @@ export const lambdaHandler = async (event: APIGatewayProxyEvent, context: Contex
     metrics.captureColdStartMetric();
 
     {%- endif %}
-    {%- if cookiecutter["Powertools X-Ray Tracing"] == "enabled"%}
+    {%- if cookiecutter["Powertools Tracing"] == "enabled"%}
     // Create another subsegment & set it as active
     const subsegment = handlerSegment.addNewSubsegment('### MySubSegment');
     tracer.setSegment(subsegment);
-
     {%- endif %}
+
     try {
         // hello world code
         response = {
@@ -70,7 +82,7 @@ export const lambdaHandler = async (event: APIGatewayProxyEvent, context: Contex
             }),
         };
         {%- if cookiecutter["Powertools Logging"] == "enabled"%}
-        logger.info('This is an INFO log - sending HTTP 200 - hello world response');
+        logger.info(`Successful response from API enpoint: ${event.path}`, response);
         {%- else %}
         console.log('sending HTTP 200 - hello world response')
         {%- endif %}
@@ -82,14 +94,18 @@ export const lambdaHandler = async (event: APIGatewayProxyEvent, context: Contex
                 message: 'some error happened',
             }),
         };
+        {%- if cookiecutter["Powertools Tracing"] == "enabled"%}
+        tracer.addErrorAsMetadata(err as Error);
+        {%- endif %}
+
         {%- if cookiecutter["Powertools Logging"] == "enabled"%}
-        logger.error('This is an ERROR log - sending HTTP 500 - some error happened response');
+        logger.error(`Error response from API enpoint: ${err}`, response);
         {%- else %}
         console.log('sending HTTP 500 - some error happened response')
         {%- endif %}
-    {%- if cookiecutter["Powertools Metrics"] == "enabled" or cookiecutter["Powertools X-Ray Tracing"] == "enabled"%}
+    {%- if cookiecutter["Powertools Metrics"] == "enabled" or cookiecutter["Powertools Tracing"] == "enabled"%}
     } finally {
-        {%- if cookiecutter["Powertools X-Ray Tracing"] == "enabled"%}
+        {%- if cookiecutter["Powertools Tracing"] == "enabled"%}
         // Close subsegments (the AWS Lambda one is closed automatically)
         subsegment.close(); // (### MySubSegment)
         handlerSegment.close(); // (## index.handler)
