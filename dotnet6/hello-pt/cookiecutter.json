@@ -6,11 +6,10 @@
             "x86_64", "arm64"
         ]
     },
-    "Powertools X-Ray Tracing": ["enabled","disabled"],
+    "Powertools Tracing": ["enabled","disabled"],
     "Powertools Metrics": ["enabled","disabled"],
     "Powertools Logging": ["enabled","disabled"],
     "_copy_without_render": [
         ".gitignore"
     ]
-
 }

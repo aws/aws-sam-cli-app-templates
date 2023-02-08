@@ -8,12 +8,12 @@ Globals:
   Function:
     Timeout: 10
     MemorySize: 128
-    {%- if cookiecutter["Powertools X-Ray Tracing"] == "enabled"%}
+    {%- if cookiecutter["Powertools Tracing"] == "enabled"%}
     Tracing: Active
     {%- endif %}
     Environment:
       Variables:
-        {%- if cookiecutter["Powertools X-Ray Tracing"] == "enabled" or cookiecutter["Powertools Metrics"] == "enabled"%}
+        {%- if cookiecutter["Powertools Tracing"] == "enabled" or cookiecutter["Powertools Metrics"] == "enabled"%}
         POWERTOOLS_SERVICE_NAME: helloWorld
         {%- endif %}
         {%- if cookiecutter["Powertools Logging"] == "enabled"%}
