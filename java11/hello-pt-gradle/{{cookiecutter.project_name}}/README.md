@@ -31,8 +31,7 @@ The Serverless Application Model Command Line Interface (SAM CLI) is an extensio
 To use the SAM CLI, you need the following tools.
 
 * SAM CLI - [Install the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
-* Java8 - [Install the Java SE Development Kit 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
-* Maven - [Install Maven](https://maven.apache.org/install.html)
+* Java11 - [Install the Java 11](https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/downloads-list.html)
 * Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community)
 
 To build and deploy your application for the first time, run the following in your shell:
@@ -60,7 +59,7 @@ Build your application with the `sam build` command.
 {{ cookiecutter.project_name }}$ sam build
 ```
 
-The SAM CLI installs dependencies defined in `HelloWorldFunction/pom.xml`, creates a deployment package, and saves it in the `.aws-sam/build` folder.
+The SAM CLI installs dependencies defined in `HelloWorldFunction/build.gradle`, creates a deployment package, and saves it in the `.aws-sam/build` folder.
 
 Test a single function by invoking it directly with a test event. An event is a JSON document that represents the input that the function receives from the event source. Test events are included in the `events` folder in this project.
 
@@ -109,7 +108,7 @@ Tests are defined in the `HelloWorldFunction/src/test` folder in this project.
 
 ```bash
 {{ cookiecutter.project_name }}$ cd HelloWorldFunction
-HelloWorldFunction$ mvn test
+HelloWorldFunction$ gradle test
 ```
 
 ## Cleanup

@@ -257,7 +257,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "java8/hello-powertools-maven",
+      "directory": "java8/hello-pt-maven",
       "displayName": "Hello World Example With Powertools",
       "dependencyManager": "maven",
       "appTemplate": "hello-world-powertools-java",
@@ -265,7 +265,7 @@
       "useCaseName": "Hello World Example With Powertools"
     },
     {
-      "directory": "java8/hello-powertools-gradle",
+      "directory": "java8/hello-pt-gradle",
       "displayName": "Hello World Example With Powertools",
       "dependencyManager": "gradle",
       "appTemplate": "hello-world-powertools-java",
@@ -341,7 +341,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "java8.al2/hello-powertools-maven",
+      "directory": "java8.al2/hello-pt-maven",
       "displayName": "Hello World Example With Powertools",
       "dependencyManager": "maven",
       "appTemplate": "hello-world-powertools-java",
@@ -349,7 +349,7 @@
       "useCaseName": "Hello World Example With Powertools"
     },
     {
-      "directory": "java8.al2/hello-powertools-gradle",
+      "directory": "java8.al2/hello-pt-gradle",
       "displayName": "Hello World Example With Powertools",
       "dependencyManager": "gradle",
       "appTemplate": "hello-world-powertools-java",
@@ -425,7 +425,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "java11/hello-powertools-maven",
+      "directory": "java11/hello-pt-maven",
       "displayName": "Hello World Example With Powertools",
       "dependencyManager": "maven",
       "appTemplate": "hello-world-powertools-java",
@@ -433,7 +433,7 @@
       "useCaseName": "Hello World Example With Powertools"
     },
     {
-      "directory": "java11/hello-powertools-gradle",
+      "directory": "java11/hello-pt-gradle",
       "displayName": "Hello World Example With Powertools",
       "dependencyManager": "gradle",
       "appTemplate": "hello-world-powertools-java",
