@@ -1,6 +1,6 @@
 # Cookiecutter NodeJS TypeScript Hello-world w/ Lambda PowerTools for SAM based Serverless App
 
-A cookiecutter template to create a NodeJS TypeScript Hello world boilerplate using [Serverless Application Model (SAM)](https://github.com/awslabs/serverless-application-model).
+A cookiecutter template to create a NodeJS TypeScript Hello World w/ Powertools boilerplate using [Serverless Application Model (SAM)](https://github.com/awslabs/serverless-application-model).
 
 ## Requirements
 
@@ -10,7 +10,7 @@ A cookiecutter template to create a NodeJS TypeScript Hello world boilerplate us
 
 Generate a boilerplate template in your current project directory using the following syntax:
 
-* **NodeJS 16**: `sam init --runtime nodejs16.x`
+* **NodeJS 18**: `sam init --runtime nodejs18.x`
 
 > **NOTE**: ``--name`` allows you to specify a different project folder name (`sam-app` is the default)
 

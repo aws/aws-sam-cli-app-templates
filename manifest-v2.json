@@ -461,6 +461,14 @@
       "useCaseName": "Hello World Example"
     },
     {
+      "directory": "nodejs16.x/hello-ts-pt",
+      "displayName": "Hello World Example TypeScript w/ Lambda Powertools",
+      "dependencyManager": "npm",
+      "appTemplate": "hello-world-powertools-typescript",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    },
+    {
       "directory": "nodejs16.x/step-func",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "npm",
@@ -517,14 +525,6 @@
       "useCaseName": "Serverless API"
     },
     {
-      "directory": "nodejs16.x/hello-ts-pt",
-      "displayName": "Hello World Example TypeScript w/ Lambda Powertools",
-      "dependencyManager": "npm",
-      "appTemplate": "hello-world-powertools-typescript",
-      "packageType": "Zip",
-      "useCaseName": "Hello World Example"
-    },
-    {
       "directory": "nodejs16.x/web-conn",
       "displayName": "Quick Start: Web Backend With Connectors",
       "dependencyManager": "npm",
@@ -565,6 +565,14 @@
       "displayName": "Hello World Example TypeScript",
       "dependencyManager": "npm",
       "appTemplate": "hello-world-typescript",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "nodejs18.x/hello-ts-pt",
+      "displayName": "Hello World Example TypeScript w/ Lambda Powertools",
+      "dependencyManager": "npm",
+      "appTemplate": "hello-world-powertools-typescript",
       "packageType": "Zip",
       "useCaseName": "Hello World Example"
     },
@@ -653,6 +661,14 @@
       "useCaseName": "Hello World Example"
     },
     {
+      "directory": "nodejs14.x/hello-ts-pt",
+      "displayName": "Hello World Example TypeScript w/ Lambda Powertools",
+      "dependencyManager": "npm",
+      "appTemplate": "hello-world-powertools-typescript",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    },
+    {
       "directory": "nodejs14.x/step-func",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "npm",
@@ -707,14 +723,6 @@
       "appTemplate": "quick-start-web",
       "packageType": "Zip",
       "useCaseName": "Serverless API"
-    },
-    {
-      "directory": "nodejs14.x/hello-ts-pt",
-      "displayName": "Hello World Example TypeScript w/ Lambda Powertools",
-      "dependencyManager": "npm",
-      "appTemplate": "hello-world-powertools-typescript",
-      "packageType": "Zip",
-      "useCaseName": "Hello World Example"
     },
     {
       "directory": "nodejs14.x/web-conn",
