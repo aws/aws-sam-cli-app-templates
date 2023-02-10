@@ -39,7 +39,7 @@ To deploy the application, you need the folllowing tools:
 To build and deploy your application for the first time, run the following in your shell:
 
 ```bash
-make build
+sam build
 sam deploy --guided
 ```
 
