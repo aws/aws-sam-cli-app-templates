@@ -25,7 +25,7 @@ phases:
       - cargo install cross
       # Install Cargo Lambda
       - pip install cargo-lambda==$CARGO_LAMBDA_VERSION
-      - echo "$HOME/.local/bin" >> $PATH
+      - PATH="$HOME/.local/bin:$PATH"
   
   post_build:
     commands:
