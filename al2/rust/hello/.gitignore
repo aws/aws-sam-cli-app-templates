@@ -15,4 +15,3 @@ Cargo.lock
 
 .aws-sam
 build
-samconfig.toml
