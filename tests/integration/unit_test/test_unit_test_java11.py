@@ -13,11 +13,11 @@ class UnitTest_java11_cookiecutter_aws_sam_hello_java_maven(UnitTestBase.JavaUni
     code_directories = ["HelloWorldFunction"]
 
 class UnitTest_java11_cookiecutter_aws_sam_hello_java_powertools_maven(UnitTestBase.JavaUnitTestMavenBase):
-    directory = "java11/hello-powertools-maven"
+    directory = "java11/hello-pt-maven"
     code_directories = ["HelloWorldFunction"]
 
 class UnitTest_java11_cookiecutter_aws_sam_hello_java_powertools_gradle(UnitTestBase.JavaUnitTestGradleBase):
-    directory = "java11/hello-powertools-gradle"
+    directory = "java11/hello-pt-gradle"
     code_directories = ["HelloWorldFunction"]
 
 
