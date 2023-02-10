@@ -1,0 +1,14 @@
+name: "Ensure all app templates have a sample samconfig.toml file"
+on:
+  pull_request:
+    branches: [master]
+
+jobs:
+  samconfig-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout commit
+        uses: actions/checkout@v3
+      - name: Run checking script
+        run: python scripts/check_samconfig_exists.py
+        shell: sh

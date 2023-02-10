@@ -29,7 +29,6 @@ def _copy_config_to_projects(zip_config, image_config, project):
     if str(project[0]) in SAMCONFIG_IGNORE_LIST:
         # These projects already have samconfig.toml files that we don't want to overwrite
         return
-    print(project[0])
     project_files_directory = Path(project[0], project[1])
     app_template = project[0].stem
     if Path.is_dir(project_files_directory):
