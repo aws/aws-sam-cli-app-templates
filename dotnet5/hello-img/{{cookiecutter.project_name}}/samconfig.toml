@@ -1,0 +1,25 @@
+# More information about the configuration file can be found here:
+# https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-config.html
+version = 0.1
+
+[default.global.parameters]
+stack_name = {{cookiecutter.project_name}}
+
+[default.build.parameters]
+parallel = true
+
+[default.sync.parameters]
+watch = true
+
+# For small init template projects, setting warm-containers to eager
+# might be the best since it pre-loads all functions and they're ready to go
+[default.local_start_api.parameters]
+warm_containers = "EAGER"
+
+[default.local_start_lambda.parameters]
+warm_containers = "EAGER"
+
+# These are the minimal parameters required to deploy without guided prompts.
+[default.deploy.parameters]
+capabilities = "CAPABILITY_IAM"
+resolve_image_repos = true
