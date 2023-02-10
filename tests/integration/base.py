@@ -25,6 +25,8 @@ LOG = getLogger(__name__)
 LOG.addHandler(StreamHandler())
 LOG.setLevel(INFO)
 
+# NOTE: Using `samdev` as against `sam` in cmdlist enables test with samcli in your dev environment.
+SAM_CLI_EXECUTABLE = "samdev" if os.getenv("SAM_CLI_DEV") else "sam"
 
 def run_command(command_list, cwd=None, env=None, timeout=TIMEOUT) -> CommandResult:
     if not env:
@@ -69,7 +71,7 @@ class Base:
 
         def _test_init_template(self):
             cmdlist = [
-                "sam",
+                SAM_CLI_EXECUTABLE,
                 "init",
                 "--no-input",
                 "--location",
@@ -77,7 +79,7 @@ class Base:
                 "--name",
                 PROJECT_NAME,
             ]
-            LOG.info(cmdlist)
+            LOG.info("Running command: %s", " ".join(map(lambda x: str(x), cmdlist)))
             run_command(cmdlist, self.tempdir.name)
             self.assertTrue(self.cwd.exists())
 

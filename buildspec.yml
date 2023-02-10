@@ -74,3 +74,5 @@ batch:
       buildspec: buildspecs/buildspec-go1.x.yml
     - identifier: GraalVM
       buildspec: buildspecs/buildspec-graalvm.yml
+    - identifier: CombinedRust
+      buildspec: buildspecs/buildspec-rust.yml
