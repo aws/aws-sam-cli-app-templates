@@ -20,6 +20,9 @@
     {%- if cookiecutter["Powertools Logging"] == "enabled"%}
     <PackageReference Include="AWS.Lambda.Powertools.Logging" Version="0.0.2-preview" />
     {%- endif %}
+    {%- if cookiecutter["Powertools Tracing"] == "enabled" or cookiecutter["Powertools Logging"] == "enabled" or cookiecutter["Powertools Metrics"] == "enabled" %}
+    <PackageReference Include="AWS.Lambda.Powertools.Common" Version="0.0.2-preview" />
+    {%- endif %}
   </ItemGroup>
 </Project>
   

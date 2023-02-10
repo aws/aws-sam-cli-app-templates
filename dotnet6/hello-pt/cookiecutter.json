@@ -1,10 +1,8 @@
 {
-    "project_name": "Name of the project",
+    "project_name": "SamAppPowertools",
     "runtime": "dotnet6",
     "architectures": {
-        "value": [
-            "x86_64", "arm64"
-        ]
+        "value": []
     },
     "Powertools Tracing": ["enabled","disabled"],
     "Powertools Metrics": ["enabled","disabled"],

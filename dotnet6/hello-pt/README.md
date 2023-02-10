@@ -72,7 +72,6 @@ You'll be prompted a few questions to help this cookiecutter template to scaffol
 
 * This project has been generated with [Cookiecutter](https://github.com/audreyr/cookiecutter)
 
-License
--------
+# License
 
 This project is licensed under the terms of the [MIT License with no attribution](/LICENSE)
