@@ -3,7 +3,7 @@
 version = 0.1
 
 [default.global.parameters]
-stack_name = {{cookiecutter.project_name}}
+stack_name = "{{cookiecutter.project_name}}"
 
 [default.build.parameters]
 cached = true

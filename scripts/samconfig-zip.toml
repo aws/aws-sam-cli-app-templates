@@ -3,7 +3,7 @@
 version = 0.1
 
 [default.global.parameters]
-stack_name = {{cookiecutter.project_name}}
+stack_name = "{{cookiecutter.project_name}}"
 
 [default.build.parameters]
 cached = true
@@ -24,3 +24,4 @@ warm_containers = "EAGER"
 [default.deploy.parameters]
 capabilities = "CAPABILITY_IAM"
 resolve_s3 = true
+confirm_changeset = true
