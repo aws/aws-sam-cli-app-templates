@@ -2,10 +2,6 @@ version: 0.2
 
 env:
   variables:
-    # disable incremental compilation
-    CARGO_INCREMENTAL: "0"
-    # enable colors in Cargo output
-    CARGO_TERM_COLOR: "always"
     CARGO_LAMBDA_VERSION: "0.17.1"
 
 phases:
@@ -14,18 +10,18 @@ phases:
       - pip install --upgrade pip aws-sam-cli
       - pip install -r requirements.txt
       # Install rustup
-      - curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+      - curl --proto '=https' --tlsv1.2 --retry 10 --retry-connrefused -fsSL https://sh.rustup.rs | sh -s -- --default-toolchain none -y
       # Configure cargo for the current shell
       - source $HOME/.cargo/env
-      # Install rustup toolchain stable
       - rustup toolchain install stable --profile minimal --no-self-update 
-      # Run rustup default stable
       - rustup default stable
-      # Install cross for cross-compilation
-      - cargo install cross
+      - rustup target add x86_64-unknown-linux-gnu --toolchain stable
+      - rustup target add aarch64-unknown-linux-gnu --toolchain stable
       # Install Cargo Lambda
       - pip install cargo-lambda==$CARGO_LAMBDA_VERSION
-      - PATH="$HOME/.local/bin:$PATH"
+      - rustc -V
+      - cargo -V
+      - cargo lambda -V
   
   post_build:
     commands:
