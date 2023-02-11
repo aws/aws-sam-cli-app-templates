@@ -24,3 +24,4 @@ warm_containers = "EAGER"
 [default.deploy.parameters]
 capabilities = "CAPABILITY_IAM"
 resolve_s3 = true
+confirm_changeset = true

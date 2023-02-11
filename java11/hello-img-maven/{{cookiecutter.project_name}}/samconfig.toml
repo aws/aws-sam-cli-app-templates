@@ -23,3 +23,4 @@ warm_containers = "EAGER"
 [default.deploy.parameters]
 capabilities = "CAPABILITY_IAM"
 resolve_image_repos = true
+confirm_changeset = true
