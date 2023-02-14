@@ -509,6 +509,14 @@
       "useCaseName": "Hello World Example"
     },
     {
+      "directory": "nodejs16.x/hello-ts-pt",
+      "displayName": "Hello World Example TypeScript w/ Lambda Powertools",
+      "dependencyManager": "npm",
+      "appTemplate": "hello-world-powertools-typescript",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    },
+    {
       "directory": "nodejs16.x/step-func",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "npm",
@@ -565,14 +573,6 @@
       "useCaseName": "Serverless API"
     },
     {
-      "directory": "nodejs16.x/hello-ts-pt",
-      "displayName": "Hello World Example TypeScript w/ Lambda Powertools",
-      "dependencyManager": "npm",
-      "appTemplate": "hello-world-powertools-typescript",
-      "packageType": "Zip",
-      "useCaseName": "Hello World Example"
-    },
-    {
       "directory": "nodejs16.x/web-conn",
       "displayName": "Quick Start: Web Backend With Connectors",
       "dependencyManager": "npm",
@@ -613,6 +613,14 @@
       "displayName": "Hello World Example TypeScript",
       "dependencyManager": "npm",
       "appTemplate": "hello-world-typescript",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "nodejs18.x/hello-ts-pt",
+      "displayName": "Hello World Example TypeScript w/ Lambda Powertools",
+      "dependencyManager": "npm",
+      "appTemplate": "hello-world-powertools-typescript",
       "packageType": "Zip",
       "useCaseName": "Hello World Example"
     },
@@ -701,6 +709,14 @@
       "useCaseName": "Hello World Example"
     },
     {
+      "directory": "nodejs14.x/hello-ts-pt",
+      "displayName": "Hello World Example TypeScript w/ Lambda Powertools",
+      "dependencyManager": "npm",
+      "appTemplate": "hello-world-powertools-typescript",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    },
+    {
       "directory": "nodejs14.x/step-func",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "npm",
@@ -755,14 +771,6 @@
       "appTemplate": "quick-start-web",
       "packageType": "Zip",
       "useCaseName": "Serverless API"
-    },
-    {
-      "directory": "nodejs14.x/hello-ts-pt",
-      "displayName": "Hello World Example TypeScript w/ Lambda Powertools",
-      "dependencyManager": "npm",
-      "appTemplate": "hello-world-powertools-typescript",
-      "packageType": "Zip",
-      "useCaseName": "Hello World Example"
     },
     {
       "directory": "nodejs14.x/web-conn",
@@ -881,6 +889,14 @@
       "useCaseName": "Hello World Example"
     },
     {
+      "directory": "python3.7/hello-pt",
+      "displayName": "Hello World Example With Powertools",
+      "dependencyManager": "pip",
+      "appTemplate": "hello-world-powertools-python",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example With Powertools"
+    },
+    {
       "directory": "python3.7/event-bridge",
       "displayName": "EventBridge Hello World",
       "dependencyManager": "pip",
@@ -930,6 +946,14 @@
       "appTemplate": "hello-world",
       "packageType": "Zip",
       "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "python3.8/hello-pt",
+      "displayName": "Hello World Example With Powertools",
+      "dependencyManager": "pip",
+      "appTemplate": "hello-world-powertools-python",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example With Powertools"
     },
     {
       "directory": "python3.8/event-bridge",
@@ -989,6 +1013,14 @@
       "appTemplate": "hello-world",
       "packageType": "Zip",
       "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "python3.9/hello-pt",
+      "displayName": "Hello World Example With Powertools",
+      "dependencyManager": "pip",
+      "appTemplate": "hello-world-powertools-python",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example With Powertools"
     },
     {
       "directory": "python3.9/event-bridge",

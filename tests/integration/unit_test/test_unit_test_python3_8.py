@@ -5,6 +5,9 @@ class UnitTest_python3_8_cookiecutter_aws_sam_hello_python(UnitTestBase.Python38
     directory = "python3.8/hello"
     code_directories = ["hello_world"]
 
+class UnitTest_python3_8_cookiecutter_aws_sam_hello_pt_python(UnitTestBase.Python38UnitTestBase):
+    directory = "python3.8/hello-pt"
+    code_directories = ["hello_world"]
 
 class UnitTest_python3_8_cookiecutter_aws_sam_eventBridge_python(UnitTestBase.Python38UnitTestBase):
     directory = "python3.8/event-bridge"
