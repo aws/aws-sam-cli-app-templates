@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/stretchr/testify/assert"
-	"io/ioutil"
+	"io"
 	"os"
 	"testing"
 	"{{ cookiecutter.codegen_path }}"
@@ -23,7 +23,7 @@ func TestHandler(t *testing.T) {
 
 	defer jsonFile.Close()
 
-	jsonStream, _ := ioutil.ReadAll(jsonFile)
+	jsonStream, _ := io.ReadAll(jsonFile)
 
 	event, _ := {{ cookiecutter.codegen_package_name }}.UnmarshalEvent(jsonStream)
 
