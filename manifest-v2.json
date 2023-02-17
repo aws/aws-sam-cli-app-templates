@@ -175,14 +175,6 @@
       "appTemplate": "hello-world",
       "packageType": "Zip",
       "useCaseName": "Hello World Example"
-    },
-    {
-      "directory": "al2/dotnet7-aot/hello-pt",
-      "displayName": "Hello World Example .NET w/ Lambda Powertools",
-      "dependencyManager": "cli-package",
-      "appTemplate": "hello-world-powertools-dotnet",
-      "packageType": "Zip",
-      "useCaseName": "Hello World Example"
     }
   ],
   "go1.x": [
