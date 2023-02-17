@@ -1,24 +1,22 @@
 # {{ cookiecutter.project_name }}
 
-Congratulations, you have just created a Serverless "Hello World" application using the AWS Serverless Application Model (AWS SAM) for the `dotnet6` runtime, and options to bootstrap it with [**AWS Lambda Powertools for .NET**](https://awslabs.github.io/aws-lambda-powertools-dotnet/) (Lambda Powertools) utilities for Logging, Tracing and Metrics.
+Congratulations, you have just created a Serverless "Hello World" application using the AWS Serverless Application Model (AWS SAM) for the `dotnet6` runtime, and options to bootstrap it with [**AWS Lambda Powertools for .NET**](https://awslabs.github.io/aws-lambda-powertools-dotnet/) (Powertools) utilities for Logging, Tracing and Metrics.
 
-Lambda Powertools is a suite of utilities for AWS Lambda functions to simplify implementation of serverless observability best practices such as tracing, structured logging, and custom metrics.
+Powertools is a developer toolkit to implement Serverless best practices and increase developer velocity.
 
-## Lambda Powertools features
+## Powertools features
 
-Lambda Powertools provides three core utilities:
+Powertools provides three core utilities:
 
-* **[Logging](https://awslabs.github.io/aws-lambda-powertools-dotnet/core/logging/)** - provides a custom logger class that outputs structured JSON. It allows you to pass in strings or more complex objects, and will take care of serializing the log output. Common use cases—such as logging the Lambda event payload and capturing cold start information—are handled for you, including appending custom keys to the logger at anytime.
+* **[Tracing](https://awslabs.github.io/aws-lambda-powertools-dotnet/core/tracer/)** - Decorators and utilities to trace Lambda function handlers, and both synchronous and asynchronous functions
+* **[Logging](https://awslabs.github.io/aws-lambda-powertools-dotnet/core/logger/)** - Structured logging made easier, and decorator to enrich structured logging with key Lambda context details
+* **[Metrics](https://awslabs.github.io/aws-lambda-powertools-dotnet/core/metrics/)** - Custom Metrics created asynchronously via CloudWatch Embedded Metric Format (EMF)
 
-* **[Metrics](https://awslabs.github.io/aws-lambda-powertools-dotnet/core/metrics/)** - makes collecting custom metrics from your application simple, without the need to make synchronous requests to external systems. This functionality is powered by [Amazon CloudWatch Embedded Metric Format (EMF)](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Embedded_Metric_Format.html), which allows for capturing metrics asynchronously.
+Find the complete project's [documentation here](https://awslabs.github.io/aws-lambda-powertools-dotnet/).
 
-* **[Tracing](https://awslabs.github.io/aws-lambda-powertools-dotnet/core/tracing/)** - provides a simple way to send traces from functions to AWS X-Ray to provide visibility into function calls, interactions with other AWS services, or external HTTP requests. Annotations can easily be added to traces to allow filtering traces based on key information. For example, when using Tracer, a ColdStart annotation is created for you so you can easily group and analyze traces where there was an initialization overhead.
+### Installing AWS Lambda Powertools for .NET
 
-Visit the [documentation](https://awslabs.github.io/aws-lambda-powertools-dotnet/) for more information.
-
-### Installing Lambda Powertools for .NET
-
-Lambda Powertools utilities are available as NuGet packages. You can install the packages from the NuGet gallery or from within the Visual Studio IDE. Search `AWS.Lambda.Powertools*` to see various utilities available. Powertools is available on NuGet.
+Powertools utilities are available as NuGet packages. You can install the packages from the NuGet gallery or from within the Visual Studio IDE. Search `AWS.Lambda.Powertools*` to see various utilities available. Powertools is available on NuGet.
 
 * [AWS.Lambda.Powertools.Logging](https://www.nuget.org/packages?q=AWS.Lambda.Powertools.Logging):
 
@@ -32,7 +30,7 @@ Lambda Powertools utilities are available as NuGet packages. You can install the
 
     `dotnet add package AWS.Lambda.Powertools.Tracing`
 
-### Lambda Powertools Examples
+### Powertools Examples
 
 We have provided examples focused specifically on each of the utilities. Each solution comes with an AWS Serverless Application Model (AWS SAM) templates to run your functions as a Zip package using the AWS Lambda .NET 6 managed runtime; or as a container package using the AWS base images for .NET.
 

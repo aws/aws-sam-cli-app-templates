@@ -2,11 +2,11 @@
 
 Congratulations, you have just created a Serverless "Hello World" application using the AWS Serverless Application Model (AWS SAM) for the `nodejs16.x` runtime, and options to bootstrap it with [**AWS Lambda Powertools for TypeScript**](https://awslabs.github.io/aws-lambda-powertools-typescript/latest/) (Lambda Powertools) utilities for Logging, Tracing and Metrics.
 
-Lambda Powertools is a suite of utilities for AWS Lambda functions to simplify implementation of serverless observability best practices such as tracing, structured logging, and custom metrics.
+Powertools is a developer toolkit to implement Serverless best practices and increase developer velocity.
 
-## Lambda Powertools features
+## Powertools features
 
-Lambda Powertools provides three core utilities:
+Powertools provides three core utilities:
 
 * **[Tracer](https://awslabs.github.io/aws-lambda-powertools-typescript/latest/core/tracer/)** - Utilities to trace Lambda function handlers, and both synchronous and asynchronous functions
 * **[Logger](https://awslabs.github.io/aws-lambda-powertools-typescript/latest/core/logger/)** - Structured logging made easier, and a middleware to enrich log items with key details of the Lambda context
@@ -14,7 +14,7 @@ Lambda Powertools provides three core utilities:
 
 Find the complete project's [documentation here](https://awslabs.github.io/aws-lambda-powertools-typescript).
 
-### Installing Lambda Powertools for TypeScript
+### Installing AWS Lambda Powertools for TypeScript
 
 You have 2 ways of consuming those utilities:
 
@@ -47,7 +47,7 @@ Or refer to the installation guide of each utility:
 
 👉 [Installation guide for the **Metrics** utility](https://awslabs.github.io/aws-lambda-powertools-typescript/latest/core/metrics#getting-started)
 
-### Lambda Powertools Examples
+### Powertools Examples
 
 * [CDK](https://github.com/awslabs/aws-lambda-powertools-typescript/tree/main/examples/cdk)
 * [SAM](https://github.com/awslabs/aws-lambda-powertools-typescript/tree/main/examples/sam)

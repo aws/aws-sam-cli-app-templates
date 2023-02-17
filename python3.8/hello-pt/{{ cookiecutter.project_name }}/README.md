@@ -2,11 +2,11 @@
 
 Congratulations, you have just created a Serverless "Hello World" application using the AWS Serverless Application Model (AWS SAM) for the `nodejs18.x` runtime, and options to bootstrap it with [**AWS Lambda Powertools for TypeScript**](https://awslabs.github.io/aws-lambda-powertools-typescript/latest/) (Lambda Powertools) utilities for Logging, Tracing and Metrics.
 
-Lambda Powertools is a suite of utilities for AWS Lambda functions to simplify implementation of serverless observability best practices such as tracing, structured logging, and custom metrics.
+Powertools is a developer toolkit to implement Serverless best practices and increase developer velocity.
 
-## Lambda Powertools features
+## Powertools features
 
-Lambda Powertools provides three core utilities:
+Powertools provides three core utilities:
 
 * **[Tracing](https://awslabs.github.io/aws-lambda-powertools-python/latest/core/tracer/)** - Decorators and utilities to trace Lambda function handlers, and both synchronous and asynchronous functions
 * **[Logging](https://awslabs.github.io/aws-lambda-powertools-python/latest/core/logger/)** - Structured logging made easier, and decorator to enrich structured logging with key Lambda context details
@@ -14,7 +14,7 @@ Lambda Powertools provides three core utilities:
 
 Find the complete project's [documentation here](https://awslabs.github.io/aws-lambda-powertools-python).
 
-### Installing Lambda Powertools for Python
+### Installing AWS Lambda Powertools for Python
 
 With [pip](https://pip.pypa.io/en/latest/index.html) installed, run: 
 
@@ -22,7 +22,7 @@ With [pip](https://pip.pypa.io/en/latest/index.html) installed, run:
 pip install aws-lambda-powertools
 ```
 
-### Lambda Powertools Examples
+### Powertools Examples
 
 * [Tutorial](https://awslabs.github.io/aws-lambda-powertools-python/latest/tutorial)
 * [Serverless Shopping cart](https://github.com/aws-samples/aws-serverless-shopping-cart)
