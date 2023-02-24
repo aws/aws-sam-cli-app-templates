@@ -16,10 +16,6 @@ class UnitTest_java11_cookiecutter_aws_sam_hello_java_powertools_maven(UnitTestB
     directory = "java11/hello-pt-maven"
     code_directories = ["HelloWorldFunction"]
 
-class UnitTest_java11_cookiecutter_aws_sam_hello_java_powertools_gradle(UnitTestBase.JavaUnitTestGradleBase):
-    directory = "java11/hello-pt-gradle"
-    code_directories = ["HelloWorldFunction"]
-
 
 class UnitTest_java11_cookiecutter_aws_sam_eventbridge_hello_java_gradle(UnitTestBase.JavaUnitTestGradleBase):
     directory = "java11/event-bridge-gradle"

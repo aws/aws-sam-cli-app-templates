@@ -265,14 +265,6 @@
       "useCaseName": "Hello World Example With Powertools"
     },
     {
-      "directory": "java8/hello-pt-gradle",
-      "displayName": "Hello World Example With Powertools",
-      "dependencyManager": "gradle",
-      "appTemplate": "hello-world-powertools-java",
-      "packageType": "Zip",
-      "useCaseName": "Hello World Example With Powertools"
-    },
-    {
       "directory": "java8/event-bridge-gradle",
       "displayName": "EventBridge Hello World: Gradle",
       "dependencyManager": "gradle",
@@ -349,14 +341,6 @@
       "useCaseName": "Hello World Example With Powertools"
     },
     {
-      "directory": "java8.al2/hello-pt-gradle",
-      "displayName": "Hello World Example With Powertools",
-      "dependencyManager": "gradle",
-      "appTemplate": "hello-world-powertools-java",
-      "packageType": "Zip",
-      "useCaseName": "Hello World Example With Powertools"
-    },
-    {
       "directory": "java8.al2/event-bridge-gradle",
       "displayName": "EventBridge Hello World: Gradle",
       "dependencyManager": "gradle",
@@ -428,14 +412,6 @@
       "directory": "java11/hello-pt-maven",
       "displayName": "Hello World Example With Powertools",
       "dependencyManager": "maven",
-      "appTemplate": "hello-world-powertools-java",
-      "packageType": "Zip",
-      "useCaseName": "Hello World Example With Powertools"
-    },
-    {
-      "directory": "java11/hello-pt-gradle",
-      "displayName": "Hello World Example With Powertools",
-      "dependencyManager": "gradle",
       "appTemplate": "hello-world-powertools-java",
       "packageType": "Zip",
       "useCaseName": "Hello World Example With Powertools"
