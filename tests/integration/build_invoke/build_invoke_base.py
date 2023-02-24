@@ -26,6 +26,7 @@ class BuildInvokeBase:
         use_container: bool = True
         build_image_tag: Optional[str] = None
         build_image_file: Optional[str] = None
+        beta_features: bool = False
 
         def _test_build(self):
             if self.build_image_tag:
@@ -34,7 +35,8 @@ class BuildInvokeBase:
                     build_image_cmdlist.append("-f")
                     build_image_cmdlist.append(self.build_image_file)
                 build_image_cmdlist.append(".")
-                LOG.info(build_image_cmdlist)
+                LOG.info(" ".join(build_image_cmdlist))
+                LOG.info("Running command: %s", " ".join(map(lambda x: str(x), build_image_cmdlist)))
                 result = run_command(build_image_cmdlist, self.cwd)
                 returnCode = result.process.poll()
                 self.assertEqual(returnCode, 0)
@@ -45,7 +47,9 @@ class BuildInvokeBase:
             if self.build_image_tag:
                 cmdlist.append("--build-image")
                 cmdlist.append(self.build_image_tag)
-            LOG.info(cmdlist)
+            if self.beta_features:
+                cmdlist.append("--beta-features")
+            LOG.info("Running command: %s", " ".join(map(lambda x: str(x), cmdlist)))
             result = run_command(cmdlist, self.cwd)
             self.assertIn("Build Succeeded", str(result.stdout))
 
@@ -75,7 +79,9 @@ class BuildInvokeBase:
                         Path("events", event_file),
                         "--debug",
                     ]
-                LOG.info(cmdlist)
+                if self.beta_features:
+                    cmdlist.append("--beta-features")
+                LOG.info("Running command: %s", " ".join(map(lambda x: str(x), cmdlist)))
                 result = run_command(cmdlist, self.cwd)
                 LOG.info(result)
                 try:
