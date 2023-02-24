@@ -54,8 +54,6 @@ batch:
       buildspec: buildspecs/buildspec-unittest-java11.yml
     - identifier: UnitTestRuby27
       buildspec: buildspecs/buildspec-unittest-ruby2.7.yml
-    - identifier: UnitTestRust
-      buildspec: buildspecs/buildspec-unittest-rust.yml
     - identifier: BuildAndInvoke
       buildspec: buildspecs/buildspec-build-invoke.yml
       env:
@@ -74,3 +72,5 @@ batch:
       buildspec: buildspecs/buildspec-go1.x.yml
     - identifier: GraalVM
       buildspec: buildspecs/buildspec-graalvm.yml
+    - identifier: CombinedRust
+      buildspec: buildspecs/buildspec-rust.yml

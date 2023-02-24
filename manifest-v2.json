@@ -127,6 +127,14 @@
       "useCaseName": "Hello World Example"
     },
     {
+      "directory": "dotnet6/hello-pt",
+      "displayName": "Hello World Example .NET w/ Lambda Powertools",
+      "dependencyManager": "cli-package",
+      "appTemplate": "hello-world-powertools-dotnet",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    },
+    {
       "directory": "dotnet6/step-func",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "cli-package",
@@ -257,6 +265,14 @@
       "useCaseName": "Hello World Example"
     },
     {
+      "directory": "java8/hello-pt-maven",
+      "displayName": "Hello World Example With Powertools",
+      "dependencyManager": "maven",
+      "appTemplate": "hello-world-powertools-java",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example With Powertools"
+    },
+    {
       "directory": "java8/event-bridge-gradle",
       "displayName": "EventBridge Hello World: Gradle",
       "dependencyManager": "gradle",
@@ -325,6 +341,14 @@
       "useCaseName": "Hello World Example"
     },
     {
+      "directory": "java8.al2/hello-pt-maven",
+      "displayName": "Hello World Example With Powertools",
+      "dependencyManager": "maven",
+      "appTemplate": "hello-world-powertools-java",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example With Powertools"
+    },
+    {
       "directory": "java8.al2/event-bridge-gradle",
       "displayName": "EventBridge Hello World: Gradle",
       "dependencyManager": "gradle",
@@ -391,6 +415,14 @@
       "appTemplate": "hello-world",
       "packageType": "Zip",
       "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "java11/hello-pt-maven",
+      "displayName": "Hello World Example With Powertools",
+      "dependencyManager": "maven",
+      "appTemplate": "hello-world-powertools-java",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example With Powertools"
     },
     {
       "directory": "java11/event-bridge-gradle",
@@ -1050,6 +1082,14 @@
       "appTemplate": "hello-world",
       "packageType": "Zip",
       "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "al2/rust/hello-ddb",
+      "displayName": "DynamoDB Example",
+      "dependencyManager": "cargo",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "DynamoDB Example"
     }
   ],
   "amazon/nodejs14.x-base": [

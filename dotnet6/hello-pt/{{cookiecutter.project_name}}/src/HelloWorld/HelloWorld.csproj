@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+    <AWSProjectType>Lambda</AWSProjectType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Amazon.Lambda.Core" Version="2.1.0" />
+    <PackageReference Include="Amazon.Lambda.Serialization.SystemTextJson" Version="2.3.0" />
+    <PackageReference Include="Amazon.Lambda.APIGatewayEvents" Version="2.5.0" />
+    {%- if cookiecutter["Powertools Tracing"] == "enabled"%}
+    <PackageReference Include="AWSXRayRecorder.Handlers.AwsSdk" Version="2.11.0" />
+    <PackageReference Include="AWS.Lambda.Powertools.Tracing" Version="1.0.0" />
+    {%- endif %}
+    {%- if cookiecutter["Powertools Metrics"] == "enabled"%}
+    <PackageReference Include="AWS.Lambda.Powertools.Metrics" Version="1.0.0" />
+    {%- endif %}
+    {%- if cookiecutter["Powertools Logging"] == "enabled"%}
+    <PackageReference Include="AWS.Lambda.Powertools.Logging" Version="1.0.0" />
+    {%- endif %}
+    {%- if cookiecutter["Powertools Tracing"] == "enabled" or cookiecutter["Powertools Logging"] == "enabled" or cookiecutter["Powertools Metrics"] == "enabled" %}
+    <PackageReference Include="AWS.Lambda.Powertools.Common" Version="1.0.0" />
+    {%- endif %}
+  </ItemGroup>
+</Project>
+  
