@@ -16,9 +16,6 @@ class BuildInvoke_dotnet6_cookiecutter_aws_sam_hello_dotnet(BuildInvokeBase.DotN
     directory = "dotnet7-aot/hello"
 
 
-class BuildInvoke_dotnet6_cookiecutter_aws_sam_hello_dotnet_pt(BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase):
-    use_container = False
-    directory = "dotnet7-aot/hello-pt"
 
 
 #
