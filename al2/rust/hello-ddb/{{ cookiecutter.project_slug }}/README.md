@@ -2,8 +2,8 @@
 
 This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes the following files and folders:
 
-- `Cargo.toml` - Project configuration file.
-- `src` - Code for the application's Lambda function.
+- `rust_app/Cargo.toml` - Project configuration file.
+- `rust_app/src/main.rs` - Code for the application's Lambda function.
 - `template.yaml` - A template that defines the application's AWS resources.
 
 The application uses several AWS resources, including Lambda functions and an API Gateway API. These resources are defined in the `template.yaml` file in this project. You can update the template to add AWS resources through the same deployment process that updates your application code.
@@ -33,8 +33,8 @@ To deploy the application, you need the folllowing tools:
 
 * SAM CLI - [Install the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
 * Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community)
-* [Rust](https://www.rust-lang.org/) version 1.56.0 or newer
-* [cargo-lambda](https://github.com/cargo-lambda/cargo-lambda#installation) for cross-compilation
+* [Rust](https://www.rust-lang.org/) version 1.64.0 or newer
+* [cargo-lambda](https://github.com/cargo-lambda/cargo-lambda) for cross-compilation
 
 To build and deploy your application for the first time, run the following in your shell:
 
@@ -71,7 +71,7 @@ You can find more information and examples about filtering Lambda function logs 
 
 ## Tests
 
-Tests are defined alongside your lambda function code in the `src` folder.
+Tests are defined alongside your lambda function code in the `rust_app/src` folder.
 
 ```bash
 cargo test
