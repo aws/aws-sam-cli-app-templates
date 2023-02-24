@@ -16,7 +16,7 @@ struct Request {
 #[derive(Serialize)]
 struct Response {
     statusCode: i32,
-    body: Body,
+    body: String,
 }
 
 #[derive(Serialize)]
@@ -33,9 +33,7 @@ async fn function_handler(event: LambdaEvent<Request>) -> Result<Response, Error
     // Prepare the response
     let resp = Response {
         statusCode: 200,
-        body: Body {
-            message: "Hello World".to_string(),
-        },
+        body: "Hello World!".to_string(),
     };
 
     // Return `Response` (it will be serialized to JSON automatically by the runtime)
