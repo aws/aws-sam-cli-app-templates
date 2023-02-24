@@ -24,7 +24,7 @@ The AWS Toolkit is an open source plug-in for popular IDEs that uses the SAM CLI
 * [Visual Studio](https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/welcome.html)
 
 
-## Requirments
+## Requirements
 * This template was tested with Rust v1.66.0 and above.
 
 ## Deploy the sample application
@@ -40,7 +40,7 @@ To build and deploy your application for the first time, run the following in yo
 
 ```bash
 sam build
-sam deploy --guided
+sam deploy
 ```
 
 The first command will build the source of your application. The second command will package and deploy your application to AWS, with a series of prompts:
