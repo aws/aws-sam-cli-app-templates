@@ -12,6 +12,10 @@ class UnitTest_java8_cookiecutter_aws_sam_hello_java_maven(UnitTestBase.JavaUnit
     directory = "java8/hello-maven"
     code_directories = ["HelloWorldFunction"]
 
+class UnitTest_java8_cookiecutter_aws_sam_hello_java_powertools_maven(UnitTestBase.JavaUnitTestMavenBase):
+    directory = "java8/hello-pt-maven"
+    code_directories = ["HelloWorldFunction"]
+
 
 class UnitTest_java8_cookiecutter_aws_sam_eventbridge_hello_java_gradle(UnitTestBase.JavaUnitTestGradleBase):
     directory = "java8/event-bridge-gradle"
