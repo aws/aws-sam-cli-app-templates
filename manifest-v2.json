@@ -1074,6 +1074,14 @@
       "appTemplate": "hello-world",
       "packageType": "Zip",
       "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "al2/rust/hello-ddb",
+      "displayName": "DynamoDB Example",
+      "dependencyManager": "cargo",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "DynamoDB Example"
     }
   ],
   "amazon/nodejs14.x-base": [
