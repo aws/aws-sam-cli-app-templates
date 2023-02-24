@@ -27,6 +27,7 @@ namespace HelloWorld.Tests
     [Fact]
     public async Task TestHelloWorldFunctionHandler()
     {
+            Environment.SetEnvironmentVariable("POWERTOOLS_METRICS_NAMESPACE", "AWSLambdaPowertools");  // set dummy metrics namespace if env is unavailable
             var request = new APIGatewayProxyRequest();
             var context = new TestLambdaContext();
             string location = GetCallingIP().Result;
