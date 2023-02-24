@@ -70,6 +70,10 @@ batch:
       buildspec: buildspecs/buildspec-dotnetcore3.1.yml
     - identifier: CombinedGo1x
       buildspec: buildspecs/buildspec-go1.x.yml
+      # the default (AL2 x86 standard 3.0) only supports go1.14
+      # use newer image so we can install go1.18+
+      env:
+        image: aws/codebuild/amazonlinux2-x86_64-standard:4.0
     - identifier: GraalVM
       buildspec: buildspecs/buildspec-graalvm.yml
     - identifier: CombinedRust
