@@ -5,7 +5,3 @@ from tests.integration.unit_test.unit_test_base import UnitTestBase
 class UnitTest_dotnet6_cookiecutter_aws_sam_hello_dotnet(UnitTestBase.DotNetCoreUnitTestBase):
     directory = "dotnet7-aot/hello"
     code_directories = ["test/HelloWorld.Test"]
-
-class UnitTest_dotnet6_cookiecutter_aws_sam_hello_dotnet_pt(UnitTestBase.DotNetCoreUnitTestBase):
-    directory = "dotnet7-aot/hello-pt"
-    code_directories = ["test/HelloWorld.Test"]
