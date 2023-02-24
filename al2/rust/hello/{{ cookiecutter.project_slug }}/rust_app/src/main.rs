@@ -1,147 +1,54 @@
-use aws_sdk_dynamodb::{model::AttributeValue, Client};
-use lambda_http::{service_fn, Body, Error, Request, RequestExt, Response};
-use std::env;
+use lambda_runtime::{run, service_fn, Error, LambdaEvent};
 
-/// Main function
+use serde::{Deserialize, Serialize};
+
+/// This is a made-up example. Requests come into the runtime as unicode
+/// strings in json format, which can map to any structure that implements `serde::Deserialize`
+/// The runtime pays no attention to the contents of the request payload.
+#[derive(Deserialize)]
+struct Request {
+}
+
+/// This is a made-up example of what a response structure may look like.
+/// There is no restriction on what it can be. The runtime requires responses
+/// to be serialized into json. The runtime pays no attention
+/// to the contents of the response payload.
+#[derive(Serialize)]
+struct Response {
+    statusCode: i32,
+    body: String,
+}
+
+#[derive(Serialize)]
+struct Body {
+    message: String,
+}
+
+/// This is the main body for the function.
+/// Write your code inside it.
+/// There are some code example in the following URLs:
+/// - https://github.com/awslabs/aws-lambda-rust-runtime/tree/main/examples
+/// - https://github.com/aws-samples/serverless-rust-demo/
+async fn function_handler(event: LambdaEvent<Request>) -> Result<Response, Error> {
+    // Prepare the response
+    let resp = Response {
+        statusCode: 200,
+        body: "Hello World!".to_string(),
+    };
+
+    // Return `Response` (it will be serialized to JSON automatically by the runtime)
+    Ok(resp)
+}
+
 #[tokio::main]
 async fn main() -> Result<(), Error> {
-    // Initialize the AWS SDK for Rust
-    let config = aws_config::load_from_env().await;
-    let table_name = env::var("TABLE_NAME").expect("TABLE_NAME must be set");
-    let dynamodb_client = Client::new(&config);
+    tracing_subscriber::fmt()
+        .with_max_level(tracing::Level::INFO)
+        // disable printing the name of the module in every log line.
+        .with_target(false)
+        // disabling time is handy because CloudWatch will add the ingestion time.
+        .without_time()
+        .init();
 
-    // Register the Lambda handler
-    //
-    // We use a closure to pass the `dynamodb_client` and `table_name` as arguments
-    // to the handler function.
-    lambda_http::run(service_fn(|request: Request| {
-        put_item(&dynamodb_client, &table_name, request)
-    }))
-    .await?;
-
-    Ok(())
-}
-
-/// Put Item Lambda function
-///
-/// This function will run for every invoke of the Lambda function.
-async fn put_item(
-    client: &Client,
-    table_name: &str,
-    request: Request,
-) -> Result<Response<Body>, Error> {
-    // Extract path parameter from request
-    let path_parameters = request.path_parameters();
-    let id = match path_parameters.first("id") {
-        Some(id) => id,
-        None => return Ok(Response::builder().status(400).body("id is required".into())?),
-    };
-
-    // Extract body from request
-    let body = match request.body() {
-        Body::Empty => "".to_string(),
-        Body::Text(body) => body.clone(),
-        Body::Binary(body) => String::from_utf8_lossy(body).to_string(),
-    };
-
-    // Put the item in the DynamoDB table
-    let res = client
-        .put_item()
-        .table_name(table_name)
-        .item("id", AttributeValue::S(id.to_string()))
-        .item("payload", AttributeValue::S(body))
-        .send()
-        .await;
-
-    // Return a response to the end-user
-    match res {
-        Ok(_) => Ok(Response::builder().status(200).body("item saved".into())?),
-        Err(_) => Ok(Response::builder().status(500).body("internal error".into())?),
-    }
-}
-
-/// Unit tests
-///
-/// These tests are run using the `cargo test` command.
-#[cfg(test)]
-mod tests {
-    use super::*;
-    use aws_sdk_dynamodb::{Client, Config, Credentials, Region};
-    use aws_smithy_client::{erase::DynConnector, test_connection::TestConnection};
-    use aws_smithy_http::body::SdkBody;
-    use std::collections::HashMap;
-
-    // Helper function to create a mock AWS configuration
-    async fn get_mock_config(conn: &TestConnection<SdkBody>) -> Config {
-        let cfg = aws_config::from_env()
-            .region(Region::new("eu-west-1"))
-            .http_connector(DynConnector::new(conn.clone()))
-            .credentials_provider(Credentials::new(
-                "access_key",
-                "privatekey",
-                None,
-                None,
-                "dummy",
-            ))
-            .load()
-            .await;
-
-        Config::new(&cfg)
-    }
-
-    /// Helper function to generate a sample DynamoDB request
-    fn get_request_builder() -> http::request::Builder {
-        http::Request::builder()
-            .header("content-type", "application/x-amz-json-1.0")
-            .uri(http::uri::Uri::from_static(
-                "https://dynamodb.eu-west-1.amazonaws.com/",
-            ))
-    }
-
-    #[tokio::test]
-    async fn test_put_item() {
-        // Mock DynamoDB client
-        //
-        // `TestConnection` takes a vector of requests and responses, allowing us to
-        // simulate the behaviour of the DynamoDB API endpoint. Since we are only
-        // making a single request in this test, we only need to provide a single
-        // entry in the vector.
-        let conn = TestConnection::new(vec![(
-            get_request_builder()
-                .header("x-amz-target", "DynamoDB_20120810.PutItem")
-                .body(SdkBody::from(
-                    r#"{"TableName":"test","Item":{"id":{"S":"1"},"payload":{"S":"test1"}}}"#,
-                ))
-                .unwrap(),
-            http::Response::builder()
-                .status(200)
-                .body(SdkBody::from(
-                    r#"{"Attributes": {"id": {"S": "1"}, "payload": {"S": "test1"}}}"#,
-                ))
-                .unwrap(),
-        )]);
-        let client = Client::from_conf(get_mock_config(&conn).await);
-
-        let table_name = "test_table";
-
-        // Mock API Gateway request
-        let mut path_parameters = HashMap::new();
-        path_parameters.insert("id".to_string(), vec!["1".to_string()]);
-
-        let request = http::Request::builder()
-            .method("PUT")
-            .uri("/1")
-            .body(Body::Text("test1".to_string()))
-            .unwrap()
-            .with_path_parameters(path_parameters);
-
-        // Send mock request to Lambda handler function
-        let response = put_item(&client, table_name, request)
-            .await
-            .unwrap();
-        
-        // Assert that the response is correct
-        assert_eq!(response.status(), 200);
-        assert_eq!(response.body(), &Body::Text("item saved".to_string()));
-    }
+    run(service_fn(function_handler)).await
 }
