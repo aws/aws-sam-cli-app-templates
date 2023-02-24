@@ -127,7 +127,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "dotnet/hello-pt",
+      "directory": "dotnet6/hello-pt",
       "displayName": "Hello World Example .NET w/ Lambda Powertools",
       "dependencyManager": "cli-package",
       "appTemplate": "hello-world-powertools-dotnet",
