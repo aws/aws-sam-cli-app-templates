@@ -1,0 +1,71 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  Sample SAM Template with AWS Lambda Powertools for {{ cookiecutter.project_name }}
+
+
+Globals: # More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+  Function:
+    Timeout: 10
+    MemorySize: 256
+    Runtime: dotnet6
+  {%- if cookiecutter["Powertools Tracing"] == "enabled"%}
+  Api:
+    TracingEnabled: true
+  {%- endif %}
+
+Resources:
+  HelloWorldFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      Handler: HelloWorld::HelloWorld.Function::FunctionHandler
+      CodeUri: ./src/HelloWorld/
+      Description: Hello World function w/ AWS Lambda Powertools for .NET  # for more information on AWS Lambda Powertools for .NET: https://github.com/awslabs/aws-lambda-powertools-dotnet
+      {%- if cookiecutter.architectures.value != []%}
+      Architectures:
+      {%- for arch in cookiecutter.architectures.value %}
+          - {{arch}}
+      {%- endfor %}
+      {%- endif %}
+      {%- if cookiecutter["Powertools Tracing"] == "enabled"%}
+      Tracing: Active
+      {%- endif %}
+      Events:
+        HelloWorld:
+          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Properties:
+            Path: /hello
+            Method: get
+      {%- if cookiecutter["Powertools Tracing"] == "enabled" or cookiecutter["Powertools Logging"] == "enabled" %}
+      Environment: # Powertools env vars: https://awslabs.github.io/aws-lambda-powertools-python/#environment-variables
+        Variables:
+          {%- if cookiecutter["Powertools Tracing"] == "enabled" or cookiecutter["Powertools Metrics"] == "enabled"%}
+          POWERTOOLS_SERVICE_NAME: PowertoolsHelloWorld
+          {%- endif %}
+          {%- if cookiecutter["Powertools Logging"] == "enabled"%}
+          POWERTOOLS_LOG_LEVEL: Info
+          POWERTOOLS_LOGGER_CASE: PascalCase # Allowed values are: CamelCase, PascalCase and SnakeCase (Default)
+          {%- endif %}
+          {%- if cookiecutter["Powertools Tracing"] == "enabled"%}
+          POWERTOOLS_TRACER_CAPTURE_RESPONSE: true
+          POWERTOOLS_TRACER_CAPTURE_ERROR: true     # To disable tracing (CaptureMode = TracingCaptureMode.Disabled)
+          {%- endif %}
+          {%- if cookiecutter["Powertools Metrics"] == "enabled"%}
+          POWERTOOLS_METRICS_NAMESPACE: {{ cookiecutter.project_name|lower|replace(' ', '-') }}
+          {%- endif %}
+      {%- endif %}
+      Tags:
+        LambdaPowertools: dotnet
+Outputs:
+  # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
+  # Find out more about other implicit resources you can reference within SAM
+  # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
+  HelloWorldApi:
+    Description: "API Gateway endpoint URL for Prod stage for Hello World function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/"
+  HelloWorldFunction:
+    Description: "Hello World Lambda Function ARN"
+    Value: !GetAtt HelloWorldFunction.Arn
+  HelloWorldFunctionIamRole:
+    Description: "Implicit IAM Role created for Hello World function"
+    Value: !GetAtt HelloWorldFunctionRole.Arn

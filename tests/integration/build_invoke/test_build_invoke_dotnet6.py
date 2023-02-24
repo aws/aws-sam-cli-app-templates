@@ -16,6 +16,11 @@ class BuildInvoke_dotnet6_cookiecutter_aws_sam_hello_dotnet(BuildInvokeBase.DotN
     directory = "dotnet6/hello"
 
 
+class BuildInvoke_dotnet6_cookiecutter_aws_sam_hello_dotnet_pt(BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase):
+    use_container = False
+    directory = "dotnet6/hello-pt"
+
+
 # FIXME: fix and re-enable the test
 # class BuildInvoke_dotnet6_cookiecutter_aws_sam_hello_powershell(BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase):
 #     use_container = False
@@ -28,22 +33,25 @@ class BuildInvoke_dotnet6_cookiecutter_aws_sam_hello_step_functions_sample_app(
     use_container = False
     directory = "dotnet6/step-func"
 
-class BuildInvoke_dotnet6_cookiecutter_aws_sam_quick_start_cloudwatch_events_dotnet(BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase):
+
+class BuildInvoke_dotnet6_cookiecutter_aws_sam_quick_start_cloudwatch_events_dotnet(
+    BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase
+):
     use_container = False
     directory = "dotnet6/cw-event"
 
-class BuildInvoke_dotnet6_cookiecutter_aws_from_scratch_dotnet(
-    BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase):
+
+class BuildInvoke_dotnet6_cookiecutter_aws_from_scratch_dotnet(BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase):
     use_container = False
     directory = "dotnet6/scratch"
 
-    
+
 class BuildInvoke_dotnet6_cookiecutter_aws_sam_quick_start_web_dotnet(
     BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase
 ):
     use_container = False
     directory = "dotnet6/web"
-   
+
 
 #
 # Image templates

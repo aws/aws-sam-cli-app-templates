@@ -1,6 +1,6 @@
 # {{ cookiecutter.project_name }}
 
-Congratulations, you have just created a Serverless "Hello World" application using the AWS Serverless Application Model (AWS SAM) for the `nodejs18.x` runtime, and options to bootstrap it with [**AWS Lambda Powertools for TypeScript**](https://awslabs.github.io/aws-lambda-powertools-typescript/latest/) (Lambda Powertools) utilities for Logging, Tracing and Metrics.
+Congratulations, you have just created a Serverless "Hello World" application using the AWS Serverless Application Model (AWS SAM) for the `dotnet6` runtime, and options to bootstrap it with [**AWS Lambda Powertools for .NET**](https://awslabs.github.io/aws-lambda-powertools-dotnet/) (Powertools) utilities for Logging, Tracing and Metrics.
 
 Powertools is a developer toolkit to implement Serverless best practices and increase developer velocity.
 
@@ -8,36 +8,44 @@ Powertools is a developer toolkit to implement Serverless best practices and inc
 
 Powertools provides three core utilities:
 
-* **[Tracing](https://awslabs.github.io/aws-lambda-powertools-python/latest/core/tracer/)** - Decorators and utilities to trace Lambda function handlers, and both synchronous and asynchronous functions
-* **[Logging](https://awslabs.github.io/aws-lambda-powertools-python/latest/core/logger/)** - Structured logging made easier, and decorator to enrich structured logging with key Lambda context details
-* **[Metrics](https://awslabs.github.io/aws-lambda-powertools-python/latest/core/metrics/)** - Custom Metrics created asynchronously via CloudWatch Embedded Metric Format (EMF)
+* **[Tracing](https://awslabs.github.io/aws-lambda-powertools-dotnet/core/tracer/)** - Decorators and utilities to trace Lambda function handlers, and both synchronous and asynchronous functions
+* **[Logging](https://awslabs.github.io/aws-lambda-powertools-dotnet/core/logger/)** - Structured logging made easier, and decorator to enrich structured logging with key Lambda context details
+* **[Metrics](https://awslabs.github.io/aws-lambda-powertools-dotnet/core/metrics/)** - Custom Metrics created asynchronously via CloudWatch Embedded Metric Format (EMF)
 
-Find the complete project's [documentation here](https://awslabs.github.io/aws-lambda-powertools-python).
+Find the complete project's [documentation here](https://awslabs.github.io/aws-lambda-powertools-dotnet/).
 
-### Installing AWS Lambda Powertools for Python
+### Installing AWS Lambda Powertools for .NET
 
-With [pip](https://pip.pypa.io/en/latest/index.html) installed, run: 
+Powertools utilities are available as NuGet packages. You can install the packages from the NuGet gallery or from within the Visual Studio IDE. Search `AWS.Lambda.Powertools*` to see various utilities available. Powertools is available on NuGet.
 
-```bash
-pip install aws-lambda-powertools
-```
+* [AWS.Lambda.Powertools.Logging](https://www.nuget.org/packages?q=AWS.Lambda.Powertools.Logging):
+
+    `dotnet add package AWS.Lambda.Powertools.Logging`
+
+* [AWS.Lambda.Powertools.Metrics](https://www.nuget.org/packages?q=AWS.Lambda.Powertools.Metrics):
+
+    `dotnet add package AWS.Lambda.Powertools.Metrics`
+
+* [AWS.Lambda.Powertools.Tracing](https://www.nuget.org/packages?q=AWS.Lambda.Powertools.Tracing):
+
+    `dotnet add package AWS.Lambda.Powertools.Tracing`
 
 ### Powertools Examples
 
-* [Tutorial](https://awslabs.github.io/aws-lambda-powertools-python/latest/tutorial)
-* [Serverless Shopping cart](https://github.com/aws-samples/aws-serverless-shopping-cart)
-* [Serverless Airline](https://github.com/aws-samples/aws-serverless-airline-booking)
-* [Serverless E-commerce platform](https://github.com/aws-samples/aws-serverless-ecommerce-platform)
-* [Serverless GraphQL Nanny Booking Api](https://github.com/trey-rosius/babysitter_api)
+We have provided examples focused specifically on each of the utilities. Each solution comes with an AWS Serverless Application Model (AWS SAM) templates to run your functions as a Zip package using the AWS Lambda .NET 6 managed runtime; or as a container package using the AWS base images for .NET.
+
+* **[Logging example](examples/Logging/)**
+* **[Metrics example](examples/Metrics/)**
+* **[Tracing example](examples/Tracing/)**
 
 ## Working with this project
 
 This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes the following files and folders.
 
-* hello_world - Code for the application's Lambda function.
+* src - Code for the application's Lambda function.
 * events - Invocation events that you can use to invoke the function.
-* tests - Unit tests for the application code.
-* template.yaml - A template that defines the application's AWS resources.  
+* test - Unit tests for the application code.
+* template.yaml - A template that defines the application's AWS resources.
 
 The application uses several AWS resources, including Lambda functions and an API Gateway API. These resources are defined in the `template.yaml` file in this project. You can update the template to add AWS resources through the same deployment process that updates your application code.
 
@@ -63,13 +71,13 @@ The Serverless Application Model Command Line Interface (SAM CLI) is an extensio
 To use the SAM CLI, you need the following tools.
 
 * SAM CLI - [Install the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
-* [Python 3 installed](https://www.python.org/downloads/)
+* .NET 6 - [Install .NET 6](https://www.microsoft.com/net/download)
 * Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community)
 
 To build and deploy your application for the first time, run the following in your shell:
 
 ```bash
-sam build --use-container
+sam build
 sam deploy --guided
 ```
 
@@ -85,13 +93,13 @@ You can find your API Gateway Endpoint URL in the output values displayed after 
 
 ### Use the SAM CLI to build and test locally
 
-Build your application with the `sam build --use-container` command.
+Build your application with the `sam build` command.
 
 ```bash
-{{ cookiecutter.project_name }}$ sam build --use-container
+{{ cookiecutter.project_name }}$ sam build
 ```
 
-The SAM CLI installs dependencies defined in `hello_world/requirements.txt`, creates a deployment package, and saves it in the `.aws-sam/build` folder.
+The SAM CLI installs dependencies defined in `src/HelloWorld.csproj`, creates a deployment package, and saves it in the `.aws-sam/build` folder.
 
 Test a single function by invoking it directly with a test event. An event is a JSON document that represents the input that the function receives from the event source. Test events are included in the `events` folder in this project.
 
@@ -135,17 +143,12 @@ To simplify troubleshooting, SAM CLI has a command called `sam logs`. `sam logs`
 
 You can find more information and examples about filtering Lambda function logs in the [SAM CLI Documentation](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-logging.html).
 
-### Tests
+### Unit tests
 
-Tests are defined in the `tests` folder in this project. Use PIP to install the test dependencies and run tests.
+Tests are defined in the `test` folder in this project.
 
 ```bash
-{{ cookiecutter.project_name }}$ pip install -r tests/requirements.txt --user
-# unit test
-{{ cookiecutter.project_name }}$ python -m pytest tests/unit -v
-# integration test, requiring deploying the stack first.
-# Create the env variable AWS_SAM_STACK_NAME with the name of the stack we are testing
-{{ cookiecutter.project_name }}$ AWS_SAM_STACK_NAME=<stack-name> python -m pytest tests/integration -v
+{{ cookiecutter.project_name }}$ dotnet test test/HelloWorld.Test
 ```
 
 ### Cleanup

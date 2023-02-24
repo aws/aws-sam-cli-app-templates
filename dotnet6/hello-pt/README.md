@@ -1,4 +1,4 @@
-# AWS SAM cookiecutter for Python Lambda functions with AWS Lambda Powertools for .NET
+# AWS SAM cookiecutter for .NET 6 Lambda functions with AWS Lambda Powertools for .NET
 
 **Please note, you should not try to `git clone` this project.** Instead, use `cookiecutter` CLI instead as ``{{cookiecutter.project_name}}`` will be rendered based on your input and therefore all variables and files will be rendered properly.
 
@@ -22,7 +22,7 @@ Install `cookiecutter` command line:
 
 ### Usage
 
-Generate a new SAM based Serverless App: `sam init --runtime python3.8`.
+Generate a new SAM based Serverless App: `sam init --runtime dotnet6`.
 
 You'll be prompted a few questions to help this cookiecutter template to scaffold this project and after its completed you should see a new folder at your current path with the name of the project you gave as input.
 

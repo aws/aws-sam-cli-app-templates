@@ -1,0 +1,13 @@
+{
+    "project_name": "SamAppPowertools",
+    "runtime": "dotnet6",
+    "architectures": {
+        "value": []
+    },
+    "Powertools Tracing": ["enabled","disabled"],
+    "Powertools Metrics": ["enabled","disabled"],
+    "Powertools Logging": ["enabled","disabled"],
+    "_copy_without_render": [
+        ".gitignore"
+    ]
+}

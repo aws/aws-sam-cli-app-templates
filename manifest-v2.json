@@ -127,6 +127,14 @@
       "useCaseName": "Hello World Example"
     },
     {
+      "directory": "dotnet6/hello-pt",
+      "displayName": "Hello World Example .NET w/ Lambda Powertools",
+      "dependencyManager": "cli-package",
+      "appTemplate": "hello-world-powertools-dotnet",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    },
+    {
       "directory": "dotnet6/step-func",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "cli-package",
