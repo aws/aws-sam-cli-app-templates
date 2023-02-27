@@ -2,8 +2,8 @@
 
 This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes the following files and folders:
 
-- `Cargo.toml` - Project configuration file.
-- `src` - Code for the application's Lambda function.
+- `rust_app/Cargo.toml` - Project configuration file.
+- `rust_app/src/main.rs` - Code for the application's Lambda function.
 - `template.yaml` - A template that defines the application's AWS resources.
 
 The application uses several AWS resources, including Lambda functions and an API Gateway API. These resources are defined in the `template.yaml` file in this project. You can update the template to add AWS resources through the same deployment process that updates your application code.
@@ -24,7 +24,7 @@ The AWS Toolkit is an open source plug-in for popular IDEs that uses the SAM CLI
 * [Visual Studio](https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/welcome.html)
 
 
-## Requirments
+## Requirements
 * This template was tested with Rust v1.66.0 and above.
 
 ## Deploy the sample application
@@ -33,17 +33,17 @@ To deploy the application, you need the folllowing tools:
 
 * SAM CLI - [Install the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
 * Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community)
-* [Rust](https://www.rust-lang.org/) version 1.56.0 or newer
-* [cargo-lambda](https://github.com/cargo-lambda/cargo-lambda#installation) for cross-compilation
+* [Rust](https://www.rust-lang.org/) version 1.64.0 or newer
+* [cargo-lambda](https://github.com/cargo-lambda/cargo-lambda) for cross-compilation
 
 To build and deploy your application for the first time, run the following in your shell:
 
 ```bash
-make build
-sam deploy --guided
+sam build
+sam deploy
 ```
 
-The first command will build the source of your application. The second command will package and deploy your application to AWS, with a series of prompts:
+The first command will build the source of your application. The second command will package and deploy your application to AWS with the default `samconfig.toml` in the project. Alternatively, you can run `sam deploy --guided` to deploy with a series of prompts:
 
 * **Stack Name**: The name of the stack to deploy to CloudFormation. This should be unique to your account and region, and a good starting point would be something matching your project name.
 * **AWS Region**: The AWS region you want to deploy your app to.
@@ -53,6 +53,41 @@ The first command will build the source of your application. The second command 
 
 You can find your API Gateway Endpoint URL in the output values displayed after deployment.
 
+## Use the SAM CLI to build and test locally
+
+Build your application with the `sam build` command.
+
+```bash
+{{ cookiecutter.project_name }}$ sam build
+```
+
+The SAM CLI builds the Rust app based on `rust_app/Cargo.toml`, creates a deployment package, and saves it in the `.aws-sam/build` folder.
+
+Test a single function by invoking it directly with a test event. An event is a JSON document that represents the input that the function receives from the event source. Test events are included in the `events` folder in this project.
+
+Run functions locally and invoke them with the `sam local invoke` command.
+
+```bash
+{{ cookiecutter.project_name }}$ sam local invoke HelloWorldFunction --event events/event.json
+```
+
+The SAM CLI can also emulate your application's API. Use the `sam local start-api` to run the API locally on port 3000.
+
+```bash
+{{ cookiecutter.project_name }}$ sam local start-api
+{{ cookiecutter.project_name }}$ curl http://localhost:3000/
+```
+
+The SAM CLI reads the application template to determine the API's routes and the functions that they invoke. The `Events` property on each function's definition includes the route and method for each path.
+
+```yaml
+      Events:
+        HelloWorld:
+          Type: Api
+          Properties:
+            Path: /hello
+            Method: get
+```
 
 ## Add a resource to your application
 The application template uses AWS Serverless Application Model (AWS SAM) to define application resources. AWS SAM is an extension of AWS CloudFormation with a simpler syntax for configuring common serverless application resources such as functions, triggers, and APIs. For resources not included in [the SAM specification](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md), you can use standard [AWS CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html) resource types.
@@ -71,7 +106,7 @@ You can find more information and examples about filtering Lambda function logs 
 
 ## Tests
 
-Tests are defined alongside your lambda function code in the `src` folder.
+Tests are defined alongside your lambda function code in the `rust_app/src` folder.
 
 ```bash
 cargo test
