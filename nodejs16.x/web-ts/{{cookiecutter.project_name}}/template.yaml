@@ -1,0 +1,153 @@
+# The AWSTemplateFormatVersion identifies the capabilities of the template
+# https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/format-version-structure.html
+AWSTemplateFormatVersion: 2010-09-09
+Description: >-
+  {{ cookiecutter.project_name }}
+  An example application with PowerTools for TypeScript instrumented. Its purpose is to demonstrate how to use the PowerTools with AWS SAM. The application an API with contains 3 endpoints (get all items, get an item by ids, put an item). Each Lambda function utilises Logger, Metrics, and Tracers.
+
+# Transform section specifies one or more macros that AWS CloudFormation uses to process your template
+# https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-section-structure.html
+Transform: AWS::Serverless-2016-10-31
+
+# Global configuration that all Functions inherit
+# https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-template-anatomy-globals.html
+Globals:
+  Function:
+      Runtime: nodejs16.x
+      {%- if cookiecutter.architectures.value != []%}
+      Architectures:
+      {%- for arch in cookiecutter.architectures.value %}
+        - {{arch}}
+      {%- endfor %}
+      {%- endif %}
+      MemorySize: 128
+      Timeout: 100
+
+# Resources declares the AWS resources that you want to include in the stack
+# https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html
+Resources:
+  # Each Lambda function is defined by properties:
+  # https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+
+  # This is a Lambda function config associated with the source code: get-all-items.js
+  getAllItemsFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/get-all-items.handler
+      Description: A simple example includes a HTTP get method to get all items from a DynamoDB table.
+      Policies:
+        # Give Create/Read/Update/Delete Permissions to the SampleTable
+        - DynamoDBReadPolicy:
+            TableName: !Ref SampleTable
+      Tracing: Active
+      Environment:
+        Variables:
+          # Make table name accessible as environment variable from function code during execution
+          NODE_OPTIONS: '--enable-source-maps' # see https://docs.aws.amazon.com/lambda/latest/dg/typescript-exceptions.html
+          AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1 # see https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/node-reusing-connections.html
+          SAMPLE_TABLE: !Ref SampleTable
+          POWERTOOLS_SERVICE_NAME: items-store
+          POWERTOOLS_METRICS_NAMESPACE: PowertoolsSAMExample
+          LOG_LEVEL: Debug
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /
+            Method: GET
+    Metadata: 
+      # Manage esbuild properties
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: "ES2020"
+        Sourcemap: true
+        EntryPoints:
+          - src/get-all-items.ts
+
+  # This is a Lambda function config associated with the source code: get-by-id.js
+  getByIdFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/get-by-id.handler
+      Description: A simple example includes a HTTP get method to get one item by id from a DynamoDB table.
+      Policies:
+        # Give Create/Read/Update/Delete Permissions to the SampleTable
+        - DynamoDBReadPolicy:
+            TableName: !Ref SampleTable
+      Tracing: Active
+      Environment:
+        Variables:
+          # Make table name accessible as environment variable from function code during execution
+          NODE_OPTIONS: '--enable-source-maps' # see https://docs.aws.amazon.com/lambda/latest/dg/typescript-exceptions.html
+          AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1 # see https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/node-reusing-connections.html
+          SAMPLE_TABLE: !Ref SampleTable
+          POWERTOOLS_SERVICE_NAME: items-store
+          POWERTOOLS_METRICS_NAMESPACE: PowertoolsSAMExample
+          LOG_LEVEL: Debug
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /{id}
+            Method: GET
+    Metadata: 
+      # Manage esbuild properties
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: "ES2020"
+        ExperimentalDecorators: true
+        Sourcemap: true
+        EntryPoints:
+          - src/get-by-id.ts
+
+  # This is a Lambda function config associated with the source code: put-item.js
+  putItemFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/put-item.handler
+      Description: A simple example includes a HTTP post method to add one item to a DynamoDB table.
+      Policies:
+        # Give Create/Read/Update/Delete Permissions to the SampleTable
+        - DynamoDBCrudPolicy:
+            TableName: !Ref SampleTable
+      Tracing: Active
+      Environment:
+        Variables:
+          # Make table name accessible as environment variable from function code during execution
+          NODE_OPTIONS: '--enable-source-maps' # see https://docs.aws.amazon.com/lambda/latest/dg/typescript-exceptions.html
+          AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1 # see https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/node-reusing-connections.html
+          SAMPLE_TABLE: !Ref SampleTable
+          POWERTOOLS_SERVICE_NAME: items-store
+          POWERTOOLS_METRICS_NAMESPACE: PowertoolsSAMExample
+          LOG_LEVEL: Debug
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /
+            Method: POST
+    Metadata: 
+      # Manage esbuild properties
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: "ES2020"
+        Sourcemap: true
+        EntryPoints: 
+          - src/put-item.ts
+
+  # DynamoDB table to store item: {id: <ID>, name: <NAME>}
+  SampleTable:
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      PrimaryKey:
+        Name: id
+        Type: String
+
+
+Outputs:
+  WebEndpoint:
+    Description: "API Gateway endpoint URL for Prod stage"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"

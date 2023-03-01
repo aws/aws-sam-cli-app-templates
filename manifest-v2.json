@@ -557,6 +557,14 @@
       "useCaseName": "Serverless API"
     },
     {
+      "directory": "nodejs16.x/web-ts",
+      "displayName": "Quick Start: Web Backend TypeScript with AWS Lambda Powertools",
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-web-ts",
+      "packageType": "Zip",
+      "useCaseName": "Serverless API TypeScript"
+    },
+    {
       "directory": "nodejs16.x/web-conn",
       "displayName": "Quick Start: Web Backend With Connectors",
       "dependencyManager": "npm",
@@ -663,6 +671,14 @@
       "appTemplate": "quick-start-web",
       "packageType": "Zip",
       "useCaseName": "Serverless API"
+    },
+    {
+      "directory": "nodejs18.x/web-ts",
+      "displayName": "Quick Start: Web Backend TypeScript with AWS Lambda Powertools",
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-web-ts",
+      "packageType": "Zip",
+      "useCaseName": "Serverless API TypeScript"
     }
   ],
   "amazon/nodejs18.x-base": [
@@ -755,6 +771,14 @@
       "appTemplate": "quick-start-web",
       "packageType": "Zip",
       "useCaseName": "Serverless API"
+    },
+    {
+      "directory": "nodejs14.x/web-ts",
+      "displayName": "Quick Start: Web Backend TypeScript with AWS Lambda Powertools",
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-web-ts",
+      "packageType": "Zip",
+      "useCaseName": "Serverless API TypeScript"
     },
     {
       "directory": "nodejs14.x/web-conn",
