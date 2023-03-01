@@ -128,11 +128,11 @@
     },
     {
       "directory": "dotnet6/hello-pt",
-      "displayName": "Hello World Example .NET w/ Lambda Powertools",
+      "displayName": "Hello World Example .NET With Lambda Powertools",
       "dependencyManager": "cli-package",
       "appTemplate": "hello-world-powertools-dotnet",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World Example With Powertools"
     },
     {
       "directory": "dotnet6/step-func",
@@ -266,7 +266,7 @@
     },
     {
       "directory": "java8/hello-pt-maven",
-      "displayName": "Hello World Example With Powertools",
+      "displayName": "Hello World Example Java With Lambda Powertools",
       "dependencyManager": "maven",
       "appTemplate": "hello-world-powertools-java",
       "packageType": "Zip",
@@ -342,7 +342,7 @@
     },
     {
       "directory": "java8.al2/hello-pt-maven",
-      "displayName": "Hello World Example With Powertools",
+      "displayName": "Hello World Example Java With Lambda Powertools",
       "dependencyManager": "maven",
       "appTemplate": "hello-world-powertools-java",
       "packageType": "Zip",
@@ -418,7 +418,7 @@
     },
     {
       "directory": "java11/hello-pt-maven",
-      "displayName": "Hello World Example With Powertools",
+      "displayName": "Hello World Example Java With Lambda Powertools",
       "dependencyManager": "maven",
       "appTemplate": "hello-world-powertools-java",
       "packageType": "Zip",
@@ -494,11 +494,11 @@
     },
     {
       "directory": "nodejs16.x/hello-ts-pt",
-      "displayName": "Hello World Example TypeScript w/ Lambda Powertools",
+      "displayName": "Hello World Example TypeScript With Lambda Powertools",
       "dependencyManager": "npm",
       "appTemplate": "hello-world-powertools-typescript",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World Example With Powertools"
     },
     {
       "directory": "nodejs16.x/step-func",
@@ -602,11 +602,11 @@
     },
     {
       "directory": "nodejs18.x/hello-ts-pt",
-      "displayName": "Hello World Example TypeScript w/ Lambda Powertools",
+      "displayName": "Hello World Example TypeScript With Lambda Powertools",
       "dependencyManager": "npm",
       "appTemplate": "hello-world-powertools-typescript",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World Example With Powertools"
     },
     {
       "directory": "nodejs18.x/step-func",
@@ -694,11 +694,11 @@
     },
     {
       "directory": "nodejs14.x/hello-ts-pt",
-      "displayName": "Hello World Example TypeScript w/ Lambda Powertools",
+      "displayName": "Hello World Example TypeScript With Lambda Powertools",
       "dependencyManager": "npm",
       "appTemplate": "hello-world-powertools-typescript",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example"
+      "useCaseName": "Hello World Example With Powertools"
     },
     {
       "directory": "nodejs14.x/step-func",
@@ -874,7 +874,7 @@
     },
     {
       "directory": "python3.7/hello-pt",
-      "displayName": "Hello World Example With Powertools",
+      "displayName": "Hello World Example Python With Lambda Powertools",
       "dependencyManager": "pip",
       "appTemplate": "hello-world-powertools-python",
       "packageType": "Zip",
@@ -933,7 +933,7 @@
     },
     {
       "directory": "python3.8/hello-pt",
-      "displayName": "Hello World Example With Powertools",
+      "displayName": "Hello World Example Python With Lambda Powertools",
       "dependencyManager": "pip",
       "appTemplate": "hello-world-powertools-python",
       "packageType": "Zip",
@@ -1000,7 +1000,7 @@
     },
     {
       "directory": "python3.9/hello-pt",
-      "displayName": "Hello World Example With Powertools",
+      "displayName": "Hello World Example Python With Lambda Powertools",
       "dependencyManager": "pip",
       "appTemplate": "hello-world-powertools-python",
       "packageType": "Zip",
