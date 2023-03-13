@@ -1,5 +1,5 @@
 
-from pytest import skip
+import pytest
 from tests.integration.build_invoke.build_invoke_base import BuildInvokeBase
 
 """
@@ -29,12 +29,12 @@ class BuildInvoke_java11_cookiecutter_aws_sam_eventbridge_hello_java_maven(
     directory = "java11/event-bridge-maven"
 
 
-@skip("eventbridge schema app requires credential to pull missing files, skip")
+@pytest.mark.skip("eventbridge schema app requires credential to pull missing files, skip")
 class BuildInvoke_java11_cookiecutter_aws_sam_eventbridge_schema_app_java_gradle(BuildInvokeBase.BuildInvokeBase):
     directory = "java11/event-bridge-schema-gradle"
 
 
-@skip("eventbridge schema app requires credential to pull missing files, skip")
+@pytest.mark.skip("eventbridge schema app requires credential to pull missing files, skip")
 class BuildInvoke_java11_cookiecutter_aws_sam_eventbridge_schema_app_java_maven(BuildInvokeBase.BuildInvokeBase):
     directory = "java11/event-bridge-schema-maven"
 

@@ -9,9 +9,9 @@ runs:
         ref: "develop"
         path: "aws-sam-cli-develop"
     - uses: actions/setup-python@v4
-      name: Install Python 3.7
+      name: Install Python $INSTALL_PYTHON_VERSION
       with:
-        python-version: "3.7"
+        python-version: $INSTALL_PYTHON_VERSION
     - run: |
         make -C aws-sam-cli-develop init
         samdev --info
