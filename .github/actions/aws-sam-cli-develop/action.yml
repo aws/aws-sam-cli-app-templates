@@ -12,6 +12,7 @@ runs:
       with:
         python-version: "3.7"
     - run: |
+        ls
         make init
         samdev --info
       shell: bash
