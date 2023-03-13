@@ -43,7 +43,7 @@ jobs:
           python-version: ${{ matrix.version }}
       - name: Run build tests for ${{ matrix.file }}
         run: |
-          cd ~
+          cd ../
           ls
           pip install -r requirements.txt
           SAM_CLI_DEV=1 pytest -vvv ${{ matrix.file }} -n 4
