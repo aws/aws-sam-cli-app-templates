@@ -12,7 +12,6 @@ runs:
       with:
         python-version: "3.7"
     - run: |
-        ls
-        make init
+        make -C aws-sam-cli-develop init
         samdev --info
       shell: bash
