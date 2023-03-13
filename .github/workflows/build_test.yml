@@ -1,4 +1,4 @@
-name: Build & Test
+name: Build / Test
 
 on:
   pull_request:
@@ -204,7 +204,7 @@ jobs:
         name: Checkout PR
       - uses: ./.github/actions/aws-sam-cli-develop
         name: Install develop version of AWS SAM CLI
-      - uses: actions/setup-go@v4
+      - uses: actions/setup-go@v3
         name: Setup golang ${{ matrix.version }}
         with:
           go-version: ${{ matrix.version }}
@@ -213,4 +213,34 @@ jobs:
           pip install -r requirements.txt
           samdev --info
           go version
+          pytest -vvv ${{ matrix.file }}
+
+  ################
+  # dotnet
+  build-test-dotnet:
+    name: dotnet
+    # if: github.repository_owner == 'aws'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - version: '3.1'
+            file: 'tests/integration/unit_test/test_unit_test_dotnetcore3_1.py'
+          - version: '6'
+            file: 'tests/integration/unit_test/test_unit_test_dotnet6.py'
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout PR
+      - uses: ./.github/actions/aws-sam-cli-develop
+        name: Install develop version of AWS SAM CLI
+      - uses: actions/setup-dotnet@v3
+        name: Setup dotnet ${{ matrix.version }}
+        with:
+          go-version: ${{ matrix.version }}
+      - name: Run build tests for ${{ matrix.file }}
+        run: |
+          pip install -r requirements.txt
+          samdev --info
+          dotnet --info
           pytest -vvv ${{ matrix.file }}
