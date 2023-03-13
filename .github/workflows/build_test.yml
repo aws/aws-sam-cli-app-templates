@@ -36,6 +36,7 @@ jobs:
       - uses: actions/checkout@v3
         name: Checkout PR
       - uses: ./.github/actions/aws-sam-cli-develop
+        name: Install develop version of AWS SAM CLI
       - uses: actions/setup-python@v4
         name: Setup Python ${{ matrix.python }}
         with:
