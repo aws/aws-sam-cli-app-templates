@@ -11,11 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - build-test-python
+      - build-test-java
+      - build-test-nodejs
     steps:
       - name: report-failure
         if: |
           needs.build-test-python.result != 'success' ||
-          needs.build-test-java.result != 'success'
+          needs.build-test-java.result != 'success' ||
+          needs.build-test-nodejs.result != 'success'
         run: exit 1
       - name: report-success
         run: exit 0
@@ -48,6 +51,7 @@ jobs:
       - name: Run build tests for ${{ matrix.file }}
         run: |
           pip install -r requirements.txt
+          samdev --info
           SAM_CLI_DEV=1 pytest -vvv ${{ matrix.file }} -n 4
 
   ################
@@ -81,4 +85,45 @@ jobs:
       - name: Run build tests for ${{ matrix.file }}
         run: |
           pip install -r requirements.txt
+          samdev --info
+          gradle --version
+          mvn --version
+          SAM_CLI_DEV=1 pytest -vvv ${{ matrix.file }} -n 4
+          
+  ################
+  # NodeJS
+  build-test-nodejs:
+    name: Build and Test / NodeJS ${{ matrix.version }}
+    # if: github.repository_owner == 'aws'
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - version: '12'
+            file: 'tests/integration/unit_test/test_unit_test_nodejs12_x.py'
+          - version: '14'
+            file: 'tests/integration/unit_test/test_unit_test_nodejs14_x.py'
+          - version: '16'
+            file: 'tests/integration/unit_test/test_unit_test_nodejs16_x.py'
+          - version: '18'
+            file: 'tests/integration/unit_test/test_unit_test_nodejs18_x.py'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout PR
+      - uses: ./.github/actions/aws-sam-cli-develop
+        name: Install develop version of AWS SAM CLI
+      - uses: actions/setup-python@v4
+        name: Setup Python 3.7
+        with:
+          python-version: '3.7'
+      - uses: actions/setup-node@v3
+        name: Setup NodeJS ${{ matrix.version }}
+        with:
+          node-version: ${{ matrix.version }}
+      - name: Run build tests for ${{ matrix.file }}
+        run: |
+          pip install -r requirements.txt
+          samdev --info
+          node --version
           SAM_CLI_DEV=1 pytest -vvv ${{ matrix.file }} -n 4
