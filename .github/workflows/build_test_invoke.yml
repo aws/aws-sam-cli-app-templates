@@ -30,7 +30,7 @@ jobs:
           needs.build-test-ruby.result != 'success' ||
           needs.build-test-rust.result != 'success' ||
           needs.build-test-golang.result != 'success' ||
-          needs.build-test-golang.result != 'dotnet'
+          needs.build-test-dotnet.result != 'success'
         run: exit 1
       - name: report-success
         run: exit 0
@@ -95,19 +95,19 @@ jobs:
             file: 'tests/integration/unit_test/test_unit_test_java8_al2.py'
           - version: '8'
             type: 'Invoke'
-            file: 'tests/integration/build_invoke/java/test_java8.py'
+            file: 'tests/integration/build_invoke/java/test_java_8.py'
           - version: '8'
             type: 'Invoke (AL2)'
-            file: 'tests/integration/build_invoke/java/test_java8_al2.py'
+            file: 'tests/integration/build_invoke/java/test_java_8_al2.py'
           - version: '11'
             type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_java11.py'
           - version: '11'
             type: 'Invoke'
-            file: 'tests/integration/build_invoke/java/test_java11.py'
+            file: 'tests/integration/build_invoke/java/test_java_11.py'
           - version: '11'
             type: 'Invoke (AL2)'
-            file: 'tests/integration/build_invoke/java/test_java11_al2.py'
+            file: 'tests/integration/build_invoke/java/test_java_11_al2.py'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
