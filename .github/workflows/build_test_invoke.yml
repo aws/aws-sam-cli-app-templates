@@ -1,4 +1,4 @@
-name: Build / Test
+name: Build
 
 on:
   pull_request:
@@ -6,11 +6,11 @@ on:
   
 env:
   SAM_CLI_DEV: 1
-  PIP_CARGO_LAMBDA_VERSION: "0.17.1"
+  PIP_CARGO_LAMBDA_VERSION: '0.17.1'
 
 jobs:
   run-workflow:
-    name: Build and Test Templates
+    name: Build & Test & Invoke Templates
     # if: github.repository_owner == 'aws'
     runs-on: ubuntu-latest
     needs:
@@ -20,6 +20,7 @@ jobs:
       - build-test-ruby
       - build-test-rust
       - build-test-golang
+      - build-test-dotnet
     steps:
       - name: report-failure
         if: |
@@ -28,7 +29,8 @@ jobs:
           needs.build-test-nodejs.result != 'success' ||
           needs.build-test-ruby.result != 'success' ||
           needs.build-test-rust.result != 'success' ||
-          needs.build-test-golang.result != 'success'
+          needs.build-test-golang.result != 'success' ||
+          needs.build-test-golang.result != 'dotnet'
         run: exit 1
       - name: report-success
         run: exit 0
@@ -36,17 +38,20 @@ jobs:
   ################
   # Python
   build-test-python:
-    name: Python ${{ matrix.version }}
+    name: ${{ matrix.type }} / Python ${{ matrix.version }}
     # if: github.repository_owner == 'aws'
     strategy:
       fail-fast: false
       matrix:
         include:
           - version: '3.7'
+            type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_python3_7.py'
           - version: '3.8'
+            type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_python3_8.py'
           - version: '3.9'
+            type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_python3_9.py'
     runs-on: ubuntu-latest
     steps:
@@ -67,16 +72,24 @@ jobs:
   ################
   # Java
   build-test-java:
-    name: Java ${{ matrix.version }}
+    name: ${{ matrix.type }} / Java ${{ matrix.version }}
     # if: github.repository_owner == 'aws'
     strategy:
       fail-fast: false
       matrix:
         include:
           - version: '8'
+            type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_java8.py'
+          - version: '8'
+            type: 'Test'
+            file: 'tests/integration/unit_test/test_unit_test_java8_al2.py'
           - version: '11'
+            type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_java11.py'
+          - version: '11'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/test_build_invoke_graalvm.py'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -99,19 +112,23 @@ jobs:
   ################
   # NodeJS
   build-test-nodejs:
-    name: NodeJS ${{ matrix.version }}
+    name: ${{ matrix.type }} / NodeJS ${{ matrix.version }}
     # if: github.repository_owner == 'aws'
     strategy:
       fail-fast: false
       matrix:
         include:
           - version: '12'
+            type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_nodejs12_x.py'
           - version: '14'
+            type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_nodejs14_x.py'
           - version: '16'
+            type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_nodejs16_x.py'
           - version: '18'
+            type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_nodejs18_x.py'
     runs-on: ubuntu-latest
     steps:
@@ -133,13 +150,14 @@ jobs:
   ################
   # Ruby
   build-test-ruby:
-    name: Ruby ${{ matrix.version }}
+    name: ${{ matrix.type }} / Ruby ${{ matrix.version }}
     # if: github.repository_owner == 'aws'
     strategy:
       fail-fast: false
       matrix:
         include:
           - version: '2.7'
+            type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_ruby2_7.py'
     runs-on: ubuntu-latest
     steps:
@@ -161,36 +179,37 @@ jobs:
   ################
   # Rust
   build-test-rust:
-    name: Rust
+    name: ${{ matrix.type }} / Rust
     # if: github.repository_owner == 'aws'
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - type: 'Test'
+            file: 'tests/integration/unit_test/test_unit_test_rust.py'
+          - type: 'Invoke'
+            file: 'tests/integration/build_invoke/test_build_invoke_rust.py'
     steps:
       - uses: actions/checkout@v3
         name: Checkout PR
       - uses: ./.github/actions/aws-sam-cli-develop
         name: Install develop version of AWS SAM CLI
-      - name: Setup Rust
-        run: |
-          curl --proto '=https' --tlsv1.2 --retry 10 --retry-connrefused -fsSL https://sh.rustup.rs | sh -s -- --default-toolchain none -y
-          source $HOME/.cargo/env
-          rustup toolchain install stable --profile minimal --no-self-update 
-          rustup default stable
-          rustup target add x86_64-unknown-linux-gnu --toolchain stable
-          rustup target add aarch64-unknown-linux-gnu --toolchain stable
-          pip install cargo-lambda==$PIP_CARGO_LAMBDA_VERSION
-      - name: Run build tests for tests/integration/unit_test/test_unit_test_rust.py
+      - uses: ./.github/actions/setup-rust
+        name: Setup Rust
+      - name: Run build tests for ${{ matrix.file }}
         run: |
           pip install -r requirements.txt
           samdev --info
           rustc -V
           cargo -V
           cargo lambda -V
-          pytest -vvv tests/integration/unit_test/test_unit_test_rust.py
+          pytest -vvv ${{ matrix.file }}
 
   ################
   # golang
   build-test-golang:
-    name: golang ${{ matrix.version }}
+    name: ${{ matrix.type }} / golang ${{ matrix.version }}
     # if: github.repository_owner == 'aws'
     runs-on: ubuntu-latest
     strategy:
@@ -198,7 +217,11 @@ jobs:
       matrix:
         include:
           - version: '1.x'
+            type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_go1_x.py'
+          - version: '1.x'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/test_build_invoke_go1_x.py'
     steps:
       - uses: actions/checkout@v3
         name: Checkout PR
@@ -218,7 +241,7 @@ jobs:
   ################
   # dotnet
   build-test-dotnet:
-    name: dotnet ${{ matrix.version }}
+    name: ${{ matrix.type }} / dotnet ${{ matrix.version }}
     # if: github.repository_owner == 'aws'
     runs-on: ubuntu-latest
     strategy:
@@ -226,9 +249,20 @@ jobs:
       matrix:
         include:
           - version: '3.1'
+            type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_dotnetcore3_1.py'
+          - version: '3.1'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/test_build_invoke_dotnetcore3_1.py'
+          - version: '5'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/test_build_invoke_dotnet5_0.py'
           - version: '6'
+            type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_dotnet6.py'
+          - version: '6'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/test_build_invoke_dotnet6.py'
     steps:
       - uses: actions/checkout@v3
         name: Checkout PR
