@@ -38,10 +38,11 @@ jobs:
       - uses: ./.github/actions/aws-sam-cli-develop
         name: Install develop version of AWS SAM CLI
       - uses: actions/setup-python@v4
-        name: Setup Python ${{ matrix.python }}
+        name: Setup Python ${{ matrix.version }}
         with:
-          python-version: ${{ matrix.python }}
+          python-version: ${{ matrix.version }}
       - name: Run build tests for ${{ matrix.file }}
         run: |
+          ls
           pip install -r requirements.txt
           SAM_CLI_DEV=1 pytest -vvv ${{ matrix.file }} -n 4

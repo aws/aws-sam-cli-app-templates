@@ -10,5 +10,7 @@ runs:
     - uses: actions/setup-python@v4
       with:
         python-version: "3.7"
-    - run: make init
+    - run: |
+        make init
+        samdev --info
       shell: bash
