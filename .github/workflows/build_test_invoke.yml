@@ -1,5 +1,3 @@
-name: Build
-
 on:
   pull_request:
     branches: ['master']
@@ -47,12 +45,21 @@ jobs:
           - version: '3.7'
             type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_python3_7.py'
+          - version: '3.7'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/python/test_python_3_7.py'
           - version: '3.8'
             type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_python3_8.py'
+          - version: '3.8'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/python/test_python_3_8.py'
           - version: '3.9'
             type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_python3_9.py'
+          - version: '3.9'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/python/test_python_3_9.py'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -82,14 +89,23 @@ jobs:
             type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_java8.py'
           - version: '8'
-            type: 'Test'
+            type: 'Test (AL2)'
             file: 'tests/integration/unit_test/test_unit_test_java8_al2.py'
+          - version: '8'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/java/test_java8.py'
+          - version: '8'
+            type: 'Invoke (AL2)'
+            file: 'tests/integration/build_invoke/java/test_java8_al2.py'
           - version: '11'
             type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_java11.py'
           - version: '11'
             type: 'Invoke'
-            file: 'tests/integration/build_invoke/test_build_invoke_graalvm.py'
+            file: 'tests/integration/build_invoke/java/test_java11.py'
+          - version: '11'
+            type: 'Invoke (AL2)'
+            file: 'tests/integration/build_invoke/java/test_java11_al2.py'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -121,15 +137,27 @@ jobs:
           - version: '12'
             type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_nodejs12_x.py'
+          - version: '12'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/node/test_node_12.py'
           - version: '14'
             type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_nodejs14_x.py'
+          - version: '14'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/node/test_node_14.py'
           - version: '16'
             type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_nodejs16_x.py'
+          - version: '16'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/node/test_node_16.py'
           - version: '18'
             type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_nodejs18_x.py'
+          - version: '18'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/node/test_node_18.py'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -159,6 +187,9 @@ jobs:
           - version: '2.7'
             type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_ruby2_7.py'
+          - version: '2.7'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/test_ruby_2_7.py'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -277,4 +308,5 @@ jobs:
           pip install -r requirements.txt
           samdev --info
           dotnet --info
+          dotnet --version
           pytest -vvv ${{ matrix.file }}
