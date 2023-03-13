@@ -27,9 +27,9 @@ jobs:
         include:
           - version: "3.7"
             file: "tests/integration/unit_test/test_unit_test_python3_7.py"
-          - version: "3.7"
+          - version: "3.8"
             file: "tests/integration/unit_test/test_unit_test_python3_8.py"
-          - version: "3.7"
+          - version: "3.9"
             file: "tests/integration/unit_test/test_unit_test_python3_9.py"
     runs-on: ubuntu-latest
     steps:
