@@ -2,35 +2,39 @@ name: Build and Test Templates
 
 on:
   pull_request:
-    branches: ["master"]
+    branches: ['master']
   
 jobs:
   run-workflow:
     name: PR Workflow
-    # if: github.repository_owner == "aws"
+    # if: github.repository_owner == 'aws'
     runs-on: ubuntu-latest
     needs:
       - build-test-python
     steps:
       - name: report-failure
-        if: needs.build-test-python.result != 'success'
+        if: |
+          needs.build-test-python.result != 'success' ||
+          needs.build-test-java.result != 'success'
         run: exit 1
       - name: report-success
         run: exit 0
 
+  ################
+  # Python
   build-test-python:
     name: Build and Test / Python ${{ matrix.version }}
-    # if: github.repository_owner == "aws"
+    # if: github.repository_owner == 'aws'
     strategy:
       fail-fast: false
       matrix:
         include:
-          - version: "3.7"
-            file: "tests/integration/unit_test/test_unit_test_python3_7.py"
-          - version: "3.8"
-            file: "tests/integration/unit_test/test_unit_test_python3_8.py"
-          - version: "3.9"
-            file: "tests/integration/unit_test/test_unit_test_python3_9.py"
+          - version: '3.7'
+            file: 'tests/integration/unit_test/test_unit_test_python3_7.py'
+          - version: '3.8'
+            file: 'tests/integration/unit_test/test_unit_test_python3_8.py'
+          - version: '3.9'
+            file: 'tests/integration/unit_test/test_unit_test_python3_9.py'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -41,6 +45,39 @@ jobs:
         name: Setup Python ${{ matrix.version }}
         with:
           python-version: ${{ matrix.version }}
+      - name: Run build tests for ${{ matrix.file }}
+        run: |
+          pip install -r requirements.txt
+          SAM_CLI_DEV=1 pytest -vvv ${{ matrix.file }} -n 4
+
+  ################
+  # Java
+  build-test-java:
+    name: Build and Test / Java ${{ matrix.version }}
+    # if: github.repository_owner == 'aws'
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - version: '8'
+            file: 'tests/integration/unit_test/test_unit_test_java8.py'
+          - version: '11'
+            file: 'tests/integration/unit_test/test_unit_test_java11.py'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout PR
+      - uses: ./.github/actions/aws-sam-cli-develop
+        name: Install develop version of AWS SAM CLI
+      - uses: actions/setup-java@v3
+        name: Setup Java ${{ matrix.version }}
+        with:
+          distribution: 'corretto'
+          java-version: ${{ matrix.version }}
+      - uses: actions/setup-python@v4
+        name: Setup Python 3.7
+        with:
+          python-version: '3.7'
       - name: Run build tests for ${{ matrix.file }}
         run: |
           pip install -r requirements.txt
