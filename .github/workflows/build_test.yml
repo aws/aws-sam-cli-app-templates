@@ -13,7 +13,7 @@ jobs:
       - build-test-python
     steps:
       - name: report-failure
-        if: needs.build-test-python.result != "success"
+        if: needs.build-test-python.result != 'success'
         run: exit 1
       - name: report-success
         run: exit 0
