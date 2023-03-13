@@ -5,7 +5,6 @@ on:
     branches: ['master']
   
 env:
-  PYTHON_VERSION_INSTALL: '3.7'
   SAM_CLI_DEV: 1
   PIP_CARGO_LAMBDA_VERSION: '0.17.1'
 
@@ -71,6 +70,8 @@ jobs:
         name: Checkout PR
       - uses: ./.github/actions/aws-sam-cli-develop
         name: Install develop version of AWS SAM CLI
+        env:
+          PYTHON_VERSION_INSTALL: ${{ matrix.version }}
       - uses: actions/setup-python@v4
         name: Setup Python ${{ matrix.version }}
         with:
@@ -231,8 +232,15 @@ jobs:
         name: Checkout PR
       - uses: ./.github/actions/aws-sam-cli-develop
         name: Install develop version of AWS SAM CLI
-      - uses: ./.github/actions/setup-rust
-        name: Setup Rust
+      - name: Setup Rust
+        run: |
+          curl --proto '=https' --tlsv1.2 --retry 10 --retry-connrefused -fsSL https://sh.rustup.rs | sh -s -- --default-toolchain none -y
+          source $HOME/.cargo/env
+          rustup toolchain install stable --profile minimal --no-self-update 
+          rustup default stable
+          rustup target add x86_64-unknown-linux-gnu --toolchain stable
+          rustup target add aarch64-unknown-linux-gnu --toolchain stable
+          pip install cargo-lambda==$PIP_CARGO_LAMBDA_VERSION
       - name: Run build tests for ${{ matrix.file }}
         run: |
           pip install -r requirements.txt
