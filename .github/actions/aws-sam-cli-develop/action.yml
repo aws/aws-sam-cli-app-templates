@@ -7,6 +7,7 @@ runs:
       with:
         repository: "aws/aws-sam-cli"
         ref: "develop"
+        path: "aws-sam-cli-develop"
     - uses: actions/setup-python@v4
       with:
         python-version: "3.7"
