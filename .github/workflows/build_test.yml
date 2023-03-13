@@ -190,7 +190,7 @@ jobs:
   ################
   # golang
   build-test-golang:
-    name: golang
+    name: golang ${{ matrix.version }}
     # if: github.repository_owner == 'aws'
     runs-on: ubuntu-latest
     strategy:
@@ -218,7 +218,7 @@ jobs:
   ################
   # dotnet
   build-test-dotnet:
-    name: dotnet
+    name: dotnet ${{ matrix.version }}
     # if: github.repository_owner == 'aws'
     runs-on: ubuntu-latest
     strategy:
@@ -237,7 +237,7 @@ jobs:
       - uses: actions/setup-dotnet@v3
         name: Setup dotnet ${{ matrix.version }}
         with:
-          go-version: ${{ matrix.version }}
+          dotnet-version: ${{ matrix.version }}
       - name: Run build tests for ${{ matrix.file }}
         run: |
           pip install -r requirements.txt
