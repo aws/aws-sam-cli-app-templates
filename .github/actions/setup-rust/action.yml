@@ -3,9 +3,9 @@ runs:
   using: "composite"
   steps:
     - uses: actions/setup-python@v4
-      name: Install Python 3.7
+      name: Install Python $PYTHON_VERSION_INSTALL
       with:
-        python-version: "3.7"
+        python-version: $PYTHON_VERSION_INSTALL
     - run: |
           curl --proto '=https' --tlsv1.2 --retry 10 --retry-connrefused -fsSL https://sh.rustup.rs | sh -s -- --default-toolchain none -y
           source $HOME/.cargo/env

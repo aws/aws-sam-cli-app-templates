@@ -5,7 +5,7 @@ on:
     branches: ['master']
   
 env:
-  INSTALL_PYTHON_VERSION: '3.7'
+  PYTHON_VERSION_INSTALL: '3.7'
   SAM_CLI_DEV: 1
   PIP_CARGO_LAMBDA_VERSION: '0.17.1'
 
@@ -64,7 +64,7 @@ jobs:
             type: 'Invoke'
             file: 'tests/integration/build_invoke/python/test_python_3_9.py'
     env:
-      INSTALL_PYTHON_VERSION: ${{ matrix.version }}
+      PYTHON_VERSION_INSTALL: ${{ matrix.version }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
