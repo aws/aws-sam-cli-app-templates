@@ -13,12 +13,14 @@ jobs:
       - build-test-python
       - build-test-java
       - build-test-nodejs
+      - build-test-ruby
     steps:
       - name: report-failure
         if: |
           needs.build-test-python.result != 'success' ||
           needs.build-test-java.result != 'success' ||
-          needs.build-test-nodejs.result != 'success'
+          needs.build-test-nodejs.result != 'success' ||
+          needs.build-test-ruby.result != 'success'
         run: exit 1
       - name: report-success
         run: exit 0
@@ -26,7 +28,7 @@ jobs:
   ################
   # Python
   build-test-python:
-    name: Build and Test / Python ${{ matrix.version }}
+    name: Python ${{ matrix.version }}
     # if: github.repository_owner == 'aws'
     strategy:
       fail-fast: false
@@ -52,12 +54,12 @@ jobs:
         run: |
           pip install -r requirements.txt
           samdev --info
-          SAM_CLI_DEV=1 pytest -vvv ${{ matrix.file }} -n 4
+          SAM_CLI_DEV=1 pytest -vvv ${{ matrix.file }}
 
   ################
   # Java
   build-test-java:
-    name: Build and Test / Java ${{ matrix.version }}
+    name: Java ${{ matrix.version }}
     # if: github.repository_owner == 'aws'
     strategy:
       fail-fast: false
@@ -78,22 +80,22 @@ jobs:
         with:
           distribution: 'corretto'
           java-version: ${{ matrix.version }}
-      - uses: actions/setup-python@v4
-        name: Setup Python 3.7
-        with:
-          python-version: '3.7'
+      # - uses: actions/setup-python@v4
+      #   name: Setup Python 3.7
+      #   with:
+      #     python-version: '3.7'
       - name: Run build tests for ${{ matrix.file }}
         run: |
           pip install -r requirements.txt
           samdev --info
           gradle --version
           mvn --version
-          SAM_CLI_DEV=1 pytest -vvv ${{ matrix.file }} -n 4
+          SAM_CLI_DEV=1 pytest -vvv ${{ matrix.file }}
           
   ################
   # NodeJS
   build-test-nodejs:
-    name: Build and Test / NodeJS ${{ matrix.version }}
+    name: NodeJS ${{ matrix.version }}
     # if: github.repository_owner == 'aws'
     strategy:
       fail-fast: false
@@ -113,10 +115,10 @@ jobs:
         name: Checkout PR
       - uses: ./.github/actions/aws-sam-cli-develop
         name: Install develop version of AWS SAM CLI
-      - uses: actions/setup-python@v4
-        name: Setup Python 3.7
-        with:
-          python-version: '3.7'
+      # - uses: actions/setup-python@v4
+      #   name: Setup Python 3.7
+      #   with:
+      #     python-version: '3.7'
       - uses: actions/setup-node@v3
         name: Setup NodeJS ${{ matrix.version }}
         with:
@@ -126,4 +128,69 @@ jobs:
           pip install -r requirements.txt
           samdev --info
           node --version
-          SAM_CLI_DEV=1 pytest -vvv ${{ matrix.file }} -n 4
+          SAM_CLI_DEV=1 pytest -vvv ${{ matrix.file }}
+          
+  ################
+  # Ruby
+  build-test-ruby:
+    name: Ruby ${{ matrix.version }}
+    # if: github.repository_owner == 'aws'
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - version: '2.7'
+            file: 'tests/integration/unit_test/test_unit_test_ruby2_7.py'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout PR
+      - uses: ./.github/actions/aws-sam-cli-develop
+        name: Install develop version of AWS SAM CLI
+      # - uses: actions/setup-python@v4
+      #   name: Setup Python 3.7
+      #   with:
+      #     python-version: '3.7'
+      - uses: ruby/setup-ruby@v1
+        name: Setup Ruby ${{ matrix.version }}
+        with:
+          ruby-version: ${{ matrix.version }}
+      - name: Run build tests for ${{ matrix.file }}
+        run: |
+          pip install -r requirements.txt
+          samdev --info
+          ruby --version
+          SAM_CLI_DEV=1 pytest -vvv ${{ matrix.file }}
+          
+  ################
+  # Rust
+  build-test-rust:
+    name: Rust
+    # if: github.repository_owner == 'aws'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout PR
+      - uses: ./.github/actions/aws-sam-cli-develop
+        name: Install develop version of AWS SAM CLI
+      # - uses: actions/setup-python@v4
+      #   name: Setup Python 3.7
+      #   with:
+      #     python-version: '3.7'
+      - name: Setup Rust
+        run: |
+          curl --proto '=https' --tlsv1.2 --retry 10 --retry-connrefused -fsSL https://sh.rustup.rs | sh -s -- --default-toolchain none -y
+          source $HOME/.cargo/env
+          rustup toolchain install stable --profile minimal --no-self-update 
+          rustup default stable
+          rustup target add x86_64-unknown-linux-gnu --toolchain stable
+          rustup target add aarch64-unknown-linux-gnu --toolchain stable
+          pip install cargo-lambda==0.17.1
+      - name: Run build tests for tests/integration/unit_test/test_unit_test_rust.py
+        run: |
+          pip install -r requirements.txt
+          samdev --info
+          rustc -V
+          cargo -V
+          cargo lambda -V
+          SAM_CLI_DEV=1 pytest -vvv tests/integration/unit_test/test_unit_test_rust.py
