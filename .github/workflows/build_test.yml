@@ -35,7 +35,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         name: Checkout PR
-      - uses: actions/aws-sam-cli-develop@v1
+      - uses: ./.github/actions/aws-sam-cli-develop
       - uses: actions/setup-python@v4
         name: Setup Python ${{ matrix.python }}
         with:
