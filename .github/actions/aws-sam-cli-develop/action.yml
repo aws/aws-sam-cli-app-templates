@@ -11,3 +11,4 @@ runs:
       with:
         python-version: "3.7"
     - run: make init
+      shell: bash
