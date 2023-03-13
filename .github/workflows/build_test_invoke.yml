@@ -3,8 +3,9 @@ name: Build
 on:
   pull_request:
     branches: ['master']
-  
+
 env:
+  PYTHON_VERSION_INSTALL: '3.7'
   SAM_CLI_DEV: 1
   PIP_CARGO_LAMBDA_VERSION: '0.17.1'
 
