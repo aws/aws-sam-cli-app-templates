@@ -13,6 +13,9 @@ Globals: # More info about Globals: https://github.com/awslabs/serverless-applic
   Api:
     TracingEnabled: true
   {%- endif %}
+  Api:
+    # More info about OpenApiVersion: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-api.html#sam-api-openapiversion
+    OpenApiVersion: 3.0.1
 
 Resources:
   HelloWorldFunction:

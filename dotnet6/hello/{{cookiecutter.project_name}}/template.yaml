@@ -8,6 +8,9 @@ Globals:
   Function:
     Timeout: 10
     MemorySize: 128
+  Api:
+    # More info about OpenApiVersion: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-api.html#sam-api-openapiversion
+    OpenApiVersion: 3.0.1
 
 Resources:
   HelloWorldFunction:
