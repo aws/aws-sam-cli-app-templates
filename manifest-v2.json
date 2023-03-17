@@ -165,6 +165,14 @@
       "appTemplate": "quick-start-web",
       "packageType": "Zip",
       "useCaseName": "Serverless API"
+    },
+    {
+      "directory": "dotnet6/s3",
+      "displayName": "Quick Start: S3",
+      "dependencyManager": "cli-package",
+      "appTemplate": "quick-start-s3",
+      "packageType": "Zip",
+      "useCaseName": "Data processing"
     }
   ],
   "aot.dotnet7 (provided.al2)": [

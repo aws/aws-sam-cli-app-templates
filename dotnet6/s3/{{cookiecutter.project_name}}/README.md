@@ -7,7 +7,8 @@ This project contains source code and supporting files for a serverless applicat
 - test - Unit tests for the application code. 
 - template.yaml - A template that defines the application's AWS resources.
 
-The application uses several AWS resources, including Lambda functions and an API Gateway API. These resources are defined in the `template.yaml` file in this project. You can update the template to add AWS resources through the same deployment process that updates your application code.
+
+Resources for this project are defined in the `template.yaml` file in this project. You can update the template to add AWS resources through the same deployment process that updates your application code.
 
 If you prefer to use an integrated development environment (IDE) to build and test your application, you can use the AWS Toolkit.  
 The AWS Toolkit is an open source plug-in for popular IDEs that uses the SAM CLI to build and deploy serverless applications on AWS. The AWS Toolkit also adds a simplified step-through debugging experience for Lambda function code. See the following links to get started.
@@ -45,11 +46,10 @@ The first command will build the source of your application. The second command 
 
 * **Stack Name**: The name of the stack to deploy to CloudFormation. This should be unique to your account and region, and a good starting point would be something matching your project name.
 * **AWS Region**: The AWS region you want to deploy your app to.
+* **Parameter AppBucketName**: This template includes a parameter to name the S3 bucket you will create as a part of the new application. This name needs to be globally unique.
 * **Confirm changes before deploy**: If set to yes, any change sets will be shown to you before execution for manual review. If set to no, the AWS SAM CLI will automatically deploy application changes.
 * **Allow SAM CLI IAM role creation**: Many AWS SAM templates, including this example, create AWS IAM roles required for the AWS Lambda function(s) included to access AWS services. By default, these are scoped down to minimum required permissions. To deploy an AWS CloudFormation stack which creates or modifies IAM roles, the `CAPABILITY_IAM` value for `capabilities` must be provided. If permission isn't provided through this prompt, to deploy this example you must explicitly pass `--capabilities CAPABILITY_IAM` to the `sam deploy` command.
 * **Save arguments to samconfig.toml**: If set to yes, your choices will be saved to a configuration file inside the project, so that in the future you can just re-run `sam deploy` without parameters to deploy changes to your application.
-
-You can find your API Gateway Endpoint URL in the output values displayed after deployment.
 
 ## Use the SAM CLI to build and test locally
 
@@ -66,29 +66,54 @@ Test a single function by invoking it directly with a test event. An event is a 
 Run functions locally and invoke them with the `sam local invoke` command.
 
 ```bash
-{{ cookiecutter.project_name }}$ sam local invoke HelloWorldFunction --event events/event.json
-```
-
-The SAM CLI can also emulate your application's API. Use the `sam local start-api` to run the API locally on port 3000.
-
-```bash
-{{ cookiecutter.project_name }}$ sam local start-api
-{{ cookiecutter.project_name }}$ curl http://localhost:3000/
-```
-
-The SAM CLI reads the application template to determine the API's routes and the functions that they invoke. The `Events` property on each function's definition includes the route and method for each path.
-
-```yaml
-      Events:
-        HelloWorld:
-          Type: Api
-          Properties:
-            Path: /hello
-            Method: get
+{{ cookiecutter.project_name }}$ sam local invoke S3JsonLoggerFunction --event events/event.json
 ```
 
 ## Add a resource to your application
-The application template uses AWS Serverless Application Model (AWS SAM) to define application resources. AWS SAM is an extension of AWS CloudFormation with a simpler syntax for configuring common serverless application resources such as functions, triggers, and APIs. For resources not included in [the SAM specification](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md), you can use standard [AWS CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html) resource types.
+
+The application template uses AWS SAM to define application resources. AWS SAM is an extension of AWS CloudFormation with a simpler syntax for configuring common serverless application resources, such as functions, triggers, and APIs. For resources that aren't included in the [AWS SAM specification](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md), you can use the standard [AWS CloudFormation resource types](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html).
+
+Update `template.yaml` to add a dead-letter queue to your application. In the **Resources** section, add a resource named **MyQueue** with the type **AWS::SQS::Queue**. Then add a property to the **AWS::Serverless::Function** resource named **DeadLetterQueue** that targets the queue's Amazon Resource Name (ARN), and a policy that grants the function permission to access the queue.
+
+```yaml
+Resources:
+  MyQueue:
+    Type: AWS::SQS::Queue
+  S3JsonLoggerFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ./src/{{cookiecutter.project_name}}/
+      Handler: {{cookiecutter.project_name}}::{{cookiecutter.project_name}}.Function::FunctionHandler
+      Runtime: dotnet6
+      MemorySize: 256
+      DeadLetterQueue:
+        Type: SQS
+        TargetArn: !GetAtt MyQueue.Arn
+      Policies:
+        - SQSSendMessagePolicy:
+            QueueName: !GetAtt MyQueue.QueueName
+        - S3NewObjectEvent:
+            Type: S3
+            Properties:
+              Bucket: !Ref AppBucket
+              Events: s3:ObjectCreated:*
+              Filter:
+                S3Key:
+                  Rules:
+                    - Name: suffix
+                      Value: ".json"
+```
+
+The dead-letter queue is a location for Lambda to send events that could not be processed. It's only used if you invoke your function asynchronously, but it's useful here to show how you can modify your application's resources and function configuration.
+
+Deploy the updated application.
+
+```bash
+my-application$ sam build
+my-application$ sam deploy
+```
+
+Open the [**Applications**](https://console.aws.amazon.com/lambda/home#/applications) page of the Lambda console, and choose your application. When the deployment completes, view the application resources on the **Overview** tab to see the new resource. Then, choose the function to see the updated configuration that specifies the dead-letter queue.
 
 ## Fetch, tail, and filter Lambda function logs
 
@@ -97,7 +122,7 @@ To simplify troubleshooting, SAM CLI has a command called `sam logs`. `sam logs`
 `NOTE`: This command works for all AWS Lambda functions; not just the ones you deploy using SAM.
 
 ```bash
-{{ cookiecutter.project_name }}$ sam logs -n HelloWorldFunction --stack-name {{ cookiecutter.project_name }} --tail
+{{ cookiecutter.project_name }}$ sam logs -n S3JsonLoggerFunction --stack-name {{ cookiecutter.project_name }} --tail
 ```
 
 You can find more information and examples about filtering Lambda function logs in the [SAM CLI Documentation](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-logging.html).
@@ -107,7 +132,7 @@ You can find more information and examples about filtering Lambda function logs 
 Tests are defined in the `test` folder in this project.
 
 ```bash
-{{ cookiecutter.project_name }}$ dotnet test test/HelloWorld.Test
+{{ cookiecutter.project_name }}$ dotnet test test/S3JsonLogger.Tests/S3JsonLogger.Tests.csproj 
 ```
 
 ## Cleanup
