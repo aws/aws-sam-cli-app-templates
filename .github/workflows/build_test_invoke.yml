@@ -267,6 +267,8 @@ jobs:
           - version: '1.x'
             type: 'Invoke'
             file: 'tests/integration/build_invoke/test_build_invoke_go1_x.py'
+    env:
+      CGO_ENABLED: 0
     steps:
       - uses: actions/checkout@v3
         name: Checkout PR
