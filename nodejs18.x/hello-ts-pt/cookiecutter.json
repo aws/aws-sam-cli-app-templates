@@ -1,0 +1,14 @@
+{
+    "project_name": "Name of the project",
+    "runtime": "nodejs18.x",
+    "architectures": {
+        "value": []
+    },
+    "Powertools Tracing": ["enabled","disabled"],
+    "Powertools Metrics": ["enabled","disabled"],
+    "Powertools Logging": ["enabled","disabled"],
+    "_copy_without_render": [
+        ".gitignore"
+    ]
+
+}

@@ -25,6 +25,8 @@ LOG = getLogger(__name__)
 LOG.addHandler(StreamHandler())
 LOG.setLevel(INFO)
 
+# NOTE: Using `samdev` as against `sam` in cmdlist enables test with samcli in your dev environment.
+SAM_CLI_EXECUTABLE = "samdev" if os.getenv("SAM_CLI_DEV") else "sam"
 
 def run_command(command_list, cwd=None, env=None, timeout=TIMEOUT) -> CommandResult:
     if not env:
@@ -59,6 +61,8 @@ class Base:
         def setUp(self) -> None:
             self.tempdir = tempfile.TemporaryDirectory()
             self.cwd = Path(self.tempdir.name, PROJECT_NAME)
+            self.template_path = Path(REPO_ROOT, self.directory)
+
             LOG.info(f"Temporary directory {self.tempdir.name} created")
 
         def tearDown(self) -> None:
@@ -66,16 +70,35 @@ class Base:
             self.tempdir.cleanup()
 
         def _test_init_template(self):
-            template_path = Path(REPO_ROOT, self.directory)
             cmdlist = [
-                "sam",
+                SAM_CLI_EXECUTABLE,
                 "init",
                 "--no-input",
                 "--location",
-                template_path,
+                self.template_path,
                 "--name",
                 PROJECT_NAME,
             ]
-            LOG.info(cmdlist)
+            LOG.info("Running command: %s", " ".join(map(lambda x: str(x), cmdlist)))
             run_command(cmdlist, self.tempdir.name)
             self.assertTrue(self.cwd.exists())
+
+            self._test_file_path_lengths()
+
+        def _test_file_path_lengths(self):
+            """
+            Tests the length of the file paths to make sure
+            we are under Windows' max path length limit
+            """
+
+            # drive + user folder + max length username + temp folder + template folder
+            MOCK_WINDOWS_PATH = "C:/Users/abcdefghijklmnopqrst/AppData/Local/Temp/2/tmp0h55doro/tmpl"
+            WINDOWS_MAX_PATH = 260
+
+            for root, _, files in os.walk(self.template_path):
+                for file in files:
+                    file_full_path = os.path.join(root, file)
+                    file_rel_path = os.path.relpath(file_full_path, REPO_ROOT)
+
+                    file_windows_path = os.path.join(MOCK_WINDOWS_PATH, file_rel_path)
+                    self.assertLess(len(file_windows_path), WINDOWS_MAX_PATH)

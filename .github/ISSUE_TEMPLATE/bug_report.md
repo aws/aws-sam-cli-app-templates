@@ -2,7 +2,7 @@
 name: Bug report
 about: Create an issue to report a bug for AWS SAM CLI Application Templates
 title: "Bug: TITLE"
-labels: ['type/bug', 'stage/needs-triage']
+labels: ['stage/needs-triage']
 assignees: ''
 
 ---

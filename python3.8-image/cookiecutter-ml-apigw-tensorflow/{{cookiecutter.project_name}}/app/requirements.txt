@@ -1,2 +1,0 @@
-tensorflow==2.8.1
-pillow==9.0.1
