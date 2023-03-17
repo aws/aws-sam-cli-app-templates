@@ -9,8 +9,12 @@ Globals:
     Timeout: 20
     Runtime: provided.al2
     MemorySize: 256
+    {%- if cookiecutter.architectures.value != []%}
     Architectures:
-      - x86_64
+    {%- for arch in cookiecutter.architectures.value %}
+      - {{arch}}
+    {%- endfor %}
+    {%- endif %}
     Tracing: Active # https://docs.aws.amazon.com/lambda/latest/dg/lambda-x-ray.html
 
 Resources:
