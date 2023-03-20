@@ -12,7 +12,7 @@ env:
 jobs:
   run-workflow:
     name: Build & Test & Invoke Templates
-    # if: github.repository_owner == 'aws'
+    if: github.repository_owner == 'aws'
     runs-on: ubuntu-latest
     needs:
       - build-test-python
@@ -40,7 +40,7 @@ jobs:
   # Python
   build-test-python:
     name: ${{ matrix.type }} / Python ${{ matrix.version }}
-    # if: github.repository_owner == 'aws'
+    if: github.repository_owner == 'aws'
     strategy:
       fail-fast: false
       matrix:
@@ -87,7 +87,7 @@ jobs:
   # Java
   build-test-java:
     name: ${{ matrix.type }} / Java ${{ matrix.version }}
-    # if: github.repository_owner == 'aws'
+    if: github.repository_owner == 'aws'
     strategy:
       fail-fast: false
       matrix:
@@ -136,7 +136,7 @@ jobs:
   # NodeJS
   build-test-nodejs:
     name: ${{ matrix.type }} / NodeJS ${{ matrix.version }}
-    # if: github.repository_owner == 'aws'
+    if: github.repository_owner == 'aws'
     strategy:
       fail-fast: false
       matrix:
@@ -186,7 +186,7 @@ jobs:
   # Ruby
   build-test-ruby:
     name: ${{ matrix.type }} / Ruby ${{ matrix.version }}
-    # if: github.repository_owner == 'aws'
+    if: github.repository_owner == 'aws'
     strategy:
       fail-fast: false
       matrix:
@@ -218,7 +218,7 @@ jobs:
   # Rust
   build-test-rust:
     name: ${{ matrix.type }} / Rust
-    # if: github.repository_owner == 'aws'
+    if: github.repository_owner == 'aws'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -255,7 +255,7 @@ jobs:
   # golang
   build-test-golang:
     name: ${{ matrix.type }} / golang ${{ matrix.version }}
-    # if: github.repository_owner == 'aws'
+    if: github.repository_owner == 'aws'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -289,7 +289,7 @@ jobs:
   # dotnet
   build-test-dotnet:
     name: ${{ matrix.type }} / dotnet ${{ matrix.version }}
-    # if: github.repository_owner == 'aws'
+    if: github.repository_owner == 'aws'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
