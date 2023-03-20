@@ -37,3 +37,8 @@ class BuildInvoke_python3_8_cookiecutter_aws_sam_step_functions_sample_app(Build
 
 class BuildInvoke_python3_8_cookiecutter_aws_sam_efs_python(BuildInvokeBase.BuildInvokeBase):
     directory = "python3.8/efs"
+
+class BuildInvoke_image_python3_8_cookiecutter_aws_sam_hello_python_lambda_image(
+    BuildInvokeBase.SimpleHelloWorldBuildInvokeBase
+):
+    directory = "python3.8/hello-img"

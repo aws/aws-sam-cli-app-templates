@@ -49,3 +49,14 @@ class BuildInvoke_java8_al2_cookiecutter_aws_sam_step_functions_sample_app_gradl
 class BuildInvoke_java8_al2_cookiecutter_aws_sam_step_functions_sample_app_maven(BuildInvokeBase.BuildInvokeBase):
     directory = "java8.al2/step-func-maven"
 
+
+class BuildInvoke_image_java8_al2_cookiecutter_aws_sam_hello_java_gradle_lambda_image(
+    BuildInvokeBase.HelloWorldWithLocationBuildInvokeBase
+):
+    directory = "java8.al2/hello-img-gradle"
+
+
+class BuildInvoke_image_java8_al2_cookiecutter_aws_sam_hello_java_maven_lambda_image(
+    BuildInvokeBase.HelloWorldWithLocationBuildInvokeBase
+):
+    directory = "java8.al2/hello-img-maven"

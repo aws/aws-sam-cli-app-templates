@@ -33,3 +33,8 @@ class BuildInvoke_python3_7_cookiecutter_aws_sam_eventbridge_schema_app_python(B
 
 class BuildInvoke_python3_7_cookiecutter_aws_sam_step_functions_sample_app(BuildInvokeBase.BuildInvokeBase):
     directory = "python3.7/step-func"
+
+class BuildInvoke_image_python3_7_cookiecutter_aws_sam_hello_python_lambda_image(
+    (BuildInvokeBase.SimpleHelloWorldBuildInvokeBase)
+):
+    directory = "python3.7/hello-img"

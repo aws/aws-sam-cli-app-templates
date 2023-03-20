@@ -47,3 +47,8 @@ class BuildInvoke_nodejs12_x_cookiecutter_quick_start_sqs(BuildInvokeBase.BuildI
 
 class BuildInvoke_nodejs12_x_cookiecutter_quick_start_web(BuildInvokeBase.QuickStartWebBuildInvokeBase):
     directory = "nodejs12.x/web"
+
+class BuildInvoke_image_nodejs12_x_cookiecutter_aws_sam_hello_nodejs_lambda_image(
+    BuildInvokeBase.SimpleHelloWorldBuildInvokeBase
+):
+    directory = "nodejs12.x/hello-img"

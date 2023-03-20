@@ -39,3 +39,8 @@ class BuildInvoke_python3_9_cookiecutter_aws_sam_efs_python(BuildInvokeBase.Buil
 
 
 # if we want to check response json, we need to setup efs
+
+class BuildInvoke_image_python3_9_cookiecutter_aws_sam_hello_python_lambda_image(
+    BuildInvokeBase.SimpleHelloWorldBuildInvokeBase
+):
+    directory = "python3.9/hello-img"
