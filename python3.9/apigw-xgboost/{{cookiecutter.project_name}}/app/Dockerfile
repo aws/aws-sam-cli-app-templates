@@ -1,8 +1,9 @@
 FROM public.ecr.aws/lambda/python:3.9
 
-COPY app.py requirements.txt ./
-COPY model /opt/ml/model
-
+COPY requirements.txt ./
 RUN python3.9 -m pip install -r requirements.txt -t .
+
+COPY app.py ./
+COPY model /opt/ml/model
 
 CMD ["app.lambda_handler"]

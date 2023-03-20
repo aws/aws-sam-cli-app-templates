@@ -3,8 +3,8 @@ Transform: AWS::Serverless-2016-10-31
 Description: >
   Sample SAM Template with AWS Lambda Powertools for {{ cookiecutter.project_name }}
 
-
-Globals: # More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
   Function:
     Timeout: 10
     MemorySize: 256
