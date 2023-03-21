@@ -1,0 +1,328 @@
+name: Build
+
+on:
+  pull_request:
+    branches: ['master']
+
+env:
+  PYTHON_VERSION_INSTALL: '3.7'
+  SAM_CLI_DEV: 1
+  PIP_CARGO_LAMBDA_VERSION: '0.17.1'
+
+jobs:
+  run-workflow:
+    name: Build & Test & Invoke Templates
+    if: github.repository_owner == 'aws'
+    runs-on: ubuntu-latest
+    needs:
+      - build-test-python
+      - build-test-java
+      - build-test-nodejs
+      - build-test-ruby
+      - build-test-rust
+      - build-test-golang
+      - build-test-dotnet
+    steps:
+      - name: report-failure
+        if: |
+          needs.build-test-python.result != 'success' ||
+          needs.build-test-java.result != 'success' ||
+          needs.build-test-nodejs.result != 'success' ||
+          needs.build-test-ruby.result != 'success' ||
+          needs.build-test-rust.result != 'success' ||
+          needs.build-test-golang.result != 'success' ||
+          needs.build-test-dotnet.result != 'success'
+        run: exit 1
+      - name: report-success
+        run: exit 0
+
+  ################
+  # Python
+  build-test-python:
+    name: ${{ matrix.type }} / Python ${{ matrix.version }}
+    if: github.repository_owner == 'aws'
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - version: '3.7'
+            type: 'Test'
+            file: 'tests/integration/unit_test/test_unit_test_python3_7.py'
+          - version: '3.7'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/python/test_python_3_7.py'
+          - version: '3.8'
+            type: 'Test'
+            file: 'tests/integration/unit_test/test_unit_test_python3_8.py'
+          - version: '3.8'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/python/test_python_3_8.py'
+          - version: '3.9'
+            type: 'Test'
+            file: 'tests/integration/unit_test/test_unit_test_python3_9.py'
+          - version: '3.9'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/python/test_python_3_9.py'
+    env:
+      PYTHON_VERSION_INSTALL: ${{ matrix.version }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout PR
+      - uses: ./.github/actions/aws-sam-cli-develop
+        name: Install develop version of AWS SAM CLI
+        env:
+          PYTHON_VERSION_INSTALL: ${{ matrix.version }}
+      - uses: actions/setup-python@v4
+        name: Setup Python ${{ matrix.version }}
+        with:
+          python-version: ${{ matrix.version }}
+      - name: Run build tests for ${{ matrix.file }}
+        run: |
+          pip install -r requirements.txt
+          samdev --info
+          pytest -vvv ${{ matrix.file }}
+
+  ################
+  # Java
+  build-test-java:
+    name: ${{ matrix.type }} / Java ${{ matrix.version }}
+    if: github.repository_owner == 'aws'
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - version: '8'
+            type: 'Test'
+            file: 'tests/integration/unit_test/test_unit_test_java8.py'
+          - version: '8'
+            type: 'Test (AL2)'
+            file: 'tests/integration/unit_test/test_unit_test_java8_al2.py'
+          - version: '8'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/java/test_java_8.py'
+          - version: '8'
+            type: 'Invoke (AL2)'
+            file: 'tests/integration/build_invoke/java/test_java_8_al2.py'
+          - version: '11'
+            type: 'Test'
+            file: 'tests/integration/unit_test/test_unit_test_java11.py'
+          - version: '11'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/java/test_java_11.py'
+          - version: '11'
+            type: 'Invoke (AL2)'
+            file: 'tests/integration/build_invoke/java/test_java_11_al2.py'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout PR
+      - uses: ./.github/actions/aws-sam-cli-develop
+        name: Install develop version of AWS SAM CLI
+      - uses: actions/setup-java@v3
+        name: Setup Java ${{ matrix.version }}
+        with:
+          distribution: 'corretto'
+          java-version: ${{ matrix.version }}
+      - name: Run build tests for ${{ matrix.file }}
+        run: |
+          pip install -r requirements.txt
+          samdev --info
+          gradle --version
+          mvn --version
+          pytest -vvv ${{ matrix.file }}
+          
+  ################
+  # NodeJS
+  build-test-nodejs:
+    name: ${{ matrix.type }} / NodeJS ${{ matrix.version }}
+    if: github.repository_owner == 'aws'
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - version: '12'
+            type: 'Test'
+            file: 'tests/integration/unit_test/test_unit_test_nodejs12_x.py'
+          - version: '12'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/node/test_node_12.py'
+          - version: '14'
+            type: 'Test'
+            file: 'tests/integration/unit_test/test_unit_test_nodejs14_x.py'
+          - version: '14'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/node/test_node_14.py'
+          - version: '16'
+            type: 'Test'
+            file: 'tests/integration/unit_test/test_unit_test_nodejs16_x.py'
+          - version: '16'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/node/test_node_16.py'
+          - version: '18'
+            type: 'Test'
+            file: 'tests/integration/unit_test/test_unit_test_nodejs18_x.py'
+          - version: '18'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/node/test_node_18.py'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout PR
+      - uses: ./.github/actions/aws-sam-cli-develop
+        name: Install develop version of AWS SAM CLI
+      - uses: actions/setup-node@v3
+        name: Setup NodeJS ${{ matrix.version }}
+        with:
+          node-version: ${{ matrix.version }}
+      - name: Run build tests for ${{ matrix.file }}
+        run: |
+          pip install -r requirements.txt
+          samdev --info
+          node --version
+          pytest -vvv ${{ matrix.file }}
+          
+  ################
+  # Ruby
+  build-test-ruby:
+    name: ${{ matrix.type }} / Ruby ${{ matrix.version }}
+    if: github.repository_owner == 'aws'
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - version: '2.7'
+            type: 'Test'
+            file: 'tests/integration/unit_test/test_unit_test_ruby2_7.py'
+          - version: '2.7'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/test_ruby_2_7.py'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout PR
+      - uses: ./.github/actions/aws-sam-cli-develop
+        name: Install develop version of AWS SAM CLI
+      - uses: ruby/setup-ruby@v1
+        name: Setup Ruby ${{ matrix.version }}
+        with:
+          ruby-version: ${{ matrix.version }}
+      - name: Run build tests for ${{ matrix.file }}
+        run: |
+          pip install -r requirements.txt
+          samdev --info
+          ruby --version
+          pytest -vvv ${{ matrix.file }}
+          
+  ################
+  # Rust
+  build-test-rust:
+    name: ${{ matrix.type }} / Rust
+    if: github.repository_owner == 'aws'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - type: 'Test'
+            file: 'tests/integration/unit_test/test_unit_test_rust.py'
+          - type: 'Invoke'
+            file: 'tests/integration/build_invoke/test_build_invoke_rust.py'
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout PR
+      - uses: ./.github/actions/aws-sam-cli-develop
+        name: Install develop version of AWS SAM CLI
+      - name: Setup Rust
+        run: |
+          curl --proto '=https' --tlsv1.2 --retry 10 --retry-connrefused -fsSL https://sh.rustup.rs | sh -s -- --default-toolchain none -y
+          source $HOME/.cargo/env
+          rustup toolchain install stable --profile minimal --no-self-update 
+          rustup default stable
+          rustup target add x86_64-unknown-linux-gnu --toolchain stable
+          rustup target add aarch64-unknown-linux-gnu --toolchain stable
+          pip install cargo-lambda==$PIP_CARGO_LAMBDA_VERSION
+      - name: Run build tests for ${{ matrix.file }}
+        run: |
+          pip install -r requirements.txt
+          samdev --info
+          rustc -V
+          cargo -V
+          cargo lambda -V
+          pytest -vvv ${{ matrix.file }}
+
+  ################
+  # golang
+  build-test-golang:
+    name: ${{ matrix.type }} / golang ${{ matrix.version }}
+    if: github.repository_owner == 'aws'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - version: '1.x'
+            type: 'Test'
+            file: 'tests/integration/unit_test/test_unit_test_go1_x.py'
+          - version: '1.x'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/test_build_invoke_go1_x.py'
+    env:
+      CGO_ENABLED: 0
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout PR
+      - uses: ./.github/actions/aws-sam-cli-develop
+        name: Install develop version of AWS SAM CLI
+      - uses: actions/setup-go@v3
+        name: Setup golang ${{ matrix.version }}
+        with:
+          go-version: ${{ matrix.version }}
+      - name: Run build tests for ${{ matrix.file }}
+        run: |
+          pip install -r requirements.txt
+          samdev --info
+          go version
+          pytest -vvv ${{ matrix.file }}
+
+  ################
+  # dotnet
+  build-test-dotnet:
+    name: ${{ matrix.type }} / dotnet ${{ matrix.version }}
+    if: github.repository_owner == 'aws'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - version: '3.1'
+            type: 'Test'
+            file: 'tests/integration/unit_test/test_unit_test_dotnetcore3_1.py'
+          - version: '3.1'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/dotnet/test_build_invoke_dotnetcore3_1.py'
+          - version: '5'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/dotnet/test_build_invoke_dotnet5_0.py'
+          - version: '6'
+            type: 'Test'
+            file: 'tests/integration/unit_test/test_unit_test_dotnet6.py'
+          - version: '6'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/dotnet/test_build_invoke_dotnet6.py'
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout PR
+      - uses: ./.github/actions/aws-sam-cli-develop
+        name: Install develop version of AWS SAM CLI
+      - uses: actions/setup-dotnet@v3
+        name: Setup dotnet ${{ matrix.version }}
+        with:
+          dotnet-version: ${{ matrix.version }}
+      - name: Run build tests for ${{ matrix.file }}
+        run: |
+          pip install -r requirements.txt
+          samdev --info
+          dotnet --info
+          dotnet --version
+          pytest -vvv ${{ matrix.file }}
