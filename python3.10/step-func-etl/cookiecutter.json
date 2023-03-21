@@ -1,0 +1,7 @@
+{
+    "project_name": "sample-glue-etl-project",
+    "runtime": "python3.10",
+    "_copy_without_render": [
+        ".gitignore"
+    ]
+}
