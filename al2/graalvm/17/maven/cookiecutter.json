@@ -1,7 +1,9 @@
 {
     "project_name": "Name of the project",
     "architectures": {
-        "value": []
+        "value": [
+            ["x86_64"]
+        ]
     },
     "_copy_without_render": [
         ".gitignore"
