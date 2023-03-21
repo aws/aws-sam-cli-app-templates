@@ -1265,7 +1265,7 @@
   ],
   "amazon/python3.10-base": [
     {
-      "directory": "python3.10-image/cookiecutter-aws-sam-hello-python-lambda-image",
+      "directory": "python3.10/hello-img",
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "pip",
       "appTemplate": "hello-world-lambda-image",
@@ -1273,7 +1273,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "python3.10-image/cookiecutter-ml-apigw-pytorch",
+      "directory": "python3.10/apigw-pytorch",
       "displayName": "PyTorch Machine Learning Inference API",
       "dependencyManager": "pip",
       "appTemplate": "ml-apigw-pytorch",
@@ -1281,7 +1281,7 @@
       "useCaseName": "Machine Learning"
     },
     {
-      "directory": "python3.10-image/cookiecutter-ml-apigw-scikit-learn",
+      "directory": "python3.10/apigw-scikit",
       "displayName": "Scikit-learn Machine Learning Inference API",
       "dependencyManager": "pip",
       "appTemplate": "ml-apigw-scikit-learn",
@@ -1289,7 +1289,7 @@
       "useCaseName": "Machine Learning"
     },
     {
-      "directory": "python3.10-image/cookiecutter-ml-apigw-tensorflow",
+      "directory": "python3.10/apigw-tensorflow",
       "displayName": "Tensorflow Machine Learning Inference API",
       "dependencyManager": "pip",
       "appTemplate": "ml-apigw-tensorflow",
@@ -1297,7 +1297,7 @@
       "useCaseName": "Machine Learning"
     },
     {
-      "directory": "python3.10-image/cookiecutter-ml-apigw-xgboost",
+      "directory": "python3.10/apigw-xgboost",
       "displayName": "XGBoost Machine Learning Inference API",
       "dependencyManager": "pip",
       "appTemplate": "ml-apigw-xgboost",
