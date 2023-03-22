@@ -122,6 +122,9 @@ class UnitTestBase:
     class Python39UnitTestBase(PythonUnitTestBase):
         python_executable = "python3.9"
 
+    class Python310UnitTestBase(PythonUnitTestBase):
+        python_executable = "python3.10"
+
     class JavaUnitTestGradleBase(UnitTestBase):
         """
         Execute the following commands:

@@ -1056,6 +1056,73 @@
       "useCaseName": "Multi-step workflow with Connectors"
     }
   ],
+  "python3.10": [
+    {
+      "directory": "python3.10/hello",
+      "displayName": "Hello World Example",
+      "dependencyManager": "pip",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "python3.10/hello-pt",
+      "displayName": "Hello World Example With Powertools",
+      "dependencyManager": "pip",
+      "appTemplate": "hello-world-powertools-python",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example With Powertools"
+    },
+    {
+      "directory": "python3.10/event-bridge",
+      "displayName": "EventBridge Hello World",
+      "dependencyManager": "pip",
+      "appTemplate": "eventBridge-hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
+    },
+    {
+      "directory": "python3.10/event-bridge-schema",
+      "displayName": "EventBridge App from scratch (100+ Event Schemas)",
+      "dependencyManager": "pip",
+      "appTemplate": "eventBridge-schema-app",
+      "isDynamicTemplate": "True",
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
+    },
+    {
+      "directory": "python3.10/step-func",
+      "displayName": "Step Functions Sample App (Stock Trader)",
+      "dependencyManager": "pip",
+      "appTemplate": "step-functions-sample-app",
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow"
+    },
+    {
+      "directory": "python3.10/efs",
+      "displayName": "Elastic File System Sample App",
+      "dependencyManager": "pip",
+      "appTemplate": "efs-sample-app",
+      "packageType": "Zip",
+      "useCaseName": "Lambda EFS example"
+    },
+    {
+      "directory": "python3.10/web-conn",
+      "displayName": "Quick Start: Web Backend With Connectors",
+      "dependencyManager": "pip",
+      "appTemplate": "hello-world-connector",
+      "packageType": "Zip",
+      "useCaseName": "Serverless Connector Hello World Example"
+    },
+    {
+      "directory": "python3.10/step-func-conn",
+      "displayName": "Step Functions Sample App (Stock Trader) With Connectors",
+      "dependencyManager": "pip",
+      "appTemplate": "step-functions-with-connectors",
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow with Connectors"
+    }
+  ],
   "ruby2.7": [
     {
       "directory": "ruby2.7/hello",
@@ -1189,6 +1256,48 @@
     },
     {
       "directory": "python3.9/apigw-xgboost",
+      "displayName": "XGBoost Machine Learning Inference API",
+      "dependencyManager": "pip",
+      "appTemplate": "ml-apigw-xgboost",
+      "packageType": "Image",
+      "useCaseName": "Machine Learning"
+    }
+  ],
+  "amazon/python3.10-base": [
+    {
+      "directory": "python3.10/hello-img",
+      "displayName": "Hello World Lambda Image Example",
+      "dependencyManager": "pip",
+      "appTemplate": "hello-world-lambda-image",
+      "packageType": "Image",
+      "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "python3.10/apigw-pytorch",
+      "displayName": "PyTorch Machine Learning Inference API",
+      "dependencyManager": "pip",
+      "appTemplate": "ml-apigw-pytorch",
+      "packageType": "Image",
+      "useCaseName": "Machine Learning"
+    },
+    {
+      "directory": "python3.10/apigw-scikit",
+      "displayName": "Scikit-learn Machine Learning Inference API",
+      "dependencyManager": "pip",
+      "appTemplate": "ml-apigw-scikit-learn",
+      "packageType": "Image",
+      "useCaseName": "Machine Learning"
+    },
+    {
+      "directory": "python3.10/apigw-tensorflow",
+      "displayName": "Tensorflow Machine Learning Inference API",
+      "dependencyManager": "pip",
+      "appTemplate": "ml-apigw-tensorflow",
+      "packageType": "Image",
+      "useCaseName": "Machine Learning"
+    },
+    {
+      "directory": "python3.10/apigw-xgboost",
       "displayName": "XGBoost Machine Learning Inference API",
       "dependencyManager": "pip",
       "appTemplate": "ml-apigw-xgboost",
