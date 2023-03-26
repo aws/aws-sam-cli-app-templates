@@ -32,7 +32,7 @@ class UnitTest_python3_7_cookiecutter_aws_sam_step_functions_sample_app(UnitTest
     ]
 
 
-class UnitTest_python3_7_cookiecutter_aws_sam_quick_start_web_with_connectors(UnitTestBase.Python39UnitTestBase):
+class UnitTest_python3_7_cookiecutter_aws_sam_quick_start_web_with_connectors(UnitTestBase.Python37UnitTestBase):
     directory = "python3.7/web-conn"
     code_directories = [
         "src/handlers/get_all_items", 
@@ -41,7 +41,7 @@ class UnitTest_python3_7_cookiecutter_aws_sam_quick_start_web_with_connectors(Un
     ]
 
 
-class UnitTest_python3_7_cookiecutter_aws_sam_step_functions_with_connectors(UnitTestBase.Python39UnitTestBase):
+class UnitTest_python3_7_cookiecutter_aws_sam_step_functions_with_connectors(UnitTestBase.Python37UnitTestBase):
     directory = "python3.7/step-func-conn"
     code_directories = [
         "functions/stock_buyer",
