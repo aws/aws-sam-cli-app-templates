@@ -37,7 +37,7 @@ class UnitTest_python3_8_cookiecutter_aws_sam_efs_python(UnitTestBase.Python38Un
     code_directories = ["hello_efs"]
 
 
-class UnitTest_python3_8_cookiecutter_aws_sam_quick_start_web_with_connectors(UnitTestBase.Python39UnitTestBase):
+class UnitTest_python3_8_cookiecutter_aws_sam_quick_start_web_with_connectors(UnitTestBase.Python38UnitTestBase):
     directory = "python3.8/web-conn"
     code_directories = [
         "src/handlers/get_all_items", 
@@ -46,7 +46,7 @@ class UnitTest_python3_8_cookiecutter_aws_sam_quick_start_web_with_connectors(Un
     ]
 
 
-class UnitTest_python3_8_cookiecutter_aws_sam_step_functions_with_connectors(UnitTestBase.Python39UnitTestBase):
+class UnitTest_python3_8_cookiecutter_aws_sam_step_functions_with_connectors(UnitTestBase.Python38UnitTestBase):
     directory = "python3.8/step-func-conn"
     code_directories = [
         "functions/stock_buyer",

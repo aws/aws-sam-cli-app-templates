@@ -1,0 +1,10 @@
+{
+    "project_name": "Name of the project",
+    "runtime": "python3.10",
+    "architectures": {
+        "value": []
+    },
+    "_copy_without_render": [
+        ".gitignore"
+    ]
+}

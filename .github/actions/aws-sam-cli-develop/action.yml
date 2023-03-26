@@ -1,0 +1,19 @@
+name: 'Clone and Build AWS SAM CLI'
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/checkout@v3
+      name: Checkout latest AWS SAM CLI commit
+      with:
+        repository: 'aws/aws-sam-cli'
+        ref: 'develop'
+        path: 'aws-sam-cli-develop'
+    - uses: actions/setup-python@v4
+      name: Install Python ${{ env.PYTHON_VERSION_INSTALL }}
+      with:
+        python-version: ${{ env.PYTHON_VERSION_INSTALL }}
+    - run: |
+        make -C aws-sam-cli-develop init
+        samdev --info
+      name: Install AWS SAM CLI as samdev
+      shell: bash
