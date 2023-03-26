@@ -1,5 +1,5 @@
 {
-    "project_name": "SamAppS3QuickStart",
+    "project_name": "Name of the project",
     "runtime": "dotnet6",
     "architectures": {
         "value": [
