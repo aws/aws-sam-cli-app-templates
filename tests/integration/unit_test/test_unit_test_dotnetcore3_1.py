@@ -12,10 +12,9 @@ class UnitTest_dotnetcore3_1_cookiecutter_aws_sam_hello_step_functions_sample_ap
     code_directories = ["tests/StockBuyer.Test", "tests/StockChecker.Test", "tests/StockSeller.Test"]
 
 
-# TODO: Re-enable this test once issues are fixed
-# class UnitTest_dotnetcore3_1_cookiecutter_aws_sam_quick_start_s3_dotnet(UnitTestBase.DotNetCoreUnitTestBase):
-#     directory = "dotnetcore3.1/s3"
-#     code_directories = ["test/project.Tests"]
+class UnitTest_dotnetcore3_1_cookiecutter_aws_sam_quick_start_s3_dotnet(UnitTestBase.DotNetCoreUnitTestBase):
+    directory = "dotnetcore3.1/s3"
+    code_directories = ["test/project.Tests"]
     
 
 class UnitTest_dotnetcore3_1_cookiecutter_aws_sam_quick_start_sqs_dotnet(UnitTestBase.DotNetCoreUnitTestBase):
