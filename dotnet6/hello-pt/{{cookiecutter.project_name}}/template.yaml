@@ -9,10 +9,12 @@ Globals:
     Timeout: 10
     MemorySize: 256
     Runtime: dotnet6
-  {%- if cookiecutter["Powertools Tracing"] == "enabled"%}
   Api:
+    # More info about OpenApiVersion: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-api.html#sam-api-openapiversion
+    OpenApiVersion: 3.0.1
+    {%- if cookiecutter["Powertools Tracing"] == "enabled"%}
     TracingEnabled: true
-  {%- endif %}
+    {%- endif %}
 
 Resources:
   HelloWorldFunction:
