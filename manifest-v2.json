@@ -1154,7 +1154,7 @@
       "directory": "al2/rust/hello-ddb",
       "displayName": "DynamoDB Example",
       "dependencyManager": "cargo",
-      "appTemplate": "hello-world",
+      "appTemplate": "hello-world-ddb",
       "packageType": "Zip",
       "useCaseName": "DynamoDB Example"
     }
