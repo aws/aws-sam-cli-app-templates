@@ -5,7 +5,7 @@
 
 export default {
     transform: {
-        '^.+\\.ts?$': 'esbuild-jest',
+        '^.+\\.ts?$': 'ts-jest',
     },
     clearMocks: true,
     collectCoverage: true,
