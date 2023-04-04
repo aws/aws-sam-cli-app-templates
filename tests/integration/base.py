@@ -57,6 +57,7 @@ class Base:
     class IntegBase(TestCase):
         tempdir: Any
         directory: str
+        should_test_lint: bool = True
 
         def setUp(self) -> None:
             self.tempdir = tempfile.TemporaryDirectory()
@@ -84,6 +85,19 @@ class Base:
             self.assertTrue(self.cwd.exists())
 
             self._test_file_path_lengths()
+            self._test_lint()
+
+        def _test_lint(self):
+            """
+            Test if sam validate --lint passes
+            """
+            cmdlist = [
+                SAM_CLI_EXECUTABLE,
+                "validate",
+                "--lint",
+            ]
+            result = run_command(cmdlist, Path(self.tempdir.name) / PROJECT_NAME)
+            self.assertEqual(result.process.returncode, 0)
 
         def _test_file_path_lengths(self):
             """
