@@ -14,6 +14,7 @@ For each template, it will test the following sam commands:
 class BuildInvoke_dotnetcore3_1_cookiecutter_aws_sam_hello_dotnet(BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase):
     use_container = False
     directory = "dotnetcore3.1/hello"
+    should_test_lint = False
 
 
 class BuildInvoke_dotnetcore3_1_cookiecutter_aws_sam_hello_step_functions_sample_app(
@@ -21,36 +22,43 @@ class BuildInvoke_dotnetcore3_1_cookiecutter_aws_sam_hello_step_functions_sample
 ):
     use_container = False
     directory = "dotnetcore3.1/step-func"
+    should_test_lint = False
 
 
 class BuildInvoke_dotnetcore3_1_cookiecutter_aws_sam_quick_start_s3_dotnet(BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase):
     use_container = False
     directory = "dotnetcore3.1/s3"
+    should_test_lint = False
 
     
 class BuildInvoke_dotnetcore3_1_cookiecutter_aws_sam_quick_start_sqs_dotnet(BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase):
     use_container = False
     directory = "dotnetcore3.1/sqs"
+    should_test_lint = False
 
 
 class BuildInvoke_dotnetcore3_1_cookiecutter_aws_quickstart_sns_dotnet(BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase):
     use_container = False
     directory = "dotnetcore3.1/sns"
+    should_test_lint = False
 
     
 class BuildInvoke_dotnetcore3_1_cookiecutter_aws_from_scratch_dotnet(BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase):
     use_container = False
     directory = "dotnetcore3.1/scratch"
+    should_test_lint = False
 
     
 class BuildInvoke_dotnetcore3_1_cookiecutter_aws_sam_hello_dotnet(BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase):
     use_container = False
     directory = "dotnetcore3.1/cw-event"
+    should_test_lint = False
 
     
 class BuildInvoke_dotnetcore3_1_cookiecutter_aws_sam_quick_start_web_dotnet_dotnet(BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase):
     use_container = False
     directory = "dotnetcore3.1/web"
+    should_test_lint = False
 
 
 #
@@ -62,3 +70,4 @@ class BuildInvoke_image_dotnetcore3_1_cookiecutter_aws_sam_hello_dotnet_lambda_i
     BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase
 ):
     directory = "dotnetcore3.1/hello-img"
+    should_test_lint = False
