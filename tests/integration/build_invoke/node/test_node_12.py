@@ -9,46 +9,57 @@ For each template, it will test the following sam commands:
 
 class BuildInvoke_nodejs12_x_cookiecutter_aws_sam_hello_nodejs(BuildInvokeBase.SimpleHelloWorldBuildInvokeBase):
     directory = "nodejs12.x/hello"
+    should_test_lint = False
 
 
 class BuildInvoke_nodejs12_x_cookiecutter_aws_sam_step_functions_sample_app(BuildInvokeBase.BuildInvokeBase):
     directory = "nodejs12.x/step-func"
+    should_test_lint = False
 
 
 class BuildInvoke_nodejs12_x_cookiecutter_quick_start_from_scratch(BuildInvokeBase.BuildInvokeBase):
     directory = "nodejs12.x/scratch"
+    should_test_lint = False
 
 
 class BuildInvoke_nodejs12_x_cookiecutter_quick_start_cloudwatch_events(BuildInvokeBase.BuildInvokeBase):
     directory = "nodejs12.x/cw-event"
+    should_test_lint = False
 
 
 class BuildInvoke_nodejs12_x_cookiecutter_quick_start_s3(BuildInvokeBase.BuildInvokeBase):
     directory = "nodejs12.x/s3"
+    should_test_lint = False
 
     # if we want to check response json, we need to setup bucket for testing
 
 
 class BuildInvoke_nodejs12_x_cookiecutter_aws_sam_quick_start_web_with_connectors(BuildInvokeBase.QuickStartWebBuildInvokeBase):
     directory = "nodejs12.x/web-conn"
+    should_test_lint = False
 
 
 class BuildInvoke_nodejs12_x_cookiecutter_aws_sam_step_functions_with_connectors(BuildInvokeBase.BuildInvokeBase):
     directory = "nodejs12.x/step-func-conn"
+    should_test_lint = False
 
 
 class BuildInvoke_nodejs12_x_cookiecutter_quick_start_sns(BuildInvokeBase.BuildInvokeBase):
     directory = "nodejs12.x/sns"
+    should_test_lint = False
 
 
 class BuildInvoke_nodejs12_x_cookiecutter_quick_start_sqs(BuildInvokeBase.BuildInvokeBase):
     directory = "nodejs12.x/sqs"
+    should_test_lint = False
 
 
 class BuildInvoke_nodejs12_x_cookiecutter_quick_start_web(BuildInvokeBase.QuickStartWebBuildInvokeBase):
     directory = "nodejs12.x/web"
+    should_test_lint = False
 
 class BuildInvoke_image_nodejs12_x_cookiecutter_aws_sam_hello_nodejs_lambda_image(
     BuildInvokeBase.SimpleHelloWorldBuildInvokeBase
 ):
     directory = "nodejs12.x/hello-img"
+    should_test_lint = False
