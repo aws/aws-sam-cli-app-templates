@@ -188,7 +188,8 @@ jobs:
         run: |
           pip install -r requirements.txt
           samdev --info
-          node --version
+          echo "node: $(node --version)"
+          echo "npm: $(npm --version)"
           pytest -vvv ${{ matrix.file }}
           
   ################
