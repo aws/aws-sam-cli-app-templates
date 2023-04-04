@@ -29,6 +29,10 @@ LOG.setLevel(INFO)
 SAM_CLI_EXECUTABLE = "samdev" if os.getenv("SAM_CLI_DEV") else "sam"
 
 def run_command(command_list, cwd=None, env=None, timeout=TIMEOUT) -> CommandResult:
+    LOG.info("Running command: %s", " ".join(map(lambda x: str(x), command_list)))
+    LOG.info("cwd:             %s", cwd)
+    LOG.info("env:             %s", env)
+    LOG.info("timeout:         %s", timeout)
     if not env:
         env = os.environ.copy()
     LOG.info("PATH=%s", env["PATH"])
@@ -80,7 +84,6 @@ class Base:
                 "--name",
                 PROJECT_NAME,
             ]
-            LOG.info("Running command: %s", " ".join(map(lambda x: str(x), cmdlist)))
             run_command(cmdlist, self.tempdir.name)
             self.assertTrue(self.cwd.exists())
 
