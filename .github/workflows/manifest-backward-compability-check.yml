@@ -2,6 +2,9 @@ name: "Manifest Backward Compatibility Check"
 on:
   pull_request:
     branches: [master]
+  merge_group:
+    types: [checks_requested]
+    branches: [master]
 
 jobs:
   check-manifest-backward-compatibility:
