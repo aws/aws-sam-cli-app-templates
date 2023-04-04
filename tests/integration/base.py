@@ -88,7 +88,8 @@ class Base:
             self.assertTrue(self.cwd.exists())
 
             self._test_file_path_lengths()
-            self._test_lint()
+            if self.should_test_lint:
+                self._test_lint()
 
         def _test_lint(self):
             """
