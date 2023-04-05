@@ -35,8 +35,6 @@ class BuildInvokeBase:
                     build_image_cmdlist.append("-f")
                     build_image_cmdlist.append(self.build_image_file)
                 build_image_cmdlist.append(".")
-                LOG.info(" ".join(build_image_cmdlist))
-                LOG.info("Running command: %s", " ".join(map(lambda x: str(x), build_image_cmdlist)))
                 result = run_command(build_image_cmdlist, self.cwd)
                 returnCode = result.process.poll()
                 self.assertEqual(returnCode, 0)
@@ -49,7 +47,6 @@ class BuildInvokeBase:
                 cmdlist.append(self.build_image_tag)
             if self.beta_features:
                 cmdlist.append("--beta-features")
-            LOG.info("Running command: %s", " ".join(map(lambda x: str(x), cmdlist)))
             result = run_command(cmdlist, self.cwd)
             self.assertIn("Build Succeeded", str(result.stdout))
 
@@ -81,7 +78,6 @@ class BuildInvokeBase:
                     ]
                 if self.beta_features:
                     cmdlist.append("--beta-features")
-                LOG.info("Running command: %s", " ".join(map(lambda x: str(x), cmdlist)))
                 result = run_command(cmdlist, self.cwd)
                 LOG.info(result)
                 try:
