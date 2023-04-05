@@ -1,5 +1,7 @@
 from tests.integration.unit_test.unit_test_base import UnitTestBase
 
+# NOTE: skipping lint test for all nodejs12.x templates as the runtime is to be deprecated (Mar 31, 2023).
+# See: https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html
 
 class UnitTest_nodejs12_x_cookiecutter_aws_sam_hello_nodejs(UnitTestBase.NodejsUnitTestBase):
     directory = "nodejs12.x/hello"

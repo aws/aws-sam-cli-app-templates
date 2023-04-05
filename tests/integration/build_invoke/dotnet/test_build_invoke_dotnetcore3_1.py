@@ -10,6 +10,8 @@ For each template, it will test the following sam commands:
 3. (if there are event jsons), for each event json, check `sam local invoke` response is a valid json
 """
 
+# NOTE: skipping lint test for all dotnet3.1 templates as the runtime is to be deprecated (Apr 3, 2023).
+# See: https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html
 
 class BuildInvoke_dotnetcore3_1_cookiecutter_aws_sam_hello_dotnet(BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase):
     use_container = False

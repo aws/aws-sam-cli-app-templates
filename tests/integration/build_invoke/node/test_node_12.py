@@ -7,6 +7,9 @@ For each template, it will test the following sam commands:
 3. (if there are event jsons), for each event json, check `sam local invoke` response is a valid json
 """
 
+# NOTE: skipping lint test for all nodejs12.x templates as the runtime is to be deprecated (Mar 31, 2023).
+# See: https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html
+
 class BuildInvoke_nodejs12_x_cookiecutter_aws_sam_hello_nodejs(BuildInvokeBase.SimpleHelloWorldBuildInvokeBase):
     directory = "nodejs12.x/hello"
     should_test_lint = False
