@@ -23,6 +23,10 @@ class UnitTest_nodejs16_x_cookiecutter_quick_start_cloudwatch_events(UnitTestBas
     directory = "nodejs16.x/cw-event"
 
 
+class UnitTest_nodejs16_x_cookiecutter_quick_start_response_streaming(UnitTestBase.NodejsUnitTestBase):
+    directory = "nodejs16.x/response-streaming"
+
+
 class UnitTest_nodejs16_x_cookiecutter_quick_start_s3(UnitTestBase.NodejsUnitTestBase):
     directory = "nodejs16.x/s3"
 
