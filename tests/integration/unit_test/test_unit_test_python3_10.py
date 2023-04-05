@@ -50,3 +50,7 @@ class UnitTest_python3_10_cookiecutter_aws_sam_step_functions_with_connectors(Un
         "functions/stock_checker",
         "functions/stock_seller",
     ]
+
+class UnitTest_python3_9_cookiecutter_aws_sam_hello_pt_python(UnitTestBase.Python310UnitTestBase):
+    directory = "python3.10/hello-pt"
+    code_directories = ["hello_world"]
