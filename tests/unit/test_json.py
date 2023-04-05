@@ -24,7 +24,6 @@ class TestJson(unittest.TestCase):
         for _, templates in json_body.items():
             for template in templates:
                 directory = template["directory"]
-                # use_case_name = template.get("useCaseName")
                 if not Path(directory).exists():
                     directories_dont_exist.append(directory)
         

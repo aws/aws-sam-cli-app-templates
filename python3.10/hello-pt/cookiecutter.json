@@ -1,6 +1,6 @@
 {
     "project_name": "sam-app-powertools",
-    "runtime": "python3.9",
+    "runtime": "python3.10",
     "architectures": {
         "value": []
     },
