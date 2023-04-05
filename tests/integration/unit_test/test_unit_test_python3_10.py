@@ -64,3 +64,10 @@ class UnitTest_python3_10_cookiecutter_aws_sam_step_functions_with_connectors(Un
     ]
     # TODO: remove the line remove once python3.10 is GA
     should_test_lint = False
+
+
+class UnitTest_python3_10_cookiecutter_aws_sam_hello_pt_python(UnitTestBase.Python310UnitTestBase):
+    directory = "python3.10/hello-pt"
+    code_directories = ["hello_world"]
+    # TODO: remove the line remove once python3.10 is GA
+    should_test_lint = False
