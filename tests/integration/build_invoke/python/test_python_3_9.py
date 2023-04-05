@@ -37,7 +37,7 @@ class BuildInvoke_python3_9_cookiecutter_aws_sam_step_functions_sample_app(Build
 class BuildInvoke_python3_9_cookiecutter_aws_sam_efs_python(BuildInvokeBase.BuildInvokeBase):
     directory = "python3.9/efs"
 
-class BuildInvoke_python3_9_cookiecutter_aws_sam_hello_pt_python(BuildInvokeBase.PTHelloWorldBuildInvokeBase):
+class BuildInvoke_python3_9_cookiecutter_aws_sam_hello_pt_python(BuildInvokeBase.SimpleHelloWorldBuildInvokeBase):
     directory = "python3.9/hello-pt"
 
 

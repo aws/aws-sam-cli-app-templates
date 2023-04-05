@@ -39,5 +39,5 @@ class BuildInvoke_image_python3_7_cookiecutter_aws_sam_hello_python_lambda_image
 ):
     directory = "python3.7/hello-img"
 
-class BuildInvoke_python3_7_cookiecutter_aws_sam_hello_pt_python(BuildInvokeBase.PTHelloWorldBuildInvokeBase):
+class BuildInvoke_python3_7_cookiecutter_aws_sam_hello_pt_python(BuildInvokeBase.SimpleHelloWorldBuildInvokeBase):
     directory = "python3.7/hello-pt"

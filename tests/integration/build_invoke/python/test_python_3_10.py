@@ -51,7 +51,7 @@ class BuildInvoke_python3_10_cookiecutter_aws_sam_efs_python(BuildInvokeBase.Bui
     # TODO: remove the line remove once python3.10 is GA
     should_test_lint = False
 
-class BuildInvoke_python3_10_cookiecutter_aws_sam_hello_pt_python(BuildInvokeBase.PTHelloWorldBuildInvokeBase):
+class BuildInvoke_python3_10_cookiecutter_aws_sam_hello_pt_python(BuildInvokeBase.SimpleHelloWorldBuildInvokeBase):
     directory = "python3.10/hello-pt"
 
 

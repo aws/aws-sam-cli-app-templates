@@ -161,16 +161,6 @@ class BuildInvokeBase:
             self.assertEqual(self.invoke_output["statusCode"], 200)
             self.assertEqual(json.loads(self.invoke_output["body"]), {"message": "hello world"})
 
-    class PTHelloWorldBuildInvokeBase(BuildInvokeBase):
-        """
-        Based on BuildInvokeBase, PTHelloWorldBuildInvokeBase will the these extra checking:
-        - check `sam local invoke` response's message is "hello world!"
-        """
-
-        def _test_local_invoke(self):
-            super()._test_local_invoke()
-            self.assertEqual(json.loads(self.invoke_output["message"]), "hello world")
-
     class QuickStartWebBuildInvokeBase(BuildInvokeBase):
         """
         Based on BuildInvokeBase, quick start web templates have multiple events that call different lambda functions.
