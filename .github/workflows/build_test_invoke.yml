@@ -2,10 +2,10 @@ name: Build
 
 on:
   pull_request:
-    branches: ['master']
+    branches: [master, "feat*"]
   merge_group:
     types: [checks_requested]
-    branches: [master]
+    branches: [master, "feat*"]
 
 env:
   PYTHON_VERSION_INSTALL: '3.7'
