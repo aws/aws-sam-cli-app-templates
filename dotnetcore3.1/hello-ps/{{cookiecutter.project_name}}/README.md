@@ -146,9 +146,8 @@ sam deploy \
 After deployment is complete you can run the following command to retrieve the API Gateway Endpoint URL:
 
 ```bash
-aws cloudformation describe-stacks \
+sam list endpoints \
     --stack-name {{ cookiecutter.project_name.lower().replace(' ', '-') }} \
-    --query 'Stacks[].Outputs[?OutputKey==`HelloWorldApi`]' \
     --output table
 ```
 
@@ -157,7 +156,7 @@ aws cloudformation describe-stacks \
 To delete the sample application that you created, use the AWS CLI. Assuming you used your project name for the stack name, you can run the following:
 
 ```bash
-aws cloudformation delete-stack --stack-name {{ cookiecutter.project_name }}
+sam delete --stack-name {{ cookiecutter.project_name }}
 ```
 
 ## Resources
@@ -206,9 +205,8 @@ sam deploy \
     --capabilities CAPABILITY_IAM
 
 # Describe Output section of CloudFormation stack previously created
-aws cloudformation describe-stacks \
+sam list endpoints \
     --stack-name {{ cookiecutter.project_name.lower().replace(' ', '-') }} \
-    --query 'Stacks[].Outputs[?OutputKey==`HelloWorldApi`]' \
     --output table
 
 # Tail Lambda function Logs using Logical name defined in SAM Template
