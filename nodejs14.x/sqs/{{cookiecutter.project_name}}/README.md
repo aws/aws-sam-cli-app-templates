@@ -130,7 +130,7 @@ my-application$ npm run test
 To delete the sample application and the bucket that you created, use the AWS CLI.
 
 ```bash
-my-application$ aws cloudformation delete-stack --stack-name sam-app
+my-application$ sam delete --stack-name sam-app
 my-application$ aws s3 rb s3://BUCKET_NAME
 ```
 
