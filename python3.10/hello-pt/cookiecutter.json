@@ -1,0 +1,13 @@
+{
+    "project_name": "sam-app-powertools",
+    "runtime": "python3.10",
+    "architectures": {
+        "value": []
+    },
+    "Powertools Logging": ["enabled","disabled"],
+    "Powertools Metrics": ["enabled","disabled"],
+    "Powertools Tracing": ["enabled","disabled"],
+    "_copy_without_render": [
+        ".gitignore"
+    ]
+}
