@@ -29,6 +29,10 @@ LOG.setLevel(INFO)
 SAM_CLI_EXECUTABLE = "samdev" if os.getenv("SAM_CLI_DEV") else "sam"
 
 def run_command(command_list, cwd=None, env=None, timeout=TIMEOUT) -> CommandResult:
+    LOG.info("Running command: %s", " ".join(map(lambda x: str(x), command_list)))
+    LOG.info("cwd:             %s", cwd)
+    LOG.info("env:             %s", env)
+    LOG.info("timeout:         %s", timeout)
     if not env:
         env = os.environ.copy()
     LOG.info("PATH=%s", env["PATH"])
@@ -57,6 +61,7 @@ class Base:
     class IntegBase(TestCase):
         tempdir: Any
         directory: str
+        should_test_lint: bool = True
 
         def setUp(self) -> None:
             self.tempdir = tempfile.TemporaryDirectory()
@@ -79,11 +84,24 @@ class Base:
                 "--name",
                 PROJECT_NAME,
             ]
-            LOG.info("Running command: %s", " ".join(map(lambda x: str(x), cmdlist)))
             run_command(cmdlist, self.tempdir.name)
             self.assertTrue(self.cwd.exists())
 
             self._test_file_path_lengths()
+            if self.should_test_lint:
+                self._test_lint()
+
+        def _test_lint(self):
+            """
+            Test if sam validate --lint passes
+            """
+            cmdlist = [
+                SAM_CLI_EXECUTABLE,
+                "validate",
+                "--lint",
+            ]
+            result = run_command(cmdlist, Path(self.tempdir.name) / PROJECT_NAME)
+            self.assertEqual(result.process.returncode, 0)
 
         def _test_file_path_lengths(self):
             """
