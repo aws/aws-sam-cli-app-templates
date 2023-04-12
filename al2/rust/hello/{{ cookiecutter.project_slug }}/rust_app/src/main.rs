@@ -19,11 +19,6 @@ struct Response {
     body: String,
 }
 
-#[derive(Serialize)]
-struct Body {
-    message: String,
-}
-
 /// This is the main body for the function.
 /// Write your code inside it.
 /// There are some code example in the following URLs:
