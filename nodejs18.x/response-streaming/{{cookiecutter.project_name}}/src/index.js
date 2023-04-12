@@ -25,6 +25,7 @@ exports.handler = awslambda.streamifyResponse(
         await new Promise(r => setTimeout(r, 1000));
   
         responseStream.write("<p>DONE!</p>");
+        responseStream.write("</html>");
         responseStream.end();
     }
 );

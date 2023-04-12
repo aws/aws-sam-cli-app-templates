@@ -1,6 +1,0 @@
-{
-    "name": "StreamingFunction",
-    "description": "sample project for lambda streaming invoke",
-    "version": "0.0.1",
-    "private": true
-}
