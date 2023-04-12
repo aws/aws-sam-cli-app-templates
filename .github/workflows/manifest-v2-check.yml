@@ -2,6 +2,9 @@ name: "Check if Manifest v2 is a valid JSON"
 on:
   pull_request:
     branches: [master]
+  merge_group:
+    types: [checks_requested]
+    branches: [master]
 
 jobs:
   check-if-manifestv2-is-valid-json:
