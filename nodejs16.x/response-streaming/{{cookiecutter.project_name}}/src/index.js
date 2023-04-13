@@ -9,7 +9,8 @@ exports.handler = awslambda.streamifyResponse(
         };
 
         responseStream = awslambda.HttpResponseStream.from(responseStream, httpResponseMetadata);
-
+        // It's recommended to use a `pipeline` over the `write` method for more complex use cases.
+        // Learn more: https://docs.aws.amazon.com/lambda/latest/dg/configuration-response-streaming.html
         responseStream.write("<html>");
         responseStream.write("<p>First write!</p>");
 

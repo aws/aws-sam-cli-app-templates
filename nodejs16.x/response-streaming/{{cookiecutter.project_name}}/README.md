@@ -4,6 +4,7 @@ This project contains source code and supporting files for a serverless applicat
 
 - `src` - Code for the application's Lambda function.
 - `template.yaml` - A template that defines the application's AWS resources.
+- `__tests__` - Unit tests for the application code.
 
 Resources for this project are defined in the `template.yaml` file in this project. You can update the template to add AWS resources through the same deployment process that updates your application code.
 
@@ -49,7 +50,7 @@ The first command will build the source of your application. The second command 
 * **Allow SAM CLI IAM role creation**: Many AWS SAM templates, including this example, create AWS IAM roles required for the AWS Lambda function(s) included to access AWS services. By default, these are scoped down to minimum required permissions. To deploy an AWS CloudFormation stack which creates or modifies IAM roles, the `CAPABILITY_IAM` value for `capabilities` must be provided. If permission isn't provided through this prompt, to deploy this example you must explicitly pass `--capabilities CAPABILITY_IAM` to the `sam deploy` command.
 * **Save arguments to samconfig.toml**: If set to yes, your choices will be saved to a configuration file inside the project, so that in the future you can just re-run `sam deploy` without parameters to deploy changes to your application.
 
-## Use the AWS SAM CLI to build and test locally
+## Building and testing
 
 Build your application by using the `sam build` command.
 
@@ -68,6 +69,8 @@ my-application$ sam local invoke StreamingFunction --no-event
 ```
 
 The streaming capabilities of the function are present only when invoked through a Function URL, so the response won't be streamed when invoking locally. To learn more, see the [Lambda response streaming documentation](https://docs.aws.amazon.com/lambda/latest/dg/configuration-response-streaming.html)
+
+There are also unit tests inside the `__tests__` directory, that can be run using `npm run test`. These tests are also specified inside the `buildspec.yml` file, which runs when deploying this through CodeBuild or similar CI/CD mechanisms.
 
 
 ## Fetch, tail, and filter Lambda function logs
