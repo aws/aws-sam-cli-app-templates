@@ -579,6 +579,14 @@
       "appTemplate": "step-functions-with-connectors",
       "packageType": "Zip",
       "useCaseName": "Multi-step workflow with Connectors"
+    },
+    {
+      "directory": "nodejs16.x/response-streaming",
+      "displayName": "Lambda function using Response Streaming",
+      "dependencyManager": "npm",
+      "appTemplate": "response-streaming",
+      "packageType": "Zip",
+      "useCaseName": "Lambda Response Streaming"
     }
   ],
   "amazon/nodejs16.x-base": [
@@ -671,6 +679,14 @@
       "appTemplate": "quick-start-web",
       "packageType": "Zip",
       "useCaseName": "Serverless API"
+    },
+    {
+      "directory": "nodejs18.x/response-streaming",
+      "displayName": "Lambda function using Response Streaming",
+      "dependencyManager": "npm",
+      "appTemplate": "response-streaming",
+      "packageType": "Zip",
+      "useCaseName": "Lambda Response Streaming"
     }
   ],
   "amazon/nodejs18.x-base": [
