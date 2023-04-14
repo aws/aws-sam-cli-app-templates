@@ -70,7 +70,7 @@ my-application$ sam local invoke StreamingFunction --no-event
 
 The streaming capabilities of the function are present only when invoked through a Function URL, so the response won't be streamed when invoking locally. To learn more, see the [Lambda response streaming documentation](https://docs.aws.amazon.com/lambda/latest/dg/configuration-response-streaming.html)
 
-There are also unit tests inside the `__tests__` directory, that can be run using `npm run test`. These tests are also specified inside the `buildspec.yml` file, which runs when deploying this through CodeBuild or similar CI/CD mechanisms.
+There are also unit tests inside the `__tests__` directory, that can be run using `npm run test`.
 
 
 ## Fetch, tail, and filter Lambda function logs

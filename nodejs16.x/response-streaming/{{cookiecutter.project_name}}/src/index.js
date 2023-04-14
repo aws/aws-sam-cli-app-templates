@@ -21,6 +21,7 @@ exports.handler = awslambda.streamifyResponse(
         responseStream.write("<h3>Streaming h3</h3>");
         await new Promise(r => setTimeout(r, 1000));
   
+        // Long strings will be streamed
         const loremIpsum1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vitae mi tincidunt tellus ultricies dignissim id et diam. Morbi pharetra eu nisi et finibus. Vivamus diam nulla, vulputate et nisl cursus, pellentesque vehicula libero. Cras imperdiet lorem ante, non posuere dolor sollicitudin a. Vestibulum ipsum lacus, blandit nec augue id, lobortis dictum urna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi auctor orci eget tellus aliquam, non maximus massa porta. In diam ante, pulvinar aliquam nisl non, elementum hendrerit sapien. Vestibulum massa nunc, mattis non congue vitae, placerat in quam. Nam vulputate lectus metus, et dignissim erat varius a.";
         responseStream.write(`<p>${loremIpsum1}</p>`);
         await new Promise(r => setTimeout(r, 1000));
