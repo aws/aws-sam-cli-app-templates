@@ -131,7 +131,7 @@ Tests for the Lambda functions are defined in the `tests` folder in this project
 To delete the sample application and the bucket that you created, use the AWS CLI.
 
 ```bash
-{{cookiecutter.project_name}}$ aws cloudformation delete-stack --stack-name sam-app
+{{cookiecutter.project_name}}$ sam delete --stack-name sam-app
 ```
 
 ## Resources
