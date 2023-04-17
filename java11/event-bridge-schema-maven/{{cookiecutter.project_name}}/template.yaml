@@ -11,10 +11,10 @@ Globals:
     Timeout: 20
 
 Resources:
-  HelloWorldFunction:
+  {{cookiecutter.function_name}}:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: HelloWorldFunction
+      CodeUri: {{cookiecutter.function_name}}
       Handler: helloworld.App::handleRequest
       Runtime: {{ cookiecutter.runtime }}
       {%- if cookiecutter.architectures.value != []%}
