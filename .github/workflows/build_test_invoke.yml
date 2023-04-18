@@ -25,6 +25,7 @@ jobs:
       - build-test-rust
       - build-test-golang
       - build-test-dotnet
+      - test-manifest
     steps:
       - name: report-failure
         if: |
@@ -34,10 +35,31 @@ jobs:
           needs.build-test-ruby.result != 'success' ||
           needs.build-test-rust.result != 'success' ||
           needs.build-test-golang.result != 'success' ||
-          needs.build-test-dotnet.result != 'success'
+          needs.build-test-dotnet.result != 'success' ||
+          needs.test-manifest.result != 'success'
         run: exit 1
       - name: report-success
         run: exit 0
+
+  ################
+  # Test Manifest
+  test-manifest:
+    name: Test Manifest File
+    if: github.repository_owner == 'aws'
+    env:
+      PYTHON_VERSION_INSTALL: '3.10'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout PR
+      - uses: actions/setup-python@v4
+        name: Setup Python 3.10
+        with:
+          python-version: '3.10'
+      - name: Run build tests for tests/unit/
+        run: |
+          pip install -r requirements.txt
+          pytest -vvv tests/unit/
 
   ################
   # Python

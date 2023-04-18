@@ -46,13 +46,18 @@ class BuildInvoke_python3_10_cookiecutter_aws_sam_step_functions_sample_app(Buil
     should_test_lint = False
 
 
+# if we want to check response json, we need to setup efs
 class BuildInvoke_python3_10_cookiecutter_aws_sam_efs_python(BuildInvokeBase.BuildInvokeBase):
     directory = "python3.10/efs"
     # TODO: remove the line remove once python3.10 is GA
     should_test_lint = False
 
 
-# if we want to check response json, we need to setup efs
+class BuildInvoke_python3_10_cookiecutter_aws_sam_hello_pt_python(BuildInvokeBase.SimpleHelloWorldBuildInvokeBase):
+    directory = "python3.10/hello-pt"
+    # TODO: remove the line remove once python3.10 is GA
+    should_test_lint = False
+
 
 class BuildInvoke_image_python3_10_cookiecutter_aws_sam_hello_python_lambda_image(
     BuildInvokeBase.SimpleHelloWorldBuildInvokeBase

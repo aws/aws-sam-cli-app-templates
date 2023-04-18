@@ -37,6 +37,10 @@ class BuildInvoke_nodejs16_x_cookiecutter_quick_start_sqs(BuildInvokeBase.BuildI
     directory = "nodejs16.x/sqs"
 
 
+class BuildInvoke_nodejs16_x_cookiecutter_quick_start_response_streaming(BuildInvokeBase.BuildInvokeBase):
+    directory = "nodejs16.x/response-streaming"
+
+
 class BuildInvoke_nodejs16_x_cookiecutter_quick_start_web(BuildInvokeBase.QuickStartWebBuildInvokeBase):
     directory = "nodejs16.x/web"
 
