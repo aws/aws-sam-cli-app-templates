@@ -75,6 +75,7 @@ class BuildInvoke_java17_cookiecutter_aws_sam_step_functions_sample_app_maven(Bu
     should_test_lint = False
 
 
+@pytest.mark.skip("Enable these tests once build images for java17 is released")
 class BuildInvoke_image_java17_cookiecutter_aws_sam_hello_java_gradle_lambda_image(
     BuildInvokeBase.HelloWorldWithLocationBuildInvokeBase
 ):
@@ -83,6 +84,7 @@ class BuildInvoke_image_java17_cookiecutter_aws_sam_hello_java_gradle_lambda_ima
     should_test_lint = False
 
 
+@pytest.mark.skip("Enable these tests once build images for java17 is released")
 class BuildInvoke_image_java17_cookiecutter_aws_sam_hello_java_maven_lambda_image(
     BuildInvokeBase.HelloWorldWithLocationBuildInvokeBase
 ):
