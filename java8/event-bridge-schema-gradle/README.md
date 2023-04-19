@@ -16,7 +16,7 @@ Install `https://github.com/awslabs/aws-sam-cli` command line:
 
 ## Usage
 
-Generate a new SAM based Serverless App: `sam init`, then choose the `"AWS SAM EventBridge App from Scratch (for any Event Trigger)"` template to enable specific schema selection.
+Generate a new SAM based Serverless App: `sam init`, then choose the `"Infrastructure event management"` option and the `"EventBridge App from scratch (100+ Event Schemas): Gradle"` template to enable specific schema selection.
 
 You'll be prompted a few questions to help this cookiecutter template to scaffold this project and after its completed you should see a new folder at your current path with the name of the project you gave as input.
 

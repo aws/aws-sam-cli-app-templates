@@ -19,7 +19,7 @@ class BuildInvoke_python3_8_cookiecutter_aws_sam_eventBridge_python(
 
 
 class BuildInvoke_python3_8_cookiecutter_aws_sam_quick_start_web_with_connectors(BuildInvokeBase.QuickStartWebBuildInvokeBase):
-    directory = "python3.9/web-conn"
+    directory = "python3.8/web-conn"
 
 
 class BuildInvoke_python3_8_cookiecutter_aws_sam_step_functions_with_connectors(BuildInvokeBase.BuildInvokeBase):
