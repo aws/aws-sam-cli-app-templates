@@ -15,16 +15,16 @@ const (
 )
 
 func renderPage(sleep func(time.Duration), w io.Writer) {
-	fmt.Fprintln(w, "<html>")
+	fmt.Fprintln(w, "<html><head><title>Hello ƛ</title></head><body>")
 	fmt.Fprintln(w, "<p>First Write!</p>")
-	for i := 0; i < 3; i++ {
+	for i := 1; i <= 3; i++ {
 		fmt.Fprintf(w, "<h%d>Streaming h%d</h%d>\n", i, i, i)
 		sleep(time.Second)
 	}
 	fmt.Fprintf(w, "<p>%s</p>\n", loreIpsum)
 	sleep(time.Second)
 	fmt.Fprintln(w, "<p>DONE!</p>")
-	fmt.Fprintln(w, "</html>")
+	fmt.Fprintln(w, "</body></html>")
 }
 
 func lambdaHandler(request *events.LambdaFunctionURLRequest) (*events.LambdaFunctionURLStreamingResponse, error) {

@@ -7,10 +7,10 @@ Description: >
 Resources:
   StreamingFunction:
     Type: AWS::Serverless::Function
-    MetaData:
+    Metadata:
       BuildMethod: go1.x
     Properties:
-      CodeUri: .
+      CodeUri: hello/
       Handler: bootstrap
       Runtime: provided.al2
       {%- if cookiecutter.architectures.value != []%}
