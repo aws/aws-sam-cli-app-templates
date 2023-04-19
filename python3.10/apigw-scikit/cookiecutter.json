@@ -1,6 +1,6 @@
 {
   "project_name": "digit_classifier",
-  "scikit_learn_version": "1.2.2",
+  "scikit_learn_version": "0.24.1",
   "api_path": "/classify_digit",
   "architectures": {
     "value": [
