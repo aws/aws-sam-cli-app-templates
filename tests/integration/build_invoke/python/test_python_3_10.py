@@ -65,3 +65,23 @@ class BuildInvoke_image_python3_10_cookiecutter_aws_sam_hello_python_lambda_imag
     directory = "python3.10/hello-img"
     # TODO: remove the line remove once python3.10 is GA
     should_test_lint = False
+
+class BuildInvoke_python3_10_pytorch(BuildInvokeBase.BuildInvokeBase):
+    directory = "python3.10/apigw-pytorch"
+    # TODO: remove the line remove once python3.10 is GA
+    should_test_lint = False
+
+class BuildInvoke_python3_10_scikit(BuildInvokeBase.BuildInvokeBase):
+    directory = "python3.10/apigw-scikit"
+    # TODO: remove the line remove once python3.10 is GA
+    should_test_lint = False
+
+class BuildInvoke_python3_10_tensorflow(BuildInvokeBase.BuildInvokeBase):
+    directory = "python3.10/apigw-tensorflow"
+    # TODO: remove the line remove once python3.10 is GA
+    should_test_lint = False
+
+class BuildInvoke_python3_10_xgboost(BuildInvokeBase.BuildInvokeBase):
+    directory = "python3.10/apigw-xgboost"
+    # TODO: remove the line remove once python3.10 is GA
+    should_test_lint = False
