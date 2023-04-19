@@ -4,7 +4,7 @@ COPY app.py requirements.txt ./
 COPY model /opt/ml/model
 
 # temporarily install gcc so that scikit-learn can be built
-RUN yum install gcc -y
+RUN yum install gcc-c++ -y
 
 RUN python3.10 -m pip install -r requirements.txt -t .
 
