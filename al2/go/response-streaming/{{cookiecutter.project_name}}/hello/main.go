@@ -15,6 +15,7 @@ const (
 )
 
 func renderPage(sleep func(time.Duration), w io.Writer) {
+	fmt.Fprintln(w, "<!DOCTYPE html>")
 	fmt.Fprintln(w, "<html><head><title>Hello ƛ</title></head><body>")
 	fmt.Fprintln(w, "<p>First Write!</p>")
 	for i := 1; i <= 3; i++ {
@@ -36,7 +37,7 @@ func lambdaHandler(request *events.LambdaFunctionURLRequest) (*events.LambdaFunc
 	return &events.LambdaFunctionURLStreamingResponse{
 		StatusCode: http.StatusOK,
 		Headers: map[string]string{
-			"Content-Type":    "text/html",
+			"Content-Type":    "text/html; charset=utf-8",
 			"X-Custom-Header": "Example-Custom-Header",
 		},
 		Body: r,
