@@ -111,7 +111,7 @@ Tests are defined in the `tests` folder in this project. Use PIP to install the 
 To delete the sample application that you created, use the SAM CLI. Assuming you used your project name for the stack name, you can run the following:
 
 ```bash
-sam delete --stack-name "{{ cookiecutter.project_name }}"
+sam delete --stack-name "{{ cookiecutter.__stack_name }}"
 ```
 
 

@@ -19,7 +19,7 @@ class BuildInvoke_python3_8_cookiecutter_aws_sam_eventBridge_python(
 
 
 class BuildInvoke_python3_8_cookiecutter_aws_sam_quick_start_web_with_connectors(BuildInvokeBase.QuickStartWebBuildInvokeBase):
-    directory = "python3.9/web-conn"
+    directory = "python3.8/web-conn"
 
 
 class BuildInvoke_python3_8_cookiecutter_aws_sam_step_functions_with_connectors(BuildInvokeBase.BuildInvokeBase):
@@ -45,3 +45,15 @@ class BuildInvoke_image_python3_8_cookiecutter_aws_sam_hello_python_lambda_image
 
 class BuildInvoke_python3_8_cookiecutter_aws_sam_hello_pt_python(BuildInvokeBase.SimpleHelloWorldBuildInvokeBase):
     directory = "python3.8/hello-pt"
+
+class BuildInvoke_python3_8_pytorch(BuildInvokeBase.BuildInvokeBase):
+    directory = "python3.8/apigw-pytorch"
+
+class BuildInvoke_python3_8_scikit(BuildInvokeBase.BuildInvokeBase):
+    directory = "python3.8/apigw-scikit"
+
+class BuildInvoke_python3_8_tensorflow(BuildInvokeBase.BuildInvokeBase):
+    directory = "python3.8/apigw-tensorflow"
+
+class BuildInvoke_python3_8_xgboost(BuildInvokeBase.BuildInvokeBase):
+    directory = "python3.8/apigw-xgboost"
