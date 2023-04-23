@@ -50,6 +50,14 @@ export const lambdaHandler = async (event: APIGatewayProxyEvent, context: Contex
     // Get facade segment created by AWS Lambda
     const segment = tracer.getSegment();
 
+    if (!segment) {
+        response = {
+            statusCode: 500,
+            body: "Failed to get segment"
+        }
+        return response;
+    }
+
     // Create subsegment for the function & set it as active
     const handlerSegment = segment.addNewSubsegment(`## ${process.env._HANDLER}`);
     tracer.setSegment(handlerSegment);
@@ -82,7 +90,7 @@ export const lambdaHandler = async (event: APIGatewayProxyEvent, context: Contex
             }),
         };
         {%- if cookiecutter["Powertools Logging"] == "enabled"%}
-        logger.info(`Successful response from API enpoint: ${event.path}`, response);
+        logger.info(`Successful response from API enpoint: ${event.path}`, response.body);
         {%- else %}
         console.log('sending HTTP 200 - hello world response')
         {%- endif %}
@@ -99,7 +107,7 @@ export const lambdaHandler = async (event: APIGatewayProxyEvent, context: Contex
         {%- endif %}
 
         {%- if cookiecutter["Powertools Logging"] == "enabled"%}
-        logger.error(`Error response from API enpoint: ${err}`, response);
+        logger.error(`Error response from API enpoint: ${err}`, response.body);
         {%- else %}
         console.log('sending HTTP 500 - some error happened response')
         {%- endif %}

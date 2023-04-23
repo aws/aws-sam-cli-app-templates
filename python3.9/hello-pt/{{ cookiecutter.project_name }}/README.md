@@ -1,6 +1,6 @@
 # {{ cookiecutter.project_name }}
 
-Congratulations, you have just created a Serverless "Hello World" application using the AWS Serverless Application Model (AWS SAM) for the `nodejs18.x` runtime, and options to bootstrap it with [**AWS Lambda Powertools for TypeScript**](https://awslabs.github.io/aws-lambda-powertools-typescript/latest/) (Lambda Powertools) utilities for Logging, Tracing and Metrics.
+Congratulations, you have just created a Serverless "Hello World" application using the AWS Serverless Application Model (AWS SAM) for the `python3.9` runtime, and options to bootstrap it with [**AWS Lambda Powertools for Python**](https://awslabs.github.io/aws-lambda-powertools-python/latest/) (Lambda Powertools) utilities for Logging, Tracing and Metrics.
 
 Powertools is a developer toolkit to implement Serverless best practices and increase developer velocity.
 
