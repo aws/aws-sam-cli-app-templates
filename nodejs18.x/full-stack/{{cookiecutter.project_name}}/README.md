@@ -7,7 +7,7 @@ This project contains source code and supporting files for a serverless applicat
 - `__tests__` - Unit tests for the application code. 
 - `template.yaml` - A template that defines the application's AWS resources.
 
-The application uses several AWS resources, including Lambda functions, an API Gateway API, and Amazon DynamoDB tables. These resources are defined in the `template.yaml` file in this project. You can update the template to add AWS resources through the same deployment process that updates your application code.
+The application uses several AWS resources, including Lambda functions, an API Gateway API, an S3 Bucket with a CloudFront Distribution and Amazon DynamoDB tables. These resources are defined in the `template.yaml` file in this project. You can update the template to add AWS resources through the same deployment process that updates your application code.
 
 If you prefer to use an integrated development environment (IDE) to build and test your application, you can use the AWS Toolkit.  
 The AWS Toolkit is an open-source plugin for popular IDEs that uses the AWS SAM CLI to build and deploy serverless applications on AWS. The AWS Toolkit also adds step-through debugging for Lambda function code. 
@@ -79,7 +79,7 @@ my-application$ sam local start-api
 my-application$ curl http://localhost:3000/
 ```
 
-The AWS SAM CLI reads the application template to determine the API's routes and the functions that they invoke. The `Events` property on each function's definition includes the route and method for each path.
+The AWS SAM CLI reads the application template to determine the API's routes and the functions that they invoke. The `Events` property on each function's definition includes the route and method for each path. It also includes a reference to the API Gateway that is also deployed as part of this application.
 
 ```yaml
       Events:
@@ -88,6 +88,8 @@ The AWS SAM CLI reads the application template to determine the API's routes and
           Properties:
             Path: /
             Method: GET
+            RestApiId:
+              Ref: ApiGatewayApi
 ```
 
 ## Add a resource to your application
