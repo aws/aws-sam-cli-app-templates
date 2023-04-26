@@ -6,7 +6,6 @@
 AWSTemplateFormatVersion: 2010-09-09
 Description: >-
   {{cookiecutter.project_name}}
-
 # Transform section specifies one or more macros that AWS CloudFormation uses to process your template
 # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-section-structure.html
 Transform:
@@ -18,37 +17,15 @@ Resources:
   # Each Lambda function is defined by properties:
   # https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
 
-  # This is a Lambda function config associated with the source code: get-all-items.js
-  getAllItemsFunction:
-    Type: AWS::Serverless::Function
+  # This is an API gateway associated with the getByIdFunction and putItemFunctions
+  ApiGatewayApi:
+    Type: AWS::Serverless::Api
     Properties:
-      Handler: src/handlers/get-all-items.getAllItemsHandler
-      Runtime: nodejs18.x
-      {%- if cookiecutter.architectures.value != []%}
-      Architectures:
-      {%- for arch in cookiecutter.architectures.value %}
-        - {{arch}}
-      {%- endfor %}
-      {%- endif %}
-      MemorySize: 128
-      Timeout: 100
-      Description: A simple example includes a HTTP get method to get all items from a DynamoDB table.
-      Policies:
-        # Give Create/Read/Update/Delete Permissions to the SampleTable
-        - DynamoDBCrudPolicy:
-            TableName: !Ref SampleTable
-      Environment:
-        Variables:
-          # Make table name accessible as environment variable from function code during execution
-          SAMPLE_TABLE: !Ref SampleTable
-      Events:
-        Api:
-          Type: Api
-          Properties:
-            Path: /
-            Method: GET
-  # Each Lambda function is defined by properties:
-  # https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+      StageName: Prod
+      Cors:
+        AllowMethods: "'OPTIONS, POST, GET'"
+        AllowHeaders: "'Content-Type'"
+        AllowOrigin: "'*'"
 
   # This is a Lambda function config associated with the source code: get-by-id.js
   getByIdFunction:
@@ -56,12 +33,8 @@ Resources:
     Properties:
       Handler: src/handlers/get-by-id.getByIdHandler
       Runtime: nodejs18.x
-      {%- if cookiecutter.architectures.value != []%}
       Architectures:
-      {%- for arch in cookiecutter.architectures.value %}
-        - {{arch}}
-      {%- endfor %}
-      {%- endif %}
+        - x86_64
       MemorySize: 128
       Timeout: 100
       Description: A simple example includes a HTTP get method to get one item by id from a DynamoDB table.
@@ -79,6 +52,8 @@ Resources:
           Properties:
             Path: /{id}
             Method: GET
+            RestApiId:
+              Ref: ApiGatewayApi
   # Each Lambda function is defined by properties:
   # https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
 
@@ -88,12 +63,8 @@ Resources:
     Properties:
       Handler: src/handlers/put-item.putItemHandler
       Runtime: nodejs18.x
-      {%- if cookiecutter.architectures.value != []%}
       Architectures:
-      {%- for arch in cookiecutter.architectures.value %}
-        - {{arch}}
-      {%- endfor %}
-      {%- endif %}
+        - x86_64
       MemorySize: 128
       Timeout: 100
       Description: A simple example includes a HTTP post method to add one item to a DynamoDB table.
@@ -103,7 +74,6 @@ Resources:
             TableName: !Ref SampleTable
       Environment:
         Variables:
-          # Make table name accessible as environment variable from function code during execution
           SAMPLE_TABLE: !Ref SampleTable
       Events:
         Api:
@@ -111,6 +81,8 @@ Resources:
           Properties:
             Path: /
             Method: POST
+            RestApiId:
+              Ref: ApiGatewayApi
   # Simple syntax to create a DynamoDB table with a single attribute primary key, more in
   # https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesssimpletable
 
@@ -125,7 +97,82 @@ Resources:
         ReadCapacityUnits: 2
         WriteCapacityUnits: 2
 
+  # S3 Bucket to host single page app website
+  WebSiteBucket:
+    Type: "AWS::S3::Bucket"
+  WebSiteBucketPolicy:
+    Type: "AWS::S3::BucketPolicy"
+    Properties:
+      Bucket: !Ref WebSiteBucket
+      PolicyDocument:
+        Version: "2012-10-17"
+        Id: "PolicyForCloudFrontPrivateContent"
+        Statement:
+        - Sid: "AllowCloudFrontServicePrincipal"
+          Effect: "Allow"
+          Principal:
+            Service: "cloudfront.amazonaws.com"
+          Action: "s3:GetObject"
+          Resource: !Join [ "", [ "arn:aws:s3:::", !Ref WebSiteBucket, "/*" ] ]
+          Condition:
+            StringEquals:
+              "AWS:SourceArn": !Join [ "", [ "arn:aws:cloudfront::", !Ref "AWS::AccountId", ":distribution/", !Ref CloudFrontDistribution ] ]
+  
+  # CloudFront Distribution for hosting the single page app website
+  CloudFrontDistribution:
+    Type: "AWS::CloudFront::Distribution"
+    Properties:
+      DistributionConfig:
+        Origins:
+        - DomainName: !GetAtt WebSiteBucket.RegionalDomainName
+          Id: "myS3Origin"
+          OriginAccessControlId: !GetAtt CloudFrontOriginAccessControl.Id
+          S3OriginConfig: 
+            OriginAccessIdentity: ""
+        Enabled: true
+        DefaultRootObject: "index.html"
+        HttpVersion: "http2"
+        DefaultCacheBehavior:
+          AllowedMethods:
+          - "DELETE"
+          - "GET"
+          - "HEAD"
+          - "OPTIONS"
+          - "PATCH"
+          - "POST"
+          - "PUT"
+          CachedMethods:
+          - "GET"
+          - "HEAD"
+          TargetOriginId: "myS3Origin"
+          ForwardedValues:
+            QueryString: false
+            Cookies:
+              Forward: "none"
+          ViewerProtocolPolicy: "allow-all"
+          MinTTL: 0
+          DefaultTTL: 3600
+          MaxTTL: 86400
+        PriceClass: "PriceClass_200"
+        Restrictions:
+          GeoRestriction:
+            RestrictionType: "whitelist"
+            Locations:
+            - "US"
+            - "CA"
+            - "GB"
+            - "DE"
+        ViewerCertificate:
+          CloudFrontDefaultCertificate: true
+  CloudFrontOriginAccessControl:
+    Type: "AWS::CloudFront::OriginAccessControl"
+    Properties:
+      OriginAccessControlConfig:
+        Name: !Sub "${WebSiteBucket} OAC"
+        OriginAccessControlOriginType: "s3"
+        SigningBehavior: "always"
+        SigningProtocol: "sigv4"
 Outputs:
   WebEndpoint:
     Description: "API Gateway endpoint URL for Prod stage"
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+    Value: !Sub "https://${ApiGatewayApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
