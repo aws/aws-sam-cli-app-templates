@@ -253,6 +253,14 @@
       "appTemplate": "step-functions-sample-app",
       "packageType": "Zip",
       "useCaseName": "Multi-step workflow"
+    },
+    {
+      "directory": "al2/go/response-streaming",
+      "displayName": "Lambda function using Response Streaming",
+      "dependencyManager": "mod",
+      "appTemplate": "response-streaming",
+      "packageType": "Zip",
+      "useCaseName": "Lambda Response Streaming"
     }
   ],
   "java8": [

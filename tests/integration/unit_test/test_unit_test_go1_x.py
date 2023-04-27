@@ -35,3 +35,7 @@ class UnitTest_go1_x_cookiecutter_aws_sam_hello_step_functions_sample_app(UnitTe
 class UnitTest_provided_go_cookiecutter_aws_sam_hello_step_functions_sample_app(UnitTestBase.GoUnitTestBase):
     directory = "al2/go/step-func"
     code_directories = ["functions/stockBuyer", "functions/stockChecker", "functions/stockSeller"]
+
+class UnitTest_provided_go_cookiecutter_aws_sam_response_streaming_sample_app(UnitTestBase.GoUnitTestBase):
+    directory = "al2/go/response-streaming"
+    code_directories = ["hello"]
