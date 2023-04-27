@@ -23,7 +23,7 @@ class BuildInvokeBase:
 
         function_id_by_event: Optional[Dict[str, str]] = None
         invoke_output: Dict[str, Any]
-        use_container: bool = True
+        use_container: bool = False
         build_image_tag: Optional[str] = None
         build_image_file: Optional[str] = None
         beta_features: bool = False

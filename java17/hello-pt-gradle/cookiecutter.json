@@ -1,0 +1,10 @@
+{
+    "project_name": "sam-app-powerools-java",
+    "runtime": "java17",
+    "Powertools Logging": ["enabled","disabled"],
+    "Powertools Metrics": ["enabled","disabled"],
+    "Powertools Tracing": ["enabled","disabled"],
+    "_copy_without_render": [
+        ".gitignore"
+    ]
+}
