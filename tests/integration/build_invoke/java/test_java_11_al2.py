@@ -15,6 +15,7 @@ class BuildInvoke_graalvm_java11_cookiecutter_aws_sam_graalvm_gradle(
     directory = "al2/graalvm/11/gradle"
     build_image_tag = "al2-graalvm:java11-gradle"
     command_timeout = 3600
+    use_container = True
 
 
 class BuildInvoke_graalvm_java11_cookiecutter_aws_sam_graalvm_maven(
@@ -23,6 +24,7 @@ class BuildInvoke_graalvm_java11_cookiecutter_aws_sam_graalvm_maven(
     directory = "al2/graalvm/11/maven"
     build_image_tag = "al2-graalvm:java11-maven"
     command_timeout = 3600
+    use_container = True
 
 
 class BuildInvoke_graalvm_java17_cookiecutter_aws_sam_graalvm_gradle(
@@ -31,6 +33,7 @@ class BuildInvoke_graalvm_java17_cookiecutter_aws_sam_graalvm_gradle(
     directory = "al2/graalvm/17/gradle"
     build_image_tag = "al2-graalvm:java17-gradle"
     command_timeout = 3600
+    use_container = True
 
 
 class BuildInvoke_graalvm_java17_cookiecutter_aws_sam_graalvm_maven(
@@ -39,4 +42,4 @@ class BuildInvoke_graalvm_java17_cookiecutter_aws_sam_graalvm_maven(
     directory = "al2/graalvm/17/maven"
     build_image_tag = "al2-graalvm:java17-maven"
     command_timeout = 3600
-
+    use_container = True

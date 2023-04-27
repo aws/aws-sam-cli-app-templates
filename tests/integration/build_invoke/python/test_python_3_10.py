@@ -47,3 +47,15 @@ class BuildInvoke_image_python3_10_cookiecutter_aws_sam_hello_python_lambda_imag
     BuildInvokeBase.SimpleHelloWorldBuildInvokeBase
 ):
     directory = "python3.10/hello-img"
+
+class BuildInvoke_python3_10_pytorch(BuildInvokeBase.BuildInvokeBase):
+    directory = "python3.10/apigw-pytorch"
+
+class BuildInvoke_python3_10_scikit(BuildInvokeBase.BuildInvokeBase):
+    directory = "python3.10/apigw-scikit"
+
+class BuildInvoke_python3_10_tensorflow(BuildInvokeBase.BuildInvokeBase):
+    directory = "python3.10/apigw-tensorflow"
+
+class BuildInvoke_python3_10_xgboost(BuildInvokeBase.BuildInvokeBase):
+    directory = "python3.10/apigw-xgboost"
