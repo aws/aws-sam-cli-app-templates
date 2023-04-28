@@ -44,6 +44,11 @@ class BuildInvoke_nodejs18_x_cookiecutter_quick_start_response_streaming(BuildIn
 class BuildInvoke_nodejs18_x_cookiecutter_quick_start_web(BuildInvokeBase.QuickStartWebBuildInvokeBase):
     directory = "nodejs18.x/web"
 
+
+class BuildInvoke_nodejs18_x_cookiecutter_quick_start_full_stack(BuildInvokeBase.QuickStartWebBuildInvokeBase):
+    directory = "nodejs18.x/full-stack"
+
+
 class BuildInvoke_image_nodejs18_x_cookiecutter_aws_sam_hello_nodejs_lambda_image(
     BuildInvokeBase.SimpleHelloWorldBuildInvokeBase
 ):
