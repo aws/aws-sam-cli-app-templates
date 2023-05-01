@@ -1,0 +1,81 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "object",
+    "additionalProperties": {
+        "type": "array",
+        "items": {
+            "$ref": "#/definitions/RuntimeTemplate"
+        }
+    },
+    "definitions": {
+        "RuntimeTemplate": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "__comment__": {
+                    "type": "string"
+                },
+                "directory": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "dependencyManager": {
+                    "$ref": "#/definitions/DependencyManager"
+                },
+                "appTemplate": {
+                    "type": "string"
+                },
+                "packageType": {
+                    "$ref": "#/definitions/PackageType"
+                },
+                "useCaseName": {
+                    "type": "string"
+                },
+                "isDynamicTemplate": {
+                    "$ref": "#/definitions/IsDynamicTemplate"
+                }
+            },
+            "required": [
+                "__comment__",
+                "appTemplate",
+                "dependencyManager",
+                "directory",
+                "displayName",
+                "packageType",
+                "useCaseName"
+            ],
+            "title": "RuntimeTemplate"
+        },
+        "DependencyManager": {
+            "type": "string",
+            "enum": [
+                "cli-package",
+                "mod",
+                "gradle",
+                "maven",
+                "npm",
+                "pip",
+                "bundler"
+            ],
+            "title": "DependencyManager"
+        },
+        "IsDynamicTemplate": {
+            "type": "string",
+            "enum": [
+                "True",
+                "False"
+            ],
+            "title": "IsDynamicTemplate"
+        },
+        "PackageType": {
+            "type": "string",
+            "enum": [
+                "Image",
+                "Zip"
+            ],
+            "title": "PackageType"
+        }
+    }
+}
