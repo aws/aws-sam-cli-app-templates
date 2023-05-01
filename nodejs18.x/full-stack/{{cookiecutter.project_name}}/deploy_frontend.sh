@@ -17,3 +17,12 @@ echo "API Gateway URL: $api_gateway_endpoint"
 echo "CloudFront Distribution ID: $cloudfront_distribution_id"
 echo "S3 Bucket Name: $s3_bucket_name"
 
+# Move to frontend and install
+cd frontend/ && npm install
+
+# Create .env file for building distribtuion with API Gateway Endpoint defined
+touch .env
+
+# Create distribution for deployment
+npm run build && cd dist/
+
