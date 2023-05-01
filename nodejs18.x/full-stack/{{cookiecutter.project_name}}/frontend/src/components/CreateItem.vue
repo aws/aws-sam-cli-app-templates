@@ -34,7 +34,7 @@ export default {
   methods: {
     createItem() {
       axios
-        .post('https://jsonplaceholder.typicode.com/posts', this.formData)
+        .post(process.env.VUE_APP_API_ENDPOINT, this.formData)
         .then((response) => {
           console.log(response)
         })

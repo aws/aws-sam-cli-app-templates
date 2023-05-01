@@ -25,7 +25,7 @@ export default {
   methods: {
     getItems() {
       axios
-        .get('https://jsonplaceholder.typicode.com/posts')
+        .get(process.env.VUE_APP_API_ENDPOINT)
         .then((response) => {
           console.log(response)
           this.posts = response.data
