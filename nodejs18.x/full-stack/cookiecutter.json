@@ -5,6 +5,7 @@
         "value": []
     },
     "_copy_without_render": [
-        ".gitignore"
+        ".gitignore",
+        "*.vue"
     ]
 }
