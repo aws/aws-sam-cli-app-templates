@@ -23,6 +23,15 @@ cd frontend/ && npm install
 # Create .env file for building distribtuion with API Gateway Endpoint defined
 touch .env
 
+# Add the API Gateway endpoint to the .env file
+echo "VUE_APP_API_ENDPOINT=$api_gateway_endpoint" >> .env
+
+# Confirm that the endpoint has been added to the .env file
+echo "The API Gateway endpoint has been added to the .env file:"
+cat .env
+
 # Create distribution for deployment
 npm run build && cd dist/
+
+
 
