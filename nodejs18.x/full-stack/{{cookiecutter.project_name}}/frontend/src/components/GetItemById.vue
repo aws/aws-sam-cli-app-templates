@@ -2,13 +2,15 @@
   <div>    
     <form @submit.prevent="createItem">
       <div>
-        <label for="itemId">Item ID</label>
-        <input type="text" id="itemId" v-model="formData.itemId" />
-      </div>
-      
+        <label for="userId">Item ID</label>
+        <input type="text" id="userId" v-model="formData.userId" />
+      </div>      
       <button @click="getItemsById">Get Item</button>
     </form>
   </div>
+  <h3 v-if="user">{{ user.userId }} . {{ user.userName }}</h3>      
+  <h3 v-if="errorMsg">{{ errorMsg }}</h3>
+    
 </template>
 
 <script>
@@ -18,8 +20,9 @@ export default {
   name: 'GetItemById',  
   data() {
     return {
+      user: '',
       formData: {
-        itemId: '',
+        userId: '',
       },      
       errorMsg: '',
     }
@@ -27,10 +30,10 @@ export default {
   methods: {
     getItemsById() {
       axios
-        .get(process.env.VUE_APP_API_ENDPOINT + this.formData.itemId)
+        .get(process.env.VUE_APP_API_ENDPOINT + this.formData.userId)
         .then((response) => {
           console.log(response)
-          this.posts = response.data
+          this.user = response.data
         })
         .catch((error) => {
           console.log(error)

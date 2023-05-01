@@ -2,19 +2,16 @@
   <div>
     <form @submit.prevent="createItem">
       <div>
-        <label for="userId">Post User ID</label>
+        <label for="userId">User ID</label>
         <input type="text" id="userId" v-model="formData.userId" />
       </div>
       <div>
-        <label for="title">Post Title</label>
-        <input type="text" id="title" v-model="formData.title" />
-      </div>
-      <div>
-        <label for="body">Post Body</label>
-        <input type="text" id="body" v-model="formData.body" />
-      </div>
-      <button>Create Item</button>
+        <label for="userName">User Name</label>
+        <input type="text" id="userName" v-model="formData.userName" />
+      </div>      
+      <button>Create User</button>
     </form>
+    <h3 v-if="errorMsg">{{ errorMsg }}</h3>
   </div>
 </template>
 
@@ -26,9 +23,9 @@ export default {
     return {
       formData: {
         userId: '',
-        title: '',
-        body: '',
+        userName: '',
       },
+      errorMsg: '',
     }
   },
   methods: {
@@ -40,6 +37,7 @@ export default {
         })
         .catch((error) => {
           console.log(error)
+          this.errorMsg = 'Error posting data'
         })
     },
   },
