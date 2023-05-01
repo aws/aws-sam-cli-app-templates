@@ -92,7 +92,7 @@ To simplify troubleshooting, SAM CLI has a command called `sam logs`. `sam logs`
 `NOTE`: This command works for all AWS Lambda functions; not just the ones you deploy using SAM.
 
 ```bash
-{{ cookiecutter.project_name }}$ sam logs -n HelloWorldFunction --stack-name {{ cookiecutter.project_name }} --tail
+{{ cookiecutter.project_name }}$ sam logs -n HelloWorldFunction --stack-name "{{ cookiecutter.__stack_name }}" --tail
 ```
 
 You can find more information and examples about filtering Lambda function logs in the [SAM CLI Documentation](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-logging.html).
@@ -111,7 +111,7 @@ Tests are defined in the `tests` folder in this project. Use PIP to install the 
 To delete the sample application that you created, use the SAM CLI. Assuming you used your project name for the stack name, you can run the following:
 
 ```bash
-sam delete --stack-name {{ cookiecutter.project_name }}
+sam delete --stack-name "{{ cookiecutter.__stack_name }}"
 ```
 
 
