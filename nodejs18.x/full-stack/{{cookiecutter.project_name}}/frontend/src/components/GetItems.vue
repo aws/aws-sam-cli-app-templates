@@ -1,9 +1,8 @@
 <template>
   <div>
     <button @click="getItems">Get Items</button>
-    <div v-for="post in posts" :key="post.id">
-      <h3>{{ post.id }}. {{ post.title }}</h3>
-      <p>{{ post.body }}</p>
+    <div v-for="user in users" :key="user.userId">
+      <h3>{{ user.userId }}. {{ user.userName }}</h3>      
       <hr />
     </div>
     <h3 v-if="errorMsg">{{ errorMsg }}</h3>
@@ -18,7 +17,7 @@ export default {
   
   data() {
     return {
-      posts: [],
+      users: [],
       errorMsg: '',
     }
   },
@@ -28,7 +27,7 @@ export default {
         .get(process.env.VUE_APP_API_ENDPOINT)
         .then((response) => {
           console.log(response)
-          this.posts = response.data
+          this.users = response.data
         })
         .catch((error) => {
           console.log(error)
