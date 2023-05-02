@@ -1431,16 +1431,6 @@
       "useCaseName": "Hello World Example"
     }
   ],
-  "amazon/dotnet5.0-base": [
-    {
-      "directory": "dotnet5/hello-img",
-      "displayName": "Hello World Lambda Image Example",
-      "dependencyManager": "cli-package",
-      "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image",
-      "useCaseName": "Hello World Example"
-    }
-  ],
   "amazon/python3.7-base": [
     {
       "directory": "python3.7/hello-img",
