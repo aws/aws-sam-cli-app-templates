@@ -8,7 +8,7 @@
       <button @click="getItemsById">Get Item</button>
     </form>
   </div>
-  <h3 v-if="user">{{ user.userId }} . {{ user.userName }}</h3>      
+  <h3 v-if="user.id">{{ user.id }} . {{ user.name }}</h3>      
   <h3 v-if="errorMsg">{{ errorMsg }}</h3>
     
 </template>
@@ -20,7 +20,7 @@ export default {
   name: 'GetItemById',  
   data() {
     return {
-      user: '',
+      user: {},
       formData: {
         userId: '',
       },      
