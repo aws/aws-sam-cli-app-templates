@@ -35,72 +35,6 @@
       "useCaseName": "Hello World Example"
     }
   ],
-  "dotnetcore3.1": [
-    {
-      "directory": "dotnetcore3.1/hello",
-      "displayName": "Hello World Example",
-      "dependencyManager": "cli-package",
-      "appTemplate": "hello-world",
-      "packageType": "Zip",
-      "useCaseName": "Hello World Example"
-    },
-    {
-      "directory": "dotnetcore3.1/step-func",
-      "displayName": "Step Functions Sample App (Stock Trader)",
-      "dependencyManager": "cli-package",
-      "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip",
-      "useCaseName": "Multi-step workflow"
-    },
-    {
-      "directory": "dotnetcore3.1/web",
-      "displayName": "Quick Start: Web Backend",
-      "dependencyManager": "cli-package",
-      "appTemplate": "quick-start-web",
-      "packageType": "Zip",
-      "useCaseName": "Serverless API"
-    },
-    {
-      "directory": "dotnetcore3.1/cw-event",
-      "displayName": "Quick Start: Scheduled Events",
-      "dependencyManager": "cli-package",
-      "appTemplate": "quick-start-cloudwatch-events",
-      "packageType": "Zip",
-      "useCaseName": "Scheduled task"
-    },
-    {
-      "directory": "dotnetcore3.1/scratch",
-      "displayName": "Quick Start: From Scratch",
-      "dependencyManager": "cli-package",
-      "appTemplate": "quick-start-from-scratch",
-      "packageType": "Zip",
-      "useCaseName": "Standalone function"
-    },
-    {
-      "directory": "dotnetcore3.1/sns",
-      "displayName": "Quick Start: SNS",
-      "dependencyManager": "cli-package",
-      "appTemplate": "quick-start-sns",
-      "packageType": "Zip",
-      "useCaseName": "Data processing"
-    },
-    {
-      "directory": "dotnetcore3.1/sqs",
-      "displayName": "Quick Start: SQS",
-      "dependencyManager": "cli-package",
-      "appTemplate": "quick-start-sqs",
-      "packageType": "Zip",
-      "useCaseName": "Data processing"
-    },
-    {
-      "directory": "dotnetcore3.1/s3",
-      "displayName": "Quick Start: S3",
-      "dependencyManager": "cli-package",
-      "appTemplate": "quick-start-s3",
-      "packageType": "Zip",
-      "useCaseName": "Data processing"
-    }
-  ],
   "dotnet6": [
     {
       "directory": "dotnet6/sqs",
@@ -1500,16 +1434,6 @@
   "amazon/dotnet5.0-base": [
     {
       "directory": "dotnet5/hello-img",
-      "displayName": "Hello World Lambda Image Example",
-      "dependencyManager": "cli-package",
-      "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image",
-      "useCaseName": "Hello World Example"
-    }
-  ],
-  "amazon/dotnetcore3.1-base": [
-    {
-      "directory": "dotnetcore3.1/hello-img",
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "cli-package",
       "appTemplate": "hello-world-lambda-image",
