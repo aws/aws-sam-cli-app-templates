@@ -215,6 +215,12 @@ Resources:
         SigningBehavior: "always"
         SigningProtocol: "sigv4"
 Outputs:
-  WebEndpoint:
+  APIGatewayEndpoint:
     Description: "API Gateway endpoint URL for Prod stage"
     Value: !Sub "https://${ApiGatewayApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+  CloudFrontDistributionId:
+    Description: "CloudFront Distribution ID for hosting web frontend"
+    Value: !Ref CloudFrontDistribution
+  WebS3BucketName:
+    Description: "S3 Bucket for hosting web frontend"
+    Value: !Ref WebSiteBucket
