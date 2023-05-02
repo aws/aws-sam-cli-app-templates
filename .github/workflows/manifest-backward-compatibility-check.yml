@@ -22,3 +22,19 @@ jobs:
         run: |
           pip install json-spec
           json validate --schema-file=manifest-schema.json --document-file=manifest.json
+  check-manifest-schema-is-not-changed:
+    permissions:
+      pull-requests: read
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout commit
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 3
+      - name: Check for manifest-schema.json changes
+        shell: bash
+        run: |
+          if git log --name-only -n 2 ${{github.sha}} | grep "manifest-schema.json"; then
+            echo "Backward Incompatible change found!"
+            exit 1
+          fi
