@@ -3,11 +3,11 @@
     <form @submit.prevent="createItem">
       <div>
         <label for="userId">User ID</label>
-        <input type="text" id="userId" v-model="formData.userId" />
+        <input type="text" id="userId" v-model="formData.id" />
       </div>
       <div>
         <label for="userName">User Name</label>
-        <input type="text" id="userName" v-model="formData.userName" />
+        <input type="text" id="userName" v-model="formData.name" />
       </div>      
       <button>Create User</button>
     </form>
@@ -22,8 +22,8 @@ export default {
   data() {
     return {
       formData: {
-        userId: '',
-        userName: '',
+        id: '',
+        name: '',
       },
       errorMsg: '',
     }

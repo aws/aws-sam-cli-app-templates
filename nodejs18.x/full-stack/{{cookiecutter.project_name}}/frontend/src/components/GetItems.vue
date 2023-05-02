@@ -1,8 +1,8 @@
 <template>
   <div>
     <button @click="getItems">Get Items</button>
-    <div v-for="user in users" :key="user.userId">
-      <h3>{{ user.userId }}. {{ user.userName }}</h3>      
+    <div v-for="user in users" :key="user.id">
+      <h3>{{ user.id }}. {{ user.name }}</h3>      
       <hr />
     </div>
     <h3 v-if="errorMsg">{{ errorMsg }}</h3>
