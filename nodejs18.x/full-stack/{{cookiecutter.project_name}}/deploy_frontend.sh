@@ -42,7 +42,11 @@ invalidation_id=$(echo "$invalidation_output" | grep -oP '(?<="Id": ")[^"]+')
 
 # Wait for cloudfront invalidation to complete
 aws cloudfront wait invalidation-completed --distribution-id $cloudfront_distribution_id --id $invalidation_id
-echo "The invalidation is now complete - please visit your cloudfront URL"
+
+# Get cloudfront domain name and validate
+cloudfront_domain_name=$(aws cloudfront list-distributions --query "DistributionList.Items[?Id=='$cloudfront_distribution_id'].DomainName" --output text)
+
+echo "The invalidation is now complete - please visit your cloudfront URL to test: $cloudfront_domain_name"
 
 
 
