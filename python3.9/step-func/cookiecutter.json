@@ -6,5 +6,6 @@
     },
     "_copy_without_render": [
         ".gitignore"
-    ]
+    ],
+    "__stack_name": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}"
 }
