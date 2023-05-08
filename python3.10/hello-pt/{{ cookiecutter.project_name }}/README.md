@@ -145,7 +145,7 @@ Tests are defined in the `tests` folder in this project. Use PIP to install the 
 {{ cookiecutter.project_name }}$ python -m pytest tests/unit -v
 # integration test, requiring deploying the stack first.
 # Create the env variable AWS_SAM_STACK_NAME with the name of the stack we are testing
-{{ cookiecutter.project_name }}$ AWS_SAM_STACK_NAME=<stack-name> python -m pytest tests/integration -v
+{{ cookiecutter.project_name }}$ AWS_SAM_STACK_NAME="{{ cookiecutter.__stack_name }}" python -m pytest tests/integration -v
 ```
 
 ### Cleanup
@@ -153,7 +153,7 @@ Tests are defined in the `tests` folder in this project. Use PIP to install the 
 To delete the sample application that you created, use the AWS CLI. Assuming you used your project name for the stack name, you can run the following:
 
 ```bash
-sam delete --stack-name {{ cookiecutter.project_name }}
+sam delete --stack-name "{{ cookiecutter.__stack_name }}"
 ```
 
 ## Resources
