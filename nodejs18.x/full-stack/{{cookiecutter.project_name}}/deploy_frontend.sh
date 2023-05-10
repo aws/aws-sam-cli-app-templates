@@ -47,6 +47,3 @@ aws cloudfront wait invalidation-completed --distribution-id $cloudfront_distrib
 cloudfront_domain_name=$(aws cloudfront list-distributions --query "DistributionList.Items[?Id=='$cloudfront_distribution_id'].DomainName" --output text)
 
 echo "The invalidation is now complete - please visit your cloudfront URL to test: $cloudfront_domain_name"
-
-
-
