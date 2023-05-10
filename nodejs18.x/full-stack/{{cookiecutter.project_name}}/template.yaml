@@ -25,7 +25,7 @@ Resources:
       Cors:
         AllowMethods: "'OPTIONS, POST, GET'"
         AllowHeaders: "'Content-Type'"
-        AllowOrigin: "'*'"
+        AllowOrigin: "'*'" #DO NOT USE THIS VALUE IN PRODUCTION - https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html
 
   # This is a Lambda function config associated with the source code: get-by-id.js
   getAllItemsFunction:

@@ -63,6 +63,10 @@ For convenience, the included deploy_frontend.sh bash script can be run to autom
 ./deploy_frontend.sh
 ```
 
+## Regarding CORS
+For security, it is recommended to restrict the Allowed Origin value to restrict HTTP requests that are initiated from scripts running in the browser. See here for more information:
+* Configuring CORS for an HTTP API - [Configuring CORS for an HTTP API](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html).
+
 ## Use the AWS SAM CLI to build and test locally
 
 Build your application by using the `sam build` command.
