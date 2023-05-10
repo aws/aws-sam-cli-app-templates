@@ -51,7 +51,17 @@ The first command will build the source of your application. The second command 
 * **Allow SAM CLI IAM role creation**: Many AWS SAM templates, including this example, create AWS IAM roles required for the AWS Lambda function(s) included to access AWS services. By default, these are scoped down to minimum required permissions. To deploy an AWS CloudFormation stack which creates or modifies IAM roles, the `CAPABILITY_IAM` value for `capabilities` must be provided. If permission isn't provided through this prompt, to deploy this example you must explicitly pass `--capabilities CAPABILITY_IAM` to the `sam deploy` command.
 * **Save arguments to samconfig.toml**: If set to yes, your choices will be saved to a configuration file inside the project, so that in the future you can just re-run `sam deploy` without parameters to deploy changes to your application.
 
-The API Gateway endpoint API will be displayed in the outputs when the deployment is complete.
+The following outputs will be displayed in the outputs when the deployment is complete:
+* API Gateway endpoint API 
+* CloudFront Distribution ID
+* CloudFront domain name
+* S3 Bucket for Front End source files
+
+## Deploy the Front End
+For convenience, the included deploy_frontend.sh bash script can be run to automatically deploy your front end website to your AWS account. Run using the following command:
+```bash
+./deploy_frontend.sh
+```
 
 ## Use the AWS SAM CLI to build and test locally
 
