@@ -28,6 +28,10 @@ class BuildInvoke_provided_go_cookiecutter_aws_sam_eventbridge_hello_golang(Buil
     use_container = False
     directory = "al2/go/event-bridge"
 
+class BuildInvoke_provided_go_cookiecutter_aws_sam_response_streaming_golang(BuildInvokeBase.BuildInvokeBase):
+    use_container = False
+    directory = "al2/go/response-streaming"
+
 # todo: remove skip once tests are run in environment with AWS Credentials
 @skip("eventbridge schema app requires credential to pull missing files, skip")
 class BuildInvoke_go1_x_cookiecutter_aws_sam_eventbridge_schema_app_golang(BuildInvokeBase.BuildInvokeBase):
