@@ -354,4 +354,4 @@ jobs:
           samdev --info
           dotnet --info
           dotnet --version
-          pytest -n auto -vvv ${{ matrix.file }}
+          pytest -vvv ${{ matrix.file }}
