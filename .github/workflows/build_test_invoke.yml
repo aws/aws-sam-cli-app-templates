@@ -333,9 +333,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - version: '5'
-            type: 'Invoke'
-            file: 'tests/integration/build_invoke/dotnet/test_build_invoke_dotnet5_0.py'
           - version: '6'
             type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_dotnet6.py'
