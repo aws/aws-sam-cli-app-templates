@@ -35,7 +35,12 @@ export const putItemHandler = async (event) => {
         const data = await ddbDocClient.send(new PutCommand(params));
         console.log("Success - item added or updated", data);
       } catch (err) {
-        console.log("Error", err.stack);
+        console.error("Error adding or updating item:", err.message);
+        console.error("Error code:", err.code);
+        console.error("Error name:", err.name);
+        console.error("Error stack:", err.stack);
+
+        throw err;
       }
 
     const response = {
