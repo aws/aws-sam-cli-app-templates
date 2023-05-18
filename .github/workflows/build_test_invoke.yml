@@ -59,7 +59,7 @@ jobs:
       - name: Run build tests for tests/unit/
         run: |
           pip install -r requirements.txt
-          pytest -vvv tests/unit/
+          pytest -n auto -vvv tests/unit/
 
   ################
   # Python
@@ -112,7 +112,7 @@ jobs:
         run: |
           pip install -r requirements.txt
           samdev --info
-          pytest -vvv ${{ matrix.file }}
+          pytest -n auto -vvv ${{ matrix.file }}
 
   ################
   # Java
@@ -144,6 +144,12 @@ jobs:
           - version: '11'
             type: 'Invoke (AL2)'
             file: 'tests/integration/build_invoke/java/test_java_11_al2.py'
+          - version: '17'
+            type: 'Test'
+            file: 'tests/integration/unit_test/test_unit_test_java17.py'
+          - version: '17'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/java/test_java_17.py'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -161,7 +167,7 @@ jobs:
           samdev --info
           gradle --version
           mvn --version
-          pytest -vvv ${{ matrix.file }}
+          pytest -n auto -vvv ${{ matrix.file }}
           
   ################
   # NodeJS
@@ -212,7 +218,7 @@ jobs:
           samdev --info
           echo "node: $(node --version)"
           echo "npm: $(npm --version)"
-          pytest -vvv ${{ matrix.file }}
+          pytest -n auto -vvv ${{ matrix.file }}
           
   ################
   # Ruby
@@ -250,7 +256,7 @@ jobs:
           pip install -r requirements.txt
           samdev --info
           ruby --version
-          pytest -vvv ${{ matrix.file }}
+          pytest -n auto -vvv ${{ matrix.file }}
           
   ################
   # Rust
@@ -287,7 +293,7 @@ jobs:
           rustc -V
           cargo -V
           cargo lambda -V
-          pytest -vvv ${{ matrix.file }}
+          pytest -n auto -vvv ${{ matrix.file }}
 
   ################
   # golang
@@ -321,7 +327,7 @@ jobs:
           pip install -r requirements.txt
           samdev --info
           go version
-          pytest -vvv ${{ matrix.file }}
+          pytest -n auto -vvv ${{ matrix.file }}
 
   ################
   # dotnet
@@ -333,15 +339,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - version: '3.1'
-            type: 'Test'
-            file: 'tests/integration/unit_test/test_unit_test_dotnetcore3_1.py'
-          - version: '3.1'
-            type: 'Invoke'
-            file: 'tests/integration/build_invoke/dotnet/test_build_invoke_dotnetcore3_1.py'
-          - version: '5'
-            type: 'Invoke'
-            file: 'tests/integration/build_invoke/dotnet/test_build_invoke_dotnet5_0.py'
           - version: '6'
             type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_dotnet6.py'
@@ -363,4 +360,4 @@ jobs:
           samdev --info
           dotnet --info
           dotnet --version
-          pytest -vvv ${{ matrix.file }}
+          pytest -n auto -vvv ${{ matrix.file }}

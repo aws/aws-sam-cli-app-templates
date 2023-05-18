@@ -1,6 +1,8 @@
 {
   "project_name": "digit_classifier",
   "api_path": "/classify_digit",
+  "pytorch_version": "1.13.1",
+  "torchvision_version": "0.14.1",
   "architectures": {
     "value": [
       "x86_64"
@@ -8,5 +10,6 @@
   },
   "_copy_without_render": [
     ".gitignore"
-  ]
+  ],
+  "__stack_name": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}"
 }

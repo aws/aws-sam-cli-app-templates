@@ -1,0 +1,11 @@
+{
+    "project_name": "Name of the project",
+    "runtime": "java17",
+    "architectures": {
+        "value": []
+    },
+    "_copy_without_render": [
+        ".gitignore"
+    ]
+
+}

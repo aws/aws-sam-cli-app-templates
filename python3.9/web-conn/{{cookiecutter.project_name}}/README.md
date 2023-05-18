@@ -58,7 +58,7 @@ The API Gateway endpoint API will be displayed in the outputs when the deploymen
 Build your application by using the `sam build` command.
 
 ```bash
-my-application$ sam build
+{{ cookiecutter.project_name }}$ sam build
 ```
 
 The AWS SAM CLI installs dependencies that are defined in `package.json`, creates a deployment package, and saves it in the `.aws-sam/build` folder.
@@ -68,15 +68,15 @@ Test a single function by invoking it directly with a test event. An event is a 
 Run functions locally and invoke them with the `sam local invoke` command.
 
 ```bash
-my-application$ sam local invoke putItemFunction --event events/event-post-item.json
-my-application$ sam local invoke getAllItemsFunction --event events/event-get-all-items.json
+{{ cookiecutter.project_name }}$ sam local invoke putItemFunction --event events/event-post-item.json
+{{ cookiecutter.project_name }}$ sam local invoke getAllItemsFunction --event events/event-get-all-items.json
 ```
 
 The AWS SAM CLI can also emulate your application's API. Use the `sam local start-api` command to run the API locally on port 3000.
 
 ```bash
-my-application$ sam local start-api
-my-application$ curl http://localhost:3000/
+{{ cookiecutter.project_name }}$ sam local start-api
+{{ cookiecutter.project_name }}$ curl http://localhost:3000/
 ```
 
 The AWS SAM CLI reads the application template to determine the API's routes and the functions that they invoke. The `Events` property on each function's definition includes the route and method for each path.
@@ -117,7 +117,7 @@ The dead-letter queue is a location for Lambda to send events that could not be 
 Deploy the updated application.
 
 ```bash
-my-application$ sam deploy
+{{ cookiecutter.project_name }}$ sam deploy
 ```
 
 Open the [**Applications**](https://console.aws.amazon.com/lambda/home#/applications) page of the Lambda console, and choose your application. When the deployment completes, view the application resources on the **Overview** tab to see the new resource. Then, choose the function to see the updated configuration that specifies the dead-letter queue.
@@ -129,7 +129,7 @@ To simplify troubleshooting, the AWS SAM CLI has a command called `sam logs`. `s
 **NOTE:** This command works for all Lambda functions, not just the ones you deploy using AWS SAM.
 
 ```bash
-my-application$ sam logs -n putItemFunction --stack-name sam-app --tail
+{{ cookiecutter.project_name }}$ sam logs -n putItemFunction --stack-name "{{ cookiecutter.__stack_name }}" --tail
 ```
 
 **NOTE:** This uses the logical name of the function within the stack. This is the correct name to use when searching logs inside an AWS Lambda function within a CloudFormation stack, even if the deployed function name varies due to CloudFormation's unique resource name generation.
@@ -141,8 +141,8 @@ You can find more information and examples about filtering Lambda function logs 
 Tests are defined in the `__tests__` folder in this project. Use `npm` to install the [Jest test framework](https://jestjs.io/) and run unit tests.
 
 ```bash
-my-application$ npm install
-my-application$ npm run test
+{{ cookiecutter.project_name }}$ npm install
+{{ cookiecutter.project_name }}$ npm run test
 ```
 
 ## Cleanup
@@ -150,7 +150,7 @@ my-application$ npm run test
 To delete the sample application that you created, use the AWS CLI. Assuming you used your project name for the stack name, you can run the following:
 
 ```bash
-sam delete --stack-name {{ cookiecutter.project_name }}
+sam delete --stack-name "{{ cookiecutter.__stack_name }}"
 ```
 
 ## Resources
