@@ -209,7 +209,7 @@ class UnitTestBase:
             cmdlist = ["ruby", code_directory]
             LOG.info(cmdlist)
             result = run_command(cmdlist, self.cwd)
-            self.assertIn("100% passed", result.stdout)
+            self.assertIn("0 failures, 0 errors", result.stdout)
 
     class RustUnitTestBase(UnitTestBase):
         """
