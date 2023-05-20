@@ -3,7 +3,10 @@
 // Create a DocumentClient that represents the query to add an item
 import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
 import { DynamoDBDocumentClient, ScanCommand } from '@aws-sdk/lib-dynamodb';
-const client = new DynamoDBClient({});
+
+//DynamoDB Endpoint
+const ENDPOINT_OVERRIDE = process.env.ENDPOINT_OVERRIDE;
+const client = new DynamoDBClient({ endpoint: ENDPOINT_OVERRIDE });
 const ddbDocClient = DynamoDBDocumentClient.from(client);
 
 // Get the DynamoDB table name from environment variables
