@@ -20,5 +20,12 @@ npm run build
 npm run lint
 ```
 
+### Connect to Backend
+
+Make backend API endpoint accessible as an environment variable. For local, create a `.env` file, Here is an example: 
+```
+VUE_APP_API_ENDPOINT=http://127.0.0.1:3000/
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
