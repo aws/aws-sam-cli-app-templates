@@ -6,6 +6,10 @@ import { DynamoDBDocumentClient, PutCommand } from '@aws-sdk/lib-dynamodb';
 
 //DynamoDB Endpoint
 const ENDPOINT_OVERRIDE = process.env.ENDPOINT_OVERRIDE;
+if(!ENDPOINT_OVERRIDE){
+  console.warn("No value for ENDPOINT_OVERRIDE provided for DynamoDB");
+}
+
 const client = new DynamoDBClient({ endpoint: ENDPOINT_OVERRIDE });
 const ddbDocClient = DynamoDBDocumentClient.from(client);
 
