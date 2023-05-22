@@ -2,16 +2,19 @@
   <div>
     <form @submit.prevent="createItem">
       <div>
-        <label for="userId">User ID</label>
+        <label for="userId">User ID </label>
         <input type="text" id="userId" v-model="formData.id" />
       </div>
       <div>
         <label for="userName">User Name</label>
         <input type="text" id="userName" v-model="formData.name" />
       </div>      
-      <button>Create User</button>
+      <div>
+        <button>Create User</button>
+      </div>
     </form>
-    <h3 v-if="errorMsg">{{ errorMsg }}</h3>
+    <h3 v-if="response"> User created</h3>
+    <h3 class="error" v-if="errorMsg">{{ errorMsg }}</h3>
   </div>
 </template>
 
@@ -26,6 +29,7 @@ export default {
         name: '',
       },
       errorMsg: '',
+      response: '',
     }
   },
   methods: {
@@ -34,6 +38,7 @@ export default {
         .post(process.env.VUE_APP_API_ENDPOINT, this.formData)
         .then((response) => {
           console.log(response)
+          this.response = response
         })
         .catch((error) => {
           console.log(error)
@@ -45,4 +50,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>

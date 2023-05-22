@@ -1,11 +1,10 @@
 <template>
   <div>
-    <button @click="getItems">Get Items</button>
-    <div v-for="user in users" :key="user.id">
-      <h3>{{ user.id }}. {{ user.name }}</h3>      
-      <hr />
+    <button @click="getItems">Get User</button>
+    <div v-for="user in users" :key="user.id">      
+      <h4>{{ user.id }} || {{ user.name }}</h4>            
     </div>
-    <h3 v-if="errorMsg">{{ errorMsg }}</h3>
+    <h3 class="error" v-if="errorMsg">{{ errorMsg }}</h3>
   </div>
 </template>
 
@@ -39,4 +38,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>
