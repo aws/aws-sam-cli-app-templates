@@ -51,6 +51,8 @@ Resources:
         Variables:
           # Make table name accessible as environment variable from function code during execution
           SAMPLE_TABLE: !Ref SampleTable
+          # Make DynamoDB endpoint accessible as environment variable from function code during execution
+          ENDPOINT_OVERRIDE: ""
       Events:
         Api:
           Type: Api
@@ -86,6 +88,8 @@ Resources:
         Variables:
           # Make table name accessible as environment variable from function code during execution
           SAMPLE_TABLE: !Ref SampleTable
+          # Make DynamoDB endpoint accessible as environment variable from function code during execution
+          ENDPOINT_OVERRIDE: ""
       Events:
         Api:
           Type: Api
@@ -120,6 +124,8 @@ Resources:
       Environment:
         Variables:
           SAMPLE_TABLE: !Ref SampleTable
+          # Make DynamoDB endpoint accessible as environment variable from function code during execution
+          ENDPOINT_OVERRIDE: ""
       Events:
         Api:
           Type: Api
