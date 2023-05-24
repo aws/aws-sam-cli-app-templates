@@ -24,19 +24,19 @@ Resources:
         - {{arch}}
       {%- endfor %}
       {%- endif %}
-      {%- if cookiecutter["Powertools Tracing"] == "enabled"%}
+      {%- if cookiecutter["Powertools for AWS Lambda (TypeScript) Tracing"] == "enabled"%}
       Tracing: Active
       {%- endif %}
-      {%- if cookiecutter["Powertools Tracing"] == "enabled" or cookiecutter["Powertools Metrics"] == "enabled" or cookiecutter["Powertools Logging"] == "enabled" %}
+      {%- if cookiecutter["Powertools for AWS Lambda (TypeScript) Tracing"] == "enabled" or cookiecutter["Powertools for AWS Lambda (TypeScript) Metrics"] == "enabled" or cookiecutter["Powertools for AWS Lambda (TypeScript) Logging"] == "enabled" %}
       Environment:
         Variables:
-          {%- if cookiecutter["Powertools Tracing"] == "enabled" or cookiecutter["Powertools Metrics"] == "enabled"%}
+          {%- if cookiecutter["Powertools for AWS Lambda (TypeScript) Tracing"] == "enabled" or cookiecutter["Powertools for AWS Lambda (TypeScript) Metrics"] == "enabled"%}
           POWERTOOLS_SERVICE_NAME: helloWorld
           {%- endif %}
-          {%- if cookiecutter["Powertools Metrics"] == "enabled"%}
+          {%- if cookiecutter["Powertools for AWS Lambda (TypeScript) Metrics"] == "enabled"%}
           POWERTOOLS_METRICS_NAMESPACE: {{ cookiecutter.project_name|lower|replace(' ', '-') }}
           {%- endif %}
-          {%- if cookiecutter["Powertools Logging"] == "enabled"%}
+          {%- if cookiecutter["Powertools for AWS Lambda (TypeScript) Logging"] == "enabled"%}
           LOG_LEVEL: INFO
           {%- endif %}
       {%- endif %}
