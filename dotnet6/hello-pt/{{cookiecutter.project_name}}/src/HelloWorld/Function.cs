@@ -10,10 +10,10 @@ using Amazon.Lambda.APIGatewayEvents;
 using Amazon.XRay.Recorder.Handlers.AwsSdk;
 using AWS.Lambda.Powertools.Tracing;
 {%- endif %}
-{%- if cookiecutter["Powertools Metrics"] == "enabled"%}
+{%- if cookiecutter["Powertools for AWS Lambda (.NET) Metrics"] == "enabled"%}
 using AWS.Lambda.Powertools.Metrics;
 {%- endif %}
-{%- if cookiecutter["Powertools Logging"] == "enabled"%}
+{%- if cookiecutter["Powertools for AWS Lambda (.NET) Logging"] == "enabled"%}
 using AWS.Lambda.Powertools.Logging;
 {%- endif %}
 

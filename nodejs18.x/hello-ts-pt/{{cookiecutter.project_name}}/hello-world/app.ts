@@ -1,5 +1,5 @@
-import { Powertools for AWS Lambda (TypeScript), APIGatewayProxyResult, Context } from 'aws-lambda';
-{%- if cookiecutter["Powertools Metrics"] == "enabled"%}
+import { APIGatewayProxyEvent, APIGatewayProxyResult, Context } from 'aws-lambda';
+{%- if cookiecutter["Powertools for AWS Lambda (TypeScript) Metrics"] == "enabled"%}
 import { Metrics, MetricUnits } from '@aws-lambda-powertools/metrics';
 {%- endif %}
 {%- if cookiecutter["Powertools for AWS Lambda (TypeScript) Logging"] == "enabled"%}

@@ -7,7 +7,7 @@ from aws_lambda_powertools import Logger
 {%- if cookiecutter["Powertools for AWS Lambda (Python) Tracing"] == "enabled"%}
 from aws_lambda_powertools import Tracer
 {%- endif %}
-{%- if cookiecutter["Powertools Metrics"] == "enabled"%}
+{%- if cookiecutter["Powertools for AWS Lambda (Python) Metrics"] == "enabled"%}
 from aws_lambda_powertools import Metrics
 from aws_lambda_powertools.metrics import MetricUnit
 {%- endif %}
