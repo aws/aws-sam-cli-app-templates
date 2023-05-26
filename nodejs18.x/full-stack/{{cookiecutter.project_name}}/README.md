@@ -127,7 +127,7 @@ aws dynamodb create-table --table-name SampleTable --attribute-definitions Attri
 ```
 3. Retrieve the ip address of your docker container running dynamodb local:
 ```
-docker inspect <container_name_or_id> -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'
+docker inspect <container_name_or_id> -f {% raw %} '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' {% endraw %}
 ```
 4. Update env.json with the IP of your docker container for the endpoint override - see here for example:
 ```
