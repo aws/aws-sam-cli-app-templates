@@ -62,11 +62,11 @@
     },
     {
       "directory": "dotnet6/hello-pt",
-      "displayName": "Hello World Example .NET With Lambda Powertools",
+      "displayName": "Hello World Example .NET With Powertools for AWS Lambda",
       "dependencyManager": "cli-package",
       "appTemplate": "hello-world-powertools-dotnet",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example With Powertools"
+      "useCaseName": "Hello World Example with Powertools for AWS Lambda"
     },
     {
       "directory": "dotnet6/step-func",
@@ -216,11 +216,11 @@
     },
     {
       "directory": "java8/hello-pt-maven",
-      "displayName": "Hello World Example Java With Lambda Powertools",
+      "displayName": "Hello World Example Java With Powertools for AWS Lambda",
       "dependencyManager": "maven",
       "appTemplate": "hello-world-powertools-java",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example With Powertools"
+      "useCaseName": "Hello World Example with Powertools for AWS Lambda"
     },
     {
       "directory": "java8/event-bridge-gradle",
@@ -292,11 +292,11 @@
     },
     {
       "directory": "java8.al2/hello-pt-maven",
-      "displayName": "Hello World Example Java With Lambda Powertools",
+      "displayName": "Hello World Example Java With Powertools for AWS Lambda",
       "dependencyManager": "maven",
       "appTemplate": "hello-world-powertools-java",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example With Powertools"
+      "useCaseName": "Hello World Example with Powertools for AWS Lambda"
     },
     {
       "directory": "java8.al2/event-bridge-gradle",
@@ -368,11 +368,11 @@
     },
     {
       "directory": "java11/hello-pt-maven",
-      "displayName": "Hello World Example Java With Lambda Powertools",
+      "displayName": "Hello World Example Java With Powertools for AWS Lambda",
       "dependencyManager": "maven",
       "appTemplate": "hello-world-powertools-java",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example With Powertools"
+      "useCaseName": "Hello World Example with Powertools for AWS Lambda"
     },
     {
       "directory": "java11/event-bridge-gradle",
@@ -444,19 +444,19 @@
     },
     {
       "directory": "java17/hello-pt-maven",
-      "displayName": "Hello World Example Java With Lambda Powertools: Maven",
+      "displayName": "Hello World Example Java With Powertools for AWS Lambda: Maven",
       "dependencyManager": "maven",
       "appTemplate": "hello-world-powertools-java",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example With Powertools"
+      "useCaseName": "Hello World Example with Powertools for AWS Lambda"
     },
     {
       "directory": "java17/hello-pt-gradle",
-      "displayName": "Hello World Example Java With Lambda Powertools: Gradle",
+      "displayName": "Hello World Example Java With Powertools for AWS Lambda: Gradle",
       "dependencyManager": "gradle",
       "appTemplate": "hello-world-powertools-java",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example With Powertools"
+      "useCaseName": "Hello World Example with Powertools for AWS Lambda"
     },
     {
       "directory": "java17/event-bridge-gradle",
@@ -528,11 +528,11 @@
     },
     {
       "directory": "nodejs16.x/hello-ts-pt",
-      "displayName": "Hello World Example TypeScript With Lambda Powertools",
+      "displayName": "Hello World Example TypeScript With Powertools for AWS Lambda",
       "dependencyManager": "npm",
       "appTemplate": "hello-world-powertools-typescript",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example With Powertools"
+      "useCaseName": "Hello World Example with Powertools for AWS Lambda"
     },
     {
       "directory": "nodejs16.x/step-func",
@@ -644,11 +644,11 @@
     },
     {
       "directory": "nodejs18.x/hello-ts-pt",
-      "displayName": "Hello World Example TypeScript With Lambda Powertools",
+      "displayName": "Hello World Example TypeScript With Powertools for AWS Lambda",
       "dependencyManager": "npm",
       "appTemplate": "hello-world-powertools-typescript",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example With Powertools"
+      "useCaseName": "Hello World Example with Powertools for AWS Lambda"
     },
     {
       "directory": "nodejs18.x/step-func",
@@ -744,11 +744,11 @@
     },
     {
       "directory": "nodejs14.x/hello-ts-pt",
-      "displayName": "Hello World Example TypeScript With Lambda Powertools",
+      "displayName": "Hello World Example TypeScript With Powertools for AWS Lambda",
       "dependencyManager": "npm",
       "appTemplate": "hello-world-powertools-typescript",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example With Powertools"
+      "useCaseName": "Hello World Example with Powertools for AWS Lambda"
     },
     {
       "directory": "nodejs14.x/step-func",
@@ -924,11 +924,11 @@
     },
     {
       "directory": "python3.7/hello-pt",
-      "displayName": "Hello World Example Python With Lambda Powertools",
+      "displayName": "Hello World Example Python With Powertools for AWS Lambda",
       "dependencyManager": "pip",
       "appTemplate": "hello-world-powertools-python",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example With Powertools"
+      "useCaseName": "Hello World Example with Powertools for AWS Lambda"
     },
     {
       "directory": "python3.7/event-bridge",
@@ -983,11 +983,11 @@
     },
     {
       "directory": "python3.8/hello-pt",
-      "displayName": "Hello World Example Python With Lambda Powertools",
+      "displayName": "Hello World Example Python With Powertools for AWS Lambda",
       "dependencyManager": "pip",
       "appTemplate": "hello-world-powertools-python",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example With Powertools"
+      "useCaseName": "Hello World Example with Powertools for AWS Lambda"
     },
     {
       "directory": "python3.8/event-bridge",
@@ -1050,11 +1050,11 @@
     },
     {
       "directory": "python3.9/hello-pt",
-      "displayName": "Hello World Example Python With Lambda Powertools",
+      "displayName": "Hello World Example Python With Powertools for AWS Lambda",
       "dependencyManager": "pip",
       "appTemplate": "hello-world-powertools-python",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example With Powertools"
+      "useCaseName": "Hello World Example with Powertools for AWS Lambda"
     },
     {
       "directory": "python3.9/event-bridge",
@@ -1117,11 +1117,11 @@
     },
     {
       "directory": "python3.10/hello-pt",
-      "displayName": "Hello World Example With Powertools",
+      "displayName": "Hello World Example with Powertools for AWS Lambda",
       "dependencyManager": "pip",
       "appTemplate": "hello-world-powertools-python",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example With Powertools"
+      "useCaseName": "Hello World Example with Powertools for AWS Lambda"
     },
     {
       "directory": "python3.10/event-bridge",

@@ -139,7 +139,7 @@ sam delete --stack-name <Name-of-your-deployed-stack>
 
 # Appendix
 
-## Powertools
+## Powertools for AWS Lambda 
 
 **Tracing**
 
@@ -157,6 +157,6 @@ sam delete --stack-name <Name-of-your-deployed-stack>
 
 See the [AWS SAM developer guide](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html) for an introduction to SAM specification, the SAM CLI, and serverless application concepts.
 
-Check the [AWS Lambda Powertools Java](https://awslabs.github.io/aws-lambda-powertools-java/) for more information on how to use and configure such tools
+Check the [Powertools for AWS Lambda (Java)](https://awslabs.github.io/aws-lambda-powertools-java/) for more information on how to use and configure such tools
 
 Next, you can use AWS Serverless Application Repository to deploy ready to use Apps that go beyond hello world samples and learn how authors developed their applications: [AWS Serverless Application Repository main page](https://aws.amazon.com/serverless/serverlessrepo/)
