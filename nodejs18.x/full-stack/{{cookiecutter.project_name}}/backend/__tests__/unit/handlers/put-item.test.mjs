@@ -1,5 +1,5 @@
 // Import putItemHandler function from put-item.mjs 
-import { putItemHandler } from '../../../src/handlers/put-item.mjs';
+import { putItemHandler } from '../../../src/handlers/putItem/put-item.mjs';
 // Import dynamodb from aws-sdk 
 import { DynamoDBDocumentClient, PutCommand } from '@aws-sdk/lib-dynamodb';
 import { mockClient } from "aws-sdk-client-mock";
