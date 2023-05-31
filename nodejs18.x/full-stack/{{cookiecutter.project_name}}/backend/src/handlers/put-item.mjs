@@ -6,12 +6,18 @@ import { DynamoDBDocumentClient, PutCommand } from '@aws-sdk/lib-dynamodb';
 
 //DynamoDB Endpoint
 const ENDPOINT_OVERRIDE = process.env.ENDPOINT_OVERRIDE;
-if(!ENDPOINT_OVERRIDE){
-  console.warn("No value for ENDPOINT_OVERRIDE provided for DynamoDB");
+let ddbClient = undefined;
+
+if(ENDPOINT_OVERRIDE){
+  ddbClient = new DynamoDBClient({ endpoint: ENDPOINT_OVERRIDE });    
+}
+else{
+  
+  ddbClient = new DynamoDBClient({});    // Use default values for DynamoDB endpoint
+  console.warn("No value for ENDPOINT_OVERRIDE provided for DynamoDB, using default");
 }
 
-const client = new DynamoDBClient({ endpoint: ENDPOINT_OVERRIDE });
-const ddbDocClient = DynamoDBDocumentClient.from(client);
+const ddbDocClient = DynamoDBDocumentClient.from(ddbClient);
 
 // Get the DynamoDB table name from environment variables
 const tableName = process.env.SAMPLE_TABLE;
