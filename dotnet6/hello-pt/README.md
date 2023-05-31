@@ -1,4 +1,4 @@
-# AWS SAM cookiecutter for .NET 6 Lambda functions with AWS Lambda Powertools for .NET
+# AWS SAM cookiecutter for .NET 6 Lambda functions with Powertools for AWS Lambda (.NET)
 
 **Please note, you should not try to `git clone` this project.** Instead, use `cookiecutter` CLI instead as ``{{cookiecutter.project_name}}`` will be rendered based on your input and therefore all variables and files will be rendered properly.
 

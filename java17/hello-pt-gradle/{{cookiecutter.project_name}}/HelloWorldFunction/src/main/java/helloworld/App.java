@@ -14,13 +14,13 @@ import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-{%- if cookiecutter[ "Powertools Logging" ] == "enabled" %}
+{%- if cookiecutter[ "Powertools for AWS Lambda (Java) Logging" ] == "enabled" %}
 import software.amazon.lambda.powertools.logging.Logging;
 {%- endif %}
-{%- if cookiecutter[ "Powertools Metrics" ] == "enabled" %}
+{%- if cookiecutter[ "Powertools for AWS Lambda (Java) Metrics" ] == "enabled" %}
 import software.amazon.lambda.powertools.metrics.Metrics;
 {%- endif %}
-{%- if cookiecutter[ "Powertools Tracing" ] == "enabled" %}
+{%- if cookiecutter[ "Powertools for AWS Lambda (Java) Tracing" ] == "enabled" %}
 import software.amazon.lambda.powertools.tracing.CaptureMode;
 import software.amazon.lambda.powertools.tracing.Tracing;
 {%- endif %}
@@ -32,16 +32,16 @@ import static software.amazon.lambda.powertools.tracing.CaptureMode.*;
  */
 public class App implements RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
 
-    {%- if cookiecutter[ "Powertools Logging" ] == "enabled" %}
+    {%- if cookiecutter[ "Powertools for AWS Lambda (Java) Logging" ] == "enabled" %}
     Logger log = LogManager.getLogger();
 
 
     @Logging(logEvent = true)
     {%- endif %}
-    {%- if cookiecutter[ "Powertools Tracing" ] == "enabled" %}
+    {%- if cookiecutter[ "Powertools for AWS Lambda (Java) Tracing" ] == "enabled" %}
     @Tracing(captureMode = DISABLED)
     {%- endif %}
-    {%- if cookiecutter[ "Powertools Metrics" ] == "enabled" %}
+    {%- if cookiecutter[ "Powertools for AWS Lambda (Java) Metrics" ] == "enabled" %}
     @Metrics(captureColdStart = true)
     {%- endif %}
     public APIGatewayProxyResponseEvent handleRequest(final APIGatewayProxyRequestEvent input, final Context context) {
@@ -64,11 +64,11 @@ public class App implements RequestHandler<APIGatewayProxyRequestEvent, APIGatew
                     .withStatusCode(500);
         }
     }
-    {%- if cookiecutter[ "Powertools Tracing" ] == "enabled" %}
+    {%- if cookiecutter[ "Powertools for AWS Lambda (Java) Tracing" ] == "enabled" %}
     @Tracing(namespace = "getPageContents")
     {%- endif %}
     private String getPageContents(String address) throws IOException {
-        {%- if cookiecutter[ "Powertools Logging" ] == "enabled" %}
+        {%- if cookiecutter[ "Powertools for AWS Lambda (Java) Logging" ] == "enabled" %}
         log.info("Retrieving {}", address);
         {%- endif %}
         URL url = new URL(address);

@@ -6,14 +6,14 @@ using System.Text.Json;
 
 using Amazon.Lambda.Core;
 using Amazon.Lambda.APIGatewayEvents;
-{%- if cookiecutter["Powertools Tracing"] == "enabled"%}
+{%- if cookiecutter["Powertools for AWS Lambda (.NET) Tracing"] == "enabled"%}
 using Amazon.XRay.Recorder.Handlers.AwsSdk;
 using AWS.Lambda.Powertools.Tracing;
 {%- endif %}
-{%- if cookiecutter["Powertools Metrics"] == "enabled"%}
+{%- if cookiecutter["Powertools for AWS Lambda (.NET) Metrics"] == "enabled"%}
 using AWS.Lambda.Powertools.Metrics;
 {%- endif %}
-{%- if cookiecutter["Powertools Logging"] == "enabled"%}
+{%- if cookiecutter["Powertools for AWS Lambda (.NET) Logging"] == "enabled"%}
 using AWS.Lambda.Powertools.Logging;
 {%- endif %}
 
@@ -26,14 +26,14 @@ namespace HelloWorld
     {
         private static readonly HttpClient client = new HttpClient();
         
-        {%- if cookiecutter["Powertools Tracing"] == "enabled"%}
+        {%- if cookiecutter["Powertools for AWS Lambda (.NET) Tracing"] == "enabled"%}
         public Function()
         {
             AWSSDKHandler.RegisterXRayForAllServices();
         }
         {%- endif %}
   
-        {%- if cookiecutter["Powertools Tracing"] == "enabled"%}
+        {%- if cookiecutter["Powertools for AWS Lambda (.NET) Tracing"] == "enabled"%}
         [Tracing(SegmentName = "Get Calling IP")]
         {%- endif %}
         private static async Task<string> GetCallingIP()
@@ -45,7 +45,7 @@ namespace HelloWorld
 
                 var msg = await client.GetStringAsync("http://checkip.amazonaws.com/").ConfigureAwait(continueOnCapturedContext:false);
 
-                {%- if cookiecutter["Powertools Metrics"] == "enabled"%}
+                {%- if cookiecutter["Powertools for AWS Lambda (.NET) Metrics"] == "enabled"%}
                 // Custom Metric
                 // https://awslabs.github.io/aws-lambda-powertools-dotnet/core/metrics/
                 Metrics.AddMetric("ApiRequestCount", 1, MetricUnit.Count);
@@ -55,7 +55,7 @@ namespace HelloWorld
             }
             catch (Exception ex)
             {
-                {%- if cookiecutter["Powertools Logging"] == "enabled" %}
+                {%- if cookiecutter["Powertools for AWS Lambda (.NET) Logging"] == "enabled" %}
                 Logger.LogError(ex);
                 {%- endif %}
                 throw;
@@ -63,13 +63,13 @@ namespace HelloWorld
         }
 
          
-        {%- if cookiecutter["Powertools Tracing"] == "enabled"%}
+        {%- if cookiecutter["Powertools for AWS Lambda (.NET) Tracing"] == "enabled"%}
         [Tracing(CaptureMode = TracingCaptureMode.ResponseAndError)]
         {%- endif %}
-        {%- if cookiecutter["Powertools Metrics"] == "enabled"%}
+        {%- if cookiecutter["Powertools for AWS Lambda (.NET) Metrics"] == "enabled"%}
         [Metrics(CaptureColdStart = true)]
         {%- endif %}
-        {%- if cookiecutter["Powertools Logging"] == "enabled"%}
+        {%- if cookiecutter["Powertools for AWS Lambda (.NET) Logging"] == "enabled"%}
         [Logging(CorrelationIdPath = CorrelationIdPaths.ApiGatewayRest)]
         {%- endif %}
         public async Task<APIGatewayProxyResponse> FunctionHandler(APIGatewayProxyRequest apigProxyEvent, ILambdaContext context)
@@ -82,7 +82,7 @@ namespace HelloWorld
                 { "location", location }
             };
 
-            {%- if cookiecutter["Powertools Logging"] == "enabled" %}
+            {%- if cookiecutter["Powertools for AWS Lambda (.NET) Logging"] == "enabled" %}
             // Structured logging
             // https://awslabs.github.io/aws-lambda-powertools-dotnet/core/logging/
             Logger.LogInformation("Hello world API - HTTP 200");

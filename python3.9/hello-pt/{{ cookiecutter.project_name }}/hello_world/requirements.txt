@@ -1,5 +1,5 @@
 requests
-{%- if cookiecutter["Powertools Tracing"] == "enabled" %}
+{%- if cookiecutter["Powertools for AWS Lambda (Python) Tracing"] == "enabled" %}
 aws-lambda-powertools[tracer]
 {%- else %}
 aws-lambda-powertools
