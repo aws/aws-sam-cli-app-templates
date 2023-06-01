@@ -170,7 +170,10 @@ VUE_APP_API_ENDPOINT=http://127.0.0.1:3000/
 ```
 npm run serve
 ``` 
-
+10. to execute frontend unit test
+```
+npm run test
+``` 
 
 
 ## Add a resource to your application
