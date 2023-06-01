@@ -1,0 +1,10 @@
+{
+    "project_name": "Name of the project",
+    "runtime": "ruby3.2",
+    "architectures": {
+        "value": []
+    },
+    "_copy_without_render": [
+        ".gitignore"
+    ]
+}
