@@ -1,7 +1,8 @@
 .DS_Store
 node_modules
 /dist
-
+/test/__snapshots__
+package-lock.json
 
 # local env files
 .env.local
