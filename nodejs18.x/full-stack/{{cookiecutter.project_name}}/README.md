@@ -157,6 +157,24 @@ aws dynamodb put-item \
 ```
 aws dynamodb scan --table-name SampleTable --endpoint-url http://127.0.0.1:8000
 ```
+8. To run frontend application locally:
+Go to your `frontend` code directory
+ ```
+cd frontend
+```
+Make backend API endpoint accessible as an environment variable. For local, create a `.env` file, Here is an example: 
+```
+VUE_APP_API_ENDPOINT=http://127.0.0.1:3000/
+```
+9. run following command to compile and run (with hot-reloads) for development
+```
+npm run serve
+``` 
+10. to execute frontend unit test
+```
+npm run test
+``` 
+
 
 ## Add a resource to your application
 The application template uses AWS SAM to define application resources. AWS SAM is an extension of AWS CloudFormation with a simpler syntax for configuring common serverless application resources, such as functions, triggers, and APIs. For resources that aren't included in the [AWS SAM specification](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md), you can use the standard [AWS CloudFormation resource types](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html).

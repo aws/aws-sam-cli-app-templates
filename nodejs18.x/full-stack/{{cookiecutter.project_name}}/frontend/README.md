@@ -20,6 +20,11 @@ npm run build
 npm run lint
 ```
 
+### Runs unit tests
+```
+npm run test
+```
+
 ### Connect to Backend
 
 Make backend API endpoint accessible as an environment variable. For local, create a `.env` file, Here is an example: 
