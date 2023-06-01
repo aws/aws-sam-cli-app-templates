@@ -235,6 +235,12 @@ jobs:
           - version: '2.7'
             type: 'Invoke'
             file: 'tests/integration/build_invoke/test_ruby_2_7.py'
+          - version: '3.2'
+            type: 'Test'
+            file: 'tests/integration/unit_test/test_unit_test_ruby3_2.py'
+          - version: '3.2'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/test_ruby_3_2.py'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -354,4 +360,4 @@ jobs:
           samdev --info
           dotnet --info
           dotnet --version
-          pytest -n auto -vvv ${{ matrix.file }}
+          pytest -vvv ${{ matrix.file }}
