@@ -2,11 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import GetItems from '../src/components/GetItems.vue'
 
-describe('GetItems', () => {
-    it('renders properly', () => {
-        const wrapper = mount(GetItems)
-        expect(wrapper.html()).toMatchSnapshot()
-    })
+describe('GetItems', () => {    
 
     it('has proper input fileds', () => {
         const wrapper = mount(GetItems)

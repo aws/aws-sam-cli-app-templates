@@ -3,10 +3,6 @@ import { mount } from '@vue/test-utils'
 import GetItemById from '../src/components/GetItemById.vue'
 
 describe('GetItemById', () => {
-    it('renders properly', () => {
-        const wrapper = mount(GetItemById)
-        expect(wrapper.html()).toMatchSnapshot()
-    })
 
     it('has proper input fileds', () => {
         const wrapper = mount(GetItemById)

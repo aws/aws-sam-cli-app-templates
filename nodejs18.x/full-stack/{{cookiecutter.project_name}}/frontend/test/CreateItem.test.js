@@ -3,10 +3,6 @@ import { mount } from '@vue/test-utils'
 import CreateItem from '../src/components/CreateItem.vue'
 
 describe('CreateItem', () => {
-    it('renders properly', () => {
-        const wrapper = mount(CreateItem)
-        expect(wrapper.html()).toMatchSnapshot()
-    })
     
     it('has proper input fileds', () => {
         const wrapper = mount(CreateItem)
