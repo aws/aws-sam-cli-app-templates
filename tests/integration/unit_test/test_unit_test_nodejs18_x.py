@@ -46,4 +46,4 @@ class UnitTest_nodejs18_x_cookiecutter_quick_start_web(UnitTestBase.NodejsUnitTe
 
 class UnitTest_nodejs18_x_cookiecutter_quick_start_full_stack(UnitTestBase.NodejsUnitTestBase):
     directory = "nodejs18.x/full-stack"
-    code_directories = ["backend"]
+    code_directories = ["backend", "frontend"]
