@@ -1,12 +1,12 @@
 # {{ cookiecutter.project_name }}
 
-Congratulations, you have just created a Serverless "Hello World" application using the AWS Serverless Application Model (AWS SAM) for the `nodejs18.x` runtime, and options to bootstrap it with [**AWS Lambda Powertools for TypeScript**](https://awslabs.github.io/aws-lambda-powertools-typescript/latest/) (Lambda Powertools) utilities for Logging, Tracing and Metrics.
+Congratulations, you have just created a Serverless "Hello World" application using the AWS Serverless Application Model (AWS SAM) for the `nodejs18.x` runtime, and options to bootstrap it with [**Powertools for AWS Lambda (TypeScript)**](https://awslabs.github.io/aws-lambda-powertools-typescript/latest/) (Lambda Powertools) utilities for Logging, Tracing and Metrics.
 
-Powertools is a developer toolkit to implement Serverless best practices and increase developer velocity.
+Powertools for AWS Lambda (TypeScript) is a developer toolkit to implement Serverless best practices and increase developer velocity.
 
-## Powertools features
+## Powertools for AWS Lambda (TypeScript) features
 
-Powertools provides three core utilities:
+Powertools for AWS Lambda (TypeScript) provides three core utilities:
 
 * **[Tracer](https://awslabs.github.io/aws-lambda-powertools-typescript/latest/core/tracer/)** - Utilities to trace Lambda function handlers, and both synchronous and asynchronous functions
 * **[Logger](https://awslabs.github.io/aws-lambda-powertools-typescript/latest/core/logger/)** - Structured logging made easier, and a middleware to enrich log items with key details of the Lambda context
@@ -14,7 +14,7 @@ Powertools provides three core utilities:
 
 Find the complete project's [documentation here](https://awslabs.github.io/aws-lambda-powertools-typescript).
 
-### Installing AWS Lambda Powertools for TypeScript
+### Installing Powertools for AWS Lambda (TypeScript)
 
 You have 2 ways of consuming those utilities:
 
@@ -23,13 +23,13 @@ You have 2 ways of consuming those utilities:
 
 #### Lambda layers
 
-The AWS Lambda Powertools for TypeScript utilities is packaged as a single [AWS Lambda Layer](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-concepts.html#gettingstarted-concepts-layer)
+The Powertools for AWS Lambda (TypeScript) utilities is packaged as a single [AWS Lambda Layer](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-concepts.html#gettingstarted-concepts-layer)
 
-👉 [Installation guide for the **AWS Lambda Powertools for TypeScript** layer](https://awslabs.github.io/aws-lambda-powertools-typescript/latest/#lambda-layer)
+👉 [Installation guide for the **Powertools for AWS Lambda (TypeScript)** layer](https://awslabs.github.io/aws-lambda-powertools-typescript/latest/#lambda-layer)
 
 #### NPM modules
 
-The AWS Lambda Powertools for TypeScript utilities follow a modular approach, similar to the official [AWS SDK v3 for JavaScript](https://github.com/aws/aws-sdk-js-v3).  
+The Powertools for AWS Lambda (TypeScript) utilities follow a modular approach, similar to the official [AWS SDK v3 for JavaScript](https://github.com/aws/aws-sdk-js-v3).  
 
 Each TypeScript utility is installed as standalone NPM package.
 
@@ -47,7 +47,7 @@ Or refer to the installation guide of each utility:
 
 👉 [Installation guide for the **Metrics** utility](https://awslabs.github.io/aws-lambda-powertools-typescript/latest/core/metrics#getting-started)
 
-### Powertools Examples
+### Powertools for AWS Lambda (TypeScript) Examples
 
 * [CDK](https://github.com/awslabs/aws-lambda-powertools-typescript/tree/main/examples/cdk)
 * [SAM](https://github.com/awslabs/aws-lambda-powertools-typescript/tree/main/examples/sam)

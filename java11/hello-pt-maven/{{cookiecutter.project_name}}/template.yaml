@@ -19,17 +19,17 @@ Resources:
       Handler: helloworld.App::handleRequest
       Runtime: java11
       MemorySize: 512
-      {%- if cookiecutter["Powertools Tracing"] == "enabled"%}
+      {%- if cookiecutter["Powertools for AWS Lambda (Java) Tracing"] == "enabled"%}
       Tracing: Active
       {%- endif %}
       Environment: # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
         Variables:
-          # Powertools env vars: https://awslabs.github.io/aws-lambda-powertools-java/#environment-variables
-          {%- if cookiecutter["Powertools Logging"] == "enabled"%}
+          # Powertools for AWS Lambda (Java) env vars: https://awslabs.github.io/aws-lambda-powertools-java/#environment-variables
+          {%- if cookiecutter["Powertools for AWS Lambda (Java) Logging"] == "enabled"%}
           POWERTOOLS_LOG_LEVEL: INFO
           POWERTOOLS_LOGGER_LOG_EVENT: true
           {%- endif %}
-          {%- if cookiecutter[ "Powertools Metrics" ] == "enabled" %}
+          {%- if cookiecutter[ "Powertools for AWS Lambda (Java) Metrics" ] == "enabled" %}
           POWERTOOLS_METRICS_NAMESPACE: {{ cookiecutter.project_name|lower|replace(' ', '-') }}
           {%- endif %}
           PARAM1: VALUE

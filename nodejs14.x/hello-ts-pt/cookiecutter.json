@@ -4,9 +4,9 @@
     "architectures": {
         "value": []
     },
-    "Powertools Tracing": ["enabled","disabled"],
-    "Powertools Metrics": ["enabled","disabled"],
-    "Powertools Logging": ["enabled","disabled"],
+    "Powertools for AWS Lambda (TypeScript) Tracing": ["enabled","disabled"],
+    "Powertools for AWS Lambda (TypeScript) Metrics": ["enabled","disabled"],
+    "Powertools for AWS Lambda (TypeScript) Logging": ["enabled","disabled"],
     "_copy_without_render": [
         ".gitignore"
     ]

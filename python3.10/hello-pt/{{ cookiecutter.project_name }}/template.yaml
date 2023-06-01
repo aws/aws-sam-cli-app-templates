@@ -3,7 +3,7 @@ Transform: AWS::Serverless-2016-10-31
 Description: >
     {{ cookiecutter.project_name }}
 
-    Powertools example
+    Powertools for AWS Lambda (Python) example
 
 Globals: # https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-template-anatomy-globals.html
     Function:
@@ -24,7 +24,7 @@ Resources:
                 - {{arch}}
             {%- endfor %}
             {%- endif %}
-            {%- if cookiecutter["Powertools Tracing"] == "enabled"%}
+            {%- if cookiecutter["Powertools for AWS Lambda (Python) Tracing"] == "enabled"%}
             Tracing: Active
             {%- endif %}
             Events:
@@ -33,17 +33,17 @@ Resources:
                     Properties:
                         Path: /hello
                         Method: GET
-            {%- if cookiecutter["Powertools Tracing"] == "enabled" or cookiecutter["Powertools Logging"] == "enabled" %}
-             # Powertools env vars: https://awslabs.github.io/aws-lambda-powertools-python/#environment-variables
+            {%- if cookiecutter["Powertools for AWS Lambda (Python) Tracing"] == "enabled" or cookiecutter["Powertools for AWS Lambda (Python) Logging"] == "enabled" %}
+             # Powertools for AWS Lambda (Python) env vars: https://awslabs.github.io/aws-lambda-powertools-python/#environment-variables
             Environment:
                 Variables:
-                    {%- if cookiecutter["Powertools Tracing"] == "enabled" or cookiecutter["Powertools Metrics"] == "enabled"%}
+                    {%- if cookiecutter["Powertools for AWS Lambda (Python) Tracing"] == "enabled" or cookiecutter["Powertools for AWS Lambda (Python) Metrics"] == "enabled"%}
                     POWERTOOLS_SERVICE_NAME: PowertoolsHelloWorld
                     {%- endif %}
-                    {%- if cookiecutter["Powertools Metrics"] == "enabled"%}
+                    {%- if cookiecutter["Powertools for AWS Lambda (Python) Metrics"] == "enabled"%}
                     POWERTOOLS_METRICS_NAMESPACE: Powertools
                     {%- endif %}
-                    {%- if cookiecutter["Powertools Logging"] == "enabled"%}
+                    {%- if cookiecutter["Powertools for AWS Lambda (Python) Logging"] == "enabled"%}
                     LOG_LEVEL: INFO
                     {%- endif %}
             {%- endif %}
