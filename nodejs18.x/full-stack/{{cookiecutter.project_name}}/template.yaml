@@ -32,7 +32,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: backend/src/handlers
-      Handler: src/handlers/get-all-items.getAllItemsHandler
+      Handler: get-all-items.getAllItemsHandler
       Runtime: nodejs18.x
       {%- if cookiecutter.architectures.value != []%}
       Architectures:
@@ -69,7 +69,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: backend/src/handlers
-      Handler: src/handlers/get-by-id.getByIdHandler
+      Handler: get-by-id.getByIdHandler
       Runtime: nodejs18.x
       {%- if cookiecutter.architectures.value != []%}
       Architectures:
@@ -106,7 +106,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: backend/src/handlers
-      Handler: src/handlers/put-item.putItemHandler
+      Handler: put-item.putItemHandler
       Runtime: nodejs18.x
       {%- if cookiecutter.architectures.value != []%}
       Architectures:
