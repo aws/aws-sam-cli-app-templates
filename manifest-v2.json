@@ -707,6 +707,14 @@
       "useCaseName": "Serverless API"
     },
     {
+      "directory": "nodejs18.x/full-stack",
+      "displayName": "Quick Start: Full Stack Application",
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-full-stack",
+      "packageType": "Zip",
+      "useCaseName": "Full Stack"
+    },
+    {
       "directory": "nodejs18.x/response-streaming",
       "displayName": "Lambda function using Response Streaming",
       "dependencyManager": "npm",
