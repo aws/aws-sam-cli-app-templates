@@ -24,10 +24,10 @@ Resources:
         - {{arch}}
       {%- endfor %}
       {%- endif %}
-      {%- if cookiecutter["Powertools for AWS Lambda (TypeScript) for AWS Lambda (TypeScript) Tracing"] == "enabled"%}
+      {%- if cookiecutter["Powertools for AWS Lambda (TypeScript) Tracing"] == "enabled"%}
       Tracing: Active
       {%- endif %}
-      {%- if cookiecutter["Powertools for AWS Lambda (TypeScript) for AWS Lambda (TypeScript) Tracing"] == "enabled" or cookiecutter["Powertools for AWS Lambda (TypeScript) for AWS Lambda (TypeScript) Metrics"] == "enabled" or cookiecutter["Powertools for AWS Lambda (TypeScript) for AWS Lambda (TypeScript) Logging"] == "enabled" %}
+      {%- if cookiecutter["Powertools for AWS Lambda (TypeScript) Tracing"] == "enabled" or cookiecutter["Powertools for AWS Lambda (TypeScript) Metrics"] == "enabled" or cookiecutter["Powertools for AWS Lambda (TypeScript) Logging"] == "enabled" %}
       Environment:
         Variables:
           {%- if cookiecutter["Powertools for AWS Lambda (TypeScript) Tracing"] == "enabled" or cookiecutter["Powertools for AWS Lambda (TypeScript) Metrics"] == "enabled"%}
