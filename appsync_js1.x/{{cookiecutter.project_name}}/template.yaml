@@ -1,0 +1,69 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  {{ cookiecutter.project_name }}
+  
+  Sample SAM Template for {{ cookiecutter.project_name }}
+
+
+Resources:
+  PostsTable:
+    Type: AWS::Serverless::SimpleTable
+
+  HelloWorldGraphQLApi:
+    Type: AWS::Serverless::GraphQLApi
+    Properties:
+      SchemaUri: ./gql/schema.graphql
+      Auth:
+        Type: API_KEY
+      ApiKeys:
+        MyApiKey:
+          Description: my api key
+      DataSources:
+        DynamoDb:
+          PostsDataSource:
+            TableName: !Ref PostsTable
+            TableArn: !GetAtt PostsTable.Arn
+      Functions:
+        preprocessPostItem:
+          Runtime:
+            Name: APPSYNC_JS
+            Version: 1.0.0
+          DataSource: NONE
+          CodeUri: ./gql/preprocessPostItem.js
+        createPostItem:
+          Runtime:
+            Name: APPSYNC_JS
+            Version: "1.0.0"
+          DataSource: PostsDataSource
+          CodeUri: ./gql/createPostItem.js
+        getPostFromTable:
+          Runtime:
+            Name: APPSYNC_JS
+            Version: "1.0.0"
+          DataSource: PostsDataSource
+          CodeUri: ./gql/getPostFromTable.js
+      Resolvers:
+        Mutation:
+          addPost:
+            Runtime:
+              Name: APPSYNC_JS
+              Version: "1.0.0"
+            Pipeline:
+            - preprocessPostItem
+            - createPostItem
+        Query:
+          getPost:
+            Runtime:
+              Name: APPSYNC_JS
+              Version: "1.0.0"
+            Pipeline:
+            - getPostFromTable
+
+Outputs:
+  HelloWorldGraphQLApi:
+    Description: HelloWorldGraphQLApi endpoint URL for Prod environment
+    Value: !GetAtt HelloWorldGraphQLApi.GraphQLUrl
+  HelloWorldGraphQLApiMyApiKey:
+    Description: API Key for HelloWorldGraphQLApi
+    Value: !GetAtt HelloWorldGraphQLApiMyApiKey.ApiKey

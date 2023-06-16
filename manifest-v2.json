@@ -1512,5 +1512,15 @@
       "packageType": "Image",
       "useCaseName": "Hello World Example"
     }
+  ],
+  "appsync_js1.x": [
+    {
+      "directory": "appsync_js1.x",
+      "displayName": "GraphQLApi Hello World Example",
+      "dependencyManager": "npm",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "GraphQLApi Hello World Example"
+    }
   ]
 }
