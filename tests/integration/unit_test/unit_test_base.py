@@ -52,6 +52,15 @@ class UnitTestBase:
             ]
             LOG.info(cmdlist)
             result = run_command(cmdlist, Path(self.cwd, code_directory))
+
+            # run npm audit to show packages that needs to be updated
+            npm_audit = run_command(
+                ["npm", "audit", Path(self.cwd, code_directory)
+            )
+            LOG.info(npm_audit.stdout)
+            LOG.warning(npm_audit.stderr)
+            
+
             self.assertRegex(
                 result.stdout,
                 r"added \d+ packages",
