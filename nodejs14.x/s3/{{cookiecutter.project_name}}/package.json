@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "jest": "^29.6.0",
+    "semver": "^7.5.2",
     "aws-sdk-mock": "^5.1.0"
   },
   "scripts": {
