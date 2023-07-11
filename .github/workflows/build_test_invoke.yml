@@ -113,6 +113,7 @@ jobs:
           env
           git remote -vv
           git rev-parse HEAD
+          git --no-pager log --decorate=short --pretty=oneline -n10
           pip install -r requirements.txt
           samdev --info
           pytest -n auto -vvv ${{ matrix.file }}
