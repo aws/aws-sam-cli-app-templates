@@ -110,6 +110,7 @@ jobs:
           python-version: ${{ matrix.version }}
       - name: Run build tests for ${{ matrix.file }}
         run: |
+          env
           pip install -r requirements.txt
           samdev --info
           pytest -n auto -vvv ${{ matrix.file }}
