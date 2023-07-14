@@ -1,0 +1,8 @@
+{
+    "project_name": "sample-glue-etl-project",
+    "runtime": "python3.11",
+    "_copy_without_render": [
+        ".gitignore"
+    ],
+    "__stack_name": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}"
+}
