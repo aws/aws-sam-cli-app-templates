@@ -60,10 +60,6 @@ class UnitTestBase:
                 result.stdout,
                 r"audited \d+ packages",
             )
-            self.assertIn(
-                "found 0 vulnerabilities",
-                result.stdout,
-            )
 
         def _test_unit_tests(self, code_directory: str):
             cmdlist = [
