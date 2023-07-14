@@ -1,64 +1,60 @@
 package main
 
 import (
-	"fmt"
-	"net/http"
-	"net/http/httptest"
 	"testing"
 
 	"github.com/aws/aws-lambda-go/events"
 )
 
 func TestHandler(t *testing.T) {
-	t.Run("Unable to get IP", func(t *testing.T) {
-		DefaultHTTPGetAddress = "http://127.0.0.1:12345"
+	testCases := []struct {
+		name          string
+		request       events.APIGatewayProxyRequest
+		expectedBody  string
+		expectedError error
+	}{
+		{
+			// mock a request with an empty SourceIP
+			name: "empty IP",
+			request: events.APIGatewayProxyRequest{
+				RequestContext: events.APIGatewayProxyRequestContext{
+					Identity: events.APIGatewayRequestIdentity{
+						SourceIP: "",
+					},
+				},
+			},
+			expectedBody:  "Hello, world!\n",
+			expectedError: nil,
+		},
+		{
+			// mock a request with a localhost SourceIP
+			name: "localhost IP",
+			request: events.APIGatewayProxyRequest{
+				RequestContext: events.APIGatewayProxyRequestContext{
+					Identity: events.APIGatewayRequestIdentity{
+						SourceIP: "127.0.0.1",
+					},
+				},
+			},
+			expectedBody:  "Hello, 127.0.0.1!\n",
+			expectedError: nil,
+		},
+	}
 
-		_, err := handler(events.APIGatewayProxyRequest{})
-		if err == nil {
-			t.Fatal("Error failed to trigger with an invalid request")
-		}
-	})
+	for _, testCase := range testCases {
+		t.Run(testCase.name, func(t *testing.T) {
+			response, err := handler(testCase.request)
+			if err != testCase.expectedError {
+				t.Errorf("Expected error %v, but got %v", testCase.expectedError, err)
+			}
 
-	t.Run("Non 200 Response", func(t *testing.T) {
-		ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-			w.WriteHeader(500)
-		}))
-		defer ts.Close()
+			if response.Body != testCase.expectedBody {
+				t.Errorf("Expected response %v, but got %v", testCase.expectedBody, response.Body)
+			}
 
-		DefaultHTTPGetAddress = ts.URL
-
-		_, err := handler(events.APIGatewayProxyRequest{})
-		if err != nil && err.Error() != ErrNon200Response.Error() {
-			t.Fatalf("Error failed to trigger with an invalid HTTP response: %v", err)
-		}
-	})
-
-	t.Run("Unable decode IP", func(t *testing.T) {
-		ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-			w.WriteHeader(500)
-		}))
-		defer ts.Close()
-
-		DefaultHTTPGetAddress = ts.URL
-
-		_, err := handler(events.APIGatewayProxyRequest{})
-		if err == nil {
-			t.Fatal("Error failed to trigger with an invalid HTTP response")
-		}
-	})
-
-	t.Run("Successful Request", func(t *testing.T) {
-		ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-			w.WriteHeader(200)
-			fmt.Fprintf(w, "127.0.0.1")
-		}))
-		defer ts.Close()
-
-		DefaultHTTPGetAddress = ts.URL
-
-		_, err := handler(events.APIGatewayProxyRequest{})
-		if err != nil {
-			t.Fatal("Everything should be ok")
-		}
-	})
+			if response.StatusCode != 200 {
+				t.Errorf("Expected status code 200, but got %v", response.StatusCode)
+			}
+		})
+	}
 }
