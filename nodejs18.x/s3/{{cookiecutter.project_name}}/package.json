@@ -16,7 +16,8 @@
   },
   "private": true,
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.188.0"
+    "@aws-sdk/client-s3": "^3.188.0",
+    "@aws-sdk/util-stream-node": "^3.188.0"
   },
   "devDependencies": {
     "aws-sdk-client-mock": "^2.0.0",
