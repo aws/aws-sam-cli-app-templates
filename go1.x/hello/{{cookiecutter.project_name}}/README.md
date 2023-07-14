@@ -88,7 +88,8 @@ You can find your API Gateway Endpoint URL in the output values displayed after 
 We use `testing` package that is built-in in Golang and you can simply run the following command to run our tests:
 
 ```shell
-go test -v ./hello-world/
+cd ./hello-world/
+go test -v .
 ```
 # Appendix
 
