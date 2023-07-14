@@ -1,4 +1,4 @@
-FROM public.ecr.aws/lambda/python:3.11-preview
+FROM public.ecr.aws/lambda/python:3.11
 
 COPY app.py requirements.txt ./
 
