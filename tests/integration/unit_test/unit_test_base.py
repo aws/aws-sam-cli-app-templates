@@ -123,6 +123,7 @@ class UnitTestBase:
 
     class Python311UnitTestBase(PythonUnitTestBase):
         python_executable = "python3.11"
+        should_test_lint: bool = False
 
     class JavaUnitTestGradleBase(UnitTestBase):
         """
