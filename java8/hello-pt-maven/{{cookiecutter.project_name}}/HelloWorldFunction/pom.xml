@@ -23,7 +23,7 @@
         <dependency>
             <groupId>software.amazon.lambda</groupId>
             <artifactId>powertools-logging</artifactId>
-            <version>1.16.0</version>
+            <version>1.16.1</version>
         </dependency>
         {%- endif %}
         {%- if cookiecutter[ "Powertools for AWS Lambda (Java) Metrics" ] == "enabled" %}
