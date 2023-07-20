@@ -30,7 +30,7 @@
         <dependency>
             <groupId>software.amazon.lambda</groupId>
             <artifactId>powertools-metrics</artifactId>
-            <version>1.16.0</version>
+            <version>1.16.1</version>
         </dependency>
         {%- endif %}
         <dependency>
