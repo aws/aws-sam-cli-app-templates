@@ -10,6 +10,19 @@ Resources:
   PostsTable:
     Type: AWS::Serverless::SimpleTable
 
+  Greeter:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: greeter/
+      Handler: app.lambdaHandler
+      Runtime: nodejs18.x
+      {%- if cookiecutter.architectures.value != []%}
+      Architectures:
+      {%- for arch in cookiecutter.architectures.value %}
+        - {{arch}}
+      {%- endfor %}
+      {%- endif %}
+
   HelloWorldGraphQLApi:
     Type: AWS::Serverless::GraphQLApi
     Properties:
@@ -21,9 +34,12 @@ Resources:
           Description: my api key
       DataSources:
         DynamoDb:
-          PostsDataSource:
+          Posts:
             TableName: !Ref PostsTable
             TableArn: !GetAtt PostsTable.Arn
+        Lambda:
+          Greeter:
+            FunctionArn: !GetAtt Greeter.Arn
       Functions:
         preprocessPostItem:
           Runtime:
@@ -35,14 +51,20 @@ Resources:
           Runtime:
             Name: APPSYNC_JS
             Version: "1.0.0"
-          DataSource: PostsDataSource
+          DataSource: Posts
           CodeUri: ./gql/createPostItem.js
         getPostFromTable:
           Runtime:
             Name: APPSYNC_JS
             Version: "1.0.0"
-          DataSource: PostsDataSource
+          DataSource: Posts
           CodeUri: ./gql/getPostFromTable.js
+        greet:
+          Runtime:
+            Name: APPSYNC_JS
+            Version: "1.0.0"
+          DataSource: Greeter
+          CodeUri: ./gql/greet.js
       Resolvers:
         Mutation:
           addPost:
@@ -59,6 +81,19 @@ Resources:
               Version: "1.0.0"
             Pipeline:
             - getPostFromTable
+          sayHello:
+            Runtime:
+              Name: APPSYNC_JS
+              Version: "1.0.0"
+            Pipeline:
+            - greet
+          sayGoodbye:
+            Runtime:
+              Name: APPSYNC_JS
+              Version: "1.0.0"
+            Pipeline:
+            - greet
+
 
 Outputs:
   HelloWorldGraphQLApi:
@@ -67,3 +102,4 @@ Outputs:
   HelloWorldGraphQLApiMyApiKey:
     Description: API Key for HelloWorldGraphQLApi
     Value: !GetAtt HelloWorldGraphQLApiMyApiKey.ApiKey
+

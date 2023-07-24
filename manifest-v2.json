@@ -635,6 +635,14 @@
       "useCaseName": "Hello World Example"
     },
     {
+      "directory": "nodejs18.x/hello-gql",
+      "displayName": "GraphQLApi Hello World Example",
+      "dependencyManager": "npm",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "GraphQLApi Hello World Example"
+    },
+    {
       "directory": "nodejs18.x/hello-ts",
       "displayName": "Hello World Example TypeScript",
       "dependencyManager": "npm",
@@ -1511,16 +1519,6 @@
       "appTemplate": "hello-world-lambda-image",
       "packageType": "Image",
       "useCaseName": "Hello World Example"
-    }
-  ],
-  "appsync_js1.x": [
-    {
-      "directory": "appsync_js1.x",
-      "displayName": "GraphQLApi Hello World Example",
-      "dependencyManager": "npm",
-      "appTemplate": "hello-world",
-      "packageType": "Zip",
-      "useCaseName": "GraphQLApi Hello World Example"
     }
   ]
 }

@@ -5,6 +5,8 @@ schema {
 
 type Query {
   getPost(id: String!): Post
+  sayHello(name: String): String
+  sayGoodbye(name: String): String
 }
 
 type Mutation {

@@ -8,9 +8,18 @@ This is a sample template for {{ cookiecutter.project_name }} - Below is a brief
 ├── gql                         <-- Source code for schema and pipeline functions
 │   ├── createPostItem.js       <-- Pipeline function code
 │   ├── getPostFromTable.js     <-- Pipeline function code
+│   ├── greet.js                <-- Pipeline function code
 │   ├── preprocessPostItem.js   <-- Pipeline function code
 │   └── schema.graphql          <-- Schema definition
-└── template.yaml
+├── greeter                     <-- Source code for lambda function
+│   ├── tests                   <-- Tests for lambda function
+│   │   ├──events               <-- Event stubs
+│   │   │  └── appsync.js       <-- Sample event for tests
+│   │   └──unit                 <-- Unit tests
+│   │      └── test-handler.mjs <-- Source file with tests
+│   ├── app.mjs                 <-- Lambda function source code
+│   └── package.json            <-- List of Lambda dependencies and npm scripts
+└── template.yaml               <-- SAM template
 ```
 
 ## Requirements
@@ -46,6 +55,14 @@ To delete the sample application that you created, use the AWS CLI. Assuming you
 ```bash
 sam delete --stack-name "{{ cookiecutter.__stack_name }}"
 ```
+
+## Test lambda function locally
+
+1. Open terminal in `{{ cookiecutter.__stack_name }}/greeter` directory
+2. Run `npm i`
+3. Run `npm run test`
+
+To modify the lambda function event, edit `{{ cookiecutter.__stack_name }}/greeter/tests/events/appsync.json` file.
 
 ## Resources
 

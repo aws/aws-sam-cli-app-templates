@@ -1,9 +1,0 @@
-{
-  "project_name": "Name of the project",
-  "runtime": "appsync_js1.x",
-  "architectures": {
-    "value": []
-  },
-  "_copy_without_render": [".gitignore"],
-  "__stack_name": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}"
-}
