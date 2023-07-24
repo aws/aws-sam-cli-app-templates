@@ -14,7 +14,7 @@ This is a sample template for {{ cookiecutter.project_name }} - Below is a brief
 ├── greeter                     <-- Source code for lambda function
 │   ├── tests                   <-- Tests for lambda function
 │   │   ├──events               <-- Event stubs
-│   │   │  └── appsync.js       <-- Sample event for tests
+│   │   │  └── appsync.json     <-- Sample event for tests
 │   │   └──unit                 <-- Unit tests
 │   │      └── test-handler.mjs <-- Source file with tests
 │   ├── app.mjs                 <-- Lambda function source code
