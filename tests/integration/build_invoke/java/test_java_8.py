@@ -38,6 +38,10 @@ class BuildInvoke_java8_cookiecutter_aws_sam_eventbridge_schema_app_java_maven(B
     directory = "java8/event-bridge-schema-maven"
 
 
+class BuildInvoke_java8_cookiecutter_aws_sam_powertools_hello_java_maven(BuildInvokeBase.BuildInvokeBase):
+    directory = "java8/hello-pt-maven"
+
+
 class BuildInvoke_java8_cookiecutter_aws_sam_step_functions_sample_app_gradle(BuildInvokeBase.BuildInvokeBase):
     directory = "java8/step-func-gradle"
 
