@@ -1,7 +1,6 @@
 from contextlib import contextmanager
 
 import os
-import subprocess
 
 
 @contextmanager
@@ -40,8 +39,8 @@ def test_app_content(cookies):
 
     contents = (
         "github.com/aws/aws-lambda-go/events",
-        "resp, err := http.Get(DefaultHTTPGetAddress)",
-        "lambda.Start(handler)",
+        "sourceIP := request.RequestContext.Identity.SourceIP",
+        "lambda.Start(handler)"
     )
 
     for content in contents:
@@ -55,9 +54,9 @@ def test_app_test_content(cookies):
     app_content = "".join(app_content)
 
     contents = (
-        'DefaultHTTPGetAddress = "http://127.0.0.1:12345"',
-        "DefaultHTTPGetAddress = ts.URL",
-        "Successful Request",
+        "func TestHandler(t *testing.T)",
+        "SourceIP: \"127.0.0.1\"",
+        "response, err := handler(testCase.request)"
     )
 
     for content in contents:

@@ -1,0 +1,11 @@
+{
+    "project_name": "Name of the project",
+    "runtime": "python3.11",
+    "architectures": {
+        "value": []
+    },
+    "_copy_without_render": [
+        ".gitignore"
+    ],
+    "__stack_name": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}"
+}

@@ -16,7 +16,7 @@ def junitVersion = providers.gradleProperty('junit.jupiter.version')
     .get()
 
 dependencies {
-    implementation 'com.amazonaws:aws-lambda-java-core:1.2.1'
+    implementation 'com.amazonaws:aws-lambda-java-core:1.2.2'
     implementation 'com.amazonaws:aws-lambda-java-events:3.11.0'
     implementation 'com.amazonaws:aws-lambda-java-runtime-interface-client:2.1.1'
     
