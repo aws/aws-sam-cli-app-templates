@@ -52,14 +52,6 @@ class UnitTestBase:
             ]
             LOG.info(cmdlist)
             result = run_command(cmdlist, Path(self.cwd, code_directory))
-            
-            # run npm audit to show any package updates needed
-            npm_audit_result = run_command(
-                ["npm", "audit"], Path(self.cwd, code_directory)
-            )
-            LOG.info(npm_audit_result.stdout)
-            LOG.warning(npm_audit_result.stderr)
-
             self.assertRegex(
                 result.stdout,
                 r"added \d+ packages",
@@ -128,6 +120,10 @@ class UnitTestBase:
 
     class Python310UnitTestBase(PythonUnitTestBase):
         python_executable = "python3.10"
+
+    class Python311UnitTestBase(PythonUnitTestBase):
+        python_executable = "python3.11"
+        should_test_lint: bool = False
 
     class JavaUnitTestGradleBase(UnitTestBase):
         """
