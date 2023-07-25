@@ -831,96 +831,6 @@
       "useCaseName": "Multi-step workflow with Connectors"
     }
   ],
-  "nodejs12.x": [
-    {
-      "directory": "nodejs12.x/hello",
-      "displayName": "Hello World Example",
-      "dependencyManager": "npm",
-      "appTemplate": "hello-world",
-      "packageType": "Zip",
-      "useCaseName": "Hello World Example"
-    },
-    {
-      "directory": "nodejs12.x/step-func",
-      "displayName": "Step Functions Sample App (Stock Trader)",
-      "dependencyManager": "npm",
-      "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip",
-      "useCaseName": "Multi-step workflow"
-    },
-    {
-      "directory": "nodejs12.x/scratch",
-      "displayName": "Quick Start: From Scratch",
-      "dependencyManager": "npm",
-      "appTemplate": "quick-start-from-scratch",
-      "packageType": "Zip",
-      "useCaseName": "Standalone function"
-    },
-    {
-      "directory": "nodejs12.x/cw-event",
-      "displayName": "Quick Start: Scheduled Events",
-      "dependencyManager": "npm",
-      "appTemplate": "quick-start-cloudwatch-events",
-      "packageType": "Zip",
-      "useCaseName": "Scheduled task"
-    },
-    {
-      "directory": "nodejs12.x/s3",
-      "displayName": "Quick Start: S3",
-      "dependencyManager": "npm",
-      "appTemplate": "quick-start-s3",
-      "packageType": "Zip",
-      "useCaseName": "Data processing"
-    },
-    {
-      "directory": "nodejs12.x/sns",
-      "displayName": "Quick Start: SNS",
-      "dependencyManager": "npm",
-      "appTemplate": "quick-start-sns",
-      "packageType": "Zip",
-      "useCaseName": "Data processing"
-    },
-    {
-      "directory": "nodejs12.x/sqs",
-      "displayName": "Quick Start: SQS",
-      "dependencyManager": "npm",
-      "appTemplate": "quick-start-sqs",
-      "packageType": "Zip",
-      "useCaseName": "Data processing"
-    },
-    {
-      "directory": "nodejs12.x/ts",
-      "displayName": "Quick Start: App Backend using TypeScript",
-      "dependencyManager": "npm",
-      "appTemplate": "quick-start-typescript-app",
-      "packageType": "Zip",
-      "useCaseName": "Serverless API"
-    },
-    {
-      "directory": "nodejs12.x/web",
-      "displayName": "Quick Start: Web Backend",
-      "dependencyManager": "npm",
-      "appTemplate": "quick-start-web",
-      "packageType": "Zip",
-      "useCaseName": "Serverless API"
-    },
-    {
-      "directory": "nodejs12.x/web-conn",
-      "displayName": "Quick Start: Web Backend With Connectors",
-      "dependencyManager": "npm",
-      "appTemplate": "hello-world-connector",
-      "packageType": "Zip",
-      "useCaseName": "Serverless Connector Hello World Example"
-    },
-    {
-      "directory": "nodejs12.x/step-func-conn",
-      "displayName": "Step Functions Sample App (Stock Trader) With Connectors",
-      "dependencyManager": "npm",
-      "appTemplate": "step-functions-with-connectors",
-      "packageType": "Zip",
-      "useCaseName": "Multi-step workflow with Connectors"
-    }
-  ],
   "python3.7": [
     {
       "directory": "python3.7/hello",
@@ -1305,16 +1215,6 @@
   "amazon/nodejs14.x-base": [
     {
       "directory": "nodejs14.x/hello-img",
-      "displayName": "Hello World Image Example",
-      "dependencyManager": "npm",
-      "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image",
-      "useCaseName": "Hello World Example"
-    }
-  ],
-  "amazon/nodejs12.x-base": [
-    {
-      "directory": "nodejs12.x/hello-img",
       "displayName": "Hello World Image Example",
       "dependencyManager": "npm",
       "appTemplate": "hello-world-lambda-image",
