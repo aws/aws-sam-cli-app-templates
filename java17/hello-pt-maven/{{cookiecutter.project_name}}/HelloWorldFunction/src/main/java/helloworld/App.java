@@ -45,7 +45,7 @@ public class App implements RequestHandler<APIGatewayProxyRequestEvent, APIGatew
     @Metrics(captureColdStart = true)
     {%- endif %}
     public APIGatewayProxyResponseEvent handleRequest(final APIGatewayProxyRequestEvent input, final Context context) {
-        Map<String, String> headers = new HashMap<>();
+        var headers = new HashMap<String, String>();
         headers.put("Content-Type", "application/json");
         headers.put("X-Custom-Header", "application/json");
 
@@ -53,7 +53,8 @@ public class App implements RequestHandler<APIGatewayProxyRequestEvent, APIGatew
                 .withHeaders(headers);
         try {
             final String pageContents = this.getPageContents("https://checkip.amazonaws.com");
-            String output = String.format("{ \"message\": \"hello world\", \"location\": \"%s\" }", pageContents);
+            String output = String.format("""
+                    { "message": "hello world", "location": "%s" }""", pageContents);
 
             return response
                     .withStatusCode(200)
@@ -71,7 +72,7 @@ public class App implements RequestHandler<APIGatewayProxyRequestEvent, APIGatew
         {%- if cookiecutter[ "Powertools for AWS Lambda (Java) Logging" ] == "enabled" %}
         log.info("Retrieving {}", address);
         {%- endif %}
-        URL url = new URL(address);
+        var url = new URL(address);
         try (BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()))) {
             return br.lines().collect(Collectors.joining(System.lineSeparator()));
         }
