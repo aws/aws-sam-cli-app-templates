@@ -1,0 +1,10 @@
+{
+    "project_name": "Name of the project",
+    "runtime": "nodejs18.x",
+    "architectures": {
+        "value": []
+    },
+    "_copy_without_render": [
+        ".gitignore"
+    ]
+}

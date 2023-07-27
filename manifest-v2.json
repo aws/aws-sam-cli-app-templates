@@ -635,6 +635,14 @@
       "useCaseName": "Hello World Example"
     },
     {
+      "directory": "nodejs18.x/hello-gql",
+      "displayName": "GraphQLApi Hello World Example",
+      "dependencyManager": "npm",
+      "appTemplate": "graphql-api-sample-app",
+      "packageType": "Zip",
+      "useCaseName": "GraphQLApi Hello World Example"
+    },
+    {
       "directory": "nodejs18.x/hello-ts",
       "displayName": "Hello World Example TypeScript",
       "dependencyManager": "npm",
