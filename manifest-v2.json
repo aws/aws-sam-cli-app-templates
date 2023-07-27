@@ -638,7 +638,7 @@
       "directory": "nodejs18.x/hello-gql",
       "displayName": "GraphQLApi Hello World Example",
       "dependencyManager": "npm",
-      "appTemplate": "hello-world",
+      "appTemplate": "graphql-api-sample-app",
       "packageType": "Zip",
       "useCaseName": "GraphQLApi Hello World Example"
     },
