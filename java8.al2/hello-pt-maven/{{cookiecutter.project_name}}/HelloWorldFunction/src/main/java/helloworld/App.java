@@ -33,7 +33,7 @@ import static software.amazon.lambda.powertools.tracing.CaptureMode.*;
 public class App implements RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
 
     {%- if cookiecutter[ "Powertools for AWS Lambda (Java) Logging" ] == "enabled" %}
-    Logger log = LogManager.getLogger();
+    Logger log = LogManager.getLogger(App.class);
 
 
     @Logging(logEvent = true)
