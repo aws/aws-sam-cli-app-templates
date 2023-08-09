@@ -1,6 +1,6 @@
 using Amazon.DynamoDBv2.DataModel;
 
-namespace {{cookiecutter.project_name}}.Entities;
+namespace ServerlessAPI.Entities;
 
 // <summary>
 /// Map the Book Class to DynamoDb Table

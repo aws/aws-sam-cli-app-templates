@@ -1,12 +1,12 @@
 ﻿using Bogus;
-using {{cookiecutter.project_name}}.Entities;
-using {{cookiecutter.project_name}}.Repositories;
+using ServerlessAPI.Entities;
+using ServerlessAPI.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace {{cookiecutter.project_name}}.Tests
+namespace ServerlessAPI.Tests
 {
     internal class MockBookRepository : IBookRepository
     {

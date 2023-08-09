@@ -45,6 +45,6 @@ If already installed check if new version is available.
 
 Deploy application
 ```
-    cd "{{cookiecutter.project_name}}/src/{{cookiecutter.project_name}}"
-    dotnet lambda deploy-serverless
+    cd "{{cookiecutter.project_name}}/src/ServerlessAPI"
+    sam deploy
 ```

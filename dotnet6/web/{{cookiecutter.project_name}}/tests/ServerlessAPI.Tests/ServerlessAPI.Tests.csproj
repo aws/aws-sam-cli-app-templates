@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\{{cookiecutter.project_name}}\{{cookiecutter.project_name}}.csproj" />
+    <ProjectReference Include="..\..\src\ServerlessAPI\ServerlessAPI.csproj" />
   </ItemGroup>
 
 </Project>

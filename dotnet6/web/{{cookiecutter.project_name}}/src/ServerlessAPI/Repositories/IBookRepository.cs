@@ -1,6 +1,6 @@
-﻿using {{cookiecutter.project_name}}.Entities;
+﻿using ServerlessAPI.Entities;
 
-namespace {{cookiecutter.project_name}}.Repositories
+namespace ServerlessAPI.Repositories
 {
     /// <summary>
     /// Sample DynamoDB Table book CRUD

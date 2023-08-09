@@ -1,5 +1,5 @@
-﻿using {{cookiecutter.project_name}}.Entities;
-using {{cookiecutter.project_name}}.Repositories;
+﻿using ServerlessAPI.Entities;
+using ServerlessAPI.Repositories;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Net.Http.Json;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace {{cookiecutter.project_name}}.Tests
+namespace ServerlessAPI.Tests
 {
     public class BookControllerTest
     {

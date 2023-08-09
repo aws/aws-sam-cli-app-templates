@@ -1,9 +1,9 @@
 using Amazon.DynamoDBv2.DataModel;
 using Microsoft.AspNetCore.Mvc;
-using {{cookiecutter.project_name}}.Entities;
-using {{cookiecutter.project_name}}.Repositories;
+using ServerlessAPI.Entities;
+using ServerlessAPI.Repositories;
 
-namespace {{cookiecutter.project_name}}.Controllers;
+namespace ServerlessAPI.Controllers;
 
 [Route("api/[controller]")]
 [Produces("application/json")]

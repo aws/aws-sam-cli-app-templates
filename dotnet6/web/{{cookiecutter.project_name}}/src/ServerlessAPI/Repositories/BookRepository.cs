@@ -1,8 +1,8 @@
 ﻿using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
-using {{cookiecutter.project_name}}.Entities;
+using ServerlessAPI.Entities;
 
-namespace {{cookiecutter.project_name}}.Repositories
+namespace ServerlessAPI.Repositories
 {
 
 

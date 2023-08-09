@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <InternalsVisibleTo Include="{{cookiecutter.project_name}}.Tests" />
+    <InternalsVisibleTo Include="ServerlessAPI.Tests" />
   </ItemGroup>
 
 </Project>
