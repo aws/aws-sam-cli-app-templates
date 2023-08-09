@@ -16,9 +16,9 @@ using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
 
-using {{cookiecutter.project_name}};
+using S3Event;
 
-namespace {{cookiecutter.project_name}}.Tests
+namespace S3Event.Tests
 {
     public class FunctionTest
     {
