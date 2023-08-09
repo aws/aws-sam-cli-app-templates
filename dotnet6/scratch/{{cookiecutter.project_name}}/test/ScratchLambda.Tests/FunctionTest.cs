@@ -7,9 +7,9 @@ using Xunit;
 using Amazon.Lambda.Core;
 using Amazon.Lambda.TestUtilities;
 
-using {{cookiecutter.project_name}};
+using ScratchLambda;
 
-namespace {{cookiecutter.project_name}}.Tests
+namespace ScratchLambda.Tests
 {
     public class FunctionTest
     {
