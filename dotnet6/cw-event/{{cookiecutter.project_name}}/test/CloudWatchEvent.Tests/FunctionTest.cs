@@ -3,7 +3,7 @@ using Amazon.Lambda.Core;
 using Amazon.Lambda.TestUtilities;
 using Amazon.Lambda.CloudWatchEvents;
 
-namespace {{cookiecutter.project_name}}.Tests;
+namespace CloudWatchEvent.Tests;
 
 public class FunctionTest
 {

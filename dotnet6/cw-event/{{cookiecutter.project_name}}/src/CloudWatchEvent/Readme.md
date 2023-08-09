@@ -38,12 +38,12 @@ If already installed check if new version is available.
 
 Execute unit tests
 ```
-    cd "{{cookiecutter.project_name}}/test/{{cookiecutter.project_name}}.Tests"
+    cd "{{cookiecutter.project_name}}/test/CloudWatchEvent.Tests"
     dotnet test
 ```
 
 Deploy function to AWS Lambda
 ```
-    cd "{{cookiecutter.project_name}}/src/{{cookiecutter.project_name}}"
-    dotnet lambda deploy-function
+    cd "{{cookiecutter.project_name}}"
+    sam deploy
 ```
