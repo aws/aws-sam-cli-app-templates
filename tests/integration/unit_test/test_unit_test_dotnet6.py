@@ -1,5 +1,6 @@
 # dotnet unit tests are executed from test directories, so code_directories point to test directories
 from tests.integration.unit_test.unit_test_base import UnitTestBase
+from tests.integration.base import PROJECT_NAME
 
 
 class UnitTest_dotnet6_cookiecutter_aws_sam_hello_dotnet(UnitTestBase.DotNetCoreUnitTestBase):
@@ -23,25 +24,25 @@ class UnitTest_dotnet6_cookiecutter_aws_sam_hello_step_functions_sample_app(Unit
 
 class UnitTest_dotnet6_cookiecutter_aws_sam_quick_start_s3_dotnet(UnitTestBase.DotNetCoreUnitTestBase):
     directory = "dotnet6/s3"
-    code_directories = ["test/project.Tests"]
+    code_directories = [f"test/{PROJECT_NAME}.Tests"]
 
 
 class UnitTest_dotnet6_cookiecutter_aws_sam_cloudwatch_events_dotnet(UnitTestBase.DotNetCoreUnitTestBase):
     directory = "dotnet6/cw-event"
-    code_directories = ["test/project.Tests"]
+    code_directories = [f"test/{PROJECT_NAME}.Tests"]
 class UnitTest_dotnet6_cookiecutter_aws_sam_quickstart_sns_dotnet_sample_app(UnitTestBase.DotNetCoreUnitTestBase):
     directory = "dotnet6/sns"
-    code_directories = ["test/project.Tests"]
+    code_directories = [f"test/{PROJECT_NAME}.Tests"]
 
 class UnitTest_dotnet6_cookiecutter_aws_from_scratch_dotnet(UnitTestBase.DotNetCoreUnitTestBase):
     directory = "dotnet6/scratch"
-    code_directories = ["test/project.Tests"]
+    code_directories = [f"test/{PROJECT_NAME}.Tests"]
 
 class UnitTest_dotnet6_cookiecutter_aws_sam_quick_start_web_dotnet(UnitTestBase.DotNetCoreUnitTestBase):
     directory = "dotnet6/web"
-    code_directories = ["tests/project.Tests"]
+    code_directories = [f"tests/{PROJECT_NAME}.Tests"]
 
 
 class UnitTest_dotnet6_cookiecutter_aws_sam_quick_start_sqs(UnitTestBase.DotNetCoreUnitTestBase):
     directory = "dotnet6/sqs"
-    code_directories = ["test/project.Tests"]
+    code_directories = [f"test/{PROJECT_NAME}.Tests"]
