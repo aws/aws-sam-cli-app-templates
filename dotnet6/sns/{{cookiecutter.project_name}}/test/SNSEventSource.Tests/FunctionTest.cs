@@ -2,7 +2,7 @@ using Xunit;
 using Amazon.Lambda.TestUtilities;
 using Amazon.Lambda.SNSEvents;
 
-namespace {{cookiecutter.project_name}}.Tests;
+namespace SNSEventSource.Tests;
 
 public class FunctionTest
 {

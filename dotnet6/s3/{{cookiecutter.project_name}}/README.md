@@ -83,8 +83,8 @@ Resources:
   S3JsonLoggerFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: ./src/S3Event/
-      Handler: S3Event::S3Event.Function::FunctionHandler
+      CodeUri: ./src/S3EventSource/
+      Handler: S3EventSource::S3EventSource.Function::FunctionHandler
       Runtime: dotnet6
       MemorySize: 256
       DeadLetterQueue:

@@ -33,7 +33,7 @@ class UnitTest_dotnet6_cookiecutter_aws_sam_cloudwatch_events_dotnet(UnitTestBas
 
 class UnitTest_dotnet6_cookiecutter_aws_sam_quickstart_sns_dotnet_sample_app(UnitTestBase.DotNetCoreUnitTestBase):
     directory = "dotnet6/sns"
-    code_directories = ["test/SNSEvent.Tests"]
+    code_directories = ["test/SNSEventSource.Tests"]
 
 
 class UnitTest_dotnet6_cookiecutter_aws_from_scratch_dotnet(UnitTestBase.DotNetCoreUnitTestBase):
