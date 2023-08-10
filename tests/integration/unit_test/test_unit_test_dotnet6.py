@@ -28,7 +28,7 @@ class UnitTest_dotnet6_cookiecutter_aws_sam_quick_start_s3_dotnet(UnitTestBase.D
 
 class UnitTest_dotnet6_cookiecutter_aws_sam_cloudwatch_events_dotnet(UnitTestBase.DotNetCoreUnitTestBase):
     directory = "dotnet6/cw-event"
-    code_directories = ["test/CloudWatchEvent.Tests"]
+    code_directories = ["test/CloudWatchEventSource.Tests"]
 
 
 class UnitTest_dotnet6_cookiecutter_aws_sam_quickstart_sns_dotnet_sample_app(UnitTestBase.DotNetCoreUnitTestBase):
