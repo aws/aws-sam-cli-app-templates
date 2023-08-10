@@ -23,7 +23,7 @@ class UnitTest_dotnet6_cookiecutter_aws_sam_hello_step_functions_sample_app(Unit
 
 class UnitTest_dotnet6_cookiecutter_aws_sam_quick_start_s3_dotnet(UnitTestBase.DotNetCoreUnitTestBase):
     directory = "dotnet6/s3"
-    code_directories = ["test/S3Event.Tests"]
+    code_directories = ["test/S3EventSource.Tests"]
 
 
 class UnitTest_dotnet6_cookiecutter_aws_sam_cloudwatch_events_dotnet(UnitTestBase.DotNetCoreUnitTestBase):

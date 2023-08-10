@@ -16,9 +16,9 @@ using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
 
-using S3Event;
+using S3EventSource;
 
-namespace S3Event.Tests
+namespace S3EventSource.Tests
 {
     public class FunctionTest
     {
