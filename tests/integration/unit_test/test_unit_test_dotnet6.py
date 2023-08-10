@@ -48,4 +48,4 @@ class UnitTest_dotnet6_cookiecutter_aws_sam_quick_start_web_dotnet(UnitTestBase.
 
 class UnitTest_dotnet6_cookiecutter_aws_sam_quick_start_sqs(UnitTestBase.DotNetCoreUnitTestBase):
     directory = "dotnet6/sqs"
-    code_directories = ["test/SQSEvent.Tests"]
+    code_directories = ["test/SQSEventSource.Tests"]

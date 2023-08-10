@@ -2,9 +2,9 @@ using Xunit;
 using Amazon.Lambda.TestUtilities;
 using Amazon.Lambda.SQSEvents;
 
-using SQSEvent;
+using SQSEventSource;
 
-namespace SQSEvent.Tests
+namespace SQSEventSource.Tests
 {
     public class FunctionTest
     {
