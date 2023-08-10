@@ -3,7 +3,7 @@ using Amazon.Lambda.Core;
 using Amazon.Lambda.TestUtilities;
 using Amazon.Lambda.CloudWatchEvents;
 
-namespace CloudWatchEvent.Tests;
+namespace CloudWatchEventSource.Tests;
 
 public class FunctionTest
 {

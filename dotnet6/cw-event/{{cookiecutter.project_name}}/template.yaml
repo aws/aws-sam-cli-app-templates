@@ -21,7 +21,7 @@ Resources:
     Properties:
       Description: A Lambda function that logs the payload of messages from a scheduled CloudWatch Event
       CodeUri: ./src/CloudWatchEvent/
-      Handler: CloudWatchEvent::CloudWatchEvent.Function::FunctionHandler
+      Handler: CloudWatchEventSource::CloudWatchEventSource.Function::FunctionHandler
       Runtime: dotnet6
       {%- if cookiecutter.architectures.value != [ ]%}
       Architectures:
