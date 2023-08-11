@@ -38,7 +38,7 @@ If already installed check if new version is available.
 
 Execute unit tests
 ```
-    cd "{{cookiecutter.project_name}}/test/CloudWatchEvent.Tests"
+    cd "{{cookiecutter.project_name}}/test/CloudWatchEventSource.Tests"
     dotnet test
 ```
 
