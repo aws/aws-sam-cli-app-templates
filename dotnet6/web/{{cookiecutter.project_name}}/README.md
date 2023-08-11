@@ -58,7 +58,7 @@ Build your application with the `sam build` command.
 {{ cookiecutter.project_name }}$ sam build
 ```
 
-The SAM CLI installs dependencies defined in `src/{{cookiecutter.project_name}}/{{cookiecutter.project_name}}.csproj`, creates a deployment package, and saves it in the `.aws-sam/build` folder.
+The SAM CLI installs dependencies defined in `src/ServerlessAPI/ServerlessAPI.csproj`, creates a deployment package, and saves it in the `.aws-sam/build` folder.
 
 Test a single function by invoking it directly with a test event. An event is a JSON document that represents the input that the function receives from the event source. Test events are included in the `events` folder in this project.
 
@@ -88,8 +88,8 @@ Resources:
   NetCodeWebAPIServerless:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: ./src/{{cookiecutter.project_name}}/
-      Handler: {{cookiecutter.project_name}}::{{cookiecutter.project_name}}.Function::FunctionHandler
+      CodeUri: ./src/ServerlessAPI/
+      Handler: ServerlessAPI::ServerlessAPI.Function::FunctionHandler
       Runtime: dotnet6
       MemorySize: 1042
       DeadLetterQueue:
@@ -128,7 +128,7 @@ You can find more information and examples about filtering Lambda function logs 
 Tests are defined in the `test` folder in this project.
 
 ```bash
-{{ cookiecutter.project_name }}$ dotnet test test/{{cookiecutter.project_name}}.Tests/{{cookiecutter.project_name}}.Tests.csproj 
+{{ cookiecutter.project_name }}$ dotnet test test/ServerlessAPI.Tests/ServerlessAPI.Tests.csproj 
 ```
 
 ## Cleanup

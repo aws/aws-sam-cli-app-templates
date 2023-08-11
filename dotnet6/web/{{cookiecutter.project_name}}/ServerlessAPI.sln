@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DEAF7F92-411E-4FE7-823B-C4F5DB41BBF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerlessAPI", "src\ServerlessAPI\ServerlessAPI.csproj", "{FC5B185F-DEBF-46D8-B864-9EF757827789}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5527D965-E863-4E48-8EC1-713E276D1BBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerlessAPI.Tests", "tests\ServerlessAPI.Tests\ServerlessAPI.Tests.csproj", "{923A8DB8-35F2-4671-8BC2-A7BB8B639348}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC5B185F-DEBF-46D8-B864-9EF757827789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC5B185F-DEBF-46D8-B864-9EF757827789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC5B185F-DEBF-46D8-B864-9EF757827789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC5B185F-DEBF-46D8-B864-9EF757827789}.Release|Any CPU.Build.0 = Release|Any CPU
+		{923A8DB8-35F2-4671-8BC2-A7BB8B639348}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{923A8DB8-35F2-4671-8BC2-A7BB8B639348}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{923A8DB8-35F2-4671-8BC2-A7BB8B639348}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{923A8DB8-35F2-4671-8BC2-A7BB8B639348}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FC5B185F-DEBF-46D8-B864-9EF757827789} = {DEAF7F92-411E-4FE7-823B-C4F5DB41BBF8}
+		{923A8DB8-35F2-4671-8BC2-A7BB8B639348} = {5527D965-E863-4E48-8EC1-713E276D1BBD}
+	EndGlobalSection
+EndGlobal

@@ -20,8 +20,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Description: A Lambda function that logs the payload of messages from a scheduled CloudWatch Event
-      CodeUri: ./src/{{cookiecutter.project_name}}/
-      Handler: {{cookiecutter.project_name}}::{{cookiecutter.project_name}}.Function::FunctionHandler
+      CodeUri: ./src/CloudWatchEventSource/
+      Handler: CloudWatchEventSource::CloudWatchEventSource.Function::FunctionHandler
       Runtime: dotnet6
       {%- if cookiecutter.architectures.value != [ ]%}
       Architectures:

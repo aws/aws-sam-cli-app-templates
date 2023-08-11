@@ -10,7 +10,7 @@ from unittest import TestCase
 
 from tests import REPO_ROOT
 
-PROJECT_NAME = "project"
+PROJECT_NAME = "project-name"
 
 
 class CommandResult(NamedTuple):

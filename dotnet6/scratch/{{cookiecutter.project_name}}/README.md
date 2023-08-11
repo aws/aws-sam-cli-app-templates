@@ -81,8 +81,8 @@ Resources:
   helloFromLambdaFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: ./src/{{cookiecutter.project_name}}/
-      Handler: {{cookiecutter.project_name}}::{{cookiecutter.project_name}}.Function::FunctionHandler
+      CodeUri: ./src/ScratchLambda/
+      Handler: ScratchLambda::ScratchLambda.Function::FunctionHandler
       Runtime: dotnet6
       MemorySize: 256
       Timeout: 100

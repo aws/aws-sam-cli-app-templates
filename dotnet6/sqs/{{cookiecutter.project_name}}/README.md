@@ -82,8 +82,8 @@ Resources:
   SQSPayloadLogger:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: ./src/{{cookiecutter.project_name}}/
-      Handler: {{cookiecutter.project_name}}::{{cookiecutter.project_name}}.Function::FunctionHandler
+      CodeUri: ./src/SQSEventSource/
+      Handler: SQSEventSource::SQSEventSource.Function::FunctionHandler
       Runtime: dotnet6
       MemorySize: 256
       DeadLetterQueue:

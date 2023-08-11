@@ -23,25 +23,29 @@ class UnitTest_dotnet6_cookiecutter_aws_sam_hello_step_functions_sample_app(Unit
 
 class UnitTest_dotnet6_cookiecutter_aws_sam_quick_start_s3_dotnet(UnitTestBase.DotNetCoreUnitTestBase):
     directory = "dotnet6/s3"
-    code_directories = ["test/project.Tests"]
+    code_directories = ["test/S3EventSource.Tests"]
 
 
 class UnitTest_dotnet6_cookiecutter_aws_sam_cloudwatch_events_dotnet(UnitTestBase.DotNetCoreUnitTestBase):
     directory = "dotnet6/cw-event"
-    code_directories = ["test/project.Tests"]
+    code_directories = ["test/CloudWatchEventSource.Tests"]
+
+
 class UnitTest_dotnet6_cookiecutter_aws_sam_quickstart_sns_dotnet_sample_app(UnitTestBase.DotNetCoreUnitTestBase):
     directory = "dotnet6/sns"
-    code_directories = ["test/project.Tests"]
+    code_directories = ["test/SNSEventSource.Tests"]
+
 
 class UnitTest_dotnet6_cookiecutter_aws_from_scratch_dotnet(UnitTestBase.DotNetCoreUnitTestBase):
     directory = "dotnet6/scratch"
-    code_directories = ["test/project.Tests"]
+    code_directories = ["test/ScratchLambda.Tests"]
+
 
 class UnitTest_dotnet6_cookiecutter_aws_sam_quick_start_web_dotnet(UnitTestBase.DotNetCoreUnitTestBase):
     directory = "dotnet6/web"
-    code_directories = ["tests/project.Tests"]
+    code_directories = ["tests/ServerlessAPI.Tests"]
 
 
 class UnitTest_dotnet6_cookiecutter_aws_sam_quick_start_sqs(UnitTestBase.DotNetCoreUnitTestBase):
     directory = "dotnet6/sqs"
-    code_directories = ["test/project.Tests"]
+    code_directories = ["test/SQSEventSource.Tests"]
