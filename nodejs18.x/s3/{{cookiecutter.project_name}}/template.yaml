@@ -40,3 +40,8 @@ Resources:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: !Ref AppBucketName
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - BucketKeyEnabled: true
+      VersioningConfiguration:
+        Status: Enabled

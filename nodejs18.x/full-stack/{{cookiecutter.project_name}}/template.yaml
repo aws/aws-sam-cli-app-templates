@@ -151,6 +151,12 @@ Resources:
   # S3 Bucket to host single page app website
   WebSiteBucket:
     Type: "AWS::S3::Bucket"
+    Properties:
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - BucketKeyEnabled: true
+      VersioningConfiguration:
+        Status: Enabled
   WebSiteBucketPolicy:
     Type: "AWS::S3::BucketPolicy"
     Properties:
