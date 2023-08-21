@@ -21,11 +21,10 @@ import software.amazon.lambda.powertools.logging.Logging;
 import software.amazon.lambda.powertools.metrics.Metrics;
 {%- endif %}
 {%- if cookiecutter[ "Powertools for AWS Lambda (Java) Tracing" ] == "enabled" %}
-import software.amazon.lambda.powertools.tracing.CaptureMode;
 import software.amazon.lambda.powertools.tracing.Tracing;
-{%- endif %}
 
 import static software.amazon.lambda.powertools.tracing.CaptureMode.*;
+{%- endif %}
 
 /**
  * Handler for requests to Lambda function.

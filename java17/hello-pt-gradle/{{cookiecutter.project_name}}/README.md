@@ -108,7 +108,7 @@ Tests are defined in the `HelloWorldFunction/src/test` folder in this project.
 
 ```bash
 {{ cookiecutter.project_name }}$ cd HelloWorldFunction
-HelloWorldFunction$ mvn test
+HelloWorldFunction$ gradle test
 ```
 
 ## Cleanup
