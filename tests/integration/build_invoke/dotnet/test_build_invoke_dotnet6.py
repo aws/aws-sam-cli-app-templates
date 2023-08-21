@@ -34,6 +34,20 @@ class BuildInvoke_dotnet6_cookiecutter_aws_sam_quick_start_s3_dotnet(
     directory = "dotnet6/s3"
 
 
+class BuildInvoke_dotnet6_cookiecutter_aws_sam_quick_start_sns_dotnet(
+    BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase
+):
+    use_container = False
+    directory = "dotnet6/sns"
+
+
+class BuildInvoke_dotnet6_cookiecutter_aws_sam_quick_start_sqs_dotnet(
+    BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase
+):
+    use_container = False
+    directory = "dotnet6/sqs"
+
+
 class BuildInvoke_dotnet6_cookiecutter_aws_sam_hello_step_functions_sample_app(
     BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase
 ):

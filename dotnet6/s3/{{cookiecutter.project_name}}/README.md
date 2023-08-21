@@ -83,8 +83,8 @@ Resources:
   S3JsonLoggerFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: ./src/{{cookiecutter.project_name}}/
-      Handler: {{cookiecutter.project_name}}::{{cookiecutter.project_name}}.Function::FunctionHandler
+      CodeUri: ./src/S3EventSource/
+      Handler: S3EventSource::S3EventSource.Function::FunctionHandler
       Runtime: dotnet6
       MemorySize: 256
       DeadLetterQueue:
