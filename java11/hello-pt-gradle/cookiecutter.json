@@ -1,0 +1,10 @@
+{
+    "project_name": "sam-app-powertools-java",
+    "runtime": "java11",
+    "Powertools for AWS Lambda (Java) Logging": ["enabled","disabled"],
+    "Powertools for AWS Lambda (Java) Metrics": ["enabled","disabled"],
+    "Powertools for AWS Lambda (Java) Tracing": ["enabled","disabled"],
+    "_copy_without_render": [
+        ".gitignore"
+    ]
+}

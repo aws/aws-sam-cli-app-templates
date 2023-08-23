@@ -375,6 +375,14 @@
       "useCaseName": "Hello World Example with Powertools for AWS Lambda"
     },
     {
+      "directory": "java11/hello-pt-gradle",
+      "displayName": "Hello World Example Java With Powertools for AWS Lambda",
+      "dependencyManager": "gradle",
+      "appTemplate": "hello-world-powertools-java",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example with Powertools for AWS Lambda"
+    },
+    {
       "directory": "java11/event-bridge-gradle",
       "displayName": "EventBridge Hello World: Gradle",
       "dependencyManager": "gradle",

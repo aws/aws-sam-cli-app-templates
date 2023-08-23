@@ -21,5 +21,5 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
 }
 
-sourceCompatibility = 17
-targetCompatibility = 17
+sourceCompatibility = 11
+targetCompatibility = 11

@@ -35,7 +35,6 @@ public class App implements RequestHandler<APIGatewayProxyRequestEvent, APIGatew
     {%- if cookiecutter[ "Powertools for AWS Lambda (Java) Logging" ] == "enabled" %}
     Logger log = LogManager.getLogger(App.class);
 
-
     @Logging(logEvent = true)
     {%- endif %}
     {%- if cookiecutter[ "Powertools for AWS Lambda (Java) Tracing" ] == "enabled" %}
