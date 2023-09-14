@@ -8,10 +8,10 @@
 
   <ItemGroup>
     <PackageReference Include="Amazon.Lambda.Core" Version="2.1.0" />
-    <PackageReference Include="Amazon.Lambda.Serialization.SystemTextJson" Version="2.3.1" />
-    <PackageReference Include="Amazon.Lambda.APIGatewayEvents" Version="2.6.0" />
+    <PackageReference Include="Amazon.Lambda.Serialization.SystemTextJson" Version="2.3.0" />
+    <PackageReference Include="Amazon.Lambda.APIGatewayEvents" Version="2.5.0" />
     {%- if cookiecutter["Powertools for AWS Lambda (.NET) Tracing"] == "enabled"%}
-    <PackageReference Include="AWSXRayRecorder.Handlers.AwsSdk" Version="2.12.0" />
+    <PackageReference Include="AWSXRayRecorder.Handlers.AwsSdk" Version="2.11.0" />
     <PackageReference Include="AWS.Lambda.Powertools.Tracing" Version="1.3.0" />
     {%- endif %}
     {%- if cookiecutter["Powertools for AWS Lambda (.NET) Metrics"] == "enabled"%}
