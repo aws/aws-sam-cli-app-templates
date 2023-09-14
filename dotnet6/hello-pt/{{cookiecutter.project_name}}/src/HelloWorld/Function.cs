@@ -7,7 +7,6 @@ using System.Text.Json;
 using Amazon.Lambda.Core;
 using Amazon.Lambda.APIGatewayEvents;
 {%- if cookiecutter["Powertools for AWS Lambda (.NET) Tracing"] == "enabled"%}
-using Amazon.XRay.Recorder.Handlers.AwsSdk;
 using AWS.Lambda.Powertools.Tracing;
 {%- endif %}
 {%- if cookiecutter["Powertools for AWS Lambda (.NET) Metrics"] == "enabled"%}
@@ -29,7 +28,7 @@ namespace HelloWorld
         {%- if cookiecutter["Powertools for AWS Lambda (.NET) Tracing"] == "enabled"%}
         public Function()
         {
-            AWSSDKHandler.RegisterXRayForAllServices();
+            Tracing.RegisterForAllServices();
         }
         {%- endif %}
   
