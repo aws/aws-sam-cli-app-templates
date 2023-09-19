@@ -2,7 +2,9 @@
     "project_name": "sam-app-powertools",
     "runtime": "python3.11",
     "architectures": {
-        "value": []
+        "value": [
+            "x86_64", "arm64"
+        ]
     },
     "Powertools Logging": ["enabled","disabled"],
     "Powertools Metrics": ["enabled","disabled"],

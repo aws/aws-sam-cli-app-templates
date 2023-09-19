@@ -2,7 +2,9 @@
     "project_name": "Your EventBridge Starter app",
     "runtime": "java17",
     "architectures": {
-        "value": []
+        "value": [
+            "x86_64", "arm64"
+        ]
     },
     "_copy_without_render": [
         ".gitignore"
