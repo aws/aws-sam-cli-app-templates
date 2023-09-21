@@ -1,0 +1,33 @@
+{
+    "version": "3.0",
+    "groups": [
+        {
+            "rootDir": "nodejs01",
+            "runtimes": [
+                "nodejs16.x",
+                "nodejs18.x"
+            ],
+            "exclude": [
+                "hello-img"
+            ]
+        },
+        {
+            "rootDir": "nodejs01/hello-img",
+            "runtimes": [
+                {
+                    "runtime": "nodejs18.x",
+                    "displayRuntime": "amazon/nodejs18.x-base"
+                }
+            ]
+        },
+        {
+            "rootDir": "al2/graalvm",
+            "runtimes": [
+                {
+                    "runtime": "provided.al2",
+                    "displayRuntime": "graalvm.java11 (provided.al2)"
+                }
+            ]
+        }
+    ]
+}

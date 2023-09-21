@@ -1,0 +1,7 @@
+{
+    "displayName": "Hello World Example",
+    "dependencyManager": "npm",
+    "appTemplate": "hello-world",
+    "packageType": "Zip",
+    "useCaseName": "Hello World Example"
+}
