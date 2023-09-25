@@ -2,7 +2,7 @@
     "project_name": "SamAppPowertools for AWS Lambda",
     "runtime": "dotnet6",
     "architectures": {
-        "value": []
+        "value": [ "x86_64", "arm64" ]
     },
     "Powertools for AWS Lambda (.NET) Tracing": ["enabled","disabled"],
     "Powertools for AWS Lambda (.NET) Metrics": ["enabled","disabled"],

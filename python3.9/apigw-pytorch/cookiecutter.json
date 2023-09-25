@@ -5,8 +5,8 @@
   "api_path": "/classify_digit",
   "architectures": {
     "value": [
-      "x86_64"
-    ]
+      "x86_64", "arm64"
+  ]
   },
   "_copy_without_render": [
     ".gitignore"

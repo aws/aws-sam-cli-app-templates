@@ -2,7 +2,9 @@
     "project_name": "Your EventBridge Starter app",
     "runtime": "python3.9",
     "architectures": {
-        "value": []
+        "value": [
+            "x86_64", "arm64"
+        ]
     },
     "function_name": "hello_world_function",
     "AWS_Schema_registry": "aws.events",

@@ -2,7 +2,9 @@
     "project_name": "Name of the project",
     "runtime": "nodejs18.x",
     "architectures": {
-        "value": []
+        "value": [
+            "x86_64", "arm64"
+        ]
     },
     "Powertools for AWS Lambda (TypeScript) Tracing": ["enabled","disabled"],
     "Powertools for AWS Lambda (TypeScript) Metrics": ["enabled","disabled"],
