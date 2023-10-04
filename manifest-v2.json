@@ -197,6 +197,16 @@
       "useCaseName": "Lambda Response Streaming"
     }
   ],
+  "go (provided.al2023)": [
+    {
+      "directory": "al2023/go/hello",
+      "displayName": "Hello World Example",
+      "dependencyManager": "mod",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    }
+  ],
   "java8": [
     {
       "directory": "java8/hello-gradle",
@@ -1226,6 +1236,16 @@
       "appTemplate": "hello-world-ddb",
       "packageType": "Zip",
       "useCaseName": "DynamoDB Example"
+    }
+  ],
+  "rust (provided.al2023)": [
+    {
+      "directory": "al2023/rust/hello",
+      "displayName": "Hello World Example",
+      "dependencyManager": "cargo",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
     }
   ],
   "amazon/nodejs14.x-base": [
