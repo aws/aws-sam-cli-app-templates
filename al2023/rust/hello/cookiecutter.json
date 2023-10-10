@@ -1,0 +1,12 @@
+{
+  "project_name": "My Project",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+  "architectures": {
+    "value": [
+      "x86_64"
+    ]
+  },
+  "_copy_without_render": [
+    ".gitignore"
+  ]
+}
