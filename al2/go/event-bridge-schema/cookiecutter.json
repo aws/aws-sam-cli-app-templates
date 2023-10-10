@@ -3,7 +3,7 @@
     "runtime": "provided.al2",
     "architectures": {
         "value": [
-            [ "x86_64", "arm64" ]
+            "x86_64", "arm64"
         ]
     },
     "function_name": "HelloWorld",
