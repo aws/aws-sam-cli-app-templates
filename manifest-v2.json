@@ -1466,6 +1466,16 @@
       "useCaseName": "Hello World Example"
     }
   ],
+  "amazon/go-provided.al2023-base": [
+    {
+      "directory": "al2023/go/hello-img",
+      "displayName": "Hello World Lambda Image Example",
+      "dependencyManager": "mod",
+      "appTemplate": "hello-world-lambda-image",
+      "packageType": "Image",
+      "useCaseName": "Hello World Example"
+    }
+  ],
   "amazon/java17-base": [
     {
       "directory": "java17/hello-img-gradle",
