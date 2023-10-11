@@ -20,10 +20,6 @@ class BuildInvoke_provided_go_cookiecutter_aws_sam_hello_golang(BuildInvokeBase.
     use_container = False
     directory = "al2/go/hello"
 
-class BuildInvoke_providedal2023_go_cookiecutter_aws_sam_hello_golang(BuildInvokeBase.BuildInvokeBase):
-    use_container = False
-    directory = "al2023/go/hello"
-
 class BuildInvoke_go1_x_cookiecutter_aws_sam_eventbridge_hello_golang(BuildInvokeBase.BuildInvokeBase):
     use_container = False
     directory = "go1.x/event-bridge"
@@ -66,6 +62,3 @@ class BuildInvoke_image_go1_x_cookiecutter_aws_sam_hello_golang_lambda_image(Bui
 
 class BuildInvoke_image_provided_go_cookiecutter_aws_sam_hello_golang_lambda_image(BuildInvokeBase.BuildInvokeBase):
     directory = "al2/go/hello-img"
-
-class BuildInvoke_image_providedal2023_go_cookiecutter_aws_sam_hello_golang_lambda_image(BuildInvokeBase.BuildInvokeBase):
-    directory = "al2023/go/hello-img"
