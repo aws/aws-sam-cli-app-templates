@@ -1,4 +1,4 @@
 -f https://download.pytorch.org/whl/torch_stable.html
 torch=={{cookiecutter.pytorch_version}}+cpu
 torchvision=={{cookiecutter.torchvision_version}}+cpu
-pillow==9.3.0
+pillow==10.1.0
