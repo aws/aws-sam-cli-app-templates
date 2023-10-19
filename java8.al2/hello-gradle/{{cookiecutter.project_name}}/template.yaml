@@ -17,7 +17,7 @@ Resources:
     Properties:
       CodeUri: HelloWorldFunction
       Handler: helloworld.App::handleRequest
-      Runtime: java8.al2
+      Runtime: {{ cookiecutter.runtime }}
       {%- if cookiecutter.architectures.value != []%}
       Architectures:
       {%- for arch in cookiecutter.architectures.value %}

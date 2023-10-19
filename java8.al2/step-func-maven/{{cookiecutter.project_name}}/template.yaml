@@ -38,7 +38,7 @@ Resources:
     Properties:
       CodeUri: functions/StockChecker
       Handler: StockChecker.src.main.java.stockChecker.App::handleRequest
-      Runtime: java8.al2
+      Runtime: {{ cookiecutter.runtime }}
       {%- if cookiecutter.architectures.value != []%}
       Architectures:
       {%- for arch in cookiecutter.architectures.value %}
@@ -55,7 +55,7 @@ Resources:
     Properties:
       CodeUri: functions/StockSeller
       Handler: StockSeller.src.main.java.stockSeller.App::handleRequest
-      Runtime: java8.al2
+      Runtime: {{ cookiecutter.runtime }}
       {%- if cookiecutter.architectures.value != []%}
       Architectures:
       {%- for arch in cookiecutter.architectures.value %}
@@ -72,7 +72,7 @@ Resources:
     Properties:
       CodeUri: functions/StockBuyer
       Handler: StockBuyer.src.main.java.stockBuyer.App::handleRequest
-      Runtime: java8.al2
+      Runtime: {{ cookiecutter.runtime }}
       {%- if cookiecutter.architectures.value != []%}
       Architectures:
       {%- for arch in cookiecutter.architectures.value %}
