@@ -28,17 +28,6 @@ class UnitTest_java21_cookiecutter_aws_sam_hello_java_maven(UnitTestBase.JavaUni
     # TODO: remove the line remove once java 21 is GA
     should_test_lint = False
 
-class UnitTest_java21_cookiecutter_aws_sam_hello_java_powertools_maven(UnitTestBase.JavaUnitTestMavenBase):
-    directory = "java21/hello-pt-maven"
-    code_directories = ["HelloWorldFunction"]
-    # TODO: remove the line remove once java 21 is GA
-    should_test_lint = False
-
-class UnitTest_java21_cookiecutter_aws_sam_hello_java_powertools_gradle(UnitTestBase.JavaUnitTestGradleBase):
-    directory = "java21/hello-pt-gradle"
-    code_directories = ["HelloWorldFunction"]
-    # TODO: remove the line remove once java 21 is GA
-    should_test_lint = False
 
 class UnitTest_java21_cookiecutter_aws_sam_eventbridge_hello_java_gradle(UnitTestBase.JavaUnitTestGradleBase):
     directory = "java21/event-bridge-gradle"

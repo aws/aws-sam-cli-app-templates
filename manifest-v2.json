@@ -535,22 +535,6 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "java21/hello-pt-maven",
-      "displayName": "Hello World Example Java With Powertools for AWS Lambda: Maven",
-      "dependencyManager": "maven",
-      "appTemplate": "hello-world-powertools-java",
-      "packageType": "Zip",
-      "useCaseName": "Hello World Example with Powertools for AWS Lambda"
-    },
-    {
-      "directory": "java21/hello-pt-gradle",
-      "displayName": "Hello World Example Java With Powertools for AWS Lambda: Gradle",
-      "dependencyManager": "gradle",
-      "appTemplate": "hello-world-powertools-java",
-      "packageType": "Zip",
-      "useCaseName": "Hello World Example with Powertools for AWS Lambda"
-    },
-    {
       "directory": "java21/event-bridge-gradle",
       "displayName": "EventBridge Hello World: Gradle",
       "dependencyManager": "gradle",
