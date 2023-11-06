@@ -8,7 +8,7 @@ on:
     branches: [master, "feat*"]
 
 env:
-  PYTHON_VERSION_INSTALL: '3.8'
+  PYTHON_VERSION_INSTALL: '3.11'
   SAM_CLI_DEV: 1
   PIP_CARGO_LAMBDA_VERSION: '0.17.1'
 
