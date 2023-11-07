@@ -8,7 +8,7 @@ on:
     branches: [master, "feat*"]
 
 env:
-  PYTHON_VERSION_INSTALL: '3.7'
+  PYTHON_VERSION_INSTALL: '3.11'
   SAM_CLI_DEV: 1
   PIP_CARGO_LAMBDA_VERSION: '0.17.1'
 
@@ -100,16 +100,12 @@ jobs:
           - version: '3.11'
             type: 'Invoke'
             file: 'tests/integration/build_invoke/python/test_python_3_11.py'
-    env:
-      PYTHON_VERSION_INSTALL: ${{ matrix.version }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         name: Checkout PR
       - uses: ./.github/actions/aws-sam-cli-develop
         name: Install develop version of AWS SAM CLI
-        env:
-          PYTHON_VERSION_INSTALL: ${{ matrix.version }}
       - uses: actions/setup-python@v4
         name: Setup Python ${{ matrix.version }}
         with:
