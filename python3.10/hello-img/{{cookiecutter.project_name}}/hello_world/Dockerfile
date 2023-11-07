@@ -1,8 +1,8 @@
 FROM public.ecr.aws/lambda/python:3.10
 
-COPY requirements.txt .
+COPY requirements.txt ./
 
-RUN {{cookiecutter.runtime}} -m pip install -r requirements.txt -t ./
+RUN {{cookiecutter.runtime}} -m pip install -r requirements.txt -t .
 
 COPY app.py ./
 
