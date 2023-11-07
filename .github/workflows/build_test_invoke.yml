@@ -380,4 +380,4 @@ jobs:
           samdev --info
           dotnet --info
           dotnet --version
-          pytest -vvv tests/refactor
+          pytest -vvv --log-cli-level INFO tests/refactor
