@@ -14,7 +14,8 @@ class BuildInvoke_ruby2_7_cookiecutter_aws_sam_hello_ruby(BuildInvokeBase.HelloW
 
 
 class BuildInvoke_ruby2_7_cookiecutter_aws_sam_step_functions_sample_app(BuildInvokeBase.BuildInvokeBase):
-    directory = "ruby2.7/step-func"
+    runtime = "ruby2.7"
+    directory = "ruby/step-func"
 
 class BuildInvoke_image_ruby2_7_cookiecutter_aws_sam_hello_ruby_lambda_image(
     BuildInvokeBase.HelloWorldExclamationBuildInvokeBase

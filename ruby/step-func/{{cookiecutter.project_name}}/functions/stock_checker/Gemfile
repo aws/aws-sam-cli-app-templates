@@ -1,0 +1,3 @@
+source "https://rubygems.org"
+
+ruby '~> {{ cookiecutter.options[cookiecutter.runtime].version }}.0'

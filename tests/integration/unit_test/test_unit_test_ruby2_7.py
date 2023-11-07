@@ -8,7 +8,8 @@ class UnitTest_ruby2_7_cookiecutter_aws_sam_hello_ruby(UnitTestBase.RubyUnitTest
 
 
 class UnitTest_ruby2_7_cookiecutter_aws_sam_step_functions_sample_app(UnitTestBase.RubyUnitTestBase):
-    directory = "ruby2.7/step-func"
+    runtime = "ruby2.7"
+    directory = "ruby/step-func"
     code_directories = [
         "tests/unit/test_stock_buyer.rb",
         "tests/unit/test_stock_checker.rb",

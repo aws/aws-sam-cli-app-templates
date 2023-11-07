@@ -29,8 +29,10 @@ class CompareNewAndOldFolders(TestCase):
     @parameterized.expand([
         ("ruby2.7/hello", "ruby/hello", "ruby2.7"),
         ("ruby2.7/hello-img", "ruby/hello-img", "ruby2.7"),
+        ("ruby2.7/step-func", "ruby/step-func", "ruby2.7"),
         ("ruby3.2/hello", "ruby/hello", "ruby3.2"),
         ("ruby3.2/hello-img", "ruby/hello-img", "ruby3.2"),
+        ("ruby3.2/step-func", "ruby/step-func", "ruby3.2"),
     ])
     def test_compare_folders(self, old_folder, new_folder, runtime):
         self.old_template_path = Path(REPO_ROOT, old_folder)
