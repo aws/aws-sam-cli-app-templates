@@ -16,6 +16,11 @@ class BuildInvoke_provided_rust_cookiecutter_aws_sam_hello(BuildInvokeBase.Build
     directory = "al2/rust/hello"
     beta_features = True
 
+class BuildInvoke_providedal2023_rust_cookiecutter_aws_sam_hello(BuildInvokeBase.BuildInvokeBase):
+    use_container = False
+    directory = "al2023/rust/hello"
+    beta_features = True
+
 class BuildInvoke_provided_rust_cookiecutter_aws_sam_hello_dynamodb(BuildInvokeBase.BuildInvokeBase):
     use_container = False
     directory = "al2/rust/hello-ddb"

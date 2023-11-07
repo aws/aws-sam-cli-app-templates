@@ -197,6 +197,16 @@
       "useCaseName": "Lambda Response Streaming"
     }
   ],
+  "go (provided.al2023)": [
+    {
+      "directory": "al2023/go/hello",
+      "displayName": "Hello World Example",
+      "dependencyManager": "mod",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    }
+  ],
   "java8": [
     {
       "directory": "java8/hello-gradle",
@@ -1228,6 +1238,16 @@
       "useCaseName": "DynamoDB Example"
     }
   ],
+  "rust (provided.al2023)": [
+    {
+      "directory": "al2023/rust/hello",
+      "displayName": "Hello World Example",
+      "dependencyManager": "cargo",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    }
+  ],
   "amazon/nodejs14.x-base": [
     {
       "directory": "nodejs14.x/hello-img",
@@ -1439,6 +1459,16 @@
   "amazon/go-provided.al2-base": [
     {
       "directory": "al2/go/hello-img",
+      "displayName": "Hello World Lambda Image Example",
+      "dependencyManager": "mod",
+      "appTemplate": "hello-world-lambda-image",
+      "packageType": "Image",
+      "useCaseName": "Hello World Example"
+    }
+  ],
+  "amazon/go-provided.al2023-base": [
+    {
+      "directory": "al2023/go/hello-img",
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "mod",
       "appTemplate": "hello-world-lambda-image",
