@@ -37,8 +37,7 @@ npm run build && cd dist/
 aws s3 sync . s3://$s3_bucket_name/
 
 # Create cloudfront invalidation and capture id for next step
-invalidation_output=$(aws cloudfront create-invalidation --distribution-id $cloudfront_distribution_id --paths "/*")
-invalidation_id=$(echo "$invalidation_output" | grep -oP '(?<="Id": ")[^"]+')
+invalidation_id=$(aws cloudfront create-invalidation --distribution-id $cloudfront_distribution_id --paths "/*" --query "Invalidation.Id" --output text)
 
 # Wait for cloudfront invalidation to complete
 aws cloudfront wait invalidation-completed --distribution-id $cloudfront_distribution_id --id $invalidation_id
