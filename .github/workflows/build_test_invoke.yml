@@ -26,6 +26,7 @@ jobs:
       - build-test-golang
       - build-test-dotnet
       - test-manifest
+      - refactor-validation
     steps:
       - name: report-failure
         if: |
@@ -36,7 +37,8 @@ jobs:
           needs.build-test-rust.result != 'success' ||
           needs.build-test-golang.result != 'success' ||
           needs.build-test-dotnet.result != 'success' ||
-          needs.test-manifest.result != 'success'
+          needs.test-manifest.result != 'success' ||
+          needs.refactor-validation.result != 'success' 
         run: exit 1
       - name: report-success
         run: exit 0
@@ -361,3 +363,21 @@ jobs:
           dotnet --info
           dotnet --version
           pytest -vvv ${{ matrix.file }}
+  
+  # refactor
+  refactor-validation:
+    name: refactor validation
+    if: github.repository_owner == 'aws'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout PR
+      - uses: ./.github/actions/aws-sam-cli-develop
+        name: Install develop version of AWS SAM CLI
+      - name: Run refactor tests
+        run: |
+          pip install -r requirements.txt
+          samdev --info
+          dotnet --info
+          dotnet --version
+          pytest -vvv tests/refactor
