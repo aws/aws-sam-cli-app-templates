@@ -1,0 +1,5 @@
+source "https://rubygems.org"
+
+gem "httparty"
+
+ruby '~> {{ cookiecutter.options[cookiecutter.runtime].version }}.0'

@@ -1176,7 +1176,7 @@
   ],
   "ruby2.7": [
     {
-      "directory": "ruby2.7/hello",
+      "directory": "ruby/hello",
       "displayName": "Hello World Example",
       "dependencyManager": "bundler",
       "appTemplate": "hello-world",
@@ -1194,7 +1194,7 @@
   ],
   "ruby3.2": [
     {
-      "directory": "ruby3.2/hello",
+      "directory": "ruby/hello",
       "displayName": "Hello World Example",
       "dependencyManager": "bundler",
       "appTemplate": "hello-world",

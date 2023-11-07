@@ -9,7 +9,8 @@ For each template, it will test the following sam commands:
 """
 
 class BuildInvoke_ruby2_7_cookiecutter_aws_sam_hello_ruby(BuildInvokeBase.HelloWorldExclamationBuildInvokeBase):
-    directory = "ruby2.7/hello"
+    runtime = "ruby2.7"
+    directory = "ruby/hello"
 
 
 class BuildInvoke_ruby2_7_cookiecutter_aws_sam_step_functions_sample_app(BuildInvokeBase.BuildInvokeBase):

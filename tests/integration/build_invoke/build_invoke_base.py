@@ -65,7 +65,6 @@ class BuildInvokeBase:
                         self.function_id_by_event[event_file],
                         "-e",
                         Path("events", event_file),
-                        "--debug",
                     ]
                 else:
                     cmdlist = [
@@ -74,7 +73,6 @@ class BuildInvokeBase:
                         "invoke",
                         "-e",
                         Path("events", event_file),
-                        "--debug",
                     ]
                 if self.beta_features:
                     cmdlist.append("--beta-features")
@@ -85,7 +83,7 @@ class BuildInvokeBase:
                 except json.decoder.JSONDecodeError:
                     self.fail(f"Response is not a valid JSON: {result.stdout}")
 
-        @pytest.mark.flaky(reruns=3)
+        #@pytest.mark.flaky(reruns=3)
         def test_buld_and_invoke(self):
             self._test_init_template()
             self._test_build()
