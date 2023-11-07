@@ -19,4 +19,5 @@ class BuildInvoke_ruby2_7_cookiecutter_aws_sam_step_functions_sample_app(BuildIn
 class BuildInvoke_image_ruby2_7_cookiecutter_aws_sam_hello_ruby_lambda_image(
     BuildInvokeBase.HelloWorldExclamationBuildInvokeBase
 ):
-    directory = "ruby2.7/hello-img"
+    runtime = "ruby2.7"
+    directory = "ruby/hello-img"

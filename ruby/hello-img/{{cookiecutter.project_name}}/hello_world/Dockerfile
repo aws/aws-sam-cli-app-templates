@@ -1,4 +1,4 @@
-FROM public.ecr.aws/lambda/ruby:2.7
+FROM public.ecr.aws/lambda/ruby:{{ cookiecutter.options[cookiecutter.runtime].version }}
 
 COPY app.rb Gemfile ./
 

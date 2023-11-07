@@ -1408,7 +1408,7 @@
   ],
   "amazon/ruby2.7-base": [
     {
-      "directory": "ruby2.7/hello-img",
+      "directory": "ruby/hello-img",
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "bundler",
       "appTemplate": "hello-world-lambda-image",
@@ -1418,7 +1418,7 @@
   ],
   "amazon/ruby3.2-base": [
     {
-      "directory": "ruby3.2/hello-img",
+      "directory": "ruby/hello-img",
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "bundler",
       "appTemplate": "hello-world-lambda-image",

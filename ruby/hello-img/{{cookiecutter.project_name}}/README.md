@@ -19,7 +19,7 @@ To use the SAM CLI, you need the following tools.
 * Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community)
 
 You may need the following for local testing.
-* Ruby - [Install Ruby 2.7](https://www.ruby-lang.org/en/documentation/installation/)
+* Ruby - [Install Ruby {{ cookiecutter.options[cookiecutter.runtime].version }}](https://www.ruby-lang.org/en/documentation/installation/)
 
 To build and deploy your application for the first time, run the following in your shell:
 
