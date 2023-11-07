@@ -1,3 +1,7 @@
+"""
+Runs `sam init` for old folder and new folder and then compares these folders to assert their contents are the same.
+These tests are created to make sure we are not introducing a side effect with this refactoring (merge same programming language templates into single folder)
+"""
 from logging import INFO, StreamHandler, getLogger
 from pathlib import Path
 import shutil
@@ -38,10 +42,11 @@ class CompareNewAndOldFolders(TestCase):
         self.old_template_path = Path(REPO_ROOT, old_folder)
         self.new_template_path = Path(REPO_ROOT, new_folder)
 
+        LOG.info("Running `sam init` for old folder (%s) and new folder (%s)", old_folder, new_folder)
         self._run_init(self.old_template_path, Path(self.old_cwd.name))
         self._run_init(self.new_template_path, Path(self.new_cwd.name), runtime)
 
-        LOG.info("Comparing %s folder with %s folder and %s runtime", old_folder, new_folder, runtime)
+        LOG.info("Comparing generated application for old folder (%s) with new folder (%s) and runtime (%s)", old_folder, new_folder, runtime)
         diff_result = run_command([
             "diff",
             "-rs",
