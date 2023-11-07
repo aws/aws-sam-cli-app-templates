@@ -86,7 +86,6 @@ class Base:
                 PROJECT_NAME,
             ]
             if self.runtime:
-                LOG.info(f"### Adding {self.runtime}")
                 cmdlist.append("--extra-context")
                 cmdlist.append(f'{{"runtime": "{self.runtime}"}}')
             run_command(cmdlist, self.tempdir.name)

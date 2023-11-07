@@ -83,7 +83,7 @@ class BuildInvokeBase:
                 except json.decoder.JSONDecodeError:
                     self.fail(f"Response is not a valid JSON: {result.stdout}")
 
-        #@pytest.mark.flaky(reruns=3)
+        @pytest.mark.flaky(reruns=3)
         def test_buld_and_invoke(self):
             self._test_init_template()
             self._test_build()
