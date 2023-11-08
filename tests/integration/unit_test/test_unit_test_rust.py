@@ -6,3 +6,5 @@ class UnitTest_rust_cookiecutter_aws_sam_hello_rust(UnitTestBase.RustUnitTestBas
 
 class UnitTest_rust_al2023_cookiecutter_aws_sam_hello_rust(UnitTestBase.RustUnitTestBase):
     directory = "al2023/rust/hello"
+    # TODO (hawflau): remove after GA
+    should_test_lint = False

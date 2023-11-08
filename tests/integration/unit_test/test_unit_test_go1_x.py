@@ -13,6 +13,8 @@ class UnitTest_provided_go_cookiecutter_aws_sam_hello_golang(UnitTestBase.GoUnit
 class UnitTest_providedal2023_go_cookiecutter_aws_sam_hello_golang(UnitTestBase.GoUnitTestBase):
     directory = "al2023/go/hello"
     code_directories = ["hello-world"]
+    # TODO (hawflau): remove after GA
+    should_test_lint = False
 
 class UnitTest_go1_x_cookiecutter_aws_sam_eventbridge_hello_golang(UnitTestBase.GoUnitTestBase):
     directory = "go1.x/event-bridge"
