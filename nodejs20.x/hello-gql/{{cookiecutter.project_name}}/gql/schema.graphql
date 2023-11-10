@@ -1,0 +1,24 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Query {
+  getPost(id: String!): Post
+  sayHello(name: String): String
+  sayGoodbye(name: String): String
+}
+
+type Mutation {
+  addPost(author: String!, title: String!, content: String!): Post!
+}
+
+type Post {
+  id: String!
+  author: String
+  title: String
+  content: String
+  ups: Int!
+  downs: Int!
+  version: Int!
+}
