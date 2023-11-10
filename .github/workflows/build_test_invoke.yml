@@ -15,7 +15,7 @@ env:
 jobs:
   run-workflow:
     name: Build & Test & Invoke Templates
-    if: github.repository_owner == 'aws'
+    if: github.repository_owner == 'aws' && always()
     runs-on: ubuntu-latest
     needs:
       - build-test-python
