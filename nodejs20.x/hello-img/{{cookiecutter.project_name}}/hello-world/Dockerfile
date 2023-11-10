@@ -1,4 +1,4 @@
-FROM public.ecr.aws/lambda/nodejs:20-preview
+FROM public.ecr.aws/lambda/nodejs:20
 
 COPY app.mjs package*.json ./
 
