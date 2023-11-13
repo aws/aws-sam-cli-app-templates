@@ -759,6 +759,122 @@
       "useCaseName": "Hello World Example"
     }
   ],
+  "nodejs20.x": [
+    {
+      "directory": "nodejs20.x/hello",
+      "displayName": "Hello World Example",
+      "dependencyManager": "npm",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "nodejs20.x/hello-gql",
+      "displayName": "GraphQLApi Hello World Example",
+      "dependencyManager": "npm",
+      "appTemplate": "graphql-api-sample-app",
+      "packageType": "Zip",
+      "useCaseName": "GraphQLApi Hello World Example"
+    },
+    {
+      "directory": "nodejs20.x/hello-ts",
+      "displayName": "Hello World Example TypeScript",
+      "dependencyManager": "npm",
+      "appTemplate": "hello-world-typescript",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "nodejs20.x/hello-ts-pt",
+      "displayName": "Hello World Example TypeScript With Powertools for AWS Lambda",
+      "dependencyManager": "npm",
+      "appTemplate": "hello-world-powertools-typescript",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example with Powertools for AWS Lambda"
+    },
+    {
+      "directory": "nodejs20.x/step-func",
+      "displayName": "Step Functions Sample App (Stock Trader)",
+      "dependencyManager": "npm",
+      "appTemplate": "step-functions-sample-app",
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow"
+    },
+    {
+      "directory": "nodejs20.x/scratch",
+      "displayName": "Quick Start: From Scratch",
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-from-scratch",
+      "packageType": "Zip",
+      "useCaseName": "Standalone function"
+    },
+    {
+      "directory": "nodejs20.x/cw-event",
+      "displayName": "Quick Start: Scheduled Events",
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-cloudwatch-events",
+      "packageType": "Zip",
+      "useCaseName": "Scheduled task"
+    },
+    {
+      "directory": "nodejs20.x/s3",
+      "displayName": "Quick Start: S3",
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-s3",
+      "packageType": "Zip",
+      "useCaseName": "Data processing"
+    },
+    {
+      "directory": "nodejs20.x/sns",
+      "displayName": "Quick Start: SNS",
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-sns",
+      "packageType": "Zip",
+      "useCaseName": "Data processing"
+    },
+    {
+      "directory": "nodejs20.x/sqs",
+      "displayName": "Quick Start: SQS",
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-sqs",
+      "packageType": "Zip",
+      "useCaseName": "Data processing"
+    },
+    {
+      "directory": "nodejs20.x/web",
+      "displayName": "Quick Start: Web Backend",
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-web",
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
+    },
+    {
+      "directory": "nodejs20.x/full-stack",
+      "displayName": "Quick Start: Full Stack Application",
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-full-stack",
+      "packageType": "Zip",
+      "useCaseName": "Full Stack"
+    },
+    {
+      "directory": "nodejs20.x/response-streaming",
+      "displayName": "Lambda function using Response Streaming",
+      "dependencyManager": "npm",
+      "appTemplate": "response-streaming",
+      "packageType": "Zip",
+      "useCaseName": "Lambda Response Streaming"
+    }
+  ],
+  "amazon/nodejs20.x-base": [
+    {
+      "directory": "nodejs20.x/hello-img",
+      "displayName": "Hello World Image Example",
+      "dependencyManager": "npm",
+      "appTemplate": "hello-world-lambda-image",
+      "packageType": "Image",
+      "useCaseName": "Hello World Example"
+    }
+  ],
   "nodejs14.x": [
     {
       "directory": "nodejs14.x/hello",

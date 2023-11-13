@@ -198,6 +198,12 @@ jobs:
           - version: '18'
             type: 'Invoke'
             file: 'tests/integration/build_invoke/node/test_node_18.py'
+          - version: '20'
+            type: 'Test'
+            file: 'tests/integration/unit_test/test_unit_test_nodejs20_x.py'
+          - version: '20'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/node/test_node_20.py'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
