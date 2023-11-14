@@ -1,0 +1,61 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+    {{ cookiecutter.project_name }}
+
+    Powertools example
+
+Globals: # https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-template-anatomy-globals.html
+    Function:
+        Timeout: 5
+        MemorySize: 128
+        Runtime: python3.12
+
+Resources:
+    HelloWorldFunction:
+        Type: AWS::Serverless::Function # More info about Function Resource: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-function.html
+        Properties:
+            Handler: app.lambda_handler
+            CodeUri: hello_world
+            Description: Hello World function
+            {%- if cookiecutter.architectures.value != []%}
+            Architectures:
+            {%- for arch in cookiecutter.architectures.value %}
+                - {{arch}}
+            {%- endfor %}
+            {%- endif %}
+            {%- if cookiecutter["Powertools Tracing"] == "enabled"%}
+            Tracing: Active
+            {%- endif %}
+            Events:
+                HelloPath:
+                    Type: Api # More info about API Event Source: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-function-api.html
+                    Properties:
+                        Path: /hello
+                        Method: GET
+            {%- if cookiecutter["Powertools Tracing"] == "enabled" or cookiecutter["Powertools Logging"] == "enabled" %}
+             # Powertools env vars: https://awslabs.github.io/aws-lambda-powertools-python/#environment-variables
+            Environment:
+                Variables:
+                    {%- if cookiecutter["Powertools Tracing"] == "enabled" or cookiecutter["Powertools Metrics"] == "enabled"%}
+                    POWERTOOLS_SERVICE_NAME: PowertoolsHelloWorld
+                    {%- endif %}
+                    {%- if cookiecutter["Powertools Metrics"] == "enabled"%}
+                    POWERTOOLS_METRICS_NAMESPACE: Powertools
+                    {%- endif %}
+                    {%- if cookiecutter["Powertools Logging"] == "enabled"%}
+                    LOG_LEVEL: INFO
+                    {%- endif %}
+            {%- endif %}
+            Tags:
+                LambdaPowertools: python
+
+Outputs:
+    HelloWorldApi:
+      Description: "API Gateway endpoint URL for Prod environment for Hello World Function"
+      Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello"
+
+    HelloWorldFunction:
+      Description: "Hello World Lambda Function ARN"
+      Value: !GetAtt HelloWorldFunction.Arn
+
