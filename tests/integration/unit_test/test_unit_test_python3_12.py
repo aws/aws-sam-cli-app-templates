@@ -32,9 +32,9 @@ class UnitTest_python3_12_cookiecutter_aws_sam_step_functions_sample_app(UnitTes
         "functions/stock_buyer",
         "functions/stock_checker",
         "functions/stock_seller",
+    ]
     # TODO: remove the line remove once java 21 is GA
     should_test_lint = False
-    ]
 
 
 class UnitTest_python3_12_cookiecutter_aws_sam_efs_python(UnitTestBase.Python312UnitTestBase):
