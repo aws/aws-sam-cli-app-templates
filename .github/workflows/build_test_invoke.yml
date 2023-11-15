@@ -70,12 +70,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - version: '3.7'
-            type: 'Test'
-            file: 'tests/integration/unit_test/test_unit_test_python3_7.py'
-          - version: '3.7'
-            type: 'Invoke'
-            file: 'tests/integration/build_invoke/python/test_python_3_7.py'
           - version: '3.8'
             type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_python3_8.py'
