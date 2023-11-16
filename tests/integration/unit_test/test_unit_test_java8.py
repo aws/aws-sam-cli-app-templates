@@ -7,6 +7,15 @@ class UnitTest_java8_cookiecutter_aws_sam_hello_java_gradle(UnitTestBase.JavaUni
     directory = "java8/hello-gradle"
     code_directories = ["HelloWorldFunction"]
 
+class UnitTest_java8_cookiecutter_aws_sam_hello_img_java_gradle(UnitTestBase.JavaUnitTestGradleBase):
+    directory = "java8/hello-img-gradle"
+    code_directories = ["HelloWorldFunction"]
+
+
+class UnitTest_java8_cookiecutter_aws_sam_hello_img_java_maven(UnitTestBase.JavaUnitTestMavenBase):
+    directory = "java8/hello-img-maven"
+    code_directories = ["HelloWorldFunction"]
+
 
 class UnitTest_java8_cookiecutter_aws_sam_hello_java_maven(UnitTestBase.JavaUnitTestMavenBase):
     directory = "java8/hello-maven"

@@ -152,6 +152,12 @@ jobs:
           - version: '17'
             type: 'Invoke'
             file: 'tests/integration/build_invoke/java/test_java_17.py'
+          - version: '21'
+            type: 'Test'
+            file: 'tests/integration/unit_test/test_unit_test_java21.py'
+          - version: '21'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/java/test_java_21.py'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
