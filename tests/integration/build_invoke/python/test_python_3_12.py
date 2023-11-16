@@ -57,17 +57,19 @@ class BuildInvoke_image_python3_12_cookiecutter_aws_sam_hello_python_lambda_imag
     directory = "python3.12/hello-img"
     should_test_lint: bool = False
 
-class BuildInvoke_python3_12_pytorch(BuildInvokeBase.BuildInvokeBase):
-    directory = "python3.12/apigw-pytorch"
-    should_test_lint: bool = False
+# TODO: uncomment below and add the template back in manifest-v2.json once PyTorch supports Python3.12
+# class BuildInvoke_python3_12_pytorch(BuildInvokeBase.BuildInvokeBase):
+#     directory = "python3.12/apigw-pytorch"
+#     should_test_lint: bool = False
 
 class BuildInvoke_python3_12_scikit(BuildInvokeBase.BuildInvokeBase):
     directory = "python3.12/apigw-scikit"
     should_test_lint: bool = False
 
-class BuildInvoke_python3_12_tensorflow(BuildInvokeBase.BuildInvokeBase):
-    directory = "python3.12/apigw-tensorflow"
-    should_test_lint: bool = False
+# TODO: uncomment below and add the template back in manifest-v2.json once Tensorflow supports Python3.12
+# class BuildInvoke_python3_12_tensorflow(BuildInvokeBase.BuildInvokeBase):
+#     directory = "python3.12/apigw-tensorflow"
+#     should_test_lint: bool = False
 
 class BuildInvoke_python3_12_xgboost(BuildInvokeBase.BuildInvokeBase):
     directory = "python3.12/apigw-xgboost"

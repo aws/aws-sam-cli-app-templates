@@ -1619,26 +1619,10 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "python3.12/apigw-pytorch",
-      "displayName": "PyTorch Machine Learning Inference API",
-      "dependencyManager": "pip",
-      "appTemplate": "ml-apigw-pytorch",
-      "packageType": "Image",
-      "useCaseName": "Machine Learning"
-    },
-    {
       "directory": "python3.12/apigw-scikit",
       "displayName": "Scikit-learn Machine Learning Inference API",
       "dependencyManager": "pip",
       "appTemplate": "ml-apigw-scikit-learn",
-      "packageType": "Image",
-      "useCaseName": "Machine Learning"
-    },
-    {
-      "directory": "python3.12/apigw-tensorflow",
-      "displayName": "Tensorflow Machine Learning Inference API",
-      "dependencyManager": "pip",
-      "appTemplate": "ml-apigw-tensorflow",
       "packageType": "Image",
       "useCaseName": "Machine Learning"
     },
