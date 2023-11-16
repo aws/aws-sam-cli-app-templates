@@ -47,15 +47,15 @@ jobs:
     name: Test Manifest File
     if: github.repository_owner == 'aws'
     env:
-      PYTHON_VERSION_INSTALL: '3.11'
+      PYTHON_VERSION_INSTALL: '3.12'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         name: Checkout PR
       - uses: actions/setup-python@v4
-        name: Setup Python 3.11
+        name: Setup Python 3.12
         with:
-          python-version: '3.11'
+          python-version: '3.12'
       - name: Run build tests for tests/unit/
         run: |
           pip install -r requirements.txt
@@ -70,12 +70,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - version: '3.7'
-            type: 'Test'
-            file: 'tests/integration/unit_test/test_unit_test_python3_7.py'
-          - version: '3.7'
-            type: 'Invoke'
-            file: 'tests/integration/build_invoke/python/test_python_3_7.py'
           - version: '3.8'
             type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_python3_8.py'
@@ -100,6 +94,14 @@ jobs:
           - version: '3.11'
             type: 'Invoke'
             file: 'tests/integration/build_invoke/python/test_python_3_11.py'
+          - version: '3.12'
+            type: 'Test'
+            file: 'tests/integration/unit_test/test_unit_test_python3_12.py'
+          - version: '3.12'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/python/test_python_3_12.py'
+    env:
+      PYTHON_VERSION_INSTALL: ${{ matrix.version }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
