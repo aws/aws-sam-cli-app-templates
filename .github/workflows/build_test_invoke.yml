@@ -188,12 +188,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - version: '14'
-            type: 'Test'
-            file: 'tests/integration/unit_test/test_unit_test_nodejs14_x.py'
-          - version: '14'
-            type: 'Invoke'
-            file: 'tests/integration/build_invoke/node/test_node_14.py'
           - version: '16'
             type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_nodejs16_x.py'
