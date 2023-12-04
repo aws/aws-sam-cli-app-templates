@@ -1,8 +1,0 @@
-{
-    "project_name": "Name of the project",
-    "runtime": "python3.7",
-    "_copy_without_render": [
-        ".gitignore"
-    ],
-    "__stack_name": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}"
-}
