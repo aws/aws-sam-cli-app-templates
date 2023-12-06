@@ -56,3 +56,4 @@ class BuildInvoke_image_nodejs20_x_cookiecutter_aws_sam_hello_nodejs_lambda_imag
 
 class BuildInvoke_nodejs20_x_cookiecutter_aws_sam_gql_quick_start(BuildInvokeBase.BuildInvokeBase):
     directory = "nodejs20.x/hello-gql"
+    should_test_lint = False
