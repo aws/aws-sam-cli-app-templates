@@ -24,9 +24,6 @@ class BuildInvoke_providedal2023_go_cookiecutter_aws_sam_hello_golang(BuildInvok
     use_container = False
     directory = "al2023/go/hello"
 
-    # TODO (hawflau): remove after GA
-    should_test_lint = False
-
 class BuildInvoke_go1_x_cookiecutter_aws_sam_eventbridge_hello_golang(BuildInvokeBase.BuildInvokeBase):
     use_container = False
     directory = "go1.x/event-bridge"
