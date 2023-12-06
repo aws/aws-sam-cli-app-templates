@@ -10,14 +10,10 @@ For each template, it will test the following sam commands:
 
 class BuildInvoke_ruby3_2_cookiecutter_aws_sam_hello_ruby(BuildInvokeBase.HelloWorldExclamationBuildInvokeBase):
     directory = "ruby3.2/hello"
-    # TODO: Remove this line when Ruby3.2 is GA.
-    should_test_lint = False
 
 
 class BuildInvoke_ruby3_2_cookiecutter_aws_sam_step_functions_sample_app(BuildInvokeBase.BuildInvokeBase):
     directory = "ruby3.2/step-func"
-    # TODO: Remove this line when Ruby3.2 is GA.
-    should_test_lint = False
 
 class BuildInvoke_image_ruby3_2_cookiecutter_aws_sam_hello_ruby_lambda_image(
     BuildInvokeBase.HelloWorldExclamationBuildInvokeBase

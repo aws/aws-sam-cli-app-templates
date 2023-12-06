@@ -20,8 +20,6 @@ class BuildInvoke_providedal2023_rust_cookiecutter_aws_sam_hello(BuildInvokeBase
     use_container = False
     directory = "al2023/rust/hello"
     beta_features = True
-    # TODO (hawflau): remove after GA
-    should_test_lint = False
 
 class BuildInvoke_provided_rust_cookiecutter_aws_sam_hello_dynamodb(BuildInvokeBase.BuildInvokeBase):
     use_container = False
