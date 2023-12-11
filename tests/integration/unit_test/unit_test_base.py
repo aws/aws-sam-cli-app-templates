@@ -108,10 +108,6 @@ class UnitTestBase:
             result = run_command(cmdlist, self.cwd, env=env)
             self.assertNotIn("ERRORS", result.stdout)
 
-
-    class Python37UnitTestBase(PythonUnitTestBase):
-        python_executable = "python3.7"
-
     class Python38UnitTestBase(PythonUnitTestBase):
         python_executable = "python3.8"
 
@@ -123,7 +119,9 @@ class UnitTestBase:
 
     class Python311UnitTestBase(PythonUnitTestBase):
         python_executable = "python3.11"
-        should_test_lint: bool = False
+
+    class Python312UnitTestBase(PythonUnitTestBase):
+        python_executable = "python3.12"
 
     class JavaUnitTestGradleBase(UnitTestBase):
         """
