@@ -9,13 +9,17 @@ For each template, it will test the following sam commands:
 """
 
 class BuildInvoke_ruby3_2_cookiecutter_aws_sam_hello_ruby(BuildInvokeBase.HelloWorldExclamationBuildInvokeBase):
-    directory = "ruby3.2/hello"
+    runtime = "ruby3.2"
+    directory = "ruby/hello"
 
 
 class BuildInvoke_ruby3_2_cookiecutter_aws_sam_step_functions_sample_app(BuildInvokeBase.BuildInvokeBase):
-    directory = "ruby3.2/step-func"
+    runtime = "ruby3.2"
+    directory = "ruby/step-func"
+
 
 class BuildInvoke_image_ruby3_2_cookiecutter_aws_sam_hello_ruby_lambda_image(
     BuildInvokeBase.HelloWorldExclamationBuildInvokeBase
 ):
-    directory = "ruby3.2/hello-img"
+    runtime = "ruby3.2"
+    directory = "ruby/hello-img"

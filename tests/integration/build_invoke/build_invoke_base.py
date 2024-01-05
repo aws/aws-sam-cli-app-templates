@@ -65,7 +65,6 @@ class BuildInvokeBase:
                         self.function_id_by_event[event_file],
                         "-e",
                         Path("events", event_file),
-                        "--debug",
                     ]
                 else:
                     cmdlist = [
@@ -74,7 +73,6 @@ class BuildInvokeBase:
                         "invoke",
                         "-e",
                         Path("events", event_file),
-                        "--debug",
                     ]
                 if self.beta_features:
                     cmdlist.append("--beta-features")

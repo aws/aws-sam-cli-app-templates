@@ -1280,7 +1280,7 @@
   ],
   "ruby2.7": [
     {
-      "directory": "ruby2.7/hello",
+      "directory": "ruby/hello",
       "displayName": "Hello World Example",
       "dependencyManager": "bundler",
       "appTemplate": "hello-world",
@@ -1288,7 +1288,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "ruby2.7/step-func",
+      "directory": "ruby/step-func",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "bundler",
       "appTemplate": "step-functions-sample-app",
@@ -1298,7 +1298,7 @@
   ],
   "ruby3.2": [
     {
-      "directory": "ruby3.2/hello",
+      "directory": "ruby/hello",
       "displayName": "Hello World Example",
       "dependencyManager": "bundler",
       "appTemplate": "hello-world",
@@ -1306,7 +1306,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "ruby3.2/step-func",
+      "directory": "ruby/step-func",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "bundler",
       "appTemplate": "step-functions-sample-app",
@@ -1538,7 +1538,7 @@
   ],
   "amazon/ruby2.7-base": [
     {
-      "directory": "ruby2.7/hello-img",
+      "directory": "ruby/hello-img",
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "bundler",
       "appTemplate": "hello-world-lambda-image",
@@ -1548,7 +1548,7 @@
   ],
   "amazon/ruby3.2-base": [
     {
-      "directory": "ruby3.2/hello-img",
+      "directory": "ruby/hello-img",
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "bundler",
       "appTemplate": "hello-world-lambda-image",
