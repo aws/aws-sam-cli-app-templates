@@ -30,6 +30,10 @@ class CompareNewAndOldFolders(TestCase):
         self.old_cwd.cleanup()
         self.new_cwd.cleanup()
     
+    def test(self):
+        """Dummy test to run for refactor test CI checks"""
+        self.assertTrue(True)
+    
     # Update following parameters when we refactor any other runtime
     # @parameterized.expand([
     #     ("ruby2.7/hello", "ruby/hello", "ruby2.7"),
