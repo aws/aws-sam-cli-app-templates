@@ -1,15 +1,12 @@
 {
     "project_name": "Name of the project",
-    "runtime": ["ruby2.7", "ruby3.2"],
+    "runtime": ["ruby3.2"],
     "architectures": {
         "value": [
             "x86_64", "arm64"
         ]
     },
     "options": {
-        "ruby2.7": {
-            "version": "2.7"
-        },
         "ruby3.2": {
             "version": "3.2"
         }

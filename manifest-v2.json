@@ -1278,24 +1278,6 @@
       "useCaseName": "Multi-step workflow with Connectors"
     }
   ],
-  "ruby2.7": [
-    {
-      "directory": "ruby/hello",
-      "displayName": "Hello World Example",
-      "dependencyManager": "bundler",
-      "appTemplate": "hello-world",
-      "packageType": "Zip",
-      "useCaseName": "Hello World Example"
-    },
-    {
-      "directory": "ruby/step-func",
-      "displayName": "Step Functions Sample App (Stock Trader)",
-      "dependencyManager": "bundler",
-      "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip",
-      "useCaseName": "Multi-step workflow"
-    }
-  ],
   "ruby3.2": [
     {
       "directory": "ruby/hello",
@@ -1534,16 +1516,6 @@
       "appTemplate": "ml-apigw-xgboost",
       "packageType": "Image",
       "useCaseName": "Machine Learning"
-    }
-  ],
-  "amazon/ruby2.7-base": [
-    {
-      "directory": "ruby/hello-img",
-      "displayName": "Hello World Lambda Image Example",
-      "dependencyManager": "bundler",
-      "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image",
-      "useCaseName": "Hello World Example"
     }
   ],
   "amazon/ruby3.2-base": [

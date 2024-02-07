@@ -235,12 +235,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - version: '2.7'
-            type: 'Test'
-            file: 'tests/integration/unit_test/test_unit_test_ruby2_7.py'
-          - version: '2.7'
-            type: 'Invoke'
-            file: 'tests/integration/build_invoke/test_ruby_2_7.py'
           - version: '3.2'
             type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_ruby3_2.py'
