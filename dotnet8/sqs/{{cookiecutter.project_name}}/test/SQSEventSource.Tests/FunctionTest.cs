@@ -4,34 +4,33 @@ using Amazon.Lambda.SQSEvents;
 
 using SQSEventSource;
 
-namespace SQSEventSource.Tests
+namespace SQSEventSource.Tests;
+
+public class FunctionTest
 {
-    public class FunctionTest
+    [Fact]
+    public async Task TestSQSEventLambdaFunction()
     {
-        [Fact]
-        public async Task TestSQSEventLambdaFunction()
+        var sqsEvent = new SQSEvent
         {
-            var sqsEvent = new SQSEvent
+            Records = new List<SQSEvent.SQSMessage>
             {
-                Records = new List<SQSEvent.SQSMessage>
+                new SQSEvent.SQSMessage
                 {
-                    new SQSEvent.SQSMessage
-                    {
-                        Body = "foobar"
-                    }
+                    Body = "foobar"
                 }
-            };
+            }
+        };
 
-            var logger = new TestLambdaLogger();
-            var context = new TestLambdaContext
-            {
-                Logger = logger
-            };
+        var logger = new TestLambdaLogger();
+        var context = new TestLambdaContext
+        {
+            Logger = logger
+        };
 
-            var function = new Function();
-            await function.FunctionHandler(sqsEvent, context);
+        var function = new Function();
+        await function.FunctionHandler(sqsEvent, context);
 
-            Assert.Contains("Processed message foobar", logger.Buffer.ToString());
-        }
+        Assert.Contains("Processed message foobar", logger.Buffer.ToString());
     }
 }

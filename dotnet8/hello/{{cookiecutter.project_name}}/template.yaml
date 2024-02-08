@@ -7,7 +7,7 @@ Description: >
 Globals:
   Function:
     Timeout: 10
-    MemorySize: 128
+    MemorySize: 512
 
 Resources:
   HelloWorldFunction:
@@ -22,7 +22,7 @@ Resources:
         - {{arch}}
         {%- endfor %}
       {%- endif %}
-      MemorySize: 256
+      MemorySize: 512
       Environment: # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
         Variables:
           PARAM1: VALUE

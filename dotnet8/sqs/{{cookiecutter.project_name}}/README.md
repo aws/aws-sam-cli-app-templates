@@ -85,7 +85,7 @@ Resources:
       CodeUri: ./src/SQSEventSource/
       Handler: SQSEventSource::SQSEventSource.Function::FunctionHandler
       Runtime: dotnet8
-      MemorySize: 256
+      MemorySize: 512
       DeadLetterQueue:
         Type: SQS
         TargetArn: !GetAtt MyQueue.Arn

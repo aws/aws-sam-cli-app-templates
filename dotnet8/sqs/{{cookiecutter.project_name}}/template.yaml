@@ -40,7 +40,7 @@ Resources:
         {%- endfor %}
       {%- endif %}
 
-      MemorySize: 256
+      MemorySize: 512
       Events:
         SQSQueueEvent:
           Type: SQS

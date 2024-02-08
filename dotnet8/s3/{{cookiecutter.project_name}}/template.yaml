@@ -12,7 +12,7 @@ Parameters:
 Globals:
   Function:
     Timeout: 10
-    MemorySize: 128
+    MemorySize: 512
 
 Resources:
   S3JsonLoggerFunction:
@@ -22,7 +22,7 @@ Resources:
       CodeUri: ./src/S3EventSource/
       Handler: S3EventSource::S3EventSource.Function::FunctionHandler
       Runtime: dotnet8
-      MemorySize: 256
+      MemorySize: 512
       Policies:
         S3ReadPolicy:
           BucketName: !Ref AppBucketName

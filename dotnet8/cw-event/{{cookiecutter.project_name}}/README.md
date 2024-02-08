@@ -85,7 +85,7 @@ Resources:
       CodeUri: ./src/lambdaEvent/
       Handler: lambdaEvent::lambdaEvent.Function::FunctionHandler
       Runtime: dotnet8
-      MemorySize: 256
+      MemorySize: 512
       Timeout: 100
       # This property associates this Lambda function with a scheduled CloudWatch Event. For all available properties, see
       # https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#schedule

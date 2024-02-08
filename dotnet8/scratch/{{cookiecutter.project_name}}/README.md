@@ -84,7 +84,7 @@ Resources:
       CodeUri: ./src/ScratchLambda/
       Handler: ScratchLambda::ScratchLambda.Function::FunctionHandler
       Runtime: dotnet8
-      MemorySize: 256
+      MemorySize: 512
       Timeout: 100
       DeadLetterQueue:
         Type: SQS

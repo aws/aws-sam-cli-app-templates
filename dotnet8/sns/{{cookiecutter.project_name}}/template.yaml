@@ -40,7 +40,7 @@ Resources:
         - {{arch}}
         {%- endfor %}
       {%- endif %}      
-      MemorySize: 256
+      MemorySize: 512
       # This property associates this Lambda function with the SNS topic defined above, so that whenever the topic
       # receives a message, the Lambda function is invoked
       Events:

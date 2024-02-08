@@ -31,7 +31,7 @@ Resources:
         - {{arch}}
         {%- endfor %}
       {%- endif %}
-      MemorySize: 256
+      MemorySize: 512
       Timeout: 100
       Description: A Lambda function that returns a static string.
       Policies:
