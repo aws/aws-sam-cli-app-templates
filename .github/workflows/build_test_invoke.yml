@@ -360,7 +360,7 @@ jobs:
         name: Checkout PR
       - uses: ./.github/actions/aws-sam-cli-develop
         name: Install develop version of AWS SAM CLI
-      - uses: actions/setup-dotnet@v3
+      - uses: actions/setup-dotnet@v4
         name: Setup dotnet ${{ matrix.version }}
         with:
           dotnet-version: ${{ matrix.version }}

@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-image
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-image
 
 ARG FUNCTION_DIR="/build"
 ARG SAM_BUILD_MODE="run"
