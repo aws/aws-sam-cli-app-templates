@@ -135,6 +135,14 @@
       "useCaseName": "Hello World Example"
     },
     {
+      "directory": "dotnet8/hello-native-aot",
+      "displayName": "Hello World Example using native AOT",
+      "dependencyManager": "cli-package",
+      "appTemplate": "hello-world-native-aot",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    },
+    {
       "directory": "dotnet8/hello-pt",
       "displayName": "Hello World Example .NET With Powertools for AWS Lambda",
       "dependencyManager": "cli-package",
