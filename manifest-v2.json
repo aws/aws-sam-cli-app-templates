@@ -136,7 +136,7 @@
     },
     {
       "directory": "dotnet8/hello-native-aot",
-      "displayName": "Hello World Example using native AOT",
+      "displayName": "sam",
       "dependencyManager": "cli-package",
       "appTemplate": "hello-world-native-aot",
       "packageType": "Zip",
