@@ -119,41 +119,6 @@
       "useCaseName": "Hello World Example"
     }
   ],
-  "go1.x": [
-    {
-      "directory": "go1.x/hello",
-      "displayName": "Hello World Example",
-      "dependencyManager": "mod",
-      "appTemplate": "hello-world",
-      "packageType": "Zip",
-      "useCaseName": "Hello World Example"
-    },
-    {
-      "directory": "go1.x/event-bridge",
-      "displayName": "EventBridge Hello World",
-      "dependencyManager": "mod",
-      "appTemplate": "eventBridge-hello-world",
-      "packageType": "Zip",
-      "useCaseName": "Infrastructure event management"
-    },
-    {
-      "directory": "go1.x/event-bridge-schema",
-      "displayName": "EventBridge App from scratch (100+ Event Schemas)",
-      "dependencyManager": "mod",
-      "appTemplate": "eventBridge-schema-app",
-      "isDynamicTemplate": "True",
-      "packageType": "Zip",
-      "useCaseName": "Infrastructure event management"
-    },
-    {
-      "directory": "go1.x/step-func",
-      "displayName": "Step Functions Sample App (Stock Trader)",
-      "dependencyManager": "mod",
-      "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip",
-      "useCaseName": "Multi-step workflow"
-    }
-  ],
   "go (provided.al2)": [
     {
       "directory": "al2/go/hello",
@@ -1523,16 +1488,6 @@
       "directory": "ruby/hello-img",
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "bundler",
-      "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image",
-      "useCaseName": "Hello World Example"
-    }
-  ],
-  "amazon/go1.x-base": [
-    {
-      "directory": "go1.x/hello-img",
-      "displayName": "Hello World Lambda Image Example",
-      "dependencyManager": "mod",
       "appTemplate": "hello-world-lambda-image",
       "packageType": "Image",
       "useCaseName": "Hello World Example"
