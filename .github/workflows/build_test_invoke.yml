@@ -130,14 +130,8 @@ jobs:
       matrix:
         include:
           - version: '8'
-            type: 'Test'
-            file: 'tests/integration/unit_test/test_unit_test_java8.py'
-          - version: '8'
             type: 'Test (AL2)'
             file: 'tests/integration/unit_test/test_unit_test_java8_al2.py'
-          - version: '8'
-            type: 'Invoke'
-            file: 'tests/integration/build_invoke/java/test_java_8.py'
           - version: '8'
             type: 'Invoke (AL2)'
             file: 'tests/integration/build_invoke/java/test_java_8_al2.py'
@@ -235,12 +229,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - version: '2.7'
-            type: 'Test'
-            file: 'tests/integration/unit_test/test_unit_test_ruby2_7.py'
-          - version: '2.7'
-            type: 'Invoke'
-            file: 'tests/integration/build_invoke/test_ruby_2_7.py'
           - version: '3.2'
             type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_ruby3_2.py'
