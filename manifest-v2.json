@@ -201,41 +201,6 @@
       "useCaseName": "Hello World Example"
     }
   ],
-  "go1.x": [
-    {
-      "directory": "go1.x/hello",
-      "displayName": "Hello World Example",
-      "dependencyManager": "mod",
-      "appTemplate": "hello-world",
-      "packageType": "Zip",
-      "useCaseName": "Hello World Example"
-    },
-    {
-      "directory": "go1.x/event-bridge",
-      "displayName": "EventBridge Hello World",
-      "dependencyManager": "mod",
-      "appTemplate": "eventBridge-hello-world",
-      "packageType": "Zip",
-      "useCaseName": "Infrastructure event management"
-    },
-    {
-      "directory": "go1.x/event-bridge-schema",
-      "displayName": "EventBridge App from scratch (100+ Event Schemas)",
-      "dependencyManager": "mod",
-      "appTemplate": "eventBridge-schema-app",
-      "isDynamicTemplate": "True",
-      "packageType": "Zip",
-      "useCaseName": "Infrastructure event management"
-    },
-    {
-      "directory": "go1.x/step-func",
-      "displayName": "Step Functions Sample App (Stock Trader)",
-      "dependencyManager": "mod",
-      "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip",
-      "useCaseName": "Multi-step workflow"
-    }
-  ],
   "go (provided.al2)": [
     {
       "directory": "al2/go/hello",
@@ -287,82 +252,6 @@
       "appTemplate": "hello-world",
       "packageType": "Zip",
       "useCaseName": "Hello World Example"
-    }
-  ],
-  "java8": [
-    {
-      "directory": "java8/hello-gradle",
-      "displayName": "Hello World Example: Gradle",
-      "dependencyManager": "gradle",
-      "appTemplate": "hello-world",
-      "packageType": "Zip",
-      "useCaseName": "Hello World Example"
-    },
-    {
-      "directory": "java8/hello-maven",
-      "displayName": "Hello World Example: Maven",
-      "dependencyManager": "maven",
-      "appTemplate": "hello-world",
-      "packageType": "Zip",
-      "useCaseName": "Hello World Example"
-    },
-    {
-      "directory": "java8/hello-pt-maven",
-      "displayName": "Hello World Example Java With Powertools for AWS Lambda",
-      "dependencyManager": "maven",
-      "appTemplate": "hello-world-powertools-java",
-      "packageType": "Zip",
-      "useCaseName": "Hello World Example with Powertools for AWS Lambda"
-    },
-    {
-      "directory": "java8/event-bridge-gradle",
-      "displayName": "EventBridge Hello World: Gradle",
-      "dependencyManager": "gradle",
-      "appTemplate": "eventBridge-hello-world",
-      "packageType": "Zip",
-      "useCaseName": "Infrastructure event management"
-    },
-    {
-      "directory": "java8/event-bridge-maven",
-      "displayName": "EventBridge Hello World: Maven",
-      "dependencyManager": "maven",
-      "appTemplate": "eventBridge-hello-world",
-      "packageType": "Zip",
-      "useCaseName": "Infrastructure event management"
-    },
-    {
-      "directory": "java8/event-bridge-schema-gradle",
-      "displayName": "EventBridge App from scratch (100+ Event Schemas): Gradle",
-      "dependencyManager": "gradle",
-      "appTemplate": "eventBridge-schema-app",
-      "isDynamicTemplate": "True",
-      "packageType": "Zip",
-      "useCaseName": "Infrastructure event management"
-    },
-    {
-      "directory": "java8/event-bridge-schema-maven",
-      "displayName": "EventBridge App from scratch (100+ Event Schemas): Maven",
-      "dependencyManager": "maven",
-      "appTemplate": "eventBridge-schema-app",
-      "isDynamicTemplate": "True",
-      "packageType": "Zip",
-      "useCaseName": "Infrastructure event management"
-    },
-    {
-      "directory": "java8/step-func-gradle",
-      "displayName": "Step Functions Sample App (Stock Trader): Gradle",
-      "dependencyManager": "gradle",
-      "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip",
-      "useCaseName": "Multi-step workflow"
-    },
-    {
-      "directory": "java8/step-func-maven",
-      "displayName": "Step Functions Sample App (Stock Trader): Maven",
-      "dependencyManager": "maven",
-      "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip",
-      "useCaseName": "Multi-step workflow"
     }
   ],
   "java8.al2": [
@@ -1360,27 +1249,9 @@
       "useCaseName": "Multi-step workflow with Connectors"
     }
   ],
-  "ruby2.7": [
-    {
-      "directory": "ruby2.7/hello",
-      "displayName": "Hello World Example",
-      "dependencyManager": "bundler",
-      "appTemplate": "hello-world",
-      "packageType": "Zip",
-      "useCaseName": "Hello World Example"
-    },
-    {
-      "directory": "ruby2.7/step-func",
-      "displayName": "Step Functions Sample App (Stock Trader)",
-      "dependencyManager": "bundler",
-      "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip",
-      "useCaseName": "Multi-step workflow"
-    }
-  ],
   "ruby3.2": [
     {
-      "directory": "ruby3.2/hello",
+      "directory": "ruby/hello",
       "displayName": "Hello World Example",
       "dependencyManager": "bundler",
       "appTemplate": "hello-world",
@@ -1388,7 +1259,7 @@
       "useCaseName": "Hello World Example"
     },
     {
-      "directory": "ruby3.2/step-func",
+      "directory": "ruby/step-func",
       "displayName": "Step Functions Sample App (Stock Trader)",
       "dependencyManager": "bundler",
       "appTemplate": "step-functions-sample-app",
@@ -1618,31 +1489,11 @@
       "useCaseName": "Machine Learning"
     }
   ],
-  "amazon/ruby2.7-base": [
-    {
-      "directory": "ruby2.7/hello-img",
-      "displayName": "Hello World Lambda Image Example",
-      "dependencyManager": "bundler",
-      "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image",
-      "useCaseName": "Hello World Example"
-    }
-  ],
   "amazon/ruby3.2-base": [
     {
-      "directory": "ruby3.2/hello-img",
+      "directory": "ruby/hello-img",
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "bundler",
-      "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image",
-      "useCaseName": "Hello World Example"
-    }
-  ],
-  "amazon/go1.x-base": [
-    {
-      "directory": "go1.x/hello-img",
-      "displayName": "Hello World Lambda Image Example",
-      "dependencyManager": "mod",
       "appTemplate": "hello-world-lambda-image",
       "packageType": "Image",
       "useCaseName": "Hello World Example"
@@ -1737,24 +1588,6 @@
       "directory": "dotnet8/hello-img",
       "displayName": "Hello World Lambda Image Example",
       "dependencyManager": "cli-package",
-      "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image",
-      "useCaseName": "Hello World Example"
-    }
-  ],
-  "amazon/java8-base": [
-    {
-      "directory": "java8/hello-img-gradle",
-      "displayName": "Hello World Lambda Image Example: Gradle",
-      "dependencyManager": "gradle",
-      "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image",
-      "useCaseName": "Hello World Example"
-    },
-    {
-      "directory": "java8/hello-img-maven",
-      "displayName": "Hello World Lambda Image Example: Maven",
-      "dependencyManager": "maven",
       "appTemplate": "hello-world-lambda-image",
       "packageType": "Image",
       "useCaseName": "Hello World Example"
