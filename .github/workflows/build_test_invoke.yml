@@ -278,7 +278,6 @@ jobs:
           rustup toolchain install stable --profile minimal --no-self-update 
           rustup default stable
           rustup target add x86_64-unknown-linux-gnu --toolchain stable
-          rustup target add aarch64-unknown-linux-gnu --toolchain stable
           pip install cargo-lambda==$PIP_CARGO_LAMBDA_VERSION
       - name: Run build tests for ${{ matrix.file }}
         run: |
