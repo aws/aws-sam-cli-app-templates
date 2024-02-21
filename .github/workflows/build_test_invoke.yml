@@ -10,7 +10,7 @@ on:
 env:
   PYTHON_VERSION_INSTALL: '3.11'
   SAM_CLI_DEV: 1
-  PIP_CARGO_LAMBDA_VERSION: '0.17.1'
+  PIP_CARGO_LAMBDA_VERSION: '1.1.0'
 
 jobs:
   run-workflow:
