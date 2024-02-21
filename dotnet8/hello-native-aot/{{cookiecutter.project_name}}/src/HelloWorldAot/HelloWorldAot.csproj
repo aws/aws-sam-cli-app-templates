@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AWSProjectType>Lambda</AWSProjectType>
+    <AssemblyName>bootstrap</AssemblyName>
+    <!-- This property makes the build directory similar to a publish directory and helps the AWS .NET Lambda Mock Test Tool find project dependencies. -->
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <!-- Generate native aot images during publishing to improve cold start time. -->
+    <PublishAot>true</PublishAot>
+		<!-- StripSymbols tells the compiler to strip debugging symbols from the final executable if we're on Linux and put them into their own file. 
+		This will greatly reduce the final executable's size.-->
+		<StripSymbols>true</StripSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Amazon.Lambda.Core" Version="2.2.0" />
+    <PackageReference Include="Amazon.Lambda.RuntimeSupport" Version="1.10.0" />
+    <PackageReference Include="Amazon.Lambda.Serialization.SystemTextJson" Version="2.4.0" />
+    <PackageReference Include="Amazon.Lambda.APIGatewayEvents" Version="2.7.0" />
+  </ItemGroup>
+</Project>

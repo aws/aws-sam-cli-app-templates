@@ -1,0 +1,53 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  Sample SAM Template for {{ cookiecutter.project_name }}
+
+Parameters:
+  AppBucketName:
+    Type: String
+    Description: "REQUIRED: Unique S3 bucket name to use for the app."
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 10
+    MemorySize: 512
+
+Resources:
+  S3JsonLoggerFunction:
+    # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ./src/S3EventSource/
+      Handler: S3EventSource::S3EventSource.Function::FunctionHandler
+      Runtime: dotnet8
+      MemorySize: 512
+      Policies:
+        S3ReadPolicy:
+          BucketName: !Ref AppBucketName
+      Events:
+        S3NewObjectEvent:
+          Type: S3
+          Properties:
+            Bucket: !Ref AppBucket
+            Events: s3:ObjectCreated:*
+            Filter:
+              S3Key:
+                Rules:
+                  - Name: suffix
+                    Value: ".json"
+  AppBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref AppBucketName
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - BucketKeyEnabled: true
+      VersioningConfiguration:
+        Status: Enabled
+
+Outputs:
+  AppBucketArn:
+    Description: "S3 Bucket"
+    Value: !Ref AppBucket
