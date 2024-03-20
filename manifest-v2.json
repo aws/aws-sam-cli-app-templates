@@ -1161,11 +1161,11 @@
     },
     {
       "directory": "python3.11/hello-pt",
-      "displayName": "Hello World Example With Powertools for AWS Lambda",
+      "displayName": "Hello World Example with Powertools for AWS Lambda",
       "dependencyManager": "pip",
       "appTemplate": "hello-world-powertools-python",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example With Powertools for AWS Lambda"
+      "useCaseName": "Hello World Example with Powertools for AWS Lambda"
     },
     {
       "directory": "python3.11/event-bridge",
@@ -1228,11 +1228,11 @@
     },
     {
       "directory": "python3.12/hello-pt",
-      "displayName": "Hello World Example With Powertools for AWS Lambda",
+      "displayName": "Hello World Example with Powertools for AWS Lambda",
       "dependencyManager": "pip",
       "appTemplate": "hello-world-powertools-python",
       "packageType": "Zip",
-      "useCaseName": "Hello World Example With Powertools for AWS Lambda"
+      "useCaseName": "Hello World Example with Powertools for AWS Lambda"
     },
     {
       "directory": "python3.12/event-bridge",
