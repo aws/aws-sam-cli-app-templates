@@ -234,7 +234,13 @@ jobs:
             file: 'tests/integration/unit_test/test_unit_test_ruby3_2.py'
           - version: '3.2'
             type: 'Invoke'
-            file: 'tests/integration/build_invoke/test_ruby_3_2.py'
+            file: 'tests/integration/build_invoke/ruby/test_ruby_3_2.py'
+          - version: '3.3'
+            type: 'Test'
+            file: 'tests/integration/unit_test/test_unit_test_ruby3_3.py'
+          - version: '3.3'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/ruby/test_ruby_3_3.py'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
