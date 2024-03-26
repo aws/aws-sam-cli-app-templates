@@ -9,6 +9,9 @@
     "options": {
         "ruby3.2": {
             "version": "3.2"
+        },
+        "ruby3.3": {
+            "version": "3.3"
         }
     },
     "_copy_without_render": [
