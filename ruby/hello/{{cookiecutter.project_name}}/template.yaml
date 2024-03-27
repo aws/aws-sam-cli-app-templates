@@ -9,7 +9,7 @@ Description: >
 Globals:
   Function:
     Timeout: 3
-    MemorySize: 128
+    MemorySize: {{ cookiecutter.options[cookiecutter.runtime].memory_size }}
 
 Resources:
   HelloWorldFunction:
