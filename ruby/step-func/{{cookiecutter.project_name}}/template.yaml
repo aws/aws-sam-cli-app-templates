@@ -5,6 +5,11 @@ Description: >
 
   Sample SAM Template for {{ cookiecutter.project_name }}
 
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    MemorySize: {{ cookiecutter.options[cookiecutter.runtime].memory_size }}
+
 Resources:
   StockTradingStateMachine:
     Type: AWS::Serverless::StateMachine # More info about State Machine Resource: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-statemachine.html

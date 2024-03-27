@@ -1267,6 +1267,24 @@
       "useCaseName": "Multi-step workflow"
     }
   ],
+  "ruby3.3": [
+    {
+      "directory": "ruby/hello",
+      "displayName": "Hello World Example",
+      "dependencyManager": "bundler",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "ruby/step-func",
+      "displayName": "Step Functions Sample App (Stock Trader)",
+      "dependencyManager": "bundler",
+      "appTemplate": "step-functions-sample-app",
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow"
+    }
+  ],
   "rust (provided.al2)": [
     {
       "directory": "al2/rust/hello",
@@ -1490,6 +1508,16 @@
     }
   ],
   "amazon/ruby3.2-base": [
+    {
+      "directory": "ruby/hello-img",
+      "displayName": "Hello World Lambda Image Example",
+      "dependencyManager": "bundler",
+      "appTemplate": "hello-world-lambda-image",
+      "packageType": "Image",
+      "useCaseName": "Hello World Example"
+    }
+  ],
+  "amazon/ruby3.3-base": [
     {
       "directory": "ruby/hello-img",
       "displayName": "Hello World Lambda Image Example",
