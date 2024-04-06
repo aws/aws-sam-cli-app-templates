@@ -10,7 +10,7 @@ create:
 	sed -E -e 's/\$$\{.+\}/arn:aws:lambda:us-east-1:123456789012:function:mock/' statemachine/stock_trader.asl.json > statemachine/test/mocked.test.asl.json
 	aws stepfunctions create-state-machine \
 		--endpoint-url http://localhost:8083 \
-		--definition file://statemachine/stock_trader.asl.json \
+		--definition file://statemachine/test/mocked.test.asl.json \
 		--name "StockTradingLocalTesting" \
 		--role-arn "arn:aws:iam::123456789012:role/DummyRole" \
 		--no-cli-pager
