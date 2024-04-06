@@ -30,6 +30,7 @@ const tracer = new Tracer();
  * @returns {APIGatewayProxyResult} object - API Gateway Lambda Proxy Output Format
  *
  */
+
 export const lambdaHandler = async (event: APIGatewayProxyEvent, context: Context): Promise<APIGatewayProxyResult> => {
     let response: APIGatewayProxyResult;
 
