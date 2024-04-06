@@ -1,6 +1,6 @@
 import { APIGatewayProxyEvent, APIGatewayProxyResult, Context } from 'aws-lambda';
 {%- if cookiecutter["Powertools for AWS Lambda (TypeScript) Metrics"] == "enabled"%}
-import { Metrics, MetricUnits } from '@aws-lambda-powertools/metrics';
+import { Metrics } from '@aws-lambda-powertools/metrics';
 {%- endif %}
 {%- if cookiecutter["Powertools for AWS Lambda (TypeScript) Logging"] == "enabled"%}
 import { Logger } from '@aws-lambda-powertools/logger';
@@ -30,7 +30,6 @@ const tracer = new Tracer();
  * @returns {APIGatewayProxyResult} object - API Gateway Lambda Proxy Output Format
  *
  */
-
 export const lambdaHandler = async (event: APIGatewayProxyEvent, context: Context): Promise<APIGatewayProxyResult> => {
     let response: APIGatewayProxyResult;
 
