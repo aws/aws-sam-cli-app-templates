@@ -1,4 +1,5 @@
-2{0 3"name": "hello_world",
+{
+  "name": "hello_world",
   "version": "1.0.0",
   "description": "hello world sample for NodeJS",
   "main": "app.js",
