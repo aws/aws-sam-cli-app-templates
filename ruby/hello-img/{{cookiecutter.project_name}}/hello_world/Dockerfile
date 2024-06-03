@@ -8,7 +8,7 @@ ENV GEM_HOME=${LAMBDA_TASK_ROOT}
 RUN yum install gcc make -y
 RUN bundle install
 # Remove the dev tools
-RUN yum uninstall gcc make -y
+RUN yum remove gcc make -y
 
 # Command can be overwritten by providing a different command in the template directly.
 CMD ["app.lambda_handler"]
