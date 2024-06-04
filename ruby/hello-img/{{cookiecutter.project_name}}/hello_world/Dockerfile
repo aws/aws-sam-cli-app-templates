@@ -19,5 +19,5 @@ ENV GEM_HOME=${LAMBDA_TASK_ROOT}
 
 COPY --from=build-image /var/task/ ./
 
-# # Command can be overwritten by providing a different command in the template directly.
+# Command can be overwritten by providing a different command in the template directly.
 CMD ["app.lambda_handler"]
