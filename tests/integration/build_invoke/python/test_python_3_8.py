@@ -49,8 +49,6 @@ class BuildInvoke_python3_8_cookiecutter_aws_sam_hello_pt_python(BuildInvokeBase
 class BuildInvoke_python3_8_pytorch(BuildInvokeBase.BuildInvokeBase):
     directory = "python3.8/apigw-pytorch"
 
-class BuildInvoke_python3_8_scikit(BuildInvokeBase.BuildInvokeBase):
-    directory = "python3.8/apigw-scikit"
 
 class BuildInvoke_python3_8_tensorflow(BuildInvokeBase.BuildInvokeBase):
     directory = "python3.8/apigw-tensorflow"
