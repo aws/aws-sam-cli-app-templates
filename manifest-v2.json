@@ -1331,14 +1331,6 @@
       "useCaseName": "Machine Learning"
     },
     {
-      "directory": "python3.8/apigw-scikit",
-      "displayName": "Scikit-learn Machine Learning Inference API",
-      "dependencyManager": "pip",
-      "appTemplate": "ml-apigw-scikit-learn",
-      "packageType": "Image",
-      "useCaseName": "Machine Learning"
-    },
-    {
       "directory": "python3.8/apigw-tensorflow",
       "displayName": "Tensorflow Machine Learning Inference API",
       "dependencyManager": "pip",
