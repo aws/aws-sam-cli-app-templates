@@ -191,16 +191,6 @@
       "useCaseName": "Data processing"
     }
   ],
-  "aot.dotnet7 (provided.al2)": [
-    {
-      "directory": "al2/dotnet7-aot/hello",
-      "displayName": "Hello World Example",
-      "dependencyManager": "cli-package",
-      "appTemplate": "hello-world",
-      "packageType": "Zip",
-      "useCaseName": "Hello World Example"
-    }
-  ],
   "go (provided.al2)": [
     {
       "directory": "al2/go/hello",
