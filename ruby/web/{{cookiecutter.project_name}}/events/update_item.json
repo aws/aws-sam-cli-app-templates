@@ -1,0 +1,6 @@
+{
+  "body": "{\"name\": \"updated\"}",
+  "pathParameters": {
+      "id": "1"
+  }
+}

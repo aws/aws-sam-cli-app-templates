@@ -1,0 +1,22 @@
+{
+  "project_name": "Name of the project",
+  "runtime": ["ruby3.2", "ruby3.3"],
+  "architectures": {
+      "value": [
+          "x86_64", "arm64"
+      ]
+  },
+  "options": {
+      "ruby3.2": {
+          "version": "3.2",
+          "memory_size": "128"
+      },
+      "ruby3.3": {
+          "version": "3.3",
+          "memory_size": "512"
+      }
+  },
+  "_copy_without_render": [
+      ".gitignore"
+  ]
+}
