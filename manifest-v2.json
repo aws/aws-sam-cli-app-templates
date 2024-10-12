@@ -1239,6 +1239,73 @@
       "useCaseName": "Multi-step workflow with Connectors"
     }
   ],
+  "python3.13": [
+    {
+      "directory": "python3.13/hello",
+      "displayName": "Hello World Example",
+      "dependencyManager": "pip",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "python3.13/hello-pt",
+      "displayName": "Hello World Example with Powertools for AWS Lambda",
+      "dependencyManager": "pip",
+      "appTemplate": "hello-world-powertools-python",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example with Powertools for AWS Lambda"
+    },
+    {
+      "directory": "python3.13/event-bridge",
+      "displayName": "EventBridge Hello World",
+      "dependencyManager": "pip",
+      "appTemplate": "eventBridge-hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
+    },
+    {
+      "directory": "python3.13/event-bridge-schema",
+      "displayName": "EventBridge App from scratch (100+ Event Schemas)",
+      "dependencyManager": "pip",
+      "appTemplate": "eventBridge-schema-app",
+      "isDynamicTemplate": "True",
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
+    },
+    {
+      "directory": "python3.13/step-func",
+      "displayName": "Step Functions Sample App (Stock Trader)",
+      "dependencyManager": "pip",
+      "appTemplate": "step-functions-sample-app",
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow"
+    },
+    {
+      "directory": "python3.13/efs",
+      "displayName": "Elastic File System Sample App",
+      "dependencyManager": "pip",
+      "appTemplate": "efs-sample-app",
+      "packageType": "Zip",
+      "useCaseName": "Lambda EFS example"
+    },
+    {
+      "directory": "python3.13/web-conn",
+      "displayName": "Quick Start: Web Backend With Connectors",
+      "dependencyManager": "pip",
+      "appTemplate": "hello-world-connector",
+      "packageType": "Zip",
+      "useCaseName": "Serverless Connector Hello World Example"
+    },
+    {
+      "directory": "python3.13/step-func-conn",
+      "displayName": "Step Functions Sample App (Stock Trader) With Connectors",
+      "dependencyManager": "pip",
+      "appTemplate": "step-functions-with-connectors",
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow with Connectors"
+    }
+  ],
   "ruby3.2": [
     {
       "directory": "ruby/hello",
@@ -1482,6 +1549,32 @@
     },
     {
       "directory": "python3.12/apigw-xgboost",
+      "displayName": "XGBoost Machine Learning Inference API",
+      "dependencyManager": "pip",
+      "appTemplate": "ml-apigw-xgboost",
+      "packageType": "Image",
+      "useCaseName": "Machine Learning"
+    }
+  ],
+  "amazon/python3.13-base": [
+    {
+      "directory": "python3.13/hello-img",
+      "displayName": "Hello World Lambda Image Example",
+      "dependencyManager": "pip",
+      "appTemplate": "hello-world-lambda-image",
+      "packageType": "Image",
+      "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "python3.13/apigw-scikit",
+      "displayName": "Scikit-learn Machine Learning Inference API",
+      "dependencyManager": "pip",
+      "appTemplate": "ml-apigw-scikit-learn",
+      "packageType": "Image",
+      "useCaseName": "Machine Learning"
+    },
+    {
+      "directory": "python3.13/apigw-xgboost",
       "displayName": "XGBoost Machine Learning Inference API",
       "dependencyManager": "pip",
       "appTemplate": "ml-apigw-xgboost",
