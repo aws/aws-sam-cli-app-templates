@@ -1,0 +1,5 @@
+{
+  "TopicArn": "arn:aws:sns:us-west-2:123456789012:SimpleTopic",
+  "Message": "This is a notification from SNS",
+  "Subject": "SNS Notification"
+}

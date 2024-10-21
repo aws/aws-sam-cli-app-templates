@@ -1,0 +1,17 @@
+{
+  "name": "stock_checker",
+  "version": "1.0.0",
+  "description": "Mock stock checker for NodeJS",
+  "main": "app.js",
+  "repository": "TODO",
+  "author": "SAM CLI",
+  "license": "MIT",
+  "dependencies": {},
+  "scripts": {
+    "test": "mocha tests/unit/"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.1.0"
+  }
+}
