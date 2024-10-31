@@ -5,8 +5,6 @@ class UnitTest_ruby3_3_cookiecutter_aws_sam_hello_ruby(UnitTestBase.RubyUnitTest
     runtime = "ruby3.3"
     directory = "ruby/hello"
     code_directories = ["tests/unit/test_handler.rb"]
-    # TODO(hawflau): remove the line below when cfn-lint supports ruby3.3
-    should_test_lint = False
 
 
 class UnitTest_ruby3_3_cookiecutter_aws_sam_step_functions_sample_app(UnitTestBase.RubyUnitTestBase):
@@ -17,5 +15,14 @@ class UnitTest_ruby3_3_cookiecutter_aws_sam_step_functions_sample_app(UnitTestBa
         "tests/unit/test_stock_checker.rb",
         "tests/unit/test_stock_seller.rb",
     ]
-    # TODO(hawflau): remove the line below when cfn-lint supports ruby3.3
-    should_test_lint = False
+
+class UnitTest_ruby3_3_cookiecutter_quick_start_web(UnitTestBase.RubyUnitTestBase):
+    runtime = "ruby3.3"
+    directory = "ruby/web"
+    code_directories = [
+        "test/test_create_item.rb",
+        "test/test_delete_item.rb",
+        "test/test_get_all_items.rb",
+        "test/test_get_item_by_id.rb",
+        "test/test_update_item.rb"
+    ]

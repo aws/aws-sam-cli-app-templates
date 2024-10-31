@@ -170,6 +170,19 @@ class BuildInvokeBase:
             "event-post-item.json": "putItemFunction",
         }
 
+    class RubyQuickStartWebBuildInvokeBase(BuildInvokeBase):
+        """
+        Based on BuildInvokeBase, quick start web templates have multiple events that call different lambda functions.
+        """
+
+        function_id_by_event = {
+            "get_all_items.json": "GetAllItemsFunction",
+            "create_item.json": "CreateItemFunction",
+            "get_item_by_id.json": "GetItemByIdFunction",
+            "delete_item.json": "DeleteItemFunction",
+            "update_item.json": "UpdateItemFunction",
+        }
+
     class DotNetCoreExtraRerunBuildInvokeBase(BuildInvokeBase):
         """
         dotnet templates' building tends to fail arbitrarily, adding extra reruns here

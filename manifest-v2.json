@@ -1255,6 +1255,14 @@
       "appTemplate": "step-functions-sample-app",
       "packageType": "Zip",
       "useCaseName": "Multi-step workflow"
+    },
+    {
+      "directory": "ruby/web",
+      "displayName": "Quick Start: Web Backend",
+      "dependencyManager": "bundler",
+      "appTemplate": "quick-start-web",
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
     }
   ],
   "ruby3.3": [
@@ -1273,6 +1281,14 @@
       "appTemplate": "step-functions-sample-app",
       "packageType": "Zip",
       "useCaseName": "Multi-step workflow"
+    },
+    {
+      "directory": "ruby/web",
+      "displayName": "Quick Start: Web Backend",
+      "dependencyManager": "bundler",
+      "appTemplate": "quick-start-web",
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
     }
   ],
   "rust (provided.al2)": [
