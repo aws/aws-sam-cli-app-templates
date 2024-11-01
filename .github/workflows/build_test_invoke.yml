@@ -102,6 +102,12 @@ jobs:
           - version: '3.12'
             type: 'Invoke'
             file: 'tests/integration/build_invoke/python/test_python_3_12.py'
+          - version: '3.13'
+            type: 'Test'
+            file: 'tests/integration/unit_test/test_unit_test_python3_13.py'
+          - version: '3.13'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/python/test_python_3_13.py'
     env:
       PYTHON_VERSION_INSTALL: ${{ matrix.version }}
     runs-on: ubuntu-latest

@@ -1,0 +1,25 @@
+{
+    "project_name": "sam-app-powertools",
+    "runtime": "python3.13",
+    "architectures": {
+        "value": [
+            "x86_64", "arm64"
+        ]
+    },
+    "Powertools Logging": [
+        "enabled",
+        "disabled"
+    ],
+    "Powertools Metrics": [
+        "enabled",
+        "disabled"
+    ],
+    "Powertools Tracing": [
+        "enabled",
+        "disabled"
+    ],
+    "_copy_without_render": [
+        ".gitignore"
+    ],
+    "__stack_name": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}"
+}

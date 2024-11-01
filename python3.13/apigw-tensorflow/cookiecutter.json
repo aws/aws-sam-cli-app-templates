@@ -1,0 +1,14 @@
+{
+  "project_name": "digit_classifier",
+  "tensorflow_version": "2.13.0",
+  "api_path": "/classify_digit",
+  "architectures": {
+    "value": [
+      "x86_64", "arm64"
+    ]
+  },
+  "_copy_without_render": [
+    ".gitignore"
+  ],
+  "__stack_name": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}"
+}
