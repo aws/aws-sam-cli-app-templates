@@ -123,6 +123,10 @@ class UnitTestBase:
     class Python312UnitTestBase(PythonUnitTestBase):
         python_executable = "python3.12"
 
+    class Python313UnitTestBase(PythonUnitTestBase):
+        python_executable = "python3.13"
+        should_test_lint: bool = False
+
     class JavaUnitTestGradleBase(UnitTestBase):
         """
         Execute the following commands:
