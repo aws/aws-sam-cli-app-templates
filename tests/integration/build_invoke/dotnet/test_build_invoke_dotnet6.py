@@ -14,13 +14,11 @@ For each template, it will test the following sam commands:
 class BuildInvoke_dotnet6_cookiecutter_aws_sam_hello_dotnet(BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase):
     use_container = False
     directory = "dotnet6/hello"
-    should_test_lint: bool = False
 
 
 class BuildInvoke_dotnet6_cookiecutter_aws_sam_hello_dotnet_pt(BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase):
     use_container = False
     directory = "dotnet6/hello-pt"
-    should_test_lint: bool = False
 
 
 # FIXME: fix and re-enable the test
@@ -34,7 +32,6 @@ class BuildInvoke_dotnet6_cookiecutter_aws_sam_quick_start_s3_dotnet(
 ):
     use_container = False
     directory = "dotnet6/s3"
-    should_test_lint: bool = False
 
 
 class BuildInvoke_dotnet6_cookiecutter_aws_sam_quick_start_sns_dotnet(
@@ -42,7 +39,6 @@ class BuildInvoke_dotnet6_cookiecutter_aws_sam_quick_start_sns_dotnet(
 ):
     use_container = False
     directory = "dotnet6/sns"
-    should_test_lint: bool = False
 
 
 class BuildInvoke_dotnet6_cookiecutter_aws_sam_quick_start_sqs_dotnet(
@@ -50,7 +46,6 @@ class BuildInvoke_dotnet6_cookiecutter_aws_sam_quick_start_sqs_dotnet(
 ):
     use_container = False
     directory = "dotnet6/sqs"
-    should_test_lint: bool = False
 
 
 class BuildInvoke_dotnet6_cookiecutter_aws_sam_hello_step_functions_sample_app(
@@ -58,7 +53,6 @@ class BuildInvoke_dotnet6_cookiecutter_aws_sam_hello_step_functions_sample_app(
 ):
     use_container = False
     directory = "dotnet6/step-func"
-    should_test_lint: bool = False
 
 
 class BuildInvoke_dotnet6_cookiecutter_aws_sam_quick_start_cloudwatch_events_dotnet(
@@ -66,13 +60,11 @@ class BuildInvoke_dotnet6_cookiecutter_aws_sam_quick_start_cloudwatch_events_dot
 ):
     use_container = False
     directory = "dotnet6/cw-event"
-    should_test_lint: bool = False
 
 
 class BuildInvoke_dotnet6_cookiecutter_aws_from_scratch_dotnet(BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase):
     use_container = False
     directory = "dotnet6/scratch"
-    should_test_lint: bool = False
 
 
 class BuildInvoke_dotnet6_cookiecutter_aws_sam_quick_start_web_dotnet(
@@ -80,7 +72,6 @@ class BuildInvoke_dotnet6_cookiecutter_aws_sam_quick_start_web_dotnet(
 ):
     use_container = False
     directory = "dotnet6/web"
-    should_test_lint: bool = False
 
 
 #
@@ -92,4 +83,3 @@ class BuildInvoke_image_dotnet6_cookiecutter_aws_sam_hello_dotnet_lambda_image(
     BuildInvokeBase.DotNetCoreExtraRerunBuildInvokeBase
 ):
     directory = "dotnet6/hello-img"
-    should_test_lint: bool = False
