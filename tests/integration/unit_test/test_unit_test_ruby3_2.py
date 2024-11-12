@@ -15,3 +15,14 @@ class UnitTest_ruby3_2_cookiecutter_aws_sam_step_functions_sample_app(UnitTestBa
         "tests/unit/test_stock_checker.rb",
         "tests/unit/test_stock_seller.rb",
     ]
+
+class UnitTest_ruby3_2_cookiecutter_quick_start_web(UnitTestBase.RubyUnitTestBase):
+    runtime = "ruby3.2"
+    directory = "ruby/web"
+    code_directories = [
+        "test/test_create_item.rb",
+        "test/test_delete_item.rb",
+        "test/test_get_all_items.rb",
+        "test/test_get_item_by_id.rb",
+        "test/test_update_item.rb"
+    ]
