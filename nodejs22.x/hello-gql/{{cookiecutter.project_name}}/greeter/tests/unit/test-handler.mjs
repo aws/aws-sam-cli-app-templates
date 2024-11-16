@@ -2,8 +2,10 @@
 
 import { lambdaHandler } from "../../app.mjs";
 import { expect } from "chai";
+import { createRequire } from 'module';
 
-import event from "../events/appsync.json" assert { type: "json" };
+const require = createRequire(import.meta.url);
+const event = require('../events/appsync.json');
 
 const context = {};
 
