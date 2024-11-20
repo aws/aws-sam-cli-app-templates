@@ -20,7 +20,7 @@ To use the SAM CLI, you need the following tools.
 
 You may need the following for local testing.
 
-* Node.js - [Install Node.js 20](https://nodejs.org/en/), including the NPM package management tool.
+* Node.js - [Install Node.js 22](https://nodejs.org/en/), including the NPM package management tool.
 
 To build and deploy your application for the first time, run the following in your shell:
 
