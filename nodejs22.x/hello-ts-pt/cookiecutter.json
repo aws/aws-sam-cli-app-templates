@@ -1,0 +1,14 @@
+{
+    "project_name": "Name of the project",
+    "runtime": "nodejs22.x",
+    "architectures": {
+        "value": ["x86_64", "arm64"]
+    },
+    "Powertools for AWS Lambda (TypeScript) Tracing": ["enabled","disabled"],
+    "Powertools for AWS Lambda (TypeScript) Metrics": ["enabled","disabled"],
+    "Powertools for AWS Lambda (TypeScript) Logging": ["enabled","disabled"],
+    "_copy_without_render": [
+        ".gitignore"
+    ]
+
+}
