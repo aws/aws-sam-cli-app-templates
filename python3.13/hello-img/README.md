@@ -13,7 +13,6 @@ Generate a boilerplate template in your current project directory using the foll
 - **Python 3.13**: `sam init --runtime python3.13`
 - **Python 3.10**: `sam init --runtime python3.10`
 - **Python 3.9**: `sam init --runtime python3.9`
-- **Python 3.8**: `sam init --runtime python3.8`
 
 > **NOTE**: `--name` allows you to specify a different project folder name (`sam-app` is the default)
 
