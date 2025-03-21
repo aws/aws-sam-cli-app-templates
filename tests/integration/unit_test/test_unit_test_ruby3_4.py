@@ -5,7 +5,7 @@ class UnitTest_ruby3_4_cookiecutter_aws_sam_hello_ruby(UnitTestBase.RubyUnitTest
     runtime = "ruby3.4"
     directory = "ruby/hello"
     code_directories = ["tests/unit/test_handler.rb"]
-    # It can be removed after cfn-lint supports ruby3.4
+    # It can be removed after SAM CLI consumes cfn-lint 1.32.0, which adds support for ruby3.4
     should_test_lint = False
 
 

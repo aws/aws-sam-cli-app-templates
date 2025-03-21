@@ -24,6 +24,6 @@ class BuildInvoke_image_ruby3_4_cookiecutter_aws_sam_hello_ruby_lambda_image(
     runtime = "ruby3.4"
     directory = "ruby/hello-img"
 
-class BuildInvoke_image_ruby3_2_cookiecutter_aws_sam_quick_start_web(BuildInvokeBase.RubyQuickStartWebBuildInvokeBase):
+class BuildInvoke_image_ruby3_4_cookiecutter_aws_sam_quick_start_web(BuildInvokeBase.RubyQuickStartWebBuildInvokeBase):
     runtime = "ruby3.4"
     directory = "ruby/web"
