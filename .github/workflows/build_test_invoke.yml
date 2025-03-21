@@ -241,6 +241,13 @@ jobs:
           - version: '3.3'
             type: 'Invoke'
             file: 'tests/integration/build_invoke/ruby/test_ruby_3_3.py'
+          - version: '3.4'
+            type: 'Test'
+            file: 'tests/integration/unit_test/test_unit_test_ruby3_4.py'
+          # Uncomment after SAM CLI supports Ruby3.4 and the build image is available
+          # - version: '3.4'
+          #   type: 'Invoke'
+          #   file: 'tests/integration/build_invoke/ruby/test_ruby_3_4.py'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
