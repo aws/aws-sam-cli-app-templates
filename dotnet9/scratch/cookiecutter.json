@@ -1,6 +1,6 @@
 {
     "project_name": "Name of the project",
-    "runtime": "dotnet8",
+    "runtime": "dotnet9",
     "architectures": {
         "value": [
             "x86_64", "arm64"

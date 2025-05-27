@@ -38,7 +38,7 @@ Resources:
     Properties:
       CodeUri: ./functions/StockChecker/
       Handler: StockChecker::StockChecker.Function::FunctionHandler
-      Runtime: dotnet8
+      Runtime: dotnet9
       {%- if cookiecutter.architectures.value != [ ]%}
       Architectures:
         {%- for arch in cookiecutter.architectures.value %}
@@ -51,7 +51,7 @@ Resources:
     Properties:
       CodeUri: ./functions/StockSeller/
       Handler: StockSeller::StockSeller.Function::FunctionHandler
-      Runtime: dotnet8
+      Runtime: dotnet9
       {%- if cookiecutter.architectures.value != [ ]%}
       Architectures:
         {%- for arch in cookiecutter.architectures.value %}
@@ -64,7 +64,7 @@ Resources:
     Properties:
       CodeUri: ./functions/StockBuyer/
       Handler: StockBuyer::StockBuyer.Function::FunctionHandler
-      Runtime: dotnet8
+      Runtime: dotnet9
       {%- if cookiecutter.architectures.value != [ ]%}
       Architectures:
         {%- for arch in cookiecutter.architectures.value %}
