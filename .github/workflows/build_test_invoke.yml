@@ -357,6 +357,12 @@ jobs:
           - version: '8'
             type: 'Invoke'
             file: 'tests/integration/build_invoke/dotnet/test_build_invoke_dotnet8.py'
+          - version: '9'
+            type: 'Test'
+            file: 'tests/integration/unit_test/test_unit_test_dotnet9.py'
+          - version: '9'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/dotnet/test_build_invoke_dotnet9.py'
     steps:
       - uses: actions/checkout@v3
         name: Checkout PR
