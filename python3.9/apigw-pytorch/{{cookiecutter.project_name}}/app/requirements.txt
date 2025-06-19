@@ -1,4 +1,5 @@
 -f https://download.pytorch.org/whl/torch_stable.html
-torch=={{cookiecutter.pytorch_version}}+cpu
+# TODO: add version+cpu after it is released
+torch=={{cookiecutter.pytorch_version}}
 torchvision=={{cookiecutter.torchvision_version}}+cpu
 pillow
