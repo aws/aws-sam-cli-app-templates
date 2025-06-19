@@ -4,11 +4,11 @@ FROM --platform=linux/arm64 public.ecr.aws/amazonlinux/amazonlinux:2023
 FROM --platform=linux/amd64 public.ecr.aws/amazonlinux/amazonlinux:2023
 {%- endif %}
 
-RUN yum -y update \
-    && yum install -y unzip tar gzip bzip2-devel ed gcc gcc-c++ gcc-gfortran \
-    less libcurl-devel openssl openssl-devel readline-devel xz-devel \
-    zlib-devel glibc-static libcxx libcxx-devel llvm-toolset-7 zlib-static \
-    && rm -rf /var/cache/yum
+# RUN yum -y update \
+#     && yum install -y unzip tar gzip bzip2-devel ed gcc gcc-c++ gcc-gfortran \
+#     less libcurl-devel openssl openssl-devel readline-devel xz-devel \
+#     zlib-devel glibc-static libcxx libcxx-devel llvm-toolset-7 zlib-static \
+#     && rm -rf /var/cache/yum
 
 # Graal VM
 ENV JAVA_VERSION java17
@@ -35,9 +35,11 @@ ENV PATH=$PATH:/usr/lib/gradle/bin
 
 # AWS Lambda Builders
 # RUN amazon-linux-extras enable python3.9
-RUN dnf -y install python3.9
-RUN yum clean metadata && yum -y install python3.9
-RUN curl -L get-pip.io | python3.9
+# RUN yum clean metadata && yum -y install python3.9
+RUN dnf -y install python3.9 curl
+RUN curl -sS https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
+    && python3.9 get-pip.py \
+    && rm get-pip.py
 RUN pip3 install aws-lambda-builders
 
 VOLUME /project
