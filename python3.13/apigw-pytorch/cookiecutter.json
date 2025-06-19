@@ -1,7 +1,7 @@
 {
   "project_name": "digit_classifier",
   "pytorch_version": "2.6.0",
-  "torchvision_version": "0.15.1",
+  "torchvision_version": "0.21.0",
   "api_path": "/classify_digit",
   "architectures": {
     "value": [
