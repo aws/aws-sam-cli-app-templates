@@ -1,7 +1,7 @@
 {%- if cookiecutter.architectures.value|length == 1 and cookiecutter.architectures.value[0] == 'arm64' %}
-FROM --platform=linux/arm64 public.ecr.aws/amazonlinux/amazonlinux:2
+FROM --platform=linux/arm64 public.ecr.aws/amazonlinux/amazonlinux:2023
 {%- else %}
-FROM --platform=linux/amd64 public.ecr.aws/amazonlinux/amazonlinux:2
+FROM --platform=linux/amd64 public.ecr.aws/amazonlinux/amazonlinux:2023
 {%- endif %}
 
 RUN yum -y update \
@@ -32,7 +32,7 @@ RUN mv $MVN_FOLDERNAME /usr/lib/maven
 RUN rm -rf $MVN_FOLDERNAME
 
 # AWS Lambda Builders
-RUN amazon-linux-extras enable python3.9
+# RUN amazon-linux-extras enable python3.9
 RUN yum clean metadata && yum -y install python3.9
 RUN curl -L get-pip.io | python3.9
 RUN pip3 install aws-lambda-builders
