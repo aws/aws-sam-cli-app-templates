@@ -1,14 +1,14 @@
 {%- if cookiecutter.architectures.value|length == 1 and cookiecutter.architectures.value[0] == 'arm64' %}
-FROM --platform=linux/arm64 public.ecr.aws/amazonlinux/amazonlinux:2023
+FROM --platform=linux/arm64 public.ecr.aws/amazonlinux/amazonlinux:2
 {%- else %}
-FROM --platform=linux/amd64 public.ecr.aws/amazonlinux/amazonlinux:2023
+FROM --platform=linux/amd64 public.ecr.aws/amazonlinux/amazonlinux:2
 {%- endif %}
 
-# RUN yum -y update \
-#     && yum install -y unzip tar gzip bzip2-devel ed gcc gcc-c++ gcc-gfortran \
-#     less libcurl-devel openssl openssl-devel readline-devel xz-devel \
-#     zlib-devel glibc-static libcxx libcxx-devel llvm-toolset-7 zlib-static \
-#     && rm -rf /var/cache/yum
+RUN yum -y update \
+    && yum install -y unzip tar gzip bzip2-devel ed gcc gcc-c++ gcc-gfortran \
+    less libcurl-devel openssl openssl-devel readline-devel xz-devel \
+    zlib-devel glibc-static libcxx libcxx-devel llvm-toolset-7 zlib-static \
+    && rm -rf /var/cache/yum
 
 # Graal VM
 ENV JAVA_VERSION java11
@@ -34,12 +34,16 @@ RUN rm $GRALE_FILENAME
 ENV PATH=$PATH:/usr/lib/gradle/bin
 
 # AWS Lambda Builders
-# RUN amazon-linux-extras enable python3.9
-RUN dnf -y install python3.9 curl
-RUN curl -sS https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
-    && python3.9 get-pip.py \
-    && rm get-pip.py
-RUN pip3 install aws-lambda-builders
+RUN cd /tmp \
+    && wget https://www.python.org/ftp/python/3.9.17/Python-3.9.17.tgz \
+    && tar xvf Python-3.9.17.tgz \
+    && cd Python-3.9.17 \
+    && ./configure --enable-optimizations \
+    && make install
+
+RUN python3 -m ensurepip
+RUN python3 -m pip install --upgrade pip
+RUN python3 -m pip install aws-lambda-builders
 
 VOLUME /project
 WORKDIR /project
