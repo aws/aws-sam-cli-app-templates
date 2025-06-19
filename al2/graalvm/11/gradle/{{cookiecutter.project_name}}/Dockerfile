@@ -34,9 +34,9 @@ RUN rm $GRALE_FILENAME
 ENV PATH=$PATH:/usr/lib/gradle/bin
 
 # AWS Lambda Builders
-RUN amazon-linux-extras enable python3.8
-RUN yum clean metadata && yum -y install python3.8
-RUN curl -L get-pip.io | python3.8
+RUN amazon-linux-extras enable python3.9
+RUN yum clean metadata && yum -y install python3.9
+RUN curl -L get-pip.io | python3.9
 RUN pip3 install aws-lambda-builders
 
 VOLUME /project
