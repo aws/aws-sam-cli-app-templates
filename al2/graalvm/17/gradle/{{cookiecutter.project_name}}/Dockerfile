@@ -4,7 +4,11 @@ FROM --platform=linux/arm64 public.ecr.aws/amazonlinux/amazonlinux:2023
 FROM --platform=linux/amd64 public.ecr.aws/amazonlinux/amazonlinux:2023
 {%- endif %}
 
-RUN dnf -y update && dnf install -y python3.9 curl tar unzip
+# RUN dnf install -y python3.9 curl tar unzip
+RUN dnf clean metadata && \
+    dnf install -y python3.9 curl tar unzip && \
+    dnf clean all && \
+    rm -rf /var/cache/dnf
 
 # Graal VM
 ENV JAVA_VERSION java17
