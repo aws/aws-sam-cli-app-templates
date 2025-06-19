@@ -1,2 +1,3 @@
 scikit-learn=={{cookiecutter.scikit_learn_version}}
+numpy==1.26.4
 pillow
