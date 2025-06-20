@@ -1,4 +1,4 @@
--f https://download.pytorch.org/whl/torch/
+-f https://download.pytorch.org/whl/cpu
 torch=={{cookiecutter.pytorch_version}}+cpu
 torchvision=={{cookiecutter.torchvision_version}}+cpu
 numpy==1.26.4
