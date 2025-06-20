@@ -6,7 +6,7 @@ FROM --platform=linux/amd64 public.ecr.aws/amazonlinux/amazonlinux:2
 
 RUN yum -y update \
     && yum install -y unzip tar gzip bzip2-devel ed gcc gcc-c++ gcc-gfortran \
-    less libcurl-devel openssl openssl-devel readline-devel xz-devel \
+    less libcurl-devel openssl openssl-devel readline-devel xz-devel wget \
     zlib-devel glibc-static libcxx libcxx-devel llvm-toolset-7 zlib-static \
     && rm -rf /var/cache/yum
 
@@ -24,7 +24,7 @@ RUN mv $GRAAL_FOLDERNAME /usr/lib/graalvm
 RUN rm -rf $GRAAL_FOLDERNAME
 
 # Maven
-ENV MVN_VERSION 3.8.8
+ENV MVN_VERSION 3.9.10
 ENV MVN_FOLDERNAME apache-maven-${MVN_VERSION}
 ENV MVN_FILENAME apache-maven-${MVN_VERSION}-bin.tar.gz
 RUN curl -4 -L https://dlcdn.apache.org/maven/maven-3/${MVN_VERSION}/binaries/${MVN_FILENAME} | tar -xvz
@@ -32,10 +32,16 @@ RUN mv $MVN_FOLDERNAME /usr/lib/maven
 RUN rm -rf $MVN_FOLDERNAME
 
 # AWS Lambda Builders
-RUN amazon-linux-extras enable python3.8
-RUN yum clean metadata && yum -y install python3.8
-RUN curl -L get-pip.io | python3.8
-RUN pip3 install aws-lambda-builders
+RUN cd /tmp \
+    && wget https://www.python.org/ftp/python/3.9.17/Python-3.9.17.tgz \
+    && tar xvf Python-3.9.17.tgz \
+    && cd Python-3.9.17 \
+    && ./configure --enable-optimizations \
+    && make install
+
+RUN python3 -m ensurepip
+RUN python3 -m pip install --upgrade pip
+RUN python3 -m pip install aws-lambda-builders
 
 VOLUME /project
 WORKDIR /project
