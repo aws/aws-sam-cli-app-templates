@@ -1,2 +1,3 @@
 tensorflow=={{cookiecutter.tensorflow_version}}
+numpy==1.24
 pillow

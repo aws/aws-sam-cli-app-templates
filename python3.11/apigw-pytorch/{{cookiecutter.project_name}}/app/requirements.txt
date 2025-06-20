@@ -1,4 +1,6 @@
--f https://download.pytorch.org/whl/torch_stable.html
-torch=={{cookiecutter.pytorch_version}}+cpu
-torchvision=={{cookiecutter.torchvision_version}}+cpu
+--index-url https://download.pytorch.org/whl/cpu
+--extra-index-url https://pypi.org/simple
+torch=={{cookiecutter.pytorch_version}}
+torchvision=={{cookiecutter.torchvision_version}}
+numpy==1.26.4
 pillow
