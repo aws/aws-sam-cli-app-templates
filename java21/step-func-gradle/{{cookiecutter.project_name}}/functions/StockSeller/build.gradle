@@ -11,10 +11,5 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
 }
 
-// sourceCompatibility = 21
-// targetCompatibility = 21
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
-    }
-}
+sourceCompatibility = 21
+targetCompatibility = 21
