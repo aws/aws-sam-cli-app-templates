@@ -167,7 +167,6 @@ jobs:
         with:
           distribution: 'corretto'
           java-version: ${{ matrix.version }}
-          gradle-version: '8.14'
       - name: Run build tests for ${{ matrix.file }}
         run: |
           pip install -r requirements.txt
