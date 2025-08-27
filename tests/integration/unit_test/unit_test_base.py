@@ -137,7 +137,7 @@ class UnitTestBase:
             pass
 
         def _test_unit_tests(self, code_directory: str):
-            cmdlist = ["gradle", "test"]
+            cmdlist = ["./gradlew", "test"]
             LOG.info(cmdlist)
             result = run_command(cmdlist, Path(self.cwd, code_directory))
             self.assertIn("BUILD SUCCESSFUL", result.stdout)
