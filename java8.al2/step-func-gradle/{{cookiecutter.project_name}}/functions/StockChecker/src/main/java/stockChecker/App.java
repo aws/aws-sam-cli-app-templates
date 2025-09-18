@@ -9,10 +9,10 @@ import java.util.Random;
 /**
  * Handler for requests to Lambda function.
  */
-public class App implements RequestHandler<Map<String, String>, Map<String, Integer>> {
+public class App implements RequestHandler<Map<String, Object>, Map<String, Integer>> {
     private final Random rand = new Random();
 
-    public Map<String, Integer> handleRequest(Map<String, String> event, Context context) {
+    public Map<String, Integer> handleRequest(Map<String, Object> event, Context context) {
         // Sample Lambda function which mocks the operation of checking the current price
         // of a stock.
 
@@ -21,7 +21,7 @@ public class App implements RequestHandler<Map<String, String>, Map<String, Inte
 
         // Parameters
         // ----------
-        // event: Map<String, String>, required
+        // event: Map<String, Object>, required
         //     Input event to the Lambda function
 
         // context: Context, required
