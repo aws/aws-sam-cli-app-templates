@@ -54,8 +54,8 @@ class BuildInvoke_python3_11_pytorch(BuildInvokeBase.BuildInvokeBase):
 class BuildInvoke_python3_11_scikit(BuildInvokeBase.BuildInvokeBase):
     directory = "python3.11/apigw-scikit"
 
-class BuildInvoke_python3_11_tensorflow(BuildInvokeBase.BuildInvokeBase):
-    directory = "python3.11/apigw-tensorflow"
+# class BuildInvoke_python3_11_tensorflow(BuildInvokeBase.BuildInvokeBase):
+#     directory = "python3.11/apigw-tensorflow"
 
 class BuildInvoke_python3_11_xgboost(BuildInvokeBase.BuildInvokeBase):
     directory = "python3.11/apigw-xgboost"
