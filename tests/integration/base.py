@@ -61,7 +61,7 @@ class Base:
     class IntegBase(TestCase):
         tempdir: Any
         directory: str
-        should_test_lint: bool = False
+        should_test_lint: bool = True
         runtime = None
 
         def setUp(self) -> None:
