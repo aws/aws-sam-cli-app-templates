@@ -10,7 +10,7 @@ A cookiecutter template to create a Python Quick Start Web Application using [Se
 
 Generate a boilerplate template in your current project directory using the following syntax:
 
-- **python3.13**: `sam init --runtime python3.13 --app-template hello-world-connector --name multi-step-app`
+- **python3.14**: `sam init --runtime python3.14 --app-template hello-world-connector --name multi-step-app`
 
 > **NOTE**: `--name` allows you to specify a different project folder name
 
