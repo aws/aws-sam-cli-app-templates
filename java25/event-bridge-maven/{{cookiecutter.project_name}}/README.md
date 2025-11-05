@@ -34,7 +34,7 @@ To use the SAM CLI, you need the following tools.
 
 * AWS CLI - [Install the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html) and [configure it with your AWS credentials].
 * SAM CLI - [Install the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
-* java21 - [Install the Java 21](https://docs.aws.amazon.com/corretto/latest/corretto-21-ug/downloads-list.html)
+* java25 - [Install the Java 25](https://docs.aws.amazon.com/corretto/latest/corretto-25-ug/downloads-list.html)
 * Maven - [Install Maven](https://maven.apache.org/install.html)
 * Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community)
 

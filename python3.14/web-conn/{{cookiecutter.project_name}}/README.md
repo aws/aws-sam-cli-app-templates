@@ -103,7 +103,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: src/handlers/get_all_items.getAllItemsHandler
-      Runtime: python3.13
+      Runtime: python3.14
       DeadLetterQueue:
         Type: SQS 
         TargetArn: !GetAtt MyQueue.Arn

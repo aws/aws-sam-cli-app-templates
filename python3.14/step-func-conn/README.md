@@ -10,7 +10,7 @@ This application creates a mock stock trading workflow which runs on a pre-defin
 
 ## Usage
 
-- **python3.13**: `sam init --runtime python3.13 --app-template step-functions-with-connectors --name multi-step-app`
+- **python3.14**: `sam init --runtime python3.14 --app-template step-functions-with-connectors --name multi-step-app`
 
 Access this template by running `sam init` and choosing it from the list of available templates.
 
