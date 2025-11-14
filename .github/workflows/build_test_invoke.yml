@@ -208,6 +208,12 @@ jobs:
           - version: '22'
             type: 'Invoke'
             file: 'tests/integration/build_invoke/node/test_node_22.py'
+          - version: '24'
+            type: 'Test'
+            file: 'tests/integration/unit_test/test_unit_test_nodejs24_x.py'
+          - version: '24'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/node/test_node_24.py'            
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
