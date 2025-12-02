@@ -8,6 +8,14 @@ class UnitTest_python3_13_cookiecutter_aws_sam_hello_python(UnitTestBase.Python3
     should_test_lint = False
 
 
+class UnitTest_python3_13_cookiecutter_aws_sam_hello_durable_python(UnitTestBase.Python313UnitTestBase):
+    directory = "python3.13/hello-durable"
+    code_directories = ["hello_world"]
+    test_dependencies = True
+    # TODO: remove the line remove once python3.13 is GA
+    should_test_lint = False
+
+
 class UnitTest_python3_13_cookiecutter_aws_sam_eventBridge_python(UnitTestBase.Python313UnitTestBase):
     directory = "python3.13/event-bridge"
     code_directories = ["hello_world_function"]
