@@ -78,6 +78,11 @@ You can find more information and examples about filtering Lambda function logs 
 
 Unit tests are written using the [`@aws/durable-execution-sdk-js-testing`](https://github.com/aws/aws-durable-execution-sdk-js) library. The testing library allows you to simulate running your execution locally while mocking any dependencies.
 
+Tests are located in `hello-world/tests/unit/app.test.ts` and demonstrate:
+- Testing durable function execution with the `LocalDurableTestRunner`
+- Verifying function results and response structure
+- Asserting on durable execution operations using `OperationType` and `OperationStatus`
+
 ```bash
 {{ cookiecutter.project_name }}$ cd hello-world
 hello-world$ npm install

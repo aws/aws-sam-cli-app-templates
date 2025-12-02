@@ -846,10 +846,10 @@
       "useCaseName": "Lambda Response Streaming"
     },
     {
-      "directory": "nodejs22.x/hello-durable",
-      "displayName": "Hello World Durable Function Example",
+      "directory": "nodejs22.x/hello-durable-ts",
+      "displayName": "Hello World Durable Function Example TypeScript",
       "dependencyManager": "npm",
-      "appTemplate": "hello-durable",
+      "appTemplate": "hello-durable-ts",
       "packageType": "Zip",
       "useCaseName": "Durable Functions"
     }
@@ -970,10 +970,10 @@
       "useCaseName": "Lambda Response Streaming"
     },
     {
-      "directory": "nodejs24.x/hello-durable",
-      "displayName": "Hello World Durable Function Example",
+      "directory": "nodejs24.x/hello-durable-ts",
+      "displayName": "Hello World Durable Function Example TypeScript",
       "dependencyManager": "npm",
-      "appTemplate": "hello-durable",
+      "appTemplate": "hello-durable-ts",
       "packageType": "Zip",
       "useCaseName": "Durable Functions"
     }

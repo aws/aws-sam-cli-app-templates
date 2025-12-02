@@ -1,4 +1,4 @@
-# Cookiecutter NodeJS TypeScript Durable Function Hello-world for SAM based Serverless App
+# Hello World Durable Function Example TypeScript for SAM based Serverless App
 
 A cookiecutter template to create a NodeJS TypeScript Durable Function Hello world boilerplate using [Serverless Application Model (SAM)](https://github.com/awslabs/serverless-application-model).
 
