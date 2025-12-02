@@ -80,6 +80,9 @@ class UnitTestBase:
 
         python_executable = "python"
 
+        # Set to install dependencies in tests/requirements.txt before running unit tests
+        test_dependencies = False
+
         def _test_install(self, code_directory: str):
             cmdlist = [
                 self.python_executable,
@@ -101,6 +104,8 @@ class UnitTestBase:
                 self.assertIn("Successfully installed", result.stdout)
 
         def _test_unit_tests(self, code_directory: str):
+            if self.test_dependencies:
+                self._test_install("tests")
             env = os.environ.copy()
             env["PYTHONPATH"] = "lib:."
             cmdlist = [self.python_executable, "-m", "pytest", "tests/unit"]

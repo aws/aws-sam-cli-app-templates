@@ -1321,6 +1321,14 @@
       "appTemplate": "step-functions-with-connectors",
       "packageType": "Zip",
       "useCaseName": "Multi-step workflow with Connectors"
+    },
+    {
+      "directory": "python3.13/hello-durable",
+      "displayName": "Hello World Durable Function Example",
+      "dependencyManager": "pip",
+      "appTemplate": "hello-world-durable",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Durable Function Example"
     }
   ],
   "python3.14": [
@@ -1388,6 +1396,14 @@
       "appTemplate": "step-functions-with-connectors",
       "packageType": "Zip",
       "useCaseName": "Multi-step workflow with Connectors"
+    },
+    {
+      "directory": "python3.14/hello-durable",
+      "displayName": "Hello World Durable Function Example",
+      "dependencyManager": "pip",
+      "appTemplate": "hello-world-durable",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Durable Function Example"
     }
   ],
   "ruby3.2": [
