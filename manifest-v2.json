@@ -844,6 +844,14 @@
       "appTemplate": "response-streaming",
       "packageType": "Zip",
       "useCaseName": "Lambda Response Streaming"
+    },
+    {
+      "directory": "nodejs22.x/hello-durable",
+      "displayName": "Hello World Durable Function Example",
+      "dependencyManager": "npm",
+      "appTemplate": "hello-durable",
+      "packageType": "Zip",
+      "useCaseName": "Durable Functions"
     }
   ],
   "amazon/nodejs22.x-base": [
@@ -960,6 +968,14 @@
       "appTemplate": "response-streaming",
       "packageType": "Zip",
       "useCaseName": "Lambda Response Streaming"
+    },
+    {
+      "directory": "nodejs24.x/hello-durable",
+      "displayName": "Hello World Durable Function Example",
+      "dependencyManager": "npm",
+      "appTemplate": "hello-durable",
+      "packageType": "Zip",
+      "useCaseName": "Durable Functions"
     }
   ],  
   "amazon/nodejs24.x-base": [
