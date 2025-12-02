@@ -1,0 +1,4 @@
+pytest
+boto3
+requests
+aws-durable-execution-sdk-python-testing==1.0.0
