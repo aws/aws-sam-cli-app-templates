@@ -1,1 +1,1 @@
-aws-durable-execution-sdk-python==1.0.0
+aws-durable-execution-sdk-python=~1.0
