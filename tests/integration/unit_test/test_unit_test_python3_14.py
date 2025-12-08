@@ -6,6 +6,12 @@ class UnitTest_python3_14_cookiecutter_aws_sam_hello_python(UnitTestBase.Python3
     code_directories = ["hello_world"]
 
 
+class UnitTest_python3_14_cookiecutter_aws_sam_hello_durable_python(UnitTestBase.Python314UnitTestBase):
+    directory = "python3.13/hello-durable"
+    code_directories = ["hello_world"]
+    test_dependencies = True
+
+
 class UnitTest_python3_14_cookiecutter_aws_sam_eventBridge_python(UnitTestBase.Python314UnitTestBase):
     directory = "python3.14/event-bridge"
     code_directories = ["hello_world_function"]

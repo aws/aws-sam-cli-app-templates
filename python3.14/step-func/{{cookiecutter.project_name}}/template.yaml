@@ -38,7 +38,7 @@ Resources:
     Properties:
       CodeUri: functions/stock_checker/
       Handler: app.lambda_handler
-      Runtime: python3.13
+      Runtime: {{ cookiecutter.runtime }}
       {%- if cookiecutter.architectures.value != []%}
       Architectures:
       {%- for arch in cookiecutter.architectures.value %}

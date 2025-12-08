@@ -22,7 +22,7 @@ Install `cookiecutter` command line:
 
 ### Usage
 
-Generate a new SAM based Serverless App: `sam init --runtime python3.13`.
+Generate a new SAM based Serverless App: `sam init --runtime python3.14`.
 
 You'll be prompted a few questions to help this cookiecutter template to scaffold this project and after its completed you should see a new folder at your current path with the name of the project you gave as input.
 

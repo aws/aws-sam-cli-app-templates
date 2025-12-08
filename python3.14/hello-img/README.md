@@ -10,7 +10,7 @@ A cookiecutter template to create a Python Hello world boilerplate using [Server
 
 Generate a boilerplate template in your current project directory using the following syntax:
 
-- **Python 3.13**: `sam init --runtime python3.13`
+- **Python 3.14**: `sam init --runtime python3.14`
 - **Python 3.10**: `sam init --runtime python3.10`
 - **Python 3.9**: `sam init --runtime python3.9`
 

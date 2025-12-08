@@ -54,7 +54,7 @@ def assertExpectedBuildDir(p) {
 }
 
 def createArtifactDir(project) {
-    def distsDir = project.buildDir.toPath().resolve(project.distsDirName).resolve('lambda-build')
+    def distsDir = project.buildDir.toPath().resolve('distributions').resolve('lambda-build')
     return makeDirs(distsDir)
 }
 
