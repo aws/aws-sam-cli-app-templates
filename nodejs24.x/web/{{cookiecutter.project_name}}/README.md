@@ -90,6 +90,65 @@ The AWS SAM CLI reads the application template to determine the API's routes and
             Method: GET
 ```
 
+## Test locally with dynamodb:
+1. Start DynamoDB Local in a Docker container (this example works on codespace) 
+```
+docker run --rm -p 8000:8000 -v /tmp:/data amazon/dynamodb-local
+```
+2. Create the DynamoDB table (sample command below): 
+```
+aws dynamodb create-table --table-name SampleTable --attribute-definitions AttributeName=id,AttributeType=S --key-schema AttributeName=id,KeyType=HASH --billing-mode PAY_PER_REQUEST --endpoint-url http://127.0.0.1:8000
+```
+3. Retrieve the ip address of your docker container running dynamodb local:
+```
+docker inspect <container_name_or_id> -f {% raw %} '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' {% endraw %}
+```
+4. Update env.json with the IP of your docker container for the endpoint override - see here for example:
+```
+{
+    "getByIdFunction": {
+        "ENDPOINT_OVERRIDE": "http://172.17.0.2:8000",
+        "SAMPLE_TABLE": "SampleTable"
+    },
+    "putItemFunction": {
+        "ENDPOINT_OVERRIDE": "http://172.17.0.2:8000",
+        "SAMPLE_TABLE": "SampleTable"
+    }
+}
+```
+5. run the following commands to start the sam local api:
+```
+sam local start-api --env-vars env.json --host 0.0.0.0 --debug
+```
+6. For testing - you can put an item into dynamodb local
+```
+aws dynamodb put-item \
+    --table-name SampleTable \
+    --item '{"id": {"S": "A1234"}, "name": {"S": "randeepx"}}' \
+    --endpoint-url http://127.0.0.1:8000
+```
+7. How to scan your table for items
+```
+aws dynamodb scan --table-name SampleTable --endpoint-url http://127.0.0.1:8000
+```
+8. To run frontend application locally:
+Go to your `frontend` code directory
+ ```
+cd frontend
+```
+Make backend API endpoint accessible as an environment variable. For local, create a `.env` file, Here is an example: 
+```
+VUE_APP_API_ENDPOINT=http://127.0.0.1:3000/
+```
+9. run following command to compile and run (with hot-reloads) for development
+```
+npm run serve
+``` 
+10. to execute frontend unit test
+```
+npm run test
+```
+
 ## Add a resource to your application
 The application template uses AWS SAM to define application resources. AWS SAM is an extension of AWS CloudFormation with a simpler syntax for configuring common serverless application resources, such as functions, triggers, and APIs. For resources that aren't included in the [AWS SAM specification](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md), you can use the standard [AWS CloudFormation resource types](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html).
 
