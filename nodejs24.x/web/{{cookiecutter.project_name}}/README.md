@@ -65,11 +65,27 @@ The AWS SAM CLI installs dependencies that are defined in `package.json`, create
 
 Test a single function by invoking it directly with a test event. An event is a JSON document that represents the input that the function receives from the event source. Test events are included in the `events` folder in this project.
 
+Update the env.json file to include the physical ID of the DynamoDB table
+
+```
+{
+    "getAllItemsFunction": {
+        "SAMPLE_TABLE": "<mystack-mytable>"
+    },
+    "getByIdFunction": {
+        "SAMPLE_TABLE": "<mystack-mytable>"
+    },
+    "putItemFunction": {
+        "SAMPLE_TABLE": "<mystack-mytable>"
+    }
+  }
+```
+
 Run functions locally and invoke them with the `sam local invoke` command.
 
 ```bash
-my-application$ sam local invoke putItemFunction --event events/event-post-item.json
-my-application$ sam local invoke getAllItemsFunction --event events/event-get-all-items.json
+my-application$ sam local invoke putItemFunction --event events/event-post-item.json --env-vars env.json
+my-application$ sam local invoke getAllItemsFunction --event events/event-get-all-items.json --env-vars env.json
 ```
 
 The AWS SAM CLI can also emulate your application's API. Use the `sam local start-api` command to run the API locally on port 3000.
@@ -95,58 +111,24 @@ The AWS SAM CLI reads the application template to determine the API's routes and
 ```
 docker run --rm -p 8000:8000 -v /tmp:/data amazon/dynamodb-local
 ```
-2. Create the DynamoDB table (sample command below): 
-```
-aws dynamodb create-table --table-name SampleTable --attribute-definitions AttributeName=id,AttributeType=S --key-schema AttributeName=id,KeyType=HASH --billing-mode PAY_PER_REQUEST --endpoint-url http://127.0.0.1:8000
-```
-3. Retrieve the ip address of your docker container running dynamodb local:
-```
-docker inspect <container_name_or_id> -f {% raw %} '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' {% endraw %}
-```
-4. Update env.json with the IP of your docker container for the endpoint override - see here for example:
-```
-{
-    "getByIdFunction": {
-        "ENDPOINT_OVERRIDE": "http://172.17.0.2:8000",
-        "SAMPLE_TABLE": "SampleTable"
-    },
-    "putItemFunction": {
-        "ENDPOINT_OVERRIDE": "http://172.17.0.2:8000",
-        "SAMPLE_TABLE": "SampleTable"
-    }
-}
-```
-5. run the following commands to start the sam local api:
+2. Run the following commands to start the sam local api:
 ```
 sam local start-api --env-vars env.json --host 0.0.0.0 --debug
 ```
-6. For testing - you can put an item into dynamodb local
+3. Create the local DynamoDB table (sample command below): 
+```
+aws dynamodb create-table --table-name SampleTable --attribute-definitions AttributeName=id,AttributeType=S --key-schema AttributeName=id,KeyType=HASH --billing-mode PAY_PER_REQUEST --endpoint-url http://127.0.0.1:8000
+```
+4. For testing - you can put an item into dynamodb local
 ```
 aws dynamodb put-item \
     --table-name SampleTable \
     --item '{"id": {"S": "A1234"}, "name": {"S": "randeepx"}}' \
     --endpoint-url http://127.0.0.1:8000
 ```
-7. How to scan your table for items
+5. Scan your table to check for the item you just inserted
 ```
 aws dynamodb scan --table-name SampleTable --endpoint-url http://127.0.0.1:8000
-```
-8. To run frontend application locally:
-Go to your `frontend` code directory
- ```
-cd frontend
-```
-Make backend API endpoint accessible as an environment variable. For local, create a `.env` file, Here is an example: 
-```
-VUE_APP_API_ENDPOINT=http://127.0.0.1:3000/
-```
-9. run following command to compile and run (with hot-reloads) for development
-```
-npm run serve
-``` 
-10. to execute frontend unit test
-```
-npm run test
 ```
 
 ## Add a resource to your application
