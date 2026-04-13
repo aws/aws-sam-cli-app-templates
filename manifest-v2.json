@@ -35,80 +35,6 @@
       "useCaseName": "Hello World Example"
     }
   ],
-  "dotnet6": [
-    {
-      "directory": "dotnet6/sqs",
-      "displayName": "Quick Start: SQS",
-      "dependencyManager": "cli-package",
-      "appTemplate": "quick-start-sqs",
-      "packageType": "Zip",
-      "useCaseName": "Data processing"
-    },
-    {
-      "directory": "dotnet6/sns",
-      "displayName": "Quick Start: SNS",
-      "dependencyManager": "cli-package",
-      "appTemplate": "quickstart-sns",
-      "packageType": "Zip",
-      "useCaseName": "Data processing"
-    },
-    {
-      "directory": "dotnet6/hello",
-      "displayName": "Hello World Example",
-      "dependencyManager": "cli-package",
-      "appTemplate": "hello-world",
-      "packageType": "Zip",
-      "useCaseName": "Hello World Example"
-    },
-    {
-      "directory": "dotnet6/hello-pt",
-      "displayName": "Hello World Example .NET With Powertools for AWS Lambda",
-      "dependencyManager": "cli-package",
-      "appTemplate": "hello-world-powertools-dotnet",
-      "packageType": "Zip",
-      "useCaseName": "Hello World Example with Powertools for AWS Lambda"
-    },
-    {
-      "directory": "dotnet6/step-func",
-      "displayName": "Step Functions Sample App (Stock Trader)",
-      "dependencyManager": "cli-package",
-      "appTemplate": "step-functions-sample-app",
-      "packageType": "Zip",
-      "useCaseName": "Multi-step workflow"
-    },
-    {
-      "directory": "dotnet6/cw-event",
-      "displayName": "Quick Start: Scheduled Events",
-      "dependencyManager": "cli-package",
-      "appTemplate": "quick-start-cloudwatch-events",
-      "packageType": "Zip",
-      "useCaseName": "Scheduled task"
-    },
-    {
-      "directory": "dotnet6/scratch",
-      "displayName": "Quick Start: From Scratch",
-      "dependencyManager": "cli-package",
-      "appTemplate": "quick-start-from-scratch",
-      "packageType": "Zip",
-      "useCaseName": "Standalone function"
-    },
-    {
-      "directory": "dotnet6/web",
-      "displayName": "Quick Start: Web Backend",
-      "dependencyManager": "cli-package",
-      "appTemplate": "quick-start-web",
-      "packageType": "Zip",
-      "useCaseName": "Serverless API"
-    },
-    {
-      "directory": "dotnet6/s3",
-      "displayName": "Quick Start: S3",
-      "dependencyManager": "cli-package",
-      "appTemplate": "quick-start-s3",
-      "packageType": "Zip",
-      "useCaseName": "Data processing"
-    }
-  ],
   "dotnet8": [
     {
       "directory": "dotnet8/sqs",
@@ -1915,16 +1841,6 @@
       "directory": "java11/hello-img-maven",
       "displayName": "Hello World Lambda Image Example: Maven",
       "dependencyManager": "maven",
-      "appTemplate": "hello-world-lambda-image",
-      "packageType": "Image",
-      "useCaseName": "Hello World Example"
-    }
-  ],
-  "amazon/dotnet6-base": [
-    {
-      "directory": "dotnet6/hello-img",
-      "displayName": "Hello World Lambda Image Example",
-      "dependencyManager": "cli-package",
       "appTemplate": "hello-world-lambda-image",
       "packageType": "Image",
       "useCaseName": "Hello World Example"
