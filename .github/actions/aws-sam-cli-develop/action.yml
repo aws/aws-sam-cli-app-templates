@@ -17,3 +17,5 @@ runs:
         samdev --info
       name: Install AWS SAM CLI as samdev
       shell: bash
+      env:
+        UV_PYTHON: python${{ env.PYTHON_VERSION_INSTALL }}
