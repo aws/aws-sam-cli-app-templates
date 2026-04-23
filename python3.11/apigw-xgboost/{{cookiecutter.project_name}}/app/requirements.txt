@@ -1,3 +1,4 @@
 xgboost=={{cookiecutter.xgboost_version}}
 numpy==1.26.4
+scipy<=1.16.0
 pillow
