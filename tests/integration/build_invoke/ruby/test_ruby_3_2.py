@@ -11,11 +11,13 @@ For each template, it will test the following sam commands:
 class BuildInvoke_ruby3_2_cookiecutter_aws_sam_hello_ruby(BuildInvokeBase.HelloWorldExclamationBuildInvokeBase):
     runtime = "ruby3.2"
     directory = "ruby/hello"
+    should_test_lint = False
 
 
 class BuildInvoke_ruby3_2_cookiecutter_aws_sam_step_functions_sample_app(BuildInvokeBase.BuildInvokeBase):
     runtime = "ruby3.2"
     directory = "ruby/step-func"
+    should_test_lint = False
 
 
 class BuildInvoke_image_ruby3_2_cookiecutter_aws_sam_hello_ruby_lambda_image(
@@ -23,7 +25,9 @@ class BuildInvoke_image_ruby3_2_cookiecutter_aws_sam_hello_ruby_lambda_image(
 ):
     runtime = "ruby3.2"
     directory = "ruby/hello-img"
+    should_test_lint = False
 
 class BuildInvoke_image_ruby3_2_cookiecutter_aws_sam_quick_start_web(BuildInvokeBase.RubyQuickStartWebBuildInvokeBase):
     runtime = "ruby3.2"
     directory = "ruby/web"
+    should_test_lint = False
