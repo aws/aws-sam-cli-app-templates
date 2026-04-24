@@ -1,6 +1,6 @@
 {
   "project_name": "Name of the project",
-  "runtime": ["ruby3.2", "ruby3.3", "ruby3.4"],
+  "runtime": ["ruby3.2", "ruby3.3", "ruby3.4", "ruby4.0"],
   "architectures": {
       "value": [
           "x86_64", "arm64"
@@ -17,6 +17,10 @@
       },
       "ruby3.4": {
           "version": "3.4",
+          "memory_size": "512"
+      },
+      "ruby4.0": {
+          "version": "4.0",
           "memory_size": "512"
       }
   },
