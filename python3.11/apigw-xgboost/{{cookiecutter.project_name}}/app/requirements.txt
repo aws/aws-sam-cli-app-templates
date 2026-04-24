@@ -1,3 +1,6 @@
 xgboost=={{cookiecutter.xgboost_version}}
 numpy==1.26.4
+# Pinning to 1.16.0 because major versions above this don't ship with manylinux 2014 wheels.
+# This is a problem because AL2 base images don't have a GCC new enough to build transient dep numpy from source.
+scipy<=1.16.0
 pillow
