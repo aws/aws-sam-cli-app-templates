@@ -7,7 +7,7 @@ class UnitTest_python3_14_cookiecutter_aws_sam_hello_python(UnitTestBase.Python3
 
 
 class UnitTest_python3_14_cookiecutter_aws_sam_hello_durable_python(UnitTestBase.Python314UnitTestBase):
-    directory = "python3.13/hello-durable"
+    directory = "python3.14/hello-durable"
     code_directories = ["hello_world"]
     test_dependencies = True
 
