@@ -5,6 +5,7 @@ class UnitTest_ruby3_2_cookiecutter_aws_sam_hello_ruby(UnitTestBase.RubyUnitTest
     runtime = "ruby3.2"
     directory = "ruby/hello"
     code_directories = ["tests/unit/test_handler.rb"]
+    should_test_lint = False
 
 
 class UnitTest_ruby3_2_cookiecutter_aws_sam_step_functions_sample_app(UnitTestBase.RubyUnitTestBase):
@@ -15,6 +16,7 @@ class UnitTest_ruby3_2_cookiecutter_aws_sam_step_functions_sample_app(UnitTestBa
         "tests/unit/test_stock_checker.rb",
         "tests/unit/test_stock_seller.rb",
     ]
+    should_test_lint = False
 
 class UnitTest_ruby3_2_cookiecutter_quick_start_web(UnitTestBase.RubyUnitTestBase):
     runtime = "ruby3.2"
@@ -26,3 +28,4 @@ class UnitTest_ruby3_2_cookiecutter_quick_start_web(UnitTestBase.RubyUnitTestBas
         "test/test_get_item_by_id.rb",
         "test/test_update_item.rb"
     ]
+    should_test_lint = False

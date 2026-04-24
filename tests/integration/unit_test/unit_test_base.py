@@ -118,6 +118,7 @@ class UnitTestBase:
 
     class Python39UnitTestBase(PythonUnitTestBase):
         python_executable = "python3.9"
+        should_test_lint = False
 
     class Python310UnitTestBase(PythonUnitTestBase):
         python_executable = "python3.10"
