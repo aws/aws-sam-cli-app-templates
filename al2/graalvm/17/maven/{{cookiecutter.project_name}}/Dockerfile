@@ -11,7 +11,7 @@ RUN yum -y update \
     && rm -rf /var/cache/yum
 
 # Maven
-ENV MVN_VERSION 3.9.14
+ENV MVN_VERSION 3.9.15
 ENV MVN_FOLDERNAME apache-maven-${MVN_VERSION}
 ENV MVN_FILENAME apache-maven-${MVN_VERSION}-bin.tar.gz
 RUN curl -4 -L https://dlcdn.apache.org/maven/maven-3/${MVN_VERSION}/binaries/${MVN_FILENAME} | tar -xvz
@@ -21,6 +21,7 @@ RUN rm -rf $MVN_FOLDERNAME
 # Graal VM
 ENV JAVA_VERSION java17
 ENV GRAAL_VERSION 22.1.0
+ENV JAVA_TOOL_OPTIONS -XX:-UseContainerSupport
 ENV GRAAL_FOLDERNAME graalvm-ce-${JAVA_VERSION}-${GRAAL_VERSION}
 {%- if cookiecutter.architectures.value|length == 1 and cookiecutter.architectures.value[0] == 'arm64' %}
 ENV GRAAL_FILENAME graalvm-ce-${JAVA_VERSION}-linux-aarch64-${GRAAL_VERSION}.tar.gz

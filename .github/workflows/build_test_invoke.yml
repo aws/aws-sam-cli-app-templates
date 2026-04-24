@@ -72,6 +72,14 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          - version: '3.9'
+            type: 'Test'
+            file: 'tests/integration/unit_test/test_unit_test_python3_9.py'
+            sam_cli_python: '3.11'
+          - version: '3.9'
+            type: 'Invoke'
+            file: 'tests/integration/build_invoke/python/test_python_3_9.py'
+            sam_cli_python: '3.11'
           - version: '3.10'
             type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_python3_10.py'
@@ -103,7 +111,7 @@ jobs:
             type: 'Invoke'
             file: 'tests/integration/build_invoke/python/test_python_3_14.py'
     env:
-      PYTHON_VERSION_INSTALL: ${{ matrix.version }}
+      PYTHON_VERSION_INSTALL: ${{ matrix.sam_cli_python || matrix.version }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -259,7 +267,7 @@ jobs:
         name: Checkout PR
       - uses: ./.github/actions/aws-sam-cli-develop
         name: Install develop version of AWS SAM CLI
-      - uses: ruby/setup-ruby@v1
+      - uses: ruby/setup-ruby@4dc28cf14d77b0afa6832d9765ac422dbf0dfedd # v1
         name: Setup Ruby ${{ matrix.version }}
         with:
           ruby-version: ${{ matrix.version }}
