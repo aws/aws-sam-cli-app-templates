@@ -6,20 +6,6 @@ Description: >
   Sample SAM Template for {{ cookiecutter.project_name }}
 
 Resources:
-  # TODO: No longer necessary after https://github.com/aws/serverless-application-model/pull/3854
-  DurableFunctionRole:
-    Type: AWS::IAM::Role
-    Properties:
-      AssumeRolePolicyDocument:
-        Version: '2012-10-17'
-        Statement:
-          - Effect: Allow
-            Principal:
-              Service: lambda.amazonaws.com
-            Action: sts:AssumeRole
-      ManagedPolicyArns:
-        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicDurableExecutionRolePolicy
-
   HelloWorldFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
@@ -33,7 +19,6 @@ Resources:
         - {{arch}}
       {%- endfor %}
       {%- endif %}
-      Role: !GetAtt DurableFunctionRole.Arn
       AutoPublishAlias: Live
       DurableConfig:
         ExecutionTimeout: 900
@@ -64,6 +49,3 @@ Outputs:
   HelloWorldFunction:
     Description: "Hello World Lambda Function ARN"
     Value: !GetAtt HelloWorldFunction.Arn
-  HelloWorldFunctionIamRole:
-    Description: "IAM Role for Hello World function"
-    Value: !GetAtt DurableFunctionRole.Arn
