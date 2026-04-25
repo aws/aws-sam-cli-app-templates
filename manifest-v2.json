@@ -272,7 +272,7 @@
       "packageType": "Zip",
       "useCaseName": "Data processing"
     }
-  ],  
+  ],
   "go (provided.al2)": [
     {
       "directory": "al2/go/hello",
@@ -705,7 +705,7 @@
       "packageType": "Zip",
       "useCaseName": "Multi-step workflow"
     }
-  ],  
+  ],
   "nodejs20.x": [
     {
       "directory": "nodejs20.x/hello",
@@ -1059,7 +1059,7 @@
       "packageType": "Zip",
       "useCaseName": "Durable Functions"
     }
-  ],  
+  ],
   "amazon/nodejs24.x-base": [
     {
       "directory": "nodejs24.x/hello-img",
@@ -1069,7 +1069,7 @@
       "packageType": "Image",
       "useCaseName": "Hello World Example"
     }
-  ],  
+  ],
   "python3.9": [
     {
       "directory": "python3.9/hello",
@@ -1411,6 +1411,12 @@
       "appTemplate": "hello-world-durable",
       "packageType": "Zip",
       "useCaseName": "Hello World Durable Function Example"
+    },
+    {
+      "directory": "python3.13/cookiecutter-aws-sam-python-fastapi",
+      "displayName": "FastAPI Framework Starter",
+      "description": "SAM Template for a FastAPI application with Python 3.13",
+      "appTemplate": "hello-world"
     }
   ],
   "python3.14": [
@@ -1823,7 +1829,7 @@
       "packageType": "Image",
       "useCaseName": "Machine Learning"
     }
-  ],  
+  ],
   "amazon/ruby3.2-base": [
     {
       "directory": "ruby/hello-img",
@@ -1985,7 +1991,7 @@
       "packageType": "Image",
       "useCaseName": "Hello World Example"
     }
-  ],  
+  ],
   "amazon/java8.al2-base": [
     {
       "directory": "java8.al2/hello-img-gradle",

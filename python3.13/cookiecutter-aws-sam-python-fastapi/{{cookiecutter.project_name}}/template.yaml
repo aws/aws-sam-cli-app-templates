@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  {{cookiecutter.project_name}}
+  SAM Template for a FastAPI application
+
+Resources:
+  FastApiFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: app/
+      Handler: main.handler
+      Runtime: python3.13
+      Architectures:
+        - x86_64
+      Events:
+        FastApiApi:
+          Type: HttpApi # Best for FastAPI (low latency/cost)
+
+Outputs:
+  FastApiApi:
+    Description: "API Gateway endpoint URL for Prod stage"
+    Value: !Sub "https://${ServerlessHttpApi}.execute-api.${AWS::Region}.amazonaws.com/" 
