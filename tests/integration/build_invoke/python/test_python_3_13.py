@@ -73,3 +73,8 @@ class BuildInvoke_python3_13_scikit(BuildInvokeBase.BuildInvokeBase):
 class BuildInvoke_python3_13_xgboost(BuildInvokeBase.BuildInvokeBase):
     directory = "python3.13/apigw-xgboost"
     should_test_lint: bool = False
+
+
+class BuildInvoke_python3_13_cookiecutter_aws_sam_python_fastapi(BuildInvokeBase.BuildInvokeBase):
+    directory = "python3.13/cookiecutter-aws-sam-python-fastapi"
+    should_test_lint: bool = False
