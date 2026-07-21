@@ -1411,6 +1411,14 @@
       "appTemplate": "hello-world-durable",
       "packageType": "Zip",
       "useCaseName": "Hello World Durable Function Example"
+    },
+    {
+      "directory": "python3.13/cookiecutter-aws-sam-python-fastapi",
+      "displayName": "FastAPI Framework Starter",
+      "dependencyManager": "pip",
+      "appTemplate": "fastapi-hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
     }
   ],
   "python3.14": [
