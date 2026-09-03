@@ -1,4 +1,5 @@
 import os
+import re
 import tempfile
 
 from pathlib import Path
@@ -27,6 +28,18 @@ LOG.setLevel(INFO)
 
 # NOTE: Using `samdev` as against `sam` in cmdlist enables test with samcli in your dev environment.
 SAM_CLI_EXECUTABLE = "samdev" if os.getenv("SAM_CLI_DEV") else "sam"
+
+# Matches a cfn-lint rule id in `sam validate --lint` output, e.g. "[W2531: Check if ...]"
+LINT_RULE_PATTERN = re.compile(r"\[([EWI]\d{4}):")
+
+# cfn-lint rules that are not template defects and so must not fail the lint test.
+#
+# W2531 flags Lambda runtimes that Lambda has declared end-of-life. This repo
+# deliberately ships one template variant per runtime, including runtimes that are
+# past their EOL date (provided.al2, java8.al2, ...), so the warning is expected and
+# fires on a calendar date rather than on a change to the template. Retiring those
+# template variants is a separate decision from keeping CI honest.
+ALLOWED_LINT_RULES = {"W2531"}
 
 def run_command(command_list, cwd=None, env=None, timeout=TIMEOUT) -> CommandResult:
     LOG.info("Running command: %s", " ".join(map(lambda x: str(x), command_list)))
@@ -97,7 +110,7 @@ class Base:
 
         def _test_lint(self):
             """
-            Test if sam validate --lint passes
+            Test if sam validate --lint passes, ignoring ALLOWED_LINT_RULES
             """
             cmdlist = [
                 SAM_CLI_EXECUTABLE,
@@ -105,7 +118,16 @@ class Base:
                 "--lint",
             ]
             result = run_command(cmdlist, Path(self.tempdir.name) / PROJECT_NAME)
-            self.assertEqual(result.process.returncode, 0)
+            if result.process.returncode == 0:
+                return
+
+            matched_rules = set(LINT_RULE_PATTERN.findall(result.stdout))
+            unexpected_rules = matched_rules - ALLOWED_LINT_RULES
+            self.assertTrue(
+                matched_rules and not unexpected_rules,
+                f"sam validate --lint failed with {sorted(unexpected_rules) or 'no parsable rule id'}"
+                f"\nstdout: {result.stdout}\nstderr: {result.stderr}",
+            )
 
         def _test_file_path_lengths(self):
             """
