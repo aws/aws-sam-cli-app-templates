@@ -34,12 +34,17 @@ LINT_RULE_PATTERN = re.compile(r"\[([EWI]\d{4}):")
 
 # cfn-lint rules that are not template defects and so must not fail the lint test.
 #
-# W2531 flags Lambda runtimes that Lambda has declared end-of-life. This repo
-# deliberately ships one template variant per runtime, including runtimes that are
-# past their EOL date (provided.al2, java8.al2, ...), so the warning is expected and
-# fires on a calendar date rather than on a change to the template. Retiring those
-# template variants is a separate decision from keeping CI honest.
-ALLOWED_LINT_RULES = {"W2531"}
+# These are cfn-lint's three deprecated-runtime rules, all of which fire on a calendar
+# date passing rather than on a change to a template:
+#   W2531 - runtime is past its EOL date
+#   E2531 - runtime is past the date new function creation was disabled
+#   E2533 - runtime is past the date function updates were disabled
+# This repo deliberately ships one template variant per runtime, including runtimes
+# past those dates (provided.al2, java8.al2, ...). All three are listed on purpose: if
+# only W2531 were allowed, every PR in the repo would go red again the day a runtime
+# crosses its next threshold, with no template having changed. Retiring an EOL template
+# variant is a product decision and is tracked separately from keeping CI honest.
+ALLOWED_LINT_RULES = {"W2531", "E2531", "E2533"}
 
 def run_command(command_list, cwd=None, env=None, timeout=TIMEOUT) -> CommandResult:
     LOG.info("Running command: %s", " ".join(map(lambda x: str(x), command_list)))
