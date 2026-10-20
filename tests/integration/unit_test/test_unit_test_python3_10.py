@@ -11,6 +11,11 @@ class UnitTest_python3_10_cookiecutter_aws_sam_eventBridge_python(UnitTestBase.P
     code_directories = ["hello_world_function"]
 
 
+class UnitTest_python3_10_cookiecutter_aws_sam_quick_start_cloudwatch_events_python(UnitTestBase.Python310UnitTestBase):
+    directory = "python3.10/cw-event"
+    code_directories = ["scheduled_event_logger"]
+
+
 class UnitTest_python3_10_cookiecutter_aws_sam_eventbridge_schema_app_python(UnitTestBase.Python310UnitTestBase):
     directory = "python3.10/event-bridge-schema"
     code_directories = ["hello_world_function"]
