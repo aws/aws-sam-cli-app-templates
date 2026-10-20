@@ -23,6 +23,11 @@ class UnitTest_python3_13_cookiecutter_aws_sam_eventBridge_python(UnitTestBase.P
     should_test_lint = False
 
 
+class UnitTest_python3_13_cookiecutter_aws_sam_quick_start_cloudwatch_events_python(UnitTestBase.Python313UnitTestBase):
+    directory = "python3.13/cw-event"
+    code_directories = ["scheduled_event_logger"]
+
+
 class UnitTest_python3_13_cookiecutter_aws_sam_eventbridge_schema_app_python(UnitTestBase.Python313UnitTestBase):
     directory = "python3.13/event-bridge-schema"
     code_directories = ["hello_world_function"]

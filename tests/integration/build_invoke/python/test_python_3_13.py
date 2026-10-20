@@ -20,6 +20,11 @@ class BuildInvoke_python3_13_cookiecutter_aws_sam_eventBridge_python(
     should_test_lint: bool = False
 
 
+class BuildInvoke_python3_13_cookiecutter_aws_sam_quick_start_cloudwatch_events_python(BuildInvokeBase.BuildInvokeBase):
+    directory = "python3.13/cw-event"
+    should_test_lint: bool = False
+
+
 class BuildInvoke_python3_13_cookiecutter_aws_sam_quick_start_web_with_connectors(BuildInvokeBase.QuickStartWebBuildInvokeBase):
     directory = "python3.13/web-conn"
     should_test_lint: bool = False
