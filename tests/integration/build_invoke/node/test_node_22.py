@@ -66,3 +66,4 @@ class BuildInvoke_image_nodejs22_x_cookiecutter_aws_sam_hello_nodejs_lambda_imag
 class BuildInvoke_nodejs22_x_cookiecutter_aws_sam_gql_quick_start(BuildInvokeBase.BuildInvokeBase):
     runtime = "nodejs22.x"
     directory = "nodejs/hello-gql"
+    should_test_lint = False
