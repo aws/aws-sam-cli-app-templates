@@ -52,13 +52,12 @@ class UnitTestBase:
             ]
             LOG.info(cmdlist)
             result = run_command(cmdlist, Path(self.cwd, code_directory))
+            # NOTE: only assert that packages were installed. npm no longer always prints an
+            # "audited N packages" line, and its wording is cosmetic, so asserting on it broke
+            # the build without saying anything about whether the install worked.
             self.assertRegex(
                 result.stdout,
                 r"added \d+ packages",
-            )
-            self.assertRegex(
-                result.stdout,
-                r"audited \d+ packages",
             )
 
         def _test_unit_tests(self, code_directory: str):
