@@ -2,4 +2,5 @@
 --extra-index-url https://pypi.org/simple
 torch=={{cookiecutter.pytorch_version}}
 torchvision=={{cookiecutter.torchvision_version}}
-pillow
+# Pinning pillow to avoid compilation issues (newer versions don't ship manylinux2014 wheels)
+pillow<=12.2.0

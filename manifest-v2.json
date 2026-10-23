@@ -272,7 +272,7 @@
       "packageType": "Zip",
       "useCaseName": "Data processing"
     }
-  ],  
+  ],
   "go (provided.al2)": [
     {
       "directory": "al2/go/hello",
@@ -705,7 +705,7 @@
       "packageType": "Zip",
       "useCaseName": "Multi-step workflow"
     }
-  ],  
+  ],
   "nodejs20.x": [
     {
       "directory": "nodejs/hello",
@@ -1059,7 +1059,7 @@
       "packageType": "Zip",
       "useCaseName": "Durable Functions"
     }
-  ],  
+  ],
   "amazon/nodejs24.x-base": [
     {
       "directory": "nodejs/hello-img",
@@ -1069,7 +1069,7 @@
       "packageType": "Image",
       "useCaseName": "Hello World Example"
     }
-  ],  
+  ],
   "python3.9": [
     {
       "directory": "python3.9/hello",
@@ -1823,7 +1823,7 @@
       "packageType": "Image",
       "useCaseName": "Machine Learning"
     }
-  ],  
+  ],
   "amazon/ruby3.2-base": [
     {
       "directory": "ruby/hello-img",
@@ -1985,7 +1985,7 @@
       "packageType": "Image",
       "useCaseName": "Hello World Example"
     }
-  ],  
+  ],
   "amazon/java8.al2-base": [
     {
       "directory": "java8.al2/hello-img-gradle",
@@ -1997,6 +1997,304 @@
     },
     {
       "directory": "java8.al2/hello-img-maven",
+      "displayName": "Hello World Lambda Image Example: Maven",
+      "dependencyManager": "maven",
+      "appTemplate": "hello-world-lambda-image",
+      "packageType": "Image",
+      "useCaseName": "Hello World Example"
+    }
+  ],
+  "java8.al2023": [
+    {
+      "directory": "java8.al2023/hello-gradle",
+      "displayName": "Hello World Example: Gradle",
+      "dependencyManager": "gradle",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "java8.al2023/hello-maven",
+      "displayName": "Hello World Example: Maven",
+      "dependencyManager": "maven",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "java8.al2023/hello-pt-maven",
+      "displayName": "Hello World Example Java With Powertools for AWS Lambda",
+      "dependencyManager": "maven",
+      "appTemplate": "hello-world-powertools-java",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example with Powertools for AWS Lambda"
+    },
+    {
+      "directory": "java8.al2023/event-bridge-gradle",
+      "displayName": "EventBridge Hello World: Gradle",
+      "dependencyManager": "gradle",
+      "appTemplate": "eventBridge-hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
+    },
+    {
+      "directory": "java8.al2023/event-bridge-maven",
+      "displayName": "EventBridge Hello World: Maven",
+      "dependencyManager": "maven",
+      "appTemplate": "eventBridge-hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
+    },
+    {
+      "directory": "java8.al2023/event-bridge-schema-gradle",
+      "displayName": "EventBridge App from scratch (100+ Event Schemas): Gradle",
+      "dependencyManager": "gradle",
+      "appTemplate": "eventBridge-schema-app",
+      "isDynamicTemplate": "True",
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
+    },
+    {
+      "directory": "java8.al2023/event-bridge-schema-maven",
+      "displayName": "EventBridge App from scratch (100+ Event Schemas): Maven",
+      "dependencyManager": "maven",
+      "appTemplate": "eventBridge-schema-app",
+      "isDynamicTemplate": "True",
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
+    },
+    {
+      "directory": "java8.al2023/step-func-gradle",
+      "displayName": "Step Functions Sample App (Stock Trader): Gradle",
+      "dependencyManager": "gradle",
+      "appTemplate": "step-functions-sample-app",
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow"
+    },
+    {
+      "directory": "java8.al2023/step-func-maven",
+      "displayName": "Step Functions Sample App (Stock Trader): Maven",
+      "dependencyManager": "maven",
+      "appTemplate": "step-functions-sample-app",
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow"
+    }
+  ],
+  "java11.al2023": [
+    {
+      "directory": "java11.al2023/hello-gradle",
+      "displayName": "Hello World Example: Gradle",
+      "dependencyManager": "gradle",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "java11.al2023/hello-maven",
+      "displayName": "Hello World Example: Maven",
+      "dependencyManager": "maven",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "java11.al2023/hello-pt-maven",
+      "displayName": "Hello World Example Java With Powertools for AWS Lambda: Maven",
+      "dependencyManager": "maven",
+      "appTemplate": "hello-world-powertools-java",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example with Powertools for AWS Lambda"
+    },
+    {
+      "directory": "java11.al2023/hello-pt-gradle",
+      "displayName": "Hello World Example Java With Powertools for AWS Lambda: Gradle",
+      "dependencyManager": "gradle",
+      "appTemplate": "hello-world-powertools-java",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example with Powertools for AWS Lambda"
+    },
+    {
+      "directory": "java11.al2023/event-bridge-gradle",
+      "displayName": "EventBridge Hello World: Gradle",
+      "dependencyManager": "gradle",
+      "appTemplate": "eventBridge-hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
+    },
+    {
+      "directory": "java11.al2023/event-bridge-maven",
+      "displayName": "EventBridge Hello World: Maven",
+      "dependencyManager": "maven",
+      "appTemplate": "eventBridge-hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
+    },
+    {
+      "directory": "java11.al2023/event-bridge-schema-gradle",
+      "displayName": "EventBridge App from scratch (100+ Event Schemas): Gradle",
+      "dependencyManager": "gradle",
+      "appTemplate": "eventBridge-schema-app",
+      "isDynamicTemplate": "True",
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
+    },
+    {
+      "directory": "java11.al2023/event-bridge-schema-maven",
+      "displayName": "EventBridge App from scratch (100+ Event Schemas): Maven",
+      "dependencyManager": "maven",
+      "appTemplate": "eventBridge-schema-app",
+      "isDynamicTemplate": "True",
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
+    },
+    {
+      "directory": "java11.al2023/step-func-gradle",
+      "displayName": "Step Functions Sample App (Stock Trader): Gradle",
+      "dependencyManager": "gradle",
+      "appTemplate": "step-functions-sample-app",
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow"
+    },
+    {
+      "directory": "java11.al2023/step-func-maven",
+      "displayName": "Step Functions Sample App (Stock Trader): Maven",
+      "dependencyManager": "maven",
+      "appTemplate": "step-functions-sample-app",
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow"
+    }
+  ],
+  "java17.al2023": [
+    {
+      "directory": "java17.al2023/hello-gradle",
+      "displayName": "Hello World Example: Gradle",
+      "dependencyManager": "gradle",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "java17.al2023/hello-maven",
+      "displayName": "Hello World Example: Maven",
+      "dependencyManager": "maven",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "java17.al2023/hello-pt-maven",
+      "displayName": "Hello World Example Java With Powertools for AWS Lambda: Maven",
+      "dependencyManager": "maven",
+      "appTemplate": "hello-world-powertools-java",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example with Powertools for AWS Lambda"
+    },
+    {
+      "directory": "java17.al2023/hello-pt-gradle",
+      "displayName": "Hello World Example Java With Powertools for AWS Lambda: Gradle",
+      "dependencyManager": "gradle",
+      "appTemplate": "hello-world-powertools-java",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example with Powertools for AWS Lambda"
+    },
+    {
+      "directory": "java17.al2023/event-bridge-gradle",
+      "displayName": "EventBridge Hello World: Gradle",
+      "dependencyManager": "gradle",
+      "appTemplate": "eventBridge-hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
+    },
+    {
+      "directory": "java17.al2023/event-bridge-maven",
+      "displayName": "EventBridge Hello World: Maven",
+      "dependencyManager": "maven",
+      "appTemplate": "eventBridge-hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
+    },
+    {
+      "directory": "java17.al2023/event-bridge-schema-gradle",
+      "displayName": "EventBridge App from scratch (100+ Event Schemas): Gradle",
+      "dependencyManager": "gradle",
+      "appTemplate": "eventBridge-schema-app",
+      "isDynamicTemplate": "True",
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
+    },
+    {
+      "directory": "java17.al2023/event-bridge-schema-maven",
+      "displayName": "EventBridge App from scratch (100+ Event Schemas): Maven",
+      "dependencyManager": "maven",
+      "appTemplate": "eventBridge-schema-app",
+      "isDynamicTemplate": "True",
+      "packageType": "Zip",
+      "useCaseName": "Infrastructure event management"
+    },
+    {
+      "directory": "java17.al2023/step-func-gradle",
+      "displayName": "Step Functions Sample App (Stock Trader): Gradle",
+      "dependencyManager": "gradle",
+      "appTemplate": "step-functions-sample-app",
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow"
+    },
+    {
+      "directory": "java17.al2023/step-func-maven",
+      "displayName": "Step Functions Sample App (Stock Trader): Maven",
+      "dependencyManager": "maven",
+      "appTemplate": "step-functions-sample-app",
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow"
+    }
+  ],
+  "amazon/java8.al2023-base": [
+    {
+      "directory": "java8.al2023/hello-img-gradle",
+      "displayName": "Hello World Lambda Image Example: Gradle",
+      "dependencyManager": "gradle",
+      "appTemplate": "hello-world-lambda-image",
+      "packageType": "Image",
+      "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "java8.al2023/hello-img-maven",
+      "displayName": "Hello World Lambda Image Example: Maven",
+      "dependencyManager": "maven",
+      "appTemplate": "hello-world-lambda-image",
+      "packageType": "Image",
+      "useCaseName": "Hello World Example"
+    }
+  ],
+  "amazon/java11.al2023-base": [
+    {
+      "directory": "java11.al2023/hello-img-gradle",
+      "displayName": "Hello World Lambda Image Example: Gradle",
+      "dependencyManager": "gradle",
+      "appTemplate": "hello-world-lambda-image",
+      "packageType": "Image",
+      "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "java11.al2023/hello-img-maven",
+      "displayName": "Hello World Lambda Image Example: Maven",
+      "dependencyManager": "maven",
+      "appTemplate": "hello-world-lambda-image",
+      "packageType": "Image",
+      "useCaseName": "Hello World Example"
+    }
+  ],
+  "amazon/java17.al2023-base": [
+    {
+      "directory": "java17.al2023/hello-img-gradle",
+      "displayName": "Hello World Lambda Image Example: Gradle",
+      "dependencyManager": "gradle",
+      "appTemplate": "hello-world-lambda-image",
+      "packageType": "Image",
+      "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "java17.al2023/hello-img-maven",
       "displayName": "Hello World Lambda Image Example: Maven",
       "dependencyManager": "maven",
       "appTemplate": "hello-world-lambda-image",
