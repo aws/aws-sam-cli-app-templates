@@ -9,7 +9,7 @@ RUN apt-get update && apt-get -y install zip
 RUN mkdir $FUNCTION_DIR
 WORKDIR $FUNCTION_DIR
 COPY Function.cs HelloWorld.csproj aws-lambda-tools-defaults.json $FUNCTION_DIR/
-RUN dotnet tool install -g Amazon.Lambda.Tools
+RUN dotnet tool install -g Amazon.Lambda.Tools --version 5.14.0
 
 # Build and Copy artifacts depending on build mode.
 RUN mkdir -p build_artifacts
