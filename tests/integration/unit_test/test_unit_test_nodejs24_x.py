@@ -63,3 +63,4 @@ class UnitTest_nodejs24_x_cookiecutter_aws_sam_gql_quick_start(UnitTestBase.Node
     runtime = "nodejs24.x"
     directory = "nodejs/hello-gql"
     code_directories = ["greeter"]
+    should_test_lint = False

@@ -3,4 +3,5 @@
 torch=={{cookiecutter.pytorch_version}}
 torchvision=={{cookiecutter.torchvision_version}}
 numpy==1.26.4
-pillow
+# Pinning pillow to avoid compilation issues (newer versions don't ship manylinux2014 wheels)
+pillow<=12.2.0
