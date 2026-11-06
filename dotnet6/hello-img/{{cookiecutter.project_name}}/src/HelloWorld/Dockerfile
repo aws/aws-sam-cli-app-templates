@@ -1,4 +1,8 @@
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-image
+# Switching to use the -bookworm-slim images because it uses Debian 12.
+# This is because Debian 11 is EoL, and the apt-get calls are hitting 404
+# because they aren't properly pulling from the archive.
+# [reference for image tag](https://github.com/dotnet/dotnet-docker/issues/5235#issuecomment-1998013448)
+FROM mcr.microsoft.com/dotnet/sdk:6.0-bookworm-slim AS build-image
 
 ARG FUNCTION_DIR="/build"
 ARG SAM_BUILD_MODE="run"
