@@ -112,7 +112,10 @@ jobs:
             file: 'tests/integration/build_invoke/python/test_python_3_14.py'
     env:
       PYTHON_VERSION_INSTALL: ${{ matrix.sam_cli_python || matrix.version }}
-    runs-on: ubuntu-latest
+    # Pinning to a specific version rather than ubuntu-latest because setup-python doesn't support
+    # Python 3.9 on ubuntu-26.04. Change this back to ubuntu-latest after Python 3.9 is fully
+    # deprecated (planned date 2027-07-31 at time of writing).
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v3
         name: Checkout PR
