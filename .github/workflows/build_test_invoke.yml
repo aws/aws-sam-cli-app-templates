@@ -113,9 +113,10 @@ jobs:
           - version: '3.15'
             type: 'Test'
             file: 'tests/integration/unit_test/test_unit_test_python3_15.py'
-          - version: '3.15'
-            type: 'Invoke'
-            file: 'tests/integration/build_invoke/python/test_python_3_15.py'
+          # Uncomment after SAM CLI supports Python3.15 and the build image is available 
+          # - version: '3.15'
+          #   type: 'Invoke'
+          #   file: 'tests/integration/build_invoke/python/test_python_3_15.py'
     env:
       PYTHON_VERSION_INSTALL: ${{ matrix.sam_cli_python || matrix.version }}
     # Pinning to a specific version rather than ubuntu-latest because setup-python doesn't support
