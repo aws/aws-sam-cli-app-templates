@@ -1,0 +1,2 @@
+xgboost=={{cookiecutter.xgboost_version}}
+pillow
