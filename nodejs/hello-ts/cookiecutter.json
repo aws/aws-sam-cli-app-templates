@@ -1,6 +1,6 @@
 {
     "project_name": "Name of the project",
-    "runtime": ["nodejs20.x", "nodejs22.x", "nodejs24.x"],
+    "runtime": ["nodejs20.x", "nodejs22.x", "nodejs24.x", "nodejs26.x"],
     "architectures": {
         "value": ["x86_64", "arm64"]
     },
@@ -13,6 +13,9 @@
         },
         "nodejs24.x": {
             "version": "24"
+        },
+        "nodejs26.x": {
+            "version": "26"
         }
     },
     "_copy_without_render": [

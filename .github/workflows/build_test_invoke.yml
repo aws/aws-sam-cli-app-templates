@@ -236,7 +236,14 @@ jobs:
             file: 'tests/integration/unit_test/test_unit_test_nodejs24_x.py'
           - version: '24'
             type: 'Invoke'
-            file: 'tests/integration/build_invoke/node/test_node_24.py'            
+            file: 'tests/integration/build_invoke/node/test_node_24.py'
+          # Uncomment after SAM CLI supports nodejs26.x and the build image is available
+          # - version: '26'
+          #   type: 'Test'
+          #   file: 'tests/integration/unit_test/test_unit_test_nodejs26_x.py'
+          # - version: '26'
+          #   type: 'Invoke'
+          #   file: 'tests/integration/build_invoke/node/test_node_26.py'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
