@@ -1287,6 +1287,14 @@
       "useCaseName": "Infrastructure event management"
     },
     {
+      "directory": "python3.10/cw-event",
+      "displayName": "Quick Start: Scheduled Events",
+      "dependencyManager": "pip",
+      "appTemplate": "quick-start-cloudwatch-events",
+      "packageType": "Zip",
+      "useCaseName": "Scheduled task"
+    },
+    {
       "directory": "python3.10/event-bridge-schema",
       "displayName": "EventBridge App from scratch (100+ Event Schemas)",
       "dependencyManager": "pip",
@@ -1352,6 +1360,14 @@
       "appTemplate": "eventBridge-hello-world",
       "packageType": "Zip",
       "useCaseName": "Infrastructure event management"
+    },
+    {
+      "directory": "python3.11/cw-event",
+      "displayName": "Quick Start: Scheduled Events",
+      "dependencyManager": "pip",
+      "appTemplate": "quick-start-cloudwatch-events",
+      "packageType": "Zip",
+      "useCaseName": "Scheduled task"
     },
     {
       "directory": "python3.11/event-bridge-schema",
@@ -1421,6 +1437,14 @@
       "useCaseName": "Infrastructure event management"
     },
     {
+      "directory": "python3.12/cw-event",
+      "displayName": "Quick Start: Scheduled Events",
+      "dependencyManager": "pip",
+      "appTemplate": "quick-start-cloudwatch-events",
+      "packageType": "Zip",
+      "useCaseName": "Scheduled task"
+    },
+    {
       "directory": "python3.12/event-bridge-schema",
       "displayName": "EventBridge App from scratch (100+ Event Schemas)",
       "dependencyManager": "pip",
@@ -1486,6 +1510,14 @@
       "appTemplate": "eventBridge-hello-world",
       "packageType": "Zip",
       "useCaseName": "Infrastructure event management"
+    },
+    {
+      "directory": "python3.13/cw-event",
+      "displayName": "Quick Start: Scheduled Events",
+      "dependencyManager": "pip",
+      "appTemplate": "quick-start-cloudwatch-events",
+      "packageType": "Zip",
+      "useCaseName": "Scheduled task"
     },
     {
       "directory": "python3.13/event-bridge-schema",
@@ -1561,6 +1593,14 @@
       "appTemplate": "eventBridge-hello-world",
       "packageType": "Zip",
       "useCaseName": "Infrastructure event management"
+    },
+    {
+      "directory": "python3.14/cw-event",
+      "displayName": "Quick Start: Scheduled Events",
+      "dependencyManager": "pip",
+      "appTemplate": "quick-start-cloudwatch-events",
+      "packageType": "Zip",
+      "useCaseName": "Scheduled task"
     },
     {
       "directory": "python3.14/event-bridge-schema",

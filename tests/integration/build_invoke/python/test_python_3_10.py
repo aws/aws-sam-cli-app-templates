@@ -17,6 +17,11 @@ class BuildInvoke_python3_10_cookiecutter_aws_sam_eventBridge_python(
 ):
     directory = "python3.10/event-bridge"
 
+
+class BuildInvoke_python3_10_cookiecutter_aws_sam_quick_start_cloudwatch_events_python(BuildInvokeBase.BuildInvokeBase):
+    directory = "python3.10/cw-event"
+
+
 class BuildInvoke_python3_10_cookiecutter_aws_sam_quick_start_web_with_connectors(BuildInvokeBase.QuickStartWebBuildInvokeBase):
     directory = "python3.10/web-conn"
 

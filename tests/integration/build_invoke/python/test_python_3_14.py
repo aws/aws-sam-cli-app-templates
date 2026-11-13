@@ -18,6 +18,11 @@ class BuildInvoke_python3_14_cookiecutter_aws_sam_eventBridge_python(
     directory = "python3.14/event-bridge"
 
 
+class BuildInvoke_python3_14_cookiecutter_aws_sam_quick_start_cloudwatch_events_python(BuildInvokeBase.BuildInvokeBase):
+    directory = "python3.14/cw-event"
+    should_test_lint: bool = False
+
+
 class BuildInvoke_python3_14_cookiecutter_aws_sam_quick_start_web_with_connectors(BuildInvokeBase.QuickStartWebBuildInvokeBase):
     directory = "python3.14/web-conn"
 
