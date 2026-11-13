@@ -10,53 +10,44 @@ For each template, it will test the following sam commands:
 
 class BuildInvoke_python3_14_cookiecutter_aws_sam_hello_python(BuildInvokeBase.SimpleHelloWorldBuildInvokeBase):
     directory = "python3.14/hello"
-    should_test_lint: bool = False
 
 
 class BuildInvoke_python3_14_cookiecutter_aws_sam_eventBridge_python(
     BuildInvokeBase.EventBridgeHelloWorldBuildInvokeBase
 ):
     directory = "python3.14/event-bridge"
-    should_test_lint: bool = False
 
 
 class BuildInvoke_python3_14_cookiecutter_aws_sam_quick_start_web_with_connectors(BuildInvokeBase.QuickStartWebBuildInvokeBase):
     directory = "python3.14/web-conn"
-    should_test_lint: bool = False
 
 
 class BuildInvoke_python3_14_cookiecutter_aws_sam_step_functions_with_connectors(BuildInvokeBase.BuildInvokeBase):
     directory = "python3.14/step-func-conn"
-    should_test_lint: bool = False
 
 
 @skip("eventbridge schema app requires credential to pull missing files, skip")
 class BuildInvoke_python3_14_cookiecutter_aws_sam_eventbridge_schema_app_python(BuildInvokeBase.BuildInvokeBase):
     directory = "python3.14/event-bridge-schema"
-    should_test_lint: bool = False
 
 
 class BuildInvoke_python3_14_cookiecutter_aws_sam_step_functions_sample_app(BuildInvokeBase.BuildInvokeBase):
     directory = "python3.14/step-func"
-    should_test_lint: bool = False
 
 
 # if we want to check response json, we need to setup efs
 class BuildInvoke_python3_14_cookiecutter_aws_sam_efs_python(BuildInvokeBase.BuildInvokeBase):
     directory = "python3.14/efs"
-    should_test_lint: bool = False
 
 
 class BuildInvoke_python3_14_cookiecutter_aws_sam_hello_pt_python(BuildInvokeBase.SimpleHelloWorldBuildInvokeBase):
     directory = "python3.14/hello-pt"
-    should_test_lint: bool = False
 
 
 class BuildInvoke_image_python3_14_cookiecutter_aws_sam_hello_python_lambda_image(
     BuildInvokeBase.SimpleHelloWorldBuildInvokeBase
 ):
     directory = "python3.14/hello-img"
-    should_test_lint: bool = False
 
 # TODO: uncomment below and add the template back in manifest-v2.json once PyTorch supports python3.14
 # class BuildInvoke_python3_14_pytorch(BuildInvokeBase.BuildInvokeBase):
@@ -64,7 +55,6 @@ class BuildInvoke_image_python3_14_cookiecutter_aws_sam_hello_python_lambda_imag
 
 class BuildInvoke_python3_14_scikit(BuildInvokeBase.BuildInvokeBase):
     directory = "python3.14/apigw-scikit"
-    should_test_lint: bool = False
 
 # TODO: uncomment below and add the template back in manifest-v2.json once Tensorflow supports python3.14
 # class BuildInvoke_python3_14_tensorflow(BuildInvokeBase.BuildInvokeBase):
@@ -72,4 +62,3 @@ class BuildInvoke_python3_14_scikit(BuildInvokeBase.BuildInvokeBase):
 
 class BuildInvoke_python3_14_xgboost(BuildInvokeBase.BuildInvokeBase):
     directory = "python3.14/apigw-xgboost"
-    should_test_lint: bool = False
