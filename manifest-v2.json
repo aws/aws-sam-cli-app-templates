@@ -1070,6 +1070,130 @@
       "useCaseName": "Hello World Example"
     }
   ],
+  "nodejs26.x": [
+    {
+      "directory": "nodejs/hello",
+      "displayName": "Hello World Example",
+      "dependencyManager": "npm",
+      "appTemplate": "hello-world",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "nodejs/hello-gql",
+      "displayName": "GraphQLApi Hello World Example",
+      "dependencyManager": "npm",
+      "appTemplate": "graphql-api-sample-app",
+      "packageType": "Zip",
+      "useCaseName": "GraphQLApi Hello World Example"
+    },
+    {
+      "directory": "nodejs/hello-ts",
+      "displayName": "Hello World Example TypeScript",
+      "dependencyManager": "npm",
+      "appTemplate": "hello-world-typescript",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example"
+    },
+    {
+      "directory": "nodejs/hello-ts-pt",
+      "displayName": "Hello World Example TypeScript With Powertools for AWS Lambda",
+      "dependencyManager": "npm",
+      "appTemplate": "hello-world-powertools-typescript",
+      "packageType": "Zip",
+      "useCaseName": "Hello World Example with Powertools for AWS Lambda"
+    },
+    {
+      "directory": "nodejs/step-func",
+      "displayName": "Step Functions Sample App (Stock Trader)",
+      "dependencyManager": "npm",
+      "appTemplate": "step-functions-sample-app",
+      "packageType": "Zip",
+      "useCaseName": "Multi-step workflow"
+    },
+    {
+      "directory": "nodejs/scratch",
+      "displayName": "Quick Start: From Scratch",
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-from-scratch",
+      "packageType": "Zip",
+      "useCaseName": "Standalone function"
+    },
+    {
+      "directory": "nodejs/cw-event",
+      "displayName": "Quick Start: Scheduled Events",
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-cloudwatch-events",
+      "packageType": "Zip",
+      "useCaseName": "Scheduled task"
+    },
+    {
+      "directory": "nodejs/s3",
+      "displayName": "Quick Start: S3",
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-s3",
+      "packageType": "Zip",
+      "useCaseName": "Data processing"
+    },
+    {
+      "directory": "nodejs/sns",
+      "displayName": "Quick Start: SNS",
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-sns",
+      "packageType": "Zip",
+      "useCaseName": "Data processing"
+    },
+    {
+      "directory": "nodejs/sqs",
+      "displayName": "Quick Start: SQS",
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-sqs",
+      "packageType": "Zip",
+      "useCaseName": "Data processing"
+    },
+    {
+      "directory": "nodejs/web",
+      "displayName": "Quick Start: Web Backend",
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-web",
+      "packageType": "Zip",
+      "useCaseName": "Serverless API"
+    },
+    {
+      "directory": "nodejs/full-stack",
+      "displayName": "Quick Start: Full Stack Application",
+      "dependencyManager": "npm",
+      "appTemplate": "quick-start-full-stack",
+      "packageType": "Zip",
+      "useCaseName": "Full Stack"
+    },
+    {
+      "directory": "nodejs/response-streaming",
+      "displayName": "Lambda function using Response Streaming",
+      "dependencyManager": "npm",
+      "appTemplate": "response-streaming",
+      "packageType": "Zip",
+      "useCaseName": "Lambda Response Streaming"
+    },
+    {
+      "directory": "nodejs/hello-durable-ts",
+      "displayName": "Hello World Durable Function Example TypeScript",
+      "dependencyManager": "npm",
+      "appTemplate": "hello-durable-ts",
+      "packageType": "Zip",
+      "useCaseName": "Durable Functions"
+    }
+  ],
+  "amazon/nodejs26.x-base": [
+    {
+      "directory": "nodejs/hello-img",
+      "displayName": "Hello World Image Example",
+      "dependencyManager": "npm",
+      "appTemplate": "hello-world-lambda-image",
+      "packageType": "Image",
+      "useCaseName": "Hello World Example"
+    }
+  ],
   "python3.9": [
     {
       "directory": "python3.9/hello",
