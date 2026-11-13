@@ -79,3 +79,10 @@ class UnitTest_python3_13_cookiecutter_aws_sam_hello_pt_python(UnitTestBase.Pyth
     code_directories = ["hello_world"]
     # TODO: remove the line remove once python3.13 is GA
     should_test_lint = False
+
+
+class UnitTest_python3_13_cookiecutter_aws_sam_python_fastapi(UnitTestBase.Python313UnitTestBase):
+    directory = "python3.13/cookiecutter-aws-sam-python-fastapi"
+    code_directories = ["app"]
+    # TODO: remove the line remove once python3.13 is GA
+    should_test_lint = False
