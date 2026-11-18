@@ -46,7 +46,7 @@ namespace HelloWorld
 
                 {%- if cookiecutter["Powertools for AWS Lambda (.NET) Metrics"] == "enabled"%}
                 // Custom Metric
-                // https://awslabs.github.io/aws-lambda-powertools-dotnet/core/metrics/
+                // https://docs.aws.amazon.com/powertools/dotnet/core/metrics/
                 Metrics.AddMetric("ApiRequestCount", 1, MetricUnit.Count);
                 {%- endif %}
 
@@ -83,7 +83,7 @@ namespace HelloWorld
 
             {%- if cookiecutter["Powertools for AWS Lambda (.NET) Logging"] == "enabled" %}
             // Structured logging
-            // https://awslabs.github.io/aws-lambda-powertools-dotnet/core/logging/
+            // https://docs.aws.amazon.com/powertools/dotnet/core/logging/
             Logger.LogInformation("Hello world API - HTTP 200");
             {%- endif %}
 

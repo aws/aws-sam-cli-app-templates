@@ -1,6 +1,6 @@
 # {{ cookiecutter.project_name }}
 
-Congratulations, you have just created a Serverless "Hello World" application using the AWS Serverless Application Model (AWS SAM) for the `dotnet10` runtime, and options to bootstrap it with [**Powertools for AWS Lambda (.NET)**](https://awslabs.github.io/aws-lambda-powertools-dotnet/) (Powertools) utilities for Logging, Tracing and Metrics.
+Congratulations, you have just created a Serverless "Hello World" application using the AWS Serverless Application Model (AWS SAM) for the `dotnet10` runtime, and options to bootstrap it with [**Powertools for AWS Lambda (.NET)**](https://docs.aws.amazon.com/powertools/dotnet/) (Powertools) utilities for Logging, Tracing and Metrics.
 
 Powertools for AWS Lambda (.NET) is a developer toolkit to implement Serverless best practices and increase developer velocity.
 
@@ -8,11 +8,11 @@ Powertools for AWS Lambda (.NET) is a developer toolkit to implement Serverless 
 
 Powertools for AWS Lambda (.NET) provides three core utilities:
 
-* **[Tracing](https://awslabs.github.io/aws-lambda-powertools-dotnet/core/tracer/)** - Decorators and utilities to trace Lambda function handlers, and both synchronous and asynchronous functions
-* **[Logging](https://awslabs.github.io/aws-lambda-powertools-dotnet/core/logger/)** - Structured logging made easier, and decorator to enrich structured logging with key Lambda context details
-* **[Metrics](https://awslabs.github.io/aws-lambda-powertools-dotnet/core/metrics/)** - Custom Metrics created asynchronously via CloudWatch Embedded Metric Format (EMF)
+* **[Tracing](https://docs.aws.amazon.com/powertools/dotnet/core/tracing/)** - Decorators and utilities to trace Lambda function handlers, and both synchronous and asynchronous functions
+* **[Logging](https://docs.aws.amazon.com/powertools/dotnet/core/logging/)** - Structured logging made easier, and decorator to enrich structured logging with key Lambda context details
+* **[Metrics](https://docs.aws.amazon.com/powertools/dotnet/core/metrics/)** - Custom Metrics created asynchronously via CloudWatch Embedded Metric Format (EMF)
 
-Find the complete project's [documentation here](https://awslabs.github.io/aws-lambda-powertools-dotnet/).
+Find the complete project's [documentation here](https://docs.aws.amazon.com/powertools/dotnet/).
 
 ### Installing Powertools for AWS Lambda (.NET)
 
